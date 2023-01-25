@@ -1,0 +1,7 @@
+{
+  "name": "sherlook-app-v1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
