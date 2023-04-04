@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 125 125" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-80,-633)">
+        <rect id="ArtBoard1" x="0" y="0" width="1340" height="800" style="fill:none;"/>
+        <g id="ArtBoard11" serif:id="ArtBoard1">
+            <g id="Button-Abbruch" serif:id="Button Abbruch" transform="matrix(1,0,0,1,-530,408)">
+                <circle cx="673" cy="287" r="60" style="fill:rgb(255,69,69);"/>
+                <clipPath id="_clip1">
+                    <circle cx="673" cy="287" r="60"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <g transform="matrix(0.695652,0,0,0.734694,584.826,-228.02)">
+                        <ellipse cx="126.75" cy="701" rx="51.75" ry="49" style="fill:rgb(255,69,69);stroke:white;stroke-width:22.36px;"/>
+                    </g>
+                    <g transform="matrix(1.32143,0,0,1.05455,542.857,-446.018)">
+                        <rect x="44" y="642" width="56" height="55" style="fill:rgb(255,69,69);"/>
+                    </g>
+                    <g transform="matrix(1.26851,-1.26851,1.04624,1.04624,-181.631,-333.747)">
+                        <path d="M92,669L103,685L81,685L92,669Z" style="fill:white;"/>
+                    </g>
+                    <g transform="matrix(1.01521,-1.01521,0.867127,0.867127,-31.3189,-231.055)">
+                        <rect x="86" y="679" width="11" height="27" style="fill:white;"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
