@@ -26,17 +26,17 @@
 
 
 <template>
-    <ion-fab-button id="hilfe-button" :class="{'pulsieren':pulsiert==true}" color="medium" disabled v-if="ausgeblendet">
+    <ion-fab-button class="hilfe-button" color="medium" disabled v-if="ausgeblendet">
         <ion-icon class="button-icon" src="assets/buttons/hilfe.svg"></ion-icon>
     </ion-fab-button>
-    <ion-fab-button id="hilfe-button" :class="{'pulsieren':pulsiert==true}" color="warning" v-else>
+    <ion-fab-button class="hilfe-button" :class="{'pulsieren':pulsiert==true}" color="warning" v-else>
         <ion-icon class="button-icon" src="assets/buttons/hilfe.svg"></ion-icon>
     </ion-fab-button>
 </template>
 
 
 <style scoped>
-#hilfe-button {
+.hilfe-button {
     width: 125px;
     height: 125px;
     margin: 30px;

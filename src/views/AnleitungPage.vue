@@ -54,27 +54,55 @@
         <ion-toolbar>
             <div class="button-container">
                 <zurueck-button-component router-link="/start"/>
-                <hilfe-button-component @click="zeigeHilfe(true)" />
+                <hilfe-button-component id="anleitung-hilfe-button" />
+                <!-- <hilfe-button-component @click="zeigeHilfe(true)" /> -->
                 <weiter-button-component router-link="/level" />
             </div>
         </ion-toolbar>
     </ion-footer>
 
-    <ion-alert
-        :is-open="istHilfeOffen"
-        header="Hilfe"
-        sub-header="Wie geht was?"
-        message="Das geht so ..."
-        :buttons="['Ok']"
-        @didDismiss="zeigeHilfe(false)"
-    ></ion-alert>
+    <ion-modal id="anleitung-hilfe-modal" ref="anleitung_hilfe_modal" trigger="anleitung-hilfe-button">
+      <div class="modal-wrapper">
+        <h1>Hilfe</h1>
+        <div class="modal-content">
+            <p>
+                Über den roten Button links könnt ihr das Spiel verlassen. 
+            </p>
+            <p>
+            Mit dem grünen Button fahrt ihr fort und schaltet zur nächsten Spielstufe weiter.
+            </p>
+            <p>
+            Ihr habt Fragen zur technischen Bedienung eurer High-Tech Lupe oder möchtet nochmal 
+            inhaltlich mehr über das Spiel erfahren? Dann nutzt diesen gelben Infobutton, 
+            um immer auf dem Laufenden zu bleiben.
+            </p>
+        </div>
+        <div class="modal-control">
+            <ion-button size="large" @click="schliesseHilfe">ok</ion-button>
+        </div>
+      </div>
+    </ion-modal>
 
 </ion-page>
 
 </template>
 
 <style scoped>
-
+.modal-wrapper {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.modal-wrapper h1 {
+    font-size: 24pt;
+}
+.modal-wrapper .modal-content {
+    flex-grow: 1;
+}
+.modal-wrapper .modal-control {
+    text-align: end;
+}
 #container {
     display: flex;
     flex-direction: row;
@@ -104,12 +132,16 @@ ul {
 </style>
 
 <script setup lang="ts">
-    import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFooter, IonAlert } from '@ionic/vue';
+    import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFooter, IonModal, IonButton } from '@ionic/vue';
     import weiterButtonComponent from '@/components/WeiterButtonComponent.vue'
     import zurueckButtonComponent from '@/components/ZurueckButtonComponent.vue'
     import hilfeButtonComponent from '@/components/HilfeButtonComponent.vue'
     import { ref } from 'vue';
 
-    const istHilfeOffen = ref(false);
-    const zeigeHilfe = (offen: boolean) => (istHilfeOffen.value = offen);
+    const anleitung_hilfe_modal = ref();
+    const schliesseHilfe = () => {
+        console.log(anleitung_hilfe_modal);
+        anleitung_hilfe_modal.value.$el.dismiss();
+    };
+    
 </script>

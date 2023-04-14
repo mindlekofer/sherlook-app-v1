@@ -22,5 +22,7 @@ const props = defineProps({
 </template>
 
 <style scoped>
-
+svg {
+    filter: drop-shadow(3px 5px 5px rgb(0 0 0 / 0.4));
+}
 </style>

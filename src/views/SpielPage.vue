@@ -1,105 +1,17 @@
-<template>
-  <ion-page>
-
-    <ion-content :fullscreen="true">
-
-      <div id="container">
-
-        <div id="container_links">
-        
-          <div id="fortschritt">
-            <fortschrittsbalken-component id="balken" />
-            <lupe-component id="lupe1" class="lupe" @click="lupeClicked(1)"/>
-            <lupe-component id="lupe2" class="lupe" @click="lupeClicked(2)" />
-            <lupe-component id="lupe3" class="lupe" @click="lupeClicked(3)" />
-          </div>          
-        
-          <!-- <img id="lupe2" class="lupe" src="assets/lupe1.svg" width="150" height="150"/> -->
-          <div id="exit_container">
-                <exit-button-component @click="zeigeExitMenue(true)"/>
-          </div>
-
-        </div>
-
-        <div id="container_mitte">
-
-            <lupe-mitte-component id="mitte"></lupe-mitte-component>
-          
-        </div>
-
-        <div id="container_rechts">
-          <div id="inhalt_rechts">
-
-            <scroll-component :aktive-lupe="lupenRef" />
-
-          </div>
-        </div>
-        
-      </div>
-<!-- 
-      <ion-modal ref="modal" trigger="open-modal" @willDismiss="onWillDismiss">
-        <ion-header>
-          <ion-toolbar>
-            <ion-buttons slot="start">
-              <ion-button @click="menueCancel()">Cancel</ion-button>
-            </ion-buttons>
-            <ion-title>Welcome</ion-title>
-            <ion-buttons slot="end">
-              <ion-button :strong="true" @click="menueConfirm()">Confirm</ion-button>
-            </ion-buttons>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content class="ion-padding">
-          <ion-item>
-            <ion-label position="stacked">Enter your name</ion-label>
-            <ion-input ref="input" type="text" placeholder="Your name"></ion-input>
-          </ion-item>
-        </ion-content>
-      </ion-modal> -->
-        
-    </ion-content>
-
-    <ion-alert
-        :is-open="istHilfeOffen"
-        header="Hilfe"
-        sub-header="Wie geht was?"
-        message="Das geht so ..."
-        :buttons="['Ok']"
-        @didDismiss="zeigeHilfe(false)"
-    ></ion-alert>
-
-    <ion-alert
-        :is-open="istExitMenueOffen"
-        header="Menü"
-        sub-header="Wählen Sie eine Option"
-        message="Wollen Sie wirklich aufhören?"
-        :buttons="['Ok']"
-        @didDismiss="zurueckZuStart"
-    ></ion-alert>
-
-  </ion-page>
-</template>
-
 <script setup lang="ts">
-import { IonPage, IonHeader, IonContent, IonAlert } from '@ionic/vue';
+import { IonPage, IonHeader, IonContent, IonModal, IonButton, IonAlert } from '@ionic/vue';
 
 import FortschrittsbalkenComponent from '@/components/FortschrittsbalkenComponent.vue';
 import LupeComponent from '@/components/LupeComponent.vue';
 import ExitButtonComponent from '@/components/ExitButtonComponent.vue'
 import ScrollComponent from '@/components/ScrollComponent.vue';
 import LupeMitteComponent from '@/components/LupeMitteComponent.vue';
+import HilfeButtonComponent from '@/components/HilfeButtonComponent.vue';
+import BuchButtonComponent from '@/components/BuchButtonComponent.vue';
+import KameraButtonComponent from '@/components/KameraButtonComponent.vue';
+
 import { ref } from 'vue';
 import router from '@/router';
-
-const istHilfeOffen = ref(false);
-const zeigeHilfe = (offen : boolean) => (istHilfeOffen.value = offen);
-const istExitMenueOffen = ref(false);
-const zeigeExitMenue = (offen : boolean) => (istExitMenueOffen.value = offen);
-const zurueckZuStart = () => { 
-  zeigeExitMenue(false);
-  router.push('/start');
-};
-
 
 const lupenRef = ref(1);
 let lupenNr = 5;
@@ -112,37 +24,146 @@ const lupeClicked = (lupe : number) => {
   lupenNr = lupe;
   emit('zeige_lupe', lupe);
 };
+const buchClicked = () => {
+  console.log('buchClicked()');
+};
+const kameraClicked = () => {
+  console.log('kameraClicked()');
+};
+const hilfeClicked = () => {
+  console.log('hilfeClicked()');
+};
 
+const menu_modal = ref();
+const schliesseMenuModal = () => {
+    console.log(menu_modal);
+    menu_modal.value.$el.dismiss();
+};
+
+const schliesseMenue = () => {
+  menu_modal.value.$el.dismiss();
+};
+
+const istBeendenHinweisOffen = ref(false);
+const zeigeBeendenHinweis = (offen: boolean) => (istBeendenHinweisOffen.value = offen);
+
+const spielBeenden = () => {
+  console.log("spielBeenden()");
+  zeigeBeendenHinweis(false);
+  schliesseMenue();
+  router.push("start");
+};
 
 </script>
 
+
+<template>
+  <ion-page>
+
+    <ion-content :fullscreen="true">
+
+      <div id="container_bildschirminhalt">
+
+        <div id="container_links">
+          <div id="container_fortschritt">
+            <fortschrittsbalken-component id="balken" />
+            <lupe-component id="lupe1" class="lupe" @click="lupeClicked(1)"/>
+            <lupe-component id="lupe2" class="lupe" @click="lupeClicked(2)" />
+            <lupe-component id="lupe3" class="lupe" @click="lupeClicked(3)" />
+          </div>          
+          <div>
+            <exit-button-component id="menu-modal-button"/>
+          </div>
+        </div>
+
+        <div id="container_mitte">
+
+          <div id="container_lupe">
+            <lupe-mitte-component id="lupe_mitte"></lupe-mitte-component>
+          </div>
+
+          <div id="container_buttons">
+              <buch-button-component id="buch_button" @click="buchClicked"/>
+              <kamera-button-component id="kamera_button" @click="kameraClicked"/>
+              <hilfe-button-component id="hilfe_button" @click="hilfeClicked"/>
+              <svg id="button_box" width="600" height="190" viewbox="0 0 600 200">
+                <circle cx="300" cy="90" r="90" fill="hsl(0,0%,60%)"/>
+                <rect x="50" y="30" width="500" height="150" rx="20" fill="hsl(0,0%,60%)"/>
+              </svg>
+          </div>
+
+        </div>
+
+        <div id="container_rechts">
+          <div id="inhalt_rechts">
+            <scroll-component :aktive-lupe="lupenRef" />
+          </div>
+        </div>
+        
+      </div>
+
+    </ion-content>
+
+    <ion-modal id="menu-modal" ref="menu_modal" trigger="menu-modal-button">
+      <div class="modal-wrapper">
+        <h1>Menü</h1>
+        <div class="modal-content">
+          <ion-button @click="zeigeBeendenHinweis(true)">Spiel beenden</ion-button>
+        </div>
+        <div class="modal-control">
+            <ion-button size="large" @click="schliesseMenue">zurück zum Spiel</ion-button>
+        </div>
+      </div>
+    </ion-modal>
+
+    <ion-alert
+        :is-open="istBeendenHinweisOffen"
+        header="Hinweis"
+        sub-header="Wollen Sie das Spiel wirklich beenden?"
+        message="Hiermit geht auch ihr Spielefortschritt verloren."
+        :buttons="[{text: 'Weiterspielen', role: 'dismiss', handler: zeigeBeendenHinweis(false) }, {text:'Beenden', role:'confirm', handler: spielBeenden}]"
+        @didDismiss="zeigeBeendenHinweis(false)"
+    ></ion-alert>
+
+  </ion-page>
+</template>
+
+
 <style scoped>
 
-#mitte {
-  position: absolute;
-  left: 140px;
+#lupe_mitte {
+  position: relative;
+  left: 0px;
   top: 50px;
 }
-
-#container {
+#container_bildschirminhalt {
  display: flex;
  flex-direction: row; 
  height: 100vh;
 }
-#container_links
-{
+#container_links {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 180px;
   margin-top: 30px;
 }
-#container_mitte
-{
-  min-width: 500px;
+#container_mitte {
+  display:flex;
+  flex-direction: column;
+  min-width: 600px;
 }
-#container_rechts
-{
+#container_lupe {
+  flex-grow: 1;
+}
+#container_buttons {
+  height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container_rechts {
   background-color: rgb(244, 244, 244);
   flex-grow: 1;
   overflow-y: scroll;
@@ -163,7 +184,7 @@ const lupeClicked = (lupe : number) => {
 ::-webkit-scrollbar-thumb:hover {
   background: #40445d; 
 }
-#fortschritt {
+#container_fortschritt {
   flex-grow: 1;
 }
 #balken {
@@ -185,4 +206,46 @@ const lupeClicked = (lupe : number) => {
 #lupe1 {
   top: 390px;
 }
+#buch_button {
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  z-index: 100;
+}
+#kamera_button {
+  position: absolute;
+  top: 20px;
+  z-index: 100;
+}
+#hilfe_button {
+  position: absolute;
+  right: 50px;
+  top: 20px;
+  width: 115px;
+  height: 115px;
+  z-index: 100;
+}
+#button_box {
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.modal-wrapper {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.modal-wrapper h1 {
+    font-size: 24pt;
+}
+.modal-wrapper .modal-content {
+    font-size: 16pt;
+    flex-grow: 1;
+    text-align: center;
+}
+.modal-wrapper .modal-control {
+    text-align: end;
+}
+
 </style>

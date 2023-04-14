@@ -16,6 +16,24 @@
 
         <div id="container">
 
+            <div id="logo">
+                <img src="assets/logo.png" width="600"/>
+            </div>
+
+            <div id="text-container">
+                <p>In welchen Räumen wollt ihr SherLOOK spielen?</p>
+            </div>
+            <div id="auswahl-container">
+                <ion-button color="primary" expand="block" size="large" fill="solid">
+                    1. Obergeschoss<br>
+                    Frömmigkeit im Mittelalter / 18. und 19. Jahrhundert
+                </ion-button>
+                <ion-button color="primary" expand="block" size="large" fill="solid">
+                    Erdgeschoss<br>
+                    Leinersaal / Stadtgeschichte
+                </ion-button>
+            </div>
+
         </div>
 
     </ion-content>
@@ -24,29 +42,38 @@
         <ion-toolbar>
             <div class="button-container">
                 <zurueck-button-component router-link="/level"/>
-                <hilfe-button-component @click="zeigeHilfe(true)" pulsiert />
+                <hilfe-button-component id="raum-hilfe-button" pulsiert />
                 <weiter-button-component router-link="/spiel" />
             </div>
         </ion-toolbar>
     </ion-footer>
 
-    <ion-alert
-        :is-open="istHilfeOffen"
-        header="Hilfe"
-        sub-header="Wie geht was?"
-        message="Das geht so ..."
-        :buttons="['Ok']"
-        @didDismiss="zeigeHilfe(false)"
-    ></ion-alert>
-
+    <ion-modal id="raum-hilfe-modal" ref="raum_hilfe_modal" trigger="raum-hilfe-button">
+      <div class="modal-wrapper">
+        <h1>Hilfe</h1>
+        <div class="modal-content">
+            <p>
+                (( Inhaltliche Erklärung: Welche Themen in welchem Stockwerk, Besonderheiten
+der Stockwerke?? ))
+            </p>
+        </div>
+        <div class="modal-control">
+            <ion-button size="large" @click="schliesseHilfe">ok</ion-button>
+        </div>
+      </div>
+    </ion-modal>
 </ion-page>
 
 </template>
 
 <style scoped>
 #container {
-  flex-direction: column;
-  text-align: center;
+    display:flex;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .button-container {
@@ -54,11 +81,59 @@
     display: flex;
     justify-content: space-between;
 }
+#text-container {
 
+}
+p, ul {
+    font-size: 36px;
+    margin: 20px;
+    text-align: left;
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+ion-button {
+    height: 120px;
+    padding: 10px;
+}
+.button-inner { flex-flow: column; }
+.button-inner {
+
+    flex-flow: column;
+}
+.modal-wrapper {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.modal-wrapper h1 {
+    font-size: 24pt;
+}
+.modal-wrapper .modal-content {
+    font-size: 16pt;
+    flex-grow: 1;
+}
+.modal-wrapper .modal-control {
+    text-align: end;
+}
+#logo {
+    position: absolute;
+    height: 215px;
+    width: 215px;
+    top: 100px;
+    left: 50px;
+}
+#auswahl-container {
+    width: 800px;
+    display:flex;
+    flex-direction: column;
+}
 </style>
 
 <script setup lang="ts">
-    import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFooter, IonAlert } from '@ionic/vue';
+    import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFooter, IonModal, IonButton } from '@ionic/vue';
     import { ref } from 'vue';
     import { useSpielerStore } from '../stores/SpielerStore';
     import weiterButtonComponent from '@/components/WeiterButtonComponent.vue'
@@ -67,7 +142,10 @@
 
     const spielerStore = useSpielerStore();
 
-    const istHilfeOffen = ref(false);
-    const zeigeHilfe = (offen: boolean) => (istHilfeOffen.value = offen);
+    const raum_hilfe_modal = ref();
+    const schliesseHilfe = () => {
+        console.log(raum_hilfe_modal);
+        raum_hilfe_modal.value.$el.dismiss();
+    };
 
 </script>

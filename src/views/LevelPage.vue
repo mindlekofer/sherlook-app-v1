@@ -45,20 +45,11 @@
         <ion-toolbar>
             <div class="button-container">
                 <zurueck-button-component router-link="/anleitung"/>
-                <hilfe-button-component @click="zeigeHilfe(true)" ausgeblendet />
+                <hilfe-button-component id="level-hilfe-button" ausgeblendet/>
                 <weiter-button-component router-link="/raum" />
             </div>
         </ion-toolbar>
     </ion-footer>
-
-    <ion-alert
-        :is-open="istHilfeOffen"
-        header="Hilfe"
-        sub-header="Wie geht was?"
-        message="Das geht so ..."
-        :buttons="['Ok']"
-        @didDismiss="zeigeHilfe(false)"
-    ></ion-alert>
 
 </ion-page>
 
@@ -110,13 +101,10 @@ ion-button {
 </style>
 
 <script setup lang="ts">
-    import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFooter, IonAlert, IonButton, IonText } from '@ionic/vue';
+    import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFooter, IonModal, IonButton } from '@ionic/vue';
     import weiterButtonComponent from '@/components/WeiterButtonComponent.vue'
     import zurueckButtonComponent from '@/components/ZurueckButtonComponent.vue'
     import hilfeButtonComponent from '@/components/HilfeButtonComponent.vue'
     import { ref } from 'vue';
-
-    const istHilfeOffen = ref(false);
-    const zeigeHilfe = (offen: boolean) => (istHilfeOffen.value = offen);
 
 </script>

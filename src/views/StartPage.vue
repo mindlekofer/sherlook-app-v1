@@ -22,21 +22,12 @@
     <ion-footer class="ion-no-border_">
         <ion-toolbar>
             <div class="button-container">
-                <zurueck-button-component style="display: none;" />
-                <hilfe-button-component @click="zeigeHilfe(true)" />
+                <!-- <zurueck-button-component /> -->
+                <!-- <hilfe-button-component @click="zeigeHilfe(true)" /> -->
                 <weiter-button-component router-link="/anleitung" />
             </div>
         </ion-toolbar>
     </ion-footer>
-
-    <ion-alert
-        :is-open="istHilfeOffen"
-        header="Hilfe"
-        sub-header="Dies ist der Hilfe Button"
-        message="Herzlichen Glückwunsch. Sie haben den Hilfe Button gefunden. Hier finden Sie zu jeder Zeit Hinweise was und wie etwas zu tun ist."
-        :buttons="['Ok']"
-        @didDismiss="zeigeHilfe(false)"
-    ></ion-alert>
     
 </ion-page>
 
@@ -50,7 +41,7 @@
 }
 .button-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
 }
 
 </style>
@@ -62,7 +53,6 @@
     import hilfeButtonComponent from '@/components/HilfeButtonComponent.vue'
     import { ref } from 'vue';
 
-    const istHilfeOffen = ref(false);
-    const zeigeHilfe = (offen: boolean) => (istHilfeOffen.value = offen);
+
 
 </script>

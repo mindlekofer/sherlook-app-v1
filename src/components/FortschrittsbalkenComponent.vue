@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 const props = defineProps({
         stufe: Number
@@ -24,6 +24,11 @@ const setFortschritt = (prozent:number) => {
 }
 
 setFortschritt(1);
+
+// watch(props.stufe, async (neue_stufe, alte_stufe) => {
+//     console.log("watch hat Stufenänderung festgestellt");
+
+// }) 
 
 </script>
 
