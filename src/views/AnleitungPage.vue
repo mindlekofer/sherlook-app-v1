@@ -3,24 +3,21 @@
 <ion-page>
     <ion-header :translucent="true">
         <ion-toolbar>
-            <ion-title>Erklärung</ion-title>
+            <ion-title>Spielerklärung</ion-title>
         </ion-toolbar>
     </ion-header>
 
     <ion-content :fullscreen="true">
-        <ion-header collapse="condense">
-            <ion-toolbar>
-                <ion-title size="large">Spiel Einleitung</ion-title>
-            </ion-toolbar>
-        </ion-header>
 
         <div id="container">
             <div id="container-links">
-                <img src="assets/logo.png" width="600"/>
+                <img src="assets/img/enola_aelter.png" width="600"/>
             </div>
             <div id="container-rechts">
                 <p>
-                    Detaildiebe treiben hier im Rosgartenmuseum ihr Unwesen. <br>
+                    Detaildiebe treiben hier im Rosgartenmuseum ihr Unwesen.
+                </p>
+                <p>
                     Detaildiebe? Ja immer wieder verschwinden kleine Details und sogar 
                     ganze Objekte aus dem Museum, hier ein kleines Wappen, da ein ganzer 
                     Türrahmen …                 
@@ -127,6 +124,7 @@ ul {
 }
 #container-rechts {
     padding: 30px;
+    padding-top: 50px;
 }
 
 </style>
@@ -137,11 +135,15 @@ ul {
     import zurueckButtonComponent from '@/components/ZurueckButtonComponent.vue'
     import hilfeButtonComponent from '@/components/HilfeButtonComponent.vue'
     import { ref } from 'vue';
+    import { useSpielStore } from '@/stores/SpielStore'
 
     const anleitung_hilfe_modal = ref();
     const schliesseHilfe = () => {
         console.log(anleitung_hilfe_modal);
         anleitung_hilfe_modal.value.$el.dismiss();
     };
+
+    const spielStore = useSpielStore();
+    console.log(spielStore.fortschritt);
     
 </script>

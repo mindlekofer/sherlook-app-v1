@@ -3,32 +3,23 @@
 <ion-page>
     <ion-header :translucent="true">
         <ion-toolbar>
-        <ion-title>Raumauswahl</ion-title>
+            <ion-title>Raumauswahl</ion-title>
         </ion-toolbar>
     </ion-header>
 
     <ion-content :fullscreen="true">
-        <ion-header collapse="condense">
-        <ion-toolbar>
-            <ion-title size="large">Raumauswahl</ion-title>
-        </ion-toolbar>
-        </ion-header>
 
         <div id="container">
-
-            <div id="logo">
-                <img src="assets/logo.png" width="600"/>
-            </div>
 
             <div id="text-container">
                 <p>In welchen Räumen wollt ihr SherLOOK spielen?</p>
             </div>
             <div id="auswahl-container">
-                <ion-button color="primary" expand="block" size="large" fill="solid">
+                <ion-button color="primary" expand="block" size="large" :fill="spielStore.ort == 'og1' ? 'solid':'outline'" @click="spielStore.ort = 'og1'">
                     1. Obergeschoss<br>
                     Frömmigkeit im Mittelalter / 18. und 19. Jahrhundert
                 </ion-button>
-                <ion-button color="primary" expand="block" size="large" fill="solid">
+                <ion-button color="primary" expand="block" size="large" :fill="spielStore.ort == 'eg' ? 'solid':'outline'" @click="spielStore.ort = 'eg'">
                     Erdgeschoss<br>
                     Leinersaal / Stadtgeschichte
                 </ion-button>
@@ -72,17 +63,13 @@ der Stockwerke?? ))
     height: 100%;
     flex-direction: column;
     text-align: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
-
-.button-container {
+#auswahl-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
-}
-#text-container {
-
 }
 p, ul {
     font-size: 36px;
@@ -135,17 +122,17 @@ ion-button {
 <script setup lang="ts">
     import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFooter, IonModal, IonButton } from '@ionic/vue';
     import { ref } from 'vue';
-    import { useSpielerStore } from '../stores/SpielerStore';
     import weiterButtonComponent from '@/components/WeiterButtonComponent.vue'
     import zurueckButtonComponent from '@/components/ZurueckButtonComponent.vue'
     import hilfeButtonComponent from '@/components/HilfeButtonComponent.vue'
-
-    const spielerStore = useSpielerStore();
+    import { useSpielStore } from '@/stores/SpielStore'
 
     const raum_hilfe_modal = ref();
     const schliesseHilfe = () => {
         console.log(raum_hilfe_modal);
         raum_hilfe_modal.value.$el.dismiss();
     };
+
+    const spielStore = useSpielStore();
 
 </script>

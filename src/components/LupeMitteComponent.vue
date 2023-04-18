@@ -5,10 +5,10 @@
 
 <template>
 
-  <svg width="600" height="600" viewBox="0 0 600 600" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+  <svg width="560" height="560" viewBox="0 0 560 560" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g>
-        <circle cx="300" cy="300" r="300" opacity="0.3"></circle>
-        <circle cx="300" cy="300" r="200"></circle>
+        <circle cx="280" cy="280" r="280" fill="black" opacity="0.15"></circle>
+        <circle cx="280" cy="280" r="200"></circle>
     </g>
   </svg>
 

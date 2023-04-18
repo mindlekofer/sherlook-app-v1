@@ -3,35 +3,32 @@
 <ion-page>
     <ion-header :translucent="true">
         <ion-toolbar>
-            <ion-title>Level</ion-title>
+            <ion-title>Spielerauswahl</ion-title>
         </ion-toolbar>
     </ion-header>
 
     <ion-content :fullscreen="true">
-        <ion-header collapse="condense">
-            <ion-toolbar>
-                <ion-title size="large">Level</ion-title>
-            </ion-toolbar>
-        </ion-header>
 
         <div id="container">
+
             <div id="logo">
-                <img src="assets/logo.png" width="600"/>
+                <img src="assets/img/enola_aelter.png" width="600"/>
             </div>
 
             <div id="text-container">
-                <p>In welchem Level wollt ihr spielen?</p>
+                <p>In welcher Schwierigkeitsstufe wollt ihr spielen?</p>
             </div>
+
             <div id="auswahl-container">
-                <ion-button color="primary" expand="block" size="large" fill="solid">
+                <ion-button color="success" expand="block" size="large" :fill="spielStore.spieler == 'watson' ? 'solid' : 'outline'" @click="spielStore.spieler = 'watson'">
                     Watson<br>
                     leicht (ab 10 Jahren)
                 </ion-button>
-                <ion-button color="primary" expand="block" size="large" fill="solid">
+                <ion-button color="warning" expand="block" size="large" :fill="spielStore.spieler == 'sherlock' ? 'solid' : 'outline'" @click="spielStore.spieler = 'sherlock'">
                     Sherlock<br>
                     mittel (ab 12 Jahre)
                 </ion-button>
-                <ion-button color="primary" expand="block" size="large" fill="solid">
+                <ion-button color="danger" expand="block" size="large" :fill="spielStore.spieler == 'enola' ? 'solid' : 'outline'" @click="spielStore.spieler = 'enola'">
                     Enola<br>
                     schwer (ab 16 Jahre)
                 </ion-button>
@@ -46,7 +43,8 @@
             <div class="button-container">
                 <zurueck-button-component router-link="/anleitung"/>
                 <hilfe-button-component id="level-hilfe-button" ausgeblendet/>
-                <weiter-button-component router-link="/raum" />
+                <weiter-button-component router-link="/raum" disabled v-if="spielStore.spieler == ''"/>
+                <weiter-button-component router-link="/raum" v-else/>
             </div>
         </ion-toolbar>
     </ion-footer>
@@ -60,7 +58,7 @@
     position: absolute;
     height: 215px;
     width: 215px;
-    top: 100px;
+    top: 180px;
     left: 50px;
 }
 #container {
@@ -68,16 +66,13 @@
     height: 100%;
     flex-direction: column;
     text-align: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 #auswahl-container {
     width: 600px;
     display:flex;
     flex-direction: column;
-}
-#text-container {
-
 }
 p, ul {
     font-size: 36px;
@@ -106,5 +101,8 @@ ion-button {
     import zurueckButtonComponent from '@/components/ZurueckButtonComponent.vue'
     import hilfeButtonComponent from '@/components/HilfeButtonComponent.vue'
     import { ref } from 'vue';
+
+    import { useSpielStore } from '@/stores/SpielStore'
+    const spielStore = useSpielStore();
 
 </script>

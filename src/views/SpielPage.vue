@@ -9,12 +9,14 @@ import LupeMitteComponent from '@/components/LupeMitteComponent.vue';
 import HilfeButtonComponent from '@/components/HilfeButtonComponent.vue';
 import BuchButtonComponent from '@/components/BuchButtonComponent.vue';
 import KameraButtonComponent from '@/components/KameraButtonComponent.vue';
+import { useSpielStore } from '@/stores/SpielStore';
 
 import { ref } from 'vue';
 import router from '@/router';
 
 const lupenRef = ref(1);
 let lupenNr = 5;
+const spielStore = useSpielStore();
 
 const emit = defineEmits(['zeige_lupe']);
 
@@ -35,10 +37,6 @@ const hilfeClicked = () => {
 };
 
 const menu_modal = ref();
-const schliesseMenuModal = () => {
-    console.log(menu_modal);
-    menu_modal.value.$el.dismiss();
-};
 
 const schliesseMenue = () => {
   menu_modal.value.$el.dismiss();
@@ -51,6 +49,7 @@ const spielBeenden = () => {
   console.log("spielBeenden()");
   zeigeBeendenHinweis(false);
   schliesseMenue();
+  spielStore.$reset();
   router.push("start");
 };
 
@@ -83,13 +82,13 @@ const spielBeenden = () => {
           </div>
 
           <div id="container_buttons">
+              <svg id="button_box" width="560" height="190" viewbox="0 0 550 200">
+                <circle cx="280" cy="90" r="90" fill="hsl(0,0%,70%)"/>
+                <rect x="30" y="30" width="500" height="150" rx="20" fill="hsl(0,0%,70%)"/>
+              </svg>
               <buch-button-component id="buch_button" @click="buchClicked"/>
               <kamera-button-component id="kamera_button" @click="kameraClicked"/>
               <hilfe-button-component id="hilfe_button" @click="hilfeClicked"/>
-              <svg id="button_box" width="600" height="190" viewbox="0 0 600 200">
-                <circle cx="300" cy="90" r="90" fill="hsl(0,0%,60%)"/>
-                <rect x="50" y="30" width="500" height="150" rx="20" fill="hsl(0,0%,60%)"/>
-              </svg>
           </div>
 
         </div>
@@ -120,7 +119,7 @@ const spielBeenden = () => {
         :is-open="istBeendenHinweisOffen"
         header="Hinweis"
         sub-header="Wollen Sie das Spiel wirklich beenden?"
-        message="Hiermit geht auch ihr Spielefortschritt verloren."
+        message="Hiermit geht auch ihr Spielfortschritt verloren."
         :buttons="[{text: 'Weiterspielen', role: 'dismiss', handler: zeigeBeendenHinweis(false) }, {text:'Beenden', role:'confirm', handler: spielBeenden}]"
         @didDismiss="zeigeBeendenHinweis(false)"
     ></ion-alert>
@@ -131,11 +130,6 @@ const spielBeenden = () => {
 
 <style scoped>
 
-#lupe_mitte {
-  position: relative;
-  left: 0px;
-  top: 50px;
-}
 #container_bildschirminhalt {
  display: flex;
  flex-direction: row; 
@@ -151,7 +145,12 @@ const spielBeenden = () => {
 #container_mitte {
   display:flex;
   flex-direction: column;
-  min-width: 600px;
+  min-width: 560px;
+}
+#lupe_mitte {
+  position: relative;
+  left: 0px;
+  top: 40px;
 }
 #container_lupe {
   flex-grow: 1;
@@ -164,7 +163,7 @@ const spielBeenden = () => {
   align-items: center;
 }
 #container_rechts {
-  background-color: rgb(244, 244, 244);
+  /* background-color: rgb(231, 231, 231); */
   flex-grow: 1;
   overflow-y: scroll;
 }
