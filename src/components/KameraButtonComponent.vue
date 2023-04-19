@@ -24,8 +24,8 @@ const props = defineProps({
 
 <style scoped>
 svg {
-    width: 140px;
-    height: 140px;
+    width: 155px;
+    height: 155px;
     filter: drop-shadow(3px 5px 5px rgb(0 0 0 / 0.4));
 }
 

@@ -10,6 +10,7 @@ import BuchButtonComponent from '@/components/BuchButtonComponent.vue';
 import KameraButtonComponent from '@/components/KameraButtonComponent.vue';
 import { useSpielStore } from '@/stores/SpielStore';
 import Scroll_1_0_Detail1 from '@/components/scrollbereich/Scroll_1_0_Detail1.vue';
+import Scroll_1_1_Frage1 from '@/components/scrollbereich/Scroll_1_1_Frage1.vue';
 import router from '@/router';
 import { ref, watch } from 'vue';
 import { storeToRefs } from 'pinia';
@@ -39,13 +40,21 @@ const hilfeClicked = () => {
 };
 
 const { flow } = storeToRefs(spielStore);
+flow.value = 1.0;
+console.log(`flow1: ${flow.value}`);
+spielStore.flow = 1.0;
+console.log(`flow2: ${flow.value}`);
 
-const objektAddresse = ref("");
+
+const scrollSeite = ref(Scroll_1_0_Detail1);
 
 watch(flow, () => {
   console.log(`(LupeMitteComponent) flow geändert auf ${flow.value}`);
-  if (flow.value == 1.1) {
-    objektAddresse.value = "assets/objekte/eg/000x_ab/400x400.png";
+  if (flow.value <= 1.0) {
+    scrollSeite.value = Scroll_1_0_Detail1;
+  }
+  else if (flow.value == 1.1) {
+    scrollSeite.value = Scroll_1_1_Frage1;
   }
 });
 
@@ -59,8 +68,10 @@ const openSpielMenu = async () => {
   if (data == "beenden") {
     spielStore.$reset();
     router.push("start");
+    spielStore.flow = 0.0;
   }
   
+
 };
 
 
@@ -86,7 +97,6 @@ const openSpielMenu = async () => {
             <lupe-component id="lupe3" class="lupe" @click="lupeClicked(3)" />
           </div>          
           <div>
-            <!-- <exit-button-component id="menu-modal-button"/> -->
             <exit-button-component @click="openSpielMenu"/>
           </div>
         </div>
@@ -112,8 +122,7 @@ const openSpielMenu = async () => {
         <div id="container_rechts">
           <div id="inhalt_rechts">
 
-            <component :is="Scroll_1_0_Detail1" :aktive-lupe="lupenRef" />
-            <!-- <scroll-component :aktive-lupe="lupenRef" /> -->
+            <component :is="scrollSeite" :aktive-lupe="lupenRef" />
 
           </div>
         </div>
