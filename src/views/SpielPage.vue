@@ -10,6 +10,7 @@ import HilfeButtonComponent from '@/components/HilfeButtonComponent.vue';
 import BuchButtonComponent from '@/components/BuchButtonComponent.vue';
 import KameraButtonComponent from '@/components/KameraButtonComponent.vue';
 import { useSpielStore } from '@/stores/SpielStore';
+import Scroll_1_0_Detail1 from '@/components/scrollbereich/Scroll_1_0_Detail1.vue';
 
 import { ref } from 'vue';
 import router from '@/router';
@@ -95,7 +96,10 @@ const spielBeenden = () => {
 
         <div id="container_rechts">
           <div id="inhalt_rechts">
-            <scroll-component :aktive-lupe="lupenRef" />
+
+            <component :is="Scroll_1_0_Detail1" :aktive-lupe="lupenRef" />
+            <!-- <scroll-component :aktive-lupe="lupenRef" /> -->
+
           </div>
         </div>
         
@@ -208,7 +212,7 @@ const spielBeenden = () => {
 #buch_button {
   position: absolute;
   top: 50px;
-  left: 80px;
+  left: 60px;
   z-index: 100;
 }
 #kamera_button {
@@ -218,7 +222,7 @@ const spielBeenden = () => {
 }
 #hilfe_button {
   position: absolute;
-  right: 50px;
+  right: 30px;
   top: 20px;
   width: 115px;
   height: 115px;

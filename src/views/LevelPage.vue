@@ -20,15 +20,15 @@
             </div>
 
             <div id="auswahl-container">
-                <ion-button color="success" expand="block" size="large" :fill="spielStore.spieler == 'watson' ? 'solid' : 'outline'" @click="spielStore.spieler = 'watson'">
+                <ion-button color="success" expand="block" size="large" :fill="spielStore.spieler == 'Watson' ? 'solid' : 'outline'" @click="spielStore.spieler = 'Watson'">
                     Watson<br>
                     leicht (ab 10 Jahren)
                 </ion-button>
-                <ion-button color="warning" expand="block" size="large" :fill="spielStore.spieler == 'sherlock' ? 'solid' : 'outline'" @click="spielStore.spieler = 'sherlock'">
+                <ion-button color="warning" expand="block" size="large" :fill="spielStore.spieler == 'Sherlock' ? 'solid' : 'outline'" @click="spielStore.spieler = 'Sherlock'">
                     Sherlock<br>
                     mittel (ab 12 Jahre)
                 </ion-button>
-                <ion-button color="danger" expand="block" size="large" :fill="spielStore.spieler == 'enola' ? 'solid' : 'outline'" @click="spielStore.spieler = 'enola'">
+                <ion-button color="danger" expand="block" size="large" :fill="spielStore.spieler == 'Enola' ? 'solid' : 'outline'" @click="spielStore.spieler = 'Enola'">
                     Enola<br>
                     schwer (ab 16 Jahre)
                 </ion-button>

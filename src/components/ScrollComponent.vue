@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useSpielStore } from '@/stores/SpielStore'
+import WeiterButtonComponent from './WeiterButtonComponent.vue';
 
 const props = defineProps ({
     aktiveLupe: {
@@ -14,7 +15,8 @@ const spielStore = useSpielStore();
 
 
 <template>
-<div>
+<div id="content-scroll">
+    <img id="gesicht" src="assets/img/enola_aelter.png" width="200px" style="transform: scaleX(-1); float: right;">
     <p>
         Hallo, ich bin Watson.
     </p>
@@ -27,15 +29,11 @@ const spielStore = useSpielStore();
     <p>
         Das sollten wir schaffen, oder?
     </p>
+    <div id="scroll-buttonbereich">
+        <weiter-button-component id="weiter-button"/>
+    </div>
 
-    <p>
-        Spieler: {{ spielStore.spieler }} <br>
-        Ort: {{ spielStore.ort }}
-    </p>
 
-    <p>
-        Lupe Nr.: {{ props.aktiveLupe }}
-    </p>
 
 
 </div>
@@ -43,8 +41,18 @@ const spielStore = useSpielStore();
 
 
 <style scoped>
-p {
-    font-size: 32px;
+* {
+    font-size: 34px;
+    text-align: left;
+}
+img {
+    width: 200px;
+    margin: 20px;
+}
+#weiter-button {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
 }
 
 </style>
