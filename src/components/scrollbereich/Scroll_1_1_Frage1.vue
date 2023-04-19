@@ -70,7 +70,7 @@ const spielStore = useSpielStore();
     </div>
 
     <div id="scroll-buttonbereich">
-        <weiter-button-component id="weiter-button" class="pulsieren" @click="spielStore.flow = 1.1"/>
+        <weiter-button-component id="weiter-button" class="pulsieren" @click="spielStore.flow = 2"/>
     </div>
 
 </div>

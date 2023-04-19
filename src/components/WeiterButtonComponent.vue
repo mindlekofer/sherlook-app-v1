@@ -1,11 +1,18 @@
 <script setup lang="ts">
     import { IonFabButton, IonIcon} from '@ionic/vue';
 
+    const props = defineProps( {
+        pulsiert: {
+            type: Boolean,
+            default: false
+        }
+    });
+
 </script>
 
 <template>
     <ion-fab-button class="round-button" color="success">
-        <ion-icon class="button-icon" src="assets/buttons/pfeil_weiter.svg"></ion-icon>
+        <ion-icon class="button-icon" :class="{'pulsieren':pulsiert==true}" src="assets/buttons/pfeil_weiter.svg"></ion-icon>
     </ion-fab-button>
 </template>
 
@@ -18,5 +25,15 @@
 }
 .button-icon {
     font-size: 72px;
+}
+.pulsieren {
+    animation: pulsieren-animation 1s ease-in-out infinite alternate;
+}
+
+@keyframes pulsieren-animation {
+    100% {
+        opacity: 75%;
+        transform: scale(110%);
+    }
 }
 </style>

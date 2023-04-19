@@ -105,4 +105,5 @@ ion-button {
     import { useSpielStore } from '@/stores/SpielStore'
     const spielStore = useSpielStore();
 
+
 </script>

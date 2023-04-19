@@ -1,19 +1,20 @@
 <script setup lang="ts">
-import { IonPage, IonHeader, IonContent, IonModal, IonButton, IonAlert } from '@ionic/vue';
+import { IonPage, IonContent } from '@ionic/vue';
 
 import FortschrittsbalkenComponent from '@/components/FortschrittsbalkenComponent.vue';
 import LupeComponent from '@/components/LupeComponent.vue';
 import ExitButtonComponent from '@/components/ExitButtonComponent.vue'
-import ScrollComponent from '@/components/ScrollComponent.vue';
 import LupeMitteComponent from '@/components/LupeMitteComponent.vue';
 import HilfeButtonComponent from '@/components/HilfeButtonComponent.vue';
 import BuchButtonComponent from '@/components/BuchButtonComponent.vue';
 import KameraButtonComponent from '@/components/KameraButtonComponent.vue';
 import { useSpielStore } from '@/stores/SpielStore';
 import Scroll_1_0_Detail1 from '@/components/scrollbereich/Scroll_1_0_Detail1.vue';
-
-import { ref } from 'vue';
 import router from '@/router';
+import { ref, watch } from 'vue';
+import { storeToRefs } from 'pinia';
+import SpielMenu from '@/components/modals/SpielMenu.vue'
+import { modalController } from '@ionic/vue';
 
 const lupenRef = ref(1);
 let lupenNr = 5;
@@ -37,25 +38,38 @@ const hilfeClicked = () => {
   console.log('hilfeClicked()');
 };
 
-const menu_modal = ref();
+const { flow } = storeToRefs(spielStore);
 
-const schliesseMenue = () => {
-  menu_modal.value.$el.dismiss();
+const objektAddresse = ref("");
+
+watch(flow, () => {
+  console.log(`(LupeMitteComponent) flow geändert auf ${flow.value}`);
+  if (flow.value == 1.1) {
+    objektAddresse.value = "assets/objekte/eg/000x_ab/400x400.png";
+  }
+});
+
+const openSpielMenu = async () => {
+  console.log("openSpielMenu clicked");
+  const spiel_menu = await modalController.create({component: SpielMenu});
+  console.log("after await");
+  spiel_menu.present();
+  const { data } = await spiel_menu.onWillDismiss();
+  
+  if (data == "beenden") {
+    spielStore.$reset();
+    router.push("start");
+  }
+  
 };
 
-const istBeendenHinweisOffen = ref(false);
-const zeigeBeendenHinweis = (offen: boolean) => (istBeendenHinweisOffen.value = offen);
 
-const spielBeenden = () => {
-  console.log("spielBeenden()");
-  zeigeBeendenHinweis(false);
-  schliesseMenue();
-  spielStore.$reset();
-  router.push("start");
-};
 
 </script>
 
+<script lang="ts">
+
+</script>
 
 <template>
   <ion-page>
@@ -72,7 +86,8 @@ const spielBeenden = () => {
             <lupe-component id="lupe3" class="lupe" @click="lupeClicked(3)" />
           </div>          
           <div>
-            <exit-button-component id="menu-modal-button"/>
+            <!-- <exit-button-component id="menu-modal-button"/> -->
+            <exit-button-component @click="openSpielMenu"/>
           </div>
         </div>
 
@@ -106,27 +121,6 @@ const spielBeenden = () => {
       </div>
 
     </ion-content>
-
-    <ion-modal id="menu-modal" ref="menu_modal" trigger="menu-modal-button">
-      <div class="modal-wrapper">
-        <h1>Menü</h1>
-        <div class="modal-content">
-          <ion-button @click="zeigeBeendenHinweis(true)">Spiel beenden</ion-button>
-        </div>
-        <div class="modal-control">
-            <ion-button size="large" @click="schliesseMenue">zurück zum Spiel</ion-button>
-        </div>
-      </div>
-    </ion-modal>
-
-    <ion-alert
-        :is-open="istBeendenHinweisOffen"
-        header="Hinweis"
-        sub-header="Wollen Sie das Spiel wirklich beenden?"
-        message="Hiermit geht auch ihr Spielfortschritt verloren."
-        :buttons="[{text: 'Weiterspielen', role: 'dismiss', handler: zeigeBeendenHinweis(false) }, {text:'Beenden', role:'confirm', handler: spielBeenden}]"
-        @didDismiss="zeigeBeendenHinweis(false)"
-    ></ion-alert>
 
   </ion-page>
 </template>
@@ -232,23 +226,6 @@ const spielBeenden = () => {
   position: relative;
   top: 0px;
   left: 0px;
-}
-.modal-wrapper {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-.modal-wrapper h1 {
-    font-size: 24pt;
-}
-.modal-wrapper .modal-content {
-    font-size: 16pt;
-    flex-grow: 1;
-    text-align: center;
-}
-.modal-wrapper .modal-control {
-    text-align: end;
 }
 
 </style>

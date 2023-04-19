@@ -2,8 +2,9 @@ import { defineStore } from 'pinia';
 
 export const useSpielStore = defineStore('spielStore', {
     state: () => ({
-        fortschritt: 0.0,
+        flow: 0.0,
         spieler: "",
-        ort: ""
+        ort: "",
+        objekt: "000x_ab"
     })
 });

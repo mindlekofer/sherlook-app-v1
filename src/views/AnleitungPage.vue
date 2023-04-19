@@ -144,6 +144,6 @@ ul {
     };
 
     const spielStore = useSpielStore();
-    console.log(spielStore.fortschritt);
+    console.log(spielStore.flow);
     
 </script>
