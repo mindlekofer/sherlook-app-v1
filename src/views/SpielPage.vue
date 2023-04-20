@@ -12,7 +12,7 @@ import { useSpielStore } from '@/stores/SpielStore';
 import Scroll_1_0_Detail1 from '@/components/scrollbereich/Scroll_1_0_Detail1.vue';
 import Scroll_1_1_Frage1 from '@/components/scrollbereich/Scroll_1_1_Frage1.vue';
 import router from '@/router';
-import { ref, watch } from 'vue';
+import { ref, shallowRef, watch } from 'vue';
 import { storeToRefs } from 'pinia';
 import SpielMenu from '@/components/modals/SpielMenu.vue'
 import { modalController } from '@ionic/vue';
@@ -46,7 +46,7 @@ spielStore.flow = 1.0;
 console.log(`flow2: ${flow.value}`);
 
 
-const scrollSeite = ref(Scroll_1_0_Detail1);
+const scrollSeite = shallowRef(Scroll_1_0_Detail1);
 
 watch(flow, () => {
   console.log(`(LupeMitteComponent) flow geändert auf ${flow.value}`);
@@ -120,11 +120,7 @@ const openSpielMenu = async () => {
         </div>
 
         <div id="container_rechts">
-          <div id="inhalt_rechts">
-
             <component :is="scrollSeite" :aktive-lupe="lupenRef" />
-
-          </div>
         </div>
         
       </div>
@@ -147,6 +143,7 @@ const openSpielMenu = async () => {
   display: flex;
   flex-direction: column;
   width: 180px;
+  min-width: 180px;
   margin-top: 30px;
 }
 #container_mitte {
@@ -173,9 +170,6 @@ const openSpielMenu = async () => {
   /* background-color: rgb(231, 231, 231); */
   flex-grow: 1;
   overflow-y: scroll;
-}
-#inhalt_rechts {
-  margin: 20px;
 }
 ::-webkit-scrollbar {
   width: 10px;

@@ -41,7 +41,7 @@ const spielStore = useSpielStore();
             Ich habe gehört, hier wartet ein neuer Fall auf mich.
         </p>
         <p>
-            Anscheinend sind hier Kunstfälscher am Werk gewesen und haben unser Detail durch ein Replik ersetzt. Im ersten Schritt muss ich überprüfen, ob ihr meine Fragen beantworten könnt und ihr euch würdig erweist in den Club der Detektive aufgenommen zu werden. 
+            Anscheinend sind hier Kunstfälscher am Werk gewesen und haben unser Detail durch eine Replik ersetzt. Im ersten Schritt muss ich überprüfen, ob ihr meine Fragen beantworten könnt und ihr euch würdig erweist in den Club der Detektive aufgenommen zu werden. 
         </p>
         <p>
             Wenn ihr das geschafft habt, sucht das passende Objekt. So werden wir am Schluss die Täter:in finden.
@@ -80,6 +80,10 @@ const spielStore = useSpielStore();
 <style scoped>
 * {
     text-align: left;
+}
+#content-scroll {
+    padding: 20px;
+    height: 100%;
 }
 .watson {
     font-size: 34px;

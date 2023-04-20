@@ -34,8 +34,8 @@
             <div class="button-container">
                 <zurueck-button-component router-link="/level"/>
                 <hilfe-button-component id="raum-hilfe-button" pulsiert />
-                <weiter-button-component router-link="/spiel" disabled v-if="spielStore.ort == ''"/>
-                <weiter-button-component router-link="/spiel" v-else/>
+                <weiter-button-component disabled v-if="spielStore.ort == ''"/>
+                <weiter-button-component router-link="/spiel" v-else @click="spielStore.flow = 1.0;"/>
             </div>
         </ion-toolbar>
     </ion-footer>

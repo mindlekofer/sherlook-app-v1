@@ -1,13 +1,13 @@
 <template>
-      <div class="modal-wrapper">
+    <div class="modal-wrapper">
         <h1>Menü</h1>
         <div class="modal-content">
-          <ion-button @click="beendeHinweis(true)">Spiel beenden</ion-button>
+            <ion-button @click="beendeHinweis(true)" size="large" fill="outline" expand="block">Spiel beenden</ion-button>
         </div>
         <div class="modal-control">
             <ion-button size="large" @click="modalController.dismiss()">zurück zum Spiel</ion-button>
         </div>
-      </div>
+    </div>
 
     <ion-alert
         :is-open="beendenHinweisOffen"
@@ -34,6 +34,9 @@
     font-size: 16pt;
     flex-grow: 1;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;;
 }
 .modal-wrapper .modal-control {
     text-align: end;

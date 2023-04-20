@@ -11,10 +11,10 @@ const objektAddresse = ref("");
 
 watch(flow, () => {
   console.log(`(LupeMitteComponent) flow geändert auf ${flow.value}`);
-  if (flow.value < 1.1) {
+  if (flow.value < 1.0) {
     objektAddresse.value = "";
   }
-  else if (flow.value == 1.1) {
+  else if (flow.value >= 1.0) {
     objektAddresse.value = "assets/objekte/eg/000x_ab/400x400.png";
   }
 });
