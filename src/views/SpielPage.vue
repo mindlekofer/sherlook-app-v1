@@ -11,6 +11,7 @@ import KameraButtonComponent from '@/components/KameraButtonComponent.vue';
 import { useSpielStore } from '@/stores/SpielStore';
 import Scroll_1_0_Detail1 from '@/components/scrollbereich/Scroll_1_0_Detail1.vue';
 import Scroll_1_1_Frage1 from '@/components/scrollbereich/Scroll_1_1_Frage1.vue';
+import Scroll_1_2_Post1 from '@/components/scrollbereich/Scroll_1_2_Post1.vue';
 import router from '@/router';
 import { ref, shallowRef, watch } from 'vue';
 import { storeToRefs } from 'pinia';
@@ -55,6 +56,8 @@ watch(flow, () => {
   }
   else if (flow.value == 1.1) {
     scrollSeite.value = Scroll_1_1_Frage1;
+  } else if (flow.value == 1.2) {
+    scrollSeite.value = Scroll_1_2_Post1;
   }
 });
 

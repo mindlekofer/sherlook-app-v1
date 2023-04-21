@@ -89,7 +89,7 @@ const spielStore = useSpielStore();
     font-size: 34px;
 }
 .sherlock {
-    font-size: 28px;;
+    font-size: 26px;;
 }
 .enola {
     font-size: 30px;

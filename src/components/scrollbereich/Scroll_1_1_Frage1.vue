@@ -39,7 +39,7 @@ const weiterClicked = () => {
         buttonFarbe2.value  = antwortRichtig.value ? "success" : "danger";
     else if (antwortClicked.value == 3)
         buttonFarbe3.value  = antwortRichtig.value ? "success" : "danger";
-    if (!antwortRichtig.value && spielStore.flow == 1.10) {
+    if (!antwortRichtig.value && spielStore.flow == 1.1) {
         spielStore.flow = 1.11;
         quizStatus.value = "falsch1";
     } else if (!antwortRichtig.value && spielStore.flow == 1.11) {
@@ -63,13 +63,13 @@ const weiterClicked = () => {
             <p v-if="quizStatus == 'frage'">
                 Was für eine hübsche Verzierung! Worauf könnte diese denn nur gestickt worden sein, was meint ihr?
             </p>
-            <p v-else-if="quizStatus == 'richtig'">
+            <p v-else-if="quizStatus == 'richtig'" class="richtig">
                 Richtige Antwort, weiter gehts.
             </p>
-            <p v-else-if="quizStatus == 'falsch1'">
+            <p v-else-if="quizStatus == 'falsch1'" class="falsch">
                 Falsche Antwort, versuche es noch einmal.
             </p>
-            <p v-else-if="quizStatus == 'falsch2'">
+            <p v-else-if="quizStatus == 'falsch2'" class="falsch">
                 Leider wieder falsch, beim nächsten Mal klappt es bestimmt. 
             </p>
         </div>
@@ -85,13 +85,13 @@ const weiterClicked = () => {
             <p v-if="quizStatus == 'frage'">
                 Welchen Beruf könnte der Besitzer des prächtig bestickten Gegenstandes ausgeübt haben? Sein Name war übrigens Karl Theodor von Dalberg und er lebte weder im Vatikan, noch in einem Kloster.
             </p>
-            <p v-else-if="quizStatus == 'richtig'">
-                Alle guten Dinge sind drei, versuche es noch einmal.
+            <p v-else-if="quizStatus == 'richtig'" class="richtig">
+                Willkommen im Club der Detektive.
             </p>
-            <p v-else-if="quizStatus == 'falsch1'">
+            <p v-else-if="quizStatus == 'falsch1'" class="falsch">
                 Leider falsch, versucht es noch einmal.
             </p>
-            <p v-else-if="quizStatus == 'falsch2'">
+            <p v-else-if="quizStatus == 'falsch2'" class="falsch">
                 Alle guten Dinge sind drei, versuche es noch einmal.
             </p>
         </div>
@@ -129,7 +129,7 @@ const weiterClicked = () => {
     </div>
 
     <div id="scroll-buttonbereich">
-        <weiter-button-component id="weiter-button" @click="weiterClicked()" class="pulsieren" v-if="quizStatus == 'richtig'" />
+        <weiter-button-component id="weiter-button" @click="spielStore.flow = 1.2" class="pulsieren" v-if="quizStatus == 'richtig'" />
         <weiter-button-component id="weiter-button" @click="weiterClicked()" v-else-if="antwortClicked > 0" />
         <weiter-button-component id="weiter-button" disabled v-else />
     </div>

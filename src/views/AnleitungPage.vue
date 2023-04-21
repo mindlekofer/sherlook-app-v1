@@ -106,7 +106,7 @@
     text-align: center;
 }
 p, ul {
-    font-size: 22px;
+    font-size: 24px;
     margin: 20px;
     text-align: left;
 }
@@ -124,7 +124,7 @@ ul {
 }
 #container-rechts {
     padding: 30px;
-    padding-top: 50px;
+    padding-top: 15px;
 }
 
 </style>
