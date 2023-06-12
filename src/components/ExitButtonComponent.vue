@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { IonFabButton, IonIcon} from '@ionic/vue';
+    import { IonFabButton } from '@ionic/vue';
     
 </script>
 
@@ -31,7 +31,8 @@
 .round-button {
     width: 100px;
     height: 100px;
-    margin: 30px;
+    margin-top: 0px;
+    margin-left: 35px;
 }
 
 </style>

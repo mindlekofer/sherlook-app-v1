@@ -1,3 +1,5 @@
+
+
 <template>
     <div class="post-content">
         <div class="post-titel">
@@ -12,8 +14,12 @@
         </div>
         <div class="post-bedienung">
             <div class="post-controls">
-                <div class="post-icons">A B C</div>
-                <div class="post-follower">42138 Follower</div>
+                <div class="post-icons">
+                    <ion-icon :icon="heart" color="danger"></ion-icon>
+                    <ion-icon :icon="chatbubbleOutline"></ion-icon>
+                    <ion-icon :icon="paperPlaneOutline"></ion-icon>
+                 </div>
+                <div class="post-likes">42138 likes</div>
             </div>
             <div class="post-avatar">
                 <img src="assets/personen/instagram_1.jpg" />
@@ -23,7 +29,7 @@
             In den Anblick dieser verschlungenen Ornamente könnte ich mich stundenlang vertiefen und von verwunschenen Gärten und paradiesischen Welten träumen. Wie fantastisch sich diese Ranken verweben und wieder verzweigen. Alles der Natur abgeschaut, dieser fabelhaften und stets aktuellen Künstlerin. Was ich daraus wohl Neues zaubern werde? 
             <br>Abonniert mich und ihr werdet staunen!
             <br><br>
-            #kleidermachenleute
+            <span class="hashtag" :class="hashtagEingetragen ? 'hashtag-eingetragen' : 'hashtag-pulsiert'" @click="onHashtagClick()">#kleidermachenleute</span>
         </div>
     </div>
 </template>
@@ -34,7 +40,8 @@
         display: flex;
         flex-direction: column;
         width: 90%;
-        margin-bottom: 180px;
+        /* margin-bottom: 180px; */
+        /* margin-bottom: 0px; */
         color: white;
         box-shadow: 0px 0px 20px grey;
     }
@@ -81,10 +88,56 @@
         display: flex;
         flex-direction: column;
         justify-content: stretch;
+    }
+    .post-icons {
+        color: white;
+        display: flex;
+        gap: 15px;
+        margin-bottom: 7px;
+        font-size: 38px;
+    }
+    .post-likes {
+        font-size: 16px;
         color: grey;
     }
+    .hashtag {
+        /* color: yellow; */
+        display: inline-block;
+        font-weight: bold;
+    }
 
+    .hashtag-pulsiert {
+        animation: hashtag_pulse 1s ease-in-out alternate-reverse infinite;
+    }
+
+    .hashtag-eingetragen {
+        color: rgb(79, 215, 79);
+        /* transform: translateX(-100px); */
+    }
+
+    @keyframes hashtag_pulse {
+        0% {
+            color: white;
+        }
+        100% {
+            transform: scale(102%);
+            color: rgb(229, 220, 35);
+        }
+    }
 </style>
 
 <script setup lang="ts">
+import { IonIcon } from '@ionic/vue';
+import { heart, chatbubbleOutline, paperPlaneOutline } from 'ionicons/icons';
+import { useSpielStore } from '@/stores/SpielStore';
+import { ref } from 'vue';
+
+const hashtagEingetragen = ref(false);
+
+const spielStore = useSpielStore();
+
+function onHashtagClick() {
+    console.log("(PostingComponent) onHashtagClick()");
+    hashtagEingetragen.value = true;
+}
 </script>

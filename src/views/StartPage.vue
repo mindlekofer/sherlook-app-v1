@@ -6,6 +6,7 @@
 
             <h1>SherLOOK 2.0</h1>
 
+
         </div>
     </ion-content>
 
@@ -42,7 +43,6 @@
     import zurueckButtonComponent from '@/components/ZurueckButtonComponent.vue'
     import hilfeButtonComponent from '@/components/HilfeButtonComponent.vue'
     import { ref } from 'vue';
-
 
 
 </script>

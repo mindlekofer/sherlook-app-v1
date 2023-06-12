@@ -12,7 +12,9 @@
         <div id="container">
 
             <div id="logo">
-                <img src="assets/img/enola_aelter.png" width="600"/>
+                <img src="assets/img/drwatsonvari3.png" width="300" v-if="spielStore.spieler == 'Watson'"/>
+                <img src="assets/img/sherlock_neutral_verbesserung.png" width="300" v-else-if="spielStore.spieler == 'Sherlock'"/>
+                <img src="assets/img/enola_aelter.png" width="230" v-else-if="spielStore.spieler == 'Enola'"/>
             </div>
 
             <div id="text-container">
@@ -56,10 +58,13 @@
 <style scoped>
 #logo {
     position: absolute;
-    height: 215px;
-    width: 215px;
+    /* height: 215px;
+    width: 215px; */
+    height: 400px;
+    width: 400px;
     top: 180px;
     left: 50px;
+    text-align: left;
 }
 #container {
     display:flex;
@@ -100,10 +105,8 @@ ion-button {
     import weiterButtonComponent from '@/components/WeiterButtonComponent.vue'
     import zurueckButtonComponent from '@/components/ZurueckButtonComponent.vue'
     import hilfeButtonComponent from '@/components/HilfeButtonComponent.vue'
-    import { ref } from 'vue';
 
     import { useSpielStore } from '@/stores/SpielStore'
     const spielStore = useSpielStore();
-
 
 </script>

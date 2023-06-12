@@ -59,7 +59,7 @@ const weiterClicked = () => {
 
     <div class="quiz watson" v-if="spielStore.spieler == 'Watson'">
         <div class="frage-content">
-            <img id="gesicht" src="assets/img/enola_aelter.png" />
+            <img id="gesicht" src="assets/img/drwatsonvari3.png" width="350"/>
             <p v-if="quizStatus == 'frage'">
                 Was für eine hübsche Verzierung! Worauf könnte diese denn nur gestickt worden sein, was meint ihr?
             </p>
@@ -81,7 +81,7 @@ const weiterClicked = () => {
     </div>
     <div class="quiz sherlock" v-else-if="spielStore.spieler == 'Sherlock'">
         <div class="frage-content">
-            <img id="gesicht" src="assets/img/enola_aelter.png" />
+            <img id="gesicht" src="assets/img/sherlock_neutral_verbesserung.png" width="350"/>
             <p v-if="quizStatus == 'frage'">
                 Welchen Beruf könnte der Besitzer des prächtig bestickten Gegenstandes ausgeübt haben? Sein Name war übrigens Karl Theodor von Dalberg und er lebte weder im Vatikan, noch in einem Kloster.
             </p>
@@ -171,7 +171,7 @@ const weiterClicked = () => {
 img {
     width: 200px;
     margin: 20px;
-    transform: scaleX(-1);
+    /* transform: scaleX(-1); */
     float: right;
 }
 #weiter-button {

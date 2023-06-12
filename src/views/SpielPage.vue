@@ -3,6 +3,7 @@ import { IonPage, IonContent } from '@ionic/vue';
 
 import FortschrittsbalkenComponent from '@/components/FortschrittsbalkenComponent.vue';
 import LupeComponent from '@/components/LupeComponent.vue';
+import KopfComponent from '@/components/KopfComponent.vue';
 import ExitButtonComponent from '@/components/ExitButtonComponent.vue'
 import LupeMitteComponent from '@/components/LupeMitteComponent.vue';
 import HilfeButtonComponent from '@/components/HilfeButtonComponent.vue';
@@ -46,7 +47,6 @@ console.log(`flow1: ${flow.value}`);
 spielStore.flow = 1.0;
 console.log(`flow2: ${flow.value}`);
 
-
 const scrollSeite = shallowRef(Scroll_1_0_Detail1);
 
 watch(flow, () => {
@@ -74,10 +74,7 @@ const openSpielMenu = async () => {
     spielStore.flow = 0.0;
   }
   
-
 };
-
-
 
 </script>
 
@@ -95,12 +92,14 @@ const openSpielMenu = async () => {
         <div id="container_links">
           <div id="container_fortschritt">
             <fortschrittsbalken-component id="balken" />
-            <lupe-component id="lupe1" class="lupe" @click="lupeClicked(1)"/>
+            <kopf-component id="kopf" class="lupe"/>
+            <lupe-component id="lupe1" class="lupe" @click="lupeClicked(1)" bild="assets/objekte/eg/000x_ab/400x400.png"/>
+            <!-- <lupe-component id="lupe1" class="lupe" @click="lupeClicked(1)" /> -->
             <lupe-component id="lupe2" class="lupe" @click="lupeClicked(2)" />
             <lupe-component id="lupe3" class="lupe" @click="lupeClicked(3)" />
           </div>          
           <div>
-            <exit-button-component @click="openSpielMenu"/>
+            <exit-button-component @click="openSpielMenu" style="margin-bottom: 20px;"/>
           </div>
         </div>
 
@@ -147,7 +146,7 @@ const openSpielMenu = async () => {
   flex-direction: column;
   width: 180px;
   min-width: 180px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 #container_mitte {
   display:flex;
@@ -192,22 +191,27 @@ const openSpielMenu = async () => {
 }
 #balken {
   margin-left: 55px;
+  margin-top: 50px;
   z-index: 110;
   width: 120px;
 }
 .lupe {
   position: absolute;
-  z-index: 100;
   left: 20px;
 }
 #lupe3 {
-  top: 30px;
+  top: 140px;
+  opacity: 0.5;
 }
 #lupe2 {
-  top: 210px;
+  top: 290px;
+  opacity: 0.5;
 }
 #lupe1 {
-  top: 390px;
+  top: 440px;
+}
+#kopf {
+  top: 0px;
 }
 #buch_button {
   position: absolute;

@@ -15,7 +15,6 @@ const props = defineProps ({
 
 const spielStore = useSpielStore();
 
-
 </script>
 
 

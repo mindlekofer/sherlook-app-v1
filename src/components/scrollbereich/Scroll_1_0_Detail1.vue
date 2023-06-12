@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useSpielStore } from '@/stores/SpielStore'
 import WeiterButtonComponent from '../WeiterButtonComponent.vue';
+import ZurueckButtonComponent from '../ZurueckButtonComponent.vue';
 
 const props = defineProps ({
     aktiveLupe: {
@@ -18,7 +19,7 @@ const spielStore = useSpielStore();
 <div id="content-scroll">
 
     <div class="watson" v-if="spielStore.spieler == 'Watson'">
-        <img id="gesicht" src="assets/img/enola_aelter.png" />
+        <img id="gesicht" src="assets/img/drwatsonvari3.png" width="350"/>
         <p>
             Hallo, ich bin Watson.
         </p>
@@ -33,7 +34,8 @@ const spielStore = useSpielStore();
         </p>
     </div>
     <div class="sherlock" v-else-if="spielStore.spieler == 'Sherlock'">
-        <img id="gesicht" src="assets/img/enola_aelter.png" />
+        <img id="gesicht" src="assets/img/sherlock_neutral_verbesserung.png" width="350"/>
+
         <p>
             Guten Tag, mein Name ist Sherlock.
         </p>
@@ -48,7 +50,7 @@ const spielStore = useSpielStore();
         </p>
     </div>
     <div class="enola" v-else-if="spielStore.spieler == 'Enola'">
-        <img id="gesicht" src="assets/img/enola_aelter.png" />
+        <img id="gesicht" src="assets/img/enola_aelter.png"/>
         <p>
             Hallo, mein Name ist Enola. 
         </p>
@@ -70,6 +72,7 @@ const spielStore = useSpielStore();
     </div>
 
     <div id="scroll-buttonbereich">
+        <!-- <zurueck-button-component id="zurueck-button" class="pulsieren" @click="spielStore.flow = 1.1"/> -->
         <weiter-button-component id="weiter-button" class="pulsieren" @click="spielStore.flow = 1.1"/>
     </div>
 
@@ -97,13 +100,19 @@ const spielStore = useSpielStore();
 img {
     width: 200px;
     margin: 20px;
-    transform: scaleX(-1);
+    /* transform: scaleX(-1); */
     float: right;
 }
 #weiter-button {
     position: fixed;
     bottom: 0px;
     right: 0px;
+}
+
+#zurueck-button {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
 }
 
 </style>
