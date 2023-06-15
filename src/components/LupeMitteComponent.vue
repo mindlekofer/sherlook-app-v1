@@ -3,6 +3,7 @@
 import { useSpielStore } from '@/stores/SpielStore';
 import { ref, watch } from 'vue';
 import { storeToRefs } from 'pinia';
+import { BleClient } from '@capacitor-community/bluetooth-le';
 
 const spielStore = useSpielStore();
 const { flow } = storeToRefs(spielStore);
@@ -18,6 +19,15 @@ watch(flow, () => {
     objektAddresse.value = "assets/objekte/eg/000x_ab/400x400.png";
   }
 });
+
+async function scanBLE(): Promise<void> {
+  try {
+    await BleClient.initialize();
+  } catch {
+    console.log("scanBLE() error");
+  }
+}
+
 
 </script>
 
