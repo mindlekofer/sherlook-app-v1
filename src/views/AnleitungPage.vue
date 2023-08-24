@@ -50,10 +50,9 @@
     <ion-footer class="ion-no-border_">
         <ion-toolbar>
             <div class="button-container">
-                <zurueck-button-component router-link="/start"/>
-                <hilfe-button-component id="anleitung-hilfe-button" />
-                <!-- <hilfe-button-component @click="zeigeHilfe(true)" /> -->
-                <weiter-button-component router-link="/level" />
+                <button-zurueck-component router-link="/start"/>
+                <button-hilfe-component id="anleitung-hilfe-button" />
+                <button-weiter-component router-link="/level" />
             </div>
         </ion-toolbar>
     </ion-footer>
@@ -131,9 +130,10 @@ ul {
 
 <script setup lang="ts">
     import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFooter, IonModal, IonButton } from '@ionic/vue';
-    import weiterButtonComponent from '@/components/WeiterButtonComponent.vue'
-    import zurueckButtonComponent from '@/components/ZurueckButtonComponent.vue'
-    import hilfeButtonComponent from '@/components/HilfeButtonComponent.vue'
+    import ButtonWeiterComponent from '@/components/ButtonWeiterComponent.vue';
+    import ButtonZurueckComponent from '@/components/ButtonZurueckComponent.vue';
+
+    import ButtonHilfeComponent from '@/components/ButtonHilfeComponent.vue'
     import { ref } from 'vue';
     import { useSpielStore } from '@/stores/SpielStore'
 

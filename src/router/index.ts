@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import StartPage from '@/views/StartPage.vue'
-import AnleitungPage from '@/views/AnleitungPage.vue'
-import LevelPage from '@/views/LevelPage.vue'
-import RaumPage from '@/views/RaumPage.vue'
-import SpielPage from '@/views/SpielPage.vue'
+import StartPage from '@/views/Page_0_0_0_Start.vue'
+import IntroFilmPage from '@/views/Page_0_2_0_IntroFilm.vue'
+import LevelPage from '@/views/Page_0_3_0_Level.vue'
+import RaumPage from '@/views/Page_0_4_0_Raum.vue'
+import SpielPage from '@/views/Page_1_x_x_Spiel.vue'
+import TutorialPage from '@/views/Page_0_6_0_Tutorial.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -17,9 +18,9 @@ const routes: Array<RouteRecordRaw> = [
     component: StartPage
   },
   {
-    path: '/anleitung',
-    name: 'Anleitung',
-    component: AnleitungPage
+    path: '/intro',
+    name: 'intro',
+    component: IntroFilmPage
   },
   {
     path: '/level',
@@ -30,6 +31,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/raum',
     name: 'Raum',
     component: RaumPage
+  },
+  {
+    path: '/tutorial',
+    name: 'Tutorial',
+    component: TutorialPage
   },
   {
     path: '/spiel',

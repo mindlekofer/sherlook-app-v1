@@ -2,8 +2,14 @@
 import { ref } from 'vue';
 
 const props = defineProps({
-        stufe: Number,
-        bild: String
+        zahl: {
+            type: String,
+            default: ''
+        },
+        bild: {
+            type: String,
+            default: ''
+        }
     });
 
 
@@ -13,7 +19,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div id="container">
+    <div class="container">
         <svg width="150" height="150" viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g id="Lupe1" serif:id="Lupe">
                 <path d="M108.54,89.462l-17.42,19.592l31.504,28.012l17.42,-19.592l-31.504,-28.012Z"/>
@@ -26,16 +32,31 @@ const props = defineProps({
                 <path d="M122.098,119.057c4.808,-5.406 13.1,-5.893 18.506,-1.086c5.407,4.808 5.893,13.1 1.086,18.506c-4.807,5.407 -13.099,5.893 -18.506,1.086c-5.406,-4.807 -5.893,-13.099 -1.086,-18.506Z"/>
             </g>
         </svg>
+        <img :src="bild" v-if="bild!=''"/>
+        <div class="zahl">{{ zahl }}</div>
     </div>
 
 </template>
 
 <style scoped>
-#container {
+.container {
     position: relative;
 }
 svg {
     filter: drop-shadow(3px 5px 5px rgb(0 0 0 / 0.4));
 }
-
+.zahl {
+    position: absolute;
+    top: 68px;
+    left: 65px;
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+}
+img {
+    position: absolute;
+    top: 30px;
+    left: 25px;
+    height: 80px;
+}
 </style>

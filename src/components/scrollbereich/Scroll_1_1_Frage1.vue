@@ -182,9 +182,6 @@ img {
 .frage-content {
     flex-grow: 1;
 }
-.antwort-buttons {
-    margin-bottom: 150px;
-}
 .antwort-buttons * {
     margin-bottom: 3px;
     /* height: 80px;

@@ -1,24 +1,59 @@
 <script setup lang="ts">
 
 const props = defineProps({
-        stufe: Number
+        zahl: {
+            type: String,
+            default: ''
+        }
     });
 
 </script>
 
 <template>
-    <div>
-        <svg width="100%" height="100%" viewBox="0 0 125 126" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"><rect id="ArtBoard4" x="0" y="0.807" width="125" height="125" style="fill:none;"/><g id="ArtBoard41" serif:id="ArtBoard4"><g id="Buch1"><g><path d="M24.726,6.487c-4.62,-0 -7.581,2.87 -7.581,8.172l-0,86.266c-0,4.721 2.862,7.271 7.581,7.271l63.599,0l0.397,-101.709l-63.996,-0Z" style="stroke:#fff8f8;stroke-width:1.67px;"/><path d="M17.145,100.631c0.101,-3.639 2.926,-7.297 7.581,-7.279c6.725,0.026 62.783,-0 62.783,-0" style="fill:none;stroke:#fff8f8;stroke-width:1.67px;stroke-linecap:butt;"/><path d="M24.726,93.352l0,-86.865" style="fill:none;stroke:#fff8f8;stroke-width:1.67px;stroke-linecap:butt;"/><path d="M28.365,100.631l59.144,0" style="fill:none;stroke:#fff8f8;stroke-width:1.67px;"/></g><g><path d="M34.126,100.631l-0,19.496l6.064,-7.278l6.065,7.278l-0,-19.496l-12.129,0Z" style="stroke:#fff;stroke-width:1.04px;"/></g><g><path d="M88.36,98.228l19.495,0l-7.277,-4.851l7.277,-4.852l-19.495,-0l0,9.703Z" style="stroke:#fff;stroke-width:1.04px;"/></g><g><path d="M88.36,84.228l19.495,0l-7.277,-4.851l7.277,-4.852l-19.495,-0l0,9.703Z" style="stroke:#fff;stroke-width:1.04px;"/></g><g><path d="M88.36,70.228l19.495,0l-7.277,-4.851l7.277,-4.852l-19.495,-0l0,9.703Z" style="stroke:#fff;stroke-width:1.04px;"/></g><g><path d="M88.36,56.228l19.495,0l-7.277,-4.851l7.277,-4.852l-19.495,-0l0,9.703Z" style="stroke:#fff;stroke-width:1.04px;"/></g><g><path d="M88.36,42.228l19.495,0l-7.277,-4.851l7.277,-4.852l-19.495,-0l0,9.703Z" style="stroke:#fff;stroke-width:1.04px;"/></g><g><path d="M88.36,28.228l19.495,0l-7.277,-4.851l7.277,-4.852l-19.495,-0l0,9.703Z" style="stroke:#fff;stroke-width:1.04px;"/>
-        </g></g></g></svg>
-        
+    <div class="container2">
+        <svg width="100%" height="100%" viewBox="0 0 116 139" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+            <g id="Buch">
+                <g>
+                    <path d="M10.414,1c-5.737,0 -9.414,3.426 -9.414,9.755l0,102.966c0,5.635 3.554,8.679 9.414,8.679l78.97,-0l0.493,-121.4l-79.463,0Z" style="fill:#393939;stroke:#fff8f8;stroke-width:1.67px;"/>
+                    <path d="M1,113.371c0.126,-4.345 3.633,-8.711 9.414,-8.689c2.394,0.008 9.822,0.012 19.202,0.013c23.337,0.002 59.755,-0.013 59.755,-0.013" style="fill:#393939;stroke:#fff8f8;stroke-width:1.67px;stroke-linecap:butt;"/>
+                    <path d="M10.414,104.682l0,-103.682" style="fill:none;stroke:#fff8f8;stroke-width:1.67px;stroke-linecap:butt;"/>
+                    <path d="M14.933,113.371l73.438,-0" style="fill:none;stroke:#fff8f8;stroke-width:1.67px;"/>
+                </g>
+                <g id="Lesezeichen-Vertikal" serif:id="Lesezeichen Vertikal">
+                    <path d="M22.085,113.371l0,23.269l7.531,-8.687l7.53,8.687l0,-23.269l-15.061,-0Z" style="fill:#393939;stroke:#393939;stroke-width:4.17px;"/>
+                    <path d="M22.085,113.371l0,23.269l7.531,-8.687l7.53,8.687l0,-23.269l-15.061,-0Z" style="fill:#fff;stroke:#fff;stroke-width:1.04px;"/>
+                </g>
+                <g id="Lesezeichen-Unten" serif:id="Lesezeichen Unten">
+                    <path d="M89.428,96.969l24.207,-0l-9.036,-8.618l9.036,-8.619l-24.207,0l0,17.237Z" style="fill:#393939;stroke:#393939;stroke-width:4.17px;"/>
+                    <path d="M89.428,96.969l24.207,-0l-9.036,-8.618l9.036,-8.619l-24.207,0l0,17.237Z" style="fill:#57cc33;stroke:#fff;stroke-width:1.04px;"/>
+                </g>
+                <g id="Lesezeichen-Oben" serif:id="Lesezeichen Oben">
+                    <path d="M89.428,69.436l24.207,-0l-9.036,-8.619l9.036,-8.618l-24.207,0l0,17.237Z" style="fill:#393939;stroke:#393939;stroke-width:4.17px;"/>
+                    <path d="M89.428,69.436l24.207,-0l-9.036,-8.619l9.036,-8.618l-24.207,0l0,17.237Z" style="fill:#57cc33;stroke:#fff;stroke-width:1.04px;"/>
+                </g>
+            </g>
+        </svg>
+        <div class="zahl">{{ zahl }}</div>
     </div>
 </template>
 
 <style scoped>
+    .container2 {
+        position: relative;
+    }
     svg {
+        position: relative;
         width: 125px;
         height: 125px;
         filter: drop-shadow(3px 5px 5px rgb(0 0 0 / 0.4));
+    }
+    .zahl {
+        position: absolute;
+        top: 47px;
+        left: 55px;
+        font-size: 48px;
+        color: rgba(255, 255, 255, 0.5);
+        transform: translate(-50%, -50%);
     }
 
 </style>
