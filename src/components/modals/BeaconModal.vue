@@ -20,6 +20,14 @@
                         <ion-label>Beacon {{ beacon.id }}</ion-label>
                         <ion-note>{{ beacon.ort }}</ion-note>
                     </ion-item>
+
+                    <!-- <ion-item>
+                        <ion-badge slot="start" color="warning">RSSI -71</ion-badge>
+                        <ion-label>vor 4 Sekunden</ion-label>
+                        <ion-label>Beacon 5</ion-label>
+                        <ion-label class="beschreibung">Schrank in W508</ion-label>
+                    </ion-item> -->
+
                 </ion-list>
             </div>
             <!-- <p>{{ beaconStore.beaconsFound }}</p>  -->
@@ -34,9 +42,11 @@
 ion-list {
    width: 80%;
 }
+.beschreibung {
+    font-size: 12px;
+    font-weight: 300;
+}
 #beacon-liste {
-    padding: 20px;
-    padding-top: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,7 +72,6 @@ ion-list {
     text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: top;
     justify-content: left;
 }
 .modal-wrapper .modal-control {
@@ -76,9 +85,6 @@ import { modalController } from '@ionic/core';
 import { IonButton, IonList, IonBadge, IonItem, IonLabel, IonNote } from '@ionic/vue';
 import { ref } from 'vue';
 
-
-import { useSpielStore } from '@/stores/SpielStore'
-const spielStore = useSpielStore();
 import { useBeaconStore, Beacon } from '@/stores/BeaconStore';
 const beaconStore = useBeaconStore();
 
@@ -95,27 +101,11 @@ const returnColor = (rssi : number) => {
 }
 
 setInterval(() => {
-    // update list of beacons
-    
     beaconsShown.value = beaconStore.beaconList.filter(filterRecent);
-
-    // update vor...Sekunden
     beaconsShown.value.forEach( (beacon : any) => {
             beacon.vor_s = Math.floor((Date.now()-beacon.time)/1000);
         }
     );
-
-    // let tempArray = [];
-
-    // beaconStore.beaconsFound.forEach((beacon) => {
-    //     tempArray.forEach((newBeacon) => {
-    //         newBeacon
-    //     })
-
-    //     if ( beaconsInRange.value.indexOf() )
-    //         tempArray.push(beacon);
-    // });
-
 }, 1000);
 
 

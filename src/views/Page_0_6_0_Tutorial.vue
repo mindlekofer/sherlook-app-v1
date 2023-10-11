@@ -9,7 +9,6 @@
 
     <ion-content :fullscreen="true">
       <span class="debugging" id="debug-flow-anzeige">{{ spielStore.spieler }} {{ spielStore.ort }} {{ spielStore.flow }} {{ spielStore.status }}</span>
-      <!-- <span class="debugging" id="debug-bt">{{ btStatus }} <br> {{ btDevices }}</span> -->
       <div id="container_alles">
         <div id="container_links">
           <div class="container_hinweise">
@@ -190,62 +189,7 @@ import 'swiper/css/scrollbar';
 const spielStore = useSpielStore();
 const beaconStore = useBeaconStore();
 
-import { BleClient, ScanResult } from '@capacitor-community/bluetooth-le';
-
-const btDevices = ref('no devices');
-
-async function scanBLE(): Promise<void> {
-  try {
-    // await BleClient.stopLEScan();
-    await BleClient.initialize();
-    console.log("BleClient initialized!");
-    beaconStore.status = "aktiv";
-    await BleClient.requestLEScan({allowDuplicates: true, namePrefix: "SherLOOK"}, (result) => {
-      console.log(result);
-      btDevices.value = JSON.stringify(result);
-      beaconStore.nrOfResults++;
-      beaconStore.lastResult = result;
-      if (result.localName?.startsWith("SherLOOK")) {
-        beaconStore.nrOfBeaconsFound++;
-        beaconStore.lastBeacon = { 
-          id:  Number(result.localName.slice(-2)),
-          rssi: result.rssi ? result.rssi : 0,
-          time: Date.now()
-        };
-        let einsortiert = false;
-        beaconStore.beaconList.forEach((beacon, index, arr) => {
-          if (beaconStore.lastBeacon && beaconStore.lastBeacon.id == beacon.id) {
-            beacon.rssi = beaconStore.lastBeacon.rssi;
-            beacon.time = beaconStore.lastBeacon.time;
-            beacon.counter = beacon.counter++;
-            einsortiert = true;
-          }
-        });
-        if (!einsortiert && beaconStore.lastBeacon) {
-          
-          beaconStore.beaconList.push( {
-            id: beaconStore.lastBeacon.id,
-            ort: "",
-            time: beaconStore.lastBeacon.time,
-            rssi: beaconStore.lastBeacon.rssi,
-            counter: 1
-          });
-        }
-        // if (beaconStore.beaconsFound.length >= 1000) {
-        //   beaconStore.beaconsFound.pop();
-        // }
-      }
-
-
-    });
-  } catch {
-    console.log("scanBLE() error");
-    beaconStore.status = "Fehler";
-  }
-}
-
-// setInterval(scanBLE, 5000);
-scanBLE();
+beaconStore.scanBt();
 
 // const emit = defineEmits(['zeige_lupe']);
 
