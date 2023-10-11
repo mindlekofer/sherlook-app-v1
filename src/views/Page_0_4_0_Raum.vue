@@ -62,8 +62,8 @@
         </div>
 
         <button-zurueck-component class="button_zurueck" router-link="/level"/>
-        <button-weiter-component class="button_weiter" router-link="/tutorial" disabled v-if="spielStore.ort == '' || spielStore.spieler == ''"/>
-        <button-weiter-component class="button_weiter" router-link="/tutorial" v-else/>
+        <button-weiter-component class="button_weiter" disabled v-if="spielStore.ort == '' || spielStore.spieler == ''"/>
+        <button-weiter-component class="button_weiter" router-link="/tutorial" @click="spielStore.flow = 0.6" v-else/>
 
     </ion-content>
 

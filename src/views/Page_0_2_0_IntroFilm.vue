@@ -16,7 +16,7 @@
             <h1>0.2 Intro Film</h1>
 
             <button-zurueck-component class="button_einstellungen" router-link="/start"/>
-            <button-weiter-component class="button_weiter" router-link="/level" />
+            <button-weiter-component class="button_weiter" @click="weiterButtonClicked" router-link="/level" />
 
         </div>
 
@@ -66,5 +66,14 @@
     import ButtonWeiterComponent from '@/components/ButtonWeiterComponent.vue';
     // import ButtonEinstellungenComponent from '@/components/ButtonEinstellungenComponent.vue';
     import ButtonZurueckComponent from '@/components/ButtonZurueckComponent.vue';
+    import { useSpielStore } from '@/stores/SpielStore'
+
+    const spielStore = useSpielStore();
+    console.log(`spielStore.flow: ${spielStore.flow}`);
+
+    const weiterButtonClicked = () => {
+        spielStore.flow = 0.3;
+        console.log(`weiter -> flow = ${spielStore.flow}`);
+    }
 
 </script>

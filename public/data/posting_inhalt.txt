@@ -1,0 +1,4 @@
+In den Anblick dieser verschlungenen Ornamente könnte ich mich stundenlang vertiefen und von verwunschenen Gärten und paradiesischen Welten träumen. Wie fantastisch sich diese Ranken verweben und wieder verzweigen. Alles der Natur abgeschaut, dieser fabelhaften und stets aktuellen Künstlerin. Was ich daraus wohl Neues zaubern werde? 
+<br>Abonniert mich und ihr werdet staunen!
+<br><br>
+<span class="hashtag" :class="hashtagEingetragen ? 'hashtag-eingetragen' : 'hashtag-pulsiert'" @click="onHashtagClick()">#kleidermachenleute</span>

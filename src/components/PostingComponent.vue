@@ -132,9 +132,22 @@ import { heart, chatbubbleOutline, paperPlaneOutline } from 'ionicons/icons';
 import { useSpielStore } from '@/stores/SpielStore';
 import { ref } from 'vue';
 
+const props = defineProps({
+    user: {
+        type: String,
+        default: "username"
+    },
+    text: {
+        type: String,
+        default : "text"
+    }
+})
+
 const hashtagEingetragen = ref(false);
 
 const spielStore = useSpielStore();
+
+
 
 function onHashtagClick() {
     console.log("(PostingComponent) onHashtagClick()");

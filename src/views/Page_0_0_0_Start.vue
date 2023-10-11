@@ -9,7 +9,7 @@
             <img class="logo_rosgarten" src="assets/logo_rosgarten.png" width="350">
 
             <button-einstellungen-component class="button_einstellungen"/>
-            <button-weiter-component class="button_weiter" :pulsiert="true" router-link="/intro" />
+            <button-weiter-component class="button_weiter" @click="weiterButtonClicked" :pulsiert="true" router-link="/intro" />
 
         </div>
 
@@ -66,5 +66,14 @@
     import ButtonWeiterComponent from '@/components/ButtonWeiterComponent.vue';
     import ButtonEinstellungenComponent from '@/components/ButtonEinstellungenComponent.vue';
 
+    import { useSpielStore } from '@/stores/SpielStore'
+
+    const spielStore = useSpielStore();
+    console.log(`spielStore.flow: ${spielStore.flow}`);
+
+    const weiterButtonClicked = () => {
+        spielStore.flow = 0.2;
+        console.log(`weiter -> flow = ${spielStore.flow}`);
+    }
 
 </script>

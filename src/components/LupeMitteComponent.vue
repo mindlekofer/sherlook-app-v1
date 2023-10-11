@@ -1,9 +1,23 @@
 <script setup lang="ts">
 
 import { useSpielStore } from '@/stores/SpielStore';
-import { ref, watch } from 'vue';
+import { ref, setBlockTracking, watch } from 'vue';
 import { storeToRefs } from 'pinia';
-import { BleClient } from '@capacitor-community/bluetooth-le';
+
+const props = defineProps({
+  farbe: {
+    type: String,
+    default: "black"
+  },
+  entfernung: {
+    type: Number,
+    default: -1
+  },
+  bild: {
+    type: String,
+    default: ''
+  }
+})
 
 const spielStore = useSpielStore();
 const { flow } = storeToRefs(spielStore);
@@ -12,7 +26,11 @@ const objektAddresse = ref("");
 
 watch(flow, () => {
   console.log(`(LupeMitteComponent) flow geändert auf ${flow.value}`);
-  if (flow.value < 1.0) {
+  if (flow.value >= 0.7)
+  {
+    objektAddresse.value = "assets/objekte/eg/tutorial/tutorial_eg_0.png";
+  }
+  else if (flow.value < 1.0) {
     objektAddresse.value = "";
   }
   else if (flow.value >= 1.0) {
@@ -20,30 +38,63 @@ watch(flow, () => {
   }
 });
 
-async function scanBLE(): Promise<void> {
-  try {
-    await BleClient.initialize();
-  } catch {
-    console.log("scanBLE() error");
-  }
-}
+const rahmenKlasse = ref('');
+const glasKlasse = ref('');
 
-
+// const entfernung = ref(props)
+watch(props, () => {
+  console.log(props.entfernung);
+    if (props.entfernung == -1)
+    rahmenKlasse.value = '';
+  else if (props.entfernung < 10)
+    rahmenKlasse.value = 'entfernung-nah';
+  else if (props.entfernung < 50)
+    rahmenKlasse.value = 'entfernung-mittel';
+  else
+    rahmenKlasse.value = 'entfernung-weit';
+})
+// if (props.entfernung == -1)
+//     rahmenKlasse.value = '';
+//   else if (props.entfernung < 10)
+//     rahmenKlasse.value = 'entfernung-nah';
+//   else if (props.entfernung < 50)
+//     rahmenKlasse.value = 'entfernung-mittel';
+//   else
+//     rahmenKlasse.value = 'entfernung-weit';
 </script>
 
 
 <template>
-  <div class="lupe">
-    <svg width="100%" height="100%" viewBox="0 0 412 392" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+  <div id="container">
+    <!-- <svg width="100%" height="100%" viewBox="0 0 412 392" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g id="Lupe-gross" serif:id="Lupe gross">
         <g id="lupe_glas">
             <path d="M83.604,94.724c47.816,-53.778 130.297,-58.618 184.075,-10.801c53.778,47.816 58.617,130.298 10.801,184.075c-47.816,53.778 -130.298,58.618 -184.075,10.801c-53.778,-47.816 -58.618,-130.297 -10.801,-184.075Z" style="fill:#a7baf1;"/>
             <path d="M118.529,91.709c0.372,-17.702 61.095,-36.959 106.603,-18.446c44.105,17.943 80.8,79.52 69.014,94.767c-6.898,8.922 -26.656,-42.606 -82.223,-63.435c-49.111,-18.41 -93.567,-4.677 -93.394,-12.886Z" style="fill:#d3dfff;"/>
         </g>
         <path id="lupe_aussen" d="M284.044,330.327c-67.081,46.428 -159.676,42.944 -223.321,-13.646c-74.685,-66.406 -81.407,-180.954 -15.001,-255.639c66.406,-74.685 180.954,-81.407 255.639,-15.001c63.69,56.631 77.955,148.272 39.59,220.344l59.981,53.332l-0.046,0.052c0.489,0.373 0.966,0.766 1.431,1.18c13.375,11.892 11.492,35.879 -4.204,53.532c-15.696,17.653 -39.298,22.329 -52.673,10.436c-0.465,-0.413 -0.912,-0.841 -1.34,-1.283l-0.045,0.052l-60.011,-53.359Zm-200.44,-235.603c-47.817,53.778 -42.977,136.259 10.801,184.075c53.777,47.817 136.259,42.977 184.075,-10.801c47.816,-53.777 42.977,-136.259 -10.801,-184.075c-53.778,-47.817 -136.259,-42.977 -184.075,10.801Z"/>
-    </g>
-</svg>
+    </g> 
+  
+</svg>-->
 
+  <!-- <svg width="100%" height="100%" viewBox="0 0 363 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="lupe_glas">
+      <path d="M83.604,94.724c47.816,-53.778 130.297,-58.618 184.075,-10.801c53.778,47.816 58.617,130.298 10.801,184.075c-47.816,53.778 -130.298,58.618 -184.075,10.801c-53.778,-47.816 -58.618,-130.297 -10.801,-184.075Z" style="fill:#a7baf1;"/>
+      <path d="M118.529,91.709c0.372,-17.702 61.095,-36.959 106.603,-18.446c44.105,17.943 80.8,79.52 69.014,94.767c-6.898,8.922 -26.656,-42.606 -82.223,-63.435c-49.111,-18.41 -93.567,-4.677 -93.394,-12.886Z" style="fill:#d3dfff;"/>
+    </g>
+    <path id="lupe_aussen" d="M253.191,348.001c-62.656,27.14 -138.118,17.542 -192.468,-30.784c-74.685,-66.406 -81.407,-180.954 -15.001,-255.638c66.406,-74.685 180.954,-81.407 255.639,-15.001c72.736,64.673 81.009,175.009 20.05,249.713l32.691,42.158l-0.054,0.042c0.335,0.357 0.654,0.731 0.957,1.122c8.72,11.245 0.645,32.127 -18.022,46.602c-18.666,14.475 -40.901,17.097 -49.621,5.852c-0.303,-0.39 -0.586,-0.793 -0.848,-1.206l-0.055,0.042l-33.268,-42.902Zm-169.587,-252.74c-47.817,53.777 -42.977,136.259 10.801,184.075c53.777,47.816 136.259,42.977 184.075,-10.801c47.816,-53.778 42.977,-136.259 -10.801,-184.075c-53.778,-47.817 -136.259,-42.977 -184.075,10.801Z"/>
+  </svg> -->
+  <!-- original viewBox="0 0 363 399 -->
+
+  <img :src="bild" v-if="bild!=''"/>
+  <svg width="100%" height="100%" viewBox="-20 -20 403 439" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Lupe-groß-Einzelteile" serif:id="Lupe groß Einzelteile">
+        <path id="lupe_gestell" d="M253.191,347.145c-62.656,27.14 -138.118,17.542 -192.468,-30.784c-74.685,-66.406 -81.407,-180.954 -15.001,-255.638c66.406,-74.685 180.954,-81.407 255.639,-15.001c72.736,64.673 81.009,175.009 20.05,249.713l32.691,42.158l-0.054,0.042c0.335,0.357 0.654,0.731 0.957,1.122c8.72,11.245 0.645,32.127 -18.022,46.602c-18.666,14.475 -40.901,17.097 -49.621,5.852c-0.303,-0.391 -0.586,-0.793 -0.848,-1.206l-0.055,0.042l-33.268,-42.902Zm-169.587,-252.74c-47.817,53.777 -42.977,136.259 10.801,184.075c53.777,47.816 136.259,42.977 184.075,-10.801c47.816,-53.778 42.977,-136.259 -10.801,-184.075c-53.778,-47.817 -136.259,-42.977 -184.075,10.801Z"/>
+        <path :class="rahmenKlasse" id="lupe_ring" d="M45.722,60.723c66.406,-74.685 180.954,-81.407 255.639,-15.001c74.685,66.406 81.407,180.954 15,255.639c-66.406,74.685 -180.954,81.407 -255.638,15c-74.685,-66.406 -81.407,-180.954 -15.001,-255.638Zm37.882,33.682c-47.817,53.777 -42.977,136.259 10.801,184.075c53.777,47.816 136.259,42.977 184.075,-10.801c47.816,-53.778 42.977,-136.259 -10.801,-184.075c-53.778,-47.817 -136.259,-42.977 -184.075,10.801Z"/>
+        <path :class="bild!=''?'transparentes-glas':''" id="lupe_glas" d="M83.604,94.405c47.816,-53.778 130.297,-58.618 184.075,-10.801c53.778,47.816 58.617,130.297 10.801,184.075c-47.816,53.778 -130.298,58.617 -184.075,10.801c-53.778,-47.816 -58.618,-130.298 -10.801,-184.075Z" style="fill:#a7baf1;"/>
+        <path :class="bild!=''?'transparentes-glas':''" id="lupe_spiegelung" d="M118.529,91.39c0.372,-17.703 61.095,-36.96 106.603,-18.446c44.105,17.942 80.8,79.519 69.014,94.767c-6.898,8.922 -26.656,-42.606 -82.223,-63.435c-49.111,-18.41 -93.567,-4.677 -93.394,-12.886Z" style="fill:#d3dfff;"/>
+    </g>
+  </svg>
 
 
 
@@ -55,26 +106,73 @@ async function scanBLE(): Promise<void> {
       </g>
     </svg> -->
     <!-- <img src="assets/objekte/eg/000x_ab/400x400.png" /> -->
-    <img :src="objektAddresse" />
+
     <div id="objekt-id"></div>
   </div>
 </template>
 
 
 <style scoped>
+.transparentes-glas {
+  opacity: 0.3;
+}
+#container{
+  position: relative;
+}
 svg {
   position: absolute;
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.9));
   /* fill: black; */
 }
-#lupe_aussen {
-  fill: black;
-  opacity: 0.75;
+.pulsiert {
+  /* fill: yellow; */
+  animation: pulsieren-animation 1s ease-in-out infinite alternate;
 }
 img {
-  position: relative;
-  top: 0px;
-  left: 0px;
-  width: 400px;
+  position: absolute;
+  top: 275px;
+  left: 300px;
+  width: 365px;
+  transform: translate(-50%, -50%);
+}
+.entfernung-weit {
+    animation: pulsieren-animation-weit 3s ease-in-out infinite alternate;
+}
+.entfernung-mittel {
+    animation: pulsieren-animation-mittel 2s ease-in-out infinite alternate;
+}
+.entfernung-nah {
+    animation: pulsieren-animation-nah 0.5s ease-in-out infinite alternate;
+}
+@keyframes pulsieren-animation-weit {
+    0% {
+      /* fill: rgb(125, 142, 255); */
+      fill: rgb(0, 0, 0);
+    }
+    100% {
+      /* fill: rgb(0, 64, 214); */
+      fill: rgb(0, 64, 214);
+    }
+}
+@keyframes pulsieren-animation-mittel {
+  0% {
+    /* fill: rgb(150, 150, 239); */
+    fill: rgb(0, 0, 0);
+  }
+  100% {
+    /* fill: rgb(221, 35, 35); */
+    fill: rgb(26, 120, 18);
+  }
+}
+@keyframes pulsieren-animation-nah {
+  0% {
+    /* fill: rgb(255, 167, 167); */
+    fill: rgb(0, 0, 0);
+  }
+  100% {
+    /* fill: rgb(244, 45, 45); */
+    fill: rgb(40, 167, 74);
+  }
 }
 
 </style>

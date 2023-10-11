@@ -1,140 +1,41 @@
-<script setup lang="ts">
-import { IonPage, IonContent, IonButton, IonAlert } from '@ionic/vue';
-
-import { useSpielStore } from '@/stores/SpielStore';
-import router from '@/router';
-import { defineComponent, ref, shallowRef, watch } from 'vue';
-import { storeToRefs } from 'pinia';
-import { modalController } from '@ionic/vue';
-import Scroll_0_6_Tutorial from '@/components/scrollbereich/Scroll_0_6_Tutorial.vue';
-import SpielMenu from '@/components/modals/SpielMenu.vue'
-import ButtonKarteComponent from '@/components/ButtonKarteComponent.vue';
-import ButtonExitComponent from '@/components/ButtonExitComponent.vue';
-import HinweisBoxComponent from '@/components/HinweisBoxComponent.vue';
-import LupeMitteComponent from '@/components/LupeMitteComponent.vue';
-
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Pagination, Navigation, FreeMode, Scrollbar } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css/free-mode';
-import 'swiper/css/scrollbar';
-
-import PostingComponent from '@/components/PostingComponent.vue';
-
-const spielStore = useSpielStore();
-
-// const emit = defineEmits(['zeige_lupe']);
-
-// const lupeClicked = (lupe : number) => { 
-//   console.log(`lupeClicked(${lupe})`);
-//   emit('zeige_lupe', lupe);
-// };
-// const buchClicked = () => {
-//   console.log('buchClicked()');
-// };
-// const kameraClicked = () => {
-//   console.log('kameraClicked()');
-// };
-// const hilfeClicked = () => {
-//   console.log('hilfeClicked()');
-// };
-
-const { flow } = storeToRefs(spielStore);
-flow.value = 0.6;
-console.log(`flow1: ${flow.value}`);
-spielStore.flow = 0.6;
-console.log(`flow2: ${flow.value}`);
-
-const scrollSeite = shallowRef(Scroll_0_6_Tutorial);
-
-watch(flow, () => {
-  console.log(`(LupeMitteComponent) flow geändert auf ${flow.value}`);
-//   if (flow.value < 1.0) {
-//     scrollSeite.value = Scroll_0_6_Tutorial;
-//   }
-//   else if (flow.value == 1.1) {
-//     scrollSeite.value = Scroll_1_1_Frage1;
-//   } else if (flow.value == 1.2) {
-//     scrollSeite.value = Scroll_1_2_Post1;
-//   }
-});
-
-const openSpielMenu = async () => {
-  console.log("openSpielMenu clicked");
-  const spiel_menu = await modalController.create({component: SpielMenu});
-  console.log("after await");
-  spiel_menu.present();
-  const { data } = await spiel_menu.onWillDismiss();
-  if (data == "beenden") {
-    spielStore.$reset();
-    router.push("start");
-    spielStore.flow = 0.0;
-  }
-};
-const skipTutorialHinweisOffen = ref(false);
-const skipTutorialHinweis = (offen : boolean) => {
-    skipTutorialHinweisOffen.value = offen;
-};
-const skipTutorial = () => {
-    console.log("skip clicked");
-    // spielStore.$reset();
-    router.push("spiel");
-    spielStore.flow = 1.0;
-};
-
-const modules = [Pagination, Navigation, FreeMode, Scrollbar];
-</script>
-
-
 <template>
   <ion-page>
     
     <!-- <ion-header collapse="fade" class="ion-no-border">
-        <ion-toolbar>
-            <ion-title>Start > Intro > Schwierigkeit > Raum > <u><b>Tutorial</b></u></ion-title>
-        </ion-toolbar>
+      <ion-toolbar>
+        <ion-title>Start > Intro > Schwierigkeit > Raum > <u><b>Tutorial</b></u></ion-title>
+      </ion-toolbar>
     </ion-header> -->
 
     <ion-content :fullscreen="true">
-
-        <div id="container_alles">
-            <div id="container_links">
-                <div class="container_hinweise">
-                    <HinweisBoxComponent id="hinweis_box_1" :zahl="'1'" bild="assets/objekte/og/001x_og1_ab/001x_og1_ab_0.png" :gross="false" inaktiv/>
-                    <HinweisBoxComponent id="hinweis_box_2" :zahl="'2'" bild="assets/objekte/og/010x_og1_ab/010x_og1_ab_0.png" :gross="false" inaktiv/>
-                    <HinweisBoxComponent id="hinweis_box_3" :zahl="'3'" bild="assets/objekte/og/111x_og1_ab/111x_og1_ab_0.png" :gross="false" inaktiv/>
-                    <LupeMitteComponent id="lupe_mitte" />
-                </div>
-                <div id="container_buttons">
-                    <button-exit-component @click="openSpielMenu"/>
-                    <ion-button @click="skipTutorialHinweis(true)" color="primary" size="large">Tutorial überspringen</ion-button>
-                    <!-- <button-einstellungen-component @click="openSpielMenu"/>
-                    <button-karte-component pulsiert/>
-                    <button-hilfe-component @click="hilfeClicked"/>
-                    <button-kamera-component />
-                    <button-handschellen-component /> -->
-                </div>
-                <img class="tutorial-stamp" src="assets/img/tutorial_solid.svg" />
-            </div>
-            <div id="container_scroll">
-                <component :is="scrollSeite" />
-                <!-- <swiper :modules="modules" :direction="'vertical'" :slidesPerView="'1'" :freeMode="false" :scrollbar="true" :navigation="false" :pagination="true">
-                    <swiper-slide>Slide1
-                      dafdsfadsf
-                      adsfadsfasd<br>asdfadsf
-                    </swiper-slide>
-                    <swiper-slide>
-                        <PostingComponent></PostingComponent>
-                    </swiper-slide>
-                    <swiper-slide>Slide3</swiper-slide>
-                    <swiper-slide>Slide4</swiper-slide>
-                </swiper> -->
-            </div>
+      <span class="debugging" id="debug-flow-anzeige">{{ spielStore.spieler }} {{ spielStore.ort }} {{ spielStore.flow }} {{ spielStore.status }}</span>
+      <!-- <span class="debugging" id="debug-bt">{{ btStatus }} <br> {{ btDevices }}</span> -->
+      <div id="container_alles">
+        <div id="container_links">
+          <div class="container_hinweise">
+            <HinweisBoxComponent id="hinweis_box_1" :zahl="'1'" :gross="false" inaktiv/>
+            <HinweisBoxComponent id="hinweis_box_2" :zahl="'2'" :gross="false" inaktiv/>
+            <HinweisBoxComponent id="hinweis_box_3" :zahl="'3'" :gross="false" inaktiv/>
+            <LupeMitteComponent id="lupe_mitte" style="opacity: 50%" v-if="spielStore.flow < 0.7 || spielStore.flow > 0.9" />
+            <LupeMitteComponent id="lupe_mitte"  v-else-if="spielStore.flow >= 0.7" bild="assets/objekte/eg/tutorial/tutorial_eg_0.png" :entfernung=entfernung />
+          </div>
+          <div id="container_buttons">
+            <ButtonExitComponent @click="openSpielMenu"/>
+            <ButtonKarteComponent @click="openKarteModal" :pulsiert="spielStore.flow == 0.8" :disabled="spielStore.flow < 0.8" />
+            <ButtonKameraComponent @click="openKameraModal" :disabled="spielStore.flow < 0.9" :pulsiert="spielStore.flow == 0.9"/>
+            <ion-button @click="skipTutorialHinweis(true)" color="primary" size="large">Tutorial <br>überspringen</ion-button>
+            <!-- <button-einstellungen-component @click="openSpielMenu"/>
+              <button-karte-component pulsiert/>
+              <button-hilfe-component @click="hilfeClicked"/>
+              <button-handschellen-component /> -->
+          </div>
+          <img class="tutorial-stamp" src="assets/img/tutorial_solid.svg" />
         </div>
-
-     <ion-alert
+        <div id="container_scroll">
+          <component :is="scrollSeite"/>
+        </div>
+      </div>
+      <ion-alert
         :is-open="skipTutorialHinweisOffen"
         header="Hinweis"
         sub-header="Wollen Sie das Tutorial wirklich überspringen?"
@@ -144,17 +45,17 @@ const modules = [Pagination, Navigation, FreeMode, Scrollbar];
             {text:'Überspringen', role:'confirm', handler: skipTutorial}
         ]"
         @didDismiss="skipTutorialHinweis(false)"
-    ></ion-alert>
-
-
-
+      ></ion-alert>
     </ion-content>
 
   </ion-page>
 </template>
 
-
 <style scoped>
+.karte-modal {
+  align-items: center;
+  justify-content: center;
+}
 .swiper {
     height: 100%;
 }
@@ -172,7 +73,6 @@ const modules = [Pagination, Navigation, FreeMode, Scrollbar];
     width: 400px;
     transform: rotate(-30deg);
     opacity: 70%;
-
 }
 .container_hinweise {
   position: relative;
@@ -212,7 +112,7 @@ const modules = [Pagination, Navigation, FreeMode, Scrollbar];
   /* border: 8px solid rgb(0,0,0,0.15); */
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
-
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.5));
 }
 #container_buttons {
   height: 150px;
@@ -239,12 +139,205 @@ const modules = [Pagination, Navigation, FreeMode, Scrollbar];
 
 #lupe_mitte {
   position: absolute;
-  top: 400px;
-  left: 500px;
-  width: 620px;
-  height: 620px;
+  top: 370px;
+  left: 460px;
+  width: 600px;
+  height: 600px;
   transform: translate(-50%,-50%);
+}
+
+.debugging {
+  position: absolute;
+  z-index: 9999;
+}
+
+#debug-bt {
+  left: 400px;
+  top: 200px;
 }
 
 </style>
 
+<script setup lang="ts">
+import { IonPage, IonContent, IonButton, IonAlert, IonModal, useKeyboard } from '@ionic/vue';
+
+import { useSpielStore } from '@/stores/SpielStore';
+import { useBeaconStore } from '@/stores/BeaconStore';
+
+import router from '@/router';
+import { ref, shallowRef, watch } from 'vue';
+import { storeToRefs } from 'pinia';
+import { modalController } from '@ionic/vue';
+import Scroll_0_6_Tutorial from '@/components/scrollbereich/Scroll_0_6_Tutorial.vue';
+import SpielMenu from '@/components/modals/SpielMenu.vue'
+import KarteModal from '@/components/modals/KarteModal.vue';
+import KameraModal from '@/components/modals/KameraModal.vue';
+import BeaconModal from '@/components/modals/BeaconModal.vue';
+
+import ButtonKarteComponent from '@/components/ButtonKarteComponent.vue';
+import ButtonExitComponent from '@/components/ButtonExitComponent.vue';
+import ButtonKameraComponent from '@/components/ButtonKameraComponent.vue';
+import HinweisBoxComponent from '@/components/HinweisBoxComponent.vue';
+import LupeMitteComponent from '@/components/LupeMitteComponent.vue';
+
+import { Pagination, Navigation, FreeMode, Scrollbar } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/free-mode';
+import 'swiper/css/scrollbar';
+
+const spielStore = useSpielStore();
+const beaconStore = useBeaconStore();
+
+import { BleClient, ScanResult } from '@capacitor-community/bluetooth-le';
+
+const btDevices = ref('no devices');
+
+async function scanBLE(): Promise<void> {
+  try {
+    // await BleClient.stopLEScan();
+    await BleClient.initialize();
+    console.log("BleClient initialized!");
+    beaconStore.status = "aktiv";
+    await BleClient.requestLEScan({allowDuplicates: true, namePrefix: "SherLOOK"}, (result) => {
+      console.log(result);
+      btDevices.value = JSON.stringify(result);
+      beaconStore.nrOfResults++;
+      beaconStore.lastResult = result;
+      if (result.localName?.startsWith("SherLOOK")) {
+        beaconStore.nrOfBeaconsFound++;
+        beaconStore.lastBeacon = { 
+          id:  Number(result.localName.slice(-2)),
+          rssi: result.rssi ? result.rssi : 0,
+          time: Date.now()
+        };
+        let einsortiert = false;
+        beaconStore.beaconList.forEach((beacon, index, arr) => {
+          if (beaconStore.lastBeacon && beaconStore.lastBeacon.id == beacon.id) {
+            beacon.rssi = beaconStore.lastBeacon.rssi;
+            beacon.time = beaconStore.lastBeacon.time;
+            beacon.counter = beacon.counter++;
+            einsortiert = true;
+          }
+        });
+        if (!einsortiert && beaconStore.lastBeacon) {
+          
+          beaconStore.beaconList.push( {
+            id: beaconStore.lastBeacon.id,
+            ort: "",
+            time: beaconStore.lastBeacon.time,
+            rssi: beaconStore.lastBeacon.rssi,
+            counter: 1
+          });
+        }
+        // if (beaconStore.beaconsFound.length >= 1000) {
+        //   beaconStore.beaconsFound.pop();
+        // }
+      }
+
+
+    });
+  } catch {
+    console.log("scanBLE() error");
+    beaconStore.status = "Fehler";
+  }
+}
+
+// setInterval(scanBLE, 5000);
+scanBLE();
+
+// const emit = defineEmits(['zeige_lupe']);
+
+// const lupeClicked = (lupe : number) => { 
+//   console.log(`lupeClicked(${lupe})`);
+//   emit('zeige_lupe', lupe);
+// };
+// const buchClicked = () => {
+//   console.log('buchClicked()');
+// };
+// const kameraClicked = () => {
+//   console.log('kameraClicked()');
+// };
+// const hilfeClicked = () => {
+//   console.log('hilfeClicked()');
+// };
+
+const scrollSeite = shallowRef(Scroll_0_6_Tutorial);
+
+const { flow } = storeToRefs(spielStore);
+spielStore.flow = 0.6;
+
+const entfernung = ref(-1);
+
+watch(flow, () => {
+  console.log(`(page tutorial) flow geändert auf ${flow.value}`);
+//   if (flow.value < 1.0) {
+//     scrollSeite.value = Scroll_0_6_Tutorial;
+//   }
+//   else if (flow.value == 1.1) {
+//     scrollSeite.value = Scroll_1_1_Frage1;
+//   } else if (flow.value == 1.2) {
+//     scrollSeite.value = Scroll_1_2_Post1;
+//   }
+  if (flow.value == 0.8) {
+    entfernung.value = 70;
+    setTimeout(() => {
+      console.log("timeout!");
+      entfernung.value = 20;
+    }, 5000);
+    setTimeout(() => {
+      console.log("timeout!");
+      entfernung.value = 3;
+      flow.value = 0.9;
+    }, 10000);
+  }
+});
+
+const openSpielMenu = async () => {
+  console.log("openSpielMenu clicked");
+  const spiel_menu = await modalController.create({component: SpielMenu});
+  console.log("after await");
+  spiel_menu.present();
+  const { data } = await spiel_menu.onWillDismiss();
+  if (data == "beenden") {
+    spielStore.$reset();
+    router.push("start");
+    spielStore.flow = 0.0;
+  } else if (data == "beacons") {
+    console.log("open beacons modal");
+    const beacon_modal = await modalController.create({component: BeaconModal, cssClass: 'kamera-modal'});
+    beacon_modal.present();
+  }
+};
+const openKarteModal = async () => {
+  console.log("openKarteModal clicked");
+  const karte_modal = await modalController.create({
+    component: KarteModal,
+    cssClass: 'karte-modal'
+  });
+  karte_modal.present();
+};
+const openKameraModal = async () => {
+  console.log("openKameraModal clicked");
+  const kamera_modal = await modalController.create({
+    component: KameraModal,
+    cssClass: 'kamera-modal'
+  });
+  kamera_modal.present();
+};
+
+const skipTutorialHinweisOffen = ref(false);
+const skipTutorialHinweis = (offen : boolean) => {
+  skipTutorialHinweisOffen.value = offen;
+};
+const skipTutorial = () => {
+  console.log("skip clicked");
+  // spielStore.$reset();
+  router.push("spiel");
+  spielStore.flow = 1.0;
+};
+
+const modules = [Pagination, Navigation, FreeMode, Scrollbar];
+
+</script>

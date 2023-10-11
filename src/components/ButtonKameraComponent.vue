@@ -37,12 +37,19 @@ ion-fab-button {
     width: 120px;
     height: 120px;
 }
+ion-fab-button[disabled] {
+    background-color: yellow;
+}
 .pulsieren {
-    animation: pulsieren-animation 1s ease-in-out infinite alternate;
+    animation: pulsieren-animation 0.5s ease-in-out infinite alternate;
 }
 @keyframes pulsieren-animation {
+    0% {
+        opacity: 100%;
+        transform: scale(100%);
+    }
     100% {
-        opacity: 75%;
+        opacity: 90%;
         transform: scale(110%);
     }
 }

@@ -61,11 +61,15 @@ ion-fab-button {
     height: 120px;
 }
 .pulsieren {
-    animation: pulsieren-animation 1s ease-in-out infinite alternate;
+    animation: pulsieren-animation 0.5s ease-in-out infinite alternate;
 }
 @keyframes pulsieren-animation {
+    0% {
+        opacity: 100%;
+        transform: scale(100%);
+    }
     100% {
-        opacity: 75%;
+        opacity: 90%;
         transform: scale(110%);
     }
 }

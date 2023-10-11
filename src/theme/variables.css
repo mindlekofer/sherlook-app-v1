@@ -90,6 +90,16 @@ http://ionicframework.com/docs/theming/ */
 	--ion-color-einstellungen-tint: #1aa7e6;
 }
 
+.karte-modal {
+  --width: 70%;
+  --height: 90%;
+}
+
+.kamera-modal {
+  --width: 70%;
+  --height: 90%;
+}
+
 .ion-color-karte {
 	--ion-color-base: var(--ion-color-karte);
 	--ion-color-base-rgb: var(--ion-color-karte-rgb);

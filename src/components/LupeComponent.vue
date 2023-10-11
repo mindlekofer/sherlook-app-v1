@@ -19,7 +19,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="container">
+    <div id="container">
         <svg width="150" height="150" viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g id="Lupe1" serif:id="Lupe">
                 <path d="M108.54,89.462l-17.42,19.592l31.504,28.012l17.42,-19.592l-31.504,-28.012Z"/>
@@ -39,7 +39,7 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.container {
+#container {
     position: relative;
 }
 svg {
