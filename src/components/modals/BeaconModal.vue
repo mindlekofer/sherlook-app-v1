@@ -18,7 +18,7 @@
                         <ion-badge slot="start" :color="returnColor(beacon.rssi)">RSSI {{ beacon.rssi }}</ion-badge>
                         <ion-label>vor {{ beacon.vor_s }} Sekunden</ion-label>
                         <ion-label>Beacon {{ beacon.id }}</ion-label>
-                        <ion-note>{{ beacon.ort }}</ion-note>
+                        <ion-label>{{ beacon.ort }}</ion-label>
                     </ion-item>
 
                     <!-- <ion-item>

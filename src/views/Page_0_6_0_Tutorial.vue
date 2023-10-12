@@ -8,7 +8,7 @@
     </ion-header> -->
 
     <ion-content :fullscreen="true">
-      <span class="debugging" id="debug-flow-anzeige">{{ spielStore.spieler }} {{ spielStore.ort }} {{ spielStore.flow }} {{ spielStore.status }}</span>
+      <span class="debugging" id="debug-flow-anzeige">{{ spielStore.spieler }} {{ spielStore.ort }} {{ spielStore.flow }}</span>
       <div id="container_alles">
         <div id="container_links">
           <div class="container_hinweise">
@@ -216,14 +216,6 @@ const entfernung = ref(-1);
 
 watch(flow, () => {
   console.log(`(page tutorial) flow geändert auf ${flow.value}`);
-//   if (flow.value < 1.0) {
-//     scrollSeite.value = Scroll_0_6_Tutorial;
-//   }
-//   else if (flow.value == 1.1) {
-//     scrollSeite.value = Scroll_1_1_Frage1;
-//   } else if (flow.value == 1.2) {
-//     scrollSeite.value = Scroll_1_2_Post1;
-//   }
   if (flow.value == 0.8) {
     entfernung.value = 70;
     setTimeout(() => {
@@ -250,9 +242,16 @@ const openSpielMenu = async () => {
     spielStore.flow = 0.0;
   } else if (data == "beacons") {
     console.log("open beacons modal");
-    const beacon_modal = await modalController.create({component: BeaconModal, cssClass: 'kamera-modal'});
+    const beacon_modal = await modalController.create({
+      component: BeaconModal, 
+      cssClass: 'kamera-modal'});
     beacon_modal.present();
-  }
+  } else if (data == "kamera") {
+    const kamera_modal = await modalController.create({
+      component: KameraModal, 
+      cssClass: 'kamera-modal'});
+    kamera_modal.present();
+  } 
 };
 const openKarteModal = async () => {
   console.log("openKarteModal clicked");
