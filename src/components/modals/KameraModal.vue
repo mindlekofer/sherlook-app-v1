@@ -13,9 +13,10 @@
         </div>
 
         <div class="modal-control">        
-            <ion-button @click="kameraStarten()" :disabled="!modelGeladen">Kamera an</ion-button>
+            <!-- <ion-button @click="kameraStarten()" :disabled="!modelGeladen">Kamera an</ion-button> -->
             <!-- <ion-button @click="kameraStarten()">Kamera an</ion-button> -->
-            <ion-button @click="kameraSchliessen()">Kamera aus</ion-button>
+            <!-- <ion-button @click="kameraSchliessen()">Kamera aus</ion-button> -->
+            <ion-button @click="objektGefunden()">Objekt gefunden</ion-button>
             <ion-button size="large" @click="modalSchliessen">zurück zum Spiel</ion-button>
         </div>
     </div>
@@ -163,11 +164,13 @@ async function kameraSchliessen() {
     if (videoRef.value) {
         videoRef.value.removeEventListener('loadeddata', predictBild);
         erkennungAktiv.value = false;
-        const tracks = videoRef.value.srcObject?.getTracks();
-        console.log('tracks: ', tracks);
-        tracks.forEach((track : any) => {
+        if (videoRef.value.srcObject) {
+            const tracks = videoRef.value.srcObject.getTracks();
+            console.log('tracks: ', tracks);
+            tracks.forEach((track : any) => {
             track.stop();
-        });
+            });
+        }
     }
 }
 
@@ -203,6 +206,12 @@ function predictBild() {
     await kameraSchliessen();
     // beaconStore.scanBt();
     modalController.dismiss()
+}
+
+function objektGefunden() {
+    console.log('Objekt gefunden');
+    spielStore.flow = 0.95;
+    modalSchliessen();
 }
 
 </script>

@@ -13,7 +13,11 @@
     <ion-content :fullscreen="true">
         <div class="container">
 
-            <h1>0.2 Intro Film</h1>
+            <!-- <h1>0.2 Intro Film</h1> -->
+
+            <video controls width="900">
+                <source src="assets/intro_film.mp4" />
+            </video>
 
             <button-zurueck-component class="button_einstellungen" router-link="/start"/>
             <button-weiter-component class="button_weiter" @click="weiterButtonClicked" router-link="/level" />
@@ -26,6 +30,10 @@
 </template>
 
 <style scoped>
+video {
+    margin-top: 80px;
+    border: 20px solid black;
+}
 .container {
   flex-direction: column;
   text-align: center;

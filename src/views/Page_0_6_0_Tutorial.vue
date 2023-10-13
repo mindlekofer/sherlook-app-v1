@@ -16,11 +16,12 @@
             <HinweisBoxComponent id="hinweis_box_2" :zahl="'2'" :gross="false" inaktiv/>
             <HinweisBoxComponent id="hinweis_box_3" :zahl="'3'" :gross="false" inaktiv/>
             <LupeMitteComponent id="lupe_mitte" style="opacity: 50%" v-if="spielStore.flow < 0.7 || spielStore.flow > 0.9" />
-            <LupeMitteComponent id="lupe_mitte"  v-else-if="spielStore.flow >= 0.7" bild="assets/objekte/eg/tutorial/tutorial_eg_0.png" :entfernung=entfernung />
+            <LupeMitteComponent id="lupe_mitte"  v-else-if="spielStore.flow >= 0.7 && spielStore.ort=='eg'" bild="assets/objekte/eg/tutorial/tutorial_eg_0.png" :entfernung=entfernung />
+            <LupeMitteComponent id="lupe_mitte"  v-else-if="spielStore.flow >= 0.7" bild="assets/objekte/og/tutorial/tutorial_og_0.png" :entfernung=entfernung />
           </div>
           <div id="container_buttons">
             <ButtonExitComponent @click="openSpielMenu"/>
-            <ButtonKarteComponent @click="openKarteModal" :pulsiert="spielStore.flow == 0.8" :disabled="spielStore.flow < 0.8" />
+            <ButtonKarteComponent @click="openKarteModal" :pulsiert="spielStore.flow == 0.73" :disabled="spielStore.flow < 0.73" />
             <ButtonKameraComponent @click="openKameraModal" :disabled="spielStore.flow < 0.9" :pulsiert="spielStore.flow == 0.9"/>
             <ion-button @click="skipTutorialHinweis(true)" color="primary" size="large">Tutorial <br>überspringen</ion-button>
             <!-- <button-einstellungen-component @click="openSpielMenu"/>
@@ -216,18 +217,18 @@ const entfernung = ref(-1);
 
 watch(flow, () => {
   console.log(`(page tutorial) flow geändert auf ${flow.value}`);
-  if (flow.value == 0.8) {
-    entfernung.value = 70;
-    setTimeout(() => {
-      console.log("timeout!");
-      entfernung.value = 20;
-    }, 5000);
-    setTimeout(() => {
-      console.log("timeout!");
-      entfernung.value = 3;
-      flow.value = 0.9;
-    }, 10000);
-  }
+  // if (flow.value == 0.8) {
+  //   entfernung.value = 70;
+  //   setTimeout(() => {
+  //     console.log("timeout!");
+  //     entfernung.value = 20;
+  //   }, 5000);
+  //   setTimeout(() => {
+  //     console.log("timeout!");
+  //     entfernung.value = 3;
+  //     flow.value = 0.9;
+  //   }, 10000);
+  // }
 });
 
 const openSpielMenu = async () => {

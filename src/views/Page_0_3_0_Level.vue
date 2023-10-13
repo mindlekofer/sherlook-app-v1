@@ -14,7 +14,13 @@
         <div class="container">
 
             <div class="text-container">
-                <p>Die Detektive stürmen sofort in das Rosgartenmuseum, denn die Spur des Detaildiebs ist noch ganz heiß. Die drei sind so schnell, dass sie sich gegenseitig überholen und wir beinahe den Überblick verlieren. Welchem Detektiv möchtet ihr folgen?</p>
+                <p>
+                    Die Detektive stürmen sofort in das Rosgartenmuseum, 
+                    denn die Spur des Detaildiebs ist noch ganz heiß. Die drei 
+                    sind so schnell, dass sie sich gegenseitig überholen und 
+                    wir beinahe den Überblick verlieren. Welchem Detektiv 
+                    möchtet ihr folgen?
+                </p>
             </div>
 
             <div class="auswahl_container">
@@ -42,7 +48,7 @@
                     <ion-button color="primary" expand="block" size="large" :fill="spielStore.spieler == 'Enola' ? 'solid' : 'outline'" @click="spielStore.spieler = 'Enola'">
                         <div class="button_inhalt">
                             <span class="name">Enola</span>
-                            <span class="beschreibung">schwer (ab 14 Jahren)</span>
+                            <span class="beschreibung">schwer (ab 16 Jahren)</span>
                         </div>
                     </ion-button>
                 </div>
