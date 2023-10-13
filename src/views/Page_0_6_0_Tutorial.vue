@@ -248,7 +248,8 @@ const openSpielMenu = async () => {
     beacon_modal.present();
   } else if (data == "kamera") {
     const kamera_modal = await modalController.create({
-      component: KameraModal, 
+      component: KameraModal,
+      backdropDismiss: false,
       cssClass: 'kamera-modal'});
     kamera_modal.present();
   } 

@@ -1,16 +1,15 @@
 import { defineStore } from 'pinia';
 
-export const useBeaconStore = defineStore('bilderStore', {
+export const useBilderStore = defineStore('bilderStore', {
     state: () => ({
-        status: "inaktiv"
-    
+        status: "inaktiv",
+        modelGeladen: false,
+
     }),
     getters: {
 
     },
     actions: {
-       
+
     }
 });
-
-
