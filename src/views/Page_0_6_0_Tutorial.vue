@@ -1,12 +1,5 @@
 <template>
   <ion-page>
-    
-    <!-- <ion-header collapse="fade" class="ion-no-border">
-      <ion-toolbar>
-        <ion-title>Start > Intro > Schwierigkeit > Raum > <u><b>Tutorial</b></u></ion-title>
-      </ion-toolbar>
-    </ion-header> -->
-
     <ion-content :fullscreen="true">
       <span class="debugging" id="debug-flow-anzeige">{{ spielStore.spieler }} {{ spielStore.ort }} {{ spielStore.flow }}</span>
       <div id="container_alles">
@@ -15,19 +8,17 @@
             <HinweisBoxComponent id="hinweis_box_1" :zahl="'1'" :gross="false" inaktiv/>
             <HinweisBoxComponent id="hinweis_box_2" :zahl="'2'" :gross="false" inaktiv/>
             <HinweisBoxComponent id="hinweis_box_3" :zahl="'3'" :gross="false" inaktiv/>
-            <LupeMitteComponent id="lupe_mitte" style="opacity: 50%" v-if="spielStore.flow < 0.7 || spielStore.flow > 0.9" />
-            <LupeMitteComponent id="lupe_mitte"  v-else-if="spielStore.flow >= 0.7 && spielStore.ort=='eg'" bild="assets/objekte/eg/tutorial/tutorial_eg_0.png" :entfernung=entfernung />
-            <LupeMitteComponent id="lupe_mitte"  v-else-if="spielStore.flow >= 0.7" bild="assets/objekte/og/tutorial/tutorial_og_0.png" :entfernung=entfernung />
+            <LupeMitteComponent id="lupe_mitte"  v-if="spielStore.flow >= 0.81 && spielStore.ort=='og1'" bild="assets/objekte/og/tutorial/tutorial_og_zunftsaal.png" :entfernung=entfernung />
+            <LupeMitteComponent id="lupe_mitte"  v-if="spielStore.flow >= 0.81 && spielStore.ort=='eg'" bild="assets/objekte/eg/tutorial/tutorial_eg_lupe_logo.png" :entfernung=entfernung />
+            <LupeMitteComponent id="lupe_mitte"  v-else-if="spielStore.flow >= 0.7 && spielStore.flow < 0.8 && spielStore.ort=='eg'" bild="assets/objekte/eg/tutorial/tutorial_eg_0.png" :entfernung=entfernung />
+            <LupeMitteComponent id="lupe_mitte"  v-else-if="spielStore.flow >= 0.7 && spielStore.ort=='og'" bild="assets/objekte/og/tutorial/tutorial_og_0.png" :entfernung=entfernung />
+            <LupeMitteComponent id="lupe_mitte" style="opacity: 50%" v-else />
           </div>
           <div id="container_buttons">
             <ButtonExitComponent @click="openSpielMenu"/>
             <ButtonKarteComponent @click="openKarteModal" :pulsiert="spielStore.flow == 0.73" :disabled="spielStore.flow < 0.73" />
-            <ButtonKameraComponent @click="openKameraModal" :disabled="spielStore.flow < 0.9" :pulsiert="spielStore.flow == 0.9"/>
+            <ButtonKameraComponent @click="openKameraModal" :disabled="spielStore.flow < 0.75" :pulsiert="spielStore.flow == 0.75"/>
             <ion-button @click="skipTutorialHinweis(true)" color="primary" size="large">Tutorial <br>überspringen</ion-button>
-            <!-- <button-einstellungen-component @click="openSpielMenu"/>
-              <button-karte-component pulsiert/>
-              <button-hilfe-component @click="hilfeClicked"/>
-              <button-handschellen-component /> -->
           </div>
           <img class="tutorial-stamp" src="assets/img/tutorial_solid.svg" />
         </div>
@@ -47,7 +38,6 @@
         @didDismiss="skipTutorialHinweis(false)"
       ></ion-alert>
     </ion-content>
-
   </ion-page>
 </template>
 
@@ -87,14 +77,6 @@
  height: 100vh;
  overflow: hidden;
 }
-/* #container_links {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 180px;
-  min-width: 180px;
-  margin-top: 10px;
-} */
 #container_links {
   display:flex;
   flex-direction: column;
@@ -104,7 +86,8 @@
 #container_scroll {
   /* background-color: rgb(231, 231, 231); */
   flex-grow: 1;
-  overflow-y: scroll;
+  overflow-y: hidden;
+  /* overflow: none; */
   background-color: #FFF4B6;
   border-left: 8px solid rgb(0,0,0,0.15);
   border-top: 8px solid rgb(0,0,0,0.15);
@@ -122,7 +105,6 @@
   align-items: center;
   padding-right: 50px;
 }
-
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -136,7 +118,6 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #333333; 
 }
-
 #lupe_mitte {
   position: absolute;
   top: 370px;
@@ -145,12 +126,10 @@
   height: 600px;
   transform: translate(-50%,-50%);
 }
-
 .debugging {
   position: absolute;
   z-index: 9999;
 }
-
 #debug-bt {
   left: 400px;
   top: 200px;
@@ -173,6 +152,7 @@ import SpielMenu from '@/components/modals/SpielMenu.vue'
 import KarteModal from '@/components/modals/KarteModal.vue';
 import KameraModal from '@/components/modals/KameraModal.vue';
 import BeaconModal from '@/components/modals/BeaconModal.vue';
+import EinstellungsModal from '@/components/modals/EinstellungsModal.vue';
 
 import ButtonKarteComponent from '@/components/ButtonKarteComponent.vue';
 import ButtonExitComponent from '@/components/ButtonExitComponent.vue';
@@ -214,9 +194,29 @@ const { flow } = storeToRefs(spielStore);
 spielStore.flow = 0.6;
 
 const entfernung = ref(-1);
-
+let leiner_timer = null as any;
 watch(flow, () => {
   console.log(`(page tutorial) flow geändert auf ${flow.value}`);
+  if (flow.value == 0.74) {
+    console.log('Leiner Timer anschalten');
+    leiner_timer = setInterval( () => {
+      console.log('Check Leiner Entfernung');
+      if (Date.now() > beaconStore.beaconList[2].time + 20000) {
+        console.log('Leiner ist zu weit weg');
+        entfernung.value = 100;
+      } else if (beaconStore.beaconList[2].rssi < -80) {
+        entfernung.value = 50;
+      }  else if (beaconStore.beaconList[2].rssi < -70) {
+        entfernung.value = 25;
+      } else {
+        entfernung.value = 5;
+      }
+      console.log('entfernung: ', entfernung.value);
+    }, 1000);
+  } else {
+    console.log('clear leiner_timer');
+    clearInterval(leiner_timer);
+  }
   // if (flow.value == 0.8) {
   //   entfernung.value = 70;
   //   setTimeout(() => {
@@ -230,6 +230,18 @@ watch(flow, () => {
   //   }, 10000);
   // }
 });
+
+
+// const {beaconList} = storeToRefs(beaconStore);
+// watch(beaconList.value[2], () => {
+//   console.log('beacon changed: (rssi) ', beaconList.value[2].rssi);
+
+// });
+
+// const leiner_entfernung = ref(beaconStore.beaconList[2].rssi);
+// watch(leiner_entfernung, () => {
+//   console.log('leiner_entfernung: ', leiner_entfernung.value);
+// });
 
 const openSpielMenu = async () => {
   console.log("openSpielMenu clicked");
@@ -253,7 +265,12 @@ const openSpielMenu = async () => {
       backdropDismiss: false,
       cssClass: 'kamera-modal'});
     kamera_modal.present();
-  } 
+  } else if (data == "einstellungen") {
+    const einstellungs_modal = await modalController.create({
+      component: EinstellungsModal,
+      backdropDismiss: true });
+    einstellungs_modal.present();
+  }
 };
 const openKarteModal = async () => {
   console.log("openKarteModal clicked");

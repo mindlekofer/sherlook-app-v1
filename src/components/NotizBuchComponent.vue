@@ -18,7 +18,7 @@ import { storeToRefs } from 'pinia';
 <style scoped>
 
 #notizbuch {
-    background-color: rgb(141, 103, 54);
+  background-color: rgb(141, 103, 54);
     
 }
 

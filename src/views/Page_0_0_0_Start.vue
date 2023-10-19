@@ -1,25 +1,25 @@
 <template>
 
 <ion-page>
-    <ion-content :fullscreen="true">
-        <div class="container">
+  <ion-content :fullscreen="true">
+    <div class="container">
 
-            <img class="logo_sherlook" src="assets/logo_sherlook.png" width="700">
-            <img class="logo_uni" src="assets/logo_uni.jpg" width="340">
-            <img class="logo_rosgarten" src="assets/logo_rosgarten.png" width="350">
+      <img class="logo_sherlook" src="assets/logo_sherlook.png" width="700">
+      <img class="logo_uni" src="assets/logo_uni.jpg" width="340">
+      <img class="logo_rosgarten" src="assets/logo_rosgarten.png" width="350">
 
-            <button-einstellungen-component class="button_einstellungen"/>
-            <button-weiter-component class="button_weiter" @click="weiterButtonClicked" :pulsiert="true" router-link="/intro" />
+      <button-einstellungen-component class="button_einstellungen"/>
+      <button-weiter-component class="button_weiter" @click="weiterButtonClicked" :pulsiert="true" router-link="/intro" />
 
-        </div>
+    </div>
 
-    </ion-content>
-    <!-- <ion-footer class="ion-no-border">
-        <ion-toolbar>
-            <div class="button-container">
-            </div>
-        </ion-toolbar>
-    </ion-footer> -->
+  </ion-content>
+  <!-- <ion-footer class="ion-no-border">
+    <ion-toolbar>
+      <div class="button-container">
+      </div>
+    </ion-toolbar>
+  </ion-footer> -->
 
 </ion-page>
 
@@ -34,46 +34,46 @@
   overflow: hidden;
 }
 .logo_rosgarten {
-    position: absolute;
-    top: 50px;
-    left: 50px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
 }
 .logo_uni {
-    position: absolute;
-    top: 50px;
-    right: 50px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
 }
 .logo_sherlook {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .button_einstellungen {
-    position: absolute;
-    bottom: 25px;
-    left: 25px;
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
 }
 .button_weiter {
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
 }
 
 </style>
 
 <script setup lang="ts">
-    import { IonContent, IonPage, IonToolbar, IonFooter } from '@ionic/vue';
-    import ButtonWeiterComponent from '@/components/ButtonWeiterComponent.vue';
-    import ButtonEinstellungenComponent from '@/components/ButtonEinstellungenComponent.vue';
+  import { IonContent, IonPage } from '@ionic/vue';
+  import ButtonWeiterComponent from '@/components/ButtonWeiterComponent.vue';
+  import ButtonEinstellungenComponent from '@/components/ButtonEinstellungenComponent.vue';
 
-    import { useSpielStore } from '@/stores/SpielStore'
+  import { useSpielStore } from '@/stores/SpielStore'
 
-    const spielStore = useSpielStore();
-    console.log(`spielStore.flow: ${spielStore.flow}`);
+  const spielStore = useSpielStore();
+  console.log(`spielStore.flow: ${spielStore.flow}`);
 
-    const weiterButtonClicked = () => {
-        spielStore.flow = 0.2;
-        console.log(`weiter -> flow = ${spielStore.flow}`);
-    }
+  const weiterButtonClicked = () => {
+    spielStore.flow = 0.2;
+    console.log(`weiter -> flow = ${spielStore.flow}`);
+  }
 
 </script>
