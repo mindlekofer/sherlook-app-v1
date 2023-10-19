@@ -268,6 +268,7 @@ const openSpielMenu = async () => {
   } else if (data == "einstellungen") {
     const einstellungs_modal = await modalController.create({
       component: EinstellungsModal,
+      cssClass: 'einstellungs-modal',
       backdropDismiss: true });
     einstellungs_modal.present();
   }

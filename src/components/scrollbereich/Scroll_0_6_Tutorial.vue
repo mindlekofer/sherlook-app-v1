@@ -5,7 +5,7 @@
         
         <swiper-slide v-if="spielStore.flow >=0.6">
             <span v-if="spielStore.spieler=='Watson'">
-              <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="200"/>
+              <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
               <p>
                 Willkommen im Detektivbüro Holmes! 
               </p>
@@ -24,7 +24,7 @@
               </p>
             </span>
             <span v-else-if="spielStore.spieler=='Sherlock'">
-              <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="200"/>
+              <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
               <p>
                 Mein Name ist Holmes, Sherlock Holmes.
               </p>
@@ -40,7 +40,7 @@
               </p>
             </span>
             <span v-else>
-              <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="200"/>
+              <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
               <p>
                 Mein Name ist Enola Holmes.
               </p>

@@ -100,6 +100,11 @@ http://ionicframework.com/docs/theming/ */
   --height: 90%;
 }
 
+.einstellungs-modal {
+  --width: 30%;
+  --height: 90%;
+}
+
 .ion-color-karte {
 	--ion-color-base: var(--ion-color-karte);
 	--ion-color-base-rgb: var(--ion-color-karte-rgb);
