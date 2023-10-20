@@ -11,7 +11,6 @@
       default: false
     }
   });
-
 </script>
 
 
@@ -37,6 +36,7 @@
 ion-fab-button {
   width: 120px;
   height: 120px;
+  z-index: 10;
 }
 .pulsieren {
   animation: pulsieren-animation 0.5s ease-in-out infinite alternate;

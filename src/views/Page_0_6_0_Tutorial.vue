@@ -8,15 +8,14 @@
             <HinweisBoxComponent id="hinweis_box_1" :zahl="'1'" :gross="false" inaktiv/>
             <HinweisBoxComponent id="hinweis_box_2" :zahl="'2'" :gross="false" inaktiv/>
             <HinweisBoxComponent id="hinweis_box_3" :zahl="'3'" :gross="false" inaktiv/>
-            <LupeMitteComponent id="lupe_mitte"  v-if="spielStore.flow >= 0.81 && spielStore.ort=='og1'" bild="assets/objekte/og/tutorial/tutorial_og_zunftsaal.png" :entfernung=entfernung />
-            <LupeMitteComponent id="lupe_mitte"  v-if="spielStore.flow >= 0.81 && spielStore.ort=='eg'" bild="assets/objekte/eg/tutorial/tutorial_eg_lupe_logo.png" :entfernung=entfernung />
-            <LupeMitteComponent id="lupe_mitte"  v-else-if="spielStore.flow >= 0.7 && spielStore.flow < 0.8 && spielStore.ort=='eg'" bild="assets/objekte/eg/tutorial/tutorial_eg_0.png" :entfernung=entfernung />
-            <LupeMitteComponent id="lupe_mitte"  v-else-if="spielStore.flow >= 0.7 && spielStore.ort=='og'" bild="assets/objekte/og/tutorial/tutorial_og_0.png" :entfernung=entfernung />
+            <LupeMitteComponent id="lupe_mitte"  v-if="spielStore.flow >= 0.81" bild="assets/objekte/eg/tutorial/tutorial_eg_lupe_logo.png" :entfernung=entfernung />
+            <LupeMitteComponent id="lupe_mitte"  v-else-if="spielStore.flow >= 0.7 && spielStore.flow < 0.9 && spielStore.ort=='eg'" bild="assets/objekte/eg/tutorial/tutorial_eg_0.png" :entfernung=entfernung />
+            <LupeMitteComponent id="lupe_mitte"  v-else-if="spielStore.flow >= 0.7 && spielStore.flow < 0.9 && spielStore.ort=='og1'" bild="assets/objekte/og/tutorial/tutorial_og_0.png" :entfernung=entfernung />
             <LupeMitteComponent id="lupe_mitte" style="opacity: 50%" v-else />
           </div>
           <div id="container_buttons">
             <ButtonExitComponent @click="openSpielMenu"/>
-            <ButtonKarteComponent @click="openKarteModal" :pulsiert="spielStore.flow == 0.73" :disabled="spielStore.flow < 0.73" />
+            <ButtonKarteComponent @click="openKarteModal" :pulsiert="spielStore.flow == 0.72" :disabled="spielStore.flow < 0.72" />
             <ButtonKameraComponent @click="openKameraModal" :disabled="spielStore.flow < 0.75" :pulsiert="spielStore.flow == 0.75"/>
             <ion-button @click="skipTutorialHinweis(true)" color="primary" size="large">Tutorial <br>überspringen</ion-button>
           </div>
@@ -243,6 +242,8 @@ watch(flow, () => {
 //   console.log('leiner_entfernung: ', leiner_entfernung.value);
 // });
 
+
+
 const openSpielMenu = async () => {
   console.log("openSpielMenu clicked");
   const spiel_menu = await modalController.create({component: SpielMenu});
@@ -257,6 +258,7 @@ const openSpielMenu = async () => {
     console.log("open beacons modal");
     const beacon_modal = await modalController.create({
       component: BeaconModal, 
+      backdropDismiss: false,
       cssClass: 'kamera-modal'});
     beacon_modal.present();
   } else if (data == "kamera") {

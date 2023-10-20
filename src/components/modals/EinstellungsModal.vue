@@ -27,7 +27,7 @@
                 <ion-radio value="Watson" label-placement="start" alignment="center" justify="space-between">Watson</ion-radio>
             </ion-item>
             <ion-item>
-              <ion-radio value="Sherlock" label-placement="start" alignment="center" justify="space-between">SherLock</ion-radio>
+              <ion-radio value="Sherlock" label-placement="start" alignment="center" justify="space-between">Sherlock</ion-radio>
             </ion-item>
             <ion-item>
               <ion-radio value="Enola" label-placement="start" alignment="center" justify="space-between">Enola</ion-radio>

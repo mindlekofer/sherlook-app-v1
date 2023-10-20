@@ -9,7 +9,7 @@
   </ion-header>
   <ion-content :fullscreen="true">
     <div class="container">
-      <video ref="videoIntroRef" controls autoplay width="900">
+      <video ref="videoIntroRef" controls autoplay height="550" poster="assets/img/detektive/watson_neutral.png">
         <source src="assets/intro_film.mp4" />
       </video>
       <button-zurueck-component class="button_einstellungen" router-link="/start"/>

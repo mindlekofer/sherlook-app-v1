@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { IonApp, IonRouterOutlet, getPlatforms, isPlatform } from '@ionic/vue';
+import { IonApp, IonRouterOutlet, getPlatforms } from '@ionic/vue';
 
 import { AndroidFullScreen} from '@awesome-cordova-plugins/android-full-screen'
 import { pageNextAnimation as animationBuilder } from './animations/pageNextAnimation';

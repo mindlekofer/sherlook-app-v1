@@ -33,7 +33,7 @@
       <!-- <p>{{ beaconStore.beaconsFound }}</p>  -->
     </div>
     <div class="modal-control">
-      <ion-button size="large" @click="modalController.dismiss()">schließen</ion-button>
+      <ion-button size="large" @click="schliessen">schließen</ion-button>
     </div>
   </div>
 </template>
@@ -83,10 +83,22 @@ ion-list {
 <script setup lang="ts">
 import { modalController } from '@ionic/core';
 import { IonButton, IonList, IonBadge, IonItem, IonLabel, IonNote } from '@ionic/vue';
-import { ref } from 'vue';
+import { onMounted, onUnmounted, ref, watch } from 'vue';
 
 import { useBeaconStore, Beacon } from '@/stores/BeaconStore';
+import { storeToRefs } from 'pinia';
+import { range } from '@tensorflow/tfjs';
 const beaconStore = useBeaconStore();
+const { rangeTicks } = storeToRefs(beaconStore);
+
+// const props = defineProps( {
+//     timerActive: {
+//       type: Boolean,
+//       default: false
+//     }
+//   });
+
+console.log("opening Beacon Modal");
 
 function filterRecent(item : Beacon) {
   return item.time > Date.now() - 60000;
@@ -95,18 +107,52 @@ function filterRecent(item : Beacon) {
 const beaconsShown = ref();
 
 const returnColor = (rssi : number) => {
+  if (rssi == 0) return 'medium';
   if (rssi < -90) return 'danger';
   if (rssi < -80) return 'warning';
   return 'success';
 }
 
-setInterval(() => {
+watch(rangeTicks, () => {
+  console.log('beaconmodal update beacon list');
   beaconsShown.value = beaconStore.beaconList.filter(filterRecent);
   beaconsShown.value.forEach( (beacon : any) => {
-      beacon.vor_s = Math.floor((Date.now()-beacon.time)/1000);
-    }
-  );
-}, 1000);
+        beacon.vor_s = Math.floor((Date.now()-beacon.time)/1000);
+      });
+});
+
+// const this.updateBeaconListTimer = setInterval(() => {
+//     console.log('beaconmodal update beacon list');
+//     beaconsShown.value = beaconStore.beaconList.filter(filterRecent);
+//     beaconsShown.value.forEach( (beacon : any) => {
+//         beacon.vor_s = Math.floor((Date.now()-beacon.time)/1000);
+//       });
+//     }, 1000);
+
+function schliessen() {
+  
+  modalController.dismiss();
+}
+
+onUnmounted(() => {
+  console.log("BeaconModal unmounted");
+});
+
+// let updateBeaconListTimer : any = null;
+
+// watch(props, () => {
+//   if (props.timerActive) {
+//     updateBeaconListTimer = setInterval(() => {
+//     console.log('beaconmodal update beacon list');
+//     beaconsShown.value = beaconStore.beaconList.filter(filterRecent);
+//     beaconsShown.value.forEach( (beacon : any) => {
+//         beacon.vor_s = Math.floor((Date.now()-beacon.time)/1000);
+//       });
+//     });
+//   } else {
+//     clearInterval(updateBeaconListTimer);
+//   }
+// });
 
 
 </script>

@@ -91,6 +91,8 @@ import '@tensorflow/tfjs-backend-webgl'
 import * as tf from '@tensorflow/tfjs'
 // import * as cocoSsd from '@tensorflow-models/coco-ssd'
 
+console.log("opening KameraModal");
+
 const spielStore = useSpielStore();
 const bilderStore = useBilderStore();
 const beaconStore = useBeaconStore();

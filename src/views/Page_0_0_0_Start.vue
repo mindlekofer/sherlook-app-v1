@@ -9,10 +9,16 @@
       <img class="logo_rosgarten" src="assets/logo_rosgarten.png" width="350">
 
       <button-einstellungen-component class="button_einstellungen"/>
-      <button-weiter-component class="button_weiter" @click="weiterButtonClicked" :pulsiert="true" router-link="/intro" />
+      <button-weiter-component class="button_weiter" @click="weiterButtonClicked" :disabled="!modelGeladenRef" :pulsiert="modelGeladenRef" router-link="/intro" />
 
     </div>
-
+    <!-- <ion-alert 
+      :is-open=true
+      header="Lade"
+      message="Lade Bilderkennung..."
+  >
+    
+  </ion-alert> -->
   </ion-content>
   <!-- <ion-footer class="ion-no-border">
     <ion-toolbar>
@@ -20,6 +26,12 @@
       </div>
     </ion-toolbar>
   </ion-footer> -->
+  <!-- <ion-alert 
+      :is-open="bilderStore.modelGeladen"
+      header="Lade"
+      message="Lade Bilderkennung..."
+  > -->
+
 
 </ion-page>
 
@@ -62,18 +74,22 @@
 </style>
 
 <script setup lang="ts">
-  import { IonContent, IonPage } from '@ionic/vue';
+  import { IonContent, IonPage, IonAlert } from '@ionic/vue';
   import ButtonWeiterComponent from '@/components/ButtonWeiterComponent.vue';
   import ButtonEinstellungenComponent from '@/components/ButtonEinstellungenComponent.vue';
+  import { ref, watch } from 'vue';
 
   import { useSpielStore } from '@/stores/SpielStore'
+import { storeToRefs } from 'pinia';
 
   const spielStore = useSpielStore();
-  console.log(`spielStore.flow: ${spielStore.flow}`);
+  const { flow } = storeToRefs(spielStore);
 
   const weiterButtonClicked = () => {
     spielStore.flow = 0.2;
     console.log(`weiter -> flow = ${spielStore.flow}`);
   }
+
+  const modelGeladenRef = ref(true);
 
 </script>

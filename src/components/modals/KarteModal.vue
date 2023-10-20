@@ -2,9 +2,11 @@
   <div class="modal-wrapper">
     <div class="modal-content">
       <div>
-        <img id="karte" src="assets/img/karte-tutorial-eg.png"/>
+        <img id="karte" src="assets/objekte/eg/tutorial/karte_eg_1.jpg" v-if="spielStore.ort=='eg' && spielStore.flow <= 0.8"/>
+        <img id="karte" src="assets/objekte/eg/tutorial/karte_eg_2.jpg" v-else-if="spielStore.ort=='eg' && spielStore.flow < 1.0"/>
+        <img id="karte" src="assets/objekte/og/tutorial/karte_og_1.jpg" v-else-if="spielStore.ort=='og1' && spielStore.flow <= 0.8"/>
+        <img id="karte" src="assets/objekte/og/tutorial/karte_og_2.jpg" v-else-if="spielStore.ort=='og1' && spielStore.flow < 1.0"/>
       </div>
-      <!-- <img id="karte" src="assets/img/karte-tutorial.png"/> -->
     </div>
     <div class="modal-control">
       <ion-button size="large" @click="modalController.dismiss()">zurück zum Spiel</ion-button>
@@ -47,19 +49,17 @@ img {
 </style>
 
 <script setup lang="ts">
+import { useSpielStore } from '@/stores/SpielStore';
 import { modalController } from '@ionic/core';
-import { IonButton, IonAlert } from '@ionic/vue';
+import { IonButton } from '@ionic/vue';
+import { storeToRefs } from 'pinia';
 import { ref } from 'vue';
 
+const spielStore = useSpielStore();
+// const { flow } = storeToRefs(spielStore);
+
+console.log("opening KarteModal");
+
 const beendenHinweisOffen = ref(false);
-
-const beendeHinweis = (offen : boolean) => {
-  beendenHinweisOffen.value = offen;
-};
-
-const beenden = () => {
-  console.log("beenden clicked");
-  modalController.dismiss("beenden");
-};
 
 </script>
