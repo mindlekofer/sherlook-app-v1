@@ -4,6 +4,14 @@ const props = defineProps({
     zahl: {
       type: String,
       default: ''
+    },
+    lesezeichen1: {
+      type: Boolean,
+      default: false
+    },
+    lesezeichen2: {
+      type: Boolean,
+      default: false
     }
   });
 
@@ -25,11 +33,11 @@ const props = defineProps({
         </g>
         <g id="Lesezeichen-Unten" serif:id="Lesezeichen Unten">
           <path d="M89.428,96.969l24.207,-0l-9.036,-8.618l9.036,-8.619l-24.207,0l0,17.237Z" style="fill:#393939;stroke:#393939;stroke-width:4.17px;"/>
-          <path d="M89.428,96.969l24.207,-0l-9.036,-8.618l9.036,-8.619l-24.207,0l0,17.237Z" style="fill:#57cc33;stroke:#fff;stroke-width:1.04px;"/>
+          <path :class="{'gruen':lesezeichen2, 'weiss':!lesezeichen2}" d="M89.428,96.969l24.207,-0l-9.036,-8.618l9.036,-8.619l-24.207,0l0,17.237Z" style="stroke:#fff;stroke-width:1.04px;"/>
         </g>
         <g id="Lesezeichen-Oben" serif:id="Lesezeichen Oben">
           <path d="M89.428,69.436l24.207,-0l-9.036,-8.619l9.036,-8.618l-24.207,0l0,17.237Z" style="fill:#393939;stroke:#393939;stroke-width:4.17px;"/>
-          <path d="M89.428,69.436l24.207,-0l-9.036,-8.619l9.036,-8.618l-24.207,0l0,17.237Z" style="fill:#57cc33;stroke:#fff;stroke-width:1.04px;"/>
+          <path :class="{'gruen':lesezeichen1, 'weiss':!lesezeichen1}" d="M89.428,69.436l24.207,-0l-9.036,-8.619l9.036,-8.618l-24.207,0l0,17.237Z" style="stroke:#fff;stroke-width:1.04px;"/>
         </g>
       </g>
     </svg>
@@ -54,6 +62,12 @@ const props = defineProps({
     font-size: 48px;
     color: rgba(255, 255, 255, 0.5);
     transform: translate(-50%, -50%);
+  }
+  .gruen {
+    fill: #57cc33;
+  }
+  .weiss {
+    fill: #ffffff;
   }
 
 </style>

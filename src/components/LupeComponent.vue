@@ -50,7 +50,8 @@ svg {
   top: 68px;
   left: 65px;
   font-size: 48px;
-  color: rgba(255, 255, 255, 0.5);
+  /* color: rgba(255, 255, 255, 0.5); */
+  color: rgba(255, 255, 255, 0.9);
   transform: translate(-50%, -50%);
 }
 img {

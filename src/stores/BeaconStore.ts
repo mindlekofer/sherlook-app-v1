@@ -10,79 +10,87 @@ export const useBeaconStore = defineStore('beaconStore', {
     lastResult: null as ScanResult | null,
     lastBeacon: null as Beacon | null,
     beaconsFound: null as Beacon | null,
-
+    sortedBeaconList: [] as Beacon[] | null,
     beaconList: [
       { 
         id: 1,
-        ort: "Kasse",
-        rssi: 0,
+        ort: "EG Kasse",
+        rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 2,
         ort: "Detektivbüro",
-        rssi: 0,
+        rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 3,
         ort: "EG Leiner-Statue",
-        rssi: 0,
+        rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 4,
         ort: "OG Leiner-Schreibtisch",
-        rssi: 0,
+        rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 5,
-        ort: "EG Gang",
-        rssi: 0,
+        ort: "EG Treppe",
+        rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 6,
-        ort: "Schrank im Gang",
-        rssi: 0,
+        ort: "EG Fischerin",
+        rssi: -100,
         time: 0,
         inRange: false,
         counter: 0
       },
       {
         id: 7,
-        ort: "Schrank in W508",
-        rssi: 0,
+        ort: "OG Zunftsaal",
+        rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 8,
-        ort: "unbekannt",
-        rssi: 0,
+        ort: "OG Bilderraum",
+        rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 9,
-        ort: "unbekannt",
-        rssi: 0,
+        ort: "OG Brücke",
+        rssi: -100,
         time: 0,
         counter: 0
       }
     ]
   }),
   getters: {
+    getSortedBeaconList() : any[] {
+      return [...this.beaconList].sort( (a, b) => 
+      {
+        if (a.rssi > b.rssi) return -1;
+        else if (a.rssi < b.rssi) return 1;
+        else return 0;
+      });
+    }
   },
   actions: {
     async scanBt(): Promise<void> {
-      console.log("scanBt()");
+      // console.log("scanBt()");
       try {
         // await BleClient.stopLEScan();
         await BleClient.initialize();
@@ -94,7 +102,7 @@ export const useBeaconStore = defineStore('beaconStore', {
           scanMode: ScanMode.SCAN_MODE_LOW_LATENCY
         }, 
         (result) => {
-          console.log(result);
+          // console.log(result);
           this.nrOfResults++;
           this.lastResult = result;
           if (result.localName?.startsWith("SherLOOK")) {
@@ -107,7 +115,7 @@ export const useBeaconStore = defineStore('beaconStore', {
             let einsortiert = false;
             this.beaconList.forEach((beacon, index, arr) => {
               if (this.lastBeacon && this.lastBeacon.id == beacon.id) {
-                beacon.rssi = this.lastBeacon.rssi;
+                beacon.rssi = Math.floor((beacon.rssi * 4 + this.lastBeacon.rssi) / 5);
                 beacon.time = this.lastBeacon.time;
                 beacon.counter = beacon.counter++;
                 einsortiert = true;
@@ -126,7 +134,7 @@ export const useBeaconStore = defineStore('beaconStore', {
         });
         setInterval(this.updateRange, 1000);
       } catch {
-        console.log("scanBLE() error");
+        // console.log("scanBLE() error");
         this.status = "Fehler";
         setTimeout(this.scanBt, 5000);
       }
@@ -141,12 +149,58 @@ export const useBeaconStore = defineStore('beaconStore', {
         return true;
     },
     updateRange() {
-      console.log("updating bt timeouts");
+      console.log(`(bt) results: ${this.nrOfResults}, beacons: ${this.nrOfBeaconsFound}`);
       this.rangeTicks++;
       this.beaconList.forEach((beacon) => {
         if (Date.now() > beacon.time + 10000)
-          beacon.rssi = 0;
+          beacon.rssi = -100;
+          // beacon.rssi = 0;
       });
+      this.updateSorted();
+      console.log("getSortedBeaconList:", this.getSortedBeaconList);
+      console.log("sortedBeaconList:", this.sortedBeaconList);
+    },
+    getEmpfangVonIndex(index : number) {
+      const rssi = this.beaconList[index].rssi;
+      if (rssi == -100) return 'nichts';
+      if (rssi < -90) return 'schwach';
+      if (rssi < -80) return 'mittel';
+      return 'stark'
+    },
+    getColor(index : number) {
+      const empfang = this.getEmpfangVonIndex(index);
+      if (empfang == 'nichts') return 'medium';
+      if (empfang == 'schwach') return 'danger';
+      if (empfang == 'mittel') return 'warning';
+      return 'success'; // 'stark'
+    },
+    getBeaconVonOrt(ort : string) { 
+      const beacon = this.beaconList.find(beacon => beacon.ort == ort);
+      return beacon ? beacon : {id: 0, rssi: 0, time: 0};
+    },
+    getIndexVonOrt(ort : string) {
+      return this.beaconList.findIndex(i => i.ort == ort);
+    },
+    getEmpfangVonOrt(ort : string) {
+      return this.getEmpfangVonIndex(this.getIndexVonOrt(ort));
+    },
+    updateSorted() {
+      // this.sortedBeaconList = this.beaconList.toSorted( (a, b) => a.rssi - b.rssi );
+      this.sortedBeaconList = this.beaconList.map((elem) => elem);
+      this.sortedBeaconList.sort( (a, b) => 
+      {
+        if (a.rssi > b.rssi) return -1;
+        else if (a.rssi < b.rssi) return 1;
+        else return 0;
+      });
+      // this.sortedBeaconList = [...this.beaconList].sort( (a, b) => 
+      // {
+      //   if (a.rssi > b.rssi) return 1;
+      //   else if (a.rssi < b.rssi) return -1;
+      //   else return 0;
+      //   // a.rssi - b.rssi;
+      // });
+      // console.log(this.sortedBeaconList);
     }
   }
 });
@@ -160,4 +214,3 @@ export interface Beacon {
   ort?: string,
   counter?: number
 }
-

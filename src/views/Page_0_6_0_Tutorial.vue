@@ -5,24 +5,136 @@
       <div id="container_alles">
         <div id="container_links">
           <div class="container_hinweise">
-            <HinweisBoxComponent id="hinweis_box_1" :zahl="'1'" :gross="false" inaktiv/>
-            <HinweisBoxComponent id="hinweis_box_2" :zahl="'2'" :gross="false" inaktiv/>
-            <HinweisBoxComponent id="hinweis_box_3" :zahl="'3'" :gross="false" inaktiv/>
-            <LupeMitteComponent id="lupe_mitte"  v-if="spielStore.flow >= 0.81" bild="assets/objekte/eg/tutorial/tutorial_eg_lupe_logo.png" :entfernung=entfernung />
-            <LupeMitteComponent id="lupe_mitte"  v-else-if="spielStore.flow >= 0.7 && spielStore.flow < 0.9 && spielStore.ort=='eg'" bild="assets/objekte/eg/tutorial/tutorial_eg_0.png" :entfernung=entfernung />
-            <LupeMitteComponent id="lupe_mitte"  v-else-if="spielStore.flow >= 0.7 && spielStore.flow < 0.9 && spielStore.ort=='og1'" bild="assets/objekte/og/tutorial/tutorial_og_0.png" :entfernung=entfernung />
-            <LupeMitteComponent id="lupe_mitte" style="opacity: 50%" v-else />
+            <HinweisBoxComponent id="hinweis_box_1" v-if="flow<1.0" :zahl="'1'" :gross="false" inaktiv />
+            <HinweisBoxComponent id="hinweis_box_1" v-else-if="flow<2.0" 
+                :zahl="'1'" 
+                :gross="flow>=1.3" 
+                :auswahl="true" 
+                :pulsieren="flow==1.0"
+                :buch="flow>=1.1"
+                bild="assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png"
+                @kleine-lupe-clicked="flow=1.1"
+                :hashtag1="flow>=1.3 ? '#schönheit_aus_urzeiten' : ''"
+                :hashtag2="flow>=1.7 ? '#alt_und_geheimnsvoll' : ''"
+                />
+              <HinweisBoxComponent id="hinweis_box_1" v-else-if="flow>=2.0" 
+                :zahl="'1'" 
+                :gross="flow<=2." 
+                :auswahl="false"
+                :pulsieren="false"
+                :buch="true"
+                bild="assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png"
+                :hashtag1="flow>=1.3 ? '#schönheit_aus_urzeiten' : ''"
+                :hashtag2="flow>=1.7 ? '#alt_und_geheimnsvoll' : ''"
+                />
+
+            <HinweisBoxComponent id="hinweis_box_2" v-if="flow<2.0" :zahl="'2'" :gross="false" inaktiv/>
+            <HinweisBoxComponent id="hinweis_box_1" v-else-if="flow<3.0" 
+                :zahl="'2'" 
+                :gross="flow>=2.3" 
+                :auswahl="true" 
+                :pulsieren="flow==2.0"
+                :buch="flow>=2.1"
+                bild="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_rund.png"
+                @kleine-lupe-clicked="flow=2.1"
+                :hashtag1="flow>=2.3 ? '#hochlichter' : ''"
+                :hashtag2="flow>=2.7 ? '#prunk_und_paradestück' : ''"
+                />
+            <HinweisBoxComponent id="hinweis_box_2" v-else-if="flow>=3.0" 
+                :zahl="'1'" 
+                :gross="false" 
+                :auswahl="false"
+                :pulsieren="false"
+                :buch="true"
+                bild="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_rund.png"
+                :hashtag1="flow>=2.3 ? '#hochlichter' : ''"
+                :hashtag2="flow>=2.7 ? '#prunk_und_paradestück' : ''"
+            />
+
+            <HinweisBoxComponent id="hinweis_box_3" v-if="flow<3.0" :zahl="'2'" :gross="false" inaktiv/>
+            <HinweisBoxComponent id="hinweis_box_3" v-else-if="flow<4.0" 
+                :zahl="'3'" 
+                :gross="flow>=3.3" 
+                :auswahl="true" 
+                :pulsieren="flow==3.0"
+                :buch="flow>=3.1"
+                bild="assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_rund.png"
+                @kleine-lupe-clicked="flow=3.1"
+                :hashtag1="flow>=3.3 ? '#Adular_und_Feldspat' : ''"
+                :hashtag2="flow>=3.7 ? '#alte_worte_alte_steine' : ''"
+            />
+            <HinweisBoxComponent id="hinweis_box_3" v-else-if="flow>=4.0" 
+                :zahl="'1'" 
+                :gross="false" 
+                :auswahl="false"
+                :pulsieren="false"
+                :buch="true"
+                bild="assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_rund.png"
+                :hashtag1="flow>=3.3 ? '#Adular_und_Feldspat' : ''"
+                :hashtag2="flow>=3.7 ? '#alte_worte_alte_steine' : ''"
+            />
+
+ 
+
+            <LupeMitteComponent id="lupe_mitte" v-if="flow >= 0.7 && flow < 0.81 && ort=='eg'" 
+                bild="assets/objekte/eg/tutorial/tutorial_eg_rund.png" 
+                :empfang=empfang 
+            />
+            <LupeMitteComponent id="lupe_mitte" v-else-if="flow >= 0.7 && flow < 0.81 && ort=='og1'"
+                bild="assets/objekte/og/tutorial/tutorial_og_rund.png"
+                :empfang=empfang 
+            />
+            <LupeMitteComponent id="lupe_mitte" v-else-if="flow >= 0.81 && flow <1.0" 
+                bild="assets/objekte/eg/tutorial/tutorial_eg_lupe_logo.png"
+            />
+            <LupeMitteComponent id="lupe_mitte" v-else-if="flow>=1.1 && flow<1.3" 
+                bild="assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png"
+            />
+            <LupeMitteComponent id="lupe_mitte" v-else-if="flow>=2.1 && flow<2.3" 
+                bild="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_rund.png"
+            />
+            <LupeMitteComponent id="lupe_mitte" v-else-if="flow>=3.1 && flow<3.3" 
+                bild="assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_rund.png"
+            />
+            <LupeMitteComponent id="lupe_mitte" v-else 
+                bild="assets/objekte/eg/tutorial/tutorial_eg_lupe_logo.png"
+                style="opacity: 10%"
+            />
           </div>
           <div id="container_buttons">
             <ButtonExitComponent @click="openSpielMenu"/>
-            <ButtonKarteComponent @click="openKarteModal" :pulsiert="spielStore.flow == 0.72" :disabled="spielStore.flow < 0.72" />
-            <ButtonKameraComponent @click="openKameraModal" :disabled="spielStore.flow < 0.75" :pulsiert="spielStore.flow == 0.75"/>
-            <ion-button @click="skipTutorialHinweis(true)" color="primary" size="large">Tutorial <br>überspringen</ion-button>
+
+            <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow == 0.72" :disabled="flow < 0.72" v-if="flow<1.0"/>
+            <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow==1.46" v-else-if="flow==1.46"/>
+            <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow==2.46" v-else-if="flow==2.46"/>
+            <ButtonKarteComponent @click="openKarteModal" disabled v-else/>
+
+            <ButtonKameraComponent v-if="flow==0.8"
+                @click="openKameraModal" 
+                :disabled="!(flow == 0.8 && (empfang == 'stark' || !btTrigger))" 
+                :pulsiert="flow == 0.8 && empfang == 'stark'"
+            />
+            <ButtonKameraComponent v-else-if="flow==1.4"
+                @click="openKameraModal" 
+                :disabled="empfang != 'stark' && btTrigger" 
+                :pulsiert="empfang == 'start'"
+            />
+                <ButtonKameraComponent v-else-if="flow==2.4"
+                @click="openKameraModal" 
+                :disabled="empfang != 'stark' && btTrigger" 
+                :pulsiert="empfang == 'start'"
+            />
+            <ButtonKameraComponent v-else disabled></ButtonKameraComponent>
+
+            <ion-button @click="skipTutorialHinweis(true)" color="primary" size="large" v-if="spielStore.flow<1.0">Tutorial <br>überspringen</ion-button>
           </div>
-          <img class="tutorial-stamp" src="assets/img/tutorial_solid.svg" />
+          <img class="tutorial-stamp" src="assets/img/tutorial_solid.svg" v-if="spielStore.flow<1.0"/>
         </div>
         <div id="container_scroll">
-          <component :is="scrollSeite"/>
+          <!-- <component :is="scrollSeite"/> -->
+          <Scroll_0_6_Tutorial v-if="spielStore.flow < 1.0"/>
+          <Scroll_EG_Detail1 v-if="spielStore.flow>=1.0" />
+          <!-- scrollSeite -->
         </div>
       </div>
       <ion-alert
@@ -119,11 +231,12 @@
 }
 #lupe_mitte {
   position: absolute;
-  top: 370px;
+  top: 350px;
   left: 460px;
   width: 600px;
   height: 600px;
   transform: translate(-50%,-50%);
+  z-index: -2
 }
 .debugging {
   position: absolute;
@@ -137,7 +250,7 @@
 </style>
 
 <script setup lang="ts">
-import { IonPage, IonContent, IonButton, IonAlert, IonModal, useKeyboard } from '@ionic/vue';
+import { IonPage, IonContent, IonButton, IonAlert, IonModal, useKeyboard, isPlatform } from '@ionic/vue';
 
 import { useSpielStore } from '@/stores/SpielStore';
 import { useBeaconStore } from '@/stores/BeaconStore';
@@ -147,6 +260,7 @@ import { ref, shallowRef, watch } from 'vue';
 import { storeToRefs } from 'pinia';
 import { modalController } from '@ionic/vue';
 import Scroll_0_6_Tutorial from '@/components/scrollbereich/Scroll_0_6_Tutorial.vue';
+import Scroll_EG_Detail1 from '@/components/scrollbereich/Scroll_EG_Detail1.vue'
 import SpielMenu from '@/components/modals/SpielMenu.vue'
 import KarteModal from '@/components/modals/KarteModal.vue';
 import KameraModal from '@/components/modals/KameraModal.vue';
@@ -169,6 +283,15 @@ import 'swiper/css/scrollbar';
 const spielStore = useSpielStore();
 const beaconStore = useBeaconStore();
 
+if (isPlatform('desktop')) {
+  spielStore.btTrigger = false;
+  spielStore.kameraTrigger = false;
+  console.log('isPlatform(): desktop')
+} else {
+  spielStore.btTrigger = true;
+  spielStore.kameraTrigger = true;
+}
+
 beaconStore.scanBt();
 
 // const emit = defineEmits(['zeige_lupe']);
@@ -189,7 +312,7 @@ beaconStore.scanBt();
 
 const scrollSeite = shallowRef(Scroll_0_6_Tutorial);
 
-const { flow } = storeToRefs(spielStore);
+const { flow, ort, spieler, btTrigger, kameraTrigger } = storeToRefs(spielStore);
 spielStore.flow = 0.6;
 
 const entfernung = ref(-1);
@@ -216,6 +339,7 @@ watch(flow, () => {
     console.log('clear leiner_timer');
     clearInterval(leiner_timer);
   }
+  // if (flow.value >= 1.0)
   // if (flow.value == 0.8) {
   //   entfernung.value = 70;
   //   setTimeout(() => {
@@ -230,6 +354,25 @@ watch(flow, () => {
   // }
 });
 
+const { rangeTicks } = storeToRefs(beaconStore);
+const empfang = ref('nichts');
+
+watch(rangeTicks, () => {
+  if (spielStore.btTrigger) {
+    if (flow.value >= 0.71 && flow.value < 0.8 ) {
+      if (beaconStore.getBeaconVonOrt('EG Leiner-Statue').rssi < -80) {
+        flow.value = 0.8;
+      } else if (beaconStore.getBeaconVonOrt('EG Kasse').rssi < -80) {
+        flow.value = 0.73;
+      } else if (beaconStore.getBeaconVonOrt('EG Treppe').rssi < -80) {
+        flow.value = 0.72;
+      }
+    }
+    if (flow.value == 0.8) {
+      empfang.value = beaconStore.getEmpfangVonOrt('EG Leiner-Statue');
+    }
+  }
+});
 
 // const {beaconList} = storeToRefs(beaconStore);
 // watch(beaconList.value[2], () => {
@@ -242,6 +385,7 @@ watch(flow, () => {
 //   console.log('leiner_entfernung: ', leiner_entfernung.value);
 // });
 
+const hinweisBoxGross = ref(true);
 
 
 const openSpielMenu = async () => {

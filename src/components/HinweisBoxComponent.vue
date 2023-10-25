@@ -29,8 +29,25 @@ const props = defineProps( {
     bild: {
       type: String,
       default: ''
+    },
+    pulsieren: {
+      type: Boolean,
+      default: false
+    },
+    hashtag1: {
+      type: String,
+      default: ''
+    },
+    hashtag2: {
+      type: String,
+      default: ''
     }
   });
+
+  // const emit = defineEmits(['kleine_lupe_clicked']);
+  const emit = defineEmits<{
+    (e: 'kleine-lupe-clicked') : void
+  }>();
 
 </script>
 
@@ -41,26 +58,47 @@ const props = defineProps( {
       'gross':gross==true, 
       'klein':gross==false,
       'auswahl':auswahl==true}">
-    <buch-button-component :zahl="zahl" class="buch" :class="{'inaktiv':inaktiv==true}" v-if="buch"/>
-    <lupe-component :zahl="zahl" class="lupe" :class="{'inaktiv':inaktiv==true}" :bild="bild" v-else />
+  
+    <buch-button-component v-if="buch" 
+        class="buch" 
+        :zahl="zahl" 
+        :class="{'inaktiv':inaktiv==true}" 
+        :lesezeichen1="props.hashtag1!=''"
+        :lesezeichen2="props.hashtag2!=''"
+    />
+    <lupe-component v-else 
+         class="lupe" 
+        :zahl="zahl" 
+        :class="{'inaktiv'
+        :inaktiv==true,'pulsieren':pulsieren==true}" 
+        :bild="bild" 
+        @click="$emit('kleine-lupe-clicked')"
+    />
     <div class="hashtags" :class="{'ausgeblendet':gross==false}">
-      <p>#alte_riesenschnecke</p>
-      <p>#uhrzeit_aus_der_urzeit</p>
+      <p>{{ props.hashtag1 }}&nbsp;</p>
+      <p>{{ props.hashtag2 }}&nbsp;</p>
     </div>
-    <!-- <div>
-      <lupe-component></lupe-component>
-    </div> -->
+    <div v-if="props.gross">
+      <lupe-component
+        :bild="bild"
+      ></lupe-component>
+    </div>
   </div>
 </template>
 
 
 <style scoped>
+.hashtags {
+  /* background-color: blue; */
+  text-align: left;
+}
 .hinweis_box {
   height: 170px;
   background-color: #e9e9e9;
   margin: 0px 0px 10px 0px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border:  8px solid rgb(0,0,0,0.15);
   border-radius: 30px;
   /* border-left: 8px solid rgb(0,0,0,0.15);
@@ -69,23 +107,14 @@ const props = defineProps( {
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px; */
   padding-left: 8px;
+  padding-right: 12px;
   transform: translateX(0px);
 }
-.hinweis_box_gross {
-  height: 170px;
-  margin: 0px 0px 10px 0px;
-  display: flex;
-  align-items: center;
-  border: 8px solid rgb(0,0,0,0.15);
-  border-radius: 15px;
-  padding-left: 8px;
-  display: flex;
-  }
 .auswahl {
   background-color: #FFF4B6;
 }
 .gross {
-  width: 100%;
+  width: 95%;
 }
 .klein {
   width: 180px;
@@ -101,13 +130,26 @@ const props = defineProps( {
 }
 p {
   font-size: 24px;
-  margin-left: 50px;
+  /* margin-left: 10px; */
   color: rgb(34, 165, 34);
   font-weight: 600;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  /* margin-top: 10px;
+  margin-bottom: 10px; */
 }
 .inaktiv {
   opacity: 30%;
+}
+.pulsieren {
+  animation: pulsieren-animation 0.5s ease-in-out infinite alternate;
+}
+@keyframes pulsieren-animation {
+  0% {
+    opacity: 100%;
+    transform: scale(100%);
+  }
+  100% {
+    /* opacity: 90%; */
+    transform: scale(105%);
+  }
 }
 </style>

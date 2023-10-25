@@ -37,4 +37,4 @@ router.isReady().then(() => {
 
 
 ladeModell();
-ladeCocoModel();
+// ladeCocoModel();

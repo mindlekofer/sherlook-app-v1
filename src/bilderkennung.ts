@@ -1,7 +1,8 @@
 import * as cocoSsd from '@tensorflow-models/coco-ssd'
-import { loadLayersModel, loadGraphModel, GraphModel  } from '@tensorflow/tfjs';
+import { loadLayersModel, loadGraphModel, GraphModel, LayersModel  } from '@tensorflow/tfjs';
 
 export let model : GraphModel;
+// export let model : LayersModel;
 export let cocoModel = null as any;
 export let modelGeladen = false;
 
@@ -10,7 +11,11 @@ export async function ladeModell() {
   if (!modelGeladen) {
     console.log('loading model...');
 
-    model = await loadGraphModel('assets/tensorflow/rosgarten_model/model.json');
+    // model = await loadGraphModel('assets/tensorflow/rosgarten_model/model.json');
+    // model = await loadGraphModel('assets/tensorflow/model_subset/model.json');
+    // model = await loadLayersModel('assets/tensorflow/model_subset/model.json');
+    // model = await loadLayersModel('assets/tensorflow/rosgarten_transfer_subset_js/model.json');
+    model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_subset_js_graph/model.json');
     console.log('model loaded');
     modelGeladen = true;
   } else {

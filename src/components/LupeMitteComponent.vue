@@ -3,6 +3,7 @@
 import { useSpielStore } from '@/stores/SpielStore';
 import { ref, setBlockTracking, watch } from 'vue';
 import { storeToRefs } from 'pinia';
+import { useBeaconStore } from '@/stores/BeaconStore';
 
 const props = defineProps({
   farbe: {
@@ -16,11 +17,17 @@ const props = defineProps({
   bild: {
     type: String,
     default: ''
+  },
+  empfang: {
+    type: String,
+    default: 'nichts'
   }
 })
 
 const spielStore = useSpielStore();
 const { flow } = storeToRefs(spielStore);
+
+const beaconStore = useBeaconStore()
 
 const objektAddresse = ref("");
 
@@ -43,7 +50,7 @@ const glasKlasse = ref('');
 
 // const entfernung = ref(props)
 watch(props, () => {
-  console.log(props.entfernung);
+  console.log(props.empfang);
     if (props.entfernung == -1)
     rahmenKlasse.value = '';
   else if (props.entfernung < 10)
@@ -52,6 +59,12 @@ watch(props, () => {
     rahmenKlasse.value = 'entfernung-mittel';
   else
     rahmenKlasse.value = 'entfernung-weit';
+
+  if (props.empfang == 'nichts') rahmenKlasse.value = '';
+  else if (props.empfang == 'schwach') rahmenKlasse.value = 'entfernung-weit'; 
+  else if (props.empfang == 'mittel') rahmenKlasse.value = 'entfernung-mittel'; 
+  else if (props.empfang == 'stark') rahmenKlasse.value = 'entfernung-nah'; 
+  else rahmenKlasse.value = ''; 
 })
 // if (props.entfernung == -1)
 //     rahmenKlasse.value = '';

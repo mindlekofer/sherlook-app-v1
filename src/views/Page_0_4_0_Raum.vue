@@ -25,9 +25,9 @@
         <div class="auswahl_box">
           <img src="assets/img/halbraum_lang.svg"  @click="spielStore.ort = 'og1'"/>
           <div class="objekte_container">
-            <img src="assets/objekte/og/001x_og1_ab/001x_og1_ab_0.png" @click="spielStore.ort = 'og1'"/>
-            <img src="assets/objekte/og/010x_og1_ab/010x_og1_ab_0.png" @click="spielStore.ort = 'og1'"/>
-            <img src="assets/objekte/og/111x_og1_ab/111x_og1_ab_0.png" @click="spielStore.ort = 'og1'"/>
+            <img src="assets/objekte/og/001x_og1_ab/001x_og1_ab_rund.png" @click="spielStore.ort = 'og1'"/>
+            <img src="assets/objekte/og/00x0_og1_ac/00x0_og1_ac_rund.png" @click="spielStore.ort = 'og1'"/>
+            <img src="assets/objekte/og/10x0_og1_bc/10x0_og1_bc_rund.png" @click="spielStore.ort = 'og1'"/>
           </div>
           <ion-button color="primary" expand="block" size="large" :fill="spielStore.ort == 'og1' ? 'solid' : 'outline'" @click="spielStore.ort = 'og1'">
             <div class="button_inhalt">
@@ -39,9 +39,9 @@
         <div class="auswahl_box">
           <img src="assets/img/halbraum_lang.svg"  @click="spielStore.ort = 'eg'"/>
           <div class="objekte_container">
-            <img src="assets/objekte/eg/11x1_eg_ab/11x1_eg_ab_0.png" @click="spielStore.ort = 'eg'"/>
-            <img src="assets/objekte/eg/11x1_eg_ac/11x1_eg_ac_0.png" @click="spielStore.ort = 'eg'"/>
-            <img src="assets/objekte/eg/110x_eg_ab/110x_eg_ab_0.png" @click="spielStore.ort = 'eg'"/>
+            <img src="assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png" @click="spielStore.ort = 'eg'"/>
+            <img src="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_rund.png" @click="spielStore.ort = 'eg'"/>
+            <img src="assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_rund.png" @click="spielStore.ort = 'eg'"/>
           </div>
           <ion-button  color="primary" expand="block" size="large" :fill="spielStore.ort == 'eg' ? 'solid' : 'outline'" @click="spielStore.ort = 'eg'">
             <div class="button_inhalt">

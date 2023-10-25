@@ -122,7 +122,7 @@
           </p>
           <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_1.jpg" v-if="spielStore.ort=='eg'"/>
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_1.jpg" style="height: 70%;" v-else-if="spielStore.ort=='og1'"/>
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.71" @click="if(isPlatform('desktop'))spielStore.flow=0.72;" :disabled="!isPlatform('desktop')"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.71" @click="if(!btTrigger)spielStore.flow=0.72;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.72" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.72" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
@@ -138,7 +138,7 @@
           </p>
           <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_2.jpg" style="height: 70%;" v-if="spielStore.ort=='eg'"/>
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_2.jpg" style="height: 70%;" v-else-if="spielStore.ort=='og1'"/>
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.72" @click="if(isPlatform('desktop'))spielStore.flow=0.73;" :disabled="!isPlatform('desktop')"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.72" @click="if(!btTrigger)spielStore.flow=0.73;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.73" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.73" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
@@ -155,13 +155,13 @@
           <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_3.jpg" style="height: 90%;" v-if="spielStore.ort=='eg'"/>
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_3.jpg" style="height: 90%;" v-else-if="spielStore.ort=='og1'"/>
           <span v-if="spielStore.ort=='eg'">
-            <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.73" @click="if(isPlatform('desktop'))spielStore.flow=0.8;" :disabled="!isPlatform('desktop')"/>
+            <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.73" @click="if(!btTrigger)spielStore.flow=0.8;" :disabled="btTrigger"/>
             <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.8" @click="swiperInstance.slideNext();" pulsiert/>
             <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.8" @click="swiperInstance.slideNext();"/>
             <button-weiter-component class="button-weiter" v-else disabled />
           </span>
           <span v-else-if="spielStore.ort=='og1'">
-            <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.73" @click="if(isPlatform('desktop'))spielStore.flow=0.74;" :disabled="!isPlatform('desktop')"/>
+            <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.73" @click="if(!btTrigger)spielStore.flow=0.74;" :disabled="btTrigger"/>
             <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.74" @click="swiperInstance.slideNext();" pulsiert/>
             <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.74" @click="swiperInstance.slideNext();"/>
             <button-weiter-component class="button-weiter" v-else disabled />
@@ -175,7 +175,7 @@
           <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
 
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_4.jpg" style="height: 90%;" />
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.74" @click="if(isPlatform('desktop'))spielStore.flow=0.75;" :disabled="!isPlatform('desktop')"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.74" @click="if(!btTrigger)spielStore.flow=0.75;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.75" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.75" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
@@ -188,7 +188,7 @@
           <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
 
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_5.jpg" style="height: 90%;" />
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.75" @click="if(isPlatform('desktop'))spielStore.flow=0.8;" :disabled="!isPlatform('desktop')"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.75" @click="if(!btTrigger)spielStore.flow=0.8;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.8" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.8" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
@@ -236,7 +236,7 @@
             <p> Seht ihr die Figur von Ludwig Leiner neben seinem Schreibtisch? </p>
             <p> Dann schaltet die Kamera an und richtet sie auf die Figur. </p>
           </span>
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.8" @click="if(isPlatform('desktop'))spielStore.flow=0.81;" :disabled="!isPlatform('desktop')"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.8" @click="if(!btTrigger)spielStore.flow=0.81;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.81" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.81" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
@@ -248,7 +248,7 @@
           <p> Und nun wagt der Detaildieb meine Ruhe zu stören. </p>
           <p> Gut, dass ihr mich gefunden habt. </p>
           <p> Beschützt mein Vermächtnis. </p>
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.81" @click="if(isPlatform('desktop'))spielStore.flow=0.82;" :disabled="!isPlatform('desktop')"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.81" @click="if(!btTrigger)spielStore.flow=0.82;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.82" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.82" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
@@ -268,7 +268,7 @@
             <p> Kennt ihr mein schönes Museum? Ich nehme Euch mit auf einen kleinen Rundgang. Schaut Euch um, damit ihr später gut nach den verschwundenen Details suchen könnt. </p>
             <p> Seid ihr bereit für den nächsten Schritt? </p>
           </span>
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.82" @click="if(isPlatform('desktop'))spielStore.flow=0.83;" :disabled="!isPlatform('desktop')"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.82" @click="if(!btTrigger)spielStore.flow=0.83;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.83" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.83" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
@@ -284,7 +284,7 @@
           </span>
           <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_4.jpg" style="height: 70%;" v-if="spielStore.ort=='eg'"/>
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_6.jpg" style="height: 70%;" v-else-if="spielStore.ort=='og1'"/>
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.83" @click="if(isPlatform('desktop'))spielStore.flow=0.84;" :disabled="!isPlatform('desktop')"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.83" @click="if(!btTrigger)spielStore.flow=0.84;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.84" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.84" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
@@ -300,13 +300,13 @@
           <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_5.jpg" style="height: 70%;" v-if="spielStore.ort=='eg'"/>
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_7.jpg" style="height: 90%;" v-else-if="spielStore.ort=='og1'"/>
           <span v-if="spielStore.ort=='eg'">
-            <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.84" @click="if(isPlatform('desktop'))spielStore.flow=0.9;" :disabled="!isPlatform('desktop')"/>
+            <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.84" @click="if(!btTrigger)spielStore.flow=0.9;" :disabled="btTrigger"/>
             <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.9" @click="swiperInstance.slideNext();" pulsiert/>
             <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.9" @click="swiperInstance.slideNext();"/>
             <button-weiter-component class="button-weiter" v-else disabled />
           </span>
           <span v-else-if="spielStore.ort=='og1'">
-            <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.84" @click="if(isPlatform('desktop'))spielStore.flow=0.85;" :disabled="!isPlatform('desktop')"/>
+            <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.84" @click="if(!btTrigger)spielStore.flow=0.85;" :disabled="btTrigger"/>
             <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.85" @click="swiperInstance.slideNext();" pulsiert/>
             <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.85" @click="swiperInstance.slideNext();"/>
             <button-weiter-component class="button-weiter" v-else disabled />
@@ -316,7 +316,7 @@
         <swiper-slide v-if="spielStore.flow >= 0.85 && spielStore.ort=='og1'" class="leiner-slide">
           <img class="spieler" src="assets/img/leiner.png" width="180"/>
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_8.jpg" style="height: 90%;"/>
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.85" @click="if(isPlatform('desktop'))spielStore.flow=0.86;" :disabled="!isPlatform('desktop')"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.85" @click="if(!btTrigger)spielStore.flow=0.86;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.86" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.86" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
@@ -325,7 +325,7 @@
         <swiper-slide v-if="spielStore.flow >= 0.86 && spielStore.ort=='og1'" class="leiner-slide">
           <img class="spieler" src="assets/img/leiner.png" width="180"/>
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_9.jpg" style="height: 90%;"/>
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.86" @click="if(isPlatform('desktop'))spielStore.flow=0.87;" :disabled="!isPlatform('desktop')"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.86" @click="if(!btTrigger)spielStore.flow=0.87;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.87" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.87" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
@@ -334,7 +334,7 @@
         <swiper-slide v-if="spielStore.flow >= 0.87 && spielStore.ort=='og1'" class="leiner-slide">
           <img class="spieler" src="assets/img/leiner.png" width="180"/>
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_10.jpg" style="height: 90%;"/>
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.87" @click="if(isPlatform('desktop'))spielStore.flow=0.88;" :disabled="!isPlatform('desktop')"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.87" @click="if(!btTrigger)spielStore.flow=0.88;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.88" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.88" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
@@ -344,7 +344,7 @@
           <img class="spieler" src="assets/img/leiner.png" width="180"/>
           <p style="font-size: 26px;">Das ist einer meiner Lieblingsräume mit Kunst aus den alten Kirchen von Konstanz. Folgt dem Pfeil in den Zunftsaal.</p>
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_11.jpg" style="height: 65%;"/>
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.88" @click="if(isPlatform('desktop'))spielStore.flow=0.9;" :disabled="!isPlatform('desktop')"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.88" @click="if(!btTrigger)spielStore.flow=0.9;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.9" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.9" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
@@ -362,7 +362,7 @@
             <p> Geht schnell in die Ecke mit dem Detektivlogo. </p>
             <p> Ich verlasse mich auf Euch! Bewahrt mein Erbe! </p>
           </span>
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.9" @click="if(isPlatform('desktop'))spielStore.flow=1.0;" :disabled="!isPlatform('desktop')"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.9" @click="if(!btTrigger)spielStore.flow=1.0;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==1.0" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>1.0" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
@@ -448,6 +448,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
+import { useBeaconStore } from '@/stores/BeaconStore';
 
 const props = defineProps( {
     empfang: {
@@ -458,7 +459,7 @@ const props = defineProps( {
 
 // Store //
 const spielStore = useSpielStore();
-const { flow } = storeToRefs(spielStore);
+const { flow, ort, spieler, btTrigger, kameraTrigger } = storeToRefs(spielStore);
 console.log(`spielStore.flow: ${spielStore.flow}`);
 
 // Swiper //
@@ -548,7 +549,9 @@ function antwortAusgewaehlt(nr : number, richtig : boolean) {
 
 <style scoped>
 .leiner-slide {
-  background-color: rgb(221, 221, 221);
+  background-color: rgb(110, 107, 102);
+  color: white;
+  /* background-color: rgb(178, 178, 178); */
 }
 .swipe-geste-vertikal {
   position: absolute;

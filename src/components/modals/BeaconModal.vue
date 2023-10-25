@@ -107,13 +107,13 @@ function filterRecent(item : Beacon) {
 const beaconsShown = ref();
 
 const returnColor = (rssi : number) => {
-  if (rssi == 0) return 'medium';
+  if (rssi == -100) return 'medium';
   if (rssi < -90) return 'danger';
   if (rssi < -80) return 'warning';
   return 'success';
 }
 
-watch(rangeTicks, () => {
+const rangeWatch = watch(rangeTicks, () => {
   console.log('beaconmodal update beacon list');
   beaconsShown.value = beaconStore.beaconList.filter(filterRecent);
   beaconsShown.value.forEach( (beacon : any) => {
@@ -132,6 +132,7 @@ watch(rangeTicks, () => {
 function schliessen() {
   
   modalController.dismiss();
+  rangeWatch(); // bringt nix
 }
 
 onUnmounted(() => {

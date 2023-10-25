@@ -4,13 +4,13 @@
   <div class="post-content">
     <div class="post-titel">
       <div class="post-avatar">
-        <img src="assets/personen/instagram_1.jpg" />
+        <img :src=avatar />
       </div>
-      <div class="post-user">elster_funkelglanz</div>
+      <div class="post-user">{{ props.username }}</div>
       <div class="post-menu">...</div>
     </div>
     <div class="post-bild">
-      <img src="assets/objekte/eg/000x_ab/800x800.jpg" />
+      <img :src=bild />
     </div>
     <div class="post-bedienung">
       <div class="post-controls">
@@ -22,14 +22,16 @@
         <div class="post-likes">42138 likes</div>
       </div>
       <div class="post-avatar">
-        <img src="assets/personen/instagram_1.jpg" />
+        <img :src=avatar />
       </div>
     </div>
     <div class="post-text">
-      In den Anblick dieser verschlungenen Ornamente könnte ich mich stundenlang vertiefen und von verwunschenen Gärten und paradiesischen Welten träumen. Wie fantastisch sich diese Ranken verweben und wieder verzweigen. Alles der Natur abgeschaut, dieser fabelhaften und stets aktuellen Künstlerin. Was ich daraus wohl Neues zaubern werde? 
-      <br>Abonniert mich und ihr werdet staunen!
+      <slot></slot>
       <br><br>
-      <span class="hashtag" :class="hashtagEingetragen ? 'hashtag-eingetragen' : 'hashtag-pulsiert'" @click="onHashtagClick()">#kleidermachenleute</span>
+      <span class="hashtag" :class="props.eingetragen ? 'hashtag-eingetragen' : 'hashtag-pulsiert'" 
+          @click="$emit('hashtag-clicked')">
+        {{ props.hashtag }}
+      </span>
     </div>
   </div>
 </template>
@@ -57,6 +59,7 @@
   }
   .post-user {
     flex-grow: 1;
+    font-size: 26px;
   }
   .post-menu {
     font-weight: bold;
@@ -120,7 +123,7 @@
       color: white;
     }
     100% {
-      transform: scale(102%);
+      transform: scale(105%);
       color: rgb(229, 220, 35);
     }
   }
@@ -133,24 +136,32 @@ import { useSpielStore } from '@/stores/SpielStore';
 import { ref } from 'vue';
 
 const props = defineProps({
-  user: {
+  username: {
     type: String,
     default: "username"
   },
-  text: {
+  avatar: {
     type: String,
-    default : "text"
+    default: ""
+  },
+  bild: {
+    type: String,
+    default: ""
+  },
+  hashtag: {
+    type: String,
+    default: "hashtag"
+  },
+  eingetragen: {
+    type: Boolean,
+    default: false
   }
 })
 
-const hashtagEingetragen = ref(false);
-
 const spielStore = useSpielStore();
 
+const emit = defineEmits<{
+    (e: 'hashtag-clicked') : void
+  }>();
 
-
-function onHashtagClick() {
-  console.log("(PostingComponent) onHashtagClick()");
-  hashtagEingetragen.value = true;
-}
 </script>

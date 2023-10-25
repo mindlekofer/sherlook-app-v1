@@ -40,7 +40,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/spiel',
     name: 'Spiel',
-    component: SpielPage
+    component: TutorialPage
   }
 
 ]

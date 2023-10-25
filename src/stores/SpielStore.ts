@@ -6,6 +6,8 @@ export const useSpielStore = defineStore('spielStore', {
     spieler: "",
     ort: "",
     objekt: "000x_ab",
+    btTrigger: true,
+    kameraTrigger: true,
     hashtags: [
       {nr: 1, text: "kleidermachenleute", eingetragen: false}, 
       {nr: 2, text: "zweiterhashtag", eingetragen: false}

@@ -51,6 +51,8 @@ video {
   /* background-color: blue; */
   display: flex;
   position: relative;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .modal-wrapper {
   padding: 30px;
@@ -280,7 +282,10 @@ async function predictBild() {
 
 async function objektGefunden() {
   console.log('Objekt gefunden');
-  spielStore.flow = 0.87;
+  if (spielStore.flow < 1.0)
+    spielStore.flow = 0.87;
+  else
+    spielStore.flow = 1.6;
 
   // const camera = await tf.data.webcam(videoRef.value);
   // const image = await camera.capture();
