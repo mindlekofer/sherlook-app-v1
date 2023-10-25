@@ -6,7 +6,7 @@
         <div id="container_links">
           <div class="container_hinweise">
             <HinweisBoxComponent id="hinweis_box_1" v-if="flow<1.0" :zahl="'1'" :gross="false" inaktiv />
-            <HinweisBoxComponent id="hinweis_box_1" v-else-if="flow<2.0" 
+            <HinweisBoxComponent id="hinweis_box_1" v-else-if="flow<2.0 && ort=='eg'" 
                 :zahl="'1'" 
                 :gross="flow>=1.3" 
                 :auswahl="true" 
@@ -17,19 +17,40 @@
                 :hashtag1="flow>=1.3 ? '#schönheit_aus_urzeiten' : ''"
                 :hashtag2="flow>=1.7 ? '#alt_und_geheimnsvoll' : ''"
                 />
-              <HinweisBoxComponent id="hinweis_box_1" v-else-if="flow>=2.0" 
+              <HinweisBoxComponent id="hinweis_box_1" v-else-if="flow>=2.0 && ort=='eg'" 
                 :zahl="'1'" 
-                :gross="flow<=2." 
+                :gross="flow<=2.3 || (flow>=3.0 && flow<=3.3)" 
                 :auswahl="false"
                 :pulsieren="false"
                 :buch="true"
                 bild="assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png"
-                :hashtag1="flow>=1.3 ? '#schönheit_aus_urzeiten' : ''"
-                :hashtag2="flow>=1.7 ? '#alt_und_geheimnsvoll' : ''"
+                hashtag1="#schönheit_aus_urzeiten"
+                hashtag2="#alt_und_geheimnsvoll"
+                />
+              <HinweisBoxComponent id="hinweis_box_1" v-else-if="flow<2.0 && ort=='og1'" 
+                :zahl="'1'" 
+                :gross="flow>=1.3" 
+                :auswahl="true" 
+                :pulsieren="flow==1.0"
+                :buch="flow>=1.1"
+                bild="assets/objekte/og/00x0_og1_ac/00x0_og1_ac_rund.png"
+                @kleine-lupe-clicked="flow=1.1"
+                :hashtag1="flow>=1.3 ? '#schnipp_schnapp_locke_ab' : ''"
+                :hashtag2="flow>=1.7 ? '#schillernde_lockenpracht' : ''"
+                />
+              <HinweisBoxComponent id="hinweis_box_1" v-else-if="flow>=2.0 && ort=='og1'" 
+                :zahl="'1'" 
+                :gross="flow<=2.3" 
+                :auswahl="false"
+                :pulsieren="false"
+                :buch="true"
+                bild="assets/objekte/og/00x0_og1_ac/00x0_og1_ac_rund.png"
+                hashtag1="#schnipp_schnapp_locke_ab"
+                hashtag2="#schillernde_lockenpracht"
                 />
 
             <HinweisBoxComponent id="hinweis_box_2" v-if="flow<2.0" :zahl="'2'" :gross="false" inaktiv/>
-            <HinweisBoxComponent id="hinweis_box_1" v-else-if="flow<3.0" 
+            <HinweisBoxComponent id="hinweis_box_2" v-else-if="flow<3.0 && ort=='eg'" 
                 :zahl="'2'" 
                 :gross="flow>=2.3" 
                 :auswahl="true" 
@@ -40,19 +61,40 @@
                 :hashtag1="flow>=2.3 ? '#hochlichter' : ''"
                 :hashtag2="flow>=2.7 ? '#prunk_und_paradestück' : ''"
                 />
-            <HinweisBoxComponent id="hinweis_box_2" v-else-if="flow>=3.0" 
-                :zahl="'1'" 
-                :gross="false" 
+            <HinweisBoxComponent id="hinweis_box_2" v-else-if="flow>=3.0 && ort=='eg'" 
+                :zahl="'2'" 
+                :gross="flow<=3.3"
                 :auswahl="false"
                 :pulsieren="false"
                 :buch="true"
                 bild="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_rund.png"
-                :hashtag1="flow>=2.3 ? '#hochlichter' : ''"
-                :hashtag2="flow>=2.7 ? '#prunk_und_paradestück' : ''"
+                hashtag1="#hochlichter"
+                hashtag2="#prunk_und_paradestück"
+            />
+            <HinweisBoxComponent id="hinweis_box_2" v-else-if="flow<3.0 && ort=='og1'" 
+                :zahl="'2'" 
+                :gross="flow>=2.3" 
+                :auswahl="true" 
+                :pulsieren="flow==2.0"
+                :buch="flow>=2.1"
+                bild="assets/objekte/og/001x_og1_ab/001x_og1_ab_rund.png"
+                @kleine-lupe-clicked="flow=2.1"
+                :hashtag1="flow>=2.3 ? '#gut_versteckt' : ''"
+                :hashtag2="flow>=2.7 ? '#Zunftkasse1454' : ''"
+                />
+            <HinweisBoxComponent id="hinweis_box_2" v-else-if="flow>=3.0 && ort=='og1'" 
+                :zahl="'2'" 
+                :gross="flow<=3.3"
+                :auswahl="false"
+                :pulsieren="false"
+                :buch="true"
+                bild="assets/objekte/og/001x_og1_ab/001x_og1_ab_rund.png"
+                hashtag1="#gut_versteckt"
+                hashtag2="#Zunftkasse1454"
             />
 
             <HinweisBoxComponent id="hinweis_box_3" v-if="flow<3.0" :zahl="'2'" :gross="false" inaktiv/>
-            <HinweisBoxComponent id="hinweis_box_3" v-else-if="flow<4.0" 
+            <HinweisBoxComponent id="hinweis_box_3" v-else-if="flow<4.0 && ort=='eg'" 
                 :zahl="'3'" 
                 :gross="flow>=3.3" 
                 :auswahl="true" 
@@ -63,8 +105,8 @@
                 :hashtag1="flow>=3.3 ? '#Adular_und_Feldspat' : ''"
                 :hashtag2="flow>=3.7 ? '#alte_worte_alte_steine' : ''"
             />
-            <HinweisBoxComponent id="hinweis_box_3" v-else-if="flow>=4.0" 
-                :zahl="'1'" 
+            <HinweisBoxComponent id="hinweis_box_3" v-else-if="flow>=4.0 && ort=='eg'" 
+                :zahl="'3'" 
                 :gross="false" 
                 :auswahl="false"
                 :pulsieren="false"
@@ -72,6 +114,27 @@
                 bild="assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_rund.png"
                 :hashtag1="flow>=3.3 ? '#Adular_und_Feldspat' : ''"
                 :hashtag2="flow>=3.7 ? '#alte_worte_alte_steine' : ''"
+            />
+            <HinweisBoxComponent id="hinweis_box_3" v-else-if="flow<4.0 && ort=='og1'" 
+                :zahl="'3'" 
+                :gross="flow>=3.3" 
+                :auswahl="true" 
+                :pulsieren="flow==3.0"
+                :buch="flow>=3.1"
+                bild="assets/objekte/og/10x0_og1_bc/10x0_og1_bc_rund.png"
+                @kleine-lupe-clicked="flow=3.1"
+                :hashtag1="flow>=3.3 ? '#5_Sterne_sind_zuwenig' : ''"
+                :hashtag2="flow>=3.7 ? '#faktisch_immerwoanders' : ''"
+            />
+            <HinweisBoxComponent id="hinweis_box_3" v-else-if="flow>=4.0 && ort=='og1'"
+                :zahl="'3'" 
+                :gross="false" 
+                :auswahl="false"
+                :pulsieren="false"
+                :buch="true"
+                bild="assets/objekte/og/10x0_og1_bc/10x0_og1_bc_rund.png"
+                :hashtag1="flow>=3.3 ? '#5_Sterne_sind_zuwenig' : ''"
+                :hashtag2="flow>=3.7 ? '#faktisch_immerwoanders' : ''"
             />
 
  
@@ -88,13 +151,13 @@
                 bild="assets/objekte/eg/tutorial/tutorial_eg_lupe_logo.png"
             />
             <LupeMitteComponent id="lupe_mitte" v-else-if="flow>=1.1 && flow<1.3" 
-                bild="assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png"
+                :bild="ort=='eg' ? 'assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png' : 'assets/objekte/og/00x0_og1_ac/00x0_og1_ac_rund.png'"
             />
             <LupeMitteComponent id="lupe_mitte" v-else-if="flow>=2.1 && flow<2.3" 
-                bild="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_rund.png"
+                :bild="ort=='eg' ? 'assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_rund.png' : 'assets/objekte/og/001x_og1_ab/001x_og1_ab_rund.png'"
             />
             <LupeMitteComponent id="lupe_mitte" v-else-if="flow>=3.1 && flow<3.3" 
-                bild="assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_rund.png"
+                :bild="ort=='eg' ? 'assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_rund.png' : 'assets/objekte/og/10x0_og1_bc/10x0_og1_bc_rund.png'"
             />
             <LupeMitteComponent id="lupe_mitte" v-else 
                 bild="assets/objekte/eg/tutorial/tutorial_eg_lupe_logo.png"

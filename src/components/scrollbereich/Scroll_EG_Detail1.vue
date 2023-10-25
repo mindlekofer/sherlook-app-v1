@@ -34,7 +34,7 @@
         </swiper-slide>
 
         <swiper-slide v-if="flow >= 1.1 && flow<2.0">
-          <span v-if="!antwortClicked">
+          <span v-if="!antwortClicked && ort=='eg'">
             <span v-if="spieler=='Watson'">
               <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
               <p style="margin-top: 50px;"> Verdammt. Ganz schön schwierig... </p>
@@ -48,7 +48,24 @@
             <span v-else>
               <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="210"/>
               <p style="margin-top: 50px;"> Ein schönes Fossil. </p>
-              <p>  Ich glaube, ich weiß auch schon, von welcher alten Echse das stammt. Ihr auch? </p>
+              <p> Ich glaube, ich weiß auch schon, von welcher alten Echse das stammt. Ihr auch? </p>
+            </span>
+          </span>
+          <span v-if="!antwortClicked && ort=='og1'">
+            <span v-if="spieler=='Watson'">
+              <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
+              <p style="margin-top: 20px;"> Das sieht ja seltsam aus. </p>
+              <p> Da frage ich euch doch erstmal: WAS suchen wir da überhaupt...? </p>
+            </span>
+            <span v-else-if="spieler=='Sherlock'">
+              <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="230"/>
+              <p style="margin-top: 50px;"> Da muss ich zweimal hinschauen. </p>
+              <p> Das sieht aus wie ein schmuckvolles Präparat. Aber was ist das genau? </p>
+            </span>
+            <span v-else>
+              <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="210"/>
+              <p style="margin-top: 50px;"> in Schmuckstück mit Haaren?! </p>
+              <p> Zu welchem Anlass das wohl gefertigt wurde? </p>
             </span>
           </span>
           <span v-else-if="!antwortRichtig">
@@ -80,20 +97,35 @@
               <p style="margin-top: 90px;"> Sehr gut, die Antwort ist richtig. </p>
             </span>
           </span>
-          <div class="antwort-buttons" v-if="spieler=='Watson'">
+          <div class="antwort-buttons" v-if="spieler=='Watson' && ort=='eg'">
               <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">zum Fossil eines Dinosauriers</ion-button>
               <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">zu einer alten italienischen Handtasche</ion-button>
               <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Verzierung eines mittelalterl. Kachelofens</ion-button>
           </div>
-          <div class="antwort-buttons" v-else-if="spieler=='Sherlock'">
+          <div class="antwort-buttons" v-else-if="spieler=='Sherlock' && ort=='eg'">
             <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Flosse eines Fischsauriers</ion-button>
             <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Schnabel eines Flugsauriers</ion-button>
             <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Gebiss eines Tyrannosaurus rex</ion-button>
           </div>
-          <div class="antwort-buttons" v-else>
+          <div class="antwort-buttons" v-else-if="spieler=='Enola' && ort=='eg'">
             <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Flosse eines Ichtyosauriers</ion-button>
             <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Flügel eines Flugsauriers</ion-button>
             <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Wirbelsäule eines Dinosauriers</ion-button>
+          </div>
+          <div class="antwort-buttons" v-else-if="spieler=='Watson' && ort=='og1'">
+              <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Eine Brosche mit Haarlocke</ion-button>
+              <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Das Nest einer diebischen Elster</ion-button>
+              <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Das Rohr eines luxuriösen Staubsaugers</ion-button>
+          </div>
+          <div class="antwort-buttons" v-else-if="spieler=='Sherlock' && ort=='og1'">
+            <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Brosche mit Menschenhaar</ion-button>
+            <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Etui mit Pferdehaar</ion-button>
+            <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Präpariertes Vogelnest</ion-button>
+          </div>
+          <div class="antwort-buttons" v-else-if="spieler=='Enola' && ort=='og1'">
+            <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Verlobung oder Hochzeit</ion-button>
+            <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Eintritt in ein Kloster</ion-button>
+            <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Beisetzung von Heiligen</ion-button>
           </div>
           <button-weiter-component class="button-weiter" v-if="flow==1.2 && antwortRichtig" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="flow>1.2" @click="swiperInstance.slideNext();"/>
@@ -119,7 +151,7 @@
                 <p> Wie unvorsichtig! Schaut mal, was ich auf Instagram gefunden habe, der Account heißt @gerne_gestern. </p>
                 <p> Da postet unser Detaildieb seine Diebstähle. Wie dreist ist das denn? Aber lest selbst... </p>
               </span>
-              <PostingComponent 
+              <PostingComponent v-if="ort=='eg'"
                   username="@gerne_gestern"
                   avatar="assets/personen/00x0/gerne_gestern.jpg"
                   bild="assets/objekte/eg/00x0_eg_02/00x0_eg_02_post1.jpg"
@@ -130,6 +162,18 @@
                 Ich habe dieses exquisite Gerippe aus seinem Rahmen befreit! 
                 Andere Leute gehen mit Delfinen schwimmen, ich hole mir Ichthyosaurier nach Hause. 
                 Im nächsten Post erfahrt ihr mehr dazu...
+              </PostingComponent>
+              <PostingComponent v-if="ort=='og1'"
+                  username="@gerne_gestern"
+                  avatar="assets/personen/00x0/gerne_gestern.jpg"
+                  bild="assets/objekte/og/00x0_og1_ac/00x0_og1_ac_post1.png"
+                  hashtag="#schnipp_schnapp_locke_ab"
+                  @hashtag-clicked="flow=1.3"
+                  :eingetragen="flow>=1.3">
+                  Es gibt Museen, deren Schränke sind schöner als jedes moderne Schaufenster. 
+                  In einem solchen Museum war ich heute und habe einiges für Euch mitgebracht. 
+                  Zum Beispiel diese Rarität. Unfassbar, was darin verborgen ist... 
+                  Schnipp, schnapp war sie weg!
               </PostingComponent>
               <p style="margin-bottom: 100px;">
                 Berührt den pulsierenden Hashtag um Ihn als Hinweis in eurem Notizbuch festzuhalten!
@@ -144,12 +188,8 @@
         <swiper-slide v-if="flow >=1.3 && flow<2.0">
           <span v-if="spieler=='Watson'">
             <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
-            <p> 
-              Hurra, das war uns erster Hinweis. 
-            </p>
-            <p>
-              Gut, dass wir es gleich in unser Notizbuch eingetragen haben, damit wir es nicht mehr vergessen.
-            </p>
+            <p> Hurra, das war uns erster Hinweis. </p>
+            <p> Gut, dass wir es gleich in unser Notizbuch eingetragen haben, damit wir es nicht mehr vergessen. </p>
             <p>
               Jetzt aber schnell, wir müssen das passende Objekt hier im Museum finden. 
               Achtet auf die Hinweise im Post und auf eure Hightech-Lupe. 
@@ -158,26 +198,21 @@
           </span>
           <span v-else-if="spieler=='Sherlock'">
             <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-            <p> 
-              Jetzt haben wir den ersten Hinweis!        
-            </p>
+            <p> Jetzt haben wir den ersten Hinweis! </p>
+            <p> Den Hashtag haben wir uns gleich im Ermittlungsbuch eingetragen. </p>
             <p>
-              Den Hashtag haben wir uns gleich im Ermittlungsbuch eingetragen.
-            </p>
-            <p>
-              Jetzt müssen wir nur noch das passende Objekt finden. Achtet auf die Hinweise im Post und auf eure Hightech-Lupe. Ihr wisst ja, je mehr der Rahmen leuchtet, deste näher seid ihr dem Objekt.     
+              Jetzt müssen wir nur noch das passende Objekt finden. 
+              Achtet auf die Hinweise im Post und auf eure Hightech-Lupe. 
+              Ihr wisst ja, je mehr der Rahmen leuchtet, deste näher seid ihr dem Objekt.     
             </p>
           </span>
           <span v-else>
             <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-            <p> 
-              Das nenne ich eine heiße Spur! 
-            </p>
+            <p> Das nenne ich eine heiße Spur! </p>
+            <p> Damit konnten wir den ersten Hastag in unser Ermittlungsbuch eintragen. </p>
             <p>
-              Damit konnten wir den ersten Hastag in unser Ermittlungsbuch eintragen.
-            </p>
-            <p>
-              Und los, geht's! Lasst uns das passende Objekt finden. Ihr wisst ja, wenn die Hightech-Lupe leuchtet, muss das Objekt irgendwo in der Nähe sein...
+              Und los, geht's! Lasst uns das passende Objekt finden. 
+              Ihr wisst ja, wenn die Hightech-Lupe leuchtet, muss das Objekt irgendwo in der Nähe sein...
             </p>
           </span>
           <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
@@ -247,22 +282,25 @@
             <swiper-slide>
               <span v-if="spieler=='Watson'">
                 <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
-                <p> Sehr gut! Ihr habt den Ichthyosaurier gefunden. </p>
+                <p v-if="ort=='eg'"> Sehr gut! Ihr habt den Ichthyosaurier gefunden. </p>
+                <p v-else-if="ort=='og1'"> Sehr gut! Ihr habt die Haarlocke gefunden. </p>
                 <p> Schaut euch das schöne Stück an. Kaum zu glauben, dass das nur noch eine Kopie sein soll... </p>
                 <p> Und lest den nächsten Post von @gerne_gestern. Mal schauen, ob wir da noch mehr über die Tatmotive erfahren. </p>
               </span>
               <span v-else-if="spieler=='Sherlock'">
                 <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-                <p> Hervorragend, da ist ja der Ichthyosaurier. </p>
+                <p v-if="ort=='eg'"> Hervorragend, da ist ja der Ichthyosaurier. </p>
+                <p v-else-if="ort=='og1'"> Hervorragend, da ist ja die Haarlocke. </p>
                 <p> Ich muss schon sagen: eine erstklassige Kopie. </p>
                 <p> Und es gibt einen zweiten Post von @gerne_gestern. Mal schauen, ob wir da noch mehr über die Tatmotive erfahren...</p>
               </span>
               <span v-else-if="spieler=='Enola'">
                 <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-                <p> Sehr gut, wir haben den Ichthyosaurier gefunden! </p>
+                <p v-if="ort=='eg'"> Sehr gut, wir haben den Ichthyosaurier gefunden! </p>
+                <p v-else-if="ort=='og1'"> Sehr gut, wir haben die Haarlocke gefunden! </p>
                 <p> Und, das darf doch nicht wahr sein: @gerne_gestern geht weiter auf Sendung! Da erfahren wir sicher auch Neues zu den Tatmotiven... </p>
               </span>
-              <PostingComponent 
+              <PostingComponent v-if="ort=='eg'"
                   username="@gerne_gestern"
                   avatar="assets/personen/00x0/gerne_gestern.jpg"
                   bild="assets/objekte/eg/00x0_eg_02/00x0_eg_02_post2.jpg"
@@ -277,6 +315,22 @@
                   Die mag ich noch mehr als Dinos. Ichthyosaurier sind die Fischsaurier. 
                   Ich finde: diesen da könnte man noch mehr zum Highlight machen! 
                   Und genau das ist meine Mission: alten Dingen, neue Ehrenplätze geben.
+              </PostingComponent>
+              <PostingComponent v-else-if="ort=='og1'"
+                  username="@gerne_gestern"
+                  avatar="assets/personen/00x0/gerne_gestern.jpg"
+                  bild="assets/objekte/og/00x0_og1_ac/00x0_og1_ac_post2.png"
+                  hashtag="#schillernde_lockenpracht"
+                  @hashtag-clicked="flow=1.7"
+                  :eingetragen="flow>=1.7">
+                  Na, wie gefällt sie euch? Vielleicht habt ihr es erraten: 
+                  Im Inneren der Brosche befindet sich eine menschliche Haarlocke! 
+                  Heute sehen wir abgeschnittene Haare hauptsächlich beim Friseur. 
+                  Damals hatte die abgeschnittene Haarpracht eine andere Funktion: 
+                  sie zu verschenken galt als Zeichen der Verbundenheit und Treue. 
+                  Ob das Oma und Opa noch so gemacht haben? Oder sogar Schiller oder Goethe? 
+                  Wie auch immer... Ich werde die Brosche so liebevoll wie hier im Museum präsentieren. 
+                  Sie wird ein Glanzstück meiner Sammlung!
               </PostingComponent>
               <p style="margin-bottom: 100px;">
                 Berührt den pulsierenden Hashtag um Ihn als Hinweis in eurem Notizbuch festzuhalten!
@@ -300,7 +354,7 @@
             <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
             <p> @gerne_gestern ist ein dreister Gegner. </p>
             <p> Aber das war hervorragende Arbeit von Euch! </p>
-            <p> Das Objekt wurde gefunden und erste Hinweise gesammelt.  @gerne_gestern kann uns nicht entkommen. </p>
+            <p> Das Objekt wurde gefunden und erste Hinweise gesammelt. @gerne_gestern kann uns nicht entkommen. </p>
             <p> Und hört, was uns der Geist von Ludwig Leiner noch zu sagen hat... </p>
           </span>
           <span v-else>
@@ -322,7 +376,7 @@
           <!-- <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/> -->
           <img class="spieler" src="assets/img/leiner.png" width="200"/>
           <img src="assets/objekte/eg/00x0_eg_02/00x0_eg_02_leiner.jpg" width="400" style="margin-left: auto; margin-right: auto; display: block;"/>
-          <p>
+          <p v-if="ort=='eg'">
             In meinen Augenwinkeln habe ich ihn noch gesehen, diesen fürchterlichen Detaildieb. 
             Dann war er weg, mit der Flosse meines schönen Ichthyosaurus... 
             Was sollen wir nun unseren Besuchern erzählen? Ichthyosaurier heisst soviel wie: 
@@ -330,6 +384,15 @@
             Vor 100 Millionen Jahren tummelten sich noch 80 verschiedene Arten in den großen Ozeanen dieser Erde. 
             Dann sind sie verschwunden... 
             Bringt mir wenigstens diesen einen wieder zurück...
+          </p>
+          <p v-else-if="ort=='og1'">
+            Auf die Komplimente eine Diebes kann ich gerne verzichten! 
+            Außerdem muss ich einer Verwechslungsgefahr vorbeugen: 
+            Diese Locke stammt weder von Schiller (1759-1805) noch von Goethe (1749-1832). 
+            Und überhaupt haben "Schillerlocken" wenig mit dem Thema zu tun. 
+            So bezeichnet man nämlich vor allem geräucherte Bauchlappen von Dornhaien oder ein süßes Gebäck mit Vanillefüllung.
+            Wie dem auch sei: Ich will die Locken aus der Biedermeierzeit 
+            (1815-1848) wieder haben und keine Bauchlappen oder andere Schillerlocken...
           </p>
           <button-weiter-component class="button-weiter" v-if="flow==1.8" @click="flow=2.0;swiperInstance.slideNext();" pulsiert />
           <button-weiter-component class="button-weiter" v-else-if="flow>1.8" @click="swiperInstance.slideNext();"/>
@@ -368,7 +431,7 @@
         </swiper-slide>
 
         <swiper-slide v-if="flow >= 2.1 && flow<3.0">
-          <span v-if="!antwortClicked">
+          <span v-if="!antwortClicked && ort=='eg'">
             <span v-if="spieler=='Watson'">
               <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
               <p style="margin-top: 50px;"> Aufgepasst. So etwas sieht man heute nicht mehr alle Tage. </p>
@@ -383,6 +446,22 @@
               <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="210"/>
               <p style="margin-top: 40px;"> Das sieht aus wie eine Spielzeugrakete. Aber ich glaube, es ist eine Hellebarde.  </p>
               <p> Woher kommt dieser Ausdruck?</p>
+            </span>
+          </span>
+          <span v-else-if="!antwortClicked && ort=='og1'">
+            <span v-if="spieler=='Watson'">
+              <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
+              <p style="margin-top: 50px;"> Hmmm, was für ein seltsames Ding. </p>
+              <p> Erkennt ihr, was das ist? </p>
+            </span>
+            <span v-else-if="spieler=='Sherlock'">
+              <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="230"/>
+              <p style="margin-top: 20px;"> Ein echtes "Teekesselchen". Ihr wisst doch, das ist ein Wort mit vielen Bedeutungen... </p>
+              <p> Aber was passt hier am besten? </p>
+            </span>
+            <span v-else>
+              <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="210"/>
+              <p style="margin-top: 40px;"> Was schützt dieses alte Schloss? </p>
             </span>
           </span>
           <span v-else-if="!antwortRichtig">
@@ -417,20 +496,35 @@
               <p> Die Antwort ist richtig! </p>
             </span>
           </span>
-          <div class="antwort-buttons" v-if="spieler=='Watson'">
+          <div class="antwort-buttons" v-if="spieler=='Watson' && ort=='eg'">
               <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Eine Hieb- und Stichwaffe</ion-button>
               <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Eine Kelle zum Pflanzen</ion-button>
               <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Eine Spielzeugrakete</ion-button>
           </div>
-          <div class="antwort-buttons" v-else-if="spieler=='Sherlock'">
+          <div class="antwort-buttons" v-else-if="spieler=='Sherlock' && ort=='eg'">
             <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Beim Hauen und Stechen</ion-button>
             <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Beim Heulen und Zähneklappern</ion-button>
             <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Beim Zeter und Mordio Schreien</ion-button>
           </div>
-          <div class="antwort-buttons" v-else>
+          <div class="antwort-buttons" v-else-if="spieler=='Enola' && ort=='eg'">
             <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)" >zusammengesetzt aus mittelhochdeutsch <br>helm für Stiel und barte für Beil</ion-button>
             <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Name eines Minnesängers, <br>der für seine hohe Stimme berühmt war</ion-button>
             <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Waffe, die der Lanze <br>Barbarossas nachgebildet wurde</ion-button>
+          </div>
+          <div class="antwort-buttons" v-else-if="spieler=='Watson' && ort=='og1'">
+              <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Ein altes Vorhängeschloss</ion-button>
+              <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Ein altes Trauerglöckchen</ion-button>
+              <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Eine alte Trillerpfeife</ion-button>
+          </div>
+          <div class="antwort-buttons" v-else-if="spieler=='Sherlock' && ort=='og1'">
+            <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Eine Vorrichtung, die Zugang verwehrt und gewährt</ion-button>
+            <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Ein Mechanismus zum Zünden einer Feuerwaffe</ion-button>
+            <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Ein Gebäude des Adels</ion-button>
+          </div>
+          <div class="antwort-buttons" v-else-if="spieler=='Enola' && ort=='og1'">
+            <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)" >Die alte Kasse der Rosgartenzunft</ion-button>
+            <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Das Depot des Rosgartenmuseums</ion-button>
+            <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Die Richental-Chronik</ion-button>
           </div>
           <button-weiter-component class="button-weiter" v-if="flow==2.2 && antwortRichtig" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="flow>2.2" @click="swiperInstance.slideNext();"/>
@@ -458,16 +552,28 @@
                 <p> @gerne_gestern postet weiter seine Diebstähle des Tages. </p>
                 <p> Aber lest selbst... </p>
               </span>
-              <PostingComponent 
+              <PostingComponent v-if="ort=='eg'"
                   username="@gerne_gestern"
                   avatar="assets/personen/00x0/gerne_gestern.jpg"
-                  bild="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_1.png"
+                  bild="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_post1.jpg"
                   hashtag="#hochlichter"
                   @hashtag-clicked="flow=2.3"
                   :eingetragen="flow>=2.3">
                   Vor 500 Jahren lief jeder Nachtwächter mit solchen Hellebarden durch die Gassen. 
                   Heute konnte ich das Highlight ganz einfach einsacken, ganz ohne Gegenwehr der Wächter. 
                   Hier haben sie so viel davon, dass sie durchaus eine davon hergeben können, finde ich. 
+              </PostingComponent>
+              <PostingComponent v-else-if="ort=='og1'"
+                  username="@gerne_gestern"
+                  avatar="assets/personen/00x0/gerne_gestern.jpg"
+                  bild="assets/objekte/og/001x_og1_ab/001x_og1_ab_post1.jpg"
+                  hashtag="#gut_versteckt"
+                  @hashtag-clicked="flow=2.3"
+                  :eingetragen="flow>=2.3">
+                  Faktenjäger aufgepasst! An diesem tollen Ding wäre ich beinah achtlos vorbeigelaufen. 
+                  Sieht so unscheinbar aus wie ein normaler Balken in der Wand. 
+                  Aber dann habe ich diesen schwarzen "Zapfen" gesehen. 
+                  Größer als man denkt. Und da war mir klar: Da ist etwas versteckt!
               </PostingComponent>
               <p style="margin-bottom: 100px;">
                 Berührt den pulsierenden Hashtag um Ihn als Hinweis in eurem Notizbuch festzuhalten!
@@ -541,22 +647,25 @@
             <swiper-slide>
               <span v-if="spieler=='Watson'">
                 <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
-                <p> Sehr gut! Ihr habt die Waffe gefunden. </p>
+                <p v-if="ort=='eg'"> Sehr gut! Ihr habt die Waffe gefunden. </p>
+                <p v-else-if="ort=='og1'"> Sehr gut! Ihr habt das Vorhängeschloss gefunden. </p>
                 <p> Und lest den zweiten Post von @accountname. </p>
                 <p> Da erfahren wir noch mehr über die Tatmotive... </p>
               </span>
               <span v-else-if="spieler=='Sherlock'">
                 <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-                <p> Hervorragend, da ist ja die Waffe. </p>
+                <p v-if="ort=='eg'"> Hervorragend, da ist ja die Waffe. </p>
+                <p v-else-if="ort=='og1'"> Hervorragend, da ist ja das Vorhängeschloss. </p>
                 <p> Ich muss schon sagen: @gerne_gestern ist wirklich dreist und fingerfertig... </p>
                 <p> Sicher werden wir auch noch mehr über die Tatmotive herausfinden... </p>
               </span>
               <span v-else-if="spieler=='Enola'">
                 <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-                <p> Klasse, wir haben die Waffe gefunden! </p>
+                <p v-if="ort=='eg'"> Klasse, wir haben die Waffe gefunden! </p>
+                <p v-else-if="ort=='og1'"> Klasse, wir haben das Vorhängeschloss gefunden! </p>
                 <p> Und Neuigkeiten zu den Tatmotiven gibt es auch: @gerne_gestern ist schon wieder auf Sendung! </p>
               </span>
-              <PostingComponent 
+              <PostingComponent v-if="ort=='eg'"
                   username="@gerne_gestern"
                   avatar="assets/personen/00x0/gerne_gestern.jpg"
                   bild="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_2.png"
@@ -573,6 +682,23 @@
                   Man salutierte mit ihr oder stellte sie "bei Fuß". 
                   Ein echtes Prunk- und Paradestück also. 
                   Genau richtig für meine extravagante Faktensammlung!
+              </PostingComponent>
+              <PostingComponent v-else-if="ort=='og1'"
+                  username="@gerne_gestern"
+                  avatar="assets/personen/00x0/gerne_gestern.jpg"
+                  bild="assets/objekte/og/001x_og1_ab/001x_og1_ab_post2.jpg"
+                  hashtag="#Zunftkasse1454"
+                  @hashtag-clicked="flow=2.7"
+                  :eingetragen="flow>=2.7">
+                  Uralt und geheimnisvoll! Zum Glück habe ich bei der Führung durch das Museum aufgepasst. 
+                  Der historische „Zunftsaal“ wurde 1454 im Haus „Zum Schwarzen Widder“ 
+                  eingerichtet und mit dem Haus zum "Rosgarten" verbunden. 
+                  Er diente den Mitgliedern der Rosgartenzunft als Versammlungssaal und Trinkstube. 
+                  Und jetzt kommt das Beste: Hier haben sie die alte Zunftkasse versteckt: 
+                  Damit sie niemand wegtragen konnte, wurde sie in die Holzwand eingelassen und mit einem Schloss gesichert. 
+                  Ein so altes Schloss darf natürlich nicht mehr aufgebrochen und zerstört werden. 
+                  Was für ein schönes, altes und echtes Geheimnis! 
+                  Da kribbelt es doch jemandem wie mir sofort in den Fingern ...
               </PostingComponent>
               <p style="margin-bottom: 100px;">
                 Berührt den pulsierenden Hashtag um Ihn als Hinweis in eurem Notizbuch festzuhalten!
@@ -621,18 +747,33 @@
               <!-- <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/> -->
               <img class="spieler" src="assets/img/leiner.png" width="200"/>
               <!-- <img class="spieler" src="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_2.png" width="200"/> -->
-              <p>
-                Wenn das mit den Diebstählen so weitergeht, müssen wir noch neue Museumswächter einstellen... 
-                vielleicht die Schweizer Garde aus dem Vatikan? 
-                Die tragen heute noch Hellebarden... 
-              </p>
-              <img src="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_leiner.jpg" width="400" style="margin-left: auto; margin-right: auto; display: block;"/>
-              <p style="margin-bottom: 90px;">
-                Wisst ihr, dass mein Rosgartenmuseum früher ein Zunfthaus war? 
-                Die Mitglieder einer Zunft mussten natürlich auch zur Waffe greifen, wenn eine Stadt angegriffen wurde. 
-                In manchen Städten war es für die Meister sogar Pflicht, einen eigenen Brustpanzer mitzubringen, wenn sie sich dort niederlassen wollten. 
-                Also bringt die Hellebarde bitte wieder dorthin zurück, wo sie auch hingehört.
-              </p>
+              <span v-if="ort=='eg'" style="margin-bottom: 90px;">
+                <p>
+                  Wenn das mit den Diebstählen so weitergeht, müssen wir noch neue Museumswächter einstellen... 
+                  vielleicht die Schweizer Garde aus dem Vatikan? 
+                  Die tragen heute noch Hellebarden... 
+                </p>
+                <img src="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_leiner.jpg" width="400" style="margin-left: auto; margin-right: auto; display: block;"/>
+                <p>
+                  Wisst ihr, dass mein Rosgartenmuseum früher ein Zunfthaus war? 
+                  Die Mitglieder einer Zunft mussten natürlich auch zur Waffe greifen, wenn eine Stadt angegriffen wurde. 
+                  In manchen Städten war es für die Meister sogar Pflicht, einen eigenen Brustpanzer mitzubringen, wenn sie sich dort niederlassen wollten. 
+                  Also bringt die Hellebarde bitte wieder dorthin zurück, wo sie auch hingehört.
+                </p>
+              </span>
+              <span v-else-if="ort=='og1'" style="margin-bottom: 90px;">
+                <p>
+                  Oh weh! Hier, an dieser Stellle, schlägt wirklich das Herz des Museums, 
+                  das große Geheimnis unserer guten alten Stube! Und jetzt ist es in Gefahr. 
+                  Sicher hält sich der der Dieb nicht an unseren Ehrenkodex. 
+                  Der besagt, dass kein Restaurator altes Kunst- oder Kulturgut zerstören darf! 
+                  Deshalb weiß bis heute niemand, ob sich in der alten Zunftkasse 
+                  tatsächlich noch ein Schatz befindet. 
+                  Bringt mir das Schloss zurück, heil und unversehrt. 
+                  Dieses Geheimnis muss gewahrt bleiben!
+                </p>
+                <img src="assets/objekte/og/001x_og1_ab/001x_og1_ab_leiner.jpg" width="400" style="margin-left: auto; margin-right: auto; display: block;"/>
+              </span>
               <button-weiter-component class="button-weiter" v-if="flow==2.8" @click="flow=3.0;swiperInstance.slideNext();" pulsiert />
               <button-weiter-component class="button-weiter" v-else-if="flow>2.8" @click="swiperInstance.slideNext();"/>
               <button-weiter-component class="button-weiter" v-else disabled />
@@ -672,7 +813,7 @@
         </swiper-slide>
 
         <swiper-slide v-if="flow >= 3.1 && flow<4.0">
-          <span v-if="!antwortClicked">
+          <span v-if="!antwortClicked && ort=='eg'">
             <span v-if="spieler=='Watson'">
               <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
               <p style="margin-top: 50px;"> Wie das glitzert und funkelt… </p>
@@ -688,6 +829,23 @@
               <p style="margin-top: 30px;"> Wie das funkelt und glänzt! </p>
               <p> Wie soll ich die Suchmeldung formulieren?</p>
               <p> Gesucht wird: </p>
+            </span>
+          </span>
+          <span v-else-if="!antwortClicked && ort=='og1'">
+            <span v-if="spieler=='Watson'">
+              <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
+              <p style="margin-top: 30px;"> In diesem Kästchen befindet sich ein ganz besonderes Objekt... </p>
+              <p> Aber welches? </p>
+            </span>
+            <span v-else-if="spieler=='Sherlock'">
+              <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="230"/>
+              <p style="margin-top: 70px;"> Oh weh! Da wurde wohl der Inhalt eines Ziboriums entwendet. </p>
+              <p> Ihr wisst doch, was da drin aufbewahrt wird? </p>
+            </span>
+            <span v-else>
+              <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="210"/>
+              <p style="margin-top: 30px;"> Oh weh. Hier wurde wohl etwas aus einem Tabernakel entwendet. </p>
+              <p> Ihr wisst doch, was ein Tabernakel ist? </p>
             </span>
           </span>
           <span v-else-if="!antwortRichtig">
@@ -719,20 +877,35 @@
               <p> Die Antwort ist richtig! </p>
             </span>
           </span>
-          <div class="antwort-buttons" v-if="spieler=='Watson'">
+          <div class="antwort-buttons" v-if="spieler=='Watson' && ort=='eg'">
               <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Ein Mineral aus den Alpen</ion-button>
               <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Würfelzucker aus eine alten Latrine</ion-button>
               <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Salzkristalle aus Bad Reichenhall</ion-button>
           </div>
-          <div class="antwort-buttons" v-else-if="spieler=='Sherlock'">
+          <div class="antwort-buttons" v-else-if="spieler=='Sherlock' && ort=='eg'">
             <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Ein Mineral, das sich gut spalten lässt</ion-button>
             <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Ein glitzernder Diamant, der besonders hart ist</ion-button>
             <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Marmor, der farbig geadert und gebändert ist</ion-button>
           </div>
-          <div class="antwort-buttons" v-else>
+          <div class="antwort-buttons" v-else-if="spieler=='Enola' && ort=='eg'">
             <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)" >ein Mineral, das man auch Feldspat nennt</ion-button>
             <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">ein Quarz, den man auch Bergkristall nennt</ion-button>
             <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">ein Glas, das man auch Orthoklas nennt</ion-button>
+          </div>
+          <div class="antwort-buttons" v-else-if="spieler=='Watson' && ort=='og1'">
+              <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Kelch mit Hostie</ion-button>
+              <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Vase mit Münze</ion-button>
+              <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig"> Trinkgefäß mit Deckel </ion-button>
+          </div>
+          <div class="antwort-buttons" v-else-if="spieler=='Sherlock' && ort=='og1'">
+            <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Kelch mit Hostie</ion-button>
+            <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Vase mit Münzen</ion-button>
+            <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Gefäss mit Reliquien</ion-button>
+          </div>
+          <div class="antwort-buttons" v-else-if="spieler=='Enola' && ort=='og1'">
+            <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)" >Ein Sakramentshaus</ion-button>
+            <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Ein Hostienkelch</ion-button>
+            <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Eine Reliquienbehälter</ion-button>
           </div>
           <button-weiter-component class="button-weiter" v-if="flow==3.2 && antwortRichtig" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="flow>3.2" @click="swiperInstance.slideNext();"/>
@@ -759,7 +932,7 @@
                 <p> @gerne_gestern postet weiter seine Diebstähle des Tages. </p>
                 <p> Aber lest selbst... </p>
               </span>
-              <PostingComponent 
+              <PostingComponent v-if="ort=='eg'"
                   username="@gerne_gestern"
                   avatar="assets/personen/00x0/gerne_gestern.jpg"
                   bild="assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_post1.jpg"
@@ -770,6 +943,16 @@
                   Deshalb zunächst nur soviel: 
                   ieser "Adular" lag zusammen mit anderen "Feldspaten" in einem Leinerschrank! 
                   (Fortsetzung folgt)
+              </PostingComponent>
+              <PostingComponent v-else-if="ort=='og1'"
+                  username="@gerne_gestern"
+                  avatar="assets/personen/00x0/gerne_gestern.jpg"
+                  bild="assets/objekte/og/10x0_og1_bc/10x0_og1_bc_post1.jpg"
+                  hashtag="#5_Sterne_sind_zuwenig"
+                  @hashtag-clicked="flow=3.3"
+                  :eingetragen="flow>=3.3">
+                  Ein wahres Schatzkästchen so ein Mini-Tabernakel. Wird es auffallen, wenn da der Kelch fehlt?
+                  Auch von mir bekommt das Objekt wahrlich mehr als fünf Sterne auf blauem Grund!
               </PostingComponent>
               <p style="margin-bottom: 100px;">
                 Berührt den pulsierenden Hashtag um Ihn als Hinweis in eurem Notizbuch festzuhalten!
@@ -842,22 +1025,25 @@
             <swiper-slide>
               <span v-if="spieler=='Watson'">
                 <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
-                <p> Sehr gut! Ihr habt den Kristall gefunden. Leider die dritte Meisterkopie von @accountname...</p>
+                <p v-if="ort=='eg'"> Sehr gut! Ihr habt den Kristall gefunden. Leider die dritte Meisterkopie von @accountname...</p>
+                <p v-else-if="ort=='og1'"> Sehr gut! Ihr habt den Kelch gefunden. Leider die dritte Meisterkopie von @accountname...</p>
                 <p> Und lest den nächsten Post. </p>
                 <p> Wir müssen herausfinden, wer hinter diesen Taten steckt... </p>
               </span>
               <span v-else-if="spieler=='Sherlock'">
                 <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-                <p> Hervorragend, da ist ja der Kristall. </p>
+                <p v-if="ort=='eg'"> Hervorragend, da ist ja der Kristall. </p>
+                <p v-else-if="ort=='og1'"> Hervorragend, da ist ja der Kelch. </p>
                 <p> @gerne_gestern bleibt dreist und fingerfertig... </p>
                 <p> Und lasst uns den letzten Post lesen. Wir müssen herausfinden, wer hinter diesen Taten steckt... </p>
               </span>
               <span v-else-if="spieler=='Enola'">
                 <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-                <p> Klasse, wir haben den Kristall gefunden! </p>
+                <p v-if="ort=='eg'"> Klasse, wir haben den Kristall gefunden! </p>
+                <p v-else-if="ort=='og1'"> Klasse, wir haben den Kelch gefunden! </p>
                 <p> Und bald werden wir wissen, wer hinter diesen Taten steckt: @gerne_gestern ist nämlich schon wieder auf Sendung! </p>
               </span>
-              <PostingComponent 
+              <PostingComponent v-if="ort=='eg'"
                   username="@gerne_gestern"
                   avatar="assets/personen/00x0/gerne_gestern.jpg"
                   bild="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_post2.jpg"
@@ -874,6 +1060,24 @@
                   Wenn die Steine einfach lose im Feld oder im Bett eines Bergbachs liegen, nennt man sie auch "Feldspat".
                   <br>Spannende Infos oder? Zur Belohnung liegt dieser uralte Feldspat jetzt bei mir!
               </PostingComponent>
+              <PostingComponent v-if="ort=='og1'"
+                  username="@gerne_gestern"
+                  avatar="assets/personen/00x0/gerne_gestern.jpg"
+                  bild="assets/objekte/og/10x0_og1_bc/10x0_og1_bc_post2.jpg"
+                  hashtag="#faktisch_immerwoanders"
+                  @hashtag-clicked="flow=2.7"
+                  :eingetragen="flow>=2.7">
+                  Heute stelle ich Euch in meinem Faktencheck ein ganz verrücktes Objekt vor: 
+                  einen Altaraufsatz aus dem Jahr 1502. 
+                  Er ist einer der wenigen Beispiele, die den Konstanzer Bildersturm 
+                  von 1531 halbwegs heil überstanden haben, wirklich nur halbwegs: 
+                  Der Altarkasten wurde mehrmals zerlegt und an verschiedenen Orten wieder aufgebaut. 
+                  Im Konstanzer Münster, im Münster auf der Reichenau, im Konzilsgebäude und im Rosgartenmuseum. 
+                  1990 wurden sogar zwei bis dahin fehlende Elemente wiederentdeckt: 
+                  die Marienkrönung (in der Mitte oben) und der hl. Nikolaus (in der Mitte rechts). 
+                  Da wird es doch kaum auffallen, wenn ich als Erinnerung ein 
+                  kleines 5-Sterne-Objekt mitnehme und in meinem Wohnzimmer aufstelle?
+              </PostingComponent>
               <p style="margin-bottom: 100px;">
                 Berührt den pulsierenden Hashtag um Ihn als Hinweis in eurem Notizbuch festzuhalten!
               </p>
@@ -889,20 +1093,20 @@
             <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
             <p> Nicht zu fassen, dieser Detaildieb. </p>
             <p> Aber ich glaube, wir sind der Lösung des Rätsels nahe! </p>
-            <p> Die letzten beiden Hashtags von @ACCOUNTNAME sind gesichert. </p>
+            <p> Die letzten beiden Hashtags von @gerne_gestern sind gesichert. </p>
             <p> Und ich glaube, der Geist von Ludwig Leiner will uns noch etwas mit auf den Weg geben... </p>
           </span>
           <span v-else-if="spieler=='Sherlock'">
             <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
             <p> Unglaublich, dieser Detailidieb. </p>
             <p> Aber auf Eure Ermittlungsarbeit ist Verlass! </p>
-            <p> Die letzten beiden Hashtags sind im Ermittlungsbuch. Bald werden wir das Rätsel von @ACCOUNTNAME gelöst haben. </p>
+            <p> Die letzten beiden Hashtags sind im Ermittlungsbuch. Bald werden wir das Rätsel von @gerne_gestern gelöst haben. </p>
             <p> Aber aufgepasst! Der Geist von Ludwig Leiner will uns noch etwas mit auf den Weg geben... </p>
           </span>
           <span v-else>
             <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
             <p> Meine Güte, egal ob Detaildieb oder Detaildiebin, das ist wirklich dreist!  </p>
-            <p> Das war Hashtag Nummer sechs. Jetzt müssen wir herausfinden, wer sich hinter @accountname verbirgt. </p>
+            <p> Das war Hashtag Nummer sechs. Jetzt müssen wir herausfinden, wer sich hinter @gerne_gestern verbirgt. </p>
             <p> Aber aufgepasst! Der Geist von Ludwig Leiner will uns noch etwas mit auf den Weg geben... </p>
           </span>
           <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
@@ -915,20 +1119,33 @@
 
         <swiper-slide v-if="flow >= 3.8 && flow<4.0" class="leiner-slide posting-slide">
           <swiper :modules="modules" :direction="'vertical'" :scrollbar="true" :mousewheel="true" :slidesPerView="'auto'" :freeMode="true">
-            <swiper-slide>
-
+            <swiper-slide v-if="ort=='eg'">
               <!-- <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/> -->
               <img class="spieler" src="assets/img/leiner.png" width="200"/>
-              <!-- <img class="spieler" src="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_2.png" width="200"/> -->
-              <p>
-                Ich bebe vor Zorn! Meinen Stein als "Belohnung" mitnehmen, 
-                womöglich noch als Schmucksteine schleifen und fassen lassen? 
-                Ich liebe meine naturbelassenen Adulare. 
-                Dieser ist mir ganz besonders ans Herz gewachsen. Ich will ihn zurück. 
-                Alles in diesem Raum, wirklich alles, atmet meinen Geist, merkt ihr das? 
-              </p>
-              <img src="assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_leiner.jpg" width="400" style="margin-left: auto; margin-right: auto; display: block;"/>
-
+              <span v-if="ort=='eg'" style="margin-bottom: 90px;">
+                <p>
+                  Ich bebe vor Zorn! Meinen Stein als "Belohnung" mitnehmen, 
+                  womöglich noch als Schmucksteine schleifen und fassen lassen? 
+                  Ich liebe meine naturbelassenen Adulare. 
+                  Dieser ist mir ganz besonders ans Herz gewachsen. Ich will ihn zurück. 
+                  Alles in diesem Raum, wirklich alles, atmet meinen Geist, merkt ihr das? 
+                </p>
+                <img src="assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_leiner.jpg" width="400" style="margin-left: auto; margin-right: auto; display: block;"/>
+              </span>
+              <span v-else-if="ort=='og1'" style="margin-bottom: 90px;">
+                <p>
+                  Der Dieb darf so viele Fakten sammeln wie er will, aber nicht unsere Objekte! 
+                  Das sind wir auch dem Stifter dieses Altars schuldig. Wisst ihr wie er heisst? 
+                  Schaut einmal ganz vorsichtig auf die Rückseite des linken Altarflügels. 
+                  Dort findet ihr unten ein Wappen mit drei schwarzen Hirschkäfern. 
+                  Die sind dem unverschämten Dieb zum Glück entgangen! 
+                  Man sieht sie auch auf einer Wappenscheibe aus Karlsruhe. 
+                  Dieses Wappen gehört Paulus Appetzhofer, einem Obervogt der Insel Reichenau. 
+                  Und das ist der Stifter dieses Altars. 
+                  Bitte bringt uns diesen unersetzlichen Kelch zurück! 
+                </p>
+                <img src="assets/objekte/og/10x0_og1_bc/10x0_og1_bc_leiner.jpg" width="400" style="margin-left: auto; margin-right: auto; display: block;"/>
+              </span>
               <button-weiter-component class="button-weiter" v-if="flow==3.8" @click="flow=4.0;swiperInstance.slideNext();" pulsiert />
               <button-weiter-component class="button-weiter" v-else-if="flow>3.8" @click="swiperInstance.slideNext();"/>
               <button-weiter-component class="button-weiter" v-else disabled />
