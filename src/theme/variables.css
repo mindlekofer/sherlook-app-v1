@@ -105,6 +105,11 @@ http://ionicframework.com/docs/theming/ */
   --height: 90%;
 }
 
+.steckbrief-modal {
+  --width: 80%;
+  --height: 70%;
+}
+
 .ion-color-karte {
 	--ion-color-base: var(--ion-color-karte);
 	--ion-color-base-rgb: var(--ion-color-karte-rgb);

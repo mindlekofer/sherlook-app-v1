@@ -1,12 +1,12 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true">
-      <span class="debugging" id="debug-flow-anzeige">{{ spielStore.spieler }} {{ spielStore.ort }} {{ spielStore.flow }}</span>
+      <span class="debugging" id="debug-flow-anzeige">{{ spieler }} {{ ort }} {{ flow }}</span>
       <div id="container_alles">
         <div id="container_links">
           <div class="container_hinweise">
-            <HinweisBoxComponent id="hinweis_box_1" v-if="flow<1.0" :zahl="'1'" :gross="false" inaktiv />
-            <HinweisBoxComponent id="hinweis_box_1" v-else-if="flow<2.0 && ort=='eg'" 
+            <HinweisBoxComponent class="hinweis-box" v-if="flow<1.0" :zahl="'1'" :gross="false" inaktiv />
+            <HinweisBoxComponent class="hinweis-box" v-else-if="flow<2.0 && ort=='eg'" 
                 :zahl="'1'" 
                 :gross="flow>=1.3" 
                 :auswahl="true" 
@@ -17,7 +17,7 @@
                 :hashtag1="flow>=1.3 ? '#schönheit_aus_urzeiten' : ''"
                 :hashtag2="flow>=1.7 ? '#alt_und_geheimnsvoll' : ''"
                 />
-              <HinweisBoxComponent id="hinweis_box_1" v-else-if="flow>=2.0 && ort=='eg'" 
+              <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=2.0 && ort=='eg'" 
                 :zahl="'1'" 
                 :gross="flow<=2.3 || (flow>=3.0 && flow<=3.3)" 
                 :auswahl="false"
@@ -27,7 +27,7 @@
                 hashtag1="#schönheit_aus_urzeiten"
                 hashtag2="#alt_und_geheimnsvoll"
                 />
-              <HinweisBoxComponent id="hinweis_box_1" v-else-if="flow<2.0 && ort=='og1'" 
+              <HinweisBoxComponent class="hinweis-box" v-else-if="flow<2.0 && ort=='og1'" 
                 :zahl="'1'" 
                 :gross="flow>=1.3" 
                 :auswahl="true" 
@@ -38,7 +38,7 @@
                 :hashtag1="flow>=1.3 ? '#schnipp_schnapp_locke_ab' : ''"
                 :hashtag2="flow>=1.7 ? '#schillernde_lockenpracht' : ''"
                 />
-              <HinweisBoxComponent id="hinweis_box_1" v-else-if="flow>=2.0 && ort=='og1'" 
+              <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=2.0 && ort=='og1'" 
                 :zahl="'1'" 
                 :gross="flow<=2.3" 
                 :auswahl="false"
@@ -49,8 +49,8 @@
                 hashtag2="#schillernde_lockenpracht"
                 />
 
-            <HinweisBoxComponent id="hinweis_box_2" v-if="flow<2.0" :zahl="'2'" :gross="false" inaktiv/>
-            <HinweisBoxComponent id="hinweis_box_2" v-else-if="flow<3.0 && ort=='eg'" 
+            <HinweisBoxComponent class="hinweis-box" v-if="flow<2.0" :zahl="'2'" :gross="false" inaktiv/>
+            <HinweisBoxComponent class="hinweis-box" v-else-if="flow<3.0 && ort=='eg'" 
                 :zahl="'2'" 
                 :gross="flow>=2.3" 
                 :auswahl="true" 
@@ -61,7 +61,7 @@
                 :hashtag1="flow>=2.3 ? '#hochlichter' : ''"
                 :hashtag2="flow>=2.7 ? '#prunk_und_paradestück' : ''"
                 />
-            <HinweisBoxComponent id="hinweis_box_2" v-else-if="flow>=3.0 && ort=='eg'" 
+            <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=3.0 && ort=='eg'" 
                 :zahl="'2'" 
                 :gross="flow<=3.3"
                 :auswahl="false"
@@ -71,7 +71,7 @@
                 hashtag1="#hochlichter"
                 hashtag2="#prunk_und_paradestück"
             />
-            <HinweisBoxComponent id="hinweis_box_2" v-else-if="flow<3.0 && ort=='og1'" 
+            <HinweisBoxComponent class="hinweis-box" v-else-if="flow<3.0 && ort=='og1'" 
                 :zahl="'2'" 
                 :gross="flow>=2.3" 
                 :auswahl="true" 
@@ -82,7 +82,7 @@
                 :hashtag1="flow>=2.3 ? '#gut_versteckt' : ''"
                 :hashtag2="flow>=2.7 ? '#Zunftkasse1454' : ''"
                 />
-            <HinweisBoxComponent id="hinweis_box_2" v-else-if="flow>=3.0 && ort=='og1'" 
+            <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=3.0 && ort=='og1'" 
                 :zahl="'2'" 
                 :gross="flow<=3.3"
                 :auswahl="false"
@@ -93,8 +93,8 @@
                 hashtag2="#Zunftkasse1454"
             />
 
-            <HinweisBoxComponent id="hinweis_box_3" v-if="flow<3.0" :zahl="'2'" :gross="false" inaktiv/>
-            <HinweisBoxComponent id="hinweis_box_3" v-else-if="flow<4.0 && ort=='eg'" 
+            <HinweisBoxComponent class="hinweis-box" v-if="flow<3.0" :zahl="'2'" :gross="false" inaktiv/>
+            <HinweisBoxComponent class="hinweis-box" v-else-if="flow<4.0 && ort=='eg'" 
                 :zahl="'3'" 
                 :gross="flow>=3.3" 
                 :auswahl="true" 
@@ -105,7 +105,7 @@
                 :hashtag1="flow>=3.3 ? '#Adular_und_Feldspat' : ''"
                 :hashtag2="flow>=3.7 ? '#alte_worte_alte_steine' : ''"
             />
-            <HinweisBoxComponent id="hinweis_box_3" v-else-if="flow>=4.0 && ort=='eg'" 
+            <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=4.0 && ort=='eg'" 
                 :zahl="'3'" 
                 :gross="false" 
                 :auswahl="false"
@@ -115,7 +115,7 @@
                 :hashtag1="flow>=3.3 ? '#Adular_und_Feldspat' : ''"
                 :hashtag2="flow>=3.7 ? '#alte_worte_alte_steine' : ''"
             />
-            <HinweisBoxComponent id="hinweis_box_3" v-else-if="flow<4.0 && ort=='og1'" 
+            <HinweisBoxComponent class="hinweis-box" v-else-if="flow<4.0 && ort=='og1'" 
                 :zahl="'3'" 
                 :gross="flow>=3.3" 
                 :auswahl="true" 
@@ -126,7 +126,7 @@
                 :hashtag1="flow>=3.3 ? '#5_Sterne_sind_zuwenig' : ''"
                 :hashtag2="flow>=3.7 ? '#faktisch_immerwoanders' : ''"
             />
-            <HinweisBoxComponent id="hinweis_box_3" v-else-if="flow>=4.0 && ort=='og1'"
+            <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=4.0 && ort=='og1'"
                 :zahl="'3'" 
                 :gross="false" 
                 :auswahl="false"
@@ -170,7 +170,7 @@
             <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow == 0.72" :disabled="flow < 0.72" v-if="flow<1.0"/>
             <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow==1.46" v-else-if="flow==1.46"/>
             <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow==2.46" v-else-if="flow==2.46"/>
-            <ButtonKarteComponent @click="openKarteModal" disabled v-else/>
+            <ButtonKarteComponent @click="openKarteModal" disabled v-else-if="flow<4.0"/>
 
             <ButtonKameraComponent v-if="flow==0.8"
                 @click="openKameraModal" 
@@ -187,7 +187,23 @@
                 :disabled="empfang != 'stark' && btTrigger" 
                 :pulsiert="empfang == 'start'"
             />
-            <ButtonKameraComponent v-else disabled></ButtonKameraComponent>
+            <ButtonKameraComponent v-else-if="flow<4.0" disabled></ButtonKameraComponent>
+
+            <span class="personen-boxen" v-if="flow>=4.0 && spieler=='Watson'">
+              <PersonenBoxComponent name="Katinka Antiqus" code="00x0" @click="personClicked(1, '00x0')" :auswahl="personAktiv==1" />
+              <PersonenBoxComponent name="James Mopsiathy" code="11x1" @click="personClicked(2, '11x1')" :auswahl="personAktiv==2" />
+              <PersonenBoxComponent name="Mia Mirabilis" code="111x" @click="personClicked(3, '111x')" :auswahl="personAktiv==3" />
+            </span>
+            <span class="personen-boxen" v-if="flow>=4.0 && spieler=='Sherlock'">
+              <PersonenBoxComponent name="Katinka Antiqus" code="00x0" @click="personClicked(1, '00x0')" :auswahl="personAktiv==1" />
+              <PersonenBoxComponent name="Mia Mirabilis" code="111x" @click="personClicked(2, '111x')" :auswahl="personAktiv==2" />
+              <PersonenBoxComponent name="Wolfram Wolkenwand" code="x111" @click="personClicked(3, 'x111')" />
+            </span>
+            <span class="personen-boxen" v-if="flow>=4.0 && spieler=='Enola'">
+              <PersonenBoxComponent name="Katinka Antiqus" code="00x0" @click="personClicked(1, '00x0')" :auswahl="personAktiv==1" />
+              <PersonenBoxComponent name="Iri Adler" code="11x0" @click="personClicked(2, '11x0')" :auswahl="personAktiv==2" />
+              <PersonenBoxComponent name="Schorm Roderick" code="01x1" @click="personClicked(3, '01x1')" :auswahl="personAktiv==3" />
+            </span>
 
             <ion-button @click="skipTutorialHinweis(true)" color="primary" size="large" v-if="spielStore.flow<1.0">Tutorial <br>überspringen</ion-button>
           </div>
@@ -216,6 +232,16 @@
 </template>
 
 <style scoped>
+.personen-boxen * {
+}
+.hinweis-box {
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25));
+}
+.personen-boxen {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
 .karte-modal {
   align-items: center;
   justify-content: center;
@@ -313,7 +339,7 @@
 </style>
 
 <script setup lang="ts">
-import { IonPage, IonContent, IonButton, IonAlert, IonModal, useKeyboard, isPlatform } from '@ionic/vue';
+import { IonPage, IonContent, IonButton, IonAlert, IonModal, isPlatform } from '@ionic/vue';
 
 import { useSpielStore } from '@/stores/SpielStore';
 import { useBeaconStore } from '@/stores/BeaconStore';
@@ -329,19 +355,14 @@ import KarteModal from '@/components/modals/KarteModal.vue';
 import KameraModal from '@/components/modals/KameraModal.vue';
 import BeaconModal from '@/components/modals/BeaconModal.vue';
 import EinstellungsModal from '@/components/modals/EinstellungsModal.vue';
+import SteckbriefModal from '@/components/modals/SteckbriefModal.vue';
 
 import ButtonKarteComponent from '@/components/ButtonKarteComponent.vue';
 import ButtonExitComponent from '@/components/ButtonExitComponent.vue';
 import ButtonKameraComponent from '@/components/ButtonKameraComponent.vue';
 import HinweisBoxComponent from '@/components/HinweisBoxComponent.vue';
 import LupeMitteComponent from '@/components/LupeMitteComponent.vue';
-
-import { Pagination, Navigation, FreeMode, Scrollbar } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css/free-mode';
-import 'swiper/css/scrollbar';
+import PersonenBoxComponent from '@/components/PersonenBoxComponent.vue';
 
 const spielStore = useSpielStore();
 const beaconStore = useBeaconStore();
@@ -450,7 +471,6 @@ watch(rangeTicks, () => {
 
 const hinweisBoxGross = ref(true);
 
-
 const openSpielMenu = async () => {
   console.log("openSpielMenu clicked");
   const spiel_menu = await modalController.create({component: SpielMenu});
@@ -510,6 +530,33 @@ const skipTutorial = () => {
   spielStore.flow = 1.0;
 };
 
-const modules = [Pagination, Navigation, FreeMode, Scrollbar];
+function personClicked(nr : number, code : string) {
+  console.log("Person clicked: ", nr);
+  if (personAktiv.value == nr) {
+    personAktiv.value = 0;
+  } else {
+    personAktiv.value = nr;
+    openSteckbriefModal(code);
+  }
+
+}
+
+const openSteckbriefModal = async (code : string) => {
+  console.log("openSteckbriefModal()");
+  const steckbrief_modal = await modalController.create({
+    component: SteckbriefModal,
+    cssClass: 'steckbrief-modal',
+    componentProps: {
+      code: code
+    }
+  });
+  console.log("after await");
+  steckbrief_modal.present();
+  // const { data } = await steckbrief_modal.onWillDismiss();
+  await steckbrief_modal.onWillDismiss();
+  personAktiv.value = 0;
+}
+
+const personAktiv = ref(0);
 
 </script>
