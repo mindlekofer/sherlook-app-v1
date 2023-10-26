@@ -51,7 +51,7 @@
               <p> Ich glaube, ich weiß auch schon, von welcher alten Echse das stammt. Ihr auch? </p>
             </span>
           </span>
-          <span v-if="!antwortClicked && ort=='og1'">
+          <span v-else-if="!antwortClicked && ort=='og1'">
             <span v-if="spieler=='Watson'">
               <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
               <p style="margin-top: 20px;"> Das sieht ja seltsam aus. </p>
@@ -883,9 +883,9 @@
               <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Salzkristalle aus Bad Reichenhall</ion-button>
           </div>
           <div class="antwort-buttons" v-else-if="spieler=='Sherlock' && ort=='eg'">
-            <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Ein Mineral, das sich gut spalten lässt</ion-button>
-            <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Ein glitzernder Diamant, der besonders hart ist</ion-button>
-            <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Marmor, der farbig geadert und gebändert ist</ion-button>
+            <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Ein Mineral, <br>das sich gut spalten lässt</ion-button>
+            <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Ein glitzernder Diamant, <br>der besonders hart ist</ion-button>
+            <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Marmor, der farbig <br>geadert und gebändert ist</ion-button>
           </div>
           <div class="antwort-buttons" v-else-if="spieler=='Enola' && ort=='eg'">
             <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)" >ein Mineral, das man auch Feldspat nennt</ion-button>
@@ -1152,6 +1152,168 @@
             </swiper-slide>
           </swiper>
         </swiper-slide>
+
+        <swiper-slide v-if="flow >=4.0 && flow<5.0">
+          <span v-if="spieler=='Watson'">
+            <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
+            <p style="margin-top: 20px;"> 
+              Geht in Ordnung, lieber Ludwig Leiner. 
+              An meiner Seite arbeiten wahre Meisterdetektive! Wir sind der Lösung des Falls ganz nah!
+            </p>
+            <p>
+              Mit den sechs Hinweisen im Buch werden wir herausfinden, wer hinter den Diebstählen steckt. @gerne_gestern kann uns nicht entkommen. 
+            </p>
+            <p>
+              Lasst uns zurück zum Detektivbüro gehen, unserem Startpunkt, und den Fall lösen!
+            </p>
+          </span>
+          <span v-else-if="spieler=='Sherlock'">
+            <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="220"/>
+            <p style="margin-top: 0px;"> 
+              Darauf können sie sich verlassen, verehrter Herr Leiner! 
+              Es wird nicht mehr lang dauern und der Fall ist gelöst. 
+              Schon jetzt: tadellose Arbeit, werte Detektive! 
+              Die Spuren sind sichergestellt und alle gestohlenen Details ermittelt. 
+            </p>
+            <p>
+              Jetzt müssen wir nur noch herausfinden, wer hinter den Diebstählen steckt. 
+              Die notierten Hinweise helfen uns dabei.
+            </p>
+            <p>
+              Lasst uns zurück in unser Detektivbüro gehen und den Fall lösen.
+            </p>
+          </span>
+          <span v-else>
+            <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="210"/>
+            <p style="margin-top: 0px;"> 
+              Danke für die interessanten Infos, lieber Herr Leiner. 
+              Wir sehen das ganz genau so. Diese Diebstähle lassen uns keine Ruhe.
+            </p>
+            <p>
+              Doch unser Ermittlungsbuch hat sich gefüllt! 
+              Mit diesen Hinweisen werden wir herausfinden, wer hinter den Diebstählen steckt. 
+              Bald wird der Fall voll und ganz gelöst sein. 
+              Das Rosgartenmuseum kann sich auf mein Team verlassen.
+            </p>
+            <p>
+              Lasst uns zurück in unser Detektivbüro gehen und den Fall lösen!
+            </p>
+          </span>
+          <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
+          <!-- <div class="swipe-geste-vertikal"></div> -->
+          <button-weiter-component class="button-weiter" v-if="flow==4.0" @click="swiperInstance.slideNext();" pulsiert/>
+          <button-weiter-component class="button-weiter" v-else-if="flow>4.0" @click="swiperInstance.slideNext();"/>
+          <button-weiter-component class="button-weiter" v-else disabled />
+          <!-- <button-weiter-component class="button-weiter" disabled /> -->
+        </swiper-slide>
+
+        <swiper-slide v-if="flow >=4.1 && flow<5.0">
+          <span v-if="spieler=='Watson'" >
+            <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
+            <p style="font-size: 26px;"> 
+              Drei Tatverdächtige wurden in letzter Zeit immer wieder im Museum gesehen: 
+              <ul>
+                <li>Katinka Antiqus</li>
+                <li>James Mopsiathy</li>
+                <li>Mia Mirabilis</li>             
+              </ul>
+            </p>
+            <p style="font-size: 26px;">
+              Wer von ihnen steckt hinter @gerne_gestern?
+            </p>
+            <p style="font-size: 26px;">
+              Sucht Euch im Detektivbüro die Steckbriefe heraus und klickt auf die Fahndungsfotos. 
+              Vergleicht die Informationen mit den Hinweisen in unserem Notizbuch.
+              Drückt auf die Handschellen, wenn ihr glaubt, den richtigen Täter oder die richtige Täterin verhaften zu können.
+            </p>
+          </span>
+          <span v-else-if="spieler=='Sherlock'">
+            <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="220"/>
+            <p style="font-size: 26px;"> 
+              Wir haben im Hintergrund weiter ermittelt: Drei Tatverdächtige wurden in letzter Zeit immer wieder im Museum gesehen: 
+              <ul>
+                <li>Katinka Antiqus</li>
+                <li>Mia Mirabilis</li>             
+                <li>Wolfram Wolkenwand</li>
+              </ul>
+            </p>
+            <p style="font-size: 26px;">
+              Wer von ihnen steckt hinter @gerne_gestern?
+            </p>
+            <p style="font-size: 26px;">
+              Sucht Euch im Detektivbüro die Steckbriefe heraus und klickt auf die Fahndungsfotos. 
+              Vergleicht die Informationen mit den Ergebnissen in unserem Ermittlungsbuch.
+              Drückt auf die Handschellen, wenn ihr glaubt, den richtigen Täter oder die richtige Täterin verhaften zu können.
+            </p>
+          </span>
+          <span v-else>
+            <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="210"/>
+            <p style="font-size: 26px;"> 
+              Der Fall nähert sich der Aufklärung! Drei Tatverdächtige wurden in letzter Zeit immer wieder im Museum gesehen:
+              <ul>
+                <li>Katinka Antiqus</li>
+                <li>Iri Adler</li>
+                <li>Schorm Roderick</li>             
+              </ul>
+            </p>
+            <p style="font-size: 26px;">
+              Sucht Euch im Detektivbüro die Steckbriefe heraus und klickt auf die Fahndungsfotos. 
+              Vergleicht die Informationen mit den Ergebnissen in unserem Ermittlungsbuch.
+            </p>
+            <p style="font-size: 26px;">
+              Drückt auf die Handschellen, wenn ihr glaubt, den richtigen Täter oder die richtige Täterin verhaften zu können.
+            </p>
+          </span>
+          <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
+          <!-- <div class="swipe-geste-vertikal"></div> -->
+          <button-weiter-component class="button-weiter" v-if="flow==4.0" @click="swiperInstance.slideNext();" pulsiert/>
+          <button-weiter-component class="button-weiter" v-else-if="flow>4.0" @click="swiperInstance.slideNext();"/>
+          <button-weiter-component class="button-weiter" v-else disabled />
+          <!-- <button-weiter-component class="button-weiter" disabled /> -->
+        </swiper-slide>
+        
+        <swiper-slide v-if="flow >= 4.4 && flow<5.0" class="leiner-slide">
+          <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/>
+          <p>
+            Endlich kann mein Geist wieder in Frieden ruhen: 
+            Ich danke euch! 
+          </p>
+          <p>
+            Ich verleihe euch den Spürnasenausweis, 
+            der euch offiziell in den Kreis der Meisterdetektive erhebt! 
+          </p>
+          <p>
+            Ihr könnt ihn am Eingang abholen.
+          </p>
+        </swiper-slide>
+        
+        <swiper-slide v-if="flow >=4.5 && flow<5.0">
+          <span v-if="spieler=='Watson'">
+            <img class="spieler" src="assets/img/detektive/watson_gluecklich.png" width="250"/>
+            <p style="margin-top: 50px;"> Was für ein spannender Urlaub! </p>
+            <p> Und ein Gutes hatten diese Diebstähle dann doch: Wir mussten als Detektive ganz genau hinschauen?! </p>
+            <p> In diesem Museum gibt es ja so viel zu entdecken…! </p>
+          </span>
+          <span v-else-if="spieler=='Sherlock'">
+            <img class="spieler" src="assets/img/detektive/sherlock_gluecklich.png" width="280"/>
+            <p style="margin-top: 60px;"> So mag ich meinen Urlaub. Garniert mit einem spannenden Fall! </p>
+            <p> Und ein Gutes hatten diese Diebstähle dann doch: Wir haben die Sammlung mit ganz neuen Augen angeschaut! </p>
+            <p> Da gibt es ja so viel zu entdecken… </p>
+          </span>
+          <span v-else>
+            <img class="spieler" src="assets/img/detektive/enola_gluecklich.png" width="260"/>
+            <p style="margin-top: 70px;"> Eigentlich ein Museumsbesuch ganz nach meinem Geschmack. </p>
+            <p> Man musste genau hinschauen und hat vieles Neues erfahren und entdeckt. </p>
+            <p> Ich glaube, dieses Museum hat noch viel mehr davon zu bieten... </p>
+          </span>
+          <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
+          <!-- <div class="swipe-geste-vertikal"></div> -->
+          <button-weiter-component class="button-weiter" v-if="flow==4.5" @click="swiperInstance.slideNext();" pulsiert/>
+          <button-weiter-component class="button-weiter" v-else-if="flow>4.5" @click="swiperInstance.slideNext();"/>
+          <button-weiter-component class="button-weiter" v-else disabled />
+          <!-- <button-weiter-component class="button-weiter" disabled /> -->
+        </swiper-slide>
+
 
     </swiper>
   </div>

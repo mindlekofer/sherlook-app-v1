@@ -75,8 +75,8 @@ const props = defineProps( {
         @click="$emit('kleine-lupe-clicked')"
     />
     <div class="hashtags" :class="{'ausgeblendet':gross==false}">
-      <p>{{ props.hashtag1 }}&nbsp;</p>
-      <p>{{ props.hashtag2 }}&nbsp;</p>
+      <p :class="{'auswahl':auswahl}">{{ props.hashtag1 }}&nbsp;</p>
+      <p :class="{'auswahl':auswahl}">{{ props.hashtag2 }}&nbsp;</p>
     </div>
     <div v-if="props.gross">
       <lupe-component
@@ -94,7 +94,8 @@ const props = defineProps( {
 }
 .hinweis_box {
   height: 170px;
-  background-color: #e9e9e9;
+  /* background-color: #e9e9e9; */
+  background-color: #edd9bd;
   margin: 0px 0px 10px 0px;
   display: flex;
   align-items: center;
@@ -111,7 +112,10 @@ const props = defineProps( {
   transform: translateX(0px);
 }
 .auswahl {
-  background-color: #FFF4B6;
+  /* background-color: #FFF4B6; */
+  background-color: #d59a46;
+  /* color: rgb(132, 255, 113); */
+  color: rgb(251, 237, 80);
 }
 .gross {
   width: 95%;
@@ -129,10 +133,11 @@ const props = defineProps( {
   margin-left: 0px;
 }
 p {
-  font-size: 24px;
+  font-size: 28px;
   /* margin-left: 10px; */
-  color: rgb(34, 165, 34);
-  font-weight: 600;
+  color: rgb(48, 184, 48);
+  /* color: rgb(34, 165, 34); */
+  font-weight: 700;
   /* margin-top: 10px;
   margin-bottom: 10px; */
 }

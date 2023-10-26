@@ -46,7 +46,8 @@ const props = defineProps( {
 .personen-box {
   height: 160px;
   width: 160px;
-  background-color: #e9e9e9;
+  /* background-color: #e9e9e9; */
+  background-color: #bac7e9;
   margin: 0px 0px 10px 0px;
   display: flex;
   align-items: center;
@@ -64,6 +65,7 @@ const props = defineProps( {
   filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25));
 }
 .auswahl {
+  /* background-color: #FFF4B6; */
   background-color: #FFF4B6;
 }
 

@@ -19,7 +19,7 @@
                 />
               <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=2.0 && ort=='eg'" 
                 :zahl="'1'" 
-                :gross="flow<=2.3 || (flow>=3.0 && flow<=3.3)" 
+                :gross="flow<=2.3 || (flow>=3.0 && flow<=3.3) || flow>=4.0" 
                 :auswahl="false"
                 :pulsieren="false"
                 :buch="true"
@@ -40,7 +40,7 @@
                 />
               <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=2.0 && ort=='og1'" 
                 :zahl="'1'" 
-                :gross="flow<=2.3" 
+                :gross="flow<=2.3 || (flow>=3.0 && flow<=3.3) || flow>=4.0" 
                 :auswahl="false"
                 :pulsieren="false"
                 :buch="true"
@@ -63,7 +63,7 @@
                 />
             <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=3.0 && ort=='eg'" 
                 :zahl="'2'" 
-                :gross="flow<=3.3"
+                :gross="flow<=3.3 || flow>=4.0"
                 :auswahl="false"
                 :pulsieren="false"
                 :buch="true"
@@ -84,7 +84,7 @@
                 />
             <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=3.0 && ort=='og1'" 
                 :zahl="'2'" 
-                :gross="flow<=3.3"
+                :gross="flow<=3.3 || flow>=4.0"
                 :auswahl="false"
                 :pulsieren="false"
                 :buch="true"
@@ -107,7 +107,7 @@
             />
             <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=4.0 && ort=='eg'" 
                 :zahl="'3'" 
-                :gross="false" 
+                :gross="flow>=4.0" 
                 :auswahl="false"
                 :pulsieren="false"
                 :buch="true"
@@ -128,7 +128,7 @@
             />
             <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=4.0 && ort=='og1'"
                 :zahl="'3'" 
-                :gross="false" 
+                :gross="flow>=4.0" 
                 :auswahl="false"
                 :pulsieren="false"
                 :buch="true"
