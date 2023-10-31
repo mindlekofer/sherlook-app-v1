@@ -5,140 +5,51 @@
       <div id="container_alles">
         <div id="container_links">
           <div class="container_hinweise">
-            <HinweisBoxComponent class="hinweis-box" v-if="flow<1.0" :zahl="'1'" :gross="false" inaktiv />
-            <HinweisBoxComponent class="hinweis-box" v-else-if="flow<2.0 && ort=='eg'" 
-                :zahl="'1'" 
-                :gross="flow>=1.3" 
-                :auswahl="true" 
-                :pulsieren="flow==1.0"
-                :buch="flow>=1.1"
-                bild="assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png"
-                @kleine-lupe-clicked="flow=1.1"
-                :hashtag1="flow>=1.3 ? '#schönheit_aus_urzeiten' : ''"
-                :hashtag2="flow>=1.7 ? '#alt_und_geheimnsvoll' : ''"
-                />
-              <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=2.0 && ort=='eg'" 
-                :zahl="'1'" 
-                :gross="flow<=2.3 || (flow>=3.0 && flow<=3.3) || flow>=4.0" 
-                :auswahl="false"
-                :pulsieren="false"
-                :buch="true"
-                bild="assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png"
-                hashtag1="#schönheit_aus_urzeiten"
-                hashtag2="#alt_und_geheimnsvoll"
-                />
-              <HinweisBoxComponent class="hinweis-box" v-else-if="flow<2.0 && ort=='og1'" 
-                :zahl="'1'" 
-                :gross="flow>=1.3" 
-                :auswahl="true" 
-                :pulsieren="flow==1.0"
-                :buch="flow>=1.1"
-                bild="assets/objekte/og/00x0_og1_ac/00x0_og1_ac_rund.png"
-                @kleine-lupe-clicked="flow=1.1"
-                :hashtag1="flow>=1.3 ? '#schnipp_schnapp_locke_ab' : ''"
-                :hashtag2="flow>=1.7 ? '#schillernde_lockenpracht' : ''"
-                />
-              <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=2.0 && ort=='og1'" 
-                :zahl="'1'" 
-                :gross="flow<=2.3 || (flow>=3.0 && flow<=3.3) || flow>=4.0" 
-                :auswahl="false"
-                :pulsieren="false"
-                :buch="true"
-                bild="assets/objekte/og/00x0_og1_ac/00x0_og1_ac_rund.png"
-                hashtag1="#schnipp_schnapp_locke_ab"
-                hashtag2="#schillernde_lockenpracht"
-                />
+            <!-- <HinweisBoxComponent class="hinweis-box" v-if="flow<1.0" :zahl="'1'" :gross="false" inaktiv /> -->
 
-            <HinweisBoxComponent class="hinweis-box" v-if="flow<2.0" :zahl="'2'" :gross="false" inaktiv/>
-            <HinweisBoxComponent class="hinweis-box" v-else-if="flow<3.0 && ort=='eg'" 
-                :zahl="'2'" 
-                :gross="flow>=2.3" 
-                :auswahl="true" 
-                :pulsieren="flow==2.0"
-                :buch="flow>=2.1"
-                bild="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_rund.png"
-                @kleine-lupe-clicked="flow=2.1"
-                :hashtag1="flow>=2.3 ? '#hochlichter' : ''"
-                :hashtag2="flow>=2.7 ? '#prunk_und_paradestück' : ''"
+  
+            <HinweisBoxComponent class="hinweis-box" v-if="flow<1.0" :zahl="'1'" inaktiv/>
+            <HinweisBoxComponent class="hinweis-box" v-else-if="flow<4.0"
+                :zahl="'1'"
+                :gross="flow>=1.2"
+                :buch="flow>=1.1"
+                :auswahl="flow>=1.0 && flow<2.0"
+                :vordergrund="flow>=1.0"
+                :pulsieren="flow==1.0"
+                :bild="ort=='eg'?'assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png':'assets/objekte/og/00x0_og1_ac/00x0_og1_ac_rund.png'"
+                @kleine-lupe-clicked="flow=1.1"
+                :hashtag1="flow>=1.3 ? (ort=='eg'?'#schönheit_aus_urzeiten':'#schnipp_schnapp_locke_ab') : ''"
+                :hashtag2="flow>=1.7 ? (ort=='eg'?'#alt_und_geheimnsvoll':'#schillernde_lockenpracht') : ''"
                 />
-            <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=3.0 && ort=='eg'" 
-                :zahl="'2'" 
-                :gross="flow<=3.3 || flow>=4.0"
-                :auswahl="false"
-                :pulsieren="false"
-                :buch="true"
-                bild="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_rund.png"
-                hashtag1="#hochlichter"
-                hashtag2="#prunk_und_paradestück"
-            />
-            <HinweisBoxComponent class="hinweis-box" v-else-if="flow<3.0 && ort=='og1'" 
-                :zahl="'2'" 
-                :gross="flow>=2.3" 
-                :auswahl="true" 
-                :pulsieren="flow==2.0"
+                <!-- @click="lupeImVordergrund=false" -->
+                
+            <HinweisBoxComponent class="hinweis-box" v-if="flow<2.0" :zahl="'2'" inaktiv />
+            <HinweisBoxComponent class="hinweis-box" v-else-if="flow<4.0"
+                :zahl="'2'"
+                :gross="flow>=2.3"
                 :buch="flow>=2.1"
-                bild="assets/objekte/og/001x_og1_ab/001x_og1_ab_rund.png"
+                :auswahl="flow>=2.0 && flow<3.0" 
+                :pulsieren="flow==2.0"
+                :bild="ort=='eg'?'assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_rund.png':'assets/objekte/og/001x_og1_ab/001x_og1_ab_rund.png'"
                 @kleine-lupe-clicked="flow=2.1"
-                :hashtag1="flow>=2.3 ? '#gut_versteckt' : ''"
-                :hashtag2="flow>=2.7 ? '#Zunftkasse1454' : ''"
-                />
-            <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=3.0 && ort=='og1'" 
-                :zahl="'2'" 
-                :gross="flow<=3.3 || flow>=4.0"
-                :auswahl="false"
-                :pulsieren="false"
-                :buch="true"
-                bild="assets/objekte/og/001x_og1_ab/001x_og1_ab_rund.png"
-                hashtag1="#gut_versteckt"
-                hashtag2="#Zunftkasse1454"
+                :hashtag1="flow>=2.3 ? (ort=='eg'?'#hochlichter':'#gut_versteckt') : ''"
+                :hashtag2="flow>=2.7 ? (ort=='eg'?'#prunk_und_paradestück':'#Zunftkasse1454') : ''"
             />
 
-            <HinweisBoxComponent class="hinweis-box" v-if="flow<3.0" :zahl="'2'" :gross="false" inaktiv/>
-            <HinweisBoxComponent class="hinweis-box" v-else-if="flow<4.0 && ort=='eg'" 
-                :zahl="'3'" 
-                :gross="flow>=3.3" 
-                :auswahl="true" 
-                :pulsieren="flow==3.0"
+            <HinweisBoxComponent class="hinweis-box" v-if="flow<2.0" :zahl="'3'" inaktiv />
+            <HinweisBoxComponent class="hinweis-box" v-else-if="flow<4.0"
+                :zahl="'3'"
+                :gross="flow>=3.3"
                 :buch="flow>=3.1"
-                bild="assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_rund.png"
-                @kleine-lupe-clicked="flow=3.1"
-                :hashtag1="flow>=3.3 ? '#Adular_und_Feldspat' : ''"
-                :hashtag2="flow>=3.7 ? '#alte_worte_alte_steine' : ''"
-            />
-            <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=4.0 && ort=='eg'" 
-                :zahl="'3'" 
-                :gross="flow>=4.0" 
-                :auswahl="false"
-                :pulsieren="false"
-                :buch="true"
-                bild="assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_rund.png"
-                :hashtag1="flow>=3.3 ? '#Adular_und_Feldspat' : ''"
-                :hashtag2="flow>=3.7 ? '#alte_worte_alte_steine' : ''"
-            />
-            <HinweisBoxComponent class="hinweis-box" v-else-if="flow<4.0 && ort=='og1'" 
-                :zahl="'3'" 
-                :gross="flow>=3.3" 
-                :auswahl="true" 
+                :auswahl="flow>=3.0 && flow<4.0" 
                 :pulsieren="flow==3.0"
-                :buch="flow>=3.1"
-                bild="assets/objekte/og/10x0_og1_bc/10x0_og1_bc_rund.png"
-                @kleine-lupe-clicked="flow=3.1"
-                :hashtag1="flow>=3.3 ? '#5_Sterne_sind_zuwenig' : ''"
-                :hashtag2="flow>=3.7 ? '#faktisch_immerwoanders' : ''"
-            />
-            <HinweisBoxComponent class="hinweis-box" v-else-if="flow>=4.0 && ort=='og1'"
-                :zahl="'3'" 
-                :gross="flow>=4.0" 
-                :auswahl="false"
-                :pulsieren="false"
-                :buch="true"
-                bild="assets/objekte/og/10x0_og1_bc/10x0_og1_bc_rund.png"
-                :hashtag1="flow>=3.3 ? '#5_Sterne_sind_zuwenig' : ''"
-                :hashtag2="flow>=3.7 ? '#faktisch_immerwoanders' : ''"
+                :bild="ort=='eg'?'assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_rund.png':'assets/objekte/og/10x0_og1_bc/10x0_og1_bc_rund.png'"
+                @kleine-lupe-clicked="flow=2.1"
+                :hashtag1="flow>=3.3 ? (ort=='eg'?'#Adular_und_Feldspat':'#5_Sterne_sind_zuwenig') : ''"
+                :hashtag2="flow>=3.7 ? (ort=='eg'?'#alte_worte_alte_steine':'#faktisch_immerwoanders') : ''"
             />
 
  
-
             <LupeMitteComponent id="lupe_mitte" v-if="flow >= 0.7 && flow < 0.81 && ort=='eg'" 
                 bild="assets/objekte/eg/tutorial/tutorial_eg_rund.png" 
                 :empfang=empfang 
@@ -150,9 +61,15 @@
             <LupeMitteComponent id="lupe_mitte" v-else-if="flow >= 0.81 && flow <1.0" 
                 bild="assets/objekte/eg/tutorial/tutorial_eg_lupe_logo.png"
             />
-            <LupeMitteComponent id="lupe_mitte" v-else-if="flow>=1.1 && flow<1.3" 
+            <!-- <LupeMitteComponent id="lupe_mitte" v-else-if="flow>=1.1 && flow<1.3"  -->
+            <LupeMitteComponent id="lupe_mitte" v-else-if="flow>=1.1 && flow<2" 
                 :bild="ort=='eg' ? 'assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png' : 'assets/objekte/og/00x0_og1_ac/00x0_og1_ac_rund.png'"
+                :class="{
+                    'vordergrund':lupeImVordergrund || flow>= 1.2,
+                    'hintergrund':!(lupeImVordergrund),
+                }"
             />
+            <!-- @click="lupeImVordergrund=true" -->
             <LupeMitteComponent id="lupe_mitte" v-else-if="flow>=2.1 && flow<2.3" 
                 :bild="ort=='eg' ? 'assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_rund.png' : 'assets/objekte/og/001x_og1_ab/001x_og1_ab_rund.png'"
             />
@@ -161,13 +78,13 @@
             />
             <LupeMitteComponent id="lupe_mitte" v-else 
                 bild="assets/objekte/eg/tutorial/tutorial_eg_lupe_logo.png"
-                style="opacity: 10%"
+                style="opacity: 20%"
             />
           </div>
           <div id="container_buttons">
             <ButtonExitComponent @click="openSpielMenu"/>
 
-            <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow == 0.72" :disabled="flow < 0.72" v-if="flow<1.0"/>
+            <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow == 0.72 || slideNr == 3" :disabled="slideNr<3" v-if="flow<1.0"/>
             <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow==1.46" v-else-if="flow==1.46"/>
             <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow==2.46" v-else-if="flow==2.46"/>
             <ButtonKarteComponent @click="openKarteModal" disabled v-else-if="flow<4.0"/>
@@ -232,10 +149,16 @@
 </template>
 
 <style scoped>
-.personen-boxen * {
-}
 .hinweis-box {
   filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25));
+}
+.vordergrund {
+  opacity: 90%;
+  z-index: 10;
+}
+.hintergrund {
+  opacity: 70%;
+  z-index: 0;
 }
 .personen-boxen {
   display: flex;
@@ -263,6 +186,7 @@
     width: 400px;
     transform: rotate(-30deg);
     opacity: 70%;
+    z-index: 20;
 }
 .container_hinweise {
   position: relative;
@@ -325,7 +249,7 @@
   width: 600px;
   height: 600px;
   transform: translate(-50%,-50%);
-  z-index: -2
+  z-index: 5;
 }
 .debugging {
   position: absolute;
@@ -378,6 +302,8 @@ if (isPlatform('desktop')) {
 
 beaconStore.scanBt();
 
+const lupeImVordergrund = ref(false);
+
 // const emit = defineEmits(['zeige_lupe']);
 
 // const lupeClicked = (lupe : number) => { 
@@ -396,7 +322,7 @@ beaconStore.scanBt();
 
 const scrollSeite = shallowRef(Scroll_0_6_Tutorial);
 
-const { flow, ort, spieler, btTrigger, kameraTrigger } = storeToRefs(spielStore);
+const { flow, ort, spieler, btTrigger, kameraTrigger, slideNr } = storeToRefs(spielStore);
 spielStore.flow = 0.6;
 
 const entfernung = ref(-1);
@@ -423,6 +349,9 @@ watch(flow, () => {
     console.log('clear leiner_timer');
     clearInterval(leiner_timer);
   }
+  if (flow.value==1.3) {
+    lupeImVordergrund.value=false;
+  }
   // if (flow.value >= 1.0)
   // if (flow.value == 0.8) {
   //   entfernung.value = 70;
@@ -443,17 +372,32 @@ const empfang = ref('nichts');
 
 watch(rangeTicks, () => {
   if (spielStore.btTrigger) {
-    if (flow.value >= 0.71 && flow.value < 0.8 ) {
-      if (beaconStore.getBeaconVonOrt('EG Leiner-Statue').rssi < -80) {
+    if (flow.value>=0.71 && flow.value<0.8 && ort.value =='eg' ) {
+      if (beaconStore.getBeaconVonOrt('EG Leiner-Statue').rssi > -95 
+          || beaconStore.getBeaconVonOrt('EG Leiner-Saal').rssi > -90) {
         flow.value = 0.8;
-      } else if (beaconStore.getBeaconVonOrt('EG Kasse').rssi < -80) {
-        flow.value = 0.73;
-      } else if (beaconStore.getBeaconVonOrt('EG Treppe').rssi < -80) {
-        flow.value = 0.72;
       }
     }
-    if (flow.value == 0.8) {
+    if (flow.value>=0.71 && flow.value<0.8 && ort.value =='og1' ) {
+      if (beaconStore.getBeaconVonOrt('OG Schreibtisch').rssi > -95 ) {
+        flow.value = 0.8;
+      }
+    }
+    if (flow.value == 0.8 && ort.value == 'eg') {
       empfang.value = beaconStore.getEmpfangVonOrt('EG Leiner-Statue');
+    }
+    if (flow.value == 0.8 && ort.value == 'og1') {
+      empfang.value = beaconStore.getEmpfangVonOrt('OG Schreibtisch');
+    }
+    if (flow.value == 0.9 && ort.value =='eg') {
+      if (beaconStore.getBeaconVonOrt('EG Detektivbüro').rssi > -95) {
+        flow.value = 0.95;
+      }
+    }
+    if (flow.value == 0.88 && ort.value =='og1') {
+      if (beaconStore.getBeaconVonOrt('OG Zunftsaal').rssi > -95) {
+        flow.value = 0.9;
+      }
     }
   }
 });
@@ -512,11 +456,13 @@ const openKarteModal = async () => {
 };
 const openKameraModal = async () => {
   console.log("openKameraModal clicked");
+  // await beaconStore.stopBt();
   const kamera_modal = await modalController.create({
     component: KameraModal,
     cssClass: 'kamera-modal'
   });
   kamera_modal.present();
+  // await beaconStore.scanBt();
 };
 
 const skipTutorialHinweisOffen = ref(false);
@@ -526,7 +472,7 @@ const skipTutorialHinweis = (offen : boolean) => {
 const skipTutorial = () => {
   console.log("skip clicked");
   // spielStore.$reset();
-  router.push("spiel");
+  // router.push("spiel");
   spielStore.flow = 1.0;
 };
 

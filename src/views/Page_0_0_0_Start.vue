@@ -8,7 +8,7 @@
       <img class="logo_uni" src="assets/logo_uni.jpg" width="340">
       <img class="logo_rosgarten" src="assets/logo_rosgarten.png" width="350">
 
-      <button-einstellungen-component class="button_einstellungen"/>
+      <button-einstellungen-component @click="openEinstellungsModal()" class="button_einstellungen"/>
       <button-weiter-component class="button_weiter" @click="weiterButtonClicked" :disabled="!modelGeladenRef" :pulsiert="modelGeladenRef" router-link="/intro" />
 
     </div>
@@ -78,9 +78,10 @@
   import ButtonWeiterComponent from '@/components/ButtonWeiterComponent.vue';
   import ButtonEinstellungenComponent from '@/components/ButtonEinstellungenComponent.vue';
   import { ref, watch } from 'vue';
-
+  import { modalController } from '@ionic/vue';
   import { useSpielStore } from '@/stores/SpielStore'
-import { storeToRefs } from 'pinia';
+  import { storeToRefs } from 'pinia';
+  import EinstellungsModal from '@/components/modals/EinstellungsModal.vue';
 
   const spielStore = useSpielStore();
   const { flow } = storeToRefs(spielStore);
@@ -91,5 +92,14 @@ import { storeToRefs } from 'pinia';
   }
 
   const modelGeladenRef = ref(true);
+
+  const openEinstellungsModal = async () => {
+    const einstellungs_modal = await modalController.create({
+      component: EinstellungsModal,
+      cssClass: 'einstellungs-modal',
+      backdropDismiss: true
+    });
+    einstellungs_modal.present();
+  };
 
 </script>

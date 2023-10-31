@@ -10,11 +10,11 @@ const props = defineProps( {
       type: String,
       default: ''
     },
-    gross: {
+    buch: {
       type: Boolean,
       default: false
     },
-    buch: {
+    gross: {
       type: Boolean,
       default: false
     },
@@ -25,6 +25,10 @@ const props = defineProps( {
     auswahl: {
       type: Boolean,
       default: false
+    },
+    vordergrund: {
+      type: Boolean,
+      default: true
     },
     bild: {
       type: String,
@@ -55,34 +59,36 @@ const props = defineProps( {
 <template>
   <div class="hinweis_box" 
     :class="{
-      'gross':gross==true, 
-      'klein':gross==false,
-      'auswahl':auswahl==true}">
+      'gross':gross, 
+      'klein':!gross,
+      'auswahl':auswahl,
+      'inaktiv':inaktiv,
+      'vordergrund':vordergrund || !gross,
+      'hintergrund':!(vordergrund || !gross)
+      }">
   
-    <buch-button-component v-if="buch" 
+    <buch-button-component v-if="buch || gross" 
         class="buch" 
         :zahl="zahl" 
-        :class="{'inaktiv':inaktiv==true}" 
+        :class="{'inaktiv':inaktiv}" 
         :lesezeichen1="props.hashtag1!=''"
         :lesezeichen2="props.hashtag2!=''"
     />
-    <lupe-component v-else 
-         class="lupe" 
-        :zahl="zahl" 
-        :class="{'inaktiv'
-        :inaktiv==true,'pulsieren':pulsieren==true}" 
+    <div class="hashtags" v-if="gross">
+      <p>{{ props.hashtag1 }}&nbsp;</p>
+      <p>{{ props.hashtag2 }}&nbsp;</p>
+    </div>
+    <lupe-component v-if="!buch"
+        class="lupe" 
+        :zahl="buch?'':zahl" 
+        :class="{'inaktiv':inaktiv,'pulsieren':pulsieren}" 
         :bild="bild" 
         @click="$emit('kleine-lupe-clicked')"
     />
-    <div class="hashtags" :class="{'ausgeblendet':gross==false}">
-      <p :class="{'auswahl':auswahl}">{{ props.hashtag1 }}&nbsp;</p>
-      <p :class="{'auswahl':auswahl}">{{ props.hashtag2 }}&nbsp;</p>
-    </div>
-    <div v-if="props.gross">
-      <lupe-component
-        :bild="bild"
-      ></lupe-component>
-    </div>
+<!-- 
+    <lupe-component v-if="props.gross"
+      :bild="bild"
+    /> -->
   </div>
 </template>
 
@@ -91,6 +97,12 @@ const props = defineProps( {
 .hashtags {
   /* background-color: blue; */
   text-align: left;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 10px;
+  /* justify-content: space-around; */
 }
 .hinweis_box {
   height: 170px;
@@ -110,39 +122,58 @@ const props = defineProps( {
   padding-left: 8px;
   padding-right: 12px;
   transform: translateX(0px);
+  opacity: 50%;
+  z-index: 0;
 }
 .auswahl {
   /* background-color: #FFF4B6; */
   background-color: #d59a46;
   /* color: rgb(132, 255, 113); */
+  opacity: 100%;
+}
+.auswahl p {
   color: rgb(251, 237, 80);
 }
 .gross {
-  width: 95%;
+  /* width: 95%; */
+  width: 70%;
 }
 .klein {
   width: 180px;
+}
+.vordergrund {
+  opacity: 90%;
+  z-index: 10;
+}
+.hintergrund {
+  opacity: 70%;
+  z-index: 0;
 }
 .ausgeblendet {
   display: none;
 }
 .buch {
   margin-left: 15px;
+  flex-grow: 0;
 }
 .lupe {
   margin-left: 0px;
+  flex-grow: 0;
 }
 p {
-  font-size: 28px;
+  font-size: 26px;
   /* margin-left: 10px; */
   color: rgb(48, 184, 48);
   /* color: rgb(34, 165, 34); */
   font-weight: 700;
   /* margin-top: 10px;
   margin-bottom: 10px; */
+  margin: 0px;
 }
 .inaktiv {
   opacity: 30%;
+  z-index: 0;
+  background-color: #e9e9e9;
 }
 .pulsieren {
   animation: pulsieren-animation 0.5s ease-in-out infinite alternate;

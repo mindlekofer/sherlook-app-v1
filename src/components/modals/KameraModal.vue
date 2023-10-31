@@ -6,7 +6,7 @@
           <rect id="bbox-rect" :x="bbox_x" :y="bbox_y" :width="bbox_width" :height="bbox_height"></rect>
           <text id="bbox-text" :x="bbox_x" :y="bbox_y-10">{{ bbox_class }} {{ bbox_score }}</text>
         </svg>
-        <div id="erkannte-kategorie">{{ kategorie }}<br>{{ wahrscheinlichkeit }}</div>
+        <div id="erkannte-kategorie">{{ kategorie }}<br>{{ wahrscheinlichkeit.toFixed(2) }}</div>
         <video ref="videoRef" autoplay muted poster="assets/img/detektive/watson_neutral.png"></video>            
       </div>
     </div>
@@ -138,9 +138,34 @@ const showBbox = ref(false);
 // });
 
 const kategorie = ref(0);
-const wahrscheinlichkeit = ref('0');
+const wahrscheinlichkeit = ref(0.0);
 
-async function kameraStarten() {
+let cam : any;
+let img;
+let prediction;
+let v;
+
+// Versuch mit Tensorflow Webcam Funktion //
+async function tfWebcam() {
+  cam = await tf.data.webcam(videoRef.value, { 
+      facingMode: 'environment',
+      resizeWidth: 224,
+      resizeHeight: 224
+     });
+     tfCapturePredict();
+}
+
+async function tfCapturePredict() {
+  img = (await cam.capture()).expandDims(0).asType('float32');
+  // (await img).print();
+  prediction = model.predict(img)  as tf.Tensor;
+  v = prediction.argMax().dataSync()[0];
+  console.log(v);
+  setTimeout(tfCapturePredict, 1000);
+}
+
+// Versuch mit Videoelement //
+async function videoElementInit() {
   if (!model) {
     console.log('error: no model loaded')
     return;
@@ -162,8 +187,9 @@ async function kameraStarten() {
           videoRef.value.srcObject = stream;
           videoAktiv.value = true;
           console.log('srcObject', videoRef.value.srcObject);
-          // videoRef.value.addEventListener('loadeddata', predictBild);     // CocoSsd
-          videoRef.value.addEventListener('loadeddata', getTensor);    // SherLOOK Model
+          // videoRef.value.addEventListener('loadeddata', cocoPredict);
+          // videoRef.value.addEventListener('loadeddata', getTensor);    // SherLOOK Model
+          videoRef.value.addEventListener('loadeddata', onLoadedData);    
         }
       } catch (error) {
         console.log('catch', error);
@@ -171,7 +197,13 @@ async function kameraStarten() {
   });
 }
 
+// wird geladen wenn erster Frame verfügbar
+function onLoadedData() {
+  console.log('loadeddata event');
+  setTimeout(predictModel, 2000);     // SherLOOK Model
+}
 
+// Versuche mit Tensorflow Webcam Funktionen //
 async function getTensor() {
   // tfCamera = await tf.data.webcam(videoRef.value, {resizeHeight: 224, resizeWidth: 224});
   // tfCamera = await tf.data.webcam(videoRef.value);
@@ -181,66 +213,81 @@ async function getTensor() {
   // console.log('predict: ', model.predict(tfCapture));
   // predictBild();
   // videoRef.value.addEventListener('loadeddata', predictBild);
-
-  console.log('loadeddata');
+  
+  // console.log('loadeddata');
   // if (videoRef.value) {
   //     tfCamera = await tf.data.webcam(videoRef.value);
   // }
-  window.requestAnimationFrame(onAnimationFrame);
+  // window.requestAnimationFrame(onAnimationFrame);
 }
 
-function onAnimationFrame() {
-  console.log('onAnimationFrame');
-  if (videoRef.value) {
+async function predictModel()  {
+  console.log('predictModel');
+  if (videoRef.value && videoAktiv.value) {
     try {
       // const tensor = tf.browser.fromPixels(videoRef.value).cast('float32');
-      const tensor = tf.browser.fromPixels(videoRef.value);
+      // const tensor = tf.browser.fromPixels(videoRef.value);
+      const tensor = await tf.browser.fromPixelsAsync(videoRef.value);
+      console.log('nach tf.browser.fromPixelsAsync(videoRef.value)');
       // const etensor = tensor.expandDims(0).asType('float32').div(256.0);
       const etensor = tensor.expandDims(0).asType('float32');
-      console.log(etensor);
+      console.log('nach tensor.expandDims(0).asType(float32)');
+      // console.log(etensor);
       // const input = tensor.expandDims(0);
       // console.log('predict: ', model.predict(tensor.expandDims(0).toFloat()).argMax(1).dataSync()[0]);
       const prediction = model.predict(etensor) as tf.Tensor;
-      const data = prediction.dataSync();
-      console.log('data: ', data);
-      const argmax = tf.argMax(data, 0).dataSync()[0];
-      kategorie.value = argmax;
-      wahrscheinlichkeit.value = tf.softmax(data).dataSync()[argmax].toFixed(2);
+      console.log('nach model.predict(etensor)');
+      // const data = prediction.dataSync();
+      const data = await prediction.data();
+      console.log('nach prediction.data()');
+      // console.log('data: ', data);
+      // const argmax = tf.argMax(data, 0).dataSync()[0];
+      const argmax = await tf.argMax(data, 0).data();
+      console.log('nach tf.argMax(data, 0).data()');
+      kategorie.value = argmax[0];
+      const softmax =  await tf.softmax(data).data();
+      console.log('nach tf.softmax(data).data()');
+      wahrscheinlichkeit.value = softmax[argmax[0]];
+      erkennungAktiv.value = true; 
       // argmax.print();
       console.log('argmax: ', argmax)
       console.log('wahrsch.: ', wahrscheinlichkeit.value);
+
+      console.log(tf.memory());
+
+      tensor.dispose();
+      etensor.dispose();
+      prediction.dispose();
+
+      console.log(tf.memory());
+
       // console.log('softmax: ', tf.softmax(data));
       // const max = tf.argMax(predictBild, 1);
       // const index = max.get([0]);
       // console.log(predict);
       // console.log('predict: ', model.predict(tensor.expandDims(0)).argMax(1).dataSync()[0]);
-      window.requestAnimationFrame(onAnimationFrame);
+
+      // if (spielStore.flow == 0.8 && kategorie.value == 79 && wahrscheinlichkeit.value >= 0.9) {
+      if (spielStore.flow == 0.8 && wahrscheinlichkeit.value >= 0.9 
+          && ( kategorie.value == 6 && spielStore.ort == 'eg' 
+            || kategorie.value == 7 && spielStore.ort == 'og1') ) {
+        objektGefunden();
+      } else {
+        // window.requestAnimationFrame(onAnimationFrame);
+        // setTimeout(predictModel, 1000);
+        window.requestAnimationFrame(predictModel);
+      }
+
     } catch (error) {
       console.log(error);
     }
+  } else {
+    setTimeout(predictModel, 1000);
   }
 }
 
-async function kameraSchliessen() {
-  console.log('disableCam pressed');
-  videoAktiv.value = false;
-  erkennungAktiv.value = false;
-  showBbox.value = false;
-  // tfCamera.stop();
-  if (videoRef.value) {
-    videoRef.value.removeEventListener('loadeddata', predictBild);
-    erkennungAktiv.value = false;
-    if (videoRef.value.srcObject) {
-      const tracks = videoRef.value.srcObject.getTracks();
-      console.log('tracks: ', tracks);
-      tracks.forEach((track : any) => {
-        track.stop();
-      });
-    }
-  }
-}
-
-async function predictBild() {
+// Versuche mit CocoSSD Modell //
+async function cocoPredict() {
   videoStartet.value = false;
   if (videoAktiv.value) {
     try {
@@ -264,7 +311,7 @@ async function predictBild() {
           showBbox.value = false;
         }
         // setTimeout(predictWebcam, 100);
-        window.requestAnimationFrame(predictBild);
+        window.requestAnimationFrame(cocoPredict);
       });
       erkennungAktiv.value = true;
     } catch (error) {
@@ -273,17 +320,12 @@ async function predictBild() {
   }
 }
 
- async function modalSchliessen() {
-  console.log('modal schliessen');
-  await kameraSchliessen();
-  // beaconStore.scanBt();
-  modalController.dismiss()
-}
-
 async function objektGefunden() {
   console.log('Objekt gefunden');
-  if (spielStore.flow < 1.0)
-    spielStore.flow = 0.87;
+  if (spielStore.flow < 1.0 && spielStore.ort == 'eg')
+    spielStore.flow = 0.9;
+  else if (spielStore.flow < 1.0 && spielStore.ort == 'og1')
+    spielStore.flow = 0.88;
   else
     spielStore.flow = 1.6;
 
@@ -292,6 +334,35 @@ async function objektGefunden() {
   modalSchliessen();
 }
 
-kameraStarten();
+async function modalSchliessen() {
+  console.log('modal schliessen');
+  await kameraSchliessen();
+  // beaconStore.scanBt();
+  modalController.dismiss()
+}
+
+async function kameraSchliessen() {
+  console.log('disableCam pressed');
+  videoAktiv.value = false;
+  erkennungAktiv.value = false;
+  showBbox.value = false;
+  // tfCamera.stop();
+  if (videoRef.value) {
+    // videoRef.value.removeEventListener('loadeddata', predictBild);
+    // videoRef.value.removeEventListener('loadeddata', predictModel);    
+    videoRef.value.removeEventListener('loadeddata', onLoadedData);    
+    erkennungAktiv.value = false;
+    if (videoRef.value.srcObject) {
+      const tracks = videoRef.value.srcObject.getTracks();
+      console.log('tracks: ', tracks);
+      tracks.forEach((track : any) => {
+        track.stop();
+      });
+    }
+  }
+}
+
+videoElementInit();
+// tfWebcam();
 
 </script>

@@ -1,7 +1,7 @@
 <template>
 <div ref="scrollContentA" id="content-scroll">
 
-    <swiper @swiper="onSwiper" @reachEnd="onSliderEndReached" id="swiper-haupt" :slidesPerView="1" :spaceBetween="50" :freeMode="false" :scrollbar="false" :navigation="false" :pagination="true" :modules="modules">
+    <swiper @swiper="onSwiper" @reachEnd="onSliderEndReached" id="swiper-haupt" @activeIndexChange="onSlideChanged" :slidesPerView="1" :spaceBetween="50" :freeMode="false" :scrollbar="false" :navigation="false" :pagination="true" :modules="modules">
         
         <swiper-slide v-if="spielStore.flow >=0.6">
           <span v-if="spielStore.spieler=='Watson'">
@@ -90,19 +90,19 @@
             </span>
           </span>
           <div class="antwort-buttons" v-if="spielStore.spieler=='Watson'">
-              <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Ludwig Leiner</ion-button>
-              <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Sherlock Holmes</ion-button>
-              <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Ludwig van Beethoven</ion-button>
+            <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Ludwig Leiner</ion-button>
+            <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Sherlock Holmes</ion-button>
+            <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Ludwig van Beethoven</ion-button>
           </div>
           <div class="antwort-buttons" v-else-if="spielStore.spieler=='Sherlock'">
-            <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Ludwig Leiner</ion-button>
             <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Ludwig van Beethoven</ion-button>
+            <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Ludwig Leiner</ion-button>
             <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Ludwig Wittgenstein</ion-button>
           </div>
           <div class="antwort-buttons" v-else>
-            <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Ludwig Leiner</ion-button>
             <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Tobias Engelsing</ion-button>
             <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Ignaz Heinrich von Wessenberg</ion-button>
+            <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Ludwig Leiner</ion-button>
           </div>
           <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.71 && antwortRichtig" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.71" @click="swiperInstance.slideNext();"/>
@@ -138,9 +138,10 @@
           </p>
           <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_2.jpg" style="height: 70%;" v-if="spielStore.ort=='eg'"/>
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_2.jpg" style="height: 70%;" v-else-if="spielStore.ort=='og1'"/>
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.72" @click="if(!btTrigger)spielStore.flow=0.73;" :disabled="btTrigger"/>
-          <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.73" @click="swiperInstance.slideNext();" pulsiert/>
-          <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.73" @click="swiperInstance.slideNext();"/>
+          <!-- <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.72" @click="if(!btTrigger)spielStore.flow=0.73;" :disabled="btTrigger"/> -->
+          <!-- <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.72" @click="spielStore.flow=0.73;" :disabled="btTrigger"/> -->
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.72" @click="swiperInstance.slideNext();"/>
+          <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.72" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
         </swiper-slide>
 
@@ -155,7 +156,7 @@
           <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_3.jpg" style="height: 90%;" v-if="spielStore.ort=='eg'"/>
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_3.jpg" style="height: 90%;" v-else-if="spielStore.ort=='og1'"/>
           <span v-if="spielStore.ort=='eg'">
-            <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.73" @click="if(!btTrigger)spielStore.flow=0.8;" :disabled="btTrigger"/>
+            <button-weiter-component class="button-weiter" v-if="spielStore.flow<0.8" @click="if(!btTrigger)spielStore.flow=0.8;" :disabled="btTrigger"/>
             <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.8" @click="swiperInstance.slideNext();" pulsiert/>
             <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.8" @click="swiperInstance.slideNext();"/>
             <button-weiter-component class="button-weiter" v-else disabled />
@@ -188,12 +189,11 @@
           <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
 
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_5.jpg" style="height: 90%;" />
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.75" @click="if(!btTrigger)spielStore.flow=0.8;" :disabled="btTrigger"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow<0.8" @click="if(!btTrigger)spielStore.flow=0.8;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.8" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.8" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
         </swiper-slide>
-
 
         <swiper-slide v-if="spielStore.flow>=0.8">
           <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="200" v-if="spielStore.spieler=='Watson'"/>
@@ -279,7 +279,7 @@
           <span v-if="spielStore.ort=='eg'">
             <p> Geht in den Raum mit den roten Vitrinen. </p>
           </span>
-          <span v-else-if="spielStore.ort=='og1'" >
+          <span v-else-if="spielStore.ort=='og1'" style="font-size: 28px;">
             <p> Im Raum des 18. und 19. Jahrhunderts hängen viele meiner Lieblingsgemälde! </p>
           </span>
           <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_4.jpg" style="height: 70%;" v-if="spielStore.ort=='eg'"/>
@@ -301,8 +301,8 @@
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_7.jpg" style="height: 90%;" v-else-if="spielStore.ort=='og1'"/>
           <span v-if="spielStore.ort=='eg'">
             <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.84" @click="if(!btTrigger)spielStore.flow=0.9;" :disabled="btTrigger"/>
-            <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.9" @click="swiperInstance.slideNext();" pulsiert/>
-            <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.9" @click="swiperInstance.slideNext();"/>
+            <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.85" @click="swiperInstance.slideNext();" pulsiert/>
+            <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.85" @click="swiperInstance.slideNext();"/>
             <button-weiter-component class="button-weiter" v-else disabled />
           </span>
           <span v-else-if="spielStore.ort=='og1'">
@@ -344,7 +344,7 @@
           <img class="spieler" src="assets/img/leiner.png" width="180"/>
           <p style="font-size: 26px;">Das ist einer meiner Lieblingsräume mit Kunst aus den alten Kirchen von Konstanz. Folgt dem Pfeil in den Zunftsaal.</p>
           <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_11.jpg" style="height: 65%;"/>
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.88" @click="if(!btTrigger)spielStore.flow=0.9;" :disabled="btTrigger"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow<0.9" @click="if(!btTrigger)spielStore.flow=0.9;" :disabled="btTrigger"/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==0.9" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>0.9" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
@@ -362,9 +362,8 @@
             <p> Geht schnell in die Ecke mit dem Detektivlogo. </p>
             <p> Ich verlasse mich auf Euch! Bewahrt mein Erbe! </p>
           </span>
-          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.9" @click="if(!btTrigger)spielStore.flow=1.0;" :disabled="btTrigger"/>
-          <button-weiter-component class="button-weiter" v-else-if="spielStore.flow==1.0" @click="swiperInstance.slideNext();" pulsiert/>
-          <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>1.0" @click="swiperInstance.slideNext();"/>
+          <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.9" @click="if(!btTrigger)spielStore.flow=0.95;" :disabled="btTrigger"/>
+          <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>=0.95" @click="spielStore.flow=1.0" pulsiert/>
           <button-weiter-component class="button-weiter" v-else disabled />
         </swiper-slide>
 
@@ -459,7 +458,7 @@ const props = defineProps( {
 
 // Store //
 const spielStore = useSpielStore();
-const { flow, ort, spieler, btTrigger, kameraTrigger } = storeToRefs(spielStore);
+const { flow, ort, spieler, btTrigger, kameraTrigger, slideNr} = storeToRefs(spielStore);
 console.log(`spielStore.flow: ${spielStore.flow}`);
 
 // Swiper //
@@ -475,10 +474,16 @@ function onSliderEndReached() {
   {
     flow.value = 0.7;
   }
+  console.log("aktiver Slide: ", slideNr);
 }
 function onVerticalSliderEndReached() {
   console.log('onVerticalSliderEndReached');
   displayScrollRunterPfeil.value = false;
+}
+
+function onSlideChanged() {
+  spielStore.slideNr = swiperInstance.value.activeIndex;
+  console.log("Slide changed: ", spielStore.slideNr);
 }
 
 // Quiz //
@@ -541,7 +546,8 @@ function antwortAusgewaehlt(nr : number, richtig : boolean) {
     buttonFarbe3.value  = "primary";
   }
   if (richtig && spielStore.flow < 0.71) {
-    spielStore.flow = 0.71;
+    // spielStore.flow = 0.71;
+    spielStore.flow = 0.79;
   }
 }
 

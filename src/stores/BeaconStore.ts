@@ -11,17 +11,18 @@ export const useBeaconStore = defineStore('beaconStore', {
     lastBeacon: null as Beacon | null,
     beaconsFound: null as Beacon | null,
     sortedBeaconList: [] as Beacon[] | null,
+    btScanTimer: 0,
     beaconList: [
       { 
         id: 1,
-        ort: "EG Kasse",
+        ort: "EG Detektivbüro",
         rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 2,
-        ort: "Detektivbüro",
+        ort: "EG Gang",
         rssi: -100,
         time: 0,
         counter: 0
@@ -35,21 +36,21 @@ export const useBeaconStore = defineStore('beaconStore', {
       },
       {
         id: 4,
-        ort: "OG Leiner-Schreibtisch",
+        ort: "EG Leiner-Saal",
         rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 5,
-        ort: "EG Treppe",
+        ort: "EG Waffenraum",
         rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 6,
-        ort: "EG Fischerin",
+        ort: "OG Gang",
         rssi: -100,
         time: 0,
         inRange: false,
@@ -57,21 +58,21 @@ export const useBeaconStore = defineStore('beaconStore', {
       },
       {
         id: 7,
-        ort: "OG Zunftsaal",
+        ort: "OG Schreibtisch",
         rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 8,
-        ort: "OG Bilderraum",
+        ort: "OG Zunftsaal",
         rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 9,
-        ort: "OG Brücke",
+        ort: "OG Aufsteller",
         rssi: -100,
         time: 0,
         counter: 0
@@ -100,6 +101,7 @@ export const useBeaconStore = defineStore('beaconStore', {
           allowDuplicates: true, 
           namePrefix: "SherLOOK",
           scanMode: ScanMode.SCAN_MODE_LOW_LATENCY
+          // scanMode: ScanMode.SCAN_MODE_BALANCED
         }, 
         (result) => {
           // console.log(result);
@@ -132,7 +134,7 @@ export const useBeaconStore = defineStore('beaconStore', {
             }
           }
         });
-        setInterval(this.updateRange, 1000);
+        this.btScanTimer = setInterval(this.updateRange, 1000);
       } catch {
         // console.log("scanBLE() error");
         this.status = "Fehler";
@@ -141,6 +143,7 @@ export const useBeaconStore = defineStore('beaconStore', {
     },
     async stopBt(): Promise<void> {
       await BleClient.stopLEScan();
+      clearInterval(this.btScanTimer);
     },
     inRange(nr:number) : boolean {
       if (Date.now() > this.beaconList[nr].time + 10000)

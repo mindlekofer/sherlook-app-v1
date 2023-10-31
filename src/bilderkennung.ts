@@ -16,6 +16,7 @@ export async function ladeModell() {
     // model = await loadLayersModel('assets/tensorflow/model_subset/model.json');
     // model = await loadLayersModel('assets/tensorflow/rosgarten_transfer_subset_js/model.json');
     model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_subset_js_graph/model.json');
+    // model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_v1_js_graph/model.json');
     console.log('model loaded');
     modelGeladen = true;
   } else {

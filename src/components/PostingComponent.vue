@@ -19,7 +19,7 @@
           <ion-icon :icon="chatbubbleOutline"></ion-icon>
           <ion-icon :icon="paperPlaneOutline"></ion-icon>
          </div>
-        <div class="post-likes">42138 likes</div>
+        <div class="post-likes">{{ likes }} likes</div>
       </div>
       <div class="post-avatar">
         <img :src=avatar />
@@ -155,6 +155,10 @@ const props = defineProps({
   eingetragen: {
     type: Boolean,
     default: false
+  },
+  likes: {
+    type: String,
+    default: "42319"
   }
 })
 
@@ -163,5 +167,6 @@ const spielStore = useSpielStore();
 const emit = defineEmits<{
     (e: 'hashtag-clicked') : void
   }>();
+
 
 </script>

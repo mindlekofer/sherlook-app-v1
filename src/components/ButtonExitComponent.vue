@@ -24,8 +24,8 @@
 
 <style scoped>
 ion-fab-button {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   margin-top: 0px;
   margin-left: 35px;
 }
