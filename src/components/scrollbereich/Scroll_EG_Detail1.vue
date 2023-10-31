@@ -5,22 +5,25 @@
       
     <swiper-slide v-if="flow >=1.0 && flow<2.0">
       <span v-if="spieler=='Watson'">
-        <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
-        <p style="margin-top: 120px;"> Liebe Spürnasen, es wird ernst! </p>
+        <img src="assets/img/detektive/watson_gluecklich.png" width="250" style="margin-left: auto; margin-right: auto; display: block;"/>
+        <!-- <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/> -->
+        <p style="margin-top: 20px;"> Liebe Spürnasen, es wird ernst! </p>
         <p> Da haben wir das erste Objekt, 
           das heute früh noch da war und nun durch eine
           Kopie ersetzt wurde… </p>
         <p> Klickt auf die Lupe... </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
-        <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-        <p style="margin-top: 120px;"> Liebe Detektive. Da ist unser erster Auftrag: </p>
+        <img src="assets/img/detektive/sherlock_gluecklich.png" width="260" style="margin-left: auto; margin-right: auto; display: block;"/>
+        <!-- <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="300"/> -->
+        <p style="margin-top: 20px;"> Liebe Detektive. Da ist unser erster Auftrag: </p>
         <p> Diese Detail wurde beim Diebstahl heute früh durch eine Kopie ersetzt... </p>
         <p> Klicken wir auf die Lupe... </p>
       </span>
       <span v-else>
-        <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-        <p style="margin-top: 120px;"> Interessant, interessant... </p>
+        <img src="assets/img/detektive/enola_gluecklich.png" width="250" style="margin-left: auto; margin-right: auto; display: block;"/>
+        <!-- <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="300"/> -->
+        <p style="margin-top: 20px;"> Interessant, interessant... </p>
         <p> Hier ist unser Fall Nr. 1. </p>
         <!-- <p> Klickt bitte auf die Lupe! </p> -->
         <p> Klickt bitte auf die erste Lupe auf der linken Seite!</p>
@@ -98,28 +101,28 @@
         </span>
       </span>
       <div class="antwort-buttons" v-if="spieler=='Watson' && ort=='eg'">
-          <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">zum Fossil eines Dinosauriers</ion-button>
-          <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">zu einer alten italienischen Handtasche</ion-button>
-          <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Verzierung eines mittelalterl. Kachelofens</ion-button>
+        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">zum Fossil eines Dinosauriers</ion-button>
+        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">zu einer alten italienischen Handtasche</ion-button>
+        <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Verzierung eines mittelalterl. Kachelofens</ion-button>
       </div>
       <div class="antwort-buttons" v-else-if="spieler=='Sherlock' && ort=='eg'">
-        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Flosse eines Fischsauriers</ion-button>
         <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Schnabel eines Flugsauriers</ion-button>
+        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Flosse eines Fischsauriers</ion-button>
         <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Gebiss eines Tyrannosaurus rex</ion-button>
       </div>
       <div class="antwort-buttons" v-else-if="spieler=='Enola' && ort=='eg'">
-        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Flosse eines Ichtyosauriers</ion-button>
         <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Flügel eines Flugsauriers</ion-button>
+        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Flosse eines Ichtyosauriers</ion-button>
         <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Wirbelsäule eines Dinosauriers</ion-button>
       </div>
       <div class="antwort-buttons" v-else-if="spieler=='Watson' && ort=='og1'">
-          <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Eine Brosche mit Haarlocke</ion-button>
-          <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Das Nest einer diebischen Elster</ion-button>
-          <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Das Rohr eines luxuriösen Staubsaugers</ion-button>
+        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Das Nest einer diebischen Elster</ion-button>
+        <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Das Rohr eines luxuriösen Staubsaugers</ion-button>
+        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Eine Brosche mit Haarlocke</ion-button>
       </div>
       <div class="antwort-buttons" v-else-if="spieler=='Sherlock' && ort=='og1'">
-        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Brosche mit Menschenhaar</ion-button>
         <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Etui mit Pferdehaar</ion-button>
+        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Brosche mit Menschenhaar</ion-button>
         <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Präpariertes Vogelnest</ion-button>
       </div>
       <div class="antwort-buttons" v-else-if="spieler=='Enola' && ort=='og1'">

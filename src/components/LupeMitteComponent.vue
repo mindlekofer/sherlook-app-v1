@@ -99,6 +99,7 @@ watch(props, () => {
 }
 #container{
   position: relative;
+  transition: all 500ms linear;
 }
 svg {
   position: absolute;
@@ -132,7 +133,7 @@ img {
     }
     100% {
       /* fill: rgb(0, 64, 214); */
-      fill: rgb(0, 64, 214);
+      fill: rgb(24, 98, 44);
     }
 }
 @keyframes pulsieren-animation-mittel {
