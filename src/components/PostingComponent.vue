@@ -1,5 +1,3 @@
-
-
 <template>
   <div class="post-content">
     <div class="post-titel">

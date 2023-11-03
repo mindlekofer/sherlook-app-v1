@@ -35,7 +35,8 @@ const props = defineProps( {
 
 <template>
   <div class="personen-box" :class="{'auswahl' : auswahl}">
-    <img class="person" :src="'assets/personen/'+props.code+'/'+props.code+'_kopf.png'"/>
+    <img v-if="code==''" class="person" src="assets/kopf_mit_hals.svg"/>
+    <img v-else class="person" :src="'assets/personen/'+props.code+'/'+props.code+'_kopf.png'"/>
   </div>
 </template>
 

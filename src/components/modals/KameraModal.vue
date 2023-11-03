@@ -15,7 +15,7 @@
       <!-- <ion-button @click="kameraStarten()" :disabled="!modelGeladen">Kamera an</ion-button> -->
       <!-- <ion-button @click="kameraStarten()">Kamera an</ion-button> -->
       <!-- <ion-button @click="kameraSchliessen()">Kamera aus</ion-button> -->
-      <ion-button @click="objektGefunden()">Objekt gefunden</ion-button>
+      <ion-button size="large" color="warning" @click="objektIdentifiziert(0, false)">Objekt gefunden</ion-button>
       <ion-button size="large" @click="modalSchliessen">zurück zum Spiel</ion-button>
     </div>
   </div>
@@ -200,7 +200,7 @@ async function videoElementInit() {
 // wird geladen wenn erster Frame verfügbar
 function onLoadedData() {
   console.log('loadeddata event');
-  setTimeout(predictModel, 2000);     // SherLOOK Model
+  setTimeout(predictModel, 1000);     // SherLOOK Model
 }
 
 // Versuche mit Tensorflow Webcam Funktionen //
@@ -266,17 +266,11 @@ async function predictModel()  {
       // const index = max.get([0]);
       // console.log(predict);
       // console.log('predict: ', model.predict(tensor.expandDims(0)).argMax(1).dataSync()[0]);
-
-      // if (spielStore.flow == 0.8 && kategorie.value == 79 && wahrscheinlichkeit.value >= 0.9) {
-      if (spielStore.flow == 0.8 && wahrscheinlichkeit.value >= 0.9 
-          && ( kategorie.value == 6 && spielStore.ort == 'eg' 
-            || kategorie.value == 7 && spielStore.ort == 'og1') ) {
-        objektGefunden();
-      } else {
-        // window.requestAnimationFrame(onAnimationFrame);
-        // setTimeout(predictModel, 1000);
+      
+      if (wahrscheinlichkeit.value >= 0.8 && objektIdentifiziert(kategorie.value))
+        modalSchliessen();
+      else
         window.requestAnimationFrame(predictModel);
-      }
 
     } catch (error) {
       console.log(error);
@@ -305,7 +299,7 @@ async function cocoPredict() {
           bbox_score.value = (predictions[0].score*100).toFixed(0)+"%";
           showBbox.value = true;
           if (bbox_class.value == 'cup') {
-            objektGefunden();
+            modalSchliessen();
           }
         } else if (predictions.length == 0) {
           showBbox.value = false;
@@ -320,18 +314,27 @@ async function cocoPredict() {
   }
 }
 
-async function objektGefunden() {
-  console.log('Objekt gefunden');
-  if (spielStore.flow < 1.0 && spielStore.ort == 'eg')
+function objektIdentifiziert(kategorie : number, auswerten = true) {
+  let ret = true;
+  if (spielStore.flow==0.8 && spielStore.ort=='eg' && (kategorie==6 || !auswerten) )      // Leiner-Statue
     spielStore.flow = 0.9;
-  else if (spielStore.flow < 1.0 && spielStore.ort == 'og1')
+  else if (spielStore.flow==0.8 && spielStore.ort=='og1' && (kategorie==7 || !auswerten))  // Leiner-Aufsteller
     spielStore.flow = 0.88;
-  else
+  else if (spielStore.flow==1.4 && spielStore.ort=='eg' && (kategorie==5 || !auswerten))   // Ichtyosaurier
     spielStore.flow = 1.6;
-
-  // const camera = await tf.data.webcam(videoRef.value);
-  // const image = await camera.capture();
-  modalSchliessen();
+  else if (spielStore.flow==1.4 && spielStore.ort=='og1' && (kategorie==1 || !auswerten))  // Haarlocke
+    spielStore.flow = 1.6;
+  else if (spielStore.flow==2.4 && spielStore.ort=='eg' && (kategorie==4 || !auswerten))   // Hellebarde
+    spielStore.flow = 2.6;
+  else if (spielStore.flow==2.4 && spielStore.ort=='og1' && (kategorie==0 || !auswerten))  // Vorhängeschloss
+    spielStore.flow = 2.6;
+  else if (spielStore.flow==3.4 && spielStore.ort=='eg' && (kategorie==3 || !auswerten))   // Kristall
+    spielStore.flow = 3.6;
+  else if (spielStore.flow==3.4 && spielStore.ort=='og1' && (kategorie==2 || !auswerten))  // Kelch 
+    spielStore.flow = 3.6;
+  else
+    ret = false;
+  return ret;
 }
 
 async function modalSchliessen() {

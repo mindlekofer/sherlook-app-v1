@@ -1,12 +1,17 @@
 <template>
   <div class="modal-wrapper">
     <div class="modal-content">
+      <span class="festgenommen" v-if="verhaftet[props.nr-1] == true">festgenommen!</span>
 
       <div class="links">
         <!-- <img class="person" :src="'assets/personen/'+code+'/'+code+'_kopf.png'"/> -->
         <img class="person" width="230" :src="'assets/personen/'+props.code+'/'+props.code+'_kopf.png'"/>
         <span>
-        <ButtonHandschellenComponent pulsiert></ButtonHandschellenComponent><br>
+        <ButtonHandschellenComponent 
+          @click="handschellenClicked"
+          pulsiert 
+        />
+        <br>
         <i>Festnehmen?</i></span>
       </div>
       <div class="rechts">
@@ -108,9 +113,6 @@
             Wahrscheinlich hat Schorm Roderick schon in der Schule häufiger von einer besseren Welt geträumt als aufgepasst...
           </p>
         </span>
-
-
-
       </div>
     </div>
       
@@ -170,6 +172,16 @@ img {
   /* justify-content: center; */
   /* background-color: bisque; */
 }
+.festgenommen {
+  position: absolute;
+  top: 200px;
+  right: 200px;
+  font-size: 90px;
+  font-weight: 600;
+  opacity: 0.6;
+  color: rgb(239, 0, 0);
+  transform: rotate(30deg);
+}
 
 </style>
 
@@ -189,14 +201,28 @@ const props = defineProps( {
     code: {
       type: String,
       default: ''
+    },
+    nr: {
+      type: Number,
+      default: 0
     }
   });
 
+const emit = defineEmits<{
+    (e: 'festnehmen', code : string) : void
+}>();
+
 const spielStore = useSpielStore();
-const { flow, ort } = storeToRefs(spielStore);
+const { flow, ort, verhaftet } = storeToRefs(spielStore);
 
 console.log("opening KarteModal");
 
-const beendenHinweisOffen = ref(false);
+function handschellenClicked() {
+  console.log(`Handschellen clicked für Nr: ${props.nr}, Code: ${props.code}`);
+  if (props.nr>0) {
+    spielStore.verhaftet[props.nr-1] = true;
+  }
+}
+
 
 </script>

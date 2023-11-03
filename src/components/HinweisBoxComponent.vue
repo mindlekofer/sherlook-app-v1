@@ -10,6 +10,22 @@ const props = defineProps( {
       type: String,
       default: ''
     },
+    bild: {
+      type: String,
+      default: ''
+    },
+    hashtag1: {
+      type: String,
+      default: ''
+    },
+    hashtag2: {
+      type: String,
+      default: ''
+    },
+    abgeschlossen: {
+      type: Boolean,
+      default: false
+    },
     buch: {
       type: Boolean,
       default: false
@@ -18,7 +34,7 @@ const props = defineProps( {
       type: Boolean,
       default: false
     },
-    inaktiv: {
+    pulsieren: {
       type: Boolean,
       default: false
     },
@@ -30,22 +46,10 @@ const props = defineProps( {
       type: Boolean,
       default: true
     },
-    bild: {
-      type: String,
-      default: ''
-    },
-    pulsieren: {
+    inaktiv: {
       type: Boolean,
       default: false
     },
-    hashtag1: {
-      type: String,
-      default: ''
-    },
-    hashtag2: {
-      type: String,
-      default: ''
-    }
   });
 
   // const emit = defineEmits(['kleine_lupe_clicked']);
@@ -73,6 +77,7 @@ const props = defineProps( {
         :class="{'inaktiv':inaktiv}" 
         :lesezeichen1="props.hashtag1!=''"
         :lesezeichen2="props.hashtag2!=''"
+        :lesezeichen3="props.abgeschlossen"
     />
     <div class="hashtags" v-if="gross">
       <p>{{ props.hashtag1 }}&nbsp;</p>
@@ -161,7 +166,7 @@ const props = defineProps( {
   flex-grow: 0;
 }
 p {
-  font-size: 26px;
+  font-size: 24px;
   /* margin-left: 10px; */
   color: rgb(48, 184, 48);
   /* color: rgb(34, 165, 34); */

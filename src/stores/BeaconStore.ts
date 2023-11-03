@@ -22,7 +22,7 @@ export const useBeaconStore = defineStore('beaconStore', {
       },
       {
         id: 2,
-        ort: "EG Gang",
+        ort: "EG Kristall",
         rssi: -100,
         time: 0,
         counter: 0

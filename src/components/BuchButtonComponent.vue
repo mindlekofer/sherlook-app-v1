@@ -12,13 +12,17 @@ const props = defineProps({
     lesezeichen2: {
       type: Boolean,
       default: false
+    },
+    lesezeichen3: {
+      type: Boolean,
+      default: false
     }
   });
 
 </script>
 
 <template>
-  <div class="container2">
+  <div class="container">
     <svg width="100%" height="100%" viewBox="0 0 116 139" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
       <g id="Buch">
         <g>
@@ -29,7 +33,7 @@ const props = defineProps({
         </g>
         <g id="Lesezeichen-Vertikal" serif:id="Lesezeichen Vertikal">
           <path d="M22.085,113.371l0,23.269l7.531,-8.687l7.53,8.687l0,-23.269l-15.061,-0Z" style="fill:#393939;stroke:#393939;stroke-width:4.17px;"/>
-          <path d="M22.085,113.371l0,23.269l7.531,-8.687l7.53,8.687l0,-23.269l-15.061,-0Z" style="fill:#fff;stroke:#fff;stroke-width:1.04px;"/>
+          <path :class="{'gruen':lesezeichen3, 'weiss':!lesezeichen3}" d="M22.085,113.371l0,23.269l7.531,-8.687l7.53,8.687l0,-23.269l-15.061,-0Z" style="stroke:#fff;stroke-width:1.04px;"/>
         </g>
         <g id="Lesezeichen-Unten" serif:id="Lesezeichen Unten">
           <path d="M89.428,96.969l24.207,-0l-9.036,-8.618l9.036,-8.619l-24.207,0l0,17.237Z" style="fill:#393939;stroke:#393939;stroke-width:4.17px;"/>
@@ -46,7 +50,7 @@ const props = defineProps({
 </template>
 
 <style scoped>
-  .container2 {
+  .container {
     position: relative;
   }
   svg {
