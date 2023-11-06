@@ -16,7 +16,7 @@
                 :zahl="'1'"
                 :gross="(flow>=1.3 && flow<2.0 && slideNr>=2) || (flow==2.0) || (flow>=2.3 && slideNr>=2) || flow>=4.1"
                 :buch="flow>=1.1"
-                :auswahl="flow>=1.0 && flow<2.0"
+                :auswahl="(flow>=1.0 && flow<2.0) || hinweisModalOffenNr==1"
                 :vordergrund="flow>=1.0 && !lupeImVordergrund"
                 :pulsieren="flow==1.0"
                 :bild="ort=='eg'?'assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png':'assets/objekte/og/00x0_og1_ac/00x0_og1_ac_rund.png'"
@@ -25,6 +25,9 @@
                 :hashtag2="flow>=1.7 ? (ort=='eg'?'#alt_und_geheimnsvoll':'#schillernde_lockenpracht') : ''"
                 :abgeschlossen="flow>=2"
                 @click="hinweisClicked(1)"
+                @hinweis-clicked="console.log('Hinweis clickecd')"
+                :hashtag1Rot="hashtagFalsch(1)"
+                :hashtag2Rot="hashtagFalsch(2)"
                 />
                 
             <HinweisBoxComponent class="hinweis-box" v-if="flow<2.0" 
@@ -36,7 +39,7 @@
                 :zahl="'2'"
                 :gross="(flow>=2.3 && flow<3.0 && slideNr>=2) || (flow==3.0) || (flow>=3.3 && slideNr>=2) || flow>=4.1"
                 :buch="flow>=2.1"
-                :auswahl="flow>=2.0 && flow<3.0" 
+                :auswahl="(flow>=2.0 && flow<3.0) || hinweisModalOffenNr==2" 
                 :vordergrund="flow>=2.0 && !lupeImVordergrund"
                 :pulsieren="flow==2.0"
                 :bild="ort=='eg'?'assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_rund.png':'assets/objekte/og/001x_og1_ab/001x_og1_ab_rund.png'"
@@ -45,6 +48,8 @@
                 :hashtag2="flow>=2.7 ? (ort=='eg'?'#prunk_und_paradestück':'#Zunftkasse1454') : ''"
                 :abgeschlossen="flow>=3"
                 @click="hinweisClicked(2)"
+                :hashtag1Rot="hashtagFalsch(3)"
+                :hashtag2Rot="hashtagFalsch(4)"
             />
 
             <HinweisBoxComponent class="hinweis-box" v-if="flow<3.0" 
@@ -56,7 +61,7 @@
                 :zahl="'3'"
                 :gross="(flow>=3.3 && flow<4.0 && slideNr>=2) || flow>=4.1"
                 :buch="flow>=3.1"
-                :auswahl="flow>=3.0 && flow<4.0" 
+                :auswahl="(flow>=3.0 && flow<4.0) || hinweisModalOffenNr==3" 
                 :vordergrund="flow>=3.0 && !lupeImVordergrund"
                 :pulsieren="flow==3.0"
                 :bild="ort=='eg'?'assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_rund.png':'assets/objekte/og/10x0_og1_bc/10x0_og1_bc_rund.png'"
@@ -65,9 +70,13 @@
                 :hashtag2="flow>=3.7 ? (ort=='eg'?'#alte_worte_alte_steine':'#faktisch_immerwoanders') : ''"
                 :abgeschlossen="flow>=4"
                 @click="hinweisClicked(3)"
+                :hashtag1Rot="hashtagFalsch(5)"
+                :hashtag2Rot="hashtagFalsch(6)"
             />
+
             <LupeMitteComponent id="lupe_mitte" v-if="flow==0.6 || flow==1.0 || flow==2.0 || flow==3.0" 
               bild="assets/img/lupe_logo_rund.png"
+              inaktiv
             />
             <LupeMitteComponent id="lupe_mitte" v-if="flow >= 0.7 && flow < 0.81 && ort=='eg'" 
                 bild="assets/objekte/eg/tutorial/tutorial_eg_rund.png" 
@@ -128,19 +137,59 @@
             <ButtonKameraComponent v-else-if="flow<4.0" disabled></ButtonKameraComponent>
 
             <span class="personen-boxen" v-if="flow>=4.1 && spieler=='Watson'">
-              <PersonenBoxComponent name="Katinka Antiqus" code="00x0" @click="personClicked(1, '00x0')" :auswahl="personAktiv==1" />
-              <PersonenBoxComponent name="James Mopsiathy" code="11x1" @click="personClicked(2, '11x1')" :auswahl="personAktiv==2" />
-              <PersonenBoxComponent name="Mia Mirabilis" code="111x" @click="personClicked(3, '111x')" :auswahl="personAktiv==3" />
+              <PersonenBoxComponent name="Katinka Antiqus" code="00x0" 
+                  @click="personClicked(1, '00x0')" 
+                  :inaktiv="false"
+                  :auswahl="personAusgewaehlt==1" 
+                  :verdaechtig="spielStore.verdaechtig[0]" 
+                  :unverdaechtig="spielStore.unverdaechtig[0]" />
+                  <!-- :inaktiv="verhaftet.some((v)=>v==true) && !verhaftet[0]"  -->
+                  <PersonenBoxComponent name="James Mopsiathy" code="11x1" 
+                  @click="personClicked(2, '11x1')" 
+                  :inaktiv="verhaftet[1]" 
+                  :auswahl="personAusgewaehlt==2" 
+                  :verdaechtig="spielStore.verdaechtig[1]" 
+                  :unverdaechtig="spielStore.unverdaechtig[1]" />
+              <PersonenBoxComponent name="Mia Mirabilis" code="111x" 
+                  @click="personClicked(3, '111x')" 
+                  :inaktiv="verhaftet[2]" 
+                  :auswahl="personAusgewaehlt==3" 
+                  :verdaechtig="spielStore.verdaechtig[2]" 
+                  :unverdaechtig="spielStore.unverdaechtig[2]" />
             </span>
             <span class="personen-boxen" v-else-if="flow>=4.1 && spieler=='Sherlock'">
-              <PersonenBoxComponent name="Katinka Antiqus" code="00x0" @click="personClicked(1, '00x0')" :auswahl="personAktiv==1" />
-              <PersonenBoxComponent name="Mia Mirabilis" code="111x" @click="personClicked(2, '111x')" :auswahl="personAktiv==2" />
-              <PersonenBoxComponent name="Wolfram Wolkenwand" code="x111" @click="personClicked(3, 'x111')" />
+              <PersonenBoxComponent name="Katinka Antiqus" code="00x0" 
+                  @click="personClicked(1, '00x0')" 
+                  :auswahl="personAusgewaehlt==1" 
+                  :verdaechtig="spielStore.verdaechtig[0]" 
+                  :unverdaechtig="spielStore.unverdaechtig[0]" />
+              <PersonenBoxComponent name="Mia Mirabilis" code="111x" 
+                  @click="personClicked(2, '111x')" 
+                  :auswahl="personAusgewaehlt==2" 
+                  :verdaechtig="spielStore.verdaechtig[1]" 
+                  :unverdaechtig="spielStore.unverdaechtig[1]" />
+              <PersonenBoxComponent name="Wolfram Wolkenwand" code="x111" 
+                  @click="personClicked(3, 'x111')" 
+                  :auswahl="personAusgewaehlt==3" 
+                  :verdaechtig="spielStore.verdaechtig[2]" 
+                  :unverdaechtig="spielStore.unverdaechtig[2]" />
             </span>
             <span class="personen-boxen" v-else-if="flow>=4.1 && spieler=='Enola'">
-              <PersonenBoxComponent name="Katinka Antiqus" code="00x0" @click="personClicked(1, '00x0')" :auswahl="personAktiv==1" />
-              <PersonenBoxComponent name="Iri Adler" code="11x0" @click="personClicked(2, '11x0')" :auswahl="personAktiv==2" />
-              <PersonenBoxComponent name="Schorm Roderick" code="01x1" @click="personClicked(3, '01x1')" :auswahl="personAktiv==3" />
+              <PersonenBoxComponent name="Katinka Antiqus" code="00x0" 
+                  @click="personClicked(1, '00x0')" 
+                  :auswahl="personAusgewaehlt==1" 
+                  :verdaechtig="spielStore.verdaechtig[0]" 
+                  :unverdaechtig="spielStore.unverdaechtig[0]" />
+              <PersonenBoxComponent name="Iri Adler" code="11x0" 
+                  @click="personClicked(2, '11x0')" 
+                  :auswahl="personAusgewaehlt==2" 
+                  :verdaechtig="spielStore.verdaechtig[1]" 
+                  :unverdaechtig="spielStore.unverdaechtig[1]" />
+              <PersonenBoxComponent name="Schorm Roderick" code="01x1" 
+                  @click="personClicked(3, '01x1')" 
+                  :auswahl="personAusgewaehlt==3" 
+                  :verdaechtig="spielStore.verdaechtig[2]" 
+                  :unverdaechtig="spielStore.unverdaechtig[2]" />
             </span>
             <span class="personen-boxen" v-else-if="flow>=4.0">
               <PersonenBoxComponent  />
@@ -295,7 +344,7 @@ import { useSpielStore } from '@/stores/SpielStore';
 import { useBeaconStore } from '@/stores/BeaconStore';
 
 import router from '@/router';
-import { ref, shallowRef, watch } from 'vue';
+import { ref, shallowRef, watch, computed } from 'vue';
 import { storeToRefs } from 'pinia';
 import { modalController } from '@ionic/vue';
 import Scroll_0_6_Tutorial from '@/components/scrollbereich/Scroll_0_6_Tutorial.vue';
@@ -315,6 +364,8 @@ import ButtonHilfeComponent from '@/components/ButtonHilfeComponent.vue';
 import HinweisBoxComponent from '@/components/HinweisBoxComponent.vue';
 import LupeMitteComponent from '@/components/LupeMitteComponent.vue';
 import PersonenBoxComponent from '@/components/PersonenBoxComponent.vue';
+import HinweisModal from '@/components/modals/HinweisModal.vue';
+
 
 const spielStore = useSpielStore();
 const beaconStore = useBeaconStore();
@@ -332,6 +383,8 @@ beaconStore.scanBt();
 
 const lupeImVordergrund = ref(false);
 const hinweisBoxKlein = ref(true);
+
+const hinweisModalOffenNr = ref(0);
 
 const timeoutObjektNichtGefunden = ref(0);
 
@@ -353,8 +406,12 @@ const timeoutObjektNichtGefunden = ref(0);
 
 const scrollSeite = shallowRef(Scroll_0_6_Tutorial);
 
-const { flow, ort, spieler, btTrigger, kameraTrigger, slideNr } = storeToRefs(spielStore);
+const { flow, ort, spieler, btTrigger, kameraTrigger, slideNr, ermittlungsAuswahl, verhaftet, verdaechtig, unverdaechtig } = storeToRefs(spielStore);
 spielStore.flow = 0.6;
+
+function personBoxInaktiv(nr : number) {
+  return verhaftet.value.some((v)=>v==true) && !verhaftet.value[nr-1]
+}
 
 const entfernung = ref(-1);
 // let leiner_timer = null as any;
@@ -380,6 +437,17 @@ watch(flow, () => {
   //   console.log('clear leiner_timer');
   //   clearInterval(leiner_timer);
   // }
+  if (flow.value<4) {
+    verhaftet.value.forEach((value, index, arr) => {
+      arr[index] = false;
+    });
+    verdaechtig.value.forEach((value, index, arr) => {
+      arr[index] = false;
+    });
+    unverdaechtig.value.forEach((value, index, arr) => {
+      arr[index] = false;
+    });
+  }
   if (flow.value==2.0) {
     lupeImVordergrund.value = false;
   }
@@ -389,9 +457,10 @@ watch(flow, () => {
   if (flow.value==1.3 || flow.value==2.3 || flow.value==3.3) {
     lupeImVordergrund.value=false;
     timeoutObjektNichtGefunden.value = setTimeout(() => {
-      if (flow.value < 1.4)
-        flow.value = 1.36;
-    }, 10000)
+      if (flow.value < 1.4) flow.value = 1.36;
+      else if (flow.value < 2.4) flow.value = 2.36;
+      else if (flow.value < 3.4) flow.value = 3.36;
+    }, 30000)
   }
   if ((flow.value==1.4 || flow.value==2.4 || flow.value==3.4) && slideNr.value>=2) {
     lupeImVordergrund.value=true;
@@ -534,6 +603,10 @@ function hinweisClicked(nr : number) {
   if (flow.value>=3.3 && flow.value<4.0) {
     lupeImVordergrund.value = false;
   }
+  if (flow.value==4.1) {
+    ermittlungsAuswahl.value = nr;
+    openHinweisModal(nr);
+  }
 }
 
 function lupeMitteClicked() {
@@ -630,12 +703,14 @@ const skipTutorial = () => {
 
 function personClicked(nr : number, code : string) {
   console.log("Person clicked: ", nr);
-  if (personAktiv.value == nr) {
-    personAktiv.value = 0;
-  } else {
-    personAktiv.value = nr;
-    openSteckbriefModal(nr, code);
-  }
+  // if (!personBoxInaktiv(nr)) {
+    if (personAusgewaehlt.value == nr) {
+      personAusgewaehlt.value = 0;
+    } else {
+      personAusgewaehlt.value = nr;
+      openSteckbriefModal(nr, code);
+    }
+  // }
 }
 
 function personVerhaften(code : string) {
@@ -656,11 +731,60 @@ const openSteckbriefModal = async (nr: number, code : string) => {
   steckbrief_modal.present().then( (result) => {
     console.log(result);
   });
-  // const { data } = await steckbrief_modal.onWillDismiss();
-  await steckbrief_modal.onWillDismiss();
-  personAktiv.value = 0;
+    // await steckbrief_modal.onWillDismiss();
+  const { data } = await steckbrief_modal.onWillDismiss();
+  personAusgewaehlt.value = 0;
+  if (data) {
+    console.log(data);
+  }
+  if (verhaftet.value[nr-1]) {
+    if (nr == 1)
+      flow.value = 4.4;
+    else
+      flow.value = 4.3;
+  }
 }
 
-const personAktiv = ref(0);
+const openHinweisModal = async (nr: number) => {
+  console.log("openHinweisModal()");
+  hinweisModalOffenNr.value = nr;
+  const hinweis_modal = await modalController.create({
+    component: HinweisModal,
+    cssClass: 'hinweis-modal',
+    componentProps: {
+      nr: nr
+    }
+  });
+  console.log("after await");
+  hinweis_modal.present();
+  await hinweis_modal.onWillDismiss();
+  hinweisModalOffenNr.value = 0;
+}
+
+const personAusgewaehlt = ref(0);
+
+function hashtagFalsch(nr : number) {
+  if (spielStore.personVerhaftet == "11x1" && spielStore.ort=='eg') {
+    return nr==1 || nr==2 || nr==3 || nr==4;
+  } else if (spielStore.personVerhaftet == "11x1" && spielStore.ort=='og1') {
+    return nr==1 || nr==2 || nr==3 || nr==4;
+  } else if (spielStore.personVerhaftet == "111x" && spielStore.ort=='eg') {
+    return nr%2 == 0;
+  } else if (spielStore.personVerhaftet == "111x" && spielStore.ort=='og1') {
+    return nr%2 == 0;
+  } else if (spielStore.personVerhaftet == "x111" && spielStore.ort=='eg') {
+    return nr%2 == 0;
+  } else if (spielStore.personVerhaftet == "x111" && spielStore.ort=='og1') {
+    return nr%2 == 0;
+  } else if (spielStore.personVerhaftet == "11x0" && spielStore.ort=='eg') {
+    return nr%2 == 0;
+  } else if (spielStore.personVerhaftet == "11x0" && spielStore.ort=='og1') {
+    return nr%2 == 0;
+  } else if (spielStore.personVerhaftet == "01x1" && spielStore.ort=='eg') {
+    return nr%2 == 0;
+  } else if (spielStore.personVerhaftet == "01x1" && spielStore.ort=='og1') {
+    return nr%2 == 0;
+  }
+}
 
 </script>

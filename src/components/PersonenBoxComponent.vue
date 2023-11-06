@@ -3,6 +3,8 @@ import { useSpielStore } from '@/stores/SpielStore';
 import { ref, watch } from 'vue';
 import { storeToRefs } from 'pinia';
 
+const spielStore = useSpielStore();
+
 const props = defineProps( {
     name: {
       type: String,
@@ -23,6 +25,18 @@ const props = defineProps( {
     auswahl: {
       type: Boolean,
       default: false
+    },
+    verdaechtig: {
+      type: Boolean,
+      default: false
+    },
+    unverdaechtig: {
+      type: Boolean,
+      default: false
+    },
+    inaktiv: {
+      type: Boolean,
+      default: false
     }
   });
 
@@ -34,7 +48,13 @@ const props = defineProps( {
 </script>
 
 <template>
-  <div class="personen-box" :class="{'auswahl' : auswahl}">
+  <div class="personen-box" 
+      :class="{
+        'auswahl' : auswahl,
+        'verdaechtig' : verdaechtig,
+        'unverdaechtig' : unverdaechtig,
+        'inaktiv' : inaktiv
+      }">
     <img v-if="code==''" class="person" src="assets/kopf_mit_hals.svg"/>
     <img v-else class="person" :src="'assets/personen/'+props.code+'/'+props.code+'_kopf.png'"/>
   </div>
@@ -67,14 +87,21 @@ const props = defineProps( {
 }
 .auswahl {
   /* background-color: #FFF4B6; */
-  background-color: #FFF4B6;
+  background-color: #5772b4;
 }
-
+.verdaechtig {
+  /* background-color: #FFF4B6; */
+  background-color: #e17852;
+}
+.unverdaechtig {
+  /* background-color: #FFF4B6; */
+  background-color: #80bf60;
+}
 .ausgeblendet {
   display: none;
 }
 .inaktiv {
-  opacity: 30%;
+  opacity: 50%;
 }
 .pulsieren {
   animation: pulsieren-animation 0.5s ease-in-out infinite alternate;

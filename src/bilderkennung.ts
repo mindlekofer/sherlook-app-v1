@@ -1,9 +1,10 @@
 import * as cocoSsd from '@tensorflow-models/coco-ssd'
-import { loadLayersModel, loadGraphModel, GraphModel, LayersModel  } from '@tensorflow/tfjs';
+import { loadLayersModel, loadGraphModel, GraphModel, LayersModel, zeros, setBackend} from '@tensorflow/tfjs';
 
 export let model : GraphModel;
 // export let model : LayersModel;
 export let cocoModel = null as any;
+// export let tflite_model = null as any;
 export let modelGeladen = false;
 
 export async function ladeModell() {
@@ -15,10 +16,15 @@ export async function ladeModell() {
     // model = await loadGraphModel('assets/tensorflow/model_subset/model.json');
     // model = await loadLayersModel('assets/tensorflow/model_subset/model.json');
     // model = await loadLayersModel('assets/tensorflow/rosgarten_transfer_subset_js/model.json');
-    model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_subset_js_graph/model.json');
-    // model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_v1_js_graph/model.json');
+    // model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_subset_js_graph/model.json');
+    model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_v1_js_graph/model.json');
+    // tflite_model = rosgarten_v2_aug.tflite
     console.log('model loaded');
-    modelGeladen = true;
+    console.log('setBackend("webgl"): ', setBackend('webgl'));
+    // console.log('setBackend("wasm"): ', setBackend('wasm'));
+    const zerosTensor:any= zeros([1, 224, 224, 3]);
+    model.predict(zerosTensor);
+    console.log('zeros predicted');
   } else {
     console.log("Modell bereits geladen.");
   }

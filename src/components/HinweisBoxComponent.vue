@@ -50,11 +50,20 @@ const props = defineProps( {
       type: Boolean,
       default: false
     },
+    hashtag1Rot: {
+      type: Boolean,
+      default: false
+    },
+    hashtag2Rot: {
+      type: Boolean,
+      default: false
+    }
   });
 
   // const emit = defineEmits(['kleine_lupe_clicked']);
   const emit = defineEmits<{
-    (e: 'kleine-lupe-clicked') : void
+    (e: 'kleine-lupe-clicked') : void,
+    (e: 'hashtag-clicked', hinweisNr: number, hashtagNr: number) : void
   }>();
 
 </script>
@@ -80,8 +89,8 @@ const props = defineProps( {
         :lesezeichen3="props.abgeschlossen"
     />
     <div class="hashtags" v-if="gross">
-      <p>{{ props.hashtag1 }}&nbsp;</p>
-      <p>{{ props.hashtag2 }}&nbsp;</p>
+      <p @click="$emit('hashtag-clicked', parseInt(zahl), 1)" :class="{'rot':hashtag1Rot}">{{ props.hashtag1 }}&nbsp;</p>
+      <p @click="$emit('hashtag-clicked', parseInt(zahl), 2)" :class="{'rot':hashtag2Rot}">{{ props.hashtag2 }}&nbsp;</p>
     </div>
     <lupe-component v-if="!buch"
         class="lupe" 
@@ -99,6 +108,9 @@ const props = defineProps( {
 
 
 <style scoped>
+.rot {
+  color: rgb(252, 38, 38);
+}
 .hashtags {
   /* background-color: blue; */
   text-align: left;
@@ -141,7 +153,7 @@ const props = defineProps( {
 }
 .gross {
   /* width: 95%; */
-  width: 70%;
+  width: 75%;
 }
 .klein {
   width: 180px;

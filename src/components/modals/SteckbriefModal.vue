@@ -2,17 +2,49 @@
   <div class="modal-wrapper">
     <div class="modal-content">
       <span class="festgenommen" v-if="verhaftet[props.nr-1] == true">festgenommen!</span>
+      <span class="verdaechtig" v-if="verdaechtig[props.nr-1] == true">verdächtig!</span>
+      <span class="unverdaechtig" v-if="unverdaechtig[props.nr-1] == true">unverdächtig</span>
+
+      <div class="handschellen">
+        <ButtonHandschellenComponent
+            @click="handschellenClicked"
+            :disabled="unverdaechtig[props.nr-1]"
+            :pulsiert="verdaechtig[props.nr-1]"
+        />
+        <!-- <i>Festnehmen</i> -->
+      </div>
+
 
       <div class="links">
         <!-- <img class="person" :src="'assets/personen/'+code+'/'+code+'_kopf.png'"/> -->
         <img class="person" width="230" :src="'assets/personen/'+props.code+'/'+props.code+'_kopf.png'"/>
-        <span>
-        <ButtonHandschellenComponent 
-          @click="handschellenClicked"
-          pulsiert 
-        />
-        <br>
-        <i>Festnehmen?</i></span>
+        <span class="vermerk">
+          <!-- <ButtonHandschellenComponent 
+            @click="handschellenClicked"
+            pulsiert 
+          />
+          <br>
+          <i>Festnehmen?</i>
+        -->
+          <i>Aktenvermerk:</i>
+            <ion-button 
+                class="vermerk-button" 
+                color="success" 
+                size="large" 
+                :fill="unverdaechtig[props.nr-1] ? 'solid' : 'outline'" 
+                expand="block"
+                @click="unverdaechtigClicked"
+            > unverdächtig </ion-button>
+            <ion-button 
+                class="vermerk-button" 
+                color="warning" 
+                size="large" 
+                :fill="verdaechtig[props.nr-1] ? 'solid' : 'outline'" 
+                expand="block" 
+                @click="verdaechtigClicked"
+            > verdächtig </ion-button>
+ 
+        </span>
       </div>
       <div class="rechts">
         <span v-if="code=='00x0'">
@@ -116,12 +148,30 @@
       </div>
     </div>
       
-    <ion-button class="zurueck-button" size="large" @click="modalController.dismiss()">zurück zum Spiel</ion-button>
+    <ion-button class="zurueck-button" size="large" @click="modalController.dismiss()">zurück</ion-button>
   </div>
 
 </template>
 
 <style scoped>
+.handschellen {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+}
+.vermerk {
+  display: flex;
+  flex-direction: column;
+  /* background-color: aqua; */
+  gap: 5px;
+  justify-content: end;
+  align-items: stretch;
+}
+i {
+  /* margin-bottom: 50px; */
+  /* color: grey; */
+}
 b {
   font-size: 36px;
 }
@@ -136,7 +186,7 @@ b {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .rechts {
   /* background-color: azure; */
@@ -174,13 +224,33 @@ img {
 }
 .festgenommen {
   position: absolute;
+  top: 180px;
+  right: 250px;
+  font-size: 90px;
+  font-weight: 600;
+  opacity: 0.6;
+  color: rgb(239, 0, 0);
+  transform: rotate(-20deg);
+}
+.verdaechtig {
+  position: absolute;
   top: 200px;
   right: 200px;
   font-size: 90px;
   font-weight: 600;
   opacity: 0.6;
-  color: rgb(239, 0, 0);
+  color: rgb(239, 155, 0);
   transform: rotate(30deg);
+}
+.unverdaechtig {
+  position: absolute;
+  top: 200px;
+  right: 200px;
+  font-size: 90px;
+  font-weight: 600;
+  opacity: 0.6;
+  color: rgb(61, 211, 53);
+  transform: rotate(-30deg);
 }
 
 </style>
@@ -213,7 +283,9 @@ const emit = defineEmits<{
 }>();
 
 const spielStore = useSpielStore();
-const { flow, ort, verhaftet } = storeToRefs(spielStore);
+const { flow, ort, verhaftet, verdaechtig, unverdaechtig } = storeToRefs(spielStore);
+
+const verhaftedClicked = ref();
 
 console.log("opening KarteModal");
 
@@ -221,8 +293,33 @@ function handschellenClicked() {
   console.log(`Handschellen clicked für Nr: ${props.nr}, Code: ${props.code}`);
   if (props.nr>0) {
     spielStore.verhaftet[props.nr-1] = true;
+    spielStore.personVerhaftet = props.code;
   }
 }
 
+function verdaechtigClicked() {
+  console.log(`Handschellen clicked für Nr: ${props.nr}, Code: ${props.code}`);
+  if (props.nr>0) {
+    if (spielStore.verdaechtig[props.nr-1]==false) {
+      spielStore.verdaechtig[props.nr-1] = true;
+      spielStore.unverdaechtig[props.nr-1] = false;
+    } else {
+      spielStore.verdaechtig[props.nr-1] = false;
+    }
+    
+  }
+}
+
+function unverdaechtigClicked() {
+  console.log(`Handschellen clicked für Nr: ${props.nr}, Code: ${props.code}`);
+  if (props.nr>0) {
+    if (spielStore.unverdaechtig[props.nr-1]==false) {
+      spielStore.unverdaechtig[props.nr-1] = true;
+      spielStore.verdaechtig[props.nr-1] = false;
+    } else {
+      spielStore.unverdaechtig[props.nr-1] = false;
+    }
+  }
+}
 
 </script>

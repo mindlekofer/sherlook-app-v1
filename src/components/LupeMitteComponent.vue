@@ -134,7 +134,7 @@ img {
 @keyframes pulsieren-animation-weit {
     0% {
       /* fill: rgb(125, 142, 255); */
-      fill: rgb(0, 0, 0);
+      fill: rgb(28, 54, 19);
     }
     100% {
       /* fill: rgb(0, 64, 214); */
@@ -144,7 +144,7 @@ img {
 @keyframes pulsieren-animation-mittel {
   0% {
     /* fill: rgb(150, 150, 239); */
-    fill: rgb(0, 0, 0);
+    fill: rgb(30, 60, 22);
   }
   100% {
     /* fill: rgb(221, 35, 35); */
@@ -154,7 +154,7 @@ img {
 @keyframes pulsieren-animation-nah {
   0% {
     /* fill: rgb(255, 167, 167); */
-    fill: rgb(0, 0, 0);
+    fill: rgb(33, 72, 26);
   }
   100% {
     /* fill: rgb(244, 45, 45); */

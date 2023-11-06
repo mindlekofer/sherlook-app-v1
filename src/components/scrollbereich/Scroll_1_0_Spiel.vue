@@ -135,7 +135,7 @@
       <button-weiter-component class="button-weiter" v-else disabled />
     </swiper-slide>
 
-    <swiper-slide class="posting-slide" v-if="flow >= 1.2 && flow<2.0">
+    <swiper-slide class="posting-slide" v-if="(flow >= 1.2 && flow<2.0)">
       <swiper :modules="modules" :direction="'vertical'" :scrollbar="true" :mousewheel="true" :slidesPerView="'auto'" :freeMode="true">
         <swiper-slide>
           <span v-if="spieler=='Watson'">
@@ -656,7 +656,7 @@
       <!-- <button-weiter-component class="button-weiter" disabled /> -->
     </swiper-slide>
 
-    <swiper-slide v-if="flow == 2.46 && flow<3.0">
+    <swiper-slide v-if="flow == 2.36 && flow<3.0">
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_enttaeuscht.png" width="230"/>
         <p> Der Rahmen der Lupe ist immer noch dunkel, das Objekt ist wohl noch nicht in der Nähe. </p>
@@ -1038,7 +1038,7 @@
       <!-- <button-weiter-component class="button-weiter" disabled /> -->
     </swiper-slide>
 
-    <swiper-slide v-if="flow == 3.46 && flow<4.0">
+    <swiper-slide v-if="flow == 3.36 && flow<4.0">
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_enttaeuscht.png" width="230"/>
         <p> Der Rahmen der Lupe ist immer noch dunkel, das Objekt ist wohl noch nicht in der Nähe. </p>
@@ -1321,38 +1321,39 @@
     </swiper-slide>
 
       <!-- 4.3.2 Täterauswahl falsch -->
-    <swiper-slide v-if="flow >=4.3 && flow<5.0">
+    <swiper-slide v-if="flow == 4.3">
       <span v-if="spieler=='Watson'" >
-        <img class="spieler" src="assets/img/detektive/watson_traurig.png" width="230"/>
+        <img class="spieler" src="assets/img/detektive/watson_enttaeuscht.png" width="230"/>
+        <p> Leider nein!</p>
         <p> 
-          Und schaut euch die rot markierten Hashtags an. Sie passen tatsächlich nicht gut zu $$AUSWAHL$$
+          Schaut euch die rot markierten Hashtags an. Sie passen tatsächlich nicht gut zu {{ spielStore.personVerhaftet=='111x' ? "Mia Mirabilis" : "James Mopsiathy" }}.
         </p>
         <p>
-          Wir geben nicht auf! Nächster Versuch: Wen überprüfen wir dieses Mal? $$VERDACHT$$ oder $$VERDACHT$$. Einer von ihnen muss es gewesen sein.
+          Wir geben nicht auf! Nächster Versuch: Wen überprüfen wir dieses Mal? Katinka Antiqus oder {{ spielStore.personVerhaftet=='111x' ? "James Mopsiathy" : "Mia Mirabilis" }}. Einer von ihnen muss es gewesen sein.
         </p>
         <p>
           Schaut Euch ihre Steckbriefe nochmal an und drückt auf die Handschellen, wenn ihr glaubt zu wissen, wer es ist.
         </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
-        <img class="spieler" src="assets/img/detektive/sherlock_traurig.png" width="220"/>
+        <img class="spieler" src="assets/img/detektive/sherlock_enttaeuscht.png" width="250"/>
         <p> 
-          Und schaut euch bitte die rot markierten Hashtags an. Sie passen in der Tat nicht gut zu $$AUSWAHL$$.
+          Und schaut euch bitte die rot markierten Hashtags an. Sie passen in der Tat nicht gut zu {{ spielStore.personVerhaftet=='111x' ? "Mia Mirabilis" : "Wolfram Wolkenwand" }}.
         </p>
         <p>
-          Doch wir haben noch eine Chance: Wen überprüfen wir als nächstes $$T0$$ oder $$T1$$? Einer von ihnen muss es gewesen sein.
+          Doch wir haben noch eine Chance: Wen überprüfen wir als nächstes Katinka Antiqus oder {{ spielStore.personVerhaftet=='111x' ? "Wolfram Wolkenwand" : "Mia Mirabilis" }}? Einer von ihnen muss es gewesen sein.
         </p>
         <p>
           Schaut Euch die Steckbriefe nochmal an und drückt auf die Handschellen, wenn ihr glaubt zu wissen, wer es ist.
         </p>
       </span>
       <span v-else>
-        <img class="spieler" src="assets/img/detektive/enola_traurig.png" width="210"/>
+        <img class="spieler" src="assets/img/detektive/enola_enttaeuscht.png" width="220"/>
         <p> 
-          So ein Pech! Aber schaut euch die rot markierten Hashtags nochmal an. Sie passen tatsächlich nicht gut zu T2
+          So ein Pech! Aber schaut euch die rot markierten Hashtags nochmal an. Sie passen tatsächlich nicht gut zu {{ spielStore.personVerhaftet=='11x0' ? "Iri Adler" : "Shorm Roderick" }}.
         </p>
         <p>
-          Wir geben nicht auf! Nächster Versuch: Wen überprüfen wir als nächstes? T0 oder T1? Einer von ihnen muss es gewesen sein.
+          Wir geben nicht auf! Nächster Versuch: Wen überprüfen wir als nächstes? Katinka Antiqus oder {{ spielStore.personVerhaftet=='11x0' ? "Shorm Roderick" : "Iri Adler" }}? Einer von ihnen muss es gewesen sein.
         </p>
         <p>
           Schaut Euch ihre Steckbriefe nochmal an und drückt auf die Handschellen, wenn ihr glaubt zu wissen, wer es ist.
@@ -1360,9 +1361,9 @@
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
       <!-- <div class="swipe-geste-vertikal"></div> -->
-      <button-weiter-component class="button-weiter" v-if="flow==4.0" @click="swiperInstance.slideNext();" pulsiert/>
-      <button-weiter-component class="button-weiter" v-else-if="flow>4.0" @click="swiperInstance.slideNext();"/>
-      <button-weiter-component class="button-weiter" v-else disabled />
+      <!-- <button-weiter-component class="button-weiter" v-if="flow==4.3" @click="swiperInstance.slideNext();" pulsiert/>
+      <button-weiter-component class="button-weiter" v-else-if="flow>4.3" @click="swiperInstance.slideNext();"/>
+      <button-weiter-component class="button-weiter" v-else disabled /> -->
       <!-- <button-weiter-component class="button-weiter" disabled /> -->
     </swiper-slide>
     
@@ -1442,7 +1443,7 @@ const props = defineProps( {
 
 // Store //
 const spielStore = useSpielStore();
-const { flow, ort, spieler, btTrigger } = storeToRefs(spielStore);
+const { flow, ort, spieler, btTrigger, ermittlungsAuswahl } = storeToRefs(spielStore);
 console.log(`flow: ${flow}`);
 
 // Swiper //
@@ -1505,6 +1506,11 @@ watch(flow, () => {
   if (flow.value==1.6 || flow.value==2.6 || flow.value==3.6) {
     setTimeout(() => {
       swiperInstance.value.slideNext();
+    }, 1000 )
+  }
+  if (flow.value==4.3 || flow.value==4.4) {
+    setTimeout(() => {
+      swiperInstance.value.slideTo(2);
     }, 1000 )
   }
 })

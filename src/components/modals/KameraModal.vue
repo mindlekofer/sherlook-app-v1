@@ -15,7 +15,8 @@
       <!-- <ion-button @click="kameraStarten()" :disabled="!modelGeladen">Kamera an</ion-button> -->
       <!-- <ion-button @click="kameraStarten()">Kamera an</ion-button> -->
       <!-- <ion-button @click="kameraSchliessen()">Kamera aus</ion-button> -->
-      <ion-button size="large" color="warning" @click="objektIdentifiziert(0, false)">Objekt gefunden</ion-button>
+      <ion-button size="large" v-if="manuelleAufloesung" color="warning" @click="objektIdentifiziert(0, false)">Objektsuche auflösen?</ion-button>
+      <span v-else>&nbsp;</span>
       <ion-button size="large" @click="modalSchliessen">zurück zum Spiel</ion-button>
     </div>
   </div>
@@ -74,6 +75,9 @@ video {
 }
 .modal-wrapper .modal-control {
   text-align: end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 </style>
@@ -120,6 +124,9 @@ const erkennungAktiv = ref(false);
 const modelLoaded = ref(false);
 let tfCamera;
 let tfCapture;
+
+const manuelleAufloesung = ref(false);
+setTimeout(() => {manuelleAufloesung.value = true}, 30000);
 
 const bbox_x = ref(0);
 const bbox_y = ref(0);

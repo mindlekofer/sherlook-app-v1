@@ -9,7 +9,11 @@ export const useSpielStore = defineStore('spielStore', {
     btTrigger: true,
     kameraTrigger: true,
     slideNr: 0,
+    ermittlungsAuswahl: 0,
+    unverdaechtig: [false, false, false],
+    verdaechtig: [false, false, false],
     verhaftet: [false, false, false],
+    personVerhaftet: "",
     hashtags: [
       {nr: 1, text: "kleidermachenleute", eingetragen: false}, 
       {nr: 2, text: "zweiterhashtag", eingetragen: false}

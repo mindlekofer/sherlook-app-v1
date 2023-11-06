@@ -16,7 +16,7 @@
 
 
 <template>
-  <ion-fab-button :class="{'pulsieren':pulsiert==true}" color="success">
+  <ion-fab-button :class="{'pulsieren':pulsiert==true}" color="danger">
     <svg width="100%" height="100%" viewBox="0 0 121 121" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
       <circle id="Button-Handschellen" serif:id="Button Handschellen" cx="60.92" cy="60.367" r="60" style="fill:none;"/>
       <clipPath id="_clip1">
