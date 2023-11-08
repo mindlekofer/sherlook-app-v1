@@ -181,7 +181,7 @@
               Schnipp, schnapp war sie weg!
           </PostingComponent>
           <p style="margin-bottom: 100px;">
-            Berührt den pulsierenden Hashtag um Ihn als Hinweis in eurem Notizbuch festzuhalten!
+            Berührt den pulsierenden Hashtag um ihn als Hinweis in eurem Notizbuch festzuhalten!
           </p>
           <button-weiter-component class="button-weiter" v-if="flow==1.3" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="flow>1.3" @click="swiperInstance.slideNext();"/>
@@ -214,7 +214,7 @@
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
         <p> Das nenne ich eine heiße Spur! </p>
-        <p> Damit konnten wir den ersten Hastag in unser Ermittlungsbuch eintragen. </p>
+        <p> Damit konnten wir den ersten Hashtag in unser Ermittlungsbuch eintragen. </p>
         <p> Und los, geht's! Lasst uns das passende Objekt finden. </p>
         <p> Ihr wisst ja, wenn die Hightech-Lupe leuchtet, muss das Objekt irgendwo in der Nähe sein... </p>
           
@@ -341,7 +341,7 @@
               Sie wird ein Glanzstück meiner Sammlung!
           </PostingComponent>
           <p style="margin-bottom: 100px;">
-            Berührt den pulsierenden Hashtag um Ihn als Hinweis in eurem Notizbuch festzuhalten!
+            Berührt den pulsierenden Hashtag um ihn als Hinweis in eurem Notizbuch festzuhalten!
           </p>
           <button-weiter-component class="button-weiter" v-if="flow==1.7" @click="flow=1.8; swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="flow>1.7" @click="swiperInstance.slideNext();"/>
@@ -456,7 +456,7 @@
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-        <p style="margin-top: 50px;"> Wir sind ganz ihrer Meinung, lieber Herr Leiner. Wir werden ihr Museum schützen! </p>
+        <p style="margin-top: 50px;"> Wir sind ganz Ihrer Meinung, lieber Herr Leiner. Wir werden ihr Museum schützen! </p>
         <p> Aber erst müssen wir weitere Spuren aufnehmen. Der Detaildieb hat heute morgen noch mehr mitgehen lassen. </p>
         <p> Hier ist unser Fall Nr. 2. Klickt bitte auf die Lupe! </p>
       </span>
@@ -499,7 +499,7 @@
         </span>
         <span v-else>
           <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="210"/>
-          <p style="margin-top: 40px;"> Was schützt dieses alte Schloss? </p>
+          <p style="margin-top: 120px;"> Was schützt dieses alte Schloss? </p>
         </span>
       </span>
       <span v-else-if="!antwortRichtig">
@@ -616,7 +616,7 @@
               Größer als man denkt. Und da war mir klar: Da ist etwas versteckt!
           </PostingComponent>
           <p style="margin-bottom: 100px;">
-            Berührt den pulsierenden Hashtag um Ihn als Hinweis in eurem Notizbuch festzuhalten!
+            Berührt den pulsierenden Hashtag um ihn als Hinweis in eurem Notizbuch festzuhalten!
           </p>
           <button-weiter-component class="button-weiter" v-if="flow==2.3" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="flow>2.3" @click="swiperInstance.slideNext();"/>
@@ -743,7 +743,7 @@
               Da kribbelt es doch jemandem wie mir sofort in den Fingern ...
           </PostingComponent>
           <p style="margin-bottom: 100px;">
-            Berührt den pulsierenden Hashtag um Ihn als Hinweis in eurem Notizbuch festzuhalten!
+            Berührt den pulsierenden Hashtag um ihn als Hinweis in eurem Notizbuch festzuhalten!
           </p>
           <button-weiter-component class="button-weiter" v-if="flow==2.7" @click="flow=2.8; swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="flow>2.7" @click="swiperInstance.slideNext();"/>
@@ -771,7 +771,7 @@
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
         <p> Das wird nicht besser mit diesem Detaildieb. </p>
         <p> @gerne_gestern bleibt rätselhaft. </p>
-        <p> WAber unser Ermittlungsbuch füllt sich. Wir müssen das Muster hinter den Diebstählen erkennen. </p>
+        <p> Aber unser Ermittlungsbuch füllt sich. Wir müssen das Muster hinter den Diebstählen erkennen. </p>
         <p> Das sind wir auch dem Geist von Ludwig Leiner schuldig... </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
@@ -789,7 +789,7 @@
           <!-- <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/> -->
           <img class="spieler" src="assets/img/leiner.png" width="200"/>
           <!-- <img class="spieler" src="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_2.png" width="200"/> -->
-          <span v-if="ort=='eg'" style="margin-bottom: 90px;">
+          <span v-if="ort=='eg'" style="margin-bottom: 150px;">
             <p>
               Wenn das mit den Diebstählen so weitergeht, müssen wir noch neue Museumswächter einstellen... 
               vielleicht die Schweizer Garde aus dem Vatikan? 
@@ -803,11 +803,11 @@
               Also bringt die Hellebarde bitte wieder dorthin zurück, wo sie auch hingehört.
             </p>
           </span>
-          <span v-else-if="ort=='og1'" style="margin-bottom: 90px;">
+          <span v-else-if="ort=='og1'" style="margin-bottom: 150px;">
             <p>
               Oh weh! Hier, an dieser Stellle, schlägt wirklich das Herz des Museums, 
               das große Geheimnis unserer guten alten Stube! Und jetzt ist es in Gefahr. 
-              Sicher hält sich der der Dieb nicht an unseren Ehrenkodex. 
+              Sicher hält sich der Dieb nicht an unseren Ehrenkodex. 
               Der besagt, dass kein Restaurator altes Kunst- oder Kulturgut zerstören darf! 
               Deshalb weiß bis heute niemand, ob sich in der alten Zunftkasse 
               tatsächlich noch ein Schatz befindet. 
@@ -984,7 +984,7 @@
               :eingetragen="flow>=3.3">
               Alte Namen, alte Sitten. Ich liebe es, wenn ich erstmal nur "Bahnhof" verstehe. 
               Deshalb zunächst nur soviel: 
-              ieser "Adular" lag zusammen mit anderen "Feldspaten" in einem Leinerschrank! 
+              Dieser "Adular" lag zusammen mit anderen "Feldspaten" in einem Leinerschrank! 
               (Fortsetzung folgt)
           </PostingComponent>
           <PostingComponent v-else-if="ort=='og1'"
@@ -999,7 +999,7 @@
               Auch von mir bekommt das Objekt wahrlich mehr als fünf Sterne auf blauem Grund!
           </PostingComponent>
           <p style="margin-bottom: 100px;">
-            Berührt den pulsierenden Hashtag um Ihn als Hinweis in eurem Notizbuch festzuhalten!
+            Berührt den pulsierenden Hashtag um ihn als Hinweis in eurem Notizbuch festzuhalten!
           </p>
           <button-weiter-component class="button-weiter" v-if="flow==3.3" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="flow>3.3" @click="swiperInstance.slideNext();"/>
@@ -1093,8 +1093,8 @@
               bild="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_post2.jpg"
               hashtag="#prunk_und_paradestück"
               likes="51029"
-              @hashtag-clicked="flow=2.7"
-              :eingetragen="flow>=2.7">
+              @hashtag-clicked="flow=3.7"
+              :eingetragen="flow>=3.7">
               Warum "Adular"? Warum "Feldspat"? Hier kommen wie immer spannende Infos und Fakten:
               <br>1. Dieses besonders spaltbare Mineral wurde zum ersten Mal in den Alpen gefunden, 
               genau genommen in einem Teil der Westalpen. 
@@ -1111,8 +1111,8 @@
               bild="assets/objekte/og/10x0_og1_bc/10x0_og1_bc_post2.jpg"
               hashtag="#faktisch_immerwoanders"
               likes=52930
-              @hashtag-clicked="flow=2.7"
-              :eingetragen="flow>=2.7">
+              @hashtag-clicked="flow=3.7"
+              :eingetragen="flow>=3.7">
               Heute stelle ich Euch in meinem Faktencheck ein ganz verrücktes Objekt vor: 
               einen Altaraufsatz aus dem Jahr 1502. 
               Er ist einer der wenigen Beispiele, die den Konstanzer Bildersturm 
@@ -1125,10 +1125,10 @@
               kleines 5-Sterne-Objekt mitnehme und in meinem Wohnzimmer aufstelle?
           </PostingComponent>
           <p style="margin-bottom: 100px;">
-            Berührt den pulsierenden Hashtag um Ihn als Hinweis in eurem Notizbuch festzuhalten!
+            Berührt den pulsierenden Hashtag um ihn als Hinweis in eurem Notizbuch festzuhalten!
           </p>
-          <button-weiter-component class="button-weiter" v-if="flow==2.7" @click="flow=2.8; swiperInstance.slideNext();" pulsiert/>
-          <button-weiter-component class="button-weiter" v-else-if="flow>2.7" @click="swiperInstance.slideNext();"/>
+          <button-weiter-component class="button-weiter" v-if="flow==3.7" @click="flow=3.8; swiperInstance.slideNext();" pulsiert/>
+          <button-weiter-component class="button-weiter" v-else-if="flow>3.7" @click="swiperInstance.slideNext();"/>
           <button-weiter-component class="button-weiter" v-else disabled />
         </swiper-slide>
       </swiper>
@@ -1200,7 +1200,7 @@
     </swiper-slide>
 
 
-    
+    <!-- Tätersuche beginnt -->
     <swiper-slide v-if="flow >=4.0 && flow<5.0">
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
@@ -1255,6 +1255,7 @@
       <!-- <button-weiter-component class="button-weiter" disabled /> -->
     </swiper-slide>
 
+    <!-- Im Detektivbüro angekommen: Täterauswahl -->
     <swiper-slide v-if="flow >=4.1 && flow<5.0">
       <span v-if="spieler=='Watson'" >
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
@@ -1320,11 +1321,36 @@
       <!-- <button-weiter-component class="button-weiter" disabled /> -->
     </swiper-slide>
 
-      <!-- 4.3.2 Täterauswahl falsch -->
-    <swiper-slide v-if="flow == 4.3">
+    <!-- Alibi Affenberg -->
+    <swiper-slide v-if="flow == 4.31">
+      <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="180" v-if="spielStore.spieler=='Watson'"/>
+      <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="180" v-else-if="spielStore.spieler=='Sherlock'"/>
+      <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="180" v-else-if="spielStore.spieler=='Enola'"/>
+      <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
+      <p v-if="spieler=='Watson'" style="font-size: 26px;"> Da lagen wir leider falsch! </p>
+      <p v-else-if="spieler=='Sherlock'" style="font-size: 26px;"> Verdammt! Da lagen wir falsch! </p>
+      <p v-else-if="spieler=='Enola'" style="font-size: 26px;"> Da lagen wir wohl falsch! </p>
+      <p v-if="spieler=='Watson'" style="font-size: 26px;">
+        {{ spielStore.personVerhaftet=='111x' ? "Mia Mirabilis" : "James Mopsiathy" }} war heute den ganzen Tag nicht zuhause. {{ spielStore.personVerhaftet=='111x' ? "Sie" : "Er" }} war in Salem auf dem Affenberg. Das nenn ich mal ein tierisch starkes Alibi!
+      </p>
+      <p v-else-if="spieler=='Sherlock'" style="font-size: 26px;">
+        {{ spielStore.personVerhaftet=='111x' ? "Mia Mirabilis" : "Wolfram Wolkenwand" }} war heute den ganzen Tag nicht zuhause. {{ spielStore.personVerhaftet=='111x' ? "Sie" : "Er" }} war in Salem auf dem Affenberg. Das nenn ich mal ein tierisch starkes Alibi!
+      </p>
+      <p v-else-if="spieler=='Enola'" style="font-size: 26px;">
+        {{ spielStore.personVerhaftet=='11x0' ? "Iri Adler" : "Shorm Roderick" }} war heute den ganzen Tag nicht zuhause. {{ spielStore.personVerhaftet=='11x0' ? "Sie" : "Er" }} war in Salem auf dem Affenberg. Das nenn ich mal ein tierisch starkes Alibi!
+      </p>
+      <img class="pfeil" src="assets/img/alibi/affenberg.jpg" style="height: 55%;" />
+      <!-- <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.72" @click="if(!btTrigger)spielStore.flow=0.73;" :disabled="btTrigger"/> -->
+      <!-- <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.72" @click="spielStore.flow=0.73;" :disabled="btTrigger"/> -->
+      <button-weiter-component class="button-weiter" v-if="spielStore.flow==4.31" @click="swiperInstance.slideNext();" pulsiert/>
+      <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>4.3" @click="swiperInstance.slideNext();"/>
+      <button-weiter-component class="button-weiter" v-else disabled />
+    </swiper-slide>
+
+    <!-- 1. Verusch falsch -->
+    <swiper-slide v-if="flow == 4.31">
       <span v-if="spieler=='Watson'" >
         <img class="spieler" src="assets/img/detektive/watson_enttaeuscht.png" width="230"/>
-        <p> Leider nein!</p>
         <p> 
           Schaut euch die rot markierten Hashtags an. Sie passen tatsächlich nicht gut zu {{ spielStore.personVerhaftet=='111x' ? "Mia Mirabilis" : "James Mopsiathy" }}.
         </p>
@@ -1366,6 +1392,75 @@
       <button-weiter-component class="button-weiter" v-else disabled /> -->
       <!-- <button-weiter-component class="button-weiter" disabled /> -->
     </swiper-slide>
+
+    <!-- Alibi Biergarten -->
+    <swiper-slide v-if="flow == 4.32">
+      <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="180" v-if="spielStore.spieler=='Watson'"/>
+      <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="180" v-else-if="spielStore.spieler=='Sherlock'"/>
+      <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="180" v-else-if="spielStore.spieler=='Enola'"/>
+      <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
+      <p v-if="spieler=='Watson'" style="font-size: 26px;"> Da lagen wir leider falsch! </p>
+      <p v-else-if="spieler=='Sherlock'" style="font-size: 26px;"> Verdammt! Da lagen wir falsch! </p>
+      <p v-else-if="spieler=='Enola'" style="font-size: 26px;"> Da lagen wir wohl falsch! </p>
+      <p v-if="spieler=='Watson'" style="font-size: 26px;">
+        {{ spielStore.personVerhaftet=='111x' ? "Mia Mirabilis" : "James Mopsiathy" }} war heute den ganzen Tag nicht zuhause. {{ spielStore.personVerhaftet=='111x' ? "Sie" : "Er" }} war heute in einem Biergarten in Konstanz. Das nenn ich mal ein erfrischendes Alibi.
+      </p>
+      <p v-else-if="spieler=='Sherlock'" style="font-size: 26px;">
+        {{ spielStore.personVerhaftet=='111x' ? "Mia Mirabilis" : "Wolfram Wolkenwand" }} war heute den ganzen Tag nicht zuhause. {{ spielStore.personVerhaftet=='111x' ? "Sie" : "Er" }} war heute in einem Biergarten in Konstanz. Das nenn ich mal ein erfrischendes Alibi.
+      </p>
+      <p v-else-if="spieler=='Enola'" style="font-size: 26px;">
+        {{ spielStore.personVerhaftet=='11x0' ? "Iri Adler" : "Shorm Roderick" }} war heute den ganzen Tag nicht zuhause. {{ spielStore.personVerhaftet=='11x0' ? "Sie" : "Er" }} war heute in einem Biergarten in Konstanz. Das nenn ich mal ein erfrischendes Alibi.
+      </p>
+      <img class="pfeil" src="assets/img/alibi/biergarten.jpg" style="height: 55%;" />
+      <!-- <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.72" @click="if(!btTrigger)spielStore.flow=0.73;" :disabled="btTrigger"/> -->
+      <!-- <button-weiter-component class="button-weiter" v-if="spielStore.flow==0.72" @click="spielStore.flow=0.73;" :disabled="btTrigger"/> -->
+      <button-weiter-component class="button-weiter" v-if="spielStore.flow==4.32" @click="swiperInstance.slideNext();" pulsiert/>
+      <button-weiter-component class="button-weiter" v-else-if="spielStore.flow>4.3" @click="swiperInstance.slideNext();"/>
+      <button-weiter-component class="button-weiter" v-else disabled />
+    </swiper-slide>
+
+    <!-- 2. Versuch falsch -->
+    <swiper-slide v-if="flow == 4.32">
+      <span v-if="spieler=='Watson'" >
+        <img class="spieler" src="assets/img/detektive/watson_enttaeuscht.png" width="230"/>
+        <p style="margin-top: 50px;"> Leider ist auch der zweite Versuch falsch. </p>
+        <p>
+          Schaut euch die rot markierten Hashtags an. 
+          Sie passen tatsächlich nicht gut zu {{ spielStore.personVerhaftet=='111x' ? "Mia Mirabilis" : "James Mopsiathy" }}.
+        </p>
+        <p>
+          Nun kann es nur noch Katinka Antiqus sein. Lest euch nochmal ihren Steckbrief durch. Da passt alles!
+        </p>
+      </span>
+      <span v-else-if="spieler=='Sherlock'">
+        <img class="spieler" src="assets/img/detektive/sherlock_enttaeuscht.png" width="250"/>
+        <p style="margin-top: 50px;"> Leider ist auch der zweite Versuch falsch. </p>
+        <p>
+          Schaut euch die rot markierten Hashtags an. 
+          Sie passen tatsächlich nicht gut zu {{ spielStore.personVerhaftet=='111x' ? "Mia Mirabilis" : "Wolfram Wolkenwand" }}.
+        </p>
+        <p>
+          Nun kann es nur noch Katinka Antiqus sein. Lest euch nochmal ihren Steckbrief durch. Da passt alles!
+        </p>
+      </span>
+      <span v-else>
+        <img class="spieler" src="assets/img/detektive/enola_enttaeuscht.png" width="220"/>
+        <p style="margin-top: 50px;"> Leider ist auch der zweite Versuch falsch. </p>
+        <p>
+          Schaut euch die rot markierten Hashtags an. 
+          Sie passen tatsächlich nicht gut zu {{ spielStore.personVerhaftet=='11x0' ? "Iri Adler" : "Shorm Roderick" }}.
+        </p>
+        <p>
+          Nun kann es nur noch Katinka Antiqus sein. Lest euch nochmal ihren Steckbrief durch. Da passt alles!
+        </p>
+      </span>
+      <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
+      <!-- <div class="swipe-geste-vertikal"></div> -->
+      <!-- <button-weiter-component class="button-weiter" v-if="flow==4.3" @click="swiperInstance.slideNext();" pulsiert/>
+      <button-weiter-component class="button-weiter" v-else-if="flow>4.3" @click="swiperInstance.slideNext();"/>
+      <button-weiter-component class="button-weiter" v-else disabled /> -->
+      <!-- <button-weiter-component class="button-weiter" disabled /> -->
+    </swiper-slide>
     
     <swiper-slide v-if="flow >= 4.4 && flow<5.0" class="leiner-slide">
       <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/>
@@ -1380,6 +1475,9 @@
       <p>
         Ihr könnt ihn am Eingang abholen.
       </p>
+      <button-weiter-component class="button-weiter" v-if="flow==4.5" @click="swiperInstance.slideNext();" pulsiert/>
+      <button-weiter-component class="button-weiter" v-else-if="flow>4.5" @click="swiperInstance.slideNext();"/>
+      <button-weiter-component class="button-weiter" v-else disabled />
     </swiper-slide>
     
     <swiper-slide v-if="flow >=4.5 && flow<5.0">
@@ -1401,12 +1499,8 @@
         <p> Man musste genau hinschauen und hat vieles Neues erfahren und entdeckt. </p>
         <p> Ich glaube, dieses Museum hat noch viel mehr davon zu bieten... </p>
       </span>
-      <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
-      <!-- <div class="swipe-geste-vertikal"></div> -->
-      <button-weiter-component class="button-weiter" v-if="flow==4.5" @click="swiperInstance.slideNext();" pulsiert/>
-      <button-weiter-component class="button-weiter" v-else-if="flow>4.5" @click="swiperInstance.slideNext();"/>
-      <button-weiter-component class="button-weiter" v-else disabled />
-      <!-- <button-weiter-component class="button-weiter" disabled /> -->
+      <br><br><br>
+      <ion-button size="large" expand="block" color="danger" @click="spielStore.$reset();router.push('start');">zurück zum Start</ion-button>
     </swiper-slide>
 
 
@@ -1433,6 +1527,7 @@ import 'swiper/css/scrollbar';
 import { useBeaconStore } from '@/stores/BeaconStore';
 import PostingComponent from '../PostingComponent.vue';
 
+import router from '@/router';
 
 const props = defineProps( {
     empfang: {
@@ -1508,7 +1603,7 @@ watch(flow, () => {
       swiperInstance.value.slideNext();
     }, 1000 )
   }
-  if (flow.value==4.3 || flow.value==4.4) {
+  if (flow.value==4.31 || flow.value==4.32) {
     setTimeout(() => {
       swiperInstance.value.slideTo(2);
     }, 1000 )

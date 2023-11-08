@@ -65,7 +65,7 @@
                 :vordergrund="flow>=3.0 && !lupeImVordergrund"
                 :pulsieren="flow==3.0"
                 :bild="ort=='eg'?'assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_rund.png':'assets/objekte/og/10x0_og1_bc/10x0_og1_bc_rund.png'"
-                @kleine-lupe-clicked="flow=2.1"
+                @kleine-lupe-clicked="flow=3.1"
                 :hashtag1="flow>=3.3 ? (ort=='eg'?'#Adular_und_Feldspat':'#5_Sterne_sind_zuwenig') : ''"
                 :hashtag2="flow>=3.7 ? (ort=='eg'?'#alte_worte_alte_steine':'#faktisch_immerwoanders') : ''"
                 :abgeschlossen="flow>=4"
@@ -116,20 +116,26 @@
 
             <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow == 0.72 || slideNr == 3" :disabled="slideNr<3" v-if="flow<1.0"/>
             <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow==1.36" v-else-if="flow==1.36"/>
-            <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow==2.46" v-else-if="flow==2.46"/>
+            <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow==2.36" v-else-if="flow==2.36"/>
+            <ButtonKarteComponent @click="openKarteModal" :pulsiert="flow==3.36" v-else-if="flow==3.36"/>
             <ButtonKarteComponent @click="openKarteModal" disabled v-else-if="flow<4.0"/>
 
             <ButtonKameraComponent v-if="flow==0.8"
                 @click="openKameraModal" 
-                :disabled="!(flow == 0.8 && (empfang == 'stark' || !btTrigger))" 
-                :pulsiert="flow == 0.8 && empfang == 'stark'"
+                :disabled="!(flow == 0.8 && (empfang=='stark' || !btTrigger))" 
+                :pulsiert="flow == 0.8 && empfang=='stark'"
             />
             <ButtonKameraComponent v-else-if="flow==1.4"
                 @click="openKameraModal" 
                 :disabled="empfang != 'stark' && btTrigger" 
                 :pulsiert="empfang == 'stark'"
             />
-                <ButtonKameraComponent v-else-if="flow==2.4"
+            <ButtonKameraComponent v-else-if="flow==2.4"
+                @click="openKameraModal" 
+                :disabled="empfang != 'stark' && btTrigger" 
+                :pulsiert="empfang == 'start'"
+            />
+            <ButtonKameraComponent v-else-if="flow==3.4"
                 @click="openKameraModal" 
                 :disabled="empfang != 'stark' && btTrigger" 
                 :pulsiert="empfang == 'start'"
@@ -437,17 +443,6 @@ watch(flow, () => {
   //   console.log('clear leiner_timer');
   //   clearInterval(leiner_timer);
   // }
-  if (flow.value<4) {
-    verhaftet.value.forEach((value, index, arr) => {
-      arr[index] = false;
-    });
-    verdaechtig.value.forEach((value, index, arr) => {
-      arr[index] = false;
-    });
-    unverdaechtig.value.forEach((value, index, arr) => {
-      arr[index] = false;
-    });
-  }
   if (flow.value==2.0) {
     lupeImVordergrund.value = false;
   }
@@ -460,7 +455,7 @@ watch(flow, () => {
       if (flow.value < 1.4) flow.value = 1.36;
       else if (flow.value < 2.4) flow.value = 2.36;
       else if (flow.value < 3.4) flow.value = 3.36;
-    }, 30000)
+    }, 5*60000)
   }
   if ((flow.value==1.4 || flow.value==2.4 || flow.value==3.4) && slideNr.value>=2) {
     lupeImVordergrund.value=true;
@@ -474,6 +469,17 @@ watch(flow, () => {
   }
   if (flow.value>=4.0) {
     lupeImVordergrund.value=false;
+  }
+  if (flow.value<4) {
+    verhaftet.value.forEach((value, index, arr) => {
+      arr[index] = false;
+    });
+    verdaechtig.value.forEach((value, index, arr) => {
+      arr[index] = false;
+    });
+    unverdaechtig.value.forEach((value, index, arr) => {
+      arr[index] = false;
+    });
   }
   // if (flow.value >= 1.0)
   // if (flow.value == 0.8) {
@@ -510,7 +516,8 @@ watch(rangeTicks, () => {
   if (spielStore.btTrigger) {
     if (flow.value >= 0.71 && flow.value<0.8 && ort.value =='eg' ) {
       if (beaconStore.getBeaconVonOrt('EG Leiner-Statue').rssi > -95 
-      || beaconStore.getBeaconVonOrt('EG Leiner-Saal').rssi > -90) {
+      || beaconStore.getBeaconVonOrt('EG Ichthyosaurier').rssi > -90) {
+      // || beaconStore.getBeaconVonOrt('EG Kristall').rssi > -95) {
         flow.value = 0.8;
       }
     }
@@ -532,31 +539,31 @@ watch(rangeTicks, () => {
     }
     if (flow.value == 0.88 && ort.value =='og1') {
       if (beaconStore.getBeaconVonOrt('OG Zunftsaal').rssi > -95) {
-        flow.value = 0.9;
+        flow.value = 0.95;
       }
     }
-    if (flow.value == 1.3 && ort.value == 'eg') {
-      if (beaconStore.getBeaconVonOrt('EG Leiner-Saal').rssi > -95) {
+    if ((flow.value==1.3 || flow.value==1.36) && ort.value == 'eg') {
+      if (beaconStore.getBeaconVonOrt('EG Ichthyosaurier').rssi > -95) {
         flow.value = 1.4;
       }
     }
-    if (flow.value == 1.3 && ort.value == 'og1') {
+    if ((flow.value==1.3 || flow.value==1.36) && ort.value == 'og1') {
       if (beaconStore.getBeaconVonOrt('OG Schreibtisch').rssi > -95 ) {
         flow.value = 1.4;
       }
     }
     if (flow.value == 1.4 && ort.value == 'eg') {
-      empfang.value = beaconStore.getEmpfangVonOrt('EG Leiner-Saal');
+      empfang.value = beaconStore.getEmpfangVonOrt('EG Ichthyosaurier');
     }
     if (flow.value == 1.4 && ort.value == 'og1') {
       empfang.value = beaconStore.getEmpfangVonOrt('OG Schreibtisch');
     }
-    if (flow.value == 2.3 && ort.value == 'eg') {
+    if ((flow.value==2.3 || flow.value==2.36) && ort.value == 'eg') {
       if (beaconStore.getBeaconVonOrt('EG Waffenraum').rssi > -95) {
         flow.value = 2.4;
       }
     }
-    if (flow.value == 2.3 && ort.value == 'og1') {
+    if ((flow.value==2.3 || flow.value==2.36) && ort.value == 'og1') {
       if (beaconStore.getBeaconVonOrt('OG Zunftsaal').rssi > -95 ) {
         flow.value = 2.4;
       }
@@ -568,18 +575,20 @@ watch(rangeTicks, () => {
       empfang.value = beaconStore.getEmpfangVonOrt('OG Zunftsaal');
     }
     
-    if (flow.value == 3.3 && ort.value == 'eg') {
-      if (beaconStore.getBeaconVonOrt('EG Kristall').rssi > -95) {
-        flow.value = 3.4;
+    if ((flow.value==3.3 || flow.value==3.36) && ort.value == 'eg') {
+      // if (beaconStore.getBeaconVonOrt('EG Kristall').rssi > -95) {
+      if (beaconStore.getBeaconVonOrt('EG Leiner-Statue').rssi > -95) {
+      flow.value = 3.4;
       }
     }
-    if (flow.value == 3.3 && ort.value == 'og1') {
+    if ((flow.value==3.3 || flow.value==3.36) && ort.value == 'og1') {
       if (beaconStore.getBeaconVonOrt('OG Aufsteller').rssi > -95 ) {
         flow.value = 3.4;
       }
     }
     if (flow.value == 3.4 && ort.value == 'eg') {
-      empfang.value = beaconStore.getEmpfangVonOrt('EG Kristall');
+      // empfang.value = beaconStore.getEmpfangVonOrt('EG Kristall');
+      empfang.value = beaconStore.getEmpfangVonOrt('EG Leiner-Statue');
     }
     if (flow.value == 3.4 && ort.value == 'og1') {
       empfang.value = beaconStore.getEmpfangVonOrt('OG Aufsteller');
@@ -603,7 +612,7 @@ function hinweisClicked(nr : number) {
   if (flow.value>=3.3 && flow.value<4.0) {
     lupeImVordergrund.value = false;
   }
-  if (flow.value==4.1) {
+  if (flow.value>=4.1) {
     ermittlungsAuswahl.value = nr;
     openHinweisModal(nr);
   }
@@ -739,9 +748,11 @@ const openSteckbriefModal = async (nr: number, code : string) => {
   }
   if (verhaftet.value[nr-1]) {
     if (nr == 1)
-      flow.value = 4.4;
-    else
-      flow.value = 4.3;
+      flow.value = 4.5;
+    else if (verhaftet.value.filter(Boolean).length == 1)
+      flow.value = 4.31;
+    else if (verhaftet.value.filter(Boolean).length == 2)
+      flow.value = 4.32;
   }
 }
 

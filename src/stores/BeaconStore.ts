@@ -15,14 +15,14 @@ export const useBeaconStore = defineStore('beaconStore', {
     beaconList: [
       { 
         id: 1,
-        ort: "EG Detektivbüro",
+        ort: "OG Gang",
         rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 2,
-        ort: "EG Kristall",
+        ort: "EG Detektivbüro",
         rssi: -100,
         time: 0,
         counter: 0
@@ -36,7 +36,7 @@ export const useBeaconStore = defineStore('beaconStore', {
       },
       {
         id: 4,
-        ort: "EG Leiner-Saal",
+        ort: "EG Ichthyosaurier",
         rssi: -100,
         time: 0,
         counter: 0
@@ -50,7 +50,7 @@ export const useBeaconStore = defineStore('beaconStore', {
       },
       {
         id: 6,
-        ort: "OG Gang",
+        ort: "EG Detektivbüro (kaputt)",
         rssi: -100,
         time: 0,
         inRange: false,
@@ -167,7 +167,7 @@ export const useBeaconStore = defineStore('beaconStore', {
       const rssi = this.beaconList[index].rssi;
       if (rssi == -100) return 'nichts';
       if (rssi < -90) return 'schwach';
-      if (rssi < -80) return 'mittel';
+      if (rssi < -85) return 'mittel';
       return 'stark'
     },
     getColor(index : number) {

@@ -135,7 +135,7 @@
               :eingetragen="flow>=3.3">
               Alte Namen, alte Sitten. Ich liebe es, wenn ich erstmal nur "Bahnhof" verstehe. 
               Deshalb zunächst nur soviel: 
-              ieser "Adular" lag zusammen mit anderen "Feldspaten" in einem Leinerschrank! 
+              Dieser "Adular" lag zusammen mit anderen "Feldspaten" in einem Leinerschrank! 
               (Fortsetzung folgt)
           </PostingComponent>
           <PostingComponent v-else-if="ort=='og1' && nr==3"

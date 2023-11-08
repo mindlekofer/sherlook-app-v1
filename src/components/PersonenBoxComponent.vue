@@ -91,7 +91,7 @@ const props = defineProps( {
 }
 .verdaechtig {
   /* background-color: #FFF4B6; */
-  background-color: #e17852;
+  background-color: #eda55e;
 }
 .unverdaechtig {
   /* background-color: #FFF4B6; */

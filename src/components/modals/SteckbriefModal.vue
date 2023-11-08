@@ -14,7 +14,6 @@
         <!-- <i>Festnehmen</i> -->
       </div>
 
-
       <div class="links">
         <!-- <img class="person" :src="'assets/personen/'+code+'/'+code+'_kopf.png'"/> -->
         <img class="person" width="230" :src="'assets/personen/'+props.code+'/'+props.code+'_kopf.png'"/>
@@ -43,7 +42,6 @@
                 expand="block" 
                 @click="verdaechtigClicked"
             > verdächtig </ion-button>
- 
         </span>
       </div>
       <div class="rechts">
