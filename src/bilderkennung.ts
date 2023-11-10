@@ -17,12 +17,15 @@ export async function ladeModell() {
     // model = await loadLayersModel('assets/tensorflow/model_subset/model.json');
     // model = await loadLayersModel('assets/tensorflow/rosgarten_transfer_subset_js/model.json');
     // model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_subset_js_graph/model.json');
-    model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_v1_js_graph/model.json');
+    // model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_v1_js_graph/model.json');
+    // model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_v1_128_js_graph/model.json');
+    model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_v2_128_js_graph/model.json');
     // tflite_model = rosgarten_v2_aug.tflite
     console.log('model loaded');
-    console.log('setBackend("webgl"): ', setBackend('webgl'));
+    console.log('setBackend("webgl"): ', await setBackend('webgl'));
     // console.log('setBackend("wasm"): ', setBackend('wasm'));
-    const zerosTensor:any= zeros([1, 224, 224, 3]);
+    // const zerosTensor:any= zeros([1, 224, 224, 3]);
+    const zerosTensor:any= zeros([1, 128, 128, 3]);
     model.predict(zerosTensor);
     console.log('zeros predicted');
   } else {

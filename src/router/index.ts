@@ -5,6 +5,7 @@ import IntroFilmPage from '@/views/Page_0_2_0_IntroFilm.vue'
 import LevelPage from '@/views/Page_0_3_0_Level.vue'
 import RaumPage from '@/views/Page_0_4_0_Raum.vue'
 import SpielPage from '@/views/Page_Spiel.vue'
+import OutroFilmPage from '@/views/Page_4_4_1_OutroFilm.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -40,8 +41,12 @@ const routes: Array<RouteRecordRaw> = [
     path: '/spiel',
     name: 'Spiel',
     component: SpielPage
+  },
+  {
+    path: '/outro',
+    name: 'Outro',
+    component: OutroFilmPage
   }
-
 ]
 
 const router = createRouter({

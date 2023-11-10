@@ -6,7 +6,10 @@
         <div id="container_links">
           <div class="container_hinweise">
             <!-- <HinweisBoxComponent class="hinweis-box" v-if="flow<1.0" :zahl="'1'" :gross="false" inaktiv /> -->
-
+            <div class="stempel" id="stempel-tutorial" v-if="flow<1.0">Tutorial</div>
+            <div class="stempel" id="stempel-detail1" v-else-if="flow==1.0">Detail #1</div>
+            <div class="stempel" id="stempel-detail2" v-else-if="flow==2.0">Detail #2</div>
+            <div class="stempel" id="stempel-detail3" v-else-if="flow==3.0">Detail #3</div>
             <HinweisBoxComponent class="hinweis-box" v-if="flow<1.0" 
                 :zahl="'1'"
                 :bild="ort=='eg'?'assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png':'assets/objekte/og/00x0_og1_ac/00x0_og1_ac_rund.png'"
@@ -14,7 +17,7 @@
             />
             <HinweisBoxComponent class="hinweis-box" v-else-if="flow<5.0"
                 :zahl="'1'"
-                :gross="(flow>=1.3 && flow<2.0 && slideNr>=2) || (flow==2.0) || (flow>=2.3 && slideNr>=2) || flow>=4.1"
+                :gross="(flow>=1.3 && flow<2.0 && slideNr>=2) || (flow==2.0) || (flow>=2.3 && flow<=2.7 && slideNr>=2) || (flow>=3.3 && flow<=3.7 && slideNr>=2) || flow==3.0 || flow>=4.0"
                 :buch="flow>=1.1"
                 :auswahl="(flow>=1.0 && flow<2.0) || hinweisModalOffenNr==1"
                 :vordergrund="flow>=1.0 && !lupeImVordergrund"
@@ -25,7 +28,7 @@
                 :hashtag2="flow>=1.7 ? (ort=='eg'?'#alt_und_geheimnsvoll':'#schillernde_lockenpracht') : ''"
                 :abgeschlossen="flow>=2"
                 @click="hinweisClicked(1)"
-                @hinweis-clicked="console.log('Hinweis clickecd')"
+                @hinweis-clicked="console.log('Hinweis clicked')"
                 :hashtag1Rot="hashtagFalsch(1)"
                 :hashtag2Rot="hashtagFalsch(2)"
                 />
@@ -37,7 +40,7 @@
                 />
             <HinweisBoxComponent class="hinweis-box" v-else-if="flow<5.0"
                 :zahl="'2'"
-                :gross="(flow>=2.3 && flow<3.0 && slideNr>=2) || (flow==3.0) || (flow>=3.3 && slideNr>=2) || flow>=4.1"
+                :gross="(flow>=2.3 && flow<3.0 && slideNr>=2) || (flow==3.0) || (flow>=3.3 && flow <= 3.7 && slideNr>=2) || flow>=4.0"
                 :buch="flow>=2.1"
                 :auswahl="(flow>=2.0 && flow<3.0) || hinweisModalOffenNr==2" 
                 :vordergrund="flow>=2.0 && !lupeImVordergrund"
@@ -59,7 +62,7 @@
             />
             <HinweisBoxComponent class="hinweis-box" v-else-if="flow<5.0"
                 :zahl="'3'"
-                :gross="(flow>=3.3 && flow<4.0 && slideNr>=2) || flow>=4.1"
+                :gross="(flow>=3.3 && flow<4.0 && slideNr>=2) || flow>=4.0"
                 :buch="flow>=3.1"
                 :auswahl="(flow>=3.0 && flow<4.0) || hinweisModalOffenNr==3" 
                 :vordergrund="flow>=3.0 && !lupeImVordergrund"
@@ -78,15 +81,15 @@
               bild="assets/img/lupe_logo_rund.png"
               inaktiv
             />
-            <LupeMitteComponent id="lupe_mitte" v-if="flow >= 0.7 && flow < 0.81 && ort=='eg'" 
+            <LupeMitteComponent id="lupe_mitte" v-if="flow >= 0.7 && flow <= 0.8 && ort=='eg'" 
                 bild="assets/objekte/eg/tutorial/tutorial_eg_rund.png" 
                 :empfang=empfang 
             />
-            <LupeMitteComponent id="lupe_mitte" v-else-if="flow >= 0.7 && flow < 0.81 && ort=='og1'"
+            <LupeMitteComponent id="lupe_mitte" v-else-if="flow >= 0.7 && flow <= 0.8 && ort=='og1'"
                 bild="assets/objekte/og/tutorial/tutorial_og_rund.png"
                 :empfang=empfang 
             />
-            <LupeMitteComponent id="lupe_mitte" v-else-if="flow >= 0.81 && flow <1.0" 
+            <LupeMitteComponent id="lupe_mitte" v-else-if="flow > 0.8 && flow <1.0" 
                 bild="assets/img/lupe_logo_rund.png"
             />
             <!-- <LupeMitteComponent id="lupe_mitte" v-else-if="flow>=1.1 && flow<1.3"  -->
@@ -103,9 +106,15 @@
                 @click="lupeMitteClicked"
                 :empfang="flow==2.4 ? empfang : 'nichts'"
               />
-            <LupeMitteComponent id="lupe_mitte" v-else-if="flow>=3.1 && flow<3.3" 
+            <!-- <LupeMitteComponent id="lupe_mitte" v-else-if="flow>=3.1 && flow<3.3" 
                 :bild="ort=='eg' ? 'assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_rund.png' : 'assets/objekte/og/10x0_og1_bc/10x0_og1_bc_rund.png'"
-            />
+            /> -->
+            <LupeMitteComponent id="lupe_mitte" v-else-if="flow>=3.1 && flow<4" 
+                :bild="ort=='eg' ? 'assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_rund.png' : 'assets/objekte/og/10x0_og1_bc/10x0_og1_bc_rund.png'"
+                :hintergrund="!lupeImVordergrund"
+                @click="lupeMitteClicked"
+                :empfang="flow==3.4 ? empfang : 'nichts'"
+              />
             <LupeMitteComponent id="lupe_mitte" v-else inaktiv bild="assets/img/lupe_logo_rund.png" />
           </div>
 
@@ -133,12 +142,12 @@
             <ButtonKameraComponent v-else-if="flow==2.4"
                 @click="openKameraModal" 
                 :disabled="empfang != 'stark' && btTrigger" 
-                :pulsiert="empfang == 'start'"
+                :pulsiert="empfang == 'stark'"
             />
             <ButtonKameraComponent v-else-if="flow==3.4"
                 @click="openKameraModal" 
                 :disabled="empfang != 'stark' && btTrigger" 
-                :pulsiert="empfang == 'start'"
+                :pulsiert="empfang == 'stark'"
             />
             <ButtonKameraComponent v-else-if="flow<4.0" disabled></ButtonKameraComponent>
 
@@ -150,7 +159,7 @@
                   :verdaechtig="spielStore.verdaechtig[0]" 
                   :unverdaechtig="spielStore.unverdaechtig[0]" />
                   <!-- :inaktiv="verhaftet.some((v)=>v==true) && !verhaftet[0]"  -->
-                  <PersonenBoxComponent name="James Mopsiathy" code="11x1" 
+              <PersonenBoxComponent name="James Mopsiathy" code="11x1" 
                   @click="personClicked(2, '11x1')" 
                   :inaktiv="verhaftet[1]" 
                   :auswahl="personAusgewaehlt==2" 
@@ -166,11 +175,13 @@
             <span class="personen-boxen" v-else-if="flow>=4.1 && spieler=='Sherlock'">
               <PersonenBoxComponent name="Katinka Antiqus" code="00x0" 
                   @click="personClicked(1, '00x0')" 
+                  :inaktiv="verhaftet[1]" 
                   :auswahl="personAusgewaehlt==1" 
                   :verdaechtig="spielStore.verdaechtig[0]" 
                   :unverdaechtig="spielStore.unverdaechtig[0]" />
               <PersonenBoxComponent name="Mia Mirabilis" code="111x" 
                   @click="personClicked(2, '111x')" 
+                  :inaktiv="verhaftet[1]" 
                   :auswahl="personAusgewaehlt==2" 
                   :verdaechtig="spielStore.verdaechtig[1]" 
                   :unverdaechtig="spielStore.unverdaechtig[1]" />
@@ -188,11 +199,13 @@
                   :unverdaechtig="spielStore.unverdaechtig[0]" />
               <PersonenBoxComponent name="Iri Adler" code="11x0" 
                   @click="personClicked(2, '11x0')" 
+                  :inaktiv="verhaftet[1]" 
                   :auswahl="personAusgewaehlt==2" 
                   :verdaechtig="spielStore.verdaechtig[1]" 
                   :unverdaechtig="spielStore.unverdaechtig[1]" />
               <PersonenBoxComponent name="Schorm Roderick" code="01x1" 
                   @click="personClicked(3, '01x1')" 
+                  :inaktiv="verhaftet[1]" 
                   :auswahl="personAusgewaehlt==3" 
                   :verdaechtig="spielStore.verdaechtig[2]" 
                   :unverdaechtig="spielStore.unverdaechtig[2]" />
@@ -205,7 +218,7 @@
 
             <ion-button @click="skipTutorialHinweis(true)" color="primary" size="large" v-if="spielStore.flow<1.0">Tutorial <br>überspringen</ion-button>
           </div>
-          <img class="tutorial-stamp" src="assets/img/tutorial_solid.svg" v-if="spielStore.flow<1.0"/>
+          <!-- <img class="tutorial-stamp" src="assets/img/tutorial_solid.svg" v-if="spielStore.flow<1.0"/> -->
         </div>
         <div id="container_scroll">
           <!-- <component :is="scrollSeite"/> -->
@@ -230,6 +243,47 @@
 </template>
 
 <style scoped>
+.stempel {
+  position: absolute;
+  padding: 5px 20px 3px 20px;
+  font-family: Helvetica, Sans-Serif;
+  font-weight: 900;
+  background-color: transparent;
+  border-width: 12px;
+  border-color: rgb(243, 61, 61);
+  color:  rgb(243, 61, 61);
+  opacity: 0.7;
+  border-style: solid;
+  border-radius: 30px;
+}
+#stempel-tutorial {
+  font-size: 90px;
+  top: 100px;
+  left: 100px;
+  transform: rotate(-30deg);
+  z-index: 999;
+}
+#stempel-detail1 {
+  font-size: 70px;
+  transform: rotate(-15deg);
+  top: 60px;
+  left: 200px;
+  z-index: 10;
+}
+#stempel-detail2 {
+  font-size: 70px;
+  transform: rotate(+10deg);
+  top: 500px;
+  left: 200px;
+  z-index: 10;
+}
+#stempel-detail3 {
+  font-size: 70px;
+  transform: rotate(-20deg);
+  top: 480px;
+  left: 320px;
+  z-index: 10;
+}
 .hinweis-box {
   filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25));
 }
@@ -335,6 +389,7 @@
 .debugging {
   position: absolute;
   z-index: 9999;
+  opacity: 50%;
 }
 #debug-bt {
   left: 400px;
@@ -385,13 +440,14 @@ if (isPlatform('desktop')) {
   spielStore.kameraTrigger = true;
 }
 
-beaconStore.scanBt();
+beaconStore.restartTimer = setInterval(() => {
+  console.log("bt restartTimer");
+  beaconStore.scanBt();
+}, 10000)
 
 const lupeImVordergrund = ref(false);
 const hinweisBoxKlein = ref(true);
-
 const hinweisModalOffenNr = ref(0);
-
 const timeoutObjektNichtGefunden = ref(0);
 
 // const emit = defineEmits(['zeige_lupe']);
@@ -422,27 +478,7 @@ function personBoxInaktiv(nr : number) {
 const entfernung = ref(-1);
 // let leiner_timer = null as any;
 watch(flow, () => {
-  console.log(`(page tutorial) flow geändert auf ${flow.value}`);
-  // if (flow.value == 0.74) {
-  //   console.log('Leiner Timer anschalten');
-  //   leiner_timer = setInterval( () => {
-  //     console.log('Check Leiner Entfernung');
-  //     if (Date.now() > beaconStore.beaconList[2].time + 20000) {
-  //       console.log('Leiner ist zu weit weg');
-  //       entfernung.value = 100;
-  //     } else if (beaconStore.beaconList[2].rssi < -80) {
-  //       entfernung.value = 50;
-  //     }  else if (beaconStore.beaconList[2].rssi < -70) {
-  //       entfernung.value = 25;
-  //     } else {
-  //       entfernung.value = 5;
-  //     }
-  //     console.log('entfernung: ', entfernung.value);
-  //   }, 1000);
-  // } else {
-  //   console.log('clear leiner_timer');
-  //   clearInterval(leiner_timer);
-  // }
+  console.log(`(page spiel) flow geändert auf ${flow.value}`);
   if (flow.value==2.0) {
     lupeImVordergrund.value = false;
   }
@@ -457,7 +493,8 @@ watch(flow, () => {
       else if (flow.value < 3.4) flow.value = 3.36;
     }, 5*60000)
   }
-  if ((flow.value==1.4 || flow.value==2.4 || flow.value==3.4) && slideNr.value>=2) {
+  // if ((flow.value==1.4 || flow.value==2.4 || flow.value==3.4) && slideNr.value>=2) {
+  if ((flow.value==1.4 || flow.value==2.4 || flow.value==3.4)) {
     lupeImVordergrund.value=true;
     clearTimeout(timeoutObjektNichtGefunden.value);
   }
@@ -481,19 +518,6 @@ watch(flow, () => {
       arr[index] = false;
     });
   }
-  // if (flow.value >= 1.0)
-  // if (flow.value == 0.8) {
-  //   entfernung.value = 70;
-  //   setTimeout(() => {
-  //     console.log("timeout!");
-  //     entfernung.value = 20;
-  //   }, 5000);
-  //   setTimeout(() => {
-  //     console.log("timeout!");
-  //     entfernung.value = 3;
-  //     flow.value = 0.9;
-  //   }, 10000);
-  // }
 });
 
 watch(slideNr, () => {
@@ -501,7 +525,10 @@ watch(slideNr, () => {
   //     && slideNr.value>=2 && slideNr.value<=3) {
   //   lupeImVordergrund.value = false;
   // }
-  if (flow.value>=2.3 && slideNr.value==3) {
+  if (((flow.value>=1.3&&flow.value<=1.4) 
+      || (flow.value>=2.3&&flow.value<=2.4) 
+      || (flow.value>=3.3&&flow.value<=3.4)) 
+      && slideNr.value==3) {
     lupeImVordergrund.value == true;
   }
   if (flow.value==1.7 && slideNr.value==6) {
@@ -516,7 +543,8 @@ watch(rangeTicks, () => {
   if (spielStore.btTrigger) {
     if (flow.value >= 0.71 && flow.value<0.8 && ort.value =='eg' ) {
       if (beaconStore.getBeaconVonOrt('EG Leiner-Statue').rssi > -95 
-      || beaconStore.getBeaconVonOrt('EG Ichthyosaurier').rssi > -90) {
+      || beaconStore.getBeaconVonOrt('EG Ichthyosaurier').rssi > -95
+      || beaconStore.getBeaconVonOrt('EG Kristall').rssi > -95) {
       // || beaconStore.getBeaconVonOrt('EG Kristall').rssi > -95) {
         flow.value = 0.8;
       }
@@ -537,8 +565,14 @@ watch(rangeTicks, () => {
         flow.value = 0.95;
       }
     }
-    if (flow.value == 0.88 && ort.value =='og1') {
+    if (flow.value == 0.9 && ort.value =='og1') {
       if (beaconStore.getBeaconVonOrt('OG Zunftsaal').rssi > -95) {
+        flow.value = 0.95;
+      }
+    }
+    if (flow.value == 0.88 && ort.value =='og1') {
+      if (beaconStore.getBeaconVonOrt('OG Schloss').rssi > -95
+      || beaconStore.getBeaconVonOrt('OG Zunftsaal').rssi > -95) {
         flow.value = 0.95;
       }
     }
@@ -564,7 +598,7 @@ watch(rangeTicks, () => {
       }
     }
     if ((flow.value==2.3 || flow.value==2.36) && ort.value == 'og1') {
-      if (beaconStore.getBeaconVonOrt('OG Zunftsaal').rssi > -95 ) {
+      if (beaconStore.getBeaconVonOrt('OG Schloss').rssi > -95 ) {
         flow.value = 2.4;
       }
     }
@@ -572,26 +606,24 @@ watch(rangeTicks, () => {
       empfang.value = beaconStore.getEmpfangVonOrt('EG Waffenraum');
     }
     if (flow.value == 2.4 && ort.value == 'og1') {
-      empfang.value = beaconStore.getEmpfangVonOrt('OG Zunftsaal');
+      empfang.value = beaconStore.getEmpfangVonOrt('OG Schloss');
     }
     
     if ((flow.value==3.3 || flow.value==3.36) && ort.value == 'eg') {
-      // if (beaconStore.getBeaconVonOrt('EG Kristall').rssi > -95) {
-      if (beaconStore.getBeaconVonOrt('EG Leiner-Statue').rssi > -95) {
-      flow.value = 3.4;
+      if (beaconStore.getBeaconVonOrt('EG Kristall').rssi > -95) {
+        flow.value = 3.4;
       }
     }
     if ((flow.value==3.3 || flow.value==3.36) && ort.value == 'og1') {
-      if (beaconStore.getBeaconVonOrt('OG Aufsteller').rssi > -95 ) {
+      if (beaconStore.getBeaconVonOrt('OG Kelch').rssi > -95 ) {
         flow.value = 3.4;
       }
     }
     if (flow.value == 3.4 && ort.value == 'eg') {
-      // empfang.value = beaconStore.getEmpfangVonOrt('EG Kristall');
-      empfang.value = beaconStore.getEmpfangVonOrt('EG Leiner-Statue');
+      empfang.value = beaconStore.getEmpfangVonOrt('EG Kristall');
     }
     if (flow.value == 3.4 && ort.value == 'og1') {
-      empfang.value = beaconStore.getEmpfangVonOrt('OG Aufsteller');
+      empfang.value = beaconStore.getEmpfangVonOrt('OG Kelch');
     }
     if (flow.value == 4.0) {
       if (beaconStore.getBeaconVonOrt('EG Detektivbüro').rssi > -95) {
@@ -623,7 +655,7 @@ function lupeMitteClicked() {
   if (flow.value>=1.3) {
     lupeImVordergrund.value = true;
   }
-  if ((flow.value==1.3 || flow.value==2.3 || flow.value==3.3) && empfang.value=='stark') {
+  if ((flow.value==1.4 || flow.value==2.4 || flow.value==3.4) && empfang.value=='stark') {
     openKameraModal();
   }
 }
@@ -775,26 +807,26 @@ const openHinweisModal = async (nr: number) => {
 const personAusgewaehlt = ref(0);
 
 function hashtagFalsch(nr : number) {
-  if (spielStore.personVerhaftet == "11x1" && spielStore.ort=='eg') {
-    return nr==1 || nr==2 || nr==3 || nr==4;
+  if (spielStore.personVerhaftet == "11x1" && spielStore.ort=='eg') {           // James Mopsiati
+    return nr==2 || nr==4 || nr==6;
   } else if (spielStore.personVerhaftet == "11x1" && spielStore.ort=='og1') {
-    return nr==1 || nr==2 || nr==3 || nr==4;
-  } else if (spielStore.personVerhaftet == "111x" && spielStore.ort=='eg') {
-    return nr%2 == 0;
+    return nr==2 || nr==4 || nr==6;
+  } else if (spielStore.personVerhaftet == "111x" && spielStore.ort=='eg') {     // Mia Mirabilis
+    return nr==2 || nr==6;
   } else if (spielStore.personVerhaftet == "111x" && spielStore.ort=='og1') {
-    return nr%2 == 0;
+    return nr==4 || nr==6;
   } else if (spielStore.personVerhaftet == "x111" && spielStore.ort=='eg') {
-    return nr%2 == 0;
+    return nr==4 || nr==6;
   } else if (spielStore.personVerhaftet == "x111" && spielStore.ort=='og1') {
-    return nr%2 == 0;
+    return nr==6 || nr==5;
   } else if (spielStore.personVerhaftet == "11x0" && spielStore.ort=='eg') {
-    return nr%2 == 0;
+    return nr==2 || nr==6;
   } else if (spielStore.personVerhaftet == "11x0" && spielStore.ort=='og1') {
-    return nr%2 == 0;
+    return nr==2 || nr==4;
   } else if (spielStore.personVerhaftet == "01x1" && spielStore.ort=='eg') {
-    return nr%2 == 0;
+    return nr==4;
   } else if (spielStore.personVerhaftet == "01x1" && spielStore.ort=='og1') {
-    return nr%2 == 0;
+    return nr==6;
   }
 }
 

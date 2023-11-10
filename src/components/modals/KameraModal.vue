@@ -1,30 +1,68 @@
 <template>
   <div class="modal-wrapper">
     <div class="modal-content">
+      <div id="erkannte-kategorie">{{ kategorie }}<br>{{ wahrscheinlichkeit.toFixed(2) }}</div>
+      <div class="objekt-info" v-show="erkennungAktiv">analysiere...</div>
+      <div class="faelschung-gefunden" v-show="faelschungGefunden">Gefälscht!</div>
       <div id="kamerabild">
         <svg width="100%" height="100%" id="bbox" v-show="showBbox">
           <rect id="bbox-rect" :x="bbox_x" :y="bbox_y" :width="bbox_width" :height="bbox_height"></rect>
           <text id="bbox-text" :x="bbox_x" :y="bbox_y-10">{{ bbox_class }} {{ bbox_score }}</text>
         </svg>
-        <div id="erkannte-kategorie">{{ kategorie }}<br>{{ wahrscheinlichkeit.toFixed(2) }}</div>
-        <video ref="videoRef" autoplay muted poster="assets/img/detektive/watson_neutral.png"></video>            
+        <video ref="videoRef" autoplay muted poster="assets/img/lupe_startet.png"></video>            
       </div>
     </div>
-
-    <div class="modal-control">        
+    <!-- <div class="modal-control">         -->
       <!-- <ion-button @click="kameraStarten()" :disabled="!modelGeladen">Kamera an</ion-button> -->
       <!-- <ion-button @click="kameraStarten()">Kamera an</ion-button> -->
       <!-- <ion-button @click="kameraSchliessen()">Kamera aus</ion-button> -->
-      <ion-button size="large" v-if="manuelleAufloesung" color="warning" @click="objektIdentifiziert(0, false)">Objektsuche auflösen?</ion-button>
-      <span v-else>&nbsp;</span>
-      <ion-button size="large" @click="modalSchliessen">zurück zum Spiel</ion-button>
-    </div>
+      <!-- <ion-button size="large" v-if="manuelleAufloesung" color="warning" @click="objektIdentifiziert(0, false)">Objektsuche auflösen?</ion-button> -->
+      <!-- <span v-else>&nbsp;</span> -->
+      <!-- <ion-button size="large" @click="modalSchliessen">zurück zum Spiel</ion-button> -->
+      <ButtonZurueckComponent class="button button-zurueck" @click="modalSchliessen"></ButtonZurueckComponent>
+      <ButtonWeiterComponent class="button button-weiter" :disabled="!faelschungGefunden" :pulsiert="faelschungGefunden" @click="{spielStore.flow=neuerFlow; modalSchliessen()}"></ButtonWeiterComponent>
+    <!-- </div> -->
   </div>
 </template>
 
 <style scoped>
+.button {
+  position: absolute;
+  bottom: 30px;
+}
+.button-zurueck {
+  left: 30px;
+}
+.button-weiter {
+  right: 30px;
+}
+.objekt-info {
+  z-index: 99;
+  font-size: 50px;
+  font-weight: 800;
+  top: 100px;
+  position: absolute;
+  color: rgb(237, 154, 0);
+  animation: pulsieren-animation 1s ease-in-out infinite alternate;
+}
+.faelschung-gefunden {
+  z-index: 99;
+  font-size: 90px;
+  font-weight: 800;
+  top: 270px;
+  position: absolute;
+  color: rgb(237, 0, 0);
+  animation: pulsieren-animation 0.15s ease-in-out infinite alternate;
+}
 #erkannte-kategorie {
   position: absolute;
+  z-index: 99;
+  left: 10px;
+  top: 10px;
+  opacity: 20%;
+}
+.faelschung-lupe {
+  border-color: rgb(255, 0, 0);
 }
 #bbox {
   position: absolute;
@@ -47,12 +85,15 @@ video {
   height: 100%;
 }
 #kamerabild {
-  width: 800px;
-  height: 600px;
+  width: 650px;
+  height: 650px;
   /* background-color: blue; */
   display: flex;
   position: relative;
-  border-radius: 10px;
+  border-radius: 325px;
+  /* border-color: rgb(0, 0, 0); */
+  border-width: 70px;
+  border-style: solid;
   overflow: hidden;
 }
 .modal-wrapper {
@@ -65,6 +106,7 @@ video {
   font-size: 24pt;
 }
 .modal-wrapper .modal-content {
+  position: relative;
   font-size: 16pt;
   flex-grow: 1;
   text-align: center;
@@ -79,7 +121,11 @@ video {
   flex-direction: row;
   justify-content: space-between;
 }
-
+@keyframes pulsieren-animation {
+  100% {
+    opacity: 40%;
+  }
+}
 </style>
 
 <script setup lang="ts">
@@ -92,10 +138,15 @@ import { useBeaconStore } from '@/stores/BeaconStore';
 
 import { model, cocoModel, modelGeladen, ladeModell } from '../../bilderkennung'
 
+
+import ButtonWeiterComponent from '../ButtonWeiterComponent.vue';
+import ButtonZurueckComponent from '../ButtonZurueckComponent.vue';
+
 import '@tensorflow/tfjs-backend-cpu'
 import '@tensorflow/tfjs-backend-webgl'
 import * as tf from '@tensorflow/tfjs'
 // import * as cocoSsd from '@tensorflow-models/coco-ssd'
+
 
 console.log("opening KameraModal");
 
@@ -124,8 +175,9 @@ const modelLoaded = ref(false);
 let tfCamera;
 let tfCapture;
 
+
 const manuelleAufloesung = ref(false);
-setTimeout(() => {manuelleAufloesung.value = true}, 30000);
+setTimeout(() => {manuelleAufloesung.value = true}, 2*60*1000);
 
 const bbox_x = ref(0);
 const bbox_y = ref(0);
@@ -133,6 +185,9 @@ const bbox_width = ref(0);
 const bbox_height = ref(0);
 const bbox_class = ref("");
 const bbox_score = ref("");
+
+const faelschungGefunden = ref(false);
+const neuerFlow = ref(0);
 
 const showBbox = ref(false);
 
@@ -181,8 +236,10 @@ async function videoElementInit() {
     video: { 
       facingMode: 'environment',
       // frameRate: 10,
-      width: 224,
-      height: 224
+      // width: 224,
+      // height: 224
+      width: 128,
+      height: 128
       // width: 400,
       // height: 300
      },
@@ -273,8 +330,10 @@ async function predictModel()  {
       // console.log(predict);
       // console.log('predict: ', model.predict(tensor.expandDims(0)).argMax(1).dataSync()[0]);
       
-      if (wahrscheinlichkeit.value >= 0.8 && objektIdentifiziert(kategorie.value))
-        modalSchliessen();
+      if (wahrscheinlichkeit.value >= 0.8 && objektIdentifiziert(kategorie.value)>0) {
+        neuerFlow.value = objektIdentifiziert(kategorie.value);
+        objektGefunden();
+      }
       else
         window.requestAnimationFrame(predictModel);
 
@@ -321,26 +380,24 @@ async function cocoPredict() {
 }
 
 function objektIdentifiziert(kategorie : number, auswerten = true) {
-  let ret = true;
+  let neuer_flow = 0;
   if (spielStore.flow==0.8 && spielStore.ort=='eg' && (kategorie==79 || !auswerten) )      // Leiner-Statue
-    spielStore.flow = 0.9;
+  neuer_flow = 0.9;
   else if (spielStore.flow==0.8 && spielStore.ort=='og1' && (kategorie==80 || !auswerten))  // Leiner-Aufsteller
-    spielStore.flow = 0.88;
+    neuer_flow = 0.9;
   else if (spielStore.flow==1.4 && spielStore.ort=='eg' && (kategorie==78 || !auswerten))   // Ichtyosaurier
-    spielStore.flow = 1.6;
+    neuer_flow = 1.6;
   else if (spielStore.flow==1.4 && spielStore.ort=='og1' && (kategorie==74 || !auswerten))  // Haarlocke
-    spielStore.flow = 1.6;
+    neuer_flow = 1.6;
   else if (spielStore.flow==2.4 && spielStore.ort=='eg' && (kategorie==32 || !auswerten))   // Hellebarde
-    spielStore.flow = 2.6;
+    neuer_flow = 2.6;
   else if (spielStore.flow==2.4 && spielStore.ort=='og1' && (kategorie==6 || !auswerten))  // Vorhängeschloss
-    spielStore.flow = 2.6;
+    neuer_flow = 2.6;
   else if (spielStore.flow==3.4 && spielStore.ort=='eg' && (kategorie==12 || !auswerten))   // Kristall
-    spielStore.flow = 3.6;
+    neuer_flow = 3.6;
   else if (spielStore.flow==3.4 && spielStore.ort=='og1' && (kategorie==9 || !auswerten))  // Kelch 
-    spielStore.flow = 3.6;
-  else
-    ret = false;
-  return ret;
+    neuer_flow = 3.6;
+  return neuer_flow;
 }
 
 function objektIdentifiziertSubset(kategorie : number, auswerten = true) {
@@ -364,6 +421,13 @@ function objektIdentifiziertSubset(kategorie : number, auswerten = true) {
   else
     ret = false;
   return ret;
+}
+
+function objektGefunden() {
+  faelschungGefunden.value = true;
+  videoAktiv.value = false;
+  erkennungAktiv.value = false;
+  videoRef.value?.pause();
 }
 
 async function modalSchliessen() {

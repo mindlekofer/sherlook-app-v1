@@ -7,26 +7,24 @@
       <span v-if="spieler=='Watson'">
         <img src="assets/img/detektive/watson_gluecklich.png" width="250" style="margin-left: auto; margin-right: auto; display: block;"/>
         <!-- <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/> -->
-        <p style="margin-top: 40px;"> Liebe Spürnasen, es wird ernst! </p>
-        <p> Da haben wir das erste Objekt, 
-          das heute früh noch da war und nun durch eine
-          Kopie ersetzt wurde… </p>
-        <p> Klickt auf die kleine Lupe auf der linken Seite... </p>
+        <p style="margin-top: 20px;"> Liebe Spürnasen, es wird ernst! </p>
+        <p> Auch dieses Detail wurde offenbar durch eine Kopie ersetzt… </p>
+        <p> Klickt auf die Lupe Nr. 1 und beantwortet meine Frage. </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img src="assets/img/detektive/sherlock_gluecklich.png" width="260" style="margin-left: auto; margin-right: auto; display: block;"/>
         <!-- <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="300"/> -->
-        <p style="margin-top: 40px;"> Liebe Detektive. Da ist unser erster Auftrag: </p>
-        <p> Diese Detail wurde beim Diebstahl heute früh durch eine Kopie ersetzt... </p>
-        <p> Klicken wir auf die Lupe links oben... </p>
+        <p style="margin-top: 40px;"> Liebe Detektive. Das scheint eine Serie von Diebstählen zu sein! </p>
+        <p> Auch dieses Detail wurde wohl durch eine Kopie ersetzt… </p>
+        <p> Klickt auf die Lupe Nr. 1 und beantwortet meine Frage. </p>
       </span>
       <span v-else>
         <img src="assets/img/detektive/enola_gluecklich.png" width="250" style="margin-left: auto; margin-right: auto; display: block;"/>
         <!-- <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="300"/> -->
-        <p style="margin-top: 40px;"> Interessant, interessant... </p>
-        <p> Hier ist unser Fall Nr. 1. </p>
+        <p style="margin-top: 20px;"> Und schon sind wir mitten in unserem seltsamen Fall... </p>
+        <p> Auch dieses Detail wurde heute früh durch eine Kopie ersetzt... </p>
         <!-- <p> Klickt bitte auf die Lupe! </p> -->
-        <p> Klickt bitte auf die erste Lupe auf der linken Seite!</p>
+        <p> Klickt auf die Lupe Nr. 1 und beantwortet meine Frage. </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
       <!-- <div class="swipe-geste-vertikal"></div> -->
@@ -141,18 +139,18 @@
           <span v-if="spieler=='Watson'">
             <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
             <p> Und da ist auch schon die erste heiße Spur im Internet. </p>
-            <p> Auf Instagram brüstet sich doch tatsächlich jemand mit diesen Diebstählen. </p>
-            <p> Der account heisst @gerne_gestern. Das ist also der Deckname unseres Detaildiebs! Wollt ihr den Post sehen? </p>
+            <p> Auf Instagram brüstet sich doch tatsächlich jemand mit diesen Diebstählen und Fälschungen. </p>
+            <p> Der Account heisst @gerne_gestern. Das ist also der Deckname unseres Detaildiebs! Scrollt runter um den Post zu sehen! </p>
           </span>
           <span v-else-if="spieler=='Sherlock'">
             <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-            <p> Und siehe da. Auf Instagram brüstet sich tatsächlich jemand mit diesen Diebstählen. </p>
-            <p> Natürlich wählt er einen Decknamen. Der Account heisst @gerne_gestern. Soll ich Euch den Post zeigen? </p>
+            <p> Und siehe da. Auf Instagram brüstet sich tatsächlich jemand mit diesen Diebstählen und Fälschungen.  </p>
+            <p> Natürlich wählt er einen Decknamen. Der Account heisst @gerne_gestern. Scrollt runter um den Post zu sehen! </p>
           </span>
           <span v-else-if="spieler=='Enola'">
             <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
             <p> Wie unvorsichtig! Schaut mal, was ich auf Instagram gefunden habe, der Account heißt @gerne_gestern. </p>
-            <p> Da postet unser Detaildieb seine Diebstähle. Wie dreist ist das denn? Aber lest selbst... </p>
+            <p> Da postet unser Detaildieb seine Diebstähle und Fälschungen. Wie dreist ist das denn? Aber lest selbst... </p>
           </span>
           <PostingComponent v-if="ort=='eg'"
               username="@gerne_gestern"
@@ -194,35 +192,31 @@
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
         <p> Hurra, das war uns erster Hinweis. </p>
-        <p> Gut, dass wir es gleich in unser Notizbuch eingetragen haben, damit wir es nicht mehr vergessen. </p>
+        <p> Das notieren wir am besten gleich im Notizbuch, damit wir es nicht mehr vergessen. </p>
         <p>
-          Jetzt aber schnell, wir müssen das passende Objekt hier im Museum finden. 
+          Jetzt aber schnell, wir müssen die Fälschung hier im Museum finden. 
           Achtet auf die Hinweise im Post und auf eure Hightech-Lupe. 
         </p>
-        <p> Ihr wisst ja, wenn der Rahmen leuchtet, seid ihr auf der richtigen Spur... </p>
+        <p> Ihr wisst ja, wenn der Rahmen blinkt, hat sie etwas Verdächtiges in der Nähe erkannt... </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
         <p> Jetzt haben wir den ersten Hinweis! </p>
-        <p> Den Hashtag haben wir uns gleich im Ermittlungsbuch eingetragen. </p>
-        <p>
-          Jetzt müssen wir nur noch das passende Objekt finden. 
-          Achtet auf die Hinweise im Post und auf eure Hightech-Lupe. 
-        </p>
-        <p> Ihr wisst ja, je mehr der Rahmen leuchtet, desto näher seid ihr dem Objekt. </p>
+        <p> Den Hashtag notieren wir uns gleich im Ermittlungsbuch. </p>
+        <p> Achtet auf die Hinweise im Post und auf eure Hightech-Lupe. </p>
+        <p> Ihr wisst ja, wenn der Rahmen blinkt, hat sie etwas Verdächtiges in der Nähe erkannt. </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-        <p> Das nenne ich eine heiße Spur! </p>
-        <p> Damit konnten wir den ersten Hashtag in unser Ermittlungsbuch eintragen. </p>
-        <p> Und los, geht's! Lasst uns das passende Objekt finden. </p>
-        <p> Ihr wisst ja, wenn die Hightech-Lupe leuchtet, muss das Objekt irgendwo in der Nähe sein... </p>
-          
+        <p> Das nenne ich eine heiße Spur! Damit können wir den ersten Hastag in unser Ermittlungsbuch eintragen. </p>
+        <p> Und los, geht's! Prüfen wir, ob es sich wirklich um eine Fälschung handelt. </p>
+        <p> Ihr wisst ja, wenn die Hightech-Lupe leuchtet, hat sie etwas Verdächtiges in der Nähe erkannt. </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
       <!-- <div class="swipe-geste-vertikal"></div> -->
       <button-weiter-component class="button-weiter" v-if="flow==1.4" @click="swiperInstance.slideNext();" pulsiert/>
       <button-weiter-component class="button-weiter" v-else-if="flow>1.4" @click="swiperInstance.slideNext();"/>
+      <button-weiter-component class="button-weiter" v-else-if="!btTrigger" @click="flow=1.4"/>
       <button-weiter-component class="button-weiter" v-else disabled />
       <!-- <button-weiter-component class="button-weiter" disabled /> -->
     </swiper-slide>
@@ -259,21 +253,20 @@
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
         <p> Die Lupe blinkt wie verrückt! </p>
-        <p> Das ist unser Zeichen. Das Objekt muss ganz in der Nähe sein. </p>
-        <p> Habt ihr es gefunden? Dann schaltet die Kamera an und richtet sie auf das Objekt! </p>
+        <p> Die Fälschung muss ganz in der Nähe sein. </p>
+        <p> Schaltet die Kamera an und überprüft das Objekt! </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
         <p> Die Lupe blinkt! Sehr gut. </p>
-        <p> Jetzt heißt es genau hinschauen, hier muss das Objekt sein. </p>
-        <p> Wenn ihr es gefunden habt, schaltet unsere Kamera ein... </p>
-        <p> Ihr wisst ja, was dann passiert... </p>
+        <p> Die Fälschung muss in der Nähe sein. </p>
+        <p> Schaltet die Kamera an und überprüft das Objekt! </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
         <p> Die Lupe blinkt immer schneller! </p>
-        <p> Das Objekt muss sich ganz in der Nähe befinden. </p>
-        <p> Seht ihr es? Dann schaltet die Kamera ein und richtet sie auf das Objekt! </p>
+        <p> Die Fälschung muss in der Nähe sein. </p>
+        <p> Schaltet die Kamera an und überprüft das Objekt! </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
       <!-- <div class="swipe-geste-vertikal"></div> -->
@@ -281,30 +274,27 @@
       <button-weiter-component class="button-weiter" v-else-if="flow>1.6" @click="swiperInstance.slideNext();"/>
         <button-weiter-component class="button-weiter" v-else disabled />
         <!-- <button-weiter-component class="button-weiter" disabled /> -->
-      </swiper-slide>
+    </swiper-slide>
 
     <swiper-slide class="posting-slide" v-if="flow >= 1.6 && flow<2.0">
       <swiper :modules="modules" :direction="'vertical'" :scrollbar="true" :mousewheel="true" :slidesPerView="'auto'" :freeMode="true">
         <swiper-slide>
           <span v-if="spieler=='Watson'">
             <img class="spieler" src="assets/img/detektive/watson_gluecklich.png" width="210"/>
-            <p v-if="ort=='eg'"> Sehr gut! Ihr habt den Ichthyosaurier gefunden. </p>
-            <p v-else-if="ort=='og1'"> Sehr gut! Ihr habt die Haarlocke gefunden. </p>
-            <p> Schaut euch das schöne Stück an. Kaum zu glauben, dass das nur noch eine Kopie sein soll... </p>
-            <p> Und lest den nächsten Post von @gerne_gestern. Mal schauen, ob wir da noch mehr über die Tatmotive erfahren. </p>
+            <p> Sehr gut! Ihr habt die Fälschung erkannt... </p>
+            <p> Und lest den nächsten Post von @gerne_gestern.  </p>
+            <p> Mal schauen, ob wir da noch mehr über die Tatmotive erfahren. </p>
           </span>
           <span v-else-if="spieler=='Sherlock'">
             <img class="spieler" src="assets/img/detektive/sherlock_gluecklich.png" width="250"/>
-            <p v-if="ort=='eg'"> Hervorragend, da ist ja der Ichthyosaurier. </p>
-            <p v-else-if="ort=='og1'"> Hervorragend, da ist ja die Haarlocke. </p>
-            <p> Ich muss schon sagen: eine erstklassige Kopie. </p>
-            <p> Und es gibt einen zweiten Post von @gerne_gestern. Mal schauen, ob wir da noch mehr über die Tatmotive erfahren...</p>
+            <p> Hervorragend. Das ist also auch eine Fälschung! </p>
+            <p> Und es gibt einen zweiten Post von @gerne_gestern. </p>
+            <p> Mal schauen, ob wir da noch mehr über die Tatmotive erfahren... </p>
           </span>
           <span v-else-if="spieler=='Enola'">
             <img class="spieler" src="assets/img/detektive/enola_gluecklich.png" width="220"/>
-            <p v-if="ort=='eg'"> Sehr gut, wir haben den Ichthyosaurier gefunden! </p>
-            <p v-else-if="ort=='og1'"> Sehr gut, wir haben die Haarlocke gefunden! </p>
-            <p> Und, das darf doch nicht wahr sein: @gerne_gestern geht weiter auf Sendung! Da erfahren wir sicher auch Neues zu den Tatmotiven... </p>
+            <p> Kaum zu glauben: das ist also auch eine Fälschung! </p>
+            <p> Und @gerne_gestern geht weiter auf Sendung. Da erfahren wir sicher auch Neues zu den Tatmotiven...</p>
           </span>
           <PostingComponent v-if="ort=='eg'"
               username="@gerne_gestern"
@@ -353,23 +343,20 @@
     <swiper-slide v-if="flow >=1.7 && flow<2.0">
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
-        <p> Wie unverschämt von @gerne_gestern! </p>
-        <p> Aber die ersten beiden Hashtags sind gesichert. </p>
-        <p> Jetzt sind wir @gerne_gestern auf den Fersen. </p>
+        <p> Die ersten beiden Hashtags sind gesichert. </p>
+        <p> Wir sind @gerne_gestern auf den Fersen. </p>
         <p> Und hört, was uns der Geist von Ludwig Leiner noch zu sagen hat... </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
         <p> @gerne_gestern ist ein dreister Gegner. </p>
         <p> Aber das war hervorragende Arbeit von Euch! </p>
-        <p> Das Objekt wurde gefunden und erste Hinweise gesammelt. @gerne_gestern kann uns nicht entkommen. </p>
         <p> Und hört, was uns der Geist von Ludwig Leiner noch zu sagen hat... </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
+        <p> Glückwunsch: Die ersten zwei Hashtags sind im Ermittlungsbuch. </p>
         <p> @gerne_gestern ist wirklich seltsam! </p>
-        <p> Aber Glückwunsch: Wir haben das erste Objekt gefunden und zwei Hashtags im Ermittlungsbuch.  </p>
-        <p> Wir sind @gerne_gestern dicht auf der Spur. </p>
         <p> Und hört, was uns der Geist von Ludwig Leiner noch zu sagen hat... </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
@@ -443,22 +430,20 @@
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
         <p style="margin-top: 50px;"> Keine Sorge, lieber Ludwig Leiner, machen wir! </p>
-        <p> Aber... oh weh, nicht schon wieder! Dieser Detaildieb lässt uns keine Ruhe. 
-          Auch dieses Objekt war heute früh noch da und wurde nun durch eine Kopie ersetzt.  
-        </p>
-        <p> Das ist schon der zweite Fall für heute! Klickt auf die Lupe...  </p>
+        <p> Aber... oh weh, noch eine Fälschung! </p>
+        <p> Klickt auf die Lupe Nr. 2 und beantwortet meine Frage. </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-        <p style="margin-top: 50px;"> Keine Sorge, lieber Herr Leiner. Ihr Auftrag ist in den besten Händen. </p>
-        <p> Aber was höre ich da? Der Detaildieb hat heute früh noch mehr gestohlen?! </p>
-        <p> Klickt auf die Lupe, dann sehen wir Fall Nummer zwei. </p>
+        <p style="margin-top: 50px;"> Ihr Auftrag ist in den besten Händen, lieber Herr Leiner. </p>
+        <p> Aber was höre ich da? Noch eine Fälschung?! </p>
+        <p> Klickt auf die Lupe Nr. 2 und beantwortet meine Frage. </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-        <p style="margin-top: 50px;"> Wir sind ganz Ihrer Meinung, lieber Herr Leiner. Wir werden ihr Museum schützen! </p>
-        <p> Aber erst müssen wir weitere Spuren aufnehmen. Der Detaildieb hat heute morgen noch mehr mitgehen lassen. </p>
-        <p> Hier ist unser Fall Nr. 2. Klickt bitte auf die Lupe! </p>
+        <p style="margin-top: 50px;"> Wir sind ganz ihrer Meinung, lieber Herr Leiner. </p>
+        <p> Und es gibt leider noch eine Fälschung. </p>
+        <p> Klickt bitte auf die Lupe Nr. 2 und beantwortet meine Frage. </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
       <!-- <div class="swipe-geste-vertikal"></div> -->
@@ -555,8 +540,8 @@
           <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Eine alte Trillerpfeife</ion-button>
       </div>
       <div class="antwort-buttons" v-else-if="spieler=='Sherlock' && ort=='og1'">
-        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Eine Vorrichtung, die Zugang verwehrt und gewährt</ion-button>
-        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Ein Mechanismus zum Zünden einer Feuerwaffe</ion-button>
+        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Eine Vorrichtung, <br>die Zugang verwehrt und gewährt</ion-button>
+        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Ein Mechanismus zum <br>Zünden einer Feuerwaffe</ion-button>
         <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Ein Gebäude des Adels</ion-button>
       </div>
       <div class="antwort-buttons" v-else-if="spieler=='Enola' && ort=='og1'">
@@ -574,21 +559,17 @@
         <swiper-slide>
           <span v-if="spieler=='Watson'">
             <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
-            <p> Und da ist auch schon die nächste heiße Spur im Internet!!! </p>
-            <p> @gerne_gestern brüstet sich weiter mit den Diebstählen des Tages. Wie unvorsichtig! </p>
-            <p> Wollt ihr den Post sehen? </p>
+            <p> Die nächste heiße Spur im Internet!!! </p>
+            <p> @gerne_gestern brüstet sich weiter mit den Diebstählen des Tages. </p>
           </span>
           <span v-else-if="spieler=='Sherlock'">
             <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-            <p> Und die nächsten Hinweise stehen im Internet: </p>
-            <p> @gerne_gestern scheint sich sicher zu fühlen und brüstet sich weiter mit den Diebstählen des Tages. </p>
-            <p> Soll ich Euch den Post zeigen? </p>
+            <p> @gerne_gestern scheint sich sicher zu fühlen und postet weiter seine Diebstähle des Tages. </p>
           </span>
           <span v-else-if="spieler=='Enola'">
             <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
             <p> Dreister geht's nicht mehr, oder? </p>
             <p> @gerne_gestern postet weiter seine Diebstähle des Tages. </p>
-            <p> Aber lest selbst... </p>
           </span>
           <PostingComponent v-if="ort=='eg'"
               username="@gerne_gestern"
@@ -628,30 +609,27 @@
     <swiper-slide v-if="flow >=2.3 && flow<3.0">
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
-        <p> Das geht ja dreist uns spannend weiter! Und wir haben den dritten Hashtag im Notizbuch. </p>
-        <p> Jetzt müssen wir wieder mit der Hightech-Lupe das passende Objekt finden. </p>
-        <p> Das funktioniert genauso wie beim letzten Mal. </p>
+        <p> Dreist! Aber auf unsere Hightech-Lupe ist Verlass. </p>
+        <p> Wo ist die Fälschung? </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-        <p> Wie unverschämt! </p>
-        <p> Den Hashtag haben wir uns gleich im Ermittlungsbuch eingetragen. </p>
-        <p> Jetzt müssen wir nur noch das passende Objekt finden. Achtet auf die Hinweise im Post und auf eure Hightech-Lupe. Ihr wisst ja, je mehr der Rahmen leuchtet, deste näher seid ihr dem Objekt. </p>
+        <p> Unser Ermittlungsbuch füllt sich. </p>
+        <p> Und wir haben zum Glück unsere Hightech-Lupe. </p>
+        <p> Wo ist die Fäschung? </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-        <p> Das nenne ich eine heiße Spur! </p>
-        <p> Aber immerhin: das ist der dritte Hashtag. Unser Ermittlungsbuch füllt sich. </p>
-        <p> 
-          Und wir haben zum Glück unsere Hightech-Lupe. 
-          Damit müssen wir wieder das passende Objekt finden. 
-        </p>
-        <p> Das funktioniert genauso wie beim letzten Mal. </p>
+        <p> Wie frech! </p>
+        <p> Immerhin, das war der dritte Hashtag. </p>
+        <p> Und weiter geht die Suche mit der Hightech-Lupe... </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
       <!-- <div class="swipe-geste-vertikal"></div> -->
       <!-- <button-weiter-component class="button-weiter" v-if="flow==1.0" @click="swiperInstance.slideNext();" pulsiert/> -->
-      <button-weiter-component class="button-weiter" v-if="flow>2.4" @click="swiperInstance.slideNext();"/>
+      <button-weiter-component class="button-weiter" v-if="flow==2.4" @click="swiperInstance.slideNext();"/>
+      <button-weiter-component class="button-weiter" v-else-if="flow>2.4" @click="swiperInstance.slideNext();"/>
+      <button-weiter-component class="button-weiter" v-else-if="!btTrigger" @click="flow=2.4"/>
       <button-weiter-component class="button-weiter" v-else disabled />
       <!-- <button-weiter-component class="button-weiter" disabled /> -->
     </swiper-slide>
@@ -687,23 +665,20 @@
         <swiper-slide>
           <span v-if="spieler=='Watson'">
             <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
-            <p v-if="ort=='eg'"> Sehr gut! Ihr habt die Waffe gefunden. </p>
-            <p v-else-if="ort=='og1'"> Sehr gut! Ihr habt das Vorhängeschloss gefunden. </p>
-            <p> Und lest den zweiten Post von @accountname. </p>
-            <p> Da erfahren wir noch mehr über die Tatmotive... </p>
+            <p> Sehr gut! </p>
+            <p> Auch diese Fälschung ist enttarnt. </p>
+            <p> Und lest noch mehr über die Tatmotive... </p>
           </span>
           <span v-else-if="spieler=='Sherlock'">
             <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-            <p v-if="ort=='eg'"> Hervorragend, da ist ja die Waffe. </p>
-            <p v-else-if="ort=='og1'"> Hervorragend, da ist ja das Vorhängeschloss. </p>
-            <p> Ich muss schon sagen: @gerne_gestern ist wirklich dreist und fingerfertig... </p>
-            <p> Sicher werden wir auch noch mehr über die Tatmotive herausfinden... </p>
+            <p> Verblüffend: auch das ist also eine Fälschung! </p>
+            <p v-if="ort=='eg'"> Und die Waffe verrät noch mehr über die Tatmotive...</p>
+            <p v-else-if="ort=='og1'"> Und das Vorhängeschloss verrät noch mehr über die Tatmotive... </p>
           </span>
           <span v-else-if="spieler=='Enola'">
             <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-            <p v-if="ort=='eg'"> Klasse, wir haben die Waffe gefunden! </p>
-            <p v-else-if="ort=='og1'"> Klasse, wir haben das Vorhängeschloss gefunden! </p>
-            <p> Und Neuigkeiten zu den Tatmotiven gibt es auch: @gerne_gestern ist schon wieder auf Sendung! </p>
+            <p> Diese Fälschungen machen mich sprachlos! </p>
+            <p> Aber @gerne_gestern geht schon wieder auf Sendung... </p>
           </span>
           <PostingComponent v-if="ort=='eg'"
               username="@gerne_gestern"
@@ -756,22 +731,16 @@
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
         <p> Nicht zu fassen, dieser Detaildieb. </p>
-        <p> Aber der zweite Schritt wäre geschafft! </p>
-        <p> Die nächsten beiden Hashtags von @gerne_gestern sind gesichert. </p>
         <p> Und ich glaube, der Geist von Ludwig Leiner will uns noch etwas sagen... </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-        <p> Unglaublich, dieser Detailidieb. </p>
-        <p> Aber das war wieder eine hervorragende Arbeit! </p>
-        <p> @gerne_gestern kann uns nicht entkommen. </p>
+        <p> Unglaublich, dieser Detaildieb. </p>
         <p> Und hört, was uns der Geist von Ludwig Leiner noch zu sagen hat... </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-        <p> Das wird nicht besser mit diesem Detaildieb. </p>
-        <p> @gerne_gestern bleibt rätselhaft. </p>
-        <p> Aber unser Ermittlungsbuch füllt sich. Wir müssen das Muster hinter den Diebstählen erkennen. </p>
+        <p> Wir müssen das Muster hinter diesen Diebstählen erkennen. </p>
         <p> Das sind wir auch dem Geist von Ludwig Leiner schuldig... </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
@@ -789,22 +758,22 @@
           <!-- <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/> -->
           <img class="spieler" src="assets/img/leiner.png" width="200"/>
           <!-- <img class="spieler" src="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_2.png" width="200"/> -->
-          <span v-if="ort=='eg'" style="margin-bottom: 150px;">
+          <span v-if="ort=='eg'">
             <p>
               Wenn das mit den Diebstählen so weitergeht, müssen wir noch neue Museumswächter einstellen... 
               vielleicht die Schweizer Garde aus dem Vatikan? 
               Die tragen heute noch Hellebarden... 
             </p>
             <img src="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_leiner.jpg" width="400" style="margin-left: auto; margin-right: auto; display: block;"/>
-            <p>
+            <p style="margin-bottom: 150px;">
               Wisst ihr, dass mein Rosgartenmuseum früher ein Zunfthaus war? 
               Die Mitglieder einer Zunft mussten natürlich auch zur Waffe greifen, wenn eine Stadt angegriffen wurde. 
               In manchen Städten war es für die Meister sogar Pflicht, einen eigenen Brustpanzer mitzubringen, wenn sie sich dort niederlassen wollten. 
               Also bringt die Hellebarde bitte wieder dorthin zurück, wo sie auch hingehört.
             </p>
           </span>
-          <span v-else-if="ort=='og1'" style="margin-bottom: 150px;">
-            <p>
+          <span v-else-if="ort=='og1'">
+            <p style="margin-bottom: 150px;">
               Oh weh! Hier, an dieser Stellle, schlägt wirklich das Herz des Museums, 
               das große Geheimnis unserer guten alten Stube! Und jetzt ist es in Gefahr. 
               Sicher hält sich der Dieb nicht an unseren Ehrenkodex. 
@@ -829,22 +798,19 @@
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
         <p style="margin-top: 50px;"> Keine Sorge, lieber Ludwig Leiner, machen wir! </p>
-        <p> Aber... oh weh, nicht schon wieder! Dieser Detaildieb lässt uns keine Ruhe. 
-          Auch dieses Objekt war heute früh noch da und wurde nun durch eine Kopie ersetzt.  
-        </p>
-        <p> Das ist schon der dritte Fall für heute! Klickt auf die Lupe...  </p>
+        <p> Aber... oh weh! </p>
+        <p> Klickt auf Lupe Nr. 3 und beantwortet meine Frage. </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-        <p style="margin-top: 50px;"> Keine Sorge, lieber Herr Leiner. Ihr Auftrag ist nach wie vor in den besten Händen. </p>
-        <p> Aber was höre ich da? Der Detaildieb hat heute früh noch mehr gestohlen?! </p>
-        <p> Klickt auf die Lupe, dann sehen wir uns Fall Nummer drei etwas genauer an... </p>
+        <p style="margin-top: 50px;"> Keine Sorge, lieber Herr Leiner, das bringen wir in Ordnung! </p>
+        <p> Klickt auf die Lupe Nr. 3 und beantwortet meine Frage. </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-        <p style="margin-top: 50px;"> Wir sind ganz ihrer Meinung, lieber Herr Leiner. Wir ruhen nicht, bevor wir alles wiedergefunden haben. </p>
-        <p> Aber erst müssen wir weitere Spuren aufnehmen. Der Detaildieb gönnt uns keine Pause. Heute morgen ist ein weiteres Detail verschwunden. </p>
-        <p> Hier ist unser Fall Nr. 3. Klickt bitte auf die Lupe! </p>
+        <p style="margin-top: 50px;"> Sie haben ja so recht lieber Herr Leiner! </p>
+        <p> Aber der Detaildieb gönnt uns keine Pause. </p>
+        <p> Klickt bitte auf die Lupe Nr. 3 und beantwortet meine Frage. </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
       <!-- <div class="swipe-geste-vertikal"></div> -->
@@ -959,20 +925,18 @@
         <swiper-slide>
           <span v-if="spieler=='Watson'">
             <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
+            <br><br>
             <p> Und da ist auch schon die dritte heiße Spur im Internet!!! </p>
-            <p> @gerne_gestern brüstet sich weiter mit den Diebstählen des Tages. </p>
-            <p> Wie unvorsichtig! Wollt ihr den Post sehen? </p>
           </span>
           <span v-else-if="spieler=='Sherlock'">
             <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-            <p> Und ich wusste es: @gerne_gestern scheint sich immer noch sicher zu fühlen und brüstet sich mit dem dritten Diebstahl des Tages. </p>
-            <p> Soll ich Euch den Post zeigen? </p>
+            <br><br>
+            <p> Und ich wusste es: der nächste Post von @gerne_gestern... </p>
           </span>
           <span v-else-if="spieler=='Enola'">
             <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
+            <br><br>
             <p> Und dreister geht es anscheinend immer noch... </p>
-            <p> @gerne_gestern postet weiter seine Diebstähle des Tages. </p>
-            <p> Aber lest selbst... </p>
           </span>
           <PostingComponent v-if="ort=='eg'"
               username="@gerne_gestern"
@@ -1011,24 +975,18 @@
     <swiper-slide v-if="flow >= 3.3 && flow<4.0">
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
-        <p> Einfach krass, kann ich da nur sagen! </p>
-        <p> Aber wir haben den fünften Hinweis im Notizbuch. </p>
-        <p> Und zum Glück haben wir unsere tolle Hightech-Lupe dabei. 
-          Mit ihr werden wir auch das dritte Detail aufspüren... </p>
+        <p style="margin-top: 50px;"> Der fünfte Hinweis im Notizbuch! </p>
+        <p> Aber wo ist die Fälschung? </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-        <p> Mehr als unverschämt! </p>
-        <p> Aber das ist unser fünfter Hashtag. Unser Ermittlungsbuch füllt sich weiter. </p>
-        <p> Und unsere Hightech-Lupe funktioniert zum Glück auch noch. 
-          Mit ihr werden wir auch das dritte Detail aufspüren... </p>
+        <p style="margin-top: 50px;"> Unser Ermittlungsbuch füllt sich! </p>
+        <p> Aber wo ist die Fälschung? </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-        <p> Ich kann nur sagen: frech, frech, frech! </p>
-        <p> Immerhin können wir den fünften Hashtag in unser Ermittlungsbuch eintragen. </p>
-        <p> Ich bin gespannt, wo uns die Suche diesmal hinführt. 
-          Die Hightech-Lupe wird uns wieder helfen </p>
+        <p style="margin-top: 50px;"> Ich kann nur sagen: frech, frech, frech! </p>
+        <p> Doch wo ist die Fälschung? </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
       <!-- <div class="swipe-geste-vertikal"></div> -->
@@ -1069,29 +1027,24 @@
         <swiper-slide>
           <span v-if="spieler=='Watson'">
             <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
-            <p v-if="ort=='eg'"> Sehr gut! Ihr habt den Kristall gefunden. Leider die dritte Meisterkopie von @accountname...</p>
-            <p v-else-if="ort=='og1'"> Sehr gut! Ihr habt den Kelch gefunden. Leider die dritte Meisterkopie von @accountname...</p>
-            <p> Und lest den nächsten Post. </p>
+            <p> Das ist also die dritte Meisterkopie von @gerne_gestern... </p>
             <p> Wir müssen herausfinden, wer hinter diesen Taten steckt... </p>
           </span>
           <span v-else-if="spieler=='Sherlock'">
             <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-            <p v-if="ort=='eg'"> Hervorragend, da ist ja der Kristall. </p>
-            <p v-else-if="ort=='og1'"> Hervorragend, da ist ja der Kelch. </p>
             <p> @gerne_gestern bleibt dreist und fingerfertig... </p>
-            <p> Und lasst uns den letzten Post lesen. Wir müssen herausfinden, wer hinter diesen Taten steckt... </p>
+            <p> Wir müssen herausfinden, wer hinter diesen Taten steckt... </p>
           </span>
           <span v-else-if="spieler=='Enola'">
             <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-            <p v-if="ort=='eg'"> Klasse, wir haben den Kristall gefunden! </p>
-            <p v-else-if="ort=='og1'"> Klasse, wir haben den Kelch gefunden! </p>
-            <p> Und bald werden wir wissen, wer hinter diesen Taten steckt: @gerne_gestern ist nämlich schon wieder auf Sendung! </p>
+            <p> Unglaublich diese Fälschungsserie... </p>
+            <p> Wer steckt hinter @gerne_gestern? </p>
           </span>
           <PostingComponent v-if="ort=='eg'"
               username="@gerne_gestern"
               avatar="assets/personen/00x0/gerne_gestern.jpg"
-              bild="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_post2.jpg"
-              hashtag="#prunk_und_paradestück"
+              bild="assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_post2.jpg"
+              hashtag="#alte_worte_alte_steine"
               likes="51029"
               @hashtag-clicked="flow=3.7"
               :eingetragen="flow>=3.7">
@@ -1137,23 +1090,18 @@
     <swiper-slide v-if="flow >= 3.7 && flow<4.0">
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
-        <p> Nicht zu fassen, dieser Detaildieb. </p>
-        <p> Aber ich glaube, wir sind der Lösung des Rätsels nahe! </p>
-        <p> Die letzten beiden Hashtags von @gerne_gestern sind gesichert. </p>
+        <p> Wir sind der Lösung des Rätsels nahe! </p>
         <p> Und ich glaube, der Geist von Ludwig Leiner will uns noch etwas mit auf den Weg geben... </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-        <p> Unglaublich, dieser Detailidieb. </p>
-        <p> Aber auf Eure Ermittlungsarbeit ist Verlass! </p>
-        <p> Die letzten beiden Hashtags sind im Ermittlungsbuch. Bald werden wir das Rätsel von @gerne_gestern gelöst haben. </p>
+        <p> Bald werden wir das Rätsel von @gerne_gestern gelöst haben.  </p>
         <p> Aber aufgepasst! Der Geist von Ludwig Leiner will uns noch etwas mit auf den Weg geben... </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-        <p> Meine Güte, egal ob Detaildieb oder Detaildiebin, das ist wirklich dreist!  </p>
-        <p> Das war Hashtag Nummer sechs. Jetzt müssen wir herausfinden, wer sich hinter @gerne_gestern verbirgt. </p>
-        <p> Aber aufgepasst! Der Geist von Ludwig Leiner will uns noch etwas mit auf den Weg geben... </p>
+        <p> Meine Güte, wer verbirgt sich hinter @gerne_gestern? </p>
+        <p> Ludwig Leiner muss doch seine Ruhe finden... </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
       <!-- <div class="swipe-geste-vertikal"></div> -->
@@ -1165,11 +1113,11 @@
 
     <swiper-slide v-if="flow >= 3.8 && flow<4.0" class="leiner-slide posting-slide">
       <swiper :modules="modules" :direction="'vertical'" :scrollbar="true" :mousewheel="true" :slidesPerView="'auto'" :freeMode="true">
-        <swiper-slide v-if="ort=='eg'">
+        <swiper-slide>
           <!-- <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/> -->
           <img class="spieler" src="assets/img/leiner.png" width="200"/>
-          <span v-if="ort=='eg'" style="margin-bottom: 90px;">
-            <p>
+          <span v-if="ort=='eg'">
+            <p style="margin-bottom: 90px;">
               Ich bebe vor Zorn! Meinen Stein als "Belohnung" mitnehmen, 
               womöglich noch als Schmucksteine schleifen und fassen lassen? 
               Ich liebe meine naturbelassenen Adulare. 
@@ -1178,8 +1126,8 @@
             </p>
             <img src="assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_leiner.jpg" width="400" style="margin-left: auto; margin-right: auto; display: block;"/>
           </span>
-          <span v-else-if="ort=='og1'" style="margin-bottom: 90px;">
-            <p>
+          <span v-else-if="ort=='og1'">
+            <p style="margin-bottom: 90px;">
               Der Dieb darf so viele Fakten sammeln wie er will, aber nicht unsere Objekte! 
               Das sind wir auch dem Stifter dieses Altars schuldig. Wisst ihr wie er heisst? 
               Schaut einmal ganz vorsichtig auf die Rückseite des linken Altarflügels. 
@@ -1204,48 +1152,24 @@
     <swiper-slide v-if="flow >=4.0 && flow<5.0">
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
-        <p style="margin-top: 20px"> 
-          Geht in Ordnung, lieber Ludwig Leiner. 
-          An meiner Seite arbeiten wahre Meisterdetektive! Wir sind der Lösung des Falls ganz nah!
-        </p>
-        <p>
-          Mit den sechs Hinweisen im Buch werden wir herausfinden, wer hinter den Diebstählen steckt. @gerne_gestern kann uns nicht entkommen. 
-        </p>
-        <p>
-          Lasst uns zurück zum Detektivbüro gehen, unserem Startpunkt, und den Fall lösen!
-        </p>
+        <p> Keine Sorge, lieber Ludwig Leiner! </p>
+        <p> Alle Fälschungen sind enttarnt. </p>
+        <p> Mit den sechs Hinweisen im Buch werden wir herausfinden, wer dahinter steckt. </p>
+        <p> @gerne_gestern kann uns nicht entkommen. </p>
+        <p> Lasst uns zurück zum Detektivbüro gehen, unserem Startpunkt, und den Fall lösen! </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="220"/>
-        <p style="margin-top: 0px;"> 
-          Darauf können sie sich verlassen, verehrter Herr Leiner! 
-          Es wird nicht mehr lang dauern und der Fall ist gelöst. 
-          Schon jetzt: tadellose Arbeit, werte Detektive! 
-          Die Spuren sind sichergestellt und alle gestohlenen Details ermittelt. 
-        </p>
-        <p>
-          Jetzt müssen wir nur noch herausfinden, wer hinter den Diebstählen steckt. 
-          Die notierten Hinweise helfen uns dabei.
-        </p>
-        <p>
-          Lasst uns zurück in unser Detektivbüro gehen und den Fall lösen.
-        </p>
+        <p> Darauf können sie sich verlassen, verehrter Herr Leiner! </p>
+        <p> Tadellose Arbeit, werte Detektive! Die Fälschungen sind enttarnt und mit den Hinweisen werden wir herausfinden, wer dahinter steckt. </p>
+        <p> Lasst uns zurück in unser Detektivbüro gehen und den Fall lösen. </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="190"/>
-        <p style="margin-top: 0px; font-size: 28px;"> 
-          Danke für die interessanten Infos, lieber Herr Leiner. 
-          Wir sehen das ganz genau so. Diese Diebstähle lassen uns keine Ruhe.
-        </p>
-        <p style="font-size: 28px;">
-          Doch unser Ermittlungsbuch hat sich gefüllt! 
-          Mit diesen Hinweisen werden wir herausfinden, wer hinter den Diebstählen steckt. 
-          Bald wird der Fall voll und ganz gelöst sein. 
-          Das Rosgartenmuseum kann sich auf mein Team verlassen.
-        </p>
-        <p style="font-size: 28px;">
-          Lasst uns zurück in unser Detektivbüro gehen und den Fall lösen!
-        </p>
+        <p> Wie immer, sehen wir das ganz genau so, lieber Herr Leiner. </p>
+        <p> Diese Fälschungen lassen auch uns keine Ruhe. </p>
+        <p> Wir werden herausfinden, wer dahinter steckt. </p>
+        <p> Lasst uns zurück in unser Detektivbüro gehen und den Fall lösen! </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
       <!-- <div class="swipe-geste-vertikal"></div> -->
@@ -1628,11 +1552,11 @@ function antwortAusgewaehlt(nr : number, richtig : boolean) {
     buttonFarbe2.value  = "primary";
     buttonFarbe3.value  = "primary";
   }
-  if (richtig && spielStore.flow < 1.2) {
+  if (richtig && spielStore.flow < 2) {
     spielStore.flow = 1.2;
-  } else if (richtig && spielStore.flow < 2.2) {
+  } else if (richtig && spielStore.flow < 3) {
     spielStore.flow = 2.2;
-  } else if (richtig && spielStore.flow < 3.2) {
+  } else if (richtig && spielStore.flow < 4) {
     spielStore.flow = 3.2;
   }
 }

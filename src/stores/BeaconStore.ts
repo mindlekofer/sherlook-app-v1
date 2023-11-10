@@ -12,17 +12,18 @@ export const useBeaconStore = defineStore('beaconStore', {
     beaconsFound: null as Beacon | null,
     sortedBeaconList: [] as Beacon[] | null,
     btScanTimer: 0,
+    restartTimer: 0,
     beaconList: [
       { 
         id: 1,
-        ort: "OG Gang",
+        ort: "EG Detektivbüro",
         rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 2,
-        ort: "EG Detektivbüro",
+        ort: "EG Kristall",
         rssi: -100,
         time: 0,
         counter: 0
@@ -50,7 +51,7 @@ export const useBeaconStore = defineStore('beaconStore', {
       },
       {
         id: 6,
-        ort: "EG Detektivbüro (kaputt)",
+        ort: "OG Zunftsaal",
         rssi: -100,
         time: 0,
         inRange: false,
@@ -65,14 +66,14 @@ export const useBeaconStore = defineStore('beaconStore', {
       },
       {
         id: 8,
-        ort: "OG Zunftsaal",
+        ort: "OG Schloss",
         rssi: -100,
         time: 0,
         counter: 0
       },
       {
         id: 9,
-        ort: "OG Aufsteller",
+        ort: "OG Kelch",
         rssi: -100,
         time: 0,
         counter: 0
@@ -117,7 +118,7 @@ export const useBeaconStore = defineStore('beaconStore', {
             let einsortiert = false;
             this.beaconList.forEach((beacon, index, arr) => {
               if (this.lastBeacon && this.lastBeacon.id == beacon.id) {
-                beacon.rssi = Math.floor((beacon.rssi * 4 + this.lastBeacon.rssi) / 5);
+                beacon.rssi = Math.floor((beacon.rssi * 3 + this.lastBeacon.rssi) / 4);
                 beacon.time = this.lastBeacon.time;
                 beacon.counter = beacon.counter++;
                 einsortiert = true;
@@ -138,6 +139,7 @@ export const useBeaconStore = defineStore('beaconStore', {
       } catch {
         // console.log("scanBLE() error");
         this.status = "Fehler";
+        this.stopBt();
         setTimeout(this.scanBt, 5000);
       }
     },
@@ -166,8 +168,8 @@ export const useBeaconStore = defineStore('beaconStore', {
     getEmpfangVonIndex(index : number) {
       const rssi = this.beaconList[index].rssi;
       if (rssi == -100) return 'nichts';
-      if (rssi < -90) return 'schwach';
-      if (rssi < -85) return 'mittel';
+      if (rssi < -95) return 'schwach';
+      if (rssi < -90) return 'mittel';
       return 'stark'
     },
     getColor(index : number) {

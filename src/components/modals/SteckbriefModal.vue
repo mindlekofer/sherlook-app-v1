@@ -229,6 +229,15 @@ img {
   opacity: 0.6;
   color: rgb(239, 0, 0);
   transform: rotate(-20deg);
+
+  padding: 5px 20px 3px 20px;
+  font-family: Helvetica, Sans-Serif;
+  font-weight: 900;
+  background-color: transparent;
+  border-width: 12px;
+  border-color: rgb(239, 0, 0);
+  border-style: solid;
+  border-radius: 30px;
 }
 .verdaechtig {
   position: absolute;
@@ -236,9 +245,19 @@ img {
   right: 200px;
   font-size: 90px;
   font-weight: 600;
-  opacity: 0.6;
+  opacity: 0.5;
   color: rgb(239, 155, 0);
   transform: rotate(30deg);
+
+  padding: 5px 20px 3px 20px;
+  font-family: Helvetica, Sans-Serif;
+  font-weight: 900;
+  background-color: transparent;
+  border-width: 12px;
+  border-color: rgb(239, 155, 0);
+  border-style: solid;
+  border-radius: 30px;
+
 }
 .unverdaechtig {
   position: absolute;
@@ -249,6 +268,14 @@ img {
   opacity: 0.6;
   color: rgb(61, 211, 53);
   transform: rotate(-30deg);
+  padding: 5px 20px 3px 20px;
+  font-family: Helvetica, Sans-Serif;
+  font-weight: 900;
+  background-color: transparent;
+  border-width: 12px;
+  border-color: rgb(61, 211, 53);
+  border-style: solid;
+  border-radius: 30px;
 }
 
 </style>
@@ -292,6 +319,7 @@ function handschellenClicked() {
   if (props.nr>0) {
     spielStore.verhaftet[props.nr-1] = true;
     spielStore.personVerhaftet = props.code;
+    setTimeout(() => {modalController.dismiss()}, 2000);
   }
 }
 

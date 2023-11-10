@@ -152,11 +152,11 @@
           <PostingComponent v-if="ort=='eg' && nr==3"
               username="@gerne_gestern"
               avatar="assets/personen/00x0/gerne_gestern.jpg"
-              bild="assets/objekte/eg/x0x0_eg_02/x0x0_eg_02_post2.jpg"
-              hashtag="#prunk_und_paradestück"
+              bild="assets/objekte/eg/00x1_eg_ab/00x1_eg_ab_post2.jpg"
+              hashtag="#alte_worte_alte_steine"
               likes="51029"
-              @hashtag-clicked="flow=2.7"
-              :eingetragen="flow>=2.7">
+              @hashtag-clicked="flow=3.7"
+              :eingetragen="flow>=3.7">
               Warum "Adular"? Warum "Feldspat"? Hier kommen wie immer spannende Infos und Fakten:
               <br>1. Dieses besonders spaltbare Mineral wurde zum ersten Mal in den Alpen gefunden, 
               genau genommen in einem Teil der Westalpen. 
@@ -173,8 +173,8 @@
               bild="assets/objekte/og/10x0_og1_bc/10x0_og1_bc_post2.jpg"
               hashtag="#faktisch_immerwoanders"
               likes=52930
-              @hashtag-clicked="flow=2.7"
-              :eingetragen="flow>=2.7">
+              @hashtag-clicked="flow=3.7"
+              :eingetragen="flow>=3.7">
               Heute stelle ich Euch in meinem Faktencheck ein ganz verrücktes Objekt vor: 
               einen Altaraufsatz aus dem Jahr 1502. 
               Er ist einer der wenigen Beispiele, die den Konstanzer Bildersturm 

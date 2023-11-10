@@ -9,11 +9,11 @@
   </ion-header>
   <ion-content :fullscreen="true">
     <div class="container">
-      <video ref="videoIntroRef" controls autoplay height="550" poster="assets/img/detektive/watson_neutral.png">
-        <source src="assets/intro_film.mp4" />
+      <video ref="videoIntroRef" controls height="600" poster="assets/img/film_poster.jpg">
+        <source src="assets/filme/intro_film_mit_ton.mp4" />
       </video>
-      <button-zurueck-component class="button_einstellungen" router-link="/start"/>
-      <button-weiter-component class="button_weiter" @click="weiterButtonClicked" router-link="/level" />
+      <button-zurueck-component class="button_einstellungen" @click="zurueck" router-link="/start"/>
+      <button-weiter-component class="button_weiter" @click="weiter" router-link="/level" :pulsiert="videoEnde"/>
     </div>
 
   </ion-content>
@@ -23,7 +23,7 @@
 
 <style scoped>
 video {
-  margin-top: 80px;
+  margin-top: 40px;
   border: 20px solid black;
 }
 .container {
@@ -32,21 +32,6 @@ video {
   position: relative;
   height: 100%;
   overflow: hidden;
-}
-.logo_rosgarten {
-  position: absolute;
-  top: 50px;
-  left: 50px;
-}
-.logo_uni {
-  position: absolute;
-  top: 50px;
-  right: 50px;
-}
-.logo_sherlook {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 .button_einstellungen {
   position: absolute;
@@ -66,17 +51,52 @@ video {
   import ButtonWeiterComponent from '@/components/ButtonWeiterComponent.vue';
   import ButtonZurueckComponent from '@/components/ButtonZurueckComponent.vue';
   import { useSpielStore } from '@/stores/SpielStore'
-  import { ref } from 'vue';    
+  import { onMounted, ref, watch } from 'vue';    
+  import { storeToRefs } from 'pinia';
 
   const spielStore = useSpielStore();
-  console.log(`spielStore.flow: ${spielStore.flow}`);
+  console.log('videoIntroPage');
+  const { flow } = storeToRefs(spielStore);
 
+  
   const videoIntroRef = ref<HTMLMediaElement>();
+  const videoEnde = ref(false);
+  
+  function videoStopReset() {
+    if (videoIntroRef.value) {
+      videoIntroRef.value.pause();
+      videoIntroRef.value.currentTime = 0;
+    }
+  }
 
-  const weiterButtonClicked = () => {
+  watch(flow, () => {
+    if (flow.value==0.2) {
+      console.log('starte Video');
+      videoIntroRef.value?.play();
+    } else {
+      videoStopReset();
+    }
+  })
+
+  watch(videoIntroRef, () => {
+    //  videoStopReset();
+    console.log(videoIntroRef.value);
+    videoIntroRef.value?.play();
+    videoIntroRef.value?.addEventListener('ended', () => {videoEnde.value = true}, false);
+    videoIntroRef.value?.addEventListener('playing', () => {videoEnde.value = false}, false);
+  })
+
+
+
+  const weiter = () => {
     spielStore.flow = 0.3;
     console.log(`weiter -> flow = ${spielStore.flow}`);
-    videoIntroRef.value?.pause();
+    videoStopReset();
+  }
+
+  const zurueck = () => {
+    console.log(`weiter -> flow = ${spielStore.flow}`);
+    videoStopReset();
   }
 
 </script>
