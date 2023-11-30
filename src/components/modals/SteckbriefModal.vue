@@ -1,14 +1,14 @@
 <template>
   <div class="modal-wrapper">
     <div class="modal-content">
-      <span class="festgenommen" v-if="verhaftet[props.nr-1] == true">festgenommen!</span>
-      <span class="verdaechtig" v-if="verdaechtig[props.nr-1] == true">verdächtig!</span>
-      <span class="unverdaechtig" v-if="unverdaechtig[props.nr-1] == true">unverdächtig</span>
+      <span class="festgenommen" v-if="verhaftet[props.nr-1]==true">festgenommen!</span>
+      <span class="verdaechtig" v-if="verdaechtig[props.nr-1]==true">verdächtig!</span>
+      <span class="unverdaechtig" v-if="unverdaechtig[props.nr-1]==true">unverdächtig</span>
 
       <div class="handschellen">
         <ButtonHandschellenComponent
             @click="handschellenClicked"
-            :disabled="unverdaechtig[props.nr-1]"
+            :disabled="unverdaechtig[props.nr-1] || verhaftet[props.nr-1] || flow>=4.5"
             :pulsiert="verdaechtig[props.nr-1]"
         />
         <!-- <i>Festnehmen</i> -->
@@ -30,16 +30,18 @@
                 class="vermerk-button" 
                 color="success" 
                 size="large" 
-                :fill="unverdaechtig[props.nr-1] ? 'solid' : 'outline'" 
                 expand="block"
+                :fill="unverdaechtig[props.nr-1] ? 'solid' : 'outline'" 
+                :disabled="verhaftet[props.nr-1] || flow>=4.5"
                 @click="unverdaechtigClicked"
             > unverdächtig </ion-button>
             <ion-button 
                 class="vermerk-button" 
                 color="warning" 
                 size="large" 
-                :fill="verdaechtig[props.nr-1] ? 'solid' : 'outline'" 
                 expand="block" 
+                :fill="verdaechtig[props.nr-1] ? 'solid' : 'outline'" 
+                :disabled="verhaftet[props.nr-1] || flow>=4.5"
                 @click="verdaechtigClicked"
             > verdächtig </ion-button>
         </span>
@@ -319,7 +321,7 @@ function handschellenClicked() {
   if (props.nr>0) {
     spielStore.verhaftet[props.nr-1] = true;
     spielStore.personVerhaftet = props.code;
-    setTimeout(() => {modalController.dismiss()}, 2000);
+    setTimeout(() => {modalController.dismiss()}, 1000);
   }
 }
 

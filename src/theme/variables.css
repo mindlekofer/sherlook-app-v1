@@ -120,6 +120,11 @@ http://ionicframework.com/docs/theming/ */
   --height: 70%;
 }
 
+.outro-modal {
+  --width: 90%;
+  --height: 90%;
+}
+
 .ion-color-karte {
 	--ion-color-base: var(--ion-color-karte);
 	--ion-color-base-rgb: var(--ion-color-karte-rgb);

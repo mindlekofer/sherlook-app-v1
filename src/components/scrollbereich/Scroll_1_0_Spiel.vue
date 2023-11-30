@@ -1527,7 +1527,7 @@ watch(flow, () => {
       swiperInstance.value.slideNext();
     }, 1000 )
   }
-  if (flow.value==4.31 || flow.value==4.32) {
+  if (flow.value==4.31 || flow.value==4.32 || flow.value==4.5) {
     setTimeout(() => {
       swiperInstance.value.slideTo(2);
     }, 1000 )

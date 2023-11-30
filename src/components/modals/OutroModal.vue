@@ -1,27 +1,24 @@
 <template>
   <div class="modal-wrapper">
     <div class="modal-content">
-      <div>
-        <video ref="videoOutroRef" controls height="600" poster="assets/img/film_poster.jpg">
-          <source src="assets/filme/outro_film_mit_ton.mp4" />
+        <video ref="videoOutroRef" controls height="500" poster="assets/img/film_poster.jpg">
+          <source src="assets/filme/outro_film.mp4" />
         </video>
-      </div>
-    </div>
-    <div class="modal-control">
-      <ion-button size="large" @click="modalController.dismiss()">zurück zum Spiel</ion-button>
+        <button-weiter-component class="button_weiter" @click="weiter" :pulsiert="videoEnde"/>
     </div>
   </div>
 
 </template>
 
 <style scoped>
-img {
-  display: inline-block;
+video {
+  margin-top: 40px;
+  border: 20px solid black;
 }
-#karte {
-  /* height: 50%; */
-  width: 95%;
-  position: relative;
+.button_weiter {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
 }
 .modal-wrapper {
   padding: 30px;
@@ -52,13 +49,45 @@ import { useSpielStore } from '@/stores/SpielStore';
 import { modalController } from '@ionic/core';
 import { IonButton } from '@ionic/vue';
 import { storeToRefs } from 'pinia';
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import ButtonWeiterComponent from '../ButtonWeiterComponent.vue';
+
 
 const spielStore = useSpielStore();
 const { flow, ort, slideNr } = storeToRefs(spielStore);
 
-console.log("opening KarteModal");
+const videoOutroRef = ref<HTMLMediaElement>();
+const videoEnde = ref(false);
 
-const beendenHinweisOffen = ref(false);
+function videoStopReset() {
+    if (videoOutroRef.value) {
+      videoOutroRef.value.pause();
+      videoOutroRef.value.currentTime = 0;
+    }
+  }
+
+watch(flow, () => {
+  if (flow.value==4.5) {
+    console.log('starte Video');
+    videoOutroRef.value?.play();
+  } else {
+    videoStopReset();
+  }
+})
+
+const weiter = () => {
+    // spielStore.flow = 4.5;
+    videoStopReset();
+    modalController.dismiss();
+}
+
+watch(videoOutroRef, () => {
+  //  videoStopReset();
+  console.log(videoOutroRef.value);
+  videoOutroRef.value?.play();
+  videoOutroRef.value?.addEventListener('ended', () => {videoEnde.value = true}, false);
+  videoOutroRef.value?.addEventListener('playing', () => {videoEnde.value = false}, false);
+})
+
 
 </script>

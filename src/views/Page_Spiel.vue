@@ -154,40 +154,41 @@
             <span class="personen-boxen" v-if="flow>=4.1 && spieler=='Watson'">
               <PersonenBoxComponent name="Katinka Antiqus" code="00x0" 
                   @click="personClicked(1, '00x0')" 
-                  :inaktiv="false"
                   :auswahl="personAusgewaehlt==1" 
+                  :inaktiv="false"
                   :verdaechtig="spielStore.verdaechtig[0]" 
                   :unverdaechtig="spielStore.unverdaechtig[0]" />
                   <!-- :inaktiv="verhaftet.some((v)=>v==true) && !verhaftet[0]"  -->
               <PersonenBoxComponent name="James Mopsiathy" code="11x1" 
                   @click="personClicked(2, '11x1')" 
-                  :inaktiv="verhaftet[1]" 
                   :auswahl="personAusgewaehlt==2" 
+                  :inaktiv="verhaftet[1] || flow>=4.5" 
                   :verdaechtig="spielStore.verdaechtig[1]" 
                   :unverdaechtig="spielStore.unverdaechtig[1]" />
               <PersonenBoxComponent name="Mia Mirabilis" code="111x" 
                   @click="personClicked(3, '111x')" 
-                  :inaktiv="verhaftet[2]" 
                   :auswahl="personAusgewaehlt==3" 
+                  :inaktiv="verhaftet[2] || flow>=4.5" 
                   :verdaechtig="spielStore.verdaechtig[2]" 
                   :unverdaechtig="spielStore.unverdaechtig[2]" />
             </span>
             <span class="personen-boxen" v-else-if="flow>=4.1 && spieler=='Sherlock'">
               <PersonenBoxComponent name="Katinka Antiqus" code="00x0" 
                   @click="personClicked(1, '00x0')" 
-                  :inaktiv="verhaftet[1]" 
                   :auswahl="personAusgewaehlt==1" 
+                  :inaktiv="false"
                   :verdaechtig="spielStore.verdaechtig[0]" 
                   :unverdaechtig="spielStore.unverdaechtig[0]" />
               <PersonenBoxComponent name="Mia Mirabilis" code="111x" 
                   @click="personClicked(2, '111x')" 
-                  :inaktiv="verhaftet[1]" 
                   :auswahl="personAusgewaehlt==2" 
+                  :inaktiv="verhaftet[1] || flow>=4.5" 
                   :verdaechtig="spielStore.verdaechtig[1]" 
                   :unverdaechtig="spielStore.unverdaechtig[1]" />
               <PersonenBoxComponent name="Wolfram Wolkenwand" code="x111" 
-                  @click="personClicked(3, 'x111')" 
+                  @click="personClicked(3, 'x111')"
                   :auswahl="personAusgewaehlt==3" 
+                  :inaktiv="verhaftet[2] || flow>=4.5" 
                   :verdaechtig="spielStore.verdaechtig[2]" 
                   :unverdaechtig="spielStore.unverdaechtig[2]" />
             </span>
@@ -195,18 +196,19 @@
               <PersonenBoxComponent name="Katinka Antiqus" code="00x0" 
                   @click="personClicked(1, '00x0')" 
                   :auswahl="personAusgewaehlt==1" 
+                  :inaktiv="false"
                   :verdaechtig="spielStore.verdaechtig[0]" 
                   :unverdaechtig="spielStore.unverdaechtig[0]" />
               <PersonenBoxComponent name="Iri Adler" code="11x0" 
                   @click="personClicked(2, '11x0')" 
-                  :inaktiv="verhaftet[1]" 
                   :auswahl="personAusgewaehlt==2" 
+                  :inaktiv="verhaftet[1] || flow>=4.5" 
                   :verdaechtig="spielStore.verdaechtig[1]" 
                   :unverdaechtig="spielStore.unverdaechtig[1]" />
               <PersonenBoxComponent name="Schorm Roderick" code="01x1" 
                   @click="personClicked(3, '01x1')" 
-                  :inaktiv="verhaftet[1]" 
                   :auswahl="personAusgewaehlt==3" 
+                  :inaktiv="verhaftet[2] || flow>=4.5" 
                   :verdaechtig="spielStore.verdaechtig[2]" 
                   :unverdaechtig="spielStore.unverdaechtig[2]" />
             </span>
@@ -426,6 +428,7 @@ import HinweisBoxComponent from '@/components/HinweisBoxComponent.vue';
 import LupeMitteComponent from '@/components/LupeMitteComponent.vue';
 import PersonenBoxComponent from '@/components/PersonenBoxComponent.vue';
 import HinweisModal from '@/components/modals/HinweisModal.vue';
+import OutroModal from '@/components/modals/OutroModal.vue';
 
 
 const spielStore = useSpielStore();
@@ -779,14 +782,33 @@ const openSteckbriefModal = async (nr: number, code : string) => {
     console.log(data);
   }
   if (verhaftet.value[nr-1]) {
-    if (nr == 1)
+    if (nr == 1) {
       flow.value = 4.5;
+      openOutroModal();
+    }
     else if (verhaftet.value.filter(Boolean).length == 1)
       flow.value = 4.31;
     else if (verhaftet.value.filter(Boolean).length == 2)
       flow.value = 4.32;
   }
 }
+
+const openOutroModal = async () => {
+  console.log("openSteckbriefModal()");
+  const outro_modal = await modalController.create({
+    component: OutroModal,
+    cssClass: 'outro-modal',
+    backdropDismiss: false,
+  });
+  console.log("after await");
+  outro_modal.present().then( (result) => {
+    console.log(result);
+  });
+  await outro_modal.onWillDismiss();
+  // const { data } = await outro_modal.onWillDismiss();
+
+}
+
 
 const openHinweisModal = async (nr: number) => {
   console.log("openHinweisModal()");
