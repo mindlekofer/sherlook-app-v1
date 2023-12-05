@@ -8,32 +8,43 @@
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
         <p> Willkommen im Detektivbüro Holmes! </p>
         <p> Mein Name ist Watson, Dr. Watson! </p>
-        <p> Wie sagt doch Sherlock immer: <br>Als erstes muss man sich den Tatort genau anschauen. </p>    
-        <p> Seid ihr bereit? </p>
-        <p>
-          <i>Swiped oder drückt den grünen Weiter-Button um auf die nächste Seite zu gelangen<br>
-          Ihr könnt zu jeder Zeit auch wieder zurückblättern falls ihr was vergessen habt.</i>
+        <p> Seid ihr bereit für diesen rätselhaften Fall? </p>
+        <p style="margin-top: 70px;">
+          <i>Wischt mit dem Finger oder drückt auf den grünen Weiter-Button, um auf die nächste Seite zu gelangen. <br>
+            Ihr könnt jederzeit wieder zurückblättern, falls ihr etwas vergessen habt.</i>
         </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
-        <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-        <p> Mein Name ist Holmes, Sherlock Holmes. </p>
-        <p> Lasst uns den Tatort genau anschauen. Jede kleine Beobachtung kann später von unschätzbarem Wert sein. </p>
-        <p> Seid ihr bereit? </p>
+        <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="210"/>
         <p>
-          <i>Swiped oder drückt den grünen Weiter-Button um auf die nächste Seite zu gelangen<br>
-          Ihr könnt zu jeder Zeit auch wieder zurückblättern falls ihr was vergessen habt.</i>
+          Mein Name ist Holmes, Sherlock Holmes. <br>
+          Dieser Fall ist ist wirklich außergewöhnlich. 
+        </p>
+        <p>
+          Schauen wir uns ein wenig um. Jede kleine Beobachtung kann später von unschätzbarem Wert sein.
+          Seid ihr bereit? 
+        </p>
+        <p style="margin-top: 0px;">
+          <i>
+            Wischt mit dem Finger oder drückt auf den grünen Weiter-Button, um auf die nächste Seite zu gelangen. <br>
+            Ihr könnt jederzeit wieder zurückblättern, falls ihr etwas vergessen habt.
+          </i>
         </p>
       </span>
       <span v-else>
-        <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-        <p> Mein Name ist Enola Holmes. </p>
-        <p> Diese Detaildiebe machen mich wirklich neugierig! </p>
-        <p> Schauen wir uns um, in diesem wunderbaren Museum... </p>
-        <p> Seid ihr bereit? </p>
+        <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="180"/>
         <p>
-          <i>Swiped oder drückt den grünen Weiter-Button um auf die nächste Seite zu gelangen. <br>
-          Ihr könnt zu jeder Zeit auch wieder zurückblättern falls ihr was vergessen habt.</i>
+          Willkommen im Detektivbüro Holmes! Mein Name ist Enola. Ich bin die Schwester von Sherlock.<br>
+        </p>
+        <p>
+          Was für ein wunderbares Museum – und was für gemeine Diebstähle! Wir müssen den Täter oder die Täterin finden.<br>
+          Seid ihr bereit?  
+        </p>
+        <p style="margin-top: 20px;">
+          <i>
+            Wischt mit dem Finger oder drückt auf den grünen Weiter-Button, um auf die nächste Seite zu gelangen. <br>
+            Ihr könnt jederzeit wieder zurückblättern, falls ihr etwas vergessen habt.
+          </i>
         </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
@@ -47,34 +58,72 @@
     <swiper-slide v-if="flow >= 0.6">
       <span v-if="!antwortClicked">
         <span v-if="spieler=='Watson' && ort=='eg'">
-          <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
-          <p style="margin-top: 40px;"> Hier im Erdgeschoss gibt es eine Büste des Museumsgründers! </p>
-          <p> Ihr habt doch aufgepasst und wisst, wie er heißt? </p>
+          <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="150"/>
+          <p style="margin-top: 0px; font-size: 26px;"> 
+            Sehr gut! 
+            <br>
+            Ich hab eine erste heiße Spur:
+            <br>
+            Mit der Büste des Museumsgründers, die hier im Erdgeschoss steht, stimmt etwas nicht. <br>
+            Habt ihr aufgepasst und wisst, wie der werte Herr heißt?
+          </p>
+          <p style="margin-top: 0px; font-size: 26px;">
+            Drückt auf die richtige Antwort und dann auf den Weiter-Button.
+          </p>
         </span>
         <span v-else-if="spieler=='Sherlock' && ort=='eg'">
-          <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="230"/>
-          <p style="margin-top: 40px;"> Hier im Erdgeschoss gibt es eine Büste des Museumsgründers! </p>
-          <p> Ihr habt sicher aufgepasst und wisst, wie er heißt? </p>
+          <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="180"/>
+          <p style="margin-top: 0px; font-size: 26px;">
+            Sehr gut! Und aufgepasst, es gibt eine erste heiße Spur: 
+            Mit der Büste des Museumsgründers, hier im Erdgeschoss, stimmt etwas nicht. 
+            Eine Bartlocke wurde wohl durch eine Fälschung ersetzt! 
+            Ihr wisst doch, wie der alte Herr heißt? 
+            <br>
+            Drückt auf die richtige Antwort und dann auf den Weiter-Button.
+          </p>
         </span>
         <span v-else-if="spieler=='Enola' && ort=='eg'">
-          <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="210"/>
-          <p style="margin-top: 40px;"> Hier im Erdgeschoss gibt es eine Büste des Museumsgründers! </p>
-          <p> Ihr habt natürlich aufgepasst und wisst, wie er heißt? </p>
+          <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="160"/>
+          <p style="margin-top: 0px; font-size: 26px;">
+            Und da ist auch schon die erste heiße Spur: 
+            Mit der Büste des Museumsgründers, die hier im Erdgeschoss steht, stimmt etwas nicht. 
+            Eine Bartlocke wurde durch eine Fälschung ersetzt! 
+            Ihr habt natürlich aufgepasst und wisst, wie der berühmte Herr heißt?
+            <br>
+            Drückt auf die richtige Antwort und dann auf den Weiter-Button.
+          </p>
         </span>
         <span v-else-if="spieler=='Watson' && ort=='og1'">
-          <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
-          <p style="font-size: 28px;"> Im ersten Obergeschoss steht noch der Schreibtisch des Museumsgründers!  </p>
-          <p style="font-size: 28px;"> Ihr habt doch aufgepasst und wisst, wie er heißt? </p>
+          <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="150"/>
+          <p style="font-size: 28px;"> 
+            Sehr gut! Ich habe eine erste heiße Spur:
+            Mit dem Schreibtisch des Museumsgründers im Obergeschoss stimmt etwas nicht. 
+            Habt ihr aufgepasst und wisst, wie der alte Herr heißt?
+            <br>
+            Drückt auf die richtige Antwort und dann auf den Weiter-Button.
+          </p>
         </span>
         <span v-else-if="spieler=='Sherlock' && ort=='og1'">
-          <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="230"/>
-          <p style="font-size: 28px;"> Im ersten Obergeschoss steht noch der Schreibtisch des Museumsgründers!  </p>
-          <p style="font-size: 28px;"> Ihr habt sicher aufgepasst und wisst, wie er heißt? </p>
+          <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="180"/>
+          <p style="font-size: 28px;"> 
+            Aufgepasst, ich höre von einer ersten heißen Spur: 
+            Im Obergeschoss wurde eine Brille durch eine Fälschung ersetzt. 
+            Sie lag auf dem alten Schreibtisch des Museumsgründers. 
+            Ihr wisst doch, wie der werte Herr heißt?
+            <br>
+            Drückt auf die richtige Antwort und dann auf den Weiter-Button.
+          </p>
         </span>
         <span v-else-if="spieler=='Enola' && ort=='og1'">
-          <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="210"/>
-          <p style="font-size: 28px;"> Im ersten Obergeschoss steht der Schreibtisch des Museumsgründers! </p>
-          <p style="font-size: 28px;"> Ihr habt natürlich aufgepasst und wisst, wie er heißt? </p>
+          <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="160"/>
+          <p style="font-size: 26px;"> 
+            Und da ist auch schon die erste heiße Spur: 
+            Im Obergeschoss wurde eine Brille durch eine Fälschung ersetzt. 
+            Sie lag auf dem alten Schreibtisch des Museumsgründers. 
+            Ihr habt natürlich aufgepasst und wisst, wie der berühmte Herr heißt? 
+            <br>
+            Drückt auf die richtige Antwort und dann auf den Weiter-Button.
+          </p>
         </span>
       </span>
       <span v-else-if="!antwortRichtig">
@@ -89,48 +138,67 @@
         <span v-if="spieler=='Watson' && ort=='eg'">
           <img class="spieler" src="assets/img/detektive/watson_gluecklich.png" width="210"/>
           <p> 
-            Sehr gut, die Antwort ist richtig. <br>
-            Und nun nichts wie hin zu dieser Büste. 
-            Der Dieb oder die Diebin soll eine Bartlocke gestohlen und gefälscht haben! 
+            Super, das ist richtig! 
+          </p>
+          <p>
+            Und los geht's!
+            Sucht die Büste von Ludwig Leiner. 
+          </p>
+          <p>
+            Drückt auf den grünen Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den Weg.
           </p>
         </span>
         <span v-else-if="spieler=='Sherlock' && ort=='eg'">
           <img class="spieler" src="assets/img/detektive/sherlock_gluecklich.png" width="240"/>
           <p>
-            Gut aufgepasst, die Antwort ist richtig. <br>
-            Und nun nichts wie hin zu dieser Büste. 
-            Der Dieb oder die Diebin soll eine Bartlocke gefälscht haben! 
+            Sehr gut, die Antwort ist richtig, und die Spur ist noch heiß!
+          </p>
+          <p> 
+            Suchen wir die Büste von Ludwig Leiner. 
+          </p>
+          <p>
+            Drückt auf den grünen Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den Weg.
           </p>
         </span>
         <span v-else-if="spieler=='Enola' && ort=='eg'">
           <img class="spieler" src="assets/img/detektive/enola_gluecklich.png" width="210"/>
-          <p> Richtig! </p>
+          <p> 
+            Wunderbar, das fängt gut an! <br>
+            Und nun nichts wie hin zu dieser Bartlocke von Ludwig Leiner. 
+          </p>
           <p>
-            Und nun nichts wie hin zu dieser Büste. <br>
-            Der Dieb oder die Diebin soll eine Bartlocke gefälscht haben!
+            Drückt auf den grünen Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den Weg.
           </p>
         </span>
         <span v-else-if="spieler=='Watson' && ort=='og1'">
           <img class="spieler" src="assets/img/detektive/watson_gluecklich.png" width="210"/>
           <p>
-            Sehr gut, die Antwort ist richtig. <br>
-            Und nun nichts wie hin zu diesem Schreibtisch. 
-            Der Dieb oder die Diebin soll die Brille von Leiner gestohlen und gefälscht haben! 
+            Super, ihr seid Klasse! 
+          </p>
+          <p>
+            Und los geht's! 
+            Suchen wir Ludwig Leiner und seinen Schreibtisch. 
+          </p>
+          <p>
+            Drückt auf den grünen Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den Weg.
           </p>
         </span>
         <span v-else-if="spieler=='Sherlock' && ort=='og1'">
-          <img class="spieler" src="assets/img/detektive/sherlock_gluecklich.png" width="240"/>
+          <img class="spieler" src="assets/img/detektive/sherlock_gluecklich.png" width="220"/>
           <p>
-            Gut aufgepasst, die Antwort ist richtig. <br>
-            Und nun nichts wie hin zu diesem Schreibtisch. 
-            Der Dieb oder die Diebin soll die Brille von Leiner gestohlen haben! 
+            Sehr gut, die Antwort ist richtig. <br>
+            Und die Spur ist noch heiß! Suchen wir die Brille von Ludwig Leiner! <br>
+            Drückt auf den grünen Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den Weg.
           </p>
         </span>
         <span v-else-if="spieler=='Enola' && ort=='og1'">
           <img class="spieler" src="assets/img/detektive/enola_gluecklich.png" width="210"/>
           <p>
-            Richtig! Und nun nichts wie hin zu diesem Schreibtisch. <br>
-            Der Dieb oder die Diebin soll die Brille von Leiner gestohlen haben! 
+            Wunderbar, das fängt gut an! <br>
+            Und nun nichts wie hin zu dieser Brille von Ludwig Leiner! 
+          </p>
+          <p>
+            Drückt auf den grünen Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den Weg.
           </p>
         </span>
       </span>
@@ -154,52 +222,52 @@
       <button-weiter-component class="button-weiter" v-else disabled />
     </swiper-slide>
 
+    <!-- Pfeil 1 -->
     <swiper-slide v-if="flow >= 0.71">
       <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="200" v-if="spieler=='Watson'"/>
       <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="200" v-else-if="spieler=='Sherlock'"/>
       <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="200" v-else-if="spieler=='Enola'"/>
       <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
-      <p v-if="ort=='eg'">
-        Folgt dem grünen Pfeil auf dem Foto!
+      <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_1.png" v-if="ort=='eg'"/>
+      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_1.png" v-else-if="ort=='og1'"/>
+      <p>
+        Folgt dem grünen Pfeil auf dem Foto. <br><br>
+        Drückt auf den Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den nächsten Schritt.
       </p>
-      <p v-else-if="ort=='og1'">
-        Er steht im ersten Obergeschoss. Folgt dem grünen Pfeil.
-      </p>
-      <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_1.jpg" v-if="ort=='eg'"/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_1.jpg" style="height: 70%;" v-else-if="ort=='og1'"/>
+      <div class="swipe-geste-vertikal"></div>
       <button-weiter-component class="button-weiter" v-if="flow==0.71" @click="if(!btTrigger)flow=0.72;" :disabled="btTrigger"/>
       <button-weiter-component class="button-weiter" v-else-if="flow==0.72" @click="swiperInstance.slideNext();" pulsiert/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.72" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
     </swiper-slide>
 
+    <!-- Pfeil 2 -->
     <swiper-slide v-if="flow >= 0.72">
       <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="200" v-if="spieler=='Watson'"/>
       <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="200" v-else-if="spieler=='Sherlock'"/>
       <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="200" v-else-if="spieler=='Enola'"/>
       <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
-      <p style="font-size: 28px;">
-        Braucht ihr noch mehr Hilfe? Dann drückt auf den Button mit der Karte.
+      <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_2.png" v-if="ort=='eg'"/>
+      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_2.png" v-else-if="ort=='og1'"/>
+      <p v-if="ort=='eg'">
+        Folgt dem grünen Pfeil, dann drückt auf den Weiter-Button oder wischt zur nächsten Seite. 
+        <br>
+        Braucht ihr noch mehr Hilfe? 
+        Dann drückt auf den Button mit der Karte.
       </p>
-      <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_2.jpg" style="height: 70%;" v-if="ort=='eg'"/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_2.jpg" style="height: 70%;" v-else-if="ort=='og1'"/>
+      <p v-else-if="ort=='og1'" style="font-size: 28px;">
+        Folgt dem grünen Pfeil auf dem Foto. 
+        Drückt auf den Weiter-Button oder wischt, dann zeige ich Euch den nächsten Schritt. 
+        <br>
+        Braucht ihr noch mehr Hilfe? 
+        Dann drückt auf den Button mit der Karte.
+      </p>
       <!-- <button-weiter-component class="button-weiter" v-if="flow==0.72" @click="if(!btTrigger)flow=0.73;" :disabled="btTrigger"/> -->
       <!-- <button-weiter-component class="button-weiter" v-if="flow==0.72" @click="flow=0.73;" :disabled="btTrigger"/> -->
       <button-weiter-component class="button-weiter" v-if="flow==0.72" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.72" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
-    </swiper-slide>
 
-    <swiper-slide v-if="flow >= 0.73">
-      <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="200" v-if="spieler=='Watson'"/>
-      <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="200" v-else-if="spieler=='Sherlock'"/>
-      <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="200" v-else-if="spieler=='Enola'"/>
-      <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
-      <!-- <p style="font-size: 28px;">
-        Braucht ihr noch mehr Hilfe? Dann drückt auf den Button mit der Karte.
-      </p> -->
-      <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_3.jpg" style="height: 90%;" v-if="ort=='eg'"/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_3.jpg" style="height: 90%;" v-else-if="ort=='og1'"/>
       <span v-if="ort=='eg'">
         <button-weiter-component class="button-weiter" v-if="flow<0.8" @click="if(!btTrigger)flow=0.8;" :disabled="btTrigger"/>
         <button-weiter-component class="button-weiter" v-else-if="flow==0.8" @click="swiperInstance.slideNext();" pulsiert/>
@@ -214,77 +282,98 @@
       </span>
     </swiper-slide>
 
+    <!-- Pfeil 3(og1) -->
+    <swiper-slide v-if="flow >= 0.73 && ort=='og1'">
+      <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="200" v-if="spieler=='Watson'"/>
+      <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="200" v-else-if="spieler=='Sherlock'"/>
+      <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="200" v-else-if="spieler=='Enola'"/>
+      <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
+      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_3.png"/>
+      <p style="font-size: 26px;">
+        Folgt dem grünen Pfeil auf dem Foto. 
+        Drückt auf den Weiter-Button oder wischt, dann zeige ich Euch den nächsten Schritt. 
+        <br>
+        Braucht ihr noch mehr Hilfe? Dann drückt auf den Button mit der Karte.
+      </p>
+      <button-weiter-component class="button-weiter" v-if="flow==0.73" @click="if(!btTrigger)flow=0.74;" :disabled="btTrigger"/>
+      <button-weiter-component class="button-weiter" v-else-if="flow==0.74" @click="swiperInstance.slideNext();" pulsiert/>
+      <button-weiter-component class="button-weiter" v-else-if="flow>0.74" @click="swiperInstance.slideNext();"/>
+      <button-weiter-component class="button-weiter" v-else disabled />
+    </swiper-slide>
+
     <swiper-slide v-if="flow >= 0.74 && ort=='og1'">
       <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="200" v-if="spieler=='Watson'"/>
       <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="200" v-else-if="spieler=='Sherlock'"/>
       <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="200" v-else-if="spieler=='Enola'"/>
       <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
-
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_4.jpg" style="height: 90%;" />
-      <button-weiter-component class="button-weiter" v-if="flow==0.74" @click="if(!btTrigger)flow=0.75;" :disabled="btTrigger"/>
-      <button-weiter-component class="button-weiter" v-else-if="flow==0.75" @click="swiperInstance.slideNext();" pulsiert/>
-      <button-weiter-component class="button-weiter" v-else-if="flow>0.75" @click="swiperInstance.slideNext();"/>
-      <button-weiter-component class="button-weiter" v-else disabled />
-    </swiper-slide>
-
-    <swiper-slide v-if="flow >= 0.75 && ort=='og1'">
-      <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="200" v-if="spieler=='Watson'"/>
-      <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="200" v-else-if="spieler=='Sherlock'"/>
-      <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="200" v-else-if="spieler=='Enola'"/>
-      <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
-
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_5.jpg" style="height: 90%;" />
+      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_4.png"/>
+      <p style="font-size: 26px;">
+        Folgt dem grünen Pfeil auf dem Foto. 
+        Drückt auf den Weiter-Button oder wischt, dann zeige ich Euch den nächsten Schritt. 
+        <br>
+        Braucht ihr noch mehr Hilfe? Dann drückt auf den Button mit der Karte.
+      </p>
       <button-weiter-component class="button-weiter" v-if="flow<0.8" @click="if(!btTrigger)flow=0.8;" :disabled="btTrigger"/>
       <button-weiter-component class="button-weiter" v-else-if="flow==0.8" @click="swiperInstance.slideNext();" pulsiert/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.8" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
     </swiper-slide>
 
-    <!-- Lupe -->
+    <!-- Pfeil 3(eg) 5(og1) und Lupe -->
     <swiper-slide v-if="flow>=0.8">
       <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="200" v-if="spieler=='Watson'"/>
       <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="200" v-else-if="spieler=='Sherlock'"/>
       <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="200" v-else-if="spieler=='Enola'"/>
       <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
-      <span v-if="ort=='eg' && spieler=='Watson'">
-        <p> Achtet jetzt auf die Hightech-Lupe. </p>
-        <p> Sie kann Fälschungen erkennen! </p>
-        <p> Je heller und schneller sie blinkt, desto näher seid ihr an einem Tatort. </p>
-        <p> Seht ihr die Büste von Ludwig Leiner? </p>
-        <p> Dann schaltet die Kamera an und richtet sie auf die Büste. </p>
-      </span>
-      <span v-else-if="ort=='eg' && spieler=='Sherlock'">
-        <p> Achtet jetzt auf die Hightech-Lupe. </p>
-        <p> Sie kann Fälschungen erkennen! </p>
-        <p> Je heller und schneller sie aufleuchtet, desto näher seid ihr an einem Tatort. </p>
-        <p> Seht ihr die Büste von Ludwig Leiner? </p>
-        <p> Dann schaltet die Kamera an und richtet sie auf die Büste. </p>
-      </span>
-      <span v-else-if="ort=='eg' && spieler=='Enola'">
-        <p> Schaut, was die Hightech-Lupe drauf hat: </p>
-        <p> Sie kann Fälschungen erkennen! </p>
-        <p> Je heller und schneller sie aufleuchtet, desto näher seid ihr an einem Tatort. </p>
-        <p> Seht ihr die Büste von Ludwig Leiner? </p>
-        <p> Dann schaltet die Kamera an und richtet sie auf die Büste. </p>
-      </span>
-      <span v-else-if="ort=='og1' && spieler=='Watson'">
-        <p style="margin-top: 60px;"> Achtet jetzt auf die Hightech-Lupe. </p>
-        <p> Je heller und schneller sie aufleuchtet, desto näher seid ihr am Ziel. </p>
-        <p> Seht ihr die Figur von Ludwig Leiner neben seinem Schreibtisch? </p>
-        <p> Dann schaltet die Kamera an und richtet sie auf die Figur. </p>
-      </span>
-      <span v-else-if="ort=='og1' && spieler=='Sherlock'">
-        <p style="margin-top: 70px;"> Achtet jetzt auf die Hightech-Lupe. Sie liefert uns wichtige Hinweise. </p>
-        <p> Je heller und schneller sie aufleuchtet, desto näher kommt ihr dem Ziel. </p>
-        <p> Seht ihr die Figur von Ludwig Leiner neben seinem Schreibtisch? </p>
-        <p> Dann schaltet die Kamera an und richtet sie auf die Figur. </p>
-      </span>
-      <span v-else-if="ort=='og1' && spieler=='Enola'">
-        <p style="margin-top: 70px;"> Jetzt könnt ihr sehen, was die Hightech-Lupe alles kann. </p>
-        <p> Je heller und schneller sie aufleuchtet, desto näher kommt ihr dem Ziel. </p>
-        <p> Seht ihr die Figur von Ludwig Leiner neben seinem Schreibtisch? </p>
-        <p> Dann schaltet die Kamera an und richtet sie auf die Figur. </p>
-      </span>
+      <img class="pfeil pfeil-kleiner" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_3.png" v-if="ort=='eg'"/>
+      <img class="pfeil pfeil-kleiner" src="assets/objekte/og/tutorial/tutorial_og_pfeil_5.png" v-else-if="ort=='og1'"/>
+      <p v-if="ort=='eg' && spieler=='Watson'" style="font-size: 26px;">
+        Achtet jetzt auf die Hightech-Lupe. Sie kann Fälschungen erkennen!
+        Wenn etwas in der Umgebung nicht stimmt, fängt sie an zu blinken, erst langsam, dann immer schneller.
+        <br><br>
+        Seht ihr die Büste von Ludwig Leiner? 
+        Dann schaltet die Kamera an und richtet sie auf sein Gesicht.
+      </p>
+      <p v-else-if="ort=='eg' && spieler=='Sherlock'" style="font-size: 26px;">
+        Achtet jetzt auf die Hightech-Lupe. Sie kann Fälschungen erkennen! 
+        Je heller und schneller sie blinkt, desto näher seid ihr an einem Tatort. 
+        <br><br>
+        Seht ihr die Büste von Ludwig Leiner? 
+        Dann schaltet die Kamera an und richtet sie auf sein Gesicht.
+      </p>
+      <p v-else-if="ort=='eg' && spieler=='Enola'" style="font-size: 26px;">
+        Gleich könnt ihr sehen, was die Hightech-Lupe drauf hat: Sie kann Fälschungen erkennen!
+        Je heller und schneller sie aufleuchtet, desto heißer ist die Spur: 
+        Ein Tatort muss dann ganz in der Nähe sein! 
+        <br><br>
+        Seht ihr die Büste von Ludwig Leiner? 
+        Dann schaltet die Kamera an und richtet sie auf sein Gesicht.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Watson'" style="font-size: 26px;">
+        Achtet jetzt auf die Hightech-Lupe. 
+        Sie kann Fälschungen erkennen! 
+        Wenn etwas in der Umgebung nicht stimmt, fängt sie an zu blinken, erst langsam, dann immer schneller. 
+        <br><br>
+        Seht ihr Ludwig Leiner neben seinem Schreibtisch? 
+        Dann schaltet die Kamera an und richtet sie auf sein Gesicht mit der Brille.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Sherlock'" style="font-size: 26px;">
+        Achtet jetzt auf die Hightech-Lupe. 
+        Sie kann Fälschungen erkennen! 
+        Je heller und schneller sie blinkt, desto näher seid ihr an einem Tatort. 
+        <br><br>
+        Seht ihr Ludwig Leiner neben seinem Schreibtisch? 
+        Dann schaltet die Kamera an und richtet sie auf sein Gesicht mit der Brille.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Enola'" style="font-size: 26px;">
+        Gleich könnt ihr sehen, was die Hightech-Lupe drauf hat: 
+        Sie kann Fälschungen erkennen! 
+        Je heller und schneller sie aufleuchtet, desto heißer ist eure Spur: 
+        Ein Tatort muss ganz in der Nähe sein. 
+        <br>
+        Seht ihr Ludwig Leiner neben seinem Schreibtisch? 
+        Dann schaltet die Kamera an und richtet sie auf sein Gesicht mit der Brille.
+      </p>
       <button-weiter-component class="button-weiter" v-if="flow==0.8" @click="if(!btTrigger)flow=0.9;" :disabled="btTrigger"/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.8" @click="swiperInstance.slideNext();" pulsiert/>
       <!-- <button-weiter-component class="button-weiter" v-else-if="flow>0.8" @click="swiperInstance.slideNext();"/> -->
@@ -293,44 +382,126 @@
 
     <!-- Detail erkannt -->
     <swiper-slide v-if="flow > 0.8" class="leiner-slide">
-      <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/>
-      <p> Ich bin der Geist von Ludwig Leiner! </p>
-      <p v-if="ort=='eg'"> Nun wagt der Detaildieb meine Ruhe zu stören und klaut meiner Büste eine Bartlocke. </p>
-      <p v-else-if="ort=='og1'"> Nun wagt der Detaildieb meine Ruhe zu stören und ersetzt meine Brille durch eine Fälschung. </p>
-      <p v-if="ort=='eg'"> Gut, dass ihr die Fälschung erkannt habt. </p>
-      <p v-else-if="ort=='og1'"> Gut, dass ihr das erkannt habt. Beschützt mein Vermächtnis. </p>
-      <p> Beschützt mein Vermächtnis. </p>
+      <img src="assets/img/leiner.png" width="190" style="margin-left: auto; margin-right: auto; display: block;"/>
+      <p v-if="ort=='eg' && spieler=='Watson'" style="font-size: 28px;">
+        Ich bin der Geist von Ludwig Leiner! 
+        Ich grüße das Team um Dr. Watson. 
+        Gut, dass ihr mich erkannt habt. 
+        Bei meinem Barte: Ich ruhe nicht, bis diese Diebstähle und Fälschungen aufgeklärt sind!
+        Wollt ihr mir helfen? 
+        <br><br>
+        Dann drückt auf den Weiter-Button oder wischt mit dem Finger.
+      </p>
+      <p v-else-if="ort=='eg' && spieler=='Sherlock'" style="font-size: 26px;">
+        Hier spricht der Geist von Ludwig Leiner! 
+        Ich grüße das Team um den berühmten Sherlock Holmes. 
+        Danke, dass ihr mir zu Hilfe eilt. 
+        Bei meinem Barte: Ich ruhe nicht, bis diese Diebstähle und Fälschungen aufgeklärt sind.
+        <br><br>
+        Wollt ihr mir helfen? 
+        Dann drückt auf den Weiter-Button oder wischt mit dem Finger.
+      </p>
+      <p v-else-if="ort=='eg' && spieler=='Enola'" style="font-size: 26px;">
+        Hier spricht der Geist von Ludwig Leiner! 
+        Ich grüße Enola Holmes und ihre Helferinen und Helfer! 
+        Diese verfluchten Diebstähle und Fälschungen... 
+        Bei meinem Barte: Ich ruhe nicht, bis diese ganze Geschichte aufgeklärt ist.
+        <br><br>
+        Wollt ihr mir helfen und mein Vermächtnis beschützen? 
+        Dann drückt auf den Weiter-Button oder wischt mit dem Finger.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Watson'" style="font-size: 28px;">
+        Ich bin der Geist von Ludwig Leiner! 
+        Ich grüße das Team um Dr. Watson. Gut, dass ihr mich gefunden und erkannt habt. 
+        Ich ruhe nicht, bis diese Diebstähle und Fälschungen aufgeklärt sind!
+        <br><br>
+        Wollt ihr mir helfen? Dann drückt auf den Weiter-Button oder wischt mit dem Finger.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Sherlock'" style="font-size: 28px;">
+        Hier spricht der Geist von Ludwig Leiner! Ich grüße das Team um den berühmten Sherlock Holmes. 
+        Mit meiner falschen Brille sehe ich leider schlecht. 
+        Aber ich ruhe nicht, bis diese Diebstähle und Fälschungen aufgeklärt sind.
+        <br><br>
+        Wollt ihr mir helfen? Dann drückt auf den Weiter-Button oder wischt mit dem Finger.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Enola'" style="font-size: 26px;">
+        Hier spricht der Geist von Ludwig Leiner! 
+        Ich grüße Enola Holmes und ihre Helferinen und Helfer! 
+        Diese verfluchten Diebstähle und Fälschungen... 
+        Mit dieser falschen Brille sehe ich leider schlecht. 
+        Aber ich ruhe nicht, bis alles aufgeklärt ist.
+        <br>
+        Wollt ihr mir mit Eurer Hightech-Lupe helfen und mein Vermächtnis beschützen? 
+        Dann drückt auf den Weiter-Button oder wischt mit dem Finger.
+      </p>
       <!-- <button-weiter-component class="button-weiter" v-if="flow==0.81" @click="if(!btTrigger)flow=0.82;" :disabled="btTrigger"/> -->
       <button-weiter-component class="button-weiter" v-if="flow>0.8" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.9" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
     </swiper-slide>
 
+    <!-- 0.9.1 Führung durch Leiner EG Schritt 1 -->
     <swiper-slide v-if="flow > 0.8" class="leiner-slide">
       <img class="spieler" src="assets/img/leiner.png" width="180"/>
-      <span v-if="ort=='eg'">
-        <!-- <p> Überall nimmt dieser Dieb oder diese Diebin kleine Dinge mit. </p>
-        <p> Sogar aus diesen alten Vitrinen, die ich noch eigenhändig bestückt habe. </p>
-        <p> Schaut Euch um, damit ihr später gut nach den verschwundenen Details suchen könnt. </p>
-        <p> Seid ihr bereit für den nächsten Schritt? </p> -->
+      <p v-if="spieler=='Watson'" style="font-size: 30px;">
+        Kennt ihr mein Museum und wollt gleich zur nächsten heißen Spur? 
+        Dann könnt ihr das Tutorial überspringen.
+        Sonst nehme ich Euch mit auf einen kleinen Rundgang. 
         <br><br>
-        <p> Es gibt leider noch viel mehr Tatorte. </p>
-        <!-- <p> Wenn ihr mit der Lösung des Falls beginnen wollt, drückt auf den Button "Los geht's" (Tutorial abbrechen) </p> -->
-        <p> Wenn ihr mit der Lösung des Falls beginnen wollt, könnt ihr das Tutorial jetzt schon überspringen. </p>
-        <p> Wenn ihr mein Museum noch gar nicht kennt, nehme ich Euch gerne mit auf einen kleinen Rundgang.  </p>
-        <p> Seid ihr bereit für den nächsten Schritt? </p>
-      </span>
-      <span v-else-if="ort=='og1'">
-        <!-- <p> Überall nimmt dieser Dieb oder diese Diebin kleine Dinge mit. </p>
-        <p> Auch aus der Biedermeier-Vitrine hier neben meinem Schreibtisch. </p>
-        <p> Kennt ihr mein schönes Museum? Ich nehme Euch mit auf einen kleinen Rundgang. Schaut Euch um, damit ihr später gut nach den verschwundenen Details suchen könnt. </p>
-        <p> Seid ihr bereit für den nächsten Schritt? </p> -->
+        Drückt dann auf den Weiter-Button oder wischt mit dem Finger.
+      </p>
+      <p v-else-if="spieler=='Sherlock'" style="font-size: 30px;">
+        Kennt ihr mein Museum und wollt gleich der nächsten heißen Spur folgen? 
+        Dann könnt ihr das Tutorial überspringen.
+        Sonst nehme ich Euch gerne mit auf einen kleinen Rundgang. 
         <br><br>
-        <p> Es gibt leider noch viel mehr Tatorte. </p>
-        <p> Wenn ihr mit der Lösung des Falls beginnen wollt, könnt ihr das Tutorial jetzt schon überspringen. </p>
-        <p> Wenn ihr mein Museum noch gar nicht kennt, nehme ich Euch gerne mit auf einen kleinen Rundgang. </p>
-        <p> Seid ihr bereit für den nächsten Schritt? </p>
-      </span>
+        Drückt dann auf den Weiter-Button oder wischt mit dem Finger.
+      </p>
+      <p v-else-if="spieler=='Enola'" style="font-size: 30px;">
+        Kennt ihr mein schönes Museum und seid bereit, der nächsten Spur zu folgen? 
+        Dann könnt ihr das Tutorial überspringen.
+        Sonst nehme ich Euch gerne mit auf einen kleinen Rundgang! 
+        <br><br>
+        Drückt dann auf den Weiter-Button oder wischt mit dem Finger.
+      </p>
+      <button-weiter-component class="button-weiter" v-if="flow>0.8" @click="swiperInstance.slideNext();"/>
+      <button-weiter-component class="button-weiter" v-else-if="flow>0.9" @click="swiperInstance.slideNext();"/>
+      <button-weiter-component class="button-weiter" v-else disabled />
+    </swiper-slide>
+
+    <!-- 0.9.2 Führung durch Leiner EG Schritt 2 -->
+    <swiper-slide v-if="flow > 0.8" class="leiner-slide">
+      <img class="spieler" src="assets/img/leiner.png" width="180"/>
+      <p v-if="ort=='eg' && spieler=='Watson'" style="font-size: 30px;">
+        Diese Vitrinen habe ich noch eigenhändig eingeräumt: alles uralte Dinge, die im Boden unserer schönen Heimat gefunden wurden!
+        <br><br>
+        Habt ihr genug gesehen? Dann drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="ort=='eg' && spieler=='Sherlock'" style="font-size: 30px;">
+        Sehr gut, schaut Euch um. Diese Vitrinen hier habe ich noch eigenhändig bestückt: Alles uralte Dinge, die fleißige Forscherinnen und Forscher aus unserem heimatlichen Boden ausgegraben haben.
+        <br><br>
+        Habt ihr genug gesehen? Dann zeige ich Euch den nächsten Raum. Drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="ort=='eg' && spieler=='Enola'" style="font-size: 30px;">
+        Liebe Freundinnen und Freunde! Schaut Euch um und atmet den Geist meines "Leinersaals": All diese Vitrinen habe ich eigenhändig entworfen und eingeräumt! Sie versammeln uralte Dinge, die fleißige Forscherinnen und Forscher im Boden unserer schönen Heimat entdeckt haben.
+        <br><br>
+        Habt ihr genug gesehen? Dann zeige ich Euch den nächsten Raum. Drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Watson'" style="font-size: 30px;">
+        Gut, beginnen wir gleich hier neben meinem Schreibtisch: Habt ihr den schönen Biedermeier-Schrank gesehen? Solch schöne Dinge hatte ich noch als Kind in den Händen.
+        <br><br>
+        Sollen wir in den nächsten Raum gehen? Dann drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Sherlock'" style="font-size: 30px;">
+        Gut! Dann beginnen wir gleich hier. Ich bin 1830 geboren, mitten in der Biedermeier-Zeit. Dazu passt der Schrank mit den schönen Sachen hier neben meinem Schreibtisch. Leider sehr beliebt bei diesem Dieb oder dieser Diebin!
+        <br><br>
+        Sollen wir in den nächsten Raum gehen? Dann drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Enola'" style="font-size: 30px;">
+        Liebe Freundinnen und Freunde! Ich bin 1830 geboren, mitten in der Biedermeier-Zeit. Im schönen Schrank neben meinem Schreibtisch seht ihr Dinge, die ich als Konstanzer Bub' "aus gutem Hause" noch in Händen hatte. Dann kam die Revolution 1848 und alles wurde anders...
+        <br><br>
+        Habt ihr genug gesehen? Dann drückt auf den Weiter-Button oder wischt.
+      </p>
       <button-weiter-component class="button-weiter" v-if="flow>0.8" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.9" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
@@ -338,22 +509,31 @@
 
     <swiper-slide v-if="flow > 0.8" class="leiner-slide">
       <img class="spieler" src="assets/img/leiner.png" width="180"/>
-      <span v-if="ort=='eg'">
-        <p style="margin-top: 100px;">
-          Ihr befindet Euch in meinem Lieblingssaal mit Vitrinen, die ich noch eigenhändig eingeräumt habe:
-        </p>
-        <p>
-          alles Dinge, die fleißige Forscher aus dem Boden unserer schönen Heimat ausgegraben haben!
-        </p>
-      </span>
-      <span v-else-if="ort=='og1'">
-        <p style="margin-top: 100px;">
-          Habt ihr den schönen Biedermeier-Schrank hier neben meinem Schreibtisch gesehen? 
-        </p>
-        <p>
-          Geht weiter und folgt den grünen Pfeilen.
-        </p>
-      </span>
+      <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_4.png" v-if="ort=='eg'"/>
+      <img class="pfeil pfeil-kleiner" src="assets/objekte/og/tutorial/tutorial_og_pfeil_6.png" v-else-if="ort=='og1'"/>
+      <p v-if="ort=='eg'">
+        Folgt dem grünen Pfeil. 
+        Geht in den Raum mit den purpurfarbenen Vitrinen. 
+        <br><br>
+        Drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Watson'" style="font-size: 30px;">
+        Im Raum des 18. und 19. Jahrhunderts hängen viele meiner Lieblingsgemälde!
+        Habt ihr auch die schönen Vitrinen gesehen? Dann drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Sherlock'" style="font-size: 28px;">
+        Im Raum des 18. und 19. Jahrhunderts hängen viele meiner Lieblingsgemälde! 
+        Einige davon hat Marie Ellenrieder gemalt.
+        Habt ihr auch die schönen Vitrinen gesehen? 
+        Dann drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Enola'" style="font-size: 28px;">
+        Im Raum des 18. und 19. Jahrhunderts hängen viele meiner Lieblingsgemälde! 
+        Einige davon hat Marie Ellenrieder gemalt, meine bemerkenswerte Zeitgenossin! 
+        Wie war ich traurig, als sie 1863 in Konstanz gestorben ist.
+        Habt ihr auch die schönen Vitrinen gesehen? 
+        Dann drückt auf den Weiter-Button oder wischt.
+      </p>
       <button-weiter-component class="button-weiter" v-if="flow>0.8" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.9" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
@@ -361,28 +541,49 @@
 
     <swiper-slide v-if="flow > 0.8" class="leiner-slide">
       <img class="spieler" src="assets/img/leiner.png" width="180"/>
-      <span v-if="ort=='eg'">
-        <p> Geht jetzt in den Raum mit den roten Vitrinen. </p>
-      </span>
-      <span v-else-if="ort=='og1'" style="font-size: 28px;">
-        <p> Im Raum des 18. und 19. Jahrhunderts hängen viele meiner Lieblingsgemälde! </p>
-      </span>
-      <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_4.jpg" style="height: 70%;" v-if="ort=='eg'"/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_6.jpg" style="height: 70%;" v-else-if="ort=='og1'"/>
+      <img class="pfeil pfeil-kleiner" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_5.png" v-if="ort=='eg'"/>
+      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_7.png" v-else-if="ort=='og1'"/>
+      <p v-if="ort=='eg' && spieler=='Watson'" style="font-size: 28px;">
+        In diesem Raum findet ihr vieles zur Geschichte unserer schönen Stadt Konstanz, alles sehr kostbar und spannend!
+        Habt ihr auch die schöne Holzdecke gesehen? Dann folgt weiter dem grünen Pfeil.#
+        <br>
+        Drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="ort=='eg' && spieler=='Sherlock'" style="font-size: 26px;">
+        Hier findet ihr kostbare Dinge zur Geschichte unserer schönen Stadt Konstanz am Bodensee. 
+        Hier stritten Bürgerzünfte und verschiedene Stadtherren miteinander. 
+        Bis 1821 war die Stadt der Sitz eines katholischen Bischofs.
+        Werft auch einen Blick auf die schöne Holzdecke und folgt dann dem grünen Pfeil. 
+        <br>
+        Drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="ort=='eg' && spieler=='Enola'" style="font-size: 24px;">
+        In diesem Raum zeugen viele kostbare Dinge von der Geschichte unserer schönen Stadt Konstanz am Bodensee. 
+        Hier stritten Bürgerzünfte und verschiedene Stadtherren miteinander. 
+        Wusstet ihr, dass die Stadt bis 1821 Sitz eines katholischen Bischofs war?
+        Werft auch einen Blick auf die schöne Holzdecke und folgt dann weiter dem grünen Pfeil. 
+        Drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Watson'" style="font-size: 30px;">
+        Folgt dem grünen Pfeil und drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Sherlock'" style="font-size: 30px;">
+        Folgt dem grünen Pfeil und drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Enola'" style="font-size: 30px;">
+        Folgt dem grünen Pfeil und drückt auf den Weiter-Button oder wischt.
+      </p>
       <button-weiter-component class="button-weiter" v-if="flow>0.8" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.9" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
     </swiper-slide>
 
-    <swiper-slide v-if="flow > 0.8" class="leiner-slide">
+    <swiper-slide v-if="flow > 0.8 && ort=='og1'" class="leiner-slide">
       <img class="spieler" src="assets/img/leiner.png" width="180"/>
-      <span v-if="ort=='eg'">
-        <p style="font-size: 26px;">  Hier findet ihr vieles zur Geschichte unserer schönen Stadt Konstanz. Folgt weiter dem grünen Pfeil. </p>
-      </span>
-      <span v-else-if="ort=='og1'" >
-      </span>
-      <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_5.jpg" style="height: 67%;" v-if="ort=='eg'"/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_7.jpg" style="height: 90%;" v-else-if="ort=='og1'"/>
+      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_8.png" />
+      <p>
+        Folgt dem grünen Pfeil und drückt auf den Weiter-Button oder wischt.
+      </p>
       <button-weiter-component class="button-weiter" v-if="flow>0.8" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.9" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
@@ -390,7 +591,10 @@
 
     <swiper-slide v-if="flow > 0.8 && ort=='og1'" class="leiner-slide">
       <img class="spieler" src="assets/img/leiner.png" width="180"/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_8.jpg" style="height: 90%;"/>
+      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_9.png" />
+      <p>
+        Folgt dem grünen Pfeil und drückt auf den Weiter-Button oder wischt.
+      </p>
       <button-weiter-component class="button-weiter" v-if="flow>0.8" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.9" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
@@ -398,42 +602,85 @@
 
     <swiper-slide v-if="flow > 0.8 && ort=='og1'" class="leiner-slide">
       <img class="spieler" src="assets/img/leiner.png" width="180"/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_9.jpg" style="height: 90%;"/>
-      <button-weiter-component class="button-weiter" v-if="flow>0.8" @click="swiperInstance.slideNext();" />
+      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_10.png" />
+      <p>
+        Folgt dem grünen Pfeil und drückt auf den Weiter-Button oder wischt.
+      </p>
+      <button-weiter-component class="button-weiter" v-if="flow>0.8" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.9" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
     </swiper-slide>
 
     <swiper-slide v-if="flow > 0.8 && ort=='og1'" class="leiner-slide">
       <img class="spieler" src="assets/img/leiner.png" width="180"/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_10.jpg" style="height: 90%;"/>
-      <button-weiter-component class="button-weiter" v-if="flow>0.8" @click="swiperInstance.slideNext();" />
+      <img class="pfeil pfeil-kleiner" src="assets/objekte/og/tutorial/tutorial_og_pfeil_11.png" />
+      <p v-if="spieler=='Watson'" style="font-size: 30px;">
+        Nun steht ihr in einem meiner Lieblingsräume mit Kunst aus den alten Kirchen von Konstanz.
+        Habt ihr auch die alte Holztreppe und die Wandmalereien bewundert? 
+        Dann drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="spieler=='Sherlock'" style="font-size: 28px;">
+        Nun steht ihr in einem meiner Lieblingsräume mit Bildern und Objekten aus den alten Kirchen von Konstanz. 
+        Ja, mein Rosgartenmuseum ist auch ein richtig tolles Kunstmuseum!
+        Und habt ihr auch die alte Holztreppe und die Reste von Wandmalereien bewundert? 
+        Dann drückt auf den Weiter-Button oder wischt.
+      </p>
+      <p v-else-if="spieler=='Enola'" style="font-size: 28px;">
+        Nun steht ihr in einem meiner Lieblingsräume mit Kunst aus den alten Kirchen von Konstanz. 
+        Ja, mein Rosgartenmuseum ist auch ein richtig tolles Kunstmuseum!
+        Und habt ihr den Raum mit seiner alten Holztreppe und den Wandmalereien bewundert? 
+        Dann drückt auf den Weiter-Button oder wischt.
+      </p>
+      <button-weiter-component class="button-weiter" v-if="flow>0.8" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.9" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
-    </swiper-slide>
-
-    <swiper-slide v-if="flow > 0.8 && ort=='og1'" class="leiner-slide">
-      <img class="spieler" src="assets/img/leiner.png" width="180"/>
-      <p style="font-size: 26px;">Das ist einer meiner Lieblingsräume mit Kunst aus den alten Kirchen von Konstanz. Folgt dem Pfeil in den Zunftsaal.</p>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_11.jpg" style="height: 65%;"/>
       <button-weiter-component class="button-weiter" v-if="flow>0.8" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.9" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
     </swiper-slide>
 
     <swiper-slide v-if="flow >= 0.9" class="leiner-slide">
-      <img src="assets/img/leiner.png" width="180" style="margin-left: auto; margin-right: auto; display: block;"/>
-      <span v-if="ort=='eg'">
-        <p> Oh Schreck, ein Skelett! </p>
-        <p> Und was höre ich da? Es gibt einen neuen Diebstahl! </p>
-        <p> Geht schnell in die Detektivecke. </p>
-        <p> Ich verlasse mich auf Euch. Bewahrt mein Erbe! </p>      </span>
-      <span v-else-if="ort=='og1'" >        
-        <p> Das ist die gute alte Stube unseres Hauses. </p>
-        <p> Aber was höre ich da? Der Detaildieb hat wieder zugeschlagen? </p>
-        <p> Geht schnell zum Detektivlogo. </p>
-        <p> Ich verlasse mich auf Euch! Bewahrt mein Erbe! </p>
-      </span>
+      <img class="spieler" src="assets/img/leiner.png" width="180"/>
+      <img class="pfeil pfeil-kleiner" src="assets/objekte/og/tutorial/tutorial_og_pfeil_11.png" />
+      <p v-if="ort=='eg' && spieler=='Watson'" style="font-size: 30px;">
+        Oh Schreck, ein Skelett! Und das ist leider nicht alles: 
+        Es gibt einen neuen Diebstahl! 
+        <br><br>
+        Geht schnell in die Detektivecke.
+      </p>
+      <p v-else-if="ort=='eg' && spieler=='Sherlock'" style="font-size: 30px;">
+        Oh Schreck ein Skelett! Aus einem römischen Grab in Konstanz.
+        Und auch mir lässt der Dieb keine Ruhe. 
+        <br><br>
+        Es gibt wohl einen neuen Diebstahl! Geht schnell in die Detektivecke.
+      </p>
+      <p v-else-if="ort=='eg' && spieler=='Enola'" style="font-size: 30px;">
+        Oh Schreck ein Skelett! Aus einem römischen Grab in Konstanz. 
+        Und das ist leider nicht alles: auch der Dieb oder die Diebin lassen uns keine Ruhe.
+        <br><br>
+        Geht schnell zum Detektivbüro und der Fall kann beginnen...
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Watson'" style="font-size: 30px;">
+        Wir sind in der guten alten Stube meines Hauses angekommen. 
+        <br><br>
+        Habt ihr die Wappen an der Decke gesehen? Und die schönen Glasfenster? 
+        Dann drückt auf den Weiter-Button.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Sherlock'" style="font-size: 26px;">
+        Wir sind in der guten alten Stube meines Hauses angekommen. 
+        Schon vor über 500 Jahren haben hier Handwerker mit ihrer Zunft getagt, getrunken und gelacht! 
+        <br><br>
+        Habt ihr die Wappen an der Decke gesehen? Und die schönen Glasfenster? 
+        Dann drückt auf den Weiter-Button.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Enola'" style="font-size: 26px;">
+        Wir sind in der guten alten Stube meines Hauses angekommen. 
+        Schon vor über 500 Jahren haben hier Handwerker mit ihrer Zunft getagt, getrunken und gelacht! 
+        Zu gerne wüsste ich, wie es damals hier zugegangen ist.
+        <br><br>
+        Habt ihr die Wappen an der Decke gesehen? Und die schönen Glasfenster? 
+        Dann drückt auf den Weiter-Button.
+      </p>
       <button-weiter-component class="button-weiter" v-if="flow==0.9" @click="if(!btTrigger)flow=0.95;" :disabled="btTrigger"/>
       <button-weiter-component class="button-weiter" v-else-if="flow>=0.95" @click="flow=1.0" pulsiert/>
       <button-weiter-component class="button-weiter" v-else disabled />
@@ -528,7 +775,10 @@ watch(flow, () => {
   if (flow.value == 0.9)
   {
     setTimeout(() => {
-      swiperInstance.value.slideTo(6);
+      if (ort.value=='eg')
+        swiperInstance.value.slideTo(5);
+      else if (ort.value=='og1')
+        swiperInstance.value.slideTo(7);
     }, 1000 )
   }
   if (flow.value == 0.95) {
@@ -572,8 +822,8 @@ function antwortAusgewaehlt(nr : number, richtig : boolean) {
 }
 .swipe-geste-vertikal {
   position: absolute;
-  right: 90px;
-  top: 440px;
+  left: 200px;
+  bottom: 60px;
   width: 50px;
   height: 50px;
   background-color: black;
@@ -658,7 +908,8 @@ section {
 .antwort-buttons {
   /* margin-bottom: 90px; */
   position: absolute;
-  bottom: 110px;
+  /* bottom: 110px; */
+  bottom: 70px;
   left: 0px;
   width: 100%;
   padding: 20px;
@@ -698,13 +949,18 @@ p {
   left: 0px;
 }
 .pfeil {
-  position: absolute;
-  bottom: 40px;
-  left: 30px;
+  position: relative;
+  top: 0px;
+  left: 0px;
   /* margin-left: 30px; */
   /* margin-right: auto; */
-  height: 75%;
+  width: 330px;
+  transform: translate(30px, 30px) scale(120%);
+  margin-bottom: 60px;
   z-index: 4;
+}
+.pfeil-kleiner {
+  width: 260px;
 }
 .pfeile-zusammen {
   display: flex;
