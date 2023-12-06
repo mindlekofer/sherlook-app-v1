@@ -519,11 +519,13 @@
       </p>
       <p v-else-if="ort=='og1' && spieler=='Watson'" style="font-size: 30px;">
         Im Raum des 18. und 19. Jahrhunderts hängen viele meiner Lieblingsgemälde!
+        <br><br>
         Habt ihr auch die schönen Vitrinen gesehen? Dann drückt auf den Weiter-Button oder wischt.
       </p>
       <p v-else-if="ort=='og1' && spieler=='Sherlock'" style="font-size: 28px;">
         Im Raum des 18. und 19. Jahrhunderts hängen viele meiner Lieblingsgemälde! 
         Einige davon hat Marie Ellenrieder gemalt.
+        <br><br>
         Habt ihr auch die schönen Vitrinen gesehen? 
         Dann drückt auf den Weiter-Button oder wischt.
       </p>
@@ -531,6 +533,7 @@
         Im Raum des 18. und 19. Jahrhunderts hängen viele meiner Lieblingsgemälde! 
         Einige davon hat Marie Ellenrieder gemalt, meine bemerkenswerte Zeitgenossin! 
         Wie war ich traurig, als sie 1863 in Konstanz gestorben ist.
+        <br><br>
         Habt ihr auch die schönen Vitrinen gesehen? 
         Dann drückt auf den Weiter-Button oder wischt.
       </p>

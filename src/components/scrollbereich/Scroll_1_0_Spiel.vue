@@ -6,25 +6,19 @@
     <swiper-slide v-if="flow >=1.0 && flow<2.0">
       <span v-if="spieler=='Watson'">
         <img src="assets/img/detektive/watson_gluecklich.png" width="250" style="margin-left: auto; margin-right: auto; display: block;"/>
-        <!-- <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/> -->
-        <p style="margin-top: 20px;"> Liebe Spürnasen, es wird ernst! </p>
-        <p> Auch dieses Detail wurde offenbar durch eine Kopie ersetzt… </p>
-        <p> Klickt auf die Lupe Nr. 1 und beantwortet meine Frage. </p>
+        <p style="margin-top: 20px;"> Lieber Herr Leiner, das Team Watson geht an den Start! </p>
+        <p> Klickt bitte auf die Lupe Nr. 1 und beantwortet meine Frage zum ersten Detail. </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img src="assets/img/detektive/sherlock_gluecklich.png" width="260" style="margin-left: auto; margin-right: auto; display: block;"/>
         <!-- <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="300"/> -->
-        <p style="margin-top: 40px;"> Liebe Detektive. Das scheint eine Serie von Diebstählen zu sein! </p>
-        <p> Auch dieses Detail wurde wohl durch eine Kopie ersetzt… </p>
-        <p> Klickt auf die Lupe Nr. 1 und beantwortet meine Frage. </p>
+        <p style="margin-top: 40px;"> Lieber Herr Leiner, keine Sorge. Das Team Sherlock ist bereit. Wir werden alle Fälschungen finden und den Fall aufklären. </p>
+        <p> Klickt bitte auf die Lupe Nr. 1 und beantwortet meine Frage zum ersten verdächtigen Detail. </p>
       </span>
       <span v-else>
         <img src="assets/img/detektive/enola_gluecklich.png" width="250" style="margin-left: auto; margin-right: auto; display: block;"/>
-        <!-- <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="300"/> -->
-        <p style="margin-top: 20px;"> Und schon sind wir mitten in unserem seltsamen Fall... </p>
-        <p> Auch dieses Detail wurde heute früh durch eine Kopie ersetzt... </p>
-        <!-- <p> Klickt bitte auf die Lupe! </p> -->
-        <p> Klickt auf die Lupe Nr. 1 und beantwortet meine Frage. </p>
+        <p style="margin-top: 20px;"> Ja, lieber Herr Leiner, leider scheint es weitere Diebstähle und Fälschungen in Ihrem schönen Museum zu geben. </p>
+        <p> Liebes Team, klickt bitte auf die Lupe Nr. 1 und beantwortet meine Frage zum ersten verdächtigen Detail.</p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
       <!-- <div class="swipe-geste-vertikal"></div> -->
@@ -34,46 +28,46 @@
       <!-- <button-weiter-component class="button-weiter" disabled /> -->
     </swiper-slide>
 
+    <!-- Quiz zu Detail 1 -->
     <swiper-slide v-if="flow >= 1.1 && flow<2.0">
       <span v-if="!antwortClicked && ort=='eg'">
         <span v-if="spieler=='Watson'">
           <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
-          <p style="margin-top: 50px;"> Verdammt. Ganz schön schwierig... </p>
-          <p> Wozu gehört das überhaupt? </p>
+          <p style="margin-top: 50px;"> Ganz schön schwierig... </p>
+          <p> Was könnte hier gefälscht worden sein? </p>
         </span>
         <span v-else-if="spieler=='Sherlock'">
           <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="230"/>
-          <p style="margin-top: 50px;"> So ein schönes Fossil. </p>
-          <p> Ratet mal, von welchem Tier das stammt?! </p>
+          <p style="margin-top: 50px;"> Nicht einfach... </p>
+          <p> Welches Fossil könnte hier gefälscht worden sein? </p>
         </span>
         <span v-else>
           <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="210"/>
-          <p style="margin-top: 50px;"> Ein schönes Fossil. </p>
-          <p> Ich glaube, ich weiß auch schon, von welcher alten Echse das stammt. Ihr auch? </p>
+          <p style="margin-top: 50px;"> Nicht einfach zu erkennen... </p>
+          <p> Welches Fossil könnte hier gefälscht worden sein? </p>
         </span>
       </span>
       <span v-else-if="!antwortClicked && ort=='og1'">
         <span v-if="spieler=='Watson'">
           <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
           <p style="margin-top: 20px;"> Das sieht ja seltsam aus. </p>
-          <p> Da frage ich euch doch erstmal: WAS suchen wir da überhaupt...? </p>
+          <p> Da frage ich euch doch erstmal: WAS könnte hier gefälscht worden sein? </p>
         </span>
         <span v-else-if="spieler=='Sherlock'">
           <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="230"/>
-          <p style="margin-top: 50px;"> Da muss ich zweimal hinschauen. </p>
-          <p> Das sieht aus wie ein schmuckvolles Präparat. Aber was ist das genau? </p>
+          <p style="margin-top: 50px;"> Das sieht aus wie ein schmuckvolles Präparat. </p>
+          <p> Aber was  genau könnte hier gefälscht worden sein? </p>
         </span>
         <span v-else>
           <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="210"/>
-          <p style="margin-top: 50px;"> Ein Schmuckstück mit Haaren?! </p>
-          <p> Zu welchem Anlass das wohl gefertigt wurde? </p>
+          <p style="margin-top: 50px;"> Ein Schmuckstück mit Haaren? Hoffentlich ist das keine Fälschung! </p>
+          <p> Denn es wurde zu einem wichtigen Anlass hergestellt. Wozu? </p>
         </span>
       </span>
       <span v-else-if="!antwortRichtig">
         <span v-if="spieler=='Watson'">
           <img class="spieler" src="assets/img/detektive/watson_enttaeuscht.png" width="210"/>
-          <p style="margin-top: 70px;"> Die Antwort war leider falsch. </p>
-          <p> Versuch es noch einmal!</p>
+          <p style="margin-top: 70px;"> Die Antwort ist leider falsch, versucht es noch einmal!</p>
         </span>
         <span v-else-if="spieler=='Sherlock'">
           <img class="spieler" src="assets/img/detektive/sherlock_enttaeuscht.png" width="230"/>
@@ -87,46 +81,58 @@
       <span v-else-if="antwortRichtig">
         <span v-if="spieler=='Watson'">
           <img class="spieler" src="assets/img/detektive/watson_gluecklich.png" width="210"/>
-          <p style="margin-top: 90px;"> Richtige Antwort, weiter geht's! </p>
+          <p style="margin-top: 70px;">
+            Super, die Antwort ist richtig.
+            <br><br>
+            Willkommen im Club der Detektive! 
+          </p>
         </span>
         <span v-else-if="spieler=='Sherlock'">
           <img class="spieler" src="assets/img/detektive/sherlock_gluecklich.png" width="240"/>
-          <p style="margin-top: 80px;"> Willkommen im Club der Detektive! </p>
+          <p style="margin-top: 80px;"> 
+            Sehr gut, die Antwort ist richtig. 
+            <br><br>
+            Willkommen im Club der Detektive!
+          </p>
         </span>
         <span v-else>
           <img class="spieler" src="assets/img/detektive/enola_gluecklich.png" width="210"/>
-          <p style="margin-top: 90px;"> Sehr gut, die Antwort ist richtig. </p>
+          <p style="margin-top: 90px;"> 
+            Wunderbar, die Antwort ist richtig!
+            <br><br>
+            So kann es weitergehen...
+          </p>
         </span>
       </span>
       <div class="antwort-buttons" v-if="spieler=='Watson' && ort=='eg'">
-        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">zum Fossil eines Dinosauriers</ion-button>
-        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">zu einer alten italienischen Handtasche</ion-button>
+        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)"> Fossil eines Dinosauriers</ion-button>
+        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig"> alte italienische Handtasche</ion-button>
         <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Verzierung eines mittelalterl. Kachelofens</ion-button>
       </div>
       <div class="antwort-buttons" v-else-if="spieler=='Sherlock' && ort=='eg'">
-        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Schnabel eines Flugsauriers</ion-button>
-        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Flosse eines Fischsauriers</ion-button>
-        <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Gebiss eines Tyrannosaurus rex</ion-button>
+        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig"> Saugnäpfe eines kleinen Tintenfischs </ion-button>
+        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Flosse eines großen Fischsauriers</ion-button>
+        <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Gebiss eines Tyrannosaurus Rex</ion-button>
       </div>
       <div class="antwort-buttons" v-else-if="spieler=='Enola' && ort=='eg'">
-        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Flügel eines Flugsauriers</ion-button>
+        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Saugnäpfe eines kleinen Tintenfischs </ion-button>
         <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Flosse eines Ichtyosauriers</ion-button>
         <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Wirbelsäule eines Dinosauriers</ion-button>
       </div>
       <div class="antwort-buttons" v-else-if="spieler=='Watson' && ort=='og1'">
-        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Das Nest einer diebischen Elster</ion-button>
-        <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Das Rohr eines luxuriösen Staubsaugers</ion-button>
-        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Eine Brosche mit Haarlocke</ion-button>
+        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig"> Stroh </ion-button>
+        <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig"> Grashalme </ion-button>
+        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)"> Haare </ion-button>
       </div>
       <div class="antwort-buttons" v-else-if="spieler=='Sherlock' && ort=='og1'">
-        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Etui mit Pferdehaar</ion-button>
-        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Brosche mit Menschenhaar</ion-button>
-        <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Präpariertes Vogelnest</ion-button>
+        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig"> Etui mit Pferdehaar </ion-button>
+        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)"> Brosche mit Menschenhaar </ion-button>
+        <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig"> Präpariertes Vogelnest </ion-button>
       </div>
       <div class="antwort-buttons" v-else-if="spieler=='Enola' && ort=='og1'">
-        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)">Verlobung oder Hochzeit</ion-button>
-        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig">Eintritt in ein Kloster</ion-button>
-        <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Beisetzung von Heiligen</ion-button>
+        <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)"> Verlobung oder Hochzeit </ion-button>
+        <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig"> Eintritt in ein Kloster </ion-button>
+        <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig"> Beisetzung eines Heiligen </ion-button>
       </div>
       <button-weiter-component class="button-weiter" v-if="flow==1.2 && antwortRichtig" @click="swiperInstance.slideNext();" pulsiert/>
       <button-weiter-component class="button-weiter" v-else-if="flow>1.2" @click="swiperInstance.slideNext();"/>
@@ -139,18 +145,20 @@
           <span v-if="spieler=='Watson'">
             <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
             <p> Und da ist auch schon die erste heiße Spur im Internet. </p>
-            <p> Auf Instagram brüstet sich doch tatsächlich jemand mit diesen Diebstählen und Fälschungen. </p>
-            <p> Der Account heisst @gerne_gestern. Das ist also der Deckname unseres Detaildiebs! Scrollt runter um den Post zu sehen! </p>
+            <p> Auf Instagram brüstet sich jemand mit diesen Diebstählen. </p>
+            <p> Schaut Euch den Post genau an und sucht dann nach der Fälschung hier im Museum. </p>
           </span>
           <span v-else-if="spieler=='Sherlock'">
             <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-            <p> Und siehe da. Auf Instagram brüstet sich tatsächlich jemand mit diesen Diebstählen und Fälschungen.  </p>
-            <p> Natürlich wählt er einen Decknamen. Der Account heisst @gerne_gestern. Scrollt runter um den Post zu sehen! </p>
+            <p> Und da schau an! Es gibt eine heiße Spur auf Instagram: da brüstet sich tatsächlich jemand mit diesen Diebstählen und Fälschungen. </p>
+            <p> Natürlich wählt er einen Decknamen. Der Account heisst @gerne_gestern. </p>
+            <p> Schaut Euch den Post genau an und sucht dann nach der Fälschung hier im Museum. </p>
           </span>
           <span v-else-if="spieler=='Enola'">
             <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-            <p> Wie unvorsichtig! Schaut mal, was ich auf Instagram gefunden habe, der Account heißt @gerne_gestern. </p>
-            <p> Da postet unser Detaildieb seine Diebstähle und Fälschungen. Wie dreist ist das denn? Aber lest selbst... </p>
+            <p> Und schaut mal, was ich auf Instagram gefunden habe, der Account heißt @gerne_gestern. </p>
+            <p> Da postet jemand seine Diebstähle und Fälschungen. Wie dreist ist das denn? </p>
+            <p> Aber scrollt runter und lest selbst! </p>
           </span>
           <PostingComponent v-if="ort=='eg'"
               username="@gerne_gestern"
@@ -160,10 +168,21 @@
               likes="30129"
               @hashtag-clicked="flow=1.3"
               :eingetragen="flow>=1.3">
-            Auch wenn sich der alte Leiner im Grab umdreht: 
-            Ich habe dieses exquisite Gerippe aus seinem Rahmen befreit! 
-            Andere Leute gehen mit Delfinen schwimmen, ich hole mir Ichthyosaurier nach Hause. 
-            Im nächsten Post erfahrt ihr mehr dazu...
+            <span v-if="spieler=='Watson'">
+              Ich habe einen Teil dieses riesigen Gerippes durch eine Fälschung ersetzt!  
+              Im nächsten Post erfahrt ihr mehr dazu...
+            </span>
+            <span v-else-if="spieler=='Sherlock'">
+              Auch wenn sich der alte Leiner im Grab umdreht: 
+              Ich habe dieses große Fisch-Gerippe durch eine Fälschung ersetzt!  
+              Im nächsten Post erfahrt ihr mehr dazu...
+            </span>
+            <span v-else-if="spieler=='Enola'">
+              Auch wenn sich der alte Leiner im Grab umdreht: 
+              Ich habe dieses exquisite Gerippe durch eine Fälschung ersetzt! 
+              Andere Leute gehen mit Delfinen schwimmen, ich hole mir Ichthyosaurier nach Hause. 
+              Im nächsten Post erfahrt ihr mehr dazu...
+            </span>
           </PostingComponent>
           <PostingComponent v-if="ort=='og1'"
               username="@gerne_gestern"
@@ -173,13 +192,26 @@
               likes="34876"
               @hashtag-clicked="flow=1.3"
               :eingetragen="flow>=1.3">
-              Es gibt Museen, deren Schränke sind schöner als jedes moderne Schaufenster. 
-              In einem solchen Museum war ich heute und habe einiges für Euch mitgebracht. 
-              Zum Beispiel diese Rarität. Unfassbar, was darin verborgen ist... 
-              Schnipp, schnapp war sie weg!
+            <span v-if="spieler=='Watson'">
+              Was für eine schöne Biedermeier-Locke. Genau richtig für eine feine Fälschung! Schnipp, schnapp war sie weg!
+            </span>
+            <span v-else-if="spieler=='Sherlock'">
+              Unfassbar, was in dieser Biedermeier-Brosche verborgen ist... 
+              Genau richtig für eine feine Fälschung. Schnipp, schnapp war sie weg!
+            </span>
+            <span v-else-if="spieler=='Enola'">
+              Unfassbar, was in dieser Brosche verborgen ist... 
+              Aber leichtes Spiel für flinke Fälscherfinger. Schnipp, schnapp war sie weg!
+            </span>
           </PostingComponent>
-          <p style="margin-bottom: 100px;">
-            Berührt den pulsierenden Hashtag um ihn als Hinweis in eurem Notizbuch festzuhalten!
+          <p style="margin-bottom: 120px;" v-if="spieler=='Watson'">
+            Berührt den pulsierenden Hashtag, dann füllt sich unser Notizbuch
+          </p>
+          <p style="margin-bottom: 120px;" v-else-if="spieler=='Sherlock'">
+            Berührt den pulsierenden Hashtag, dann fliegt er als Hinweis in unser Notizbuch!
+          </p>
+          <p style="margin-bottom: 120px;" v-else-if="spieler=='Enola'">
+            Berührt den pulsierenden Hashtag, dann fliegt er als Hinweis in unser Notizbuch!
           </p>
           <button-weiter-component class="button-weiter" v-if="flow==1.3" @click="swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="flow>1.3" @click="swiperInstance.slideNext();"/>
@@ -191,26 +223,36 @@
     <swiper-slide v-if="flow >=1.3 && flow<2.0">
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
-        <p> Hurra, das war uns erster Hinweis. </p>
-        <p> Das notieren wir am besten gleich im Notizbuch, damit wir es nicht mehr vergessen. </p>
-        <p>
-          Jetzt aber schnell, wir müssen die Fälschung hier im Museum finden. 
-          Achtet auf die Hinweise im Post und auf eure Hightech-Lupe. 
+        <p> 
+          Ein seltsamer Hinweis! Habt ihr Euch den Post genau angeschaut? 
+          Dann sucht bitte das Objekt hier im Museum.
         </p>
-        <p> Ihr wisst ja, wenn der Rahmen blinkt, hat sie etwas Verdächtiges in der Nähe erkannt... </p>
+        <p>
+          Haltet die Augen offen und achtet auf die Hightech-Lupe. 
+          Wenn sie blinkt, ist etwas Verdächtiges in der Nähe! 
+        </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
-        <p> Jetzt haben wir den ersten Hinweis! </p>
-        <p> Den Hashtag notieren wir uns gleich im Ermittlungsbuch. </p>
-        <p> Achtet auf die Hinweise im Post und auf eure Hightech-Lupe. </p>
-        <p> Ihr wisst ja, wenn der Rahmen blinkt, hat sie etwas Verdächtiges in der Nähe erkannt. </p>
+        <p> 
+          Sehr gut, ein eigenartiger Hinweis! Habt ihr Euch den Post genau angeschaut? 
+          Dann lasst uns die Fälschung hier im Museum suchen.
+        </p>
+        <p>
+          Haltet die Augen offen und achtet auf die Hightech-Lupe. 
+          Ihr wisst ja, wenn sie blinkt, ist etwas Verdächtiges in der Nähe! 
+        </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-        <p> Das nenne ich eine heiße Spur! Damit können wir den ersten Hastag in unser Ermittlungsbuch eintragen. </p>
-        <p> Und los, geht's! Prüfen wir, ob es sich wirklich um eine Fälschung handelt. </p>
-        <p> Ihr wisst ja, wenn die Hightech-Lupe leuchtet, hat sie etwas Verdächtiges in der Nähe erkannt. </p>
+        <p> 
+          Habt ihr Euch den Post genau angeschaut? 
+          Dann lasst uns die Fälschung in den Räumen des Museums finden. 
+        </p>
+        <p>
+          Haltet die Augen offen und achtet auf unsere Hightech-Lupe. 
+          Ihr wisst ja, wenn sie blinkt, ist etwas Verdächtiges in der Nähe... 
+        </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
       <!-- <div class="swipe-geste-vertikal"></div> -->
@@ -281,15 +323,15 @@
         <swiper-slide>
           <span v-if="spieler=='Watson'">
             <img class="spieler" src="assets/img/detektive/watson_gluecklich.png" width="210"/>
-            <p> Sehr gut! Ihr habt die Fälschung erkannt... </p>
-            <p> Und lest den nächsten Post von @gerne_gestern.  </p>
-            <p> Mal schauen, ob wir da noch mehr über die Tatmotive erfahren. </p>
+            <p> Sehr gut! Das ist also auch eine Fälschung. </p>
+            <p> Aber wer steckt hinter diesen seltsamen Aktionen? </p>
+            <p> Mal schauen, ob wir bei @gerne_gestern mehr über die Tatmotive erfahren. </p>
           </span>
           <span v-else-if="spieler=='Sherlock'">
             <img class="spieler" src="assets/img/detektive/sherlock_gluecklich.png" width="250"/>
-            <p> Hervorragend. Das ist also auch eine Fälschung! </p>
+            <p> Hervorragend. Die Fälschung ist entlarvt! </p>
             <p> Und es gibt einen zweiten Post von @gerne_gestern. </p>
-            <p> Mal schauen, ob wir da noch mehr über die Tatmotive erfahren... </p>
+            <p> Mal schauen, ob wir da mehr über die Tatmotive erfahren... </p>
           </span>
           <span v-else-if="spieler=='Enola'">
             <img class="spieler" src="assets/img/detektive/enola_gluecklich.png" width="220"/>
@@ -304,34 +346,78 @@
               likes="34521"
               @hashtag-clicked="flow=1.7"
               :eingetragen="flow>=1.7">
-              Ich liebe diesen alten Saal. Hier ist alles so geheimnisvoll. 
-              Diese schönen alten Vitrinen. Vom Museumsgründer selbst entworfen. 
-              Aber bei aller Liebe: etwas vollgestopft ist es schon. 
-              Ich wusste erst gar nicht, wo ich hinschauen sollte. 
-              Dann habe ich den tollen Ichtyo an der Wand entdeckt. 
-              Die mag ich noch mehr als Dinos. Ichthyosaurier sind die Fischsaurier. 
-              Ich finde: diesen da könnte man noch mehr zum Highlight machen! 
-              Und genau das ist meine Mission: alten Dingen, neue Ehrenplätze geben.
+              <span v-if="spieler=='Watson'">
+                Dieses Gerippe hat einem lebendigen Fischsaurier gehört! 
+                So etwas Altes und Geheimnisvolles zieht mich magisch an. 
+                Eine Flosse habe ich durch eine kleine Fälschung ersetzt. 
+                Jetzt hängt sie über meinem Kühlschrank. 
+                Sieht bei mir noch schöner aus als hier im Museum!
+              </span>
+              <span v-else-if="spieler=='Sherlock'">
+                Ich liebe diesen Saal. 
+                Hier sieht alles so alt, fremd und geheimnisvoll aus. 
+                Erst wusste ich gar nicht, wo ich hinschauen sollte. 
+                Dann habe ich den tollen Ichtyo an der Wand entdeckt. 
+                Die mag ich noch mehr als Dinos. 
+                Ichthyosaurier sind die Fischsaurier. 
+                Eine Flosse habe ich durch eine kleine Fälschung ersetzt. 
+                Jetzt hängt sie über meinem Kühlschrank. 
+                Sieht noch schöner aus als hier im Museum!
+              </span>
+              <span v-else-if="spieler=='Enola'">
+                Ich liebe diesen alten Saal. Hier ist alles so geheimnisvoll. 
+                Diese schönen alten Vitrinen, vom Museumsgründer selbst entworfen. 
+                Aber bei aller Liebe: etwas vollgestopft ist es schon. 
+                Ich wusste erst gar nicht, wo ich hinschauen sollte. 
+                Dann habe ich den tollen Ichtyo an der Wand entdeckt. 
+                Die mag ich noch mehr als Dinos. Ichthyosaurier sind die Fischsaurier. 
+                Ich finde: diesen da könnte man noch mehr zum Highlight machen! 
+                Und genau das ist meine Mission: alten Dingen neue Ehrenplätze geben.
+              </span>
           </PostingComponent>
           <PostingComponent v-else-if="ort=='og1'"
               username="@gerne_gestern"
               avatar="assets/personen/00x0/gerne_gestern.jpg"
               bild="assets/objekte/og/00x0_og1_ac/00x0_og1_ac_post2.jpg"
-              hashtag="#schillernde_lockenpracht"
+              hashtag="#alte_sitten_fremd_und_schön"
               likes="34232"
               @hashtag-clicked="flow=1.7"
               :eingetragen="flow>=1.7">
-              Na, wie gefällt sie euch? Vielleicht habt ihr es erraten: 
-              Im Inneren der Brosche befindet sich eine menschliche Haarlocke! 
-              Heute sehen wir abgeschnittene Haare hauptsächlich beim Friseur. 
-              Damals hatte die abgeschnittene Haarpracht eine andere Funktion: 
-              sie zu verschenken galt als Zeichen der Verbundenheit und Treue. 
-              Ob das Oma und Opa noch so gemacht haben? Oder sogar Schiller oder Goethe? 
-              Wie auch immer... Ich werde die Brosche so liebevoll wie hier im Museum präsentieren. 
-              Sie wird ein Glanzstück meiner Sammlung!
+              <span v-if="spieler=='Watson'">
+                Ich habe diese Brosche mitgenommen und ersetzt. 
+                Denn sie erinnert mich an einen alten Brauch: 
+                Dem Liebsten eine Haarlocke schenken, als Zeichen für Treue und Verbundenheit. 
+                Und so schön in Szene gesetzt! Das musste ich einfach selbst ausprobieren!
+              </span>
+              <span v-else-if="spieler=='Sherlock'">
+                Ich mag Dinge mit alten, überraschenden Geheimnissen. 
+                So wie bei dieser Brosche: 
+                In ihrem Inneren befindet sich eine menschliche Haarlocke!  
+                Sie zu verschenken galt als Zeichen der Verbundenheit und Treue. 
+                Ob das noch Oma und Opa so gemacht haben? Oder schon Schiller und Goethe? 
+                Wie auch immer... Ich werde die Brosche so liebevoll wie hier im Museum präsentieren. 
+                Sie wird ein Glanzstück meiner Sammlung!
+              </span>
+              <span v-else-if="spieler=='Enola'">
+                Ich mag Dinge mit alten, überraschenden Geheimnissen. 
+                Vielleicht habt ihr es erraten: 
+                Im Inneren der Brosche befindet sich eine menschliche Haarlocke!  
+                In der Biedermeierzeit galt das als Zeichen der Verbundenheit und Treue. 
+                Schade, dass das aus der Mode gekommen ist. 
+                Ob das noch Oma und Opa so gemacht haben? 
+                Oder schon Schiller oder Goethe? Wie auch immer... 
+                Ich werde die Brosche so liebevoll wie hier im Museum präsentieren. 
+                Sie wird ein Glanzstück meiner Sammlung!
+              </span>
           </PostingComponent>
-          <p style="margin-bottom: 100px;">
-            Berührt den pulsierenden Hashtag um ihn als Hinweis in eurem Notizbuch festzuhalten!
+          <p style="margin-bottom: 120px;" v-if="spieler=='Watson'">
+            Berührt den pulsierenden Hashtag, dann füllt sich unser Notizbuch
+          </p>
+          <p style="margin-bottom: 120px;" v-else-if="spieler=='Sherlock'">
+            Berührt den pulsierenden Hashtag, dann fliegt er als Hinweis in unser Notizbuch!
+          </p>
+          <p style="margin-bottom: 120px;" v-else-if="spieler=='Enola'">
+            Berührt den pulsierenden Hashtag, dann fliegt er als Hinweis in unser Notizbuch!
           </p>
           <button-weiter-component class="button-weiter" v-if="flow==1.7" @click="flow=1.8; swiperInstance.slideNext();" pulsiert/>
           <button-weiter-component class="button-weiter" v-else-if="flow>1.7" @click="swiperInstance.slideNext();"/>
@@ -343,20 +429,19 @@
     <swiper-slide v-if="flow >=1.7 && flow<2.0">
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
-        <p> Die ersten beiden Hashtags sind gesichert. </p>
-        <p> Wir sind @gerne_gestern auf den Fersen. </p>
+        <p> Sehr gut. Die Fälschung ist enttarnt und wir haben erste Hinweise auf die Tatmotive. </p>
         <p> Und hört, was uns der Geist von Ludwig Leiner noch zu sagen hat... </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
         <p> @gerne_gestern ist ein dreister Gegner. </p>
-        <p> Aber das war hervorragende Arbeit von Euch! </p>
+        <p> Aber wir haben erste Hinweise auf seine Tatmotive gesammelt. </p>
         <p> Und hört, was uns der Geist von Ludwig Leiner noch zu sagen hat... </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
-        <p> Glückwunsch: Die ersten zwei Hashtags sind im Ermittlungsbuch. </p>
         <p> @gerne_gestern ist wirklich seltsam! </p>
+        <p> Aber die Fälschung ist enttarnt und wir haben erste Hinweise auf die Tatmotive gesammelt. </p>
         <p> Und hört, was uns der Geist von Ludwig Leiner noch zu sagen hat... </p>
       </span>
       <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
@@ -370,55 +455,91 @@
     <swiper-slide v-if="flow >= 1.79 && flow<2.0" class="leiner-slide">
       <!-- <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/> -->
       <!-- <img class="spieler" src="assets/img/leiner.png" width="200"/> -->
-      <img src="assets/objekte/eg/00x0_eg_02/00x0_eg_02_leiner.jpg" width="400" style="margin-left: auto; margin-right: auto; display: block;"/>
-      <span v-if="ort=='eg'">
-        <p>
-          In meinen Augenwinkeln habe ich ihn noch gesehen, diesen fürchterlichen Detaildieb. 
-          Dann war er weg, mit der Flosse meines schönen Ichthyosaurus... 
-        </p>
-        <p>
-          Was sollen wir nun unseren Besuchern erzählen?
-        </p>
-      </span>
-      <span v-else-if="ort=='og1'">
-        <p>
-          Auf die Komplimente eine Diebes kann ich gerne verzichten! 
-          Außerdem muss ich einer Verwechslungsgefahr vorbeugen: 
-          Diese Locke stammt weder von Schiller (1759-1805) noch von Goethe (1749-1832). 
-        </p>
-      </span>
+      <img src="assets/objekte/eg/00x0_eg_02/00x0_eg_02_leiner.jpg" width="500" style="margin-left: auto; margin-right: auto; display: block;"/>
+      <p v-if="ort=='eg' && spieler=='Watson'">
+        Ich danke dem Team um Dr. Watson, sehr gute Arbeit! 
+      </p>
+      <p v-else-if="ort=='eg' && spieler=='Sherlock'">
+        Ich danke Sherlock Holmes und seinem tollen Team! 
+        <br><br>
+        In meinen Augenwinkeln habe ich den fürchterlichen Diebstahl noch gesehen. 
+      </p>
+      <p v-else-if="ort=='eg' && spieler=='Enola'">
+        Ich danke Enola Holmes und ihren Helferinnen und Helfern! Sehr gute Arbeit. 
+        <br><br>
+        Aber ist das nicht schrecklich? Ich liebe meinen Ichtyosaurier! 
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Watson'">
+        Ich danke dem Team um Dr. Watson, sehr gute Arbeit! 
+        <br><br>
+        Und habt ihr bemerkt: Dieser Dieb oder diese Diebin lobt mein Museum und lässt dann trotzdem alte Dinge mitgehen. 
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Sherlock'">
+        Ich danke dem Team um den berühmten Sherlock Holmes, sehr gute Arbeit. 
+        <br>
+        Und habt ihr bemerkt: Dieser Dieb oder diese Diebin lobt mein Museum und lässt dann trotzdem alte Dinge mitgehen. 
+        <br>
+        Auf solche Komplimente kann ich gerne verzichten!
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Enola'">
+        Ich danke Enola Holmes und ihren Helferinnen und Helfern! 
+        Sehr gute Arbeit. 
+        <br>
+        Und habt ihr bemerkt: 
+        Dieser Dieb oder diese Diebin lobt mein Museum und lässt dann trotzdem alte Dinge mitgehen. 
+        <br>
+        Auf solche Komplimente kann ich gerne verzichten!
+      </p>
       <button-weiter-component class="button-weiter" v-if="flow==1.8" @click="flow=1.8;swiperInstance.slideNext();" pulsiert />
       <button-weiter-component class="button-weiter" v-else-if="flow>1.8" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
     </swiper-slide>
 
     <swiper-slide v-if="flow >= 1.8 && flow<2.0" class="leiner-slide">
-      <!-- <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/> -->
       <img class="spieler" src="assets/img/leiner.png" width="200"/>
-      <!-- <img src="assets/objekte/eg/00x0_eg_02/00x0_eg_02_leiner.jpg" width="400" style="margin-left: auto; margin-right: auto; display: block;"/> -->
-      <span v-if="ort=='eg'">
-        <p>
-          Ichthyosaurier heisst soviel wie: 
-          Fischsaurier, denn altgriechisch bedeutet ἰχθῦς (ichthŷs) einfach "Fisch". 
-        </p>
-        <p>
-          Vor 100 Millionen Jahren tummelten sich noch 80 verschiedene Arten in den großen Ozeanen dieser Erde. 
-          Dann sind sie verschwunden... 
-        </p>
-        <p>
-          Bringt mir wenigstens diesen einen wieder zurück...
-        </p>
-      </span>
-      <span v-else-if="ort=='og1'">
-        <p>
-          Und überhaupt haben "Schillerlocken" wenig mit dem Thema zu tun. 
-          So bezeichnet man nämlich vor allem geräucherte Bauchlappen von Dornhaien oder ein süßes Gebäck mit Vanillefüllung.
-        </p>
-        <p>
-          Wie dem auch sei: Ich will die Locken aus der Biedermeierzeit 
-          (1815-1848) wieder haben und keine Bauchlappen oder andere Schillerlocken...
-        </p>
-      </span>
+      <p v-if="ort=='eg' && spieler=='Watson'">
+        Und habt ihr bemerkt: <br>
+        Der Dieb lobt meine Ausstellung und lässt gleichzeitig Dinge verschwinden. 
+        <br><br>
+        Auf solche Komplimente kann ich gerne verzichten! 
+        <br><br>
+        Ihr müsst diesen Fall bitte rasch aufkären!
+      </p>
+      <p v-else-if="ort=='eg' && spieler=='Sherlock'">
+        Stellt Euch vor: der Fischsaurier hat 100 Millionen Jahre überlebt, jedenfalls sein versteinerter Körper. 
+        <br><br>
+        Und jetzt soll da eine schnöde Kopie an der Wand hängen? 
+        <br><br>
+        Ihr müsst diesen unbedingt aufkären!
+      </p>
+      <p v-else-if="ort=='eg' && spieler=='Enola'">
+        ἰχθῦς (ichthŷs) ist altgriechisch und bedeutet einfach "Fisch". 
+        <br><br>
+        Vor 100 Millionen Jahren tummelten sich noch 80 verschiedene Fischsaurier in den großen Ozeanen dieser Erde. 
+        Dieser versteinerte Körper hat also 100 Millionen Jahre überlebt, und jetzt soll da eine schnöde Kopie an der Wand hängen?  
+        <br><br>
+        Ihr müsst diesen Fall bitte rasch aufkären!
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Watson'">
+        Auf solche Komplimente kann ich gerne verzichten! 
+        <br><br>
+        Bringt mir bitte schnell die alte Brosche mit den echten Haaren zurück.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Sherlock'">
+        Außerdem muss ich einem Missverständnis vorbeugen: 
+        <br>
+        Schiller und Goethe sind im 18. Jahrhundert geboren. 
+        Diese Brosche mit Locke gehört zur Biedermeierzeit (1815-1848). 
+        <br><br>
+        Bringt mir bitte schnell die alte Brosche mit den echten Haaren zurück.
+      </p>
+      <p v-else-if="ort=='og1' && spieler=='Enola'">
+        Außerdem muss ich einem Missverständnis vorbeugen: 
+        Schiller und Goethe sind im 18. Jahrhundert geboren. 
+        Die alte Brosche mit der echten Haarlocke gehört zur Biedermeierzeit (1815-1848). 
+        <br><br>
+        Bringt sie bitte schnell wieder zurück.
+      </p>
       <button-weiter-component class="button-weiter" v-if="flow==1.8" @click="flow=2.0;swiperInstance.slideNext();" pulsiert />
       <button-weiter-component class="button-weiter" v-else-if="flow>1.8" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />

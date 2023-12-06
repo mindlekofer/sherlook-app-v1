@@ -25,7 +25,7 @@
                 :bild="ort=='eg'?'assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png':'assets/objekte/og/00x0_og1_ac/00x0_og1_ac_rund.png'"
                 @kleine-lupe-clicked="flow=1.1"
                 :hashtag1="flow>=1.3 ? (ort=='eg'?'#schönheit_aus_urzeiten':'#schnipp_schnapp_locke_ab') : ''"
-                :hashtag2="flow>=1.7 ? (ort=='eg'?'#alt_und_geheimnsvoll':'#schillernde_lockenpracht') : ''"
+                :hashtag2="flow>=1.7 ? (ort=='eg'?'#alt_und_geheimnsvoll':'#alte_sitten_fremd_und_schön') : ''"
                 :abgeschlossen="flow>=2"
                 @click="hinweisClicked(1)"
                 @hinweis-clicked="console.log('Hinweis clicked')"
@@ -494,7 +494,7 @@ watch(flow, () => {
       if (flow.value < 1.4) flow.value = 1.36;
       else if (flow.value < 2.4) flow.value = 2.36;
       else if (flow.value < 3.4) flow.value = 3.36;
-    }, 5*60000)
+    }, 3*60000)
   }
   // if ((flow.value==1.4 || flow.value==2.4 || flow.value==3.4) && slideNr.value>=2) {
   if ((flow.value==1.4 || flow.value==2.4 || flow.value==3.4)) {
