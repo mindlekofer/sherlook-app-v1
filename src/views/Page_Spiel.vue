@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true">
-      <span class="debugging" id="debug-flow-anzeige">{{ spieler }} {{ ort }} {{ flow }}</span>
+      <span class="debugging" id="debug-flow-anzeige">{{ spieler }} {{ ort }} {{ flow }} {{ slideNr }}</span>
       <div id="container_alles">
         <div id="container_links">
           <div class="container_hinweise">

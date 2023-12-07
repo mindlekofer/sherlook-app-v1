@@ -47,8 +47,8 @@
           </i>
         </p>
       </span>
-      <!-- <div class="swipe-geste-vertikal" v-if="flow==0.6"></div> -->
-      <div class="swipe-geste-vertikal"></div>
+      <!-- <div class="swipe-geste-horizontal" v-if="flow==0.6"></div> -->
+      <div class="swipe-geste-horizontal"></div>
       <button-weiter-component class="button-weiter" v-if="flow==0.6" @click="swiperInstance.slideNext();" pulsiert/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.6" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
@@ -234,7 +234,7 @@
         Folgt dem grünen Pfeil auf dem Foto. <br><br>
         Drückt auf den Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den nächsten Schritt.
       </p>
-      <div class="swipe-geste-vertikal"></div>
+      <div class="swipe-geste-horizontal"></div>
       <button-weiter-component class="button-weiter" v-if="flow==0.71" @click="if(!btTrigger)flow=0.72;" :disabled="btTrigger"/>
       <button-weiter-component class="button-weiter" v-else-if="flow==0.72" @click="swiperInstance.slideNext();" pulsiert/>
       <button-weiter-component class="button-weiter" v-else-if="flow>0.72" @click="swiperInstance.slideNext();"/>
@@ -823,7 +823,7 @@ function antwortAusgewaehlt(nr : number, richtig : boolean) {
   color: white;
   /* background-color: rgb(178, 178, 178); */
 }
-.swipe-geste-vertikal {
+.swipe-geste-horizontal {
   position: absolute;
   left: 200px;
   bottom: 60px;
@@ -834,9 +834,9 @@ function antwortAusgewaehlt(nr : number, richtig : boolean) {
   opacity: 50%;
   /* margin-right: auto;
   margin-left: auto; */
-  animation: swipe-vertikal-animation 4s ease-in-out infinite;
+  animation: swipe-horizontal-animation 4s ease-in-out infinite;
 }
-/* @keyframes swipe-vertikal-animation {
+/* @keyframes swipe-horizontal-animation {
   0% {
     transform: translateX(+50px);
     opacity: 10%;
@@ -854,7 +854,7 @@ function antwortAusgewaehlt(nr : number, richtig : boolean) {
     opacity: 10%;
   }
 } */
-@keyframes swipe-vertikal-animation {
+@keyframes swipe-horizontal-animation {
   0% {
     transform: translateX(+50px);
     opacity: 10%;
