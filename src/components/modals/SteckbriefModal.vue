@@ -48,112 +48,203 @@
       </div>
       <div class="rechts">
         <span v-if="code=='00x0'">
-          <p>
-            <b>Katinka Antiqus</b> hat eine Schwäche für Exponate, die ihr direkt ins Auge stechen, 
-            alt und irgendwie spektakulär aus der Zeit gefallen scheinen.
-          </p>
-          <p>            
-            Hochmoderne Gegenstände kommen ihr dagegen nicht ins Haus. 
-            So leuchtet sie ihr Wohnzimmer abends mit uralten Wachskerzen aus, natürlich ohne vorher die Feuerwehr zu fragen. 
-          </p>
-          <p>
-            Katinka stammt aus der gelehrten Familie Antiqus und kennt zu jedem ihrer Fundstücke eine Menge an Fakten. 
-            Für ihre Expertise arbeitet Katinka hart: Sie bucht eifrig Führungen durch Museen und hat, um ihren Wissensdurst zu stillen, 
-            auch immer einen mehr oder weniger großen Rucksack dabei.
-          </p>
+          <span v-if="spieler=='Watson'">
+            <b>KATINKA ANTIQUS</b>
+            <ul>
+              <li>mag, was alt und fremd aussieht</li>
+              <li>interessiert sich für Fakten</li>
+              <li>mag Dinge, die glänzen oder als besondere Kostbarkeit präsentiert werden können</li>
+            </ul>
+          </span>
+          <span v-else-if="spieler=='Sherlock'">
+            <b>KATINKA ANTIQUS</b>
+            <ul>
+              <li>mag Dinge, die alt wirken und in Vergessenheit geraten sind</li>
+              <li>bevor sie zuschlägt, sammelt sie Fakten und bucht eifrig Führungen durch Museen</li>
+              <li>mag "Highlights", die glänzen oder als besondere Kostbarkeit präsentiert werden</li>
+            </ul>
+          </span>
+          <span v-else-if="spieler=='Enola'">
+            <b>KATINKA ANTIQUS</b> hat eine Schwäche für Exponate, 
+            die ihr direkt ins Auge stechen, glänzen oder irgendwie spektakulär 
+            aus der Zeit gefallen scheinen. 
+            <br><br>
+            Sie stammt aus der gelehrten Familie Antiqus und kennt zu jedem ihrer 
+            Fundstücke eine Menge an Fakten.
+            <br><br>
+            Wenn sie den Dingen und Namen wieder einmal auf den Grund gegangen ist, 
+            teilt sie ihr Wissen gerne auf Instagram. 
+            Für ihre Expertise arbeitet Katinka hart: 
+            Sie bucht eifrig Führungen durch Museen, um herauszufinden, 
+            was dessen spezielle Highlights sind.
+          </span>
         </span>
         <span v-else-if="code=='11x1'">
-          <p>
-            Mit spitzer Feder kämpft <b>James Mopsiathy</b> gegen hartnäckige Dummheiten, 
-            die scheinbar nicht aus der Welt zu schaffen sind. 
-          </p>
-          <p>
-            Die Phantasie ist seine Waffe. 
-          </p>
-          <p>
-            An der Seite seines treuen Mopses zieht er sich immer wieder gern in 
-            eine einsame Waldvilla zurück und träumt von einer Welt, 
-            in der die Menschen für seine Einfälle dankbar sind. 
-          </p>
-          <p>
-            In Wirklichkeit ist sein Mops der einzige, der ihm zuhört. 
-            Und meist sogar ein wenig dabei schnarcht.
-          </p>
+          <span v-if="spieler=='Watson'">
+            <b>JAMES MOPSIATHY</b>
+            <ul>
+              <li>mag Dinge, die modern oder immer noch aktuell aussehen</li>
+              <li>betrachtet alles mit seiner großen, lebendigen Phantasie</li>
+              <li>ist ein kritischer Geist, der meist kein gutes Haar am Museum und seinen Mitmenschen lässt</li>
+            </ul>
+          </span>
+          <span v-else-if="spieler=='Sherlock'">
+            <b>JAMES MOPSIATHY</b>
+            <ul>
+              <li>kämpft in seinen Posts gegen Dummheiten, die scheinbar nicht aus der Welt zu schaffen sind</li>
+              <li>Phantasie ist seine Waffe</li>
+              <li>mag Dinge, die modern oder immer noch aktuell sind und stellt ständig Bezüge zur eigenen Gegenwart her</li>
+            </ul>
+          </span>
+          <span v-else-if="spieler=='Enola'">
+            <b>JAMES MOPSIATHY</b> kämpft mit spitzer Feder gegen hartnäckige 
+            Dummheiten, die scheinbar nicht aus der Welt zu schaffen sind. 
+            <br><br>
+            Ständig stellt er Bezüge zur eigenen Gegenwart her und hält Dinge 
+            für relevant und immer noch aktuell, selbst wenn sie uralt sind. 
+            <br><br>
+            Die Phantasie ist seine Waffe. <br>
+            An der Seite seines treuen Mopses zieht er sich gern in eine einsame 
+            Waldvilla zurück und träumt von einer Welt, 
+            in der die Menschen für seine Einfälle dankbar sind.
+          </span>
         </span>
         <span v-else-if="code=='111x'">
-          <p>
+          <span v-if="spieler=='Watson'">
+            <b>MIA MIRABILIS</b>
+            <ul>
+              <li>lebt ganz in der Gegenwart</li>
+              <li>mag Dinge, die ihre Phantasie anregen</li>
+              <li>sucht in allen Dingen eine höhere Bedeutung</li>
+            </ul>
+          </span>
+          <span v-else-if="spieler=='Sherlock'">
+            <b>MIA MIRABILIS</b>
+            <ul>
+              <li>entdeckt in alten Dingen etwas, was man vielleicht erst morgen wird gebrauchen können</li>
+              <li>sprudelt in ihren Posts vor kreativen Ideen nur so über</li>
+              <li>sucht in allen Dingen eine höhere Bedeutung</li>
+            </ul>
+          </span>
+          <span v-else-if="spieler=='Enola'">
+            MIA MIRABILIS entdeckt in uralten Dingen immer etwas, was man 
+            vielleicht erst morgen wird gebrauchen können. 
+            <br><br>
             Egal ob auf Flohmärkten oder im Museum: 
-            <b>Mia Mirabilis</b> entdeckt in uralten Dingen immer etwas, was man vielleicht erst morgen wird gebrauchen können. 
-          </p>
-          <p>
-            Alles, was ihr bedeutungsvoll erscheint, will sie am Leben erhalten. 
+            Alles, was ihr bedeutungsvoll erscheint, will sie haben und am Leben erhalten. 
             Deshalb kreiert sie auch wunderbar verrückte Outfits. 
-            Einen Schönheitswettbewerb wird sie damit nicht gewinnen, ihr Stil ist durchaus gewöhnungsbedürftig. 
-          </p>
-          <p>
-            Aber eins muss man ihr lassen:  Sie sprudelt vor kreativen Ideen nur so über!
-          </p>
+            Einen Schönheitswettbewerb wird sie damit nicht gewinnen, 
+            ihr Stil ist durchaus gewöhnungsbedürftig. 
+            <br><br>
+            Aber eins muss man ihr lassen:  
+            Sie sprudelt vor kreativen Ideen nur so über!
+          </span>
         </span>
         <span v-else-if="code=='x111'">
-          <p>
-            <b>Wolfram Wolkenwand</b> ist im Museum nicht sonderlich beliebt. 
-          </p>
-          <p>            
+          <span v-if="spieler=='Watson'">
+            <b>WOLFRAM WOLKENWAND</b>
+          <ul>
+            <li>verfügt über eine große, lebendige Phantasie</li>
+            <li>interessiert sich für die Bedeutung der Dinge</li>
+            <li>kritisiert häufig seine Mitmenschen, aber auch die Museen</li>
+          </ul>
+          </span>
+          <span v-else-if="spieler=='Sherlock'">
+            <b>WOLFRAM WOLKENWAND</b>
+          <ul>
+            <li>schreibt Bücher mit lustigen Titeln wie "1x1 der Fantasie" oder "Tintenkleckse für Tiefseetaucher"</li>
+            <li>kritisiert gern seine Zeitgenossen und findet z.B. den Audioguide des Museums "Schmalspur"</li>
+            <li>ist ein kritischer Geist, der nach wahren und wichtigen Bedeutungen sucht</li>
+          </ul>
+          </span>
+          <span v-else-if="spieler=='Enola'">
+            <b>WOLFRAM WOLKENWAND</b> ist im Museum nicht sonderlich beliebt. 
+            <br><br>
             Auch wenn er Bücher mit lustigen Titeln wie "1x1 der Fantasie" oder 
             "Tintenkleckse für Tiefseetaucher" schreibt, ist er ein ausgesprochener Nörgler. 
-          </p>
-          <p>
+            <br><br>
             Er regt sich über den Audioguide auf (den er "Schmalspur" findet) und meint, 
             dass die Leute im Museum mal besser seine Bücher lesen sollten. 
-          </p>
-          <p>
-            Tatsächlich geht es dort recht humorvoll und einfallsreich zu.
-          </p>
+            Tatsächlich geht es dort recht humorvoll und einfallsreich zu. 
+            Die wenigsten wissen, dass die meisten seiner Abbildungen aus der eigenen "Privatsammlung" stammen.
+          </span>
         </span>
         <span v-else-if="code=='11x0'">
-          <p>
-            Im Ausweis von Frau Adler steht der Vorname "Irene". 
-          </p>
-          <p>
-            Doch sie liebt es, wenn alte Dinge und Namen, plötzlich einen frischen Klang oder Dreh bekommen. 
+          <span v-if="spieler=='Watson'">
+            <b>IRI ADLER</b>
+            <ul>
+              <li>mag Dinge, die ihre Phantasie anregen</li>
+              <li>informiert sich über die "Highlights" des Museums</li>
+              <li>mag Dinge, egal welchen Alters, mit Bezug zum heutigen Alltag</li>
+            </ul>
+          </span>
+          <span v-else-if="spieler=='Sherlock'">
+            <b>IRI ADLER</b>
+            <ul>
+              <li>rückt gerne Dinge mit ihrer Phantasie in ein neues Licht</li>
+              <li>macht Dinge durch ihre Bewunderung "zum Glanzstück"</li>
+              <li>auch alte Dinge können dadurch einen "frischen Dreh" bekommen</li>
+            </ul>
+          </span>
+          <span v-else-if="spieler=='Enola'">
+            <b>IRI ADLER</b> hat einen Ausweis, in dem der Vorname "Irene" steht. 
+            <br><br>
+            Doch sie liebt es, wenn alte Dinge und Namen plötzlich einen frischen Klang oder Dreh bekommen. 
             Deshalb nennt sie sich "Iri". 
-          </p>
-          <p>
-            Auch im Museum sind es nicht die Dinge, 
-            die sie fesseln, sondern interessante Blickwinkel. 
-            Und dafür sorgt sie schon selbst: 
-          </p>
-          <p>
-            Alles was <b>Iri Adler</b> mit ihrer Phantasie in ein neues Licht rückt, wird zum Glanzstück und Highlight.
-          </p>
+            <br><br>
+            Auch im Museum sind es nicht die Dinge, die sie fesseln, sondern interessante Blickwinkel. 
+            Und dafür sorgt sie schon selbst: Alles was Iri Adler mit ihrer 
+            reichen Phantasie in ein neues Licht rückt, wird zum Glanzstück und Highlight. 
+            Fakten interessieren sie dagegen weniger bis gar nicht.
+          </span>
         </span>
         <span v-else-if="code=='01x1'">
-          <p>
-            <!-- <b>Schorm</b> wurde in eine fürstliche Familie hineingeboren.  -->
-            <b>Schorm Roderick</b> wurde in eine fürstliche Familie hineingeboren. 
-          </p>
-          <p>
-            Schon als Kind wurden ihm die Traditionen der Familie Roderick eingetrichtert, 
+          <span v-if="spieler=='Watson'">
+            <b>SCHORM RODERICK</b>
+            <ul>
+              <li>mag Dinge, die anderen altmodisch vorkommen</li>
+              <li>hat ganz eigene Vorstellungen von der Vergangenheit</li>
+              <li>kritisiert häufig die eigenen Zeitgenossen</li>
+            </ul>
+          </span>
+          <span v-else-if="spieler=='Sherlock'">
+            <b>SCHORM RODERICK</b>
+            <ul>
+              <li>Teil einer adligen Familie mit recht altmodischem Geschmack</li>
+              <li>malt sich die Vergangenheit mit lebhafter Vorstellungskraft aus</li>
+              <li>hat schon in der Schule von einer besseren Welt geträumt</li>
+            </ul>
+          </span>
+          <span v-else-if="spieler=='Enola'">
+            <b>SCHORM RODERICK</b> wurde in eine fürstliche Familie hineingeboren. 
+            <br>
+            Schon als Kind wurden ihm die Traditionen der Familie beigebracht, 
+            manche würden sogar sagen "eingetrichtert": 
             mit Wappenkunde, höfischer Verhaltenslehre und allem, was dazu gehört. 
-          </p>
-          <p>
-            Aber: Ein arroganter Snob ist er gewiss nicht. 
-            Schorm setzt sich für Arme und Schwache ein und hat so manches an der eigenen Gegenwart auszusetzen. 
-          </p>
-          <p>
-            Die Vergangenheit malt er sich mit lebhafter Vorstellungskraft aus. 
-            Wahrscheinlich hat Schorm Roderick schon in der Schule häufiger von einer besseren Welt geträumt als aufgepasst...
-          </p>
+            Aber: Ein arroganter Snob ist Schorm Roderick gewiss nicht. 
+            <br>
+            Er malt sich die Vergangenheit mit lebhafter Vorstellungskraft aus 
+            und hat immer schon von einer besseren Welt geträumt. 
+            <br>
+            An seinen Zeitgenossen hat er so manches auszusetzen. 
+            <br>
+            Und auch die Museen verschont er nicht mit seiner Kritik auf seinen Beutezügen.
+          </span>
         </span>
       </div>
     </div>
-      
     <ion-button class="zurueck-button" size="large" @click="modalController.dismiss()">zurück</ion-button>
   </div>
 
 </template>
 
 <style scoped>
+ul {
+  padding: 10px;
+}
+li {
+  padding: 10px;
+}
 .handschellen {
   position: absolute;
   left: 50%;
@@ -191,7 +282,8 @@ b {
 .rechts {
   /* background-color: azure; */
   padding-left: 30px;
-  padding-right: 30px;
+  padding-right: 0px;
+  padding-top: 30px;
   font-size: 24px;
 }
 p {
@@ -310,7 +402,7 @@ const emit = defineEmits<{
 }>();
 
 const spielStore = useSpielStore();
-const { flow, ort, verhaftet, verdaechtig, unverdaechtig } = storeToRefs(spielStore);
+const { flow, ort, spieler, verhaftet, verdaechtig, unverdaechtig } = storeToRefs(spielStore);
 
 const verhaftedClicked = ref();
 

@@ -104,7 +104,8 @@
                 So wie bei dieser Brosche: 
                 In ihrem Inneren befindet sich eine menschliche Haarlocke!  
                 Sie zu verschenken galt als Zeichen der Verbundenheit und Treue. 
-                Ob das noch Oma und Opa so gemacht haben? Oder schon Schiller und Goethe? 
+                Ob das noch Oma und Opa so gemacht haben? Oder schon Schiller und Goethe?
+                <br>
                 Wie auch immer... Ich werde die Brosche so liebevoll wie hier im Museum präsentieren. 
                 Sie wird ein Glanzstück meiner Sammlung!
               </span>
@@ -116,6 +117,7 @@
                 Schade, dass das aus der Mode gekommen ist. 
                 Ob das noch Oma und Opa so gemacht haben? 
                 Oder schon Schiller oder Goethe? Wie auch immer... 
+                <br>
                 Ich werde die Brosche so liebevoll wie hier im Museum präsentieren. 
                 Sie wird ein Glanzstück meiner Sammlung!
               </span>
