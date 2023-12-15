@@ -495,11 +495,12 @@ watch(flow, () => {
       else if (flow.value < 2.4) flow.value = 2.36;
       else if (flow.value < 3.4) flow.value = 3.36;
     }, 3*60000)
+  } else {
+    clearTimeout(timeoutObjektNichtGefunden.value);
   }
   // if ((flow.value==1.4 || flow.value==2.4 || flow.value==3.4) && slideNr.value>=2) {
   if ((flow.value==1.4 || flow.value==2.4 || flow.value==3.4)) {
     lupeImVordergrund.value=true;
-    clearTimeout(timeoutObjektNichtGefunden.value);
   }
   if (flow.value==1.6 || flow.value==2.6 || flow.value==3.6) {
     lupeImVordergrund.value=false;

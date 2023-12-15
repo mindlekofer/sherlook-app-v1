@@ -60,9 +60,11 @@
         </span>
         <span v-else>
           <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="210"/>
-          <br><br>
-          <p> Ein Schmuckstück mit Haaren? Hoffentlich ist das keine Fälschung! </p>
-          <p> Denn es wurde zu einem wichtigen Anlass hergestellt. Wozu? </p>
+          <p>
+            Ein Schmuckstück mit Haaren? Hoffentlich ist das keine Fälschung!
+            <br> 
+            Denn es wurde zu einem wichtigen Anlass hergestellt. Wozu? 
+          </p>
         </span>
       </span>
       <span v-else-if="!antwortRichtig">
@@ -114,7 +116,7 @@
       <div class="antwort-buttons" v-if="spieler=='Watson' && ort=='eg'">
         <ion-button :color="buttonFarbe1" :fill="buttonFill1" size="large" expand="block" @click="antwortAusgewaehlt(1, true)"> Fossil eines Dinosauriers</ion-button>
         <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig"> alte italienische Handtasche</ion-button>
-        <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Verzierung eines mittelalterl. Kachelofens</ion-button>
+        <ion-button :color="buttonFarbe3" :fill="buttonFill3" size="large" expand="block" @click="antwortAusgewaehlt(3, false)" :disabled="antwortRichtig">Verzierung eines Kachelofens</ion-button>
       </div>
       <div class="antwort-buttons" v-else-if="spieler=='Sherlock' && ort=='eg'">
         <ion-button :color="buttonFarbe2" :fill="buttonFill2" size="large" expand="block" @click="antwortAusgewaehlt(2, false)" :disabled="antwortRichtig"> Saugnäpfe eines kleinen Tintenfischs </ion-button>
@@ -239,6 +241,7 @@
           Haltet die Augen offen und achtet auf die Hightech-Lupe. 
           Wenn sie blinkt, ist etwas Verdächtiges in der Nähe! 
         </p>
+        <p> Drückt dann auf den grünen Button und der Fall kann beginnen... </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
@@ -250,6 +253,7 @@
           Haltet die Augen offen und achtet auf die Hightech-Lupe. 
           Ihr wisst ja, wenn sie blinkt, ist etwas Verdächtiges in der Nähe! 
         </p>
+        <p> Drückt dann auf den grünen Button und der Fall kann beginnen... </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
@@ -261,6 +265,7 @@
           Haltet die Augen offen und achtet auf unsere Hightech-Lupe. 
           Ihr wisst ja, wenn sie blinkt, ist etwas Verdächtiges in der Nähe... 
         </p>
+        <p> Drückt dann auf den grünen Button und der Fall kann beginnen... </p>
       </span>
       <button-weiter-component class="button-weiter" v-if="flow==1.4" @click="swiperInstance.slideNext();" pulsiert/>
       <button-weiter-component class="button-weiter" v-else-if="flow>1.4" @click="swiperInstance.slideNext();"/>
@@ -295,19 +300,19 @@
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
         <p> Die Lupe blinkt wie verrückt! </p>
         <p> Die Fälschung muss ganz in der Nähe sein. </p>
-        <p> Schaltet die Kamera an und überprüft das Objekt! </p>
+        <p> Geht zum verdächtigen Objekt und überprüft es mit der Kamera. </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
         <p> Die Lupe blinkt! Sehr gut. </p>
         <p> Die Fälschung muss in der Nähe sein. </p>
-        <p> Schaltet die Kamera an und überprüft das Objekt! </p>
+        <p> Geht zum verdächtigen Objekt und überprüft es mit der Kamera. </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
         <p> Die Lupe blinkt immer schneller! </p>
         <p> Die Fälschung muss in der Nähe sein. </p>
-        <p> Schaltet die Kamera an und überprüft das Objekt! </p>
+        <p> Geht zum verdächtigen Objekt und überprüft es mit der Kamera. </p>
       </span>
       <!-- <div class="swipe-geste-horizontal" v-if="flow==0.6"></div> -->
       <!-- <div class="swipe-geste-horizontal"></div> -->
@@ -366,10 +371,9 @@
               <span v-else-if="spieler=='Enola'">
                 Ich liebe diesen alten Saal. Hier ist alles so geheimnisvoll. 
                 Diese schönen alten Vitrinen, vom Museumsgründer selbst entworfen. 
-                Aber bei aller Liebe: etwas vollgestopft ist es schon. 
-                Ich wusste erst gar nicht, wo ich hinschauen sollte. 
-                Dann habe ich den tollen Ichtyo an der Wand entdeckt. 
-                Die mag ich noch mehr als Dinos. Ichthyosaurier sind die Fischsaurier. 
+                Etwas vollgestopft sind sie ja schon. 
+                Aber dann habe ich den tollen Ichtyo an der Wand entdeckt. 
+                Ichthyosaurier sind die Fischsaurier. 
                 Ich finde: diesen da könnte man noch mehr zum Highlight machen! 
                 Und genau das ist meine Mission: alten Dingen neue Ehrenplätze geben.
               </span>
@@ -510,7 +514,7 @@
         <br><br>
         Und jetzt soll da eine schnöde Kopie an der Wand hängen? 
         <br><br>
-        Ihr müsst diesen unbedingt aufkären!
+        Ihr müsst diesen Fall unbedingt aufkären!
       </p>
       <p v-else-if="ort=='eg' && spieler=='Enola'">
         ἰχθῦς (ichthŷs) ist altgriechisch und bedeutet einfach "Fisch". 
@@ -578,13 +582,13 @@
       <span v-if="!antwortClicked && ort=='eg'">
         <span v-if="spieler=='Watson'">
           <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
-          <br><br>
+          <br>
           <p> Ein neuer Verdacht: Auch das könnte eine Fälschung sein. </p>
           <p> Was ist das überhaupt? </p>
         </span>
         <span v-else-if="spieler=='Sherlock'">
           <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="230"/>
-          <br><br>
+          <br>
           <p> Auch dieses Detail müssen wir auf Herz und Nieren prüfen. </p>
           <p> Wozu wurde es verwedet? </p>
         </span>
@@ -598,20 +602,20 @@
       <span v-else-if="!antwortClicked && ort=='og1'">
         <span v-if="spieler=='Watson'">
           <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
-          <br><br>
           <p> Hmmm, was für ein seltsames Ding. </p>
           <p> Erkennt ihr, was das ist? </p>
         </span>
         <span v-else-if="spieler=='Sherlock'">
           <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="230"/>
-          <br>
-          <p> Egal ob gefälscht oder nicht, das ist ein echtes "Teekesselchen": 
-            Ihr wisst doch, das ist ein Wort mit vielen Bedeutungen...</p>
-          <p> Aber was passt hier am besten? </p>
+          <p> 
+            Egal ob gefälscht oder nicht, das ist ein echtes "Teekesselchen",
+            ein Wort mit vielen Bedeutungen...
+            <br><br>
+            Aber was passt hier am besten? 
+          </p>
         </span>
-        <span v-else>
+        <span v-else-if="spieler=='Enola'">
           <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="210"/>
-          <br><br>
           <p> Egal ob gefälscht oder nicht, das ist ein echtes "Teekesselchen": </p>
           <p> Aber was passt hier am besten? </p>
         </span>
@@ -834,7 +838,7 @@
           <span v-else-if="spieler=='Enola'">
             <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
             <p> Diese Fälschungen machen mich sprachlos! </p>
-            <p> Aber @gerne_gestern geht schon wieder auf Sendung. Ob wir mehr über die Tatmotiven erfahren? </p>
+            <p> Aber @gerne_gestern geht schon wieder auf Sendung. Ob wir mehr über die Tatmotive erfahren? </p>
           </span>
           <PostingComponent v-if="ort=='eg'"
               username="@gerne_gestern"
@@ -1259,23 +1263,23 @@
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="230"/>
         <p style="margin-top: 50px;"> Habt ihr Euch den Post genau angeschaut? </p>
-        <p> Dann lasst uns prüfen, ob das tatsächlich auch eine Fälschung ist! </p>
+        <p> Dann lasst uns mit Hilfe der Lupe prüfen, ob das tatsächlich auch eine Fälschung ist! </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
         <p style="margin-top: 50px;"> Der fünfte Hinweis im Notizbuch! </p>
         <p> Habt ihr Euch den Post genau angeschaut? </p>
-        <p> Dann lasst uns das passende Objekt suchen und überprüfen! </p>
+        <p> Dann lasst uns mit Hilfe der Lupe das passende Objekt suchen und überprüfen! </p>
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
         <p style="margin-top: 50px;"> Habt ihr Euch den Post genau angeschaut? </p>
-        <p> Dann lasst uns das passende Objekt suchen und überprüfen! </p>
+        <p> Dann lasst uns mit Hilfe der Lupe das passende Objekt suchen und überprüfen! </p>
       </span>
       <button-weiter-component class="button-weiter" v-if="flow>3.4" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
     </swiper-slide>
-<!-- aktuell -->
+
     <swiper-slide v-if="flow == 3.36 && flow<4.0">
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_enttaeuscht.png" width="230"/>
@@ -1765,8 +1769,8 @@
         <img class="spieler" src="assets/img/detektive/watson_gluecklich.png" width="250"/>
         <br><br>
         <p> Was für ein spannender Urlaub! </p>
-        <p> Und ein Gutes hatten diese Diebstähle dann doch: Wir mussten als Detektive ganz genau hinschauen?! </p>
-        <p> In diesem Museum gibt es ja so viel zu entdecken…! </p>
+        <p> Und ein Gutes hatten diese Diebstähle dann doch: Wir mussten als Detektive ganz genau hinschauen! </p>
+        <p> In diesem Museum gibt es ja so viel zu entdecken… </p>
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_gluecklich.png" width="280"/>
