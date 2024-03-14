@@ -53,6 +53,8 @@ const props = defineProps( {
         'auswahl' : auswahl,
         'verdaechtig' : verdaechtig,
         'unverdaechtig' : unverdaechtig,
+        'falsch' : falsch,
+        'richtig' : richtig,
         'inaktiv' : inaktiv
       }">
     <img v-if="code==''" class="person" src="assets/kopf_mit_hals.svg"/>
@@ -94,6 +96,14 @@ const props = defineProps( {
   background-color: #eda55e;
 }
 .unverdaechtig {
+  /* background-color: #FFF4B6; */
+  background-color: #80bf60;
+}
+.falsch {
+  /* background-color: #FFF4B6; */
+  background-color: #c63232;
+}
+.richtig {
   /* background-color: #FFF4B6; */
   background-color: #80bf60;
 }

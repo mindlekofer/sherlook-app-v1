@@ -1,0 +1,86 @@
+{
+  "code": "10x0_og1_bc",
+  "nr": 10,
+  "ort": "og1",
+  "name": "Kelch",
+  "genus": {
+    "maskulin": true,
+    "feminin": false,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag_1": "#5_Sterne_sind_zuwenig",
+  "hashtag_2": "#faktisch_immerwoanders",
+  
+  "watson": {
+      "quiz": {
+          "frage": "Auch dieses Objekt könnte gefälscht worden sein... Aber was ist das überhaupt?",
+          "antwort" : [
+              {
+                  "text": "Kelch mit Hostie",
+                  "richtig": true
+              },
+              {
+                  "text": "Vase mit Münze",
+                  "richtig": false
+              },  
+              {
+                  "text": "Trinkgefäß mit Deckel",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Das Detail ist winzig, aber der Alter ist groß. Schaut selbst im Saal mit alten Bildern aus Konstanzer Kirchen. Wahrlich ein Objekt mit mehr als fünf Sternen!",
+      "post_2": "Dieses winzige Objekt habe ich mitgenommen und ersetzt, weil es glänzt wie ein Stern und eine so spannende Geschichte hat. Der Altar stand schon auf der Reichenau und in Konstanz. Immer wieder wurden Teile zerstört und sind verloren gegangen. Da wird es nicht weiter auffallen, wenn der echte Kelch jetzt mir gehört?",
+      "leinertext": "Ich danke für Eure tollen Ermittlungen. Zur Belohnung verrate ich Euch ein Geheimnis. Schaut einmal ganz vorsichtig auf die Rückseite des linken Altarflügels. Dort findet ihr unten ein Wappen mit drei schwarzen Hirschkäfern. Das Wappen gehört Paulus Appetzhofer, einem Obervogt der Insel Reichenau. Er hat den Altar gestiftet. Bei meinem Barte: Auch ihm müsst ihr bitte den echten Kelch zurückbringen!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Oh weh! Auch dieses Ziborium könnte gefälscht worden sein. Ihr wisst doch, was ein Ziborium ist?",
+          "antwort" : [
+              {
+                  "text": "Kelch zur Aufbewahrtung von Hostien",
+                  "richtig": true
+              },
+              {
+                  "text": "Schatulle zur Aufbewahrung von Münzen",
+                  "richtig": false
+              },  
+              {
+                  "text": "Schrein zur Aufbewahrung von Reliquien",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Das Objekt ist so groß und lückenhaft, da wird es kaum auffallen, wenn ein winziger Kelch fehlt?  Schaut selbst im Saal mit der alten Kirchenkunst. Wahrlich ein klappriges Klapp-Objekt mit mehr als fünf Sternen!",
+      "post_2": "Dieser Altarkasten hat den Konstanzer Bildersturm von 1531 halbwegs heil überstanden. Er wurde mehrmals zerlegt und an verschiedenen Orten wieder aufgebaut, im Münster auf der Reichenau und im Konzilsgebäude in Konstanz. 1990 wurden sogar zwei bis dahin fehlende Elemente wiederentdeckt: die Marienkrönung (in der Mitte oben) und der hl. Nikolaus (in der Mitte rechts). Da wird es doch kaum auffallen, wenn ich als Erinnerung ein kleines 5-Sterne-Objekt mitnehme und in meinem Wohnzimmer aufstelle?",
+      "leinertext": "Ich danke für Eure tollen Ermittlungen. Zur Belohnung verrate ich Euch ein Geheimnis. Schaut einmal ganz vorsichtig auf die Rückseite des linken Altarflügels. Dort findet ihr unten ein Wappen mit drei schwarzen Hirschkäfern. Dieses Wappen seht ihr auch hier im Bild, auf einer Wappenscheibe. Es gehört Paulus Appetzhofer, einem Obervogt der Insel Reichenau. Er hat den Altar gestiftet. Bei meinem Barte: Auch ihm müsst ihr bitte den echten Kelch zurückbringen!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Oh weh. Auch der Inhalt des Tabernakels könnte gefälscht wurden sein. Ihr wisst doch, was ein Tabernakel ist?",
+          "antwort" : [
+              {
+                  "text": "Ein Sakramentshaus",
+                  "richtig": true
+              },
+              {
+                  "text": "Ein Hostienkelch",
+                  "richtig": false
+              },  
+              {
+                  "text": "Ein Reliquienbehälter",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Eine wahre Schatztruhe so ein großer Kirchenaltar. Wird es auffallen, wenn da ein winziger Kelch fehlt oder vertauscht wird? Wahrlich  ein klappriges Klapp-Objekt mit mehr als fünf Sternen!",
+      "post_2": "Heute stelle ich Euch in meinem Faktencheck ein ganz verrücktes Objekt vor: einen Altaraufsatz aus dem Jahr 1502. Er ist einer der wenigen Beispiele, die den Konstanzer Bildersturm von 1531 halbwegs heil überstanden haben, wirklich nur halbwegs: Der Altarkasten wurde mehrmals zerlegt und an verschiedenen Orten wieder aufgebaut: im Münster auf der Reichenau, im Konzilsgebäude und im Rosgartenmuseum. 1990 wurden sogar zwei bis dahin fehlende Elemente wiederentdeckt: die Marienkrönung (in der Mitte oben) und der hl. Nikolaus (in der Mitte rechts). Da wird es doch kaum auffallen, wenn ich als Erinnerung ein kleines 5-Sterne-Objekt mitnehme und in meinem Wohnzimmer aufstelle?",
+      "leinertext": "Ich danke für Eure tollen Ermittlungen. Zur Belohnung verrate ich Euch ein Geheimnis. Schaut einmal ganz vorsichtig auf die Rückseite des linken Altarflügels. Dort findet ihr unten ein Wappen mit drei schwarzen Hirschkäfern. Die sind dem unverschämten Dieb zum Glück entgangen! Man sieht sie auch auf einer Wappenscheibe aus Karlsruhe. Das Wappen gehört Paulus Appetzhofer, einem Obervogt der Insel Reichenau. Er hat den Altar gestiftet. Bei meinem Barte: Auch ihm müsst ihr bitte den echten Kelch zurückbringen!"
+  }
+}

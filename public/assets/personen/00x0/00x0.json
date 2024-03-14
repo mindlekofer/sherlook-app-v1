@@ -1,0 +1,28 @@
+{
+  "code": "00x0",
+  "name": "Katinka Antiqus",
+  "eigenschaften": [
+    "alt & fremd",
+    "Fakten",
+    "Highlights"
+  ],
+  "accountnamen": [
+    "gerne_gestern",
+    "antiquarius",
+    "selten_schön"
+  ],
+  "gruppen": [
+    "00x0",
+    "0xx0",
+    "x0x0"
+  ],
+  "watson": {
+    "steckbrief": "<b> KATINKA ANTIQUS </b> <ul> <li> mag, was alt und fremd aussieht </li> <li> interessiert sich für Fakten </li> <li> mag Dinge, die glänzen oder als besondere Kostbarkeit präsentiert werden </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> KATINKA ANTIQUS </b> <ul> <li> mag Dinge, die alt wirken und in Vergessenheit geraten sind </li> <li> bevor sie zuschlägt, sammelt sie Fakten und bucht eifrig Führungen durch Museen </li> <li> mag \"Highlights\", die glänzen oder als besondere Kostbarkeit präsentiert werden </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> KATINKA ANTIQUS </b> hat eine Schwäche für Exponate, die ihr direkt ins Auge stechen, glänzen oder irgendwie spektakulär aus der Zeit gefallen scheinen. Sie stammt aus der gelehrten Familie Antiqus und kennt zu jedem ihrer Fundstücke eine Menge an Fakten. Wenn sie den Dingen und Namen wieder einmal auf den Grund gegangen ist, teilt sie ihr Wissen gerne auf Instagram. Für ihre Expertise arbeitet Katinka hart: Sie bucht eifrig Führungen und weiß genau was die Highlights des Museums sind."
+  }
+}

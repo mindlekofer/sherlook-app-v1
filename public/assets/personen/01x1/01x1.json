@@ -1,0 +1,32 @@
+{
+  "code": "01x1",
+  "name": "Schorm Roderick",
+  "genus": {
+    "maskulin": true,
+    "feminin": false
+  },
+  "eigenschaften": [
+    "alt & fremd",
+    "Phantasie",
+    "Kritik"
+  ],
+  "accountnamen": [
+    "gerne_gestern",
+    "altes_holz",
+    "prince_leviathan"
+  ],
+  "gruppen": [
+    "01xx",
+    "0xx1",
+    "x1x1"
+  ],
+  "watson": {
+    "steckbrief": "<b> SCHORM RODERICK </b> <ul> <li> mag Dinge, die anderen altmodisch vorkommen </li> <li> erfindet mit Phantasie seine eigenen Geschichten </li> <li> kritisiert häufig die eigenen Zeitgenossen </li> </ul>"
+  },
+    "sherlock": {
+    "steckbrief": "<b> SCHORM RODERICK </b> <ul> <li> ist Teil einer adligen Familie mit recht altmodischem Geschmack </li> <li> erfindet mit Phantasie seine eigenen Geschichten </li> <li> hat schon in der Schule von einer besseren Welt geträumt </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> SCHORM RODERICK </b> ist Teil einer adligen Familie mit recht altmodischem Geschmack. Dennoch ist er zum Glück alles andere als arrogant. Er erfindet mit Phantasie eigene Geschichten und hat schon in der Schule von einer besseren Welt geträumt... An seinen Zeitgenossen hat er auch so manches auszusetzen..."
+  }
+}

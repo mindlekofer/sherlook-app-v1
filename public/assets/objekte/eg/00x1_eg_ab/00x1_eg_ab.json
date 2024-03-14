@@ -1,0 +1,86 @@
+{
+  "code": "00x1_eg_ab",
+  "nr": 13,
+  "ort": "eg",
+  "name": "Kristall",
+  "genus": {
+    "maskulin": true,
+    "feminin": false,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag_1": "#Adular_und_Feldspat",
+  "hashtag_2": "#alte_worte_alte_steine",
+  
+  "watson": {
+      "quiz": {
+          "frage": "Achtung! Vielleicht ist auch diese Objekt gefälscht worden… Aber was ist das überhaupt?",
+          "antwort" : [
+              {
+                  "text": "Ein Mineral aus den Alpen",
+                  "richtig": true
+              },
+              {
+                  "text": "Würfelzucker aus eine alten Latrine",
+                  "richtig": false
+              },  
+              {
+                  "text": "Salzkristalle aus Bad Reichenhall",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Dieser \"Adular\" lag zusammen mit anderen \"Feldspaten\" in einem Leinerschrank! Sucht in Schrank Nr. XX und stellt Euch ein wenig auf die Zehenspitzen. (Fortsetzung folgt)",
+      "post_2": "Ich liebe alte und fremde Namen. Aber dann suche ich nach den Fakten: \"Adula\", so heisst ein Teil der West-Alpen. Und da wurde dieser \"Adular\" gefunden. Man nennt den Stein auch \"Spat\", weil man ihn gut spalten kann. Spaten spalten gespaltene Spate. Ein echter Zungerbrecher, findet ihr nicht auch?",
+      "leinertext": "Ich danke Dr. Watson und seinem Team! Bringt mir diesen schönen Adular bitte heil und unversehrt zurück. Womöglich macht dieser seltsame Faktenjäger noch ein Schmuckstück  daraus? So etwas ist heutzutage leider sehr beliebt. Ihr müsst dieser Serie von Diebstählen ein Ende setzen!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Auch dieses Objekt müssen wir überprüfen… Erkennt ihr, was das für ein besonderer Stein ist?",
+          "antwort" : [
+              {
+                  "text": "Ein Mineral, das sich gut spalten lässt",
+                  "richtig": true
+              },
+              {
+                  "text": "Ein glitzernder Diamant, der besonders hart ist",
+                  "richtig": false
+              },  
+              {
+                  "text": "Marmor, der farbig gebändert ist",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Dieser \"Adular\" lag zusammen mit anderen \"Feldspaten\" in einem Leinerschrank! Sucht in Schrank Nr. XX und stellt Euch ein wenig auf die Zehenspitzen. (Erklärung und Fortsetzung folgt)",
+      "post_2": "Ich liebe es, wenn ich erstmal nur \"Bahnhof\" verstehe und mir die Dinge alt und fremd vorkommen. Aber dann suche ich nach den Fakten: \"Adula\", so heisst ein Teil der westlichen Alpen. Und da wurde dieser \"Adular\" gefunden. Man nennt den Stein auch \"Spat\", weil man ihn gut spalten kann. Spaten spalten gespaltene Spate. Ein echter Zungerbrecher, findet ihr nicht auch?",
+      "leinertext": "Ich danke dem Team um den berühmten Sherlock Holmes, sehr gute Arbeit! Bringt mir diesen schönen Adular bitte heil und unversehrt zurück. Womöglich macht dieser seltsame Faktenjäger noch ein Schmuckstück  daraus? Ich liebe meine naturbelassenen Adulare. Ihr müsst dieser Serie von Diebstählen ein Ende setzen!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Wie das funkelt und glänzt! Aber auch das könnte ein falscher Schein sein. Was steht hier unter Fälschungsverdacht?",
+          "antwort" : [
+              {
+                  "text": "ein Mineral, das man auch Feldspat nennt",
+                  "richtig": true
+              },
+              {
+                  "text": "ein Quarz, den man auch Bergkristall nennt",
+                  "richtig": false
+              },  
+              {
+                  "text": "ein Glas, das man auch Orthoklas nennt",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Alte Namen, alte Sitten. Ich liebe es, wenn ich erstmal nur \"Bahnhof\" verstehe. Deshalb zunächst nur soviel: Dieser \"Adular\" lag zusammen mit anderen \"Feldspaten\" in einem Leinerschrank! Genau genommen in Nr. XX (Erklärung und Fortsetzung folgt)",
+      "post_2": "Warum \"Adular\"? Warum \"Feldspat\"? Hier kommen – wie immer bei mir – spannende Infos und Fakten: <br> 1. Dieses besonders spaltbare Mineral wurde zum ersten Mal in den Alpen gefunden, genau genommen in einem Teil der Westalpen. Da dieser Teil der Alpen \"Adula\" heisst, nennt man das Mineral auch \"Adular\". <br> 2. \"Spat\" ist mit \"Spaten\" und \"spalten\" verwandt. Bergleute verwenden Spaten zum Abbau von Steinen. Minerialien, die sich besonders gut spalten lassen, nennen sie \"Spat\". Wenn die Steine einfach lose im Feld oder im Bett eines Bergbachs liegen, nennt man sie auch \"Feldspat\". <br> Spannende Infos oder? Zur Belohnung liegt dieser uralte Feldspat jetzt bei mir!",
+      "leinertext": "Ich danke Enola Holmes und ihren Helferinnen und Helfern und bebe vor Zorn: Meinen Stein als \"Belohnung\" mitnehmen, womöglich noch als Schmucksteine schleifen und fassen lassen? Dieser naturbelassene Adular aus dem Gotthard-Massiv ist mir ganz besonders ans Herz gewachsen. Ich will ihn zurück. Alles in diesem Raum, wirklich alles, atmet meinen Geist, merkt ihr das? Ihr müsst dieser Serie von Diebstählen ein Ende setzen!"
+  }
+}

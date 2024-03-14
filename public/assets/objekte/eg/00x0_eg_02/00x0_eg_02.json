@@ -1,0 +1,86 @@
+{
+    "code": "00x0_eg_02",
+    "nr": 86,
+    "ort": "eg",
+    "name": "Ichthyosaurier",
+    "genus": {
+      "maskulin": true,
+      "feminin": false,
+      "neutrum": false
+    },
+    "numerus": {
+      "singular": true,
+      "plural": false
+    },
+    "hashtag_1": "#schönheit_aus_urzeiten",
+    "hashtag_2": "#alt_und_geheimnsvoll",
+    
+    "watson": {
+        "quiz": {
+            "frage": "Ganz schön schwierig... <br> Was könnte hier gefälscht worden sein?",
+            "antwort" : [
+                {
+                    "text": "Fossil eines Dinosauriers",
+                    "richtig": true
+                },
+                {
+                    "text": "alte italienischen Handtasche",
+                    "richtig": false
+                },  
+                {
+                    "text": "Verzierung eines Kachelofens",
+                    "richtig": false
+                }
+            ]
+        },
+        "post_1": "Ich habe einen Teil dieses riesigen Gerippes durch eine Fälschung ersetzt! Im schönen Leinersaal an der Wand. <br> Im nächsten Post erfahrt ihr mehr dazu...",
+        "post_2": "Dieses Gerippe hat einem lebendigen Fischsaurier gehört! <br> So etwas Altes und Geheimnisvolles zieht mich magisch an. <br> Eine Flosse habe ich durch eine kleine Fälschung ersetzt. Jetzt hängt sie über meinem Kühlschrank. Sieht bei mir noch schöner aus als hier im Museum!",
+        "leinertext": "Ich danke dem Team um Dr. Watson, sehr gute Arbeit! <br> Und habt ihr bemerkt: Der Dieb lobt meine Ausstellung und lässt gleichzeitig Dinge verschwinden. Auf solche Komplimente kann ich gerne verzichten! <br> Ihr müsst diesen Fall bitte rasch aufkären!"
+    },
+    
+    "sherlock": {
+        "quiz": {
+            "frage": "Nicht einfach... Welches Fossil könnte hier gefälscht worden sein?",
+            "antwort" : [
+                {
+                    "text": "Flosse eines großen Fischsauriers",
+                    "richtig": true
+                },
+                {
+                    "text": "Saugnäpfe eines kleinen Tintenfischs",
+                    "richtig": false
+                },  
+                {
+                    "text": "Gebiss eines Tyrannosaurus Rex",
+                    "richtig": false
+                }  
+            ]
+        },
+        "post_1": "Auch wenn sich der alte Leiner im Grab umdreht oder mich aus den rechten Augenwinkeln seiner Statue beobachtet hat: Ich habe dieses große Fisch-Gerippe durch eine Fälschung ersetzt! <br> Im nächsten Post erfahrt ihr mehr dazu...",
+        "post_2": "Ich liebe diesen Saal. Hier sieht alles so alt, fremd und geheimnisvoll aus. <br> Erst wusste ich gar nicht, wo ich hinschauen sollte. Dann habe ich den tollen Ichtyo an der Wand entdeckt. Die mag ich noch mehr als Dinos. <br> Ichthyosaurier sind die Fischsaurier. Eine Flosse habe ich durch eine kleine Fälschung ersetzt. Jetzt hängt sie über meinem Kühlschrank. Sieht noch schöner aus als hier im Museum!",
+        "leinertext": "Ich danke Sherlock Holmes und seinem tollen Team! <br> In meinen Augenwinkeln habe ich den fürchterlichen Diebstahl noch gesehen. <br> Stellt Euch vor: der Fischsaurier hat 100 Millionen Jahre überlebt, jedenfalls sein versteinerter Körper. Und jetzt soll da eine schnöde Kopie an der Wand hängen? <br> Ihr müsst diesen Fall unbedingt aufkären!"
+    },
+  
+    "enola": {
+        "quiz": {
+            "frage": "Nicht einfach zu erkennen... <br> Welches Fossil könnte hier gefälscht worden sein?",
+            "antwort" : [
+                {
+                    "text": "Flosse eines Ichtyosauriers",
+                    "richtig": true
+                },
+                {
+                    "text": "Saugnäpfe eines kleinen Tintenfischs",
+                    "richtig": false
+                },  
+                {
+                    "text": "Wirbelsäule eines Dinosauriers",
+                    "richtig": false
+                } 
+            ]
+        },
+        "post_1":"Auch wenn sich der alte Leiner im Grab umdreht und mich aus dem rechten Augenwinkel seiner Büste beobachtet hat: Ich habe dieses exquisite Gerippe durch eine Fälschung ersetzt! <br> Andere Leute gehen mit Delfinen schwimmen, ich hole mir Ichthyosaurier nach Hause. <br> Im nächsten Post erfahrt ihr mehr dazu...",
+        "post_2": "Ich liebe diesen alten Saal. <br> Hier ist alles so geheimnisvoll. Diese schönen alten Vitrinen, vom Museumsgründer selbst entworfen. Etwas vollgestopft sind sie ja schon.<br> Aber dann habe ich den tollen Ichtyo an der Wand entdeckt. <br> Ichthyosaurier sind die Fischsaurier. <br> Ich finde: diesen da könnte man noch mehr zum Highlight machen! <br> Und genau das ist meine Mission: alten Dingen neue Ehrenplätze geben.",
+        "leinertext": "Ich danke Enola Holmes und ihren Helferinnen und Helfern! Sehr gute Arbeit. <br> Aber ist das nicht schrechlich? Ich liebe meinen Ichtyosaurier! <br> ἰχθῦς (ichthŷs) ist altgriechisch und bedeutet einfach \"Fisch\". Vor 100 Millionen Jahren tummelten sich noch 80 verschiedene Fischsaurier in den großen Ozeanen dieser Erde. <br> Dieser versteinerte Körper hat also 100 Millionen Jahre überlebt, und jetzt soll da eine schnöde Kopie an der Wand hängen? <br> Ihr müsst diesen Fall bitte rasch aufkären!"
+      }
+  }

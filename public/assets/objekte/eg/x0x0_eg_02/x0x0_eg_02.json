@@ -1,0 +1,86 @@
+{
+  "code": "x0x0_eg_02",
+  "nr": 33,
+  "ort": "eg",
+  "name": "Waffe",
+  "genus": {
+    "maskulin": false,
+    "feminin": true,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag_1": "#hochlichter",
+  "hashtag_2": "#prunk_und_paradestück",
+  
+  "watson": {
+      "quiz": {
+          "frage": "Ein neuer Verdacht: Auch das könnte eine Fälschung sein. Was ist das überhaupt?",
+          "antwort" : [
+              {
+                  "text": "Eine Hieb- und Stichwaffe",
+                  "richtig": true
+              },
+              {
+                  "text": "Eine Kelle zum Pflanzen",
+                  "richtig": false
+              },  
+              {
+                  "text": "Eine Spielzeugrakete",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Kennt ihr den Raum mit den bunten Vitrinen? Hier haben sie so viele Lanzen und Hellebarden ausgestellt, an den Wänden und an den Decken, dass sie durchaus eine davon hergeben können.",
+      "post_2": "In meiner Sammlung gibt es viele Prunkstücke, durch die ich neue Fakten kennenlerne. Diese hell glänzender Klinge hat mich magisch angezogen. Sie hat eine einfache Spitze ohne Beil und Haken an der Seite. Es ist eine einfache Lanze und keine Hellebarde. Seht ihr den Unterschied?",
+      "leinertext": "Ich danke dem Team um Dr. Watson für die erfolgreichen Ermittlungen! Wenn das mit den Diebstählen so weitergeht, müssen wir heute noch neue Museumswächter einstellen... Z.B. die Schweizer Garde aus dem Vatikan mit ihren Hellebarden... Bitte löst diesen rätselhaften Fall!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Auch dieses Detail müssen wir auf Herz und Nieren prüfen. Wozu wurde es verwedet?",
+          "antwort" : [
+              {
+                  "text": "um Feinde abzuwehren",
+                  "richtig": true
+              },
+              {
+                  "text": "um große Torten anzuschneiden",
+                  "richtig": false
+              },  
+              {
+                  "text": "um spielerisch zum Mond zu fliegen",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Dieser Raum sieht irgendwie auch katholisch aus. Aber dieses Highlight konnte ich ganz einfach einsacken, ganz ohne Gegenwehr der Wächter. Hier haben sie so viele davon, an Wänden und Decken, dass sie durchaus eine davon hergeben können, finde ich.",
+      "post_2": "Wie immer seht ihr bei mir nicht nur schöne Dinge, sondern bekommt interessante Fakten dazu geliefert. Die mittelalterliche Hellebarde, die schon im 15. Jahrhundert aufkam, besteht aus drei Teilen: Einem Beil, Haken an den Seiten und einer Klinge an der Spitze. Mich hat die einfache Version mit hell glänzender Klinge magisch angezogen. Genau richtig für meine extravagante Prunk- und Paradesammlung!",
+      "leinertext": "Ich danke dem Team um Sherlock Holmes für seine erfolgreichen Ermittlungen! Wenn das mit den Diebstählen so weitergeht, müssen wir heute noch neue Museumswächter einstellen... Z.B. die Schweizer Garde aus dem Vatikan, die noch immer Hellebarden trägt... Bringt die Lanze bitte zurück, wo sie hingehört und bereitet dieser Serie von Diebstählen ein Ende!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Auch dieses Detail müssen wir auf Herz und Nieren prüfen. Sieht fast aus wie eine Spielzeugrakete, hat aber eine ernste Funktion... (welche Redewendung passt am Besten?)",
+          "antwort" : [
+              {
+                  "text": "nützt beim Hauen und Stechen",
+                  "richtig": true
+              },
+              {
+                  "text": "nützt beim Heulen und Zähneklappern",
+                  "richtig": false
+              },  
+              {
+                  "text": "nützt beim Zeter und Mordio Schreien",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Vor 500 Jahren lief jeder Nachtwächter mit solchen Waffen durch die Gassen. Heute konnte ich das Ding ganz einfach einsacken, ganz ohne Gegenwehr der Wächter. Und auch die Fischersfrau hat sich nicht gerührt. Hier haben sie so viel davon, dass sie durchaus ein paar Highlights hergeben können, finde ich. Und \"Highlight\" meint hier ganz wörtlich \"hoch im Licht\"",
+      "post_2": "Wie immer seht ihr bei mir nicht nur schöne Dinge, sondern bekommt interessante Fakten dazu geliefert. Die mittelalterliche Hellebarde, die schon im 15. Jahrhundert aufkam, besteht aus drei Teilen: Einem Beil, Haken an den Seiten und einer Klinge an der Spitze. Mich hat die einfache Version mit hell glänzender Klinge magisch angezogen. Um 1700 führte fast jeder im Fußvolk einen solchen Spieß mit sich. Die Waffe war auch beliebt bei Militärparaden. Man salutierte mit ihr oder stellte sie \"bei Fuß\". Ein echtes Prunk- und Paradestück also. Genau richtig für meine extravagante Fakten-Sammlung!",
+      "leinertext": "Ich danke dem Team um Enola Holmes für die erfolgreichen Ermittlungen! Wenn das mit den Diebstählen so weitergeht, müssen wir heute noch neue Museumswächter einstellen... Z.B. die Schweizer Garde aus dem Vatikan, die noch immer Hellebarden trägt... Wisst ihr, dass mein Rosgartenmuseum früher ein Zunfthaus war? Die Mitglieder einer Zunft mussten natürlich auch zur Waffe greifen, wenn eine Stadt angegriffen wurde. In manchen Städten mussten die Meister sogar einen eigenen Brustpanzer vorweisen, wenn sie sich dort niederlassen wollten. Also bringt die Hellebarde bitte wieder dorthin zurück, wo sie auch hingehört."
+  }
+}

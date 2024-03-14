@@ -26,10 +26,14 @@ import './theme/variables.css';
 
 import { ladeModell, ladeCocoModel } from './bilderkennung';
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
 const app = createApp(App)
   .use(IonicVue)
   .use(router)
-  .use(createPinia());
+  .use(createPinia())
+  .use(VueAxios, axios);
   
 router.isReady().then(() => {
   app.mount('#app');

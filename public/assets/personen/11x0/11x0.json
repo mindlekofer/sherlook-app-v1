@@ -1,0 +1,32 @@
+{
+  "code": "11x0",
+  "name": "Iri Adler",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "Aktualität",
+    "Phantasie",
+    "Highlights"
+  ],
+  "accountnamen": [
+    "funkelglanz",
+    "selten_schön",
+    "simsalabim"
+  ],
+  "gruppen": [
+    "11xx",
+    "1xx0",
+    "x1x0"
+  ],
+  "watson": {
+    "steckbrief": "<b> IRI ADLER </b> <ul> <li> mag Dinge, die ihre Phantasie anregen </li> <li> informiert sich über die \"Highlights\" des Museums </li> <li> mag Dinge, egal welchen Alters, mit Bezug zum heutigen Alltag </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> IRI ADLER </b> <ul> <li> rückt gerne Dinge mit ihrer Phantasie in ein neues Licht </li> <li> macht Dinge durch ihre Bewunderung \"zum Glanzstück\" </li> <li> auch alte Dinge können dadurch einen \"frischen Dreh\" bekommen </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> IRI ADLER </b> hat einen Ausweis, in dem der Vorname \"Irene\" steht. Doch sie liebt es, wenn alte Dinge und Namen plötzlich einen frischen Klang oder Dreh bekommen. Deshalb nennt sie sich \"Iri\". Auch im Museum sind es nicht die Dinge, die sie fesseln, sondern interessante Blickwinkel. Und dafür sorgt sie schon selbst: Alles was Iri Adler mit ihrer reichen Phantasie in ein neues Licht rückt, wird zum Glanzstück und Highlight. Fakten interessieren sie dagegen weniger bis gar nicht."
+  }
+}

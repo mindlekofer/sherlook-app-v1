@@ -1,0 +1,86 @@
+{
+  "code": "",
+  "nr": 0,
+  "ort": "",
+  "name": "",
+  "genus": {
+    "maskulin": false,
+    "feminin": false,
+    "neutrum": true
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag_1": "",
+  "hashtag_2": "",
+  
+  "watson": {
+      "quiz": {
+          "frage": "",
+          "antwort" : [
+              {
+                  "text": "",
+                  "richtig": true
+              },
+              {
+                  "text": "",
+                  "richtig": false
+              },  
+              {
+                  "text": "",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "",
+      "post_2": "",
+      "leinertext": ""
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "",
+          "antwort" : [
+              {
+                  "text": "",
+                  "richtig": true
+              },
+              {
+                  "text": "",
+                  "richtig": false
+              },  
+              {
+                  "text": "",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "",
+      "post_2": "",
+      "leinertext": ""
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "",
+          "antwort" : [
+              {
+                  "text": "",
+                  "richtig": true
+              },
+              {
+                  "text": "",
+                  "richtig": false
+              },  
+              {
+                  "text": "",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "",
+      "post_2": "",
+      "leinertext": ""
+  }
+}

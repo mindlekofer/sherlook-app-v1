@@ -80,11 +80,51 @@
   import { ref, watch } from 'vue';
   import { modalController } from '@ionic/vue';
   import { useSpielStore } from '@/stores/SpielStore'
-  import { storeToRefs } from 'pinia';
   import EinstellungsModal from '@/components/modals/EinstellungsModal.vue';
+  import axios from 'axios';
 
   const spielStore = useSpielStore();
-  const { flow } = storeToRefs(spielStore);
+
+  spielStore.objekte_eg = ['00x0_eg_02', 'x0x0_eg_02', '00x1_eg_ab'];
+  spielStore.objekte_og = ['001x_og1_ab', '00x0_og1_ac', '10x0_og1_bc'];
+
+  for (let i=0; i<3; i++) {
+    axios.get('assets/objekte/eg/'+spielStore.objekte_eg[i]+'/'+spielStore.objekte_eg[i]+'.json')
+        .then(response => { spielStore.objekte.eg[i] = response.data, console.log(response); });
+  }  
+  for (let i=0; i<3; i++) {
+    axios.get('assets/objekte/og1/'+spielStore.objekte_og[i]+'/'+spielStore.objekte_og[i]+'.json')
+        .then(response => { spielStore.objekte.og1[i] = response.data, console.log(response); });
+  }
+
+  spielStore.personen_auswahl = {
+    'schuldig': '00x0',
+    'unschuldig': {
+    'watson': ['11x1', '111x'],
+    'sherlock': ['111x', 'x111'],
+    'enola': ['11x0', '01x1'] 
+    }
+  };
+
+  axios.get('assets/personen/'+spielStore.personen_auswahl.schuldig+'/'+spielStore.personen_auswahl.schuldig+'.json')
+        .then(response => { spielStore.person.schuldig = response.data; console.log('Person (schuldig): ', spielStore.person.schuldig); })
+        .catch( (error) => {console.log("Axios Fehler: ", error)});
+  for (let i=0; i<2; i++) {
+    axios.get('assets/personen/'+spielStore.personen_auswahl.unschuldig.watson[i]+'/'+spielStore.personen_auswahl.unschuldig.watson[i]+'.json')
+      .then(response => { spielStore.person.unschuldig.watson[i] = response.data; console.log('Person (unschuldig, Watson): ', response.data); })
+      .catch( (error) => {console.log("Axios Fehler: ", error)});
+  }
+  for (let i=0; i<2; i++) {
+    axios.get('assets/personen/'+spielStore.personen_auswahl.unschuldig.sherlock[i]+'/'+spielStore.personen_auswahl.unschuldig.sherlock[i]+'.json')
+      .then(response => { spielStore.person.unschuldig.sherlock[i] = response.data; console.log('Person (unschuldig, Sherlock): ', response.data); })
+      .catch( (error) => {console.log("Axios Fehler: ", error)});
+  }
+  for (let i=0; i<2; i++) {
+      axios.get('assets/personen/'+spielStore.personen_auswahl.unschuldig.enola[i]+'/'+spielStore.personen_auswahl.unschuldig.enola[i]+'.json')
+      .then(response => { spielStore.person.unschuldig.enola[i] = response.data; console.log('Person (unschuldig, Enola): ', response.data); })
+      .catch( (error) => {console.log("Axios Fehler: ", error)});
+  }
+
 
   const weiterButtonClicked = () => {
     spielStore.flow = 0.2;

@@ -228,7 +228,7 @@
       <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="200" v-else-if="spieler=='Enola'"/>
       <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
       <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_1.png" v-if="ort=='eg'"/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_1.png" v-else-if="ort=='og1'"/>
+      <img class="pfeil" src="assets/objekte/og1/tutorial/tutorial_og_pfeil_1.png" v-else-if="ort=='og1'"/>
       <p>
         Folgt dem grünen Pfeil auf dem Foto. <br><br>
         Drückt auf den Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den nächsten Schritt.
@@ -247,7 +247,7 @@
       <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="200" v-else-if="spieler=='Enola'"/>
       <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
       <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_2.png" v-if="ort=='eg'"/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_2.png" v-else-if="ort=='og1'"/>
+      <img class="pfeil" src="assets/objekte/og1/tutorial/tutorial_og_pfeil_2.png" v-else-if="ort=='og1'"/>
       <p v-if="ort=='eg'">
         Folgt dem grünen Pfeil, dann drückt auf den Weiter-Button oder wischt zur nächsten Seite. 
         <br>
@@ -287,7 +287,7 @@
       <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="200" v-else-if="spieler=='Sherlock'"/>
       <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="200" v-else-if="spieler=='Enola'"/>
       <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_3.png"/>
+      <img class="pfeil" src="assets/objekte/og1/tutorial/tutorial_og_pfeil_3.png"/>
       <p style="font-size: 26px;">
         Folgt dem grünen Pfeil auf dem Foto. 
         Drückt auf den Weiter-Button oder wischt, dann zeige ich Euch den nächsten Schritt. 
@@ -305,7 +305,7 @@
       <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="200" v-else-if="spieler=='Sherlock'"/>
       <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="200" v-else-if="spieler=='Enola'"/>
       <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_4.png"/>
+      <img class="pfeil" src="assets/objekte/og1/tutorial/tutorial_og_pfeil_4.png"/>
       <p style="font-size: 26px;">
         Folgt dem grünen Pfeil auf dem Foto. 
         Drückt auf den Weiter-Button oder wischt, dann zeige ich Euch den nächsten Schritt. 
@@ -325,7 +325,7 @@
       <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="200" v-else-if="spieler=='Enola'"/>
       <img class="spieler" src="assets/kopf_mit_hals.svg" width="200" v-else/>
       <img class="pfeil pfeil-kleiner" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_3.png" v-if="ort=='eg'"/>
-      <img class="pfeil pfeil-kleiner" src="assets/objekte/og/tutorial/tutorial_og_pfeil_5.png" v-else-if="ort=='og1'"/>
+      <img class="pfeil pfeil-kleiner" src="assets/objekte/og1/tutorial/tutorial_og_pfeil_5.png" v-else-if="ort=='og1'"/>
       <p v-if="ort=='eg' && spieler=='Watson'" style="font-size: 26px;">
         Achtet jetzt auf die Hightech-Lupe. Sie kann Fälschungen erkennen!
         Wenn etwas in der Umgebung nicht stimmt, fängt sie an zu blinken, erst langsam, dann immer schneller.
@@ -510,7 +510,7 @@
     <swiper-slide v-if="flow > 0.8" class="leiner-slide">
       <img class="spieler" src="assets/img/leiner.png" width="180"/>
       <img class="pfeil" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_4.png" v-if="ort=='eg'"/>
-      <img class="pfeil pfeil-kleiner" src="assets/objekte/og/tutorial/tutorial_og_pfeil_6.png" v-else-if="ort=='og1'"/>
+      <img class="pfeil pfeil-kleiner" src="assets/objekte/og1/tutorial/tutorial_og_pfeil_6.png" v-else-if="ort=='og1'"/>
       <p v-if="ort=='eg'">
         Folgt dem grünen Pfeil. 
         Geht in den Raum mit den purpurfarbenen Vitrinen. 
@@ -529,7 +529,7 @@
     <swiper-slide v-if="flow > 0.8" class="leiner-slide">
       <img class="spieler" src="assets/img/leiner.png" width="180"/>
       <img class="pfeil pfeil-kleiner" src="assets/objekte/eg/tutorial/tutorial_eg_pfeil_5.png" v-if="ort=='eg'"/>
-      <img class="pfeil pfeil-kleiner" src="assets/objekte/og/tutorial/tutorial_og_pfeil_7.png" v-else-if="ort=='og1'"/>
+      <img class="pfeil pfeil-kleiner" src="assets/objekte/og1/tutorial/tutorial_og_pfeil_7.png" v-else-if="ort=='og1'"/>
       <p v-if="ort=='eg' && spieler=='Watson'" style="font-size: 28px;">
         In diesem Raum findet ihr vieles zur Geschichte unserer schönen Stadt Konstanz, alles sehr kostbar und spannend!
         Habt ihr auch die schöne Holzdecke gesehen? Dann folgt weiter dem grünen Pfeil.
@@ -578,7 +578,7 @@
 
     <swiper-slide v-if="flow > 0.8 && ort=='og1'" class="leiner-slide">
       <img class="spieler" src="assets/img/leiner.png" width="180"/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_8.png" />
+      <img class="pfeil" src="assets/objekte/og1/tutorial/tutorial_og_pfeil_8.png" />
       <p>
         Folgt dem grünen Pfeil und drückt auf den Weiter-Button oder wischt.
       </p>
@@ -589,7 +589,7 @@
 
     <swiper-slide v-if="flow > 0.8 && ort=='og1'" class="leiner-slide">
       <img class="spieler" src="assets/img/leiner.png" width="180"/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_9.png" />
+      <img class="pfeil" src="assets/objekte/og1/tutorial/tutorial_og_pfeil_9.png" />
       <p>
         Folgt dem grünen Pfeil und drückt auf den Weiter-Button oder wischt.
       </p>
@@ -600,7 +600,7 @@
 
     <swiper-slide v-if="flow > 0.8 && ort=='og1'" class="leiner-slide">
       <img class="spieler" src="assets/img/leiner.png" width="180"/>
-      <img class="pfeil" src="assets/objekte/og/tutorial/tutorial_og_pfeil_10.png" />
+      <img class="pfeil" src="assets/objekte/og1/tutorial/tutorial_og_pfeil_10.png" />
       <p>
         Folgt dem grünen Pfeil und drückt auf den Weiter-Button oder wischt.
       </p>
@@ -611,7 +611,7 @@
 
     <swiper-slide v-if="flow > 0.8 && ort=='og1'" class="leiner-slide">
       <img class="spieler" src="assets/img/leiner.png" width="180"/>
-      <img class="pfeil pfeil-kleiner" src="assets/objekte/og/tutorial/tutorial_og_pfeil_11.png" />
+      <img class="pfeil pfeil-kleiner" src="assets/objekte/og1/tutorial/tutorial_og_pfeil_11.png" />
       <p v-if="spieler=='Watson'" style="font-size: 30px;">
         Nun steht ihr in einem meiner Lieblingsräume mit Kunst aus den alten Kirchen von Konstanz.
         Habt ihr auch die alte Holztreppe und die Wandmalereien bewundert? 
@@ -643,7 +643,7 @@
 
     <swiper-slide v-if="flow >= 0.9 && ort=='og1'" class="leiner-slide">
       <img class="spieler" src="assets/img/leiner.png" width="180"/>
-      <!-- <img class="pfeil pfeil-kleiner" src="assets/objekte/og/tutorial/tutorial_og_pfeil_11.png" /> -->
+      <!-- <img class="pfeil pfeil-kleiner" src="assets/objekte/og1/tutorial/tutorial_og_pfeil_11.png" /> -->
       <p v-if="spieler=='Watson'" style="font-size: 30px;">
         Wir sind in der guten alten Stube meines Hauses angekommen. 
         <br><br>

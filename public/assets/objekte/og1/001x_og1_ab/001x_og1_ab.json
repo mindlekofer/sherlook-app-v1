@@ -1,0 +1,86 @@
+{
+  "code": "001x_og1_ab",
+  "nr": 7,
+  "ort": "og1",
+  "name": "Vorhängeschloss",
+  "genus": {
+    "maskulin": false,
+    "feminin": false,
+    "neutrum": true
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag_1": "#gut_versteckt",
+  "hashtag_2": "#Zunftkasse1454",
+  
+  "watson": {
+      "quiz": {
+          "frage": "Hmmm, was für ein seltsames Ding. Erkennt ihr, was das ist?",
+          "antwort" : [
+              {
+                  "text": "Ein altes Vorhängeschloss",
+                  "richtig": true
+              },
+              {
+                  "text": "Ein altes Trauerglöckchen",
+                  "richtig": false
+              },  
+              {
+                  "text": "Eine alte Trillerpfeife",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Faktenjäger aufgepasst! Hinter diesem alten Schloss ist etwas versteckt. In echt! Geht in den Saal mit den alten Wappen an der Decke, dann werdet ihr schon sehen...",
+      "post_2": "Diese Zunftkasse aus dem Jahr 1454 musste ich einfach öffnen. Vorsichtig und behutsam. Nicht weil mich Gold oder Silber besonders interessieren würden. Nein! Ich wollte einfach an die Fakten kommen und wissen, was hinter dem Schloss verborgen ist. Ich liebe alte und echte Geheimnisse!",
+      "leinertext": "Ich danke Ihnen lieber Dr. Watson und ihrem ganzen Team! Bringt mir das Schloss bitte heil und unversehrt zurück. So wie es unsere Restauratoren geschworen haben: Sie haben das Schloß noch nie geöffnet. Dieses Geheimnis muss gewahrt bleiben!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Egal ob gefälscht oder nicht, das ist ein echtes \"Teekesselchen\", ein Wort mit vielen Bedeutungen... Aber was passt hier am besten?",
+          "antwort" : [
+              {
+                  "text": "Vorrichtung die Zugang verwehrt und gewährt",
+                  "richtig": true
+              },
+              {
+                  "text": "Mechanismus zum Zünden einer Feuerwaffe",
+                  "richtig": false
+              },  
+              {
+                  "text": "Bauwerk adliger Herrschaften",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Faktenjäger aufgepasst! An diesem Holzbalken wäre ich beinah achtlos vorbeigelaufen. Dann habe ich das alte Schloss entdeckt. Und da war mir klar: Da ist etwas versteckt. In echt! Geht in den Saal mit den alten Wappen an der Decke, dann werdet ihr schon sehen...",
+      "post_2": "Zum Glück habe ich bei der Führung durch das Museum gut aufgepasst. Der historische „Zunftsaal“ wurde 1454 eingerichtet und diente den Mitgliedern der Rosgartenzunft als Versammlungssaal und Trinkstube. Die alte Zunftkasse ist in der Holzwand eingelassen, damit sie niemand wegtragen kann. Da kribbelt es mir doch sofort in den Fingern: Ich liebe alte und echte Geheimnisse!",
+      "leinertext": "Ich danke dem Team um den berühmten Sherlock Holmes, sehr gute Arbeit. An dieser Stelle, schlägt wirklich das Herz des Museums, das große Geheimnis unserer guten alten Stube! Und jetzt ist es in Gefahr. Sicher hält sich der der Dieb nicht an unseren Ehrenkodex. Der besagt, dass kein Restaurator altes Kunst- oder Kulturgut zerstören darf! Bringt mir das Schloss zurück, heil und unversehrt. Dieses Geheimnis muss gewahrt bleiben!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Egal ob gefälscht oder nicht, das ist ein echtes \"Teekesselchen\", ein Wort mit vielen Bedeutungen... Aber was passt hier am besten?",
+          "antwort" : [
+              {
+                  "text": "Vorrichtung, die <br> Zugang verwehrt und gewährt",
+                  "richtig": true
+              },
+              {
+                  "text": "Mechanismus zum Zünden einer Feuerwaffe",
+                  "richtig": false
+              },  
+              {
+                  "text": "Bauwerk adliger Herrschaften",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Faktenjäger aufgepasst! An diesem Holzbanken wäre ich beinah achtlos vorbeigelaufen.  Dann habe ich den schwarzen Zapfen gesehen. Größer als man denkt. Und da war mir klar: Da ist etwas versteckt. In echt! Geht in die gute alte Stube, dann werdet ihr schon sehen...",
+      "post_2": "Historische Geheimnisse ziehen mich magisch an! Bei einer Führung durch das Museum habe ich den entscheidenden Hinweis bekommen. Der \"Zunftsaal\" wurde 1454 im Haus \"Zum Schwarzen Widder\" eingerichtet und mit dem Haus zum \"Rosgarten\" verbunden. Er diente den Mitgliedern der Rosgartenzunft als Versammlungssaal und Trinkstube. Und jetzt kommt das Beste: Hier haben sie die alte Zunftkasse versteckt: Damit sie niemand wegtragen kann, wurde sie in die Holzwand eingelassen und mit einem Zusatzschloss gesichert. Ein so altes Schloss darf natürlich nicht mehr aufgebrochen und zerstört werden. Was für ein schönes, altes und echtes Geheimnis! Da kribbelt es mir einfach in den Fingern ...",
+      "leinertext": "Ich danke Enola Holmes und ihren Helferinnen und Helfern! Sehr gute Arbeit. Hier, an dieser Stelle, schlägt wirklich das Herz des Museums, das große Geheimnis unserer guten alten Stube! Und jetzt ist es in Gefahr. Sicher hält sich der der Dieb nicht an unseren Ehrenkodex. Der besagt, dass kein Restaurator altes Kunst- oder Kulturgut zerstören darf! Deshalb weiß bis heute niemand, was sich in der alten Zunftkasse hinter dem Schloss befindet. Bringt es heil und unversehrt zurück. Dieses Geheimnis muss gewahrt bleiben!"
+  }
+}

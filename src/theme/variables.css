@@ -100,6 +100,16 @@ http://ionicframework.com/docs/theming/ */
   --height: 90%;
 }
 
+.beacon-modal {
+  --width: 70%;
+  --height: 90%;
+}
+
+.objekte-modal {
+  --width: 70%;
+  --height: 90%;
+}
+
 .einstellungs-modal {
   --width: 30%;
   --height: 90%;

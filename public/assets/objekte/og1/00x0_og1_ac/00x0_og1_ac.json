@@ -1,0 +1,86 @@
+{
+  "code": "00x0_og1_ac",
+  "nr": 8,
+  "ort": "og1",
+  "name": "Haarlocke",
+  "genus": {
+    "maskulin": false,
+    "feminin": true,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag_1": "#schnipp_schnapp_locke_ab",
+  "hashtag_2": "#alte_sitten_fremd_und_schön",
+  
+  "watson": {
+      "quiz": {
+          "frage": "Das sieht ja seltsam aus. Da frage ich euch doch erstmal: WAS könnte hier gefälscht worden sein?",
+          "antwort" : [
+              {
+                  "text": "Haare",
+                  "richtig": true
+              },
+              {
+                  "text": "Grashalme",
+                  "richtig": false
+              },  
+              {
+                  "text": "Stroh",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Was für eine schöne Locke im Biedermeier-Schrank. Genau richtig für eine feine Fälschung! Schnipp, schnapp war sie weg!",
+      "post_2": "Ich habe diese Brosche mitgenommen und ersetzt. Denn sie erinnert mich an einen alten Brauch: Dem Liebsten eine Haarlocke schenken, als Zeichen für Treue und Verbundenheit. Und so schön in Szene gesetzt! Das musste ich einfach selbst ausprobieren!",
+      "leinertext": "Ich danke dem Team um Dr. Watson, sehr gute Arbeit! Und habt ihr bemerkt: Dieser Dieb oder diese Diebin lobt mein Museum und lässt dann trotzdem alte Dinge mitgehen. Auf solche Komplimente kann ich gerne verzichten! Bringt mir bitte schnell die alte Brosche mit den echten Haaren zurück."
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Das sieht aus wie ein schmuckvolles Präparat. Aber was  genau könnte hier gefälscht worden sein?",
+          "antwort" : [
+              {
+                  "text": "Brosche mit Menschenhaar",
+                  "richtig": true
+              },
+              {
+                  "text": "Etui mit Pferdehaar",
+                  "richtig": false
+              },  
+              {
+                  "text": "Präpariertes Vogelnest",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Unfassbar, was in dieser Biedermeier-Brosche verborgen ist... Genau richtig für eine feine Fälschung. Schnipp, schnapp war sie weg!",
+      "post_2": "Ich mag Dinge mit alten, überraschenden Geheimnissen. So wie bei dieser Brosche: In ihrem Inneren befindet sich eine menschliche Haarlocke!  Sie zu verschenken galt als Zeichen der Verbundenheit und Treue. Ob das noch Oma und Opa so gemacht haben? Oder schon Schiller und Goethe? Wie auch immer... Ich werde die Brosche so liebevoll wie hier im Museum präsentieren. Sie wird ein Glanzstück meiner Sammlung!",
+      "leinertext": "Ich danke dem Team um den berühmten Sherlock Holmes, sehr gute Arbeit. Und habt ihr bemerkt: Dieser Dieb oder diese Diebin lobt mein Museum und lässt dann trotzdem alte Dinge mitgehen. Auf solche Komplimente kann ich gerne verzichten!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Ein Schmuckstück mit Haaren? Hoffentlich ist das keine Fälschung! Denn es wurde zu einem wichtigen Anlass hergestellt. Wozu?",
+          "antwort" : [
+              {
+                  "text": "Verlobung oder Hochzeit",
+                  "richtig": true
+              },
+              {
+                  "text": "Eintritt in ein Kloster",
+                  "richtig": false
+              },  
+              {
+                  "text": "Beisetzung eines Heiligen",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Unfassbar, was in dieser Brosche verborgen ist... Stammt i.ü. aus einer Epoche, die nach einem einfältigen Spießbürger benannt ist. Und treuherzig, den Schrank nicht besser abzuschließen. Leichtes Spiel für flinke Fälscherfinger. Schnipp, schnapp war sie weg!",
+      "post_2": "Ich mag Dinge mit alten, überraschenden Geheimnissen. Vielleicht habt ihr es erraten: Im Inneren dieser Brosche aus der Biedermeierzeit befindet sich eine menschliche Haarlocke!  In den guten alten Zeiten gab es noch Zeichen der Verbundenheit und Treue. Ob das noch Oma und Opa so gemacht haben? Oder schon Schiller oder Goethe? Wie auch immer... Ich werde die Brosche so liebevoll wie hier im Museum präsentieren. Sie wird ein Glanzstück meiner Sammlung!",
+      "leinertext": "Ich danke Enola Holmes und ihren Helferinnen und Helfern! Sehr gute Arbeit. Und habt ihr bemerkt: Dieser Dieb oder diese Diebin lobt mein Museum und lässt dann trotzdem alte Dinge mitgehen. Auf solche Komplimente kann ich gerne verzichten! <br> Außerdem muss ich einem Missverständnis vorbeugen: Schiller und Goethe sind im 18. Jahrhundert geboren. Die alte Brosche mit der echten Haarlocke gehört zur Biedermeierzeit (1815-1848). Bringt sie bitte schnell wieder zurück."
+  }
+}

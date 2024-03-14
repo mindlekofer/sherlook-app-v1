@@ -1,0 +1,32 @@
+{
+  "code": "",
+  "name": "",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "",
+    "",
+    ""
+  ],
+  "accountnamen": [
+    "",
+    "",
+    ""
+  ],
+  "gruppen": [
+    "",
+    "",
+    ""
+  ],
+  "watson": {
+    "steckbrief": ""
+  },
+  "sherlock": {
+    "steckbrief": ""
+  },
+  "enola": {
+    "steckbrief": ""
+  }
+}

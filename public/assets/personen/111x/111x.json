@@ -1,0 +1,32 @@
+{
+  "code": "111x",
+  "name": "Mia Mirabilis",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "Gegenwartsbezug",
+    "Phantasie",
+    "Bedeutung"
+  ],
+  "accountnamen": [
+    "wunderblumes_traumfabrik",
+    "selten_schön",
+    "simsalabim"
+  ],
+  "gruppen": [
+    "11xx",
+    "1x1x",
+    "x11x"
+  ],
+  "watson": {
+    "steckbrief": "<b> MIA MIRABILIS </b> <ul> <li> prägt aktuelle Trends </li> <li> sprudelt vor kreativen Ideen nur so über </li> <li> will Bedeutsames schaffen </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> MIA MIRABILIS </b> <ul> <li> prägt aktuelle Trends </li> <li> sprudelt vor kreativen Ideen nur so über </li> <li> will Bedeutsames schaffen </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> MIA MIRABILIS </b> versteht sich als Influencerin die ganz in der eigenen Gegenwart lebt. Sie stöbert in alten Dingen, um aktuelle Trends zu entdecken. Egal ob auf Flohmärkten oder im Museum: Sie sucht nach alten Dingen, in denen sie etwas Neues und \"Bedeutsames\" entdecken kann. Ihr Stil ist durchaus gewöhnungsbedürftig. Aber eins muss man ihr lassen:  Sie sprudelt vor kreativen Ideen nur so über!"
+  }
+}

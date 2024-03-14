@@ -1,0 +1,32 @@
+{
+  "code": "x111",
+  "name": "Wolfram Wolkenwand",
+  "genus": {
+    "maskulin": true,
+    "feminin": false
+  },
+  "eigenschaften": [
+    "Phantasie",
+    "Bedeutungen",
+    "Kritik"
+  ],
+  "accountnamen": [
+    "gold_richtig",
+    "prince_leviathan",
+    "saetze_sind_schaetze"
+  ],
+  "gruppen": [
+    "x11x",
+    "x1x1",
+    "xx11"
+  ],
+  "watson": {
+    "steckbrief": "<b> WOLFRAM WOLKENWAND </b> <ul> <li> verfügt über eine große, lebendige Phantasie </li> <li> interessiert sich für die Bedeutung der Dinge </li> <li> kritisiert häufig seine Mitmenschen, aber auch die Museen </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> WOLFRAM WOLKENWAND </b> <ul> <li> schreibt Bücher mit lustigen Titeln wie \"1x1 der Fantasie\" oder \"Tintenkleckse für Tiefseetaucher\" </li> <li> kritisiert gern seine Zeitgenossen und findet z.B. den Audioguide des Museums \"Schmalspur\" </li> <li> ist ein kritischer Geist, der nach wahren und wichtigen Bedeutungen sucht </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> WOLFRAM WOLKENWAND </b> ist im Museum nicht sonderlich beliebt. Auch wenn er Bücher mit lustigen Titeln wie \"1x1 der Fantasie\" oder \"Tintenkleckse für Tiefseetaucher\" schreibt, ist er ein ausgesprochener Nörgler. Er regt sich über den Audioguide auf (den er \"Schmalspur\" findet) und meint, dass die Leute im Museum mal besser seine Bücher lesen sollten. Tatsächlich geht es dort recht humorvoll und einfallsreich zu. Die wenigsten wissen, dass die meisten seiner Abbildungen aus der eigenen \"Privatsammlung\" stammen."
+  }
+}

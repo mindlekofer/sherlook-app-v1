@@ -1,0 +1,32 @@
+{
+  "code": "11x1",
+  "name": "James Mopsiathy",
+  "genus": {
+    "maskulin": true,
+    "feminin": false
+  },
+  "eigenschaften": [
+    "Aktualität",
+    "Phantasie",
+    "Kritik"
+  ],
+  "accountnamen": [
+    "saetze_sind_schaetze",
+    "funkelglanz",
+    "vielzuviel_fatal"
+  ],
+  "gruppen": [
+    "11xx",
+    "1xx1",
+    "x1x1"
+  ],
+  "watson": {
+    "steckbrief": "<b> JAMES MOPSIATHY </b> <ul> <li> mag Altes, wenn es noch heute ein Vorbild sein kann </li> </li> betrachtet vieles mit einer etwas übergroßen und kritischen Phantasie </li> <li> hat vieles an seinen Mitmenschen auszusetzen </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> JAMES MOPSIATHY </b> <ul> <li> findet Dinge gar nicht so alt, wenn sie heute noch ein Vorbild sein können </li> <li> verfügt über eine große, kritische, manchmal etwas respektlose Phantasie </li> <li> kämpft gegen viele Misstände und Ungerechtigkeiten in dieser Welt </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> JAMES MOPSIATHY </b> kämpft mit manchmal respektloser Phantasie und spitzer Feder gegen viele Misstände und Ungerechtigkeiten in dieser Welt. Er mag Altes, wenn es noch heute ein Vorbild sein kann, und kritisiert es, wenn es falsche Dinge tradiert. An der Seite seines treuen Mopses zieht er sich gern in eine einsame Waldvilla zurück und träumt von einer besseren Welt, in der die Menschen für seine Einschätzungen dankbar sind..."
+  }
+}
