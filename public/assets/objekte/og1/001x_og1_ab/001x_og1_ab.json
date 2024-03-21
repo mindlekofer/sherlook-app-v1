@@ -12,9 +12,17 @@
     "singular": true,
     "plural": false
   },
-  "hashtag_1": "#gut_versteckt",
-  "hashtag_2": "#Zunftkasse1454",
-  
+  "hashtag": [
+    {
+       "text": "#gut_versteckt",
+       "code": "xxxx"
+    },
+    {
+       "text": "#Zunftkasse1454",
+       "code": "x0xx"
+    }
+   ],
+
   "watson": {
       "quiz": {
           "frage": "Hmmm, was für ein seltsames Ding. Erkennt ihr, was das ist?",

@@ -25,13 +25,13 @@
                 :pulsieren="flow==1.0"
                 :bild="`assets/objekte/${objekte_ort[0].ort}/${objekte_ort[0].code}/${objekte_ort[0].code}_rund.png`"
                 @kleine-lupe-clicked="flow=1.1"
-                :hashtag1="flow>=1.3 ? objekte_ort[0].hashtag_1 : ''"
-                :hashtag2="flow>=1.7 ? objekte_ort[0].hashtag_2 : ''"
+                :hashtag1="flow>=1.3 ? objekte_ort[0].hashtag[0].text : ''"
+                :hashtag2="flow>=1.7 ? objekte_ort[0].hashtag[1].text : ''"
                 :abgeschlossen="flow>=2"
                 @click="hinweisClicked(1)"
                 @hinweis-clicked="console.log('Hinweis clicked')"
-                :hashtag1Rot="hashtagFalsch(1)"
-                :hashtag2Rot="hashtagFalsch(2)"
+                :hashtag1Rot="isHashtagFalsch(spielStore.personVerhaftet, objekte_ort[0].hashtag[0].code)"
+                :hashtag2Rot="isHashtagFalsch(spielStore.personVerhaftet, objekte_ort[0].hashtag[1].code)"
             />
             <!-- :bild="ort=='eg'?'assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png':'assets/objekte/og1/00x0_og1_ac/00x0_og1_ac_rund.png'" -->
                 
@@ -49,12 +49,12 @@
                 :pulsieren="flow==2.0"
                 :bild="`assets/objekte/${objekte_ort[1].ort}/${objekte_ort[1].code}/${objekte_ort[1].code}_rund.png`"
                 @kleine-lupe-clicked="flow=2.1"
-                :hashtag1="flow>=2.3 ? objekte_ort[1].hashtag_1 : ''"
-                :hashtag2="flow>=2.7 ? objekte_ort[1].hashtag_2 : ''"
+                :hashtag1="flow>=2.3 ? objekte_ort[1].hashtag[0].text : ''"
+                :hashtag2="flow>=2.7 ? objekte_ort[1].hashtag[1].text : ''"
                 :abgeschlossen="flow>=3"
                 @click="hinweisClicked(2)"
-                :hashtag1Rot="hashtagFalsch(3)"
-                :hashtag2Rot="hashtagFalsch(4)"
+                :hashtag1Rot="isHashtagFalsch(spielStore.personVerhaftet, objekte_ort[1].hashtag[0].code)"
+                :hashtag2Rot="isHashtagFalsch(spielStore.personVerhaftet, objekte_ort[1].hashtag[1].code)"
             />
 
             <HinweisBoxComponent class="hinweis-box" v-if="flow<3.0" 
@@ -71,12 +71,12 @@
                 :pulsieren="flow==3.0"
                 :bild="`assets/objekte/${objekte_ort[2].ort}/${objekte_ort[2].code}/${objekte_ort[2].code}_rund.png`"
                 @kleine-lupe-clicked="flow=3.1"
-                :hashtag1="flow>=3.3 ? objekte_ort[2].hashtag_1 : ''"
-                :hashtag2="flow>=3.7 ? objekte_ort[2].hashtag_2 : ''"
+                :hashtag1="flow>=3.3 ? objekte_ort[2].hashtag[0].text : ''"
+                :hashtag2="flow>=3.7 ? objekte_ort[2].hashtag[1].text : ''"
                 :abgeschlossen="flow>=4"
                 @click="hinweisClicked(3)"
-                :hashtag1Rot="hashtagFalsch(5)"
-                :hashtag2Rot="hashtagFalsch(6)"
+                :hashtag1Rot="isHashtagFalsch(spielStore.personVerhaftet, objekte_ort[2].hashtag[0].code)"
+                :hashtag2Rot="isHashtagFalsch(spielStore.personVerhaftet, objekte_ort[2].hashtag[1].code)"
             />
 
             <LupeMitteComponent id="lupe_mitte" v-if="flow==0.6 || flow==1.0 || flow==2.0 || flow==3.0" 
@@ -874,28 +874,18 @@ const openObjekteModal = async (nr: number) => {
 
 const personAusgewaehlt = ref(0);
 
-function hashtagFalsch(nr : number) {
-  if (spielStore.personVerhaftet == "11x1" && spielStore.ort=='eg') {           // James Mopsiati
-    return nr==2 || nr==4 || nr==6;
-  } else if (spielStore.personVerhaftet == "11x1" && spielStore.ort=='og1') {
-    return nr==2 || nr==4 || nr==6;
-  } else if (spielStore.personVerhaftet == "111x" && spielStore.ort=='eg') {     // Mia Mirabilis
-    return nr==2 || nr==6;
-  } else if (spielStore.personVerhaftet == "111x" && spielStore.ort=='og1') {
-    return nr==4 || nr==6;
-  } else if (spielStore.personVerhaftet == "x111" && spielStore.ort=='eg') {
-    return nr==4 || nr==6;
-  } else if (spielStore.personVerhaftet == "x111" && spielStore.ort=='og1') {
-    return nr==6 || nr==5;
-  } else if (spielStore.personVerhaftet == "11x0" && spielStore.ort=='eg') {
-    return nr==2 || nr==6;
-  } else if (spielStore.personVerhaftet == "11x0" && spielStore.ort=='og1') {
-    return nr==2 || nr==4;
-  } else if (spielStore.personVerhaftet == "01x1" && spielStore.ort=='eg') {
-    return nr==4;
-  } else if (spielStore.personVerhaftet == "01x1" && spielStore.ort=='og1') {
-    return nr==6;
+function isHashtagFalsch(personCode : string, hashtagCode : string) : boolean {
+  if (personCode.length != 4 || hashtagCode.length != 4) {
+    console.log("(Fehler) Codeformat falsch");
+    return false;
+  } 
+  for (let i = 0; i < 4; i++) {
+    if (personCode[i] == '1' && hashtagCode[i] == '0')
+      return true;
+    if (personCode[i] == '0' && hashtagCode[i] == '1')
+      return true;
   }
+  return false;
 }
 
 </script>

@@ -12,8 +12,16 @@
     "singular": true,
     "plural": false
   },
-  "hashtag_1": "",
-  "hashtag_2": "",
+  "hashtag": [
+    {
+       "text": "",
+       "code": ""
+    },
+    {
+       "text": "",
+       "code": ""
+    }
+   ],
   
   "watson": {
       "quiz": {

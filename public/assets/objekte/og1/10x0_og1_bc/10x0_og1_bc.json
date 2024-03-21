@@ -12,8 +12,16 @@
     "singular": true,
     "plural": false
   },
-  "hashtag_1": "#5_Sterne_sind_zuwenig",
-  "hashtag_2": "#faktisch_immerwoanders",
+  "hashtag": [
+    {
+       "text": "#5_Sterne_sind_zuwenig",
+       "code": "xxx0"
+    },
+    {
+       "text": "#faktisch_immerwoanders",
+       "code": "x0xx"
+    }
+   ],
   
   "watson": {
       "quiz": {

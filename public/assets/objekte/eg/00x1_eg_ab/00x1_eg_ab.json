@@ -12,9 +12,17 @@
     "singular": true,
     "plural": false
   },
-  "hashtag_1": "#Adular_und_Feldspat",
-  "hashtag_2": "#alte_worte_alte_steine",
-  
+  "hashtag": [
+    {
+       "text": "#Adular_und_Feldspat",
+       "code": "xxxx"
+    },
+    {
+       "text": "#alte_worte_alte_steine",
+       "code": "00xx"
+    }
+   ],
+
   "watson": {
       "quiz": {
           "frage": "Achtung! Vielleicht ist auch diese Objekt gefälscht worden… Aber was ist das überhaupt?",

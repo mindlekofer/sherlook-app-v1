@@ -126,7 +126,7 @@
               :username="`@${person.schuldig.accountnamen[0]}`"
               :avatar="`assets/accounts/${person.schuldig.accountnamen[0]}/${person.schuldig.accountnamen[0]}.jpg`"
               :bild="`assets/objekte/${objekte_ort[0].ort}/${objekte_ort[0].code}/${objekte_ort[0].code}_post1.jpg`"
-              :hashtag=objekte_ort[0].hashtag_1
+              :hashtag=objekte_ort[0].hashtag[0].text
               likes="30129"
               @hashtag-clicked="flow < 1.3 ? flow=1.3 : flow=flow"
               :eingetragen="flow>=1.3">
@@ -267,7 +267,7 @@
               :username="`@${person.schuldig.accountnamen[0]}`"
               :avatar="`assets/accounts/${person.schuldig.accountnamen[0]}/${person.schuldig.accountnamen[0]}.jpg`"
               :bild="`assets/objekte/${objekte_ort[0].ort}/${objekte_ort[0].code}/${objekte_ort[0].code}_post2.jpg`"
-              :hashtag=objekte_ort[0].hashtag_2
+              :hashtag=objekte_ort[0].hashtag[1].text
               likes="34521"
               @hashtag-clicked="flow < 1.7 ? flow=1.7 : flow=flow"
               :eingetragen="flow>=1.7">
@@ -471,7 +471,7 @@
               :username="`@${person.schuldig.accountnamen[0]}`"
               :avatar="`assets/accounts/${person.schuldig.accountnamen[0]}/${person.schuldig.accountnamen[0]}.jpg`"
               :bild="`assets/objekte/${objekte_ort[1].ort}/${objekte_ort[1].code}/${objekte_ort[1].code}_post1.jpg`"
-              :hashtag=objekte_ort[1].hashtag_1
+              :hashtag=objekte_ort[1].hashtag[0].text
               likes="43210"
               @hashtag-clicked="flow<2.3 ? flow=2.3 : flow=flow"
               :eingetragen="flow>=2.3">
@@ -560,7 +560,7 @@
               :username="`@${person.schuldig.accountnamen[0]}`"
               :avatar="`assets/accounts/${person.schuldig.accountnamen[0]}/${person.schuldig.accountnamen[0]}.jpg`"
               :bild="`assets/objekte/${objekte_ort[1].ort}/${objekte_ort[1].code}/${objekte_ort[1].code}_post2.jpg`"
-              :hashtag=objekte_ort[1].hashtag_2
+              :hashtag=objekte_ort[1].hashtag[1].text
               likes="42911"
               @hashtag-clicked="flow<2.7 ? flow=2.7 : flow=flow"
               :eingetragen="flow>=2.7">
@@ -750,7 +750,7 @@
               :username="`@${person.schuldig.accountnamen[0]}`"
               :avatar="`assets/accounts/${person.schuldig.accountnamen[0]}/${person.schuldig.accountnamen[0]}.jpg`"
               :bild="`assets/objekte/${objekte_ort[2].ort}/${objekte_ort[2].code}/${objekte_ort[2].code}_post1.jpg`"
-              :hashtag=objekte_ort[1].hashtag_1
+              :hashtag=objekte_ort[1].hashtag[0].text
               likes="48501"
               @hashtag-clicked="flow<3.3 ? flow=3.3 : flow=flow"
               :eingetragen="flow>=3.3">
@@ -834,7 +834,7 @@
               :username="`@${person.schuldig.accountnamen[0]}`"
               :avatar="`assets/accounts/${person.schuldig.accountnamen[0]}/${person.schuldig.accountnamen[0]}.jpg`"
               :bild="`assets/objekte/${objekte_ort[2].ort}/${objekte_ort[2].code}/${objekte_ort[2].code}_post2.jpg`"
-              :hashtag=objekte_ort[1].hashtag_2
+              :hashtag=objekte_ort[1].hashtag[1].text
               likes="51029"
               @hashtag-clicked="flow<3.7 ? flow=3.7 : flow=flow"
               :eingetragen="flow>=3.7">

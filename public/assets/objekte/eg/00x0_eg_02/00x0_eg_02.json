@@ -12,12 +12,19 @@
       "singular": true,
       "plural": false
     },
-    "hashtag_1": "#schönheit_aus_urzeiten",
-    "hashtag_2": "#alt_und_geheimnsvoll",
-    
+    "hashtag": [
+     {
+        "text": "#schönheit_aus_urzeiten",
+        "code": "xxxx"
+     },
+     {
+        "text": "#alt_und_geheimnsvoll",
+        "code": "0xxx"
+     }
+    ],    
     "watson": {
         "quiz": {
-            "frage": "Ganz schön schwierig... <br> Was könnte hier gefälscht worden sein?",
+            "frage": "Ganz schön schwierig... <br><br> Was könnte hier gefälscht worden sein?",
             "antwort" : [
                 {
                     "text": "Fossil eines Dinosauriers",

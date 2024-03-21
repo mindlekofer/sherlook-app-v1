@@ -12,9 +12,17 @@
     "singular": true,
     "plural": false
   },
-  "hashtag_1": "#hochlichter",
-  "hashtag_2": "#prunk_und_paradestück",
-  
+  "hashtag": [
+    {
+       "text": "#hochlichter",
+       "code": "xxx0"
+    },
+    {
+       "text": "#prunk_und_paradestück",
+       "code": "xxx0"
+    }
+   ],
+
   "watson": {
       "quiz": {
           "frage": "Ein neuer Verdacht: Auch das könnte eine Fälschung sein. Was ist das überhaupt?",

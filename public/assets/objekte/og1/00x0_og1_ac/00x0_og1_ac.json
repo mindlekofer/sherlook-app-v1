@@ -12,8 +12,16 @@
     "singular": true,
     "plural": false
   },
-  "hashtag_1": "#schnipp_schnapp_locke_ab",
-  "hashtag_2": "#alte_sitten_fremd_und_schön",
+  "hashtag": [
+    {
+       "text": "#schnipp_schnapp_locke_ab",
+       "code": "xxxx"
+    },
+    {
+       "text": "#alte_sitten_fremd_und_schön",
+       "code": "0xxx"
+    }
+   ],
   
   "watson": {
       "quiz": {
