@@ -545,54 +545,29 @@ watch(rangeTicks, () => {
         flow.value = 0.95;
       }
     }
-    if ((flow.value==1.3 || flow.value==1.36) && ort.value == 'eg') {
-      if (beaconStore.getBeaconVonOrt('EG Ichthyosaurier').rssi > -95) {
+    if (flow.value==1.3 || flow.value==1.36) {
+      if (beaconStore.getBeaconVonId(objekte_ort.value[0].beacon[0].id).rssi > objekte_ort.value[0].beacon[0].schwelle) {
         flow.value = 1.4;
       }
     }
-    if ((flow.value==1.3 || flow.value==1.36) && ort.value == 'og1') {
-      if (beaconStore.getBeaconVonOrt('OG Schreibtisch').rssi > -95 ) {
-        flow.value = 1.4;
-      }
+    if (flow.value == 1.4) {
+      empfang.value = beaconStore.getEmpfangVonIndex(objekte_ort.value[0].beacon[0].id);
     }
-    if (flow.value == 1.4 && ort.value == 'eg') {
-      empfang.value = beaconStore.getEmpfangVonOrt('EG Ichthyosaurier');
-    }
-    if (flow.value == 1.4 && ort.value == 'og1') {
-      empfang.value = beaconStore.getEmpfangVonOrt('OG Schreibtisch');
-    }
-    if ((flow.value==2.3 || flow.value==2.36) && ort.value == 'eg') {
-      if (beaconStore.getBeaconVonOrt('EG Waffenraum').rssi > -95) {
+    if (flow.value==2.3 || flow.value==2.36) {
+      if (beaconStore.getBeaconVonId(objekte_ort.value[1].beacon[0].id).rssi > objekte_ort.value[1].beacon[0].schwelle) {
         flow.value = 2.4;
       }
     }
-    if ((flow.value==2.3 || flow.value==2.36) && ort.value == 'og1') {
-      if (beaconStore.getBeaconVonOrt('OG Schloss').rssi > -95 ) {
-        flow.value = 2.4;
-      }
+    if (flow.value == 2.4) {
+      empfang.value = beaconStore.getEmpfangVonIndex(objekte_ort.value[1].beacon[0].id);
     }
-    if (flow.value == 2.4 && ort.value == 'eg') {
-      empfang.value = beaconStore.getEmpfangVonOrt('EG Waffenraum');
-    }
-    if (flow.value == 2.4 && ort.value == 'og1') {
-      empfang.value = beaconStore.getEmpfangVonOrt('OG Schloss');
-    }
-    
-    if ((flow.value==3.3 || flow.value==3.36) && ort.value == 'eg') {
-      if (beaconStore.getBeaconVonOrt('EG Kristall').rssi > -95) {
+    if (flow.value==3.3 || flow.value==3.36) {
+      if (beaconStore.getBeaconVonId(objekte_ort.value[2].beacon[0].id).rssi > objekte_ort.value[2].beacon[0].schwelle) {
         flow.value = 3.4;
       }
     }
-    if ((flow.value==3.3 || flow.value==3.36) && ort.value == 'og1') {
-      if (beaconStore.getBeaconVonOrt('OG Kelch').rssi > -95 ) {
-        flow.value = 3.4;
-      }
-    }
-    if (flow.value == 3.4 && ort.value == 'eg') {
-      empfang.value = beaconStore.getEmpfangVonOrt('EG Kristall');
-    }
-    if (flow.value == 3.4 && ort.value == 'og1') {
-      empfang.value = beaconStore.getEmpfangVonOrt('OG Kelch');
+    if (flow.value == 3.4) {
+      empfang.value = beaconStore.getEmpfangVonIndex(objekte_ort.value[2].beacon[0].id);
     }
     if (flow.value == 4.0) {
       if (beaconStore.getBeaconVonOrt('EG Detektivbüro').rssi > -95) {

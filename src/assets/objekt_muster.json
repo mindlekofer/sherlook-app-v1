@@ -22,6 +22,12 @@
        "code": ""
     }
    ],
+   "beacon": [
+       {
+           "id" : 0,
+           "schwelle" : -100
+       }
+   ],
   
   "watson": {
       "quiz": {

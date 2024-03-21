@@ -22,6 +22,12 @@
        "code": "0xxx"
     }
    ],
+   "beacon": [
+       {
+           "id" : 7,
+           "schwelle" : -95
+       }
+   ],
   
   "watson": {
       "quiz": {

@@ -21,7 +21,14 @@
         "text": "#alt_und_geheimnsvoll",
         "code": "0xxx"
      }
-    ],    
+    ],
+    "beacon": [
+        {
+            "id" : 4,
+            "schwelle" : -95
+        }
+    ],
+
     "watson": {
         "quiz": {
             "frage": "Ganz schön schwierig... <br><br> Was könnte hier gefälscht worden sein?",

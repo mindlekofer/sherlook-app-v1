@@ -183,6 +183,10 @@ export const useBeaconStore = defineStore('beaconStore', {
       const beacon = this.beaconList.find(beacon => beacon.ort == ort);
       return beacon ? beacon : {id: 0, rssi: 0, time: 0};
     },
+    getBeaconVonId(id : number) {
+      const beacon = this.beaconList.find(beacon => beacon.id == id);
+      return beacon ? beacon : {id: 0, rssi: 0, time: 0};
+    },
     getIndexVonOrt(ort : string) {
       return this.beaconList.findIndex(i => i.ort == ort);
     },
