@@ -1,0 +1,100 @@
+{
+  "code": "001x_eg_ac",
+  "nr": 26,
+  "ort": "eg",
+  "name": "Palme",
+  "genus": {
+    "maskulin": false,
+    "feminin": true,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#alt_und_gefährlich",
+       "code": "0xxx"
+    },
+    {
+       "text": "#vergessene_bedeutung",
+       "code": "0x1x"
+    }
+   ],
+   "beacon": [
+       {
+           "id" : 0,
+           "schwelle" : -100
+       }
+   ],
+  
+  "watson": {
+      "quiz": {
+          "frage": "Das sieht ja ganz schön witzig aus! <br><br> Was könnte hier gefälscht worden sein?",
+          "antwort" : [
+              {
+                  "text": "Wappenschild",
+                  "richtig": true
+              },
+              {
+                  "text": "Maskottchen eines Fussballclubs",
+                  "richtig": false
+              },  
+              {
+                  "text": "Anleitung zum Bau einer Vogelscheuche",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Dieses schöne alte Objekt sieht lustig aus, ist aber durchaus gefährlich. <br> Also habe ich mich ganz vorsichtig an die blutrote Vitrine angeschlichen...",
+      "post_2": "Was für ein schöne alte Armbrust mit Abzug und Schulterstütze. <br> Das diente als eine altmodische Waffe für die Jagd... <br> Vielleicht deshalb auch die lustige Fratze? Und ist die Palme nicht ein Zeichen des Friedens? <br> Hach, wie gerne gehe ich alten Bedeutungen auf den Grund...",
+      "leinertext": "Danke für eure Ermittlungen! <br> Ein unverschämter Forscher, dieser Detaildieb. Soll ich Euch noch mehr verraten? Die Armbrust galt lange Zeit als Waffe der Bürger und wurde vom Adel verachtet. Erst später wurde sie als Unterhaltungswaffe für die Jagd genutzt! <br> Bringt das gute Stück schnell wieder zurück."
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Das sieht ja ganz schön komisch aus! <br><br> Was könnte hier gefälscht worden sein?",
+          "antwort" : [
+              {
+                  "text": "Ein Wappenschild mit Ritterhelm und Palme",
+                  "richtig": true
+              },
+              {
+                  "text": "Maskottchen eines Footballclubs mit wehenden Haaren, Halskette und Hawaiihemd",
+                  "richtig": false
+              },  
+              {
+                  "text": "Anleitung zum Bau einer Vogelscheuche",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Dieses schöne alte Objekt hätte sicher auch Wilhelm Tell gefallen. <br> Es sieht lustig aus, ist aber durchaus gefährlich. <br> Also habe ich mich ganz vorsichtig an die blutrote Vitrine angeschlichen...",
+      "post_2": "Was für ein schöner alter Schnepper. <br> So heisst diese Armbrust mit Schnappschloss und Schulterstütze. Sie diente im 16. Jahrhundert als Belustigung des Adels auf der Jagd... Vielleicht deshalb auch die lustige Fratze? Und ist die Palme nicht ein Zeichen des Friedens? <br> Hach, wie gerne gehe ich alten und vergessenen Bedeutungen auf den Grund...",
+      "leinertext": "Danke für die Ermittlungen, lieber Sherlock Holmes! <br> Da sollte der Detaildieb mal zu mir in die Lehre gehen. <br> Kennt ihr die Geschichte des Freiheitskämpfers Wilhelm Tell? Der musste mit einer Armbrust den Apfel vom Kopf seines Sohnes schießen. <br> Und soll ich Euch noch mehr verraten? Die Armbrust galt anders als das Schwert als Waffe der niedrigen Stände. Erst später haben sie Adlige als Unterhaltungswaffe für die Jagd genutzt! <br> Bringt das gute Stück schnell wieder zurück."
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Das sieht ja eigenartig aus! Was könnte hier gefälscht worden sein?",
+          "antwort" : [
+              {
+                  "text": "Ein Wappenschild mit Ritterhelm und Palme",
+                  "richtig": true
+              },
+              {
+                  "text": "Maskottchen eines Footballclubs mit wehenden Haaren, Halskette und Hawaiihemd",
+                  "richtig": false
+              },  
+              {
+                  "text": "Anleitung zum Bau einer Vogelscheuche",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Dieses schöne alte Objekt hätte sicher auch Wilhelm Tell sehr gut gefallen. Es sieht lustig aus, ist aber durchaus gefährlich. <br> Also habe ich mich ganz vorsichtig an die blutrote Vitrine angeschlichen...",
+      "post_2": "Was für ein schöner alter Schnepper. So heisst diese Armbrust mit Schnappschloss und Schulterstütze. Das war schon im 16. Jahrhundert eine altmodische Waffe und diente fast nur noch zur Belustigung des Adels auf der Jagd... Vielleicht deshalb auch die lustige Fratze und die Palme, als Zeichen des Friedens? <br> Hach, wie gerne gehe ich alten und vergessenen Bedeutungen auf den Grund...",
+      "leinertext": "Danke für eure Ermittlungen, liebe Enola Holmes! <br> Da sollte der Detaildieb mal zu mir in die Lehre gehen. <br> Kennt ihr die Geschichte des Freiheitskämpfers Wilhelm Tell? Der musste mit einer Armbrust den Apfel vom Kopf seines Sohnes schießen. Wie gemein! Friedrich Schiller hat ein ganzes Drama zu diesem Schweizer Nationalmythos verfasst. <br> Und soll ich Euch noch mehr verraten? Die Armbrust galt anders als das Schwert als Waffe der niedrigen Stände und wurde vom Adel verachtet. Im 16. Jahrhundert erlebte sie ein Comeback als Unterhaltungswaffe für die Jagd! Das hat der Detaildieb gut erkannt. Trotzdem gehört diese Waffe meinem Museum. <br> Bringt sie schnell wieder zurück."
+  }
+}

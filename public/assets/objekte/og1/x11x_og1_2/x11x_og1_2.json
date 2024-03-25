@@ -1,0 +1,100 @@
+{
+  "code": "x11x_og1_2",
+  "nr": 81,
+  "ort": "og1",
+  "name": "Rosen",
+  "genus": {
+    "maskulin": false,
+    "feminin": true,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": false,
+    "plural": true
+  },
+  "hashtag": [
+    {
+       "text": "#ideen_ranken",
+       "code": "x1xx"
+    },
+    {
+       "text": "#rosen_mit_botschaft",
+       "code": "xx1x"
+    }
+   ],
+   "beacon": [
+       {
+           "id" : 0,
+           "schwelle" : -100
+       }
+   ],
+  
+  "watson": {
+      "quiz": {
+          "frage": "Was für schöne Blüten, doch leider nicht echt... <br><br> Um welche Art handelt es sich?",
+          "antwort" : [
+              {
+                  "text": "Rosen",
+                  "richtig": true
+              },
+              {
+                  "text": "Vergissmeinnicht",
+                  "richtig": false
+              },  
+              {
+                  "text": "Flieder",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Diese Schrankfenster sind wie kleine Schaufenster, die mich auf gute Gedanken bringen... <br> Um diese Rosenranken werde ich neue Ideen ranken! Die nächste Demo kommt bestimmt...",
+      "post_2": "Plakate auf Demos sind häufig gut gemeint, aber etwas lieblos gestaltet... <br> Nicht bei mir! Diese Rosenranken werden meine Botschaft unterstreichen!",
+      "leinertext": "Danke, liebes Team um Dr. Watson. // INFO ZUM BRIEF// Bewahrt die Schätze meines Museums!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Schöne Blumen, doch leider nicht echt... <br><br> Könnt ihr das gefälschte Wort entziffern?",
+          "antwort" : [
+              {
+                  "text": "Frühling",
+                  "richtig": true
+              },
+              {
+                  "text": "Jüngling",
+                  "richtig": false
+              },  
+              {
+                  "text": "Fräulein",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Diese Schrankfenster sind wie kleine Schaufenster, die mich auf gute Gedanken bringen... <br> Um diese Rosenranken werde ich neue Ideen ranken! Die nächste Demo kommt bestimmt...",
+      "post_2": "Findet ihr nicht auch, dass Plakate auf Demos häufig gut gemeint aber etwas lieblos gestaltet sind? Nicht bei mir! <br> Diese schönen Rosenranken werden meine Botschaft unterstreichen!",
+      "leinertext": "Danke, liebes Team um Sherlock Holmes. // INFO ZUM BRIEF// Bewahrt die Schätze meines Museums!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Was für schöne Blumen, doch leider nicht echt... <br><br> Was wurde hier gefälscht?",
+          "antwort" : [
+              {
+                  "text": "ein Brief",
+                  "richtig": true
+              },
+              {
+                  "text": "eine Urkunde",
+                  "richtig": false
+              },  
+              {
+                  "text": "eine Banknote",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Diese beleuchteten Schrankfenster sind wie kleine Schaufenster, die mich auf gute Gedanken bringen... <br> Um diese Rosenranken werde ich neue Ideen ranken! Die nächste Demo kommt bestimmt...",
+      "post_2": "Findet ihr nicht auch, dass Plakate auf Demos häufig gut gemeint aber etwas lieblos gestaltet sind? Nicht bei mir! Diese schönen Rosenranken werden meine Botschaft unterstreichen! <br> Sehen wir uns am nächsten Freitag?",
+      "leinertext": "Danke, liebes Team um Enola Holmes. // INFO ZUM BRIEF//  Bewahrt die Schätze meines Museums!"
+  }
+}

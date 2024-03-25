@@ -1,0 +1,32 @@
+{
+  "code": "100x",
+  "name": "Marco Millefiori",
+  "genus": {
+    "maskulin": true,
+    "feminin": false
+  },
+  "eigenschaften": [
+    "Aktualität",
+    "Fakten",
+    "Materialien"
+  ],
+  "accountnamen": [
+    "",
+    "",
+    ""
+  ],
+  "gruppen": [
+    "10xx",
+    "1x0x",
+    "x00x"
+  ],
+  "watson": {
+    "steckbrief": "<b> MARCO MILLEFIORI </b> <ul> <li> entdeckt vieles, was heute nicht anders ist als früher </li> <li> bleibt bei den wahren Daten und Fakten </li> <li> mag gutes Handwerk und feine Materialien </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> MARCO MILLEFIORI </b> <ul> <li> entdeckt vieles, was heute nicht anders ist als früher </li> <li> bleibt bei den wahren Daten und Fakten </li> <li> mag gutes Handwerk und feine Materialien </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> MARCO MILLEFIORI </b> entdeckt vieles, was heute nicht anders ist als früher. Ihm kann man kein X für ein  U vormachen. Er will wissen, was Sache ist und die wahren Daten und Fakten kennen. Dann zieht er seine eigenen Schlüsse daraus. Besonders interessiert er sich für die Materialien, aus denen die Dinge hergestellt sind. Er hält gutes Handwerk für zeitlos wichtig."
+  }
+}

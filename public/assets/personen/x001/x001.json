@@ -1,0 +1,32 @@
+{
+  "code": "x001",
+  "name": "Redd Fox",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "Fakten",
+    "Materialien",
+    "Kritik"
+  ],
+  "accountnamen": [
+    "faktengram",
+    "falsche_fakten_sind_fatal",
+    "artful_investments"
+  ],
+  "gruppen": [
+    "x00x",
+    "x0x1",
+    "xx01"
+  ],
+  "watson": {
+    "steckbrief": "<b> REDD FOX </b> <ul> <li> prüft sehr genau die Fakten </li> <li> will wissen, aus welchen Materialien etwas gemacht ist </li> <li> spart nicht mit Kritik am Museum und seinen Zeitgenossen </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> REDD FOX </b> <ul> <li> sammelt Daten und prüft die Fakten </li> <li> will genau wissen, aus welchen Materialien etwas gemacht ist </li> <li> spart nicht mit Kritik am Museum und seinen Zeitgenossen </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> REDD FOX </b> Redd Fox ist ein wissbegieriger und verschlagener Antiquitätenhändler. Er will genau wissen, aus welchen Materialien etwas gemacht ist.  Die gute Verarbeitung prüft er ebenso gründlich, wie Daten und Fakten. Selbstbewußt spart er nicht mit Kritik am Museum und seinen Zeitgenossen. Er ist überzeugt, dass oft nur er die Spreu vom Weizen trennen kann."
+  }
+}

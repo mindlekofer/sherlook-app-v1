@@ -1,0 +1,32 @@
+{
+  "code": "110x",
+  "name": "Waltraud van Walden",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "Aktualität",
+    "Phantasie",
+    "Materialien"
+  ],
+  "accountnamen": [
+    "funkelglanz",
+    "tanteschnickschnack",
+    "wunderblumes_traumfabrik"
+  ],
+  "gruppen": [
+    "11xx",
+    "1x0x",
+    "x10x"
+  ],
+  "watson": {
+    "steckbrief": "<b> WALTRAUD VAN WALDEN </b> <ul> <li> ist sehr phantasievoll </li> <li> interessiert sich für alte Materialien und Handwerkskünste </li> <li> zaubert daraus gerne Neues </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> WALTRAUD VAN WALDEN </b> <ul> <li> hat viele eigene, zum Teil freche Ideen </li> <li> interessiert sich für alte Materialien und Handwerkskünste </li> <li> zaubert daraus gerne Neues </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "WALTRAUD VAN WALDEN soll sich eigentlich um die seit Generationen gehütete Familiensammlung kümmern. Doch alte, verstaubte Sachen sind überhaupt nicht ihr Ding. Waltraud und versteht ihr kleines Museum eher als Schaufenster, das neugierig machen soll: dort zeigt sie zeitlose Materialien und Techniken und vor allem ihre eigenen Kreationen."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "code": "000x",
+  "name": "Alexander Goldsmith",
+  "genus": {
+    "maskulin": true,
+    "feminin": false
+  },
+  "eigenschaften": [
+    "alt & fremd",
+    "Fakten",
+    "Materialien"
+  ],
+  "accountnamen": [
+    "antiquarius",
+    "gerne_gestern",
+    "hintertürchen"
+  ],
+  "gruppen": [
+    "00xx",
+    "0x0x",
+    "x00x"
+  ],
+  "watson": {
+    "steckbrief": "<b> ALEXANDER GOLDSMITH </b> <ul> <li> liebt alte Dinge </li> <li> recherchiert Fakten und Fachbegriffe </li> <li> interessiert sich für Materialien und gutes Handwerk </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> ALEXANDER GOLDSMITH </b> <ul> <li> liebt \"gute alte Dinge\" und Materialien </li> <li> kann sich viele Fakten und Fachbegriffe merken </li> <li> hätte am liebsten selbst in einer alten Werkstatt mitgearbeitet </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "ALEXANDER GOLDSMITH wohnt in einem schiefen Haus aus dem 15. Jahrhundert und ist Privatdozent für Technikgeschichte. Weil er sich so viele Fakten und Fachbergriffe merken kann, wird er von seinen Studierenden auch liebevoll ,\"Lexi\" genannt. Am liebsten hätte er in den alten Werkstätten selbst mitgearbeitet. Sein Stil ist altmodisch, aber geschmackvoll. Er weiß einfach edle und gut verarbeitete Materialien zu schätzen."
+  }
+}

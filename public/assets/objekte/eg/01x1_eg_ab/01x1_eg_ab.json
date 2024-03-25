@@ -1,0 +1,100 @@
+{
+  "code": "01x1_eg_ab",
+  "nr": 14,
+  "ort": "eg",
+  "name": "Fossil",
+  "genus": {
+    "maskulin": false,
+    "feminin": false,
+    "neutrum": true
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#alte_höhlen",
+       "code": "0xxx"
+    },
+    {
+       "text": "#geheimnisvolle_wächter",
+       "code": "x1xx"
+    }
+   ],
+   "beacon": [
+       {
+           "id" : 0,
+           "schwelle" : -100
+       }
+   ],
+  
+  "watson": {
+      "quiz": {
+          "frage": "Seltsam. Wurde das ausgemeißelt? <br><br> Wo können wir da hineinschauen?",
+          "antwort" : [
+              {
+                  "text": "in eine Versteinerung",
+                  "richtig": true
+              },
+              {
+                  "text": "in ein altes Getriebe",
+                  "richtig": false
+              },  
+              {
+                  "text": "in einen Messkelch",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Sucht die schattige Höhle, in einer alten Glasvitrine, recht nah bei den Straßenfenstern... <br> Aber Vorsicht: die Schatzkammer könnte gut bewacht sein!",
+      "post_2": "Als es dunkel wurde habe ich die kleinen Bergleute entdeckt und mitsamt ihrer Höhle entwendet. Ab heute bewachen sie meine Wohnung! <br> Alt und geheimnisvoll, ganz nach meinem Geschmack!",
+      "leinertext": "Ich danke Dr. Watson und seinem Team! <br> Was für ein Unfug! Das ist die Versteinerung eines Schalentiers, aus dem Ur-Ozean. Da braucht es keine Zwerge als Baumeister. <br> Bringt das Fossil zurück, bevor ich wirklich noch Wächter vor die Vitrinen stelle!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Sieht seltsam ausgemeißelt aus. <br><br> Wo können wir da hineinschauen?",
+          "antwort" : [
+              {
+                  "text": "in ein Fossil",
+                  "richtig": true
+              },
+              {
+                  "text": "in ein altes Getriebe",
+                  "richtig": false
+              },  
+              {
+                  "text": "in ein Schneckenhaus",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Sucht die schattige Höhle, in einer alten Glasvitrine, recht nah bei den Straßenfenstern... <br> Aber Vorsicht: die Schatzkammer könnte gut bewacht sein!",
+      "post_2": "Als es dunkel wurde habe ich die kleinen Bergleute entdeckt und mitsamt ihrer Höhle entwendet. Ab heute bewachen sie meine Wohnung! <br> Alt und geheimnisvoll, ganz nach meinem Geschmack!",
+      "leinertext": "Ich danke Dr. Watson und seinem Team! <br> Was für ein Unfug! Das ist die Versteinerung eines Schalentiers, das vor 50 Millionen Jahre im Ur-Ozean gelebt hat. Da braucht es keine Zwerge als Baumeister. <br> Bringt das Fossil zurück, bevor ich wirklich noch Wächter vor die Vitrinen stelle!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Seltsam. Wurde das ausgemeißelt? <br><br> Wo können wir da hineinschauen?",
+          "antwort" : [
+              {
+                  "text": "in ein Fossil",
+                  "richtig": true
+              },
+              {
+                  "text": "in ein Schneckenhaus",
+                  "richtig": false
+              },  
+              {
+                  "text": "in eine Volute",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Geheimnisivoll und dunkel. <br> Sucht die schattige Höhle, in einer alten Glasvitrine, recht nah bei den Straßenfenstern... <br> Aber Vorsicht: die Schatzkammer könnte gut bewacht sein!",
+      "post_2": "Als es dunkel wurde habe ich die kleinen Bergleute entdeckt und mitsamt ihrer Höhle entwendet. Ab heute bewachen sie meine Wohnung! <br> Alt und geheimnisvoll, ganz nach meinem Geschmack!",
+      "leinertext": "Ich danke Enola Holmes und ihren Helferinnen und Helfern und bebe vor Zorn: Die Phantasien dieses Diebs sind so dreist wie seine Taten! <br> Das ist die Versteinerung eines Ammoniten. Das ist ein Schalentier, das vor 50 Millionen Jahre im Ur-Ozean gelebt hat. Da braucht es keine Zwerge als Baumeister. <br> Bringt das Fossil zurück, bevor ich wirklich noch Wächter vor die Vitrinen stelle!"
+  }
+}

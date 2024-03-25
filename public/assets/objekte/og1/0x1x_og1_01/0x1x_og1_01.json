@@ -1,0 +1,100 @@
+{
+  "code": "0x1x_og1_01",
+  "nr": 57,
+  "ort": "og1",
+  "name": "Babybauch",
+  "genus": {
+    "maskulin": true,
+    "feminin": false,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#alter_Babybauch",
+       "code": "xxxx"
+    },
+    {
+       "text": "#alt_und_symbolisch",
+       "code": "0x1x"
+    }
+   ],
+   "beacon": [
+       {
+           "id" : 0,
+           "schwelle" : -100
+       }
+   ],
+  
+  "watson": {
+      "quiz": {
+          "frage": "Wie dreist ist das denn?! <br><br> Was wurde hier schon wieder ausgetauscht...",
+          "antwort" : [
+              {
+                  "text": "Ein Baby im Bauch seiner Mutter",
+                  "richtig": true
+              },
+              {
+                  "text": "Ein betender Mann im Federschmuck",
+                  "richtig": false
+              },  
+              {
+                  "text": "Ein kleines Götzenbild im Strahlenkranz",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Das sieht alt und geheimnisvoll aus! <br> In diesem Saal gibt es so große Altarbilder, da kann man dieses Tontäfelchen fast übersehen...",
+      "post_2": "Heilige Babys im Bauch ihrer Mütter! <br> Hach wie gerne gehe ich alten Bedeutungen auf den Grund...<br> Die Mütter heißen Maria und Elisabeth. <br> Und die Babies? Das müsst ihr selbst herausfinden.",
+      "leinertext": "Danke lieber Dr. Watson und allen, die das Detail gefunden haben. <br> Die Lösung des Rätsels steht in der Bibel. <br> Maria ist die Mutter von Jesus. Elisabeth ist die Mutter von Johannes dem Täufer. Beide Babys erkennen sich schon im Bauch ihrer Mütter! <br> Bringt das kostbare Detail bitte wieder zurück in mein Rosgartenmuseum!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Liebe Kunstdetektive, was wurde hier schon wieder ganz dreist ausgetauscht?",
+          "antwort" : [
+              {
+                  "text": "Ein Baby im Bauch seiner Mutter",
+                  "richtig": true
+              },
+              {
+                  "text": "Ein betender Mann im Federschmuck",
+                  "richtig": false
+              },  
+              {
+                  "text": "Ein kleines Götzenbild im Strahlenkranz",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Das sieht alt und geheimnisvoll aus! <br> Also habe ich dieses Tontäfelchen etwas genauer untersucht. In diesem Saal gibt es so große Altarbilder, da kann man das Kleinod fast übersehen.",
+      "post_2": "Heilige Babys im Bauch ihrer Mütter! <br> Hach wie gerne gehe ich alten Bedeutungen auf den Grund... <br> Die Mütter heißen Maria und Elisabeth. <br> Und die Babies? Das müsst ihr selbst herausfinden.",
+      "leinertext": "Danke lieber Sherlock Holmes und allen, die das Detail gefunden haben. <br> Bleibt diesem Detaildieb bitte auf den Fersen! <br> Die Lösung des Rätsels steht in der Bibel. <br> Maria ist die Mutter von Jesus. Elisabeth ist die Mutter von Johannes dem Täufer. Beide Babys erkennen sich schon im Bauch ihrer Mütter! <br> Bringt das kostbare Detail bitte wieder zurück in mein Rosgartenmuseum!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Liebe Kunstdetektive, was wurde hier schon wieder ganz dreist ausgetauscht?",
+          "antwort" : [
+              {
+                  "text": "Ein Baby im Bauch seiner Mutter",
+                  "richtig": true
+              },
+              {
+                  "text": "Ein betender Mann im Federschmuck",
+                  "richtig": false
+              },  
+              {
+                  "text": "Ein kleines Götzenbild im Strahlenkranz",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Das sieht alt und geheimnisvoll aus! <br> Also habe ich dieses gebrannte Tontäfelchen etwas genauer untersucht. <br> In diesem Saal gibt es so große Altarbilder, da kann man das Kleinod fast übersehen.",
+      "post_2": "Diese zwei seltsamen Strahlenkränze auf Bauchhöhe, wisst ihr, was die bedeuten sollen? Heilige Babys im Bauch ihrer Mütter! <br> Und soll ich noch mehr verraten? Die Mütter heißen Maria und Elisabeth. <br> Wie die Babies heißen, müsst ihr selbst herausfinden... <br> Hach wie gerne gehe ich alten Bedeutungen auf den Grund... ",
+      "leinertext": "Danke liebe Enola Holmes. Bleiben Sie diesem Detaildieb auf den Fersen! <br> Soll ich das Rätsel auflösen? Das mache ich gerne: Maria ist die Mutter von Jesus. Elisabeth ist die Mutter von Johannes dem Täufer. In der Bibel steht, dass sich beide Babys schon bei ihrer ersten Begegnung im Bauch ihrer Mütter erkennen. Keine einfache Aufgabe, die Szene in einem Bild zu zeigen...<br> Maria erkennt ihr übrigens am Rosenstock. <br> Ein Grund mehr, das kostbare Detail wieder in meinem Rosgartenmuseum zu zeigen!"
+  }
+}

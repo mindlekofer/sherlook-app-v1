@@ -1,0 +1,32 @@
+{
+  "code": "10x0",
+  "name": "Gigi Glam",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "Aktualität",
+    "Fakten",
+    "Highlights"
+  ],
+  "accountnamen": [
+    "selten_schön",
+    "numis_dorado",
+    "gold_richtig"
+  ],
+  "gruppen": [
+    "10xx",
+    "1xx0",
+    "x0x0"
+  ],
+  "watson": {
+    "steckbrief": "<b> GIGI GLAM </b> <ul> <li> mag alte Dinge, die eine neue Aktualität gewinnen </li> <li> kennt viele Fakten, Daten und Sprachen </li> <li> mag großartige Objekte </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> GIGI GLAM </b> <ul> <li> mag alte Dinge, die eine neue Aktualität gewinnen </li> <li> kennt viele Fakten, Daten und Sprachen </li> <li> mag großartige Objekte </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> GIGI GLAM </b> spricht viele Sprachen. Sie war schon früh und oft mit ihrer Famile im Museum. Die kleine Gigi war ganz begeistert und zeigte ein tolles Gedächnis, für Fakten, Begriffe und Daten. Sie liebt es wenn alte Dinge eine neue Aktualität gewinnen und träumt von einer Sammlung, in der es einfach nur großartig aussieht!"
+  }
+}

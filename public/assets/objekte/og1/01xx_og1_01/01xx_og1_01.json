@@ -1,0 +1,102 @@
+{
+  "code": "01xx_og1_01",
+  "nr": 91,
+  "ort": "og1",
+  "name": "Hostienkelch",
+  "genus": {
+    "maskulin": true,
+    "feminin": false,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#phantastische_Türen",
+       "code": "x1xx"
+    },
+    {
+       "text": "#symbole_entschlüsseln",
+       "code": "0xxx"
+    }
+   ],
+   "beacon": [
+       {
+           "id" : 0,
+           "schwelle" : -100
+       }
+   ],
+  
+  "watson": {
+      "quiz": {
+          "frage": "Rund und rätselhaft... <br><br> Könnt ihr erkennen, was da gefälscht worden ist?",
+          "antwort" : [
+              {
+                  "text": "Hostie",
+                  "richtig": true
+              },
+              {
+                  "text": "Vollmond",
+                  "richtig": false
+              },  
+              {
+                  "text": "Lampion",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "In diesem Raum gibt es zwei Altäre, die sehen ganz ähnlich aus. <br> Bei einem hängen die Tafeln wie drei Türen an der Wand...",
+      "post_2": "Da komm ich doch gleich ins Dichten: Kennt ihr das Königreich von Narnia? Um in diese alte Welt zu gelangen, muss man auch durch eine Schranktür gehen. <br> Und genau das werde ich jetzt mit meinen alt-ehrwürdigen Altartüren versuchen.",
+      "leinertext": "Ich danke Dr. Watson und seinem Team! <br> Das sind Flügel eines Altars, keine Türen eines Schrankes. <br> Besiegt diesen Diebl! <br> Schaut Euch die hl. Margeritha auf der rechten Tafel an. Sie steht auf einem Drachen! Den hat sie zum Glück auch schon besiegt!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Rund und rätselhaft... <br><br> Könnt ihr erkennen, was da gefälscht worden ist?",
+          "antwort" : [
+              {
+                  "text": "Hostie",
+                  "richtig": true
+              },
+              {
+                  "text": "Makrone",
+                  "richtig": false
+              },  
+              {
+                  "text": "Silbermünze",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "In diesem Raum gibt es zwei Altäre, die sehen ganz ähnlich aus. Aber nur bei einem hängen die Tafeln wie drei Türen an der Wand... <br> Solch alt-ehrwürdigen Kräfte darf man nicht verschwenden!",
+      "post_2": "Da komm ich doch gleich ins Dichten und Fabulieren: Kennt ihr das Königreich von Narnia? Um in diese alte Welt zu gelangen, muss man auch durch eine Schranktür gehen. <br> Und genau das werde ich jetzt mit meinen alt-ehrwürdigen Altartüren versuchen. <br> Seht ihr den geheimnisvollen Turm mit dem Kelch? Er weist mir den Weg...",
+      "leinertext": "Ich danke dem Team um den berühmten Sherlock Holmes, sehr gute Arbeit! <br> Das sind Flügel eines alten Altars, keine Türen eines alten Schrankes: Seht ihr links die heilige Katharina mit dem Schwert und die heilige Barbara mit dem Turm? <br> Mein Liebling ist aber die hl. Margeritha, die einen Drachen besiegt hat. <br> Nehmt sie Euch zum Vorbild und besiegt diesen dreisten Dieb!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Rund und rätselhaft... <br><br> Könnt ihr erkennen, was da gefälscht worden ist?",
+          "antwort" : [
+              {
+                  "text": "Eine Hostie",
+                  "richtig": true
+              },
+              {
+                  "text": "Ein Hustaler",
+                  "richtig": false
+              },  
+              {
+                  "text": "Eine Pfeffernuss",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "In diesem Raum gibt es zwei Altäre, die sehen ganz ähnlich aus. Aber nur bei einem hängen die Tafeln wie drei Türen an der Wand... <br> Solch alt-ehrwürdigen Kräfte darf man nicht verschwenden! <br> Gleich werdet ihr sehen, was ich meine...",
+      "post_2": "Da komm ich doch gleich ins Dichten und Fabulieren: Kennt ihr das Königreich von Narnia? Um in diese alte Welt zu gelangen, muss man auch durch eine Schranktür gehen. <br> Und genau das werde ich jetzt mit meinen alt-ehrwürdigen Altartüren versuchen. <br> Die heilige Barbara ist mein Vorbild. Seht ihr ihren geheimnisvollen Turm mit dem Kelch? Er weist mir den Weg...",
+      "leinertext": "Ich danke Enola Holmes und ihren Helferinnen und Helfern. <br> Da stehen mir ja wirklich die Haare zu Berge! Das sind Flügel eines alten Altars, keine Türen eines alten Schrankes. Seht ihr links die heilige Katharina mit dem Schwert und die heilige Barbara mit dem Turm? <br> Mein Liebling ist aber die hl. Margeritha, die einen Drachen besiegt hat. <br> Nehmt sie Euch zum Vorbild und besiegt diesen dreisten Dieb!"
+  }
+}
+
+

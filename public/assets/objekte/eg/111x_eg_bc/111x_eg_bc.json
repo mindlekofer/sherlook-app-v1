@@ -1,0 +1,100 @@
+{
+  "code": "111x_eg_bc",
+  "nr": 31,
+  "ort": "eg",
+  "name": "Katze",
+  "genus": {
+    "maskulin": false,
+    "feminin": true,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#katze_krallen",
+       "code": "xxxx"
+    },
+    {
+       "text": "#principessa_raum_für_tiere",
+       "code": "x1xx"
+    }
+   ],
+   "beacon": [
+       {
+           "id" : 0,
+           "schwelle" : -100
+       }
+   ],
+  
+  "watson": {
+      "quiz": {
+          "frage": "Eine lustige Fälschung! <br><br> Was ist denn das für ein knuffiges Tier mit Krone?",
+          "antwort" : [
+              {
+                  "text": "Eine Katze",
+                  "richtig": true
+              },
+              {
+                  "text": "Ein Hund",
+                  "richtig": false
+              },  
+              {
+                  "text": "Ein Seelöwe",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Ein Poster in der Vitrine. Bewacht von vielen Lanzen an der Decke. Trotzdem habe ich mir diese süße Katze gekrallt. Denn sie erinnert mich an jemand ...",
+      "post_2": "Das Wappen erinnert mich an meine alte Katze Principessa. Mit ihr bin ich früher in den Weltraum geflogen. Und in ihrem Namen habe ich letzte Woche einen Tierschutzverein gegründet. Da kann ich dieses Wappen sehr gut gebrauchen. Ich will Bedeutsames schaffen!",
+      "leinertext": "Danke, liebes Team um Dr. Watson. Die Gesellschaft zur Katz war natürlich kein Tierschutzverein, sondern eine Vereinigung von Bürgern und Bürgerinnen der Stadt Konstanz aus dem 14. Jahrhundert. Ihr Zunfthaus steht noch in der Katzgasse, die zum Münster führt. Bringt das bedeutsame Wappen bitte schnell zurück!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+        "frage": "Eine lustige Fälschung! <br><br> Was ist denn das für ein knuffiges Tier mit Krone?",
+        "antwort" : [
+              {
+                  "text": "Das Wappen der Gesellschaft zur Katz",
+                  "richtig": true
+              },
+              {
+                  "text": "Das Wappen der Gesellschaft zum Löwen",
+                  "richtig": false
+              },  
+              {
+                  "text": "Das Wappen der Gesellschaft zum Tiger",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Ein Poster in der Vitrine. Bewacht von vielen Lanzen an der Decke. Trotzdem habe ich mir diese süße Katze gekrallt. Denn sie erinnert mich an jemand ...",
+      "post_2": "Das Wappen erinnert mich an meine alte Katze Principessa. Mit ihr bin ich früher in den Weltraum geflogen. Und in ihrem Namen habe ich letzte Woche einen Tierschutzverein gegründet. Und da kann ich dieses Wappen sehr gut gebrauchen. Ich will Bedeutsames schaffen!",
+      "leinertext": "Danke, lieber Sherlock Holmes, bleiben sie dieser Serie von Diebstählen auf der Spur. Mir stehen die Haare zu Berge. Die Gesellschaft zur Katz war natürlich kein Tierschutzverein, sondern eine Vereinigung von Bürgern und Bürgerinnen der Stadt Konstanz, die schon im 14. Jahrhundert gegründet wurde. Ihr Zunfthaus steht noch in der Katzgasse, die zum Münster führt. Bringt das bedeutsame Wappen bitte schnell und unverfälscht zurück!"
+  },
+
+  "enola": {
+      "quiz": {
+        "frage": "Eine lustige Fälschung! <br><br> Was ist denn das für ein knuffiges Tier mit Krone?",
+          "antwort" : [
+              {
+                  "text": "Das Wappen der Gesellschaft zur Katz",
+                  "richtig": true
+              },
+              {
+                  "text": "Das Wappen der Gesellschaft zur Tatz",
+                  "richtig": false
+              },  
+              {
+                  "text": "Das Wappen der Gesellschaft zur Hatz",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Ein Poster in der Vitrine. Bewacht von vielen Lanzen an der Decke. Trotzdem habe ich mir diese süße Katze gekrallt. Denn sie erinnert mich an jemand ...",
+      "post_2": "Das Wappen erinnert mich an meine alte Katze Principessa. Mit ihr bin ich früher in den Weltraum geflogen. Und in ihrem Namen habe ich letzte Woche einen Tierschutzverein gegründet: \"Schafft Raum für Tiere!!\" Da kann ich dieses Wappen sehr gut gebrauchen. Ich will Bedeutsames schaffen.",
+      "leinertext": "Danke, liebes Team um Enola Holmes. Mir stehen die Haare zu Berge. Die Gesellschaft zur Katz war natürlich kein Tierschutzverein, sondern eine Vereinigung von Bürgern und Bürgerinnen der Stadt Konstanz, die schon im 14. Jahrhundert gegründet wurde. \"Katz\" war erst als Schmähung gemeint und wurde dann zum Zeichen von Stärke und Gemeinschaft. Davon zeugt auch das Zunfthaus in der Katzgasse, die zum Münster führt. Bringt das bedeutsame Wappen bitte schnell und unverfälscht zurück!"
+  }
+}

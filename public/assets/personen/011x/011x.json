@@ -1,0 +1,32 @@
+{
+  "code": "011x",
+  "name": "Lavinia Lee",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "alt & fremd",
+    "Phantasie",
+    "Bedeutung"
+  ],
+  "accountnamen": [
+    "antiquarius",
+    "schaetze_suchen",
+    "saetze_sind_schaetze"
+  ],
+  "gruppen": [
+    "01xx",
+    "0x1x",
+    "x11x"
+  ],
+  "watson": {
+    "steckbrief": "<b> LAVINIA LEE </b> <ul> <li> mag wenn etwas alt und geheimnisvoll aussieht </li> <li> hat eine reiche Phantasie </li> <li> liebt alte Bedeutungen und eigene Erinnerungen </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> LAVINIA LEE </b> <ul> <li> mag wenn etwas richtig alt und geheimnisvoll aussieht </li> <li> malt sich vieles in ihrer Phantasie noch weiter aus </li> <li> vergessene Geschichten und alte Erinnerungen bedeuten ihr viel </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> LAVINIA LEE </b> mag, wenn man ihren schönen Stücken sofort ansieht, dass sie aus einer anderen Zeit stammen. Denn kann sie ihrer Phantasie wie ein Kind freien Lauf lassen. Alte Symbole, Geschichten und ihre Bedeutung versucht sie zu ergründen. Manchmal liest in alten Büchern, manchmal schwelgt sie nur in eigenen Erinnerungen und lacht über sich selbst. Langweilig wird es mit Lavinia jedenfalls nie!"
+  }
+}
