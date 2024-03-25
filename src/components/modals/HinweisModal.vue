@@ -9,7 +9,7 @@
             :username="`@${person.schuldig.accountnamen[nr-1]}`"
             :avatar="`assets/accounts/${person.schuldig.accountnamen[nr-1]}/${person.schuldig.accountnamen[nr-1]}.jpg`"
             :bild="`assets/objekte/${objekte_ort[nr-1].ort}/${objekte_ort[nr-1].code}/${objekte_ort[nr-1].code}_post1.jpg`"
-            :hashtag=objekte_ort[nr-1].hashtag_1
+            :hashtag=objekte_ort[nr-1].hashtag[0].text
             :likes="`randomInteger(30000, 42000)`"
             @hashtag-clicked="flow < 1.3 ? flow=1.3 : flow=flow"
             :eingetragen="flow>=1.3">
@@ -20,7 +20,7 @@
             :username="`@${person.schuldig.accountnamen[nr-1]}`"
             :avatar="`assets/accounts/${person.schuldig.accountnamen[nr-1]}/${person.schuldig.accountnamen[nr-1]}.jpg`"
             :bild="`assets/objekte/${objekte_ort[nr-1].ort}/${objekte_ort[nr-1].code}/${objekte_ort[nr-1].code}_post2.jpg`"
-            :hashtag=objekte_ort[nr-1].hashtag_2
+            :hashtag=objekte_ort[nr-1].hashtag[1].text
             :likes="`randomInteger(38000, 50000)`"
             @hashtag-clicked="flow < 1.7 ? flow=1.7 : flow=flow"
             :eingetragen="flow>=1.7">

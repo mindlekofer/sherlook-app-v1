@@ -133,11 +133,9 @@ import { modalController } from '@ionic/core';
 import { IonButton, IonToast } from '@ionic/vue';
 import { VideoHTMLAttributes, ref } from 'vue';
 import { useSpielStore } from '@/stores/SpielStore'
-import { useBilderStore } from '@/stores/BilderStore';
 import { useBeaconStore } from '@/stores/BeaconStore';
 
 import { model, cocoModel, modelGeladen, ladeModell } from '../../bilderkennung'
-
 
 import ButtonWeiterComponent from '../ButtonWeiterComponent.vue';
 import ButtonZurueckComponent from '../ButtonZurueckComponent.vue';
@@ -145,13 +143,13 @@ import ButtonZurueckComponent from '../ButtonZurueckComponent.vue';
 import '@tensorflow/tfjs-backend-cpu'
 import '@tensorflow/tfjs-backend-webgl'
 import * as tf from '@tensorflow/tfjs'
+import { flower } from 'ionicons/icons';
 // import * as cocoSsd from '@tensorflow-models/coco-ssd'
 
 
 console.log("opening KameraModal");
 
 const spielStore = useSpielStore();
-const bilderStore = useBilderStore();
 const beaconStore = useBeaconStore();
 
 // beaconStore.stopBt();
@@ -174,7 +172,6 @@ const erkennungAktiv = ref(false);
 const modelLoaded = ref(false);
 let tfCamera;
 let tfCapture;
-
 
 const manuelleAufloesung = ref(false);
 setTimeout(() => {manuelleAufloesung.value = true}, 2*60*1000);
@@ -200,6 +197,26 @@ const showBbox = ref(false);
 
 const kategorie = ref(0);
 const wahrscheinlichkeit = ref(0.0);
+
+const gesuchte_kategorie = ref(0);
+if (spielStore.flow == 0.8 && spielStore.ort == 'eg') {
+  gesuchte_kategorie.value = 79;
+  neuerFlow.value = 0.9;
+} else if (spielStore.flow == 0.8 && spielStore.ort == 'og1') {
+  gesuchte_kategorie.value = 80;
+  neuerFlow.value = 0.9;
+} else if (spielStore.flow == 1.4) {
+  gesuchte_kategorie.value = spielStore.objekte_ort[0].nr;
+  neuerFlow.value = 1.6;
+} else if (spielStore.flow == 2.4) {
+  gesuchte_kategorie.value = spielStore.objekte_ort[1].nr;
+  neuerFlow.value = 2.6;
+} else if (spielStore.flow == 3.4) {
+  gesuchte_kategorie.value = spielStore.objekte_ort[2].nr;
+  neuerFlow.value = 3.6;
+} else {
+  gesuchte_kategorie.value = 0;
+}
 
 let cam : any;
 let img;
@@ -331,8 +348,13 @@ async function predictModel()  {
       // console.log('predict: ', model.predict(tensor.expandDims(0)).argMax(1).dataSync()[0]);
       
       if (wahrscheinlichkeit.value >= 0.8 && objektIdentifiziert(kategorie.value)>0) {
-        neuerFlow.value = objektIdentifiziert(kategorie.value);
-        objektGefunden();
+        if (kategorie.value == gesuchte_kategorie.value)
+        {
+          faelschungGefunden.value = true;
+          videoAktiv.value = false;
+          erkennungAktiv.value = false;
+          videoRef.value?.pause();
+        }
       }
       else
         window.requestAnimationFrame(predictModel);
@@ -379,56 +401,49 @@ async function cocoPredict() {
   }
 }
 
-function objektIdentifiziert(kategorie : number, auswerten = true) {
-  let neuer_flow = 0;
-  if (spielStore.flow==0.8 && spielStore.ort=='eg' && (kategorie==79 || !auswerten) )      // Leiner-Statue
-  neuer_flow = 0.9;
-  else if (spielStore.flow==0.8 && spielStore.ort=='og1' && (kategorie==80 || !auswerten))  // Leiner-Aufsteller
-    neuer_flow = 0.9;
-  else if (spielStore.flow==1.4 && spielStore.ort=='eg' && (kategorie==78 || !auswerten))   // Ichtyosaurier
-    neuer_flow = 1.6;
-  else if (spielStore.flow==1.4 && spielStore.ort=='og1' && (kategorie==74 || !auswerten))  // Haarlocke
-    neuer_flow = 1.6;
-  else if (spielStore.flow==2.4 && spielStore.ort=='eg' && (kategorie==32 || !auswerten))   // Hellebarde
-    neuer_flow = 2.6;
-  else if (spielStore.flow==2.4 && spielStore.ort=='og1' && (kategorie==6 || !auswerten))  // Vorhängeschloss
-    neuer_flow = 2.6;
-  else if (spielStore.flow==3.4 && spielStore.ort=='eg' && (kategorie==12 || !auswerten))   // Kristall
-    neuer_flow = 3.6;
-  else if (spielStore.flow==3.4 && spielStore.ort=='og1' && (kategorie==9 || !auswerten))  // Kelch 
-    neuer_flow = 3.6;
-  return neuer_flow;
-}
+// function objektIdentifiziert(kategorie : number, auswerten = true) {
+//   let neuer_flow = 0;
+//   if (spielStore.flow==0.8 && spielStore.ort=='eg' && (kategorie==79 || !auswerten) )      // Leiner-Statue
+//   neuer_flow = 0.9;
+//   else if (spielStore.flow==0.8 && spielStore.ort=='og1' && (kategorie==80 || !auswerten))  // Leiner-Aufsteller
+//     neuer_flow = 0.9;
+//   else if (spielStore.flow==1.4 && spielStore.ort=='eg' && (kategorie==78 || !auswerten))   // Ichtyosaurier
+//     neuer_flow = 1.6;
+//   else if (spielStore.flow==1.4 && spielStore.ort=='og1' && (kategorie==74 || !auswerten))  // Haarlocke
+//     neuer_flow = 1.6;
+//   else if (spielStore.flow==2.4 && spielStore.ort=='eg' && (kategorie==32 || !auswerten))   // Hellebarde
+//     neuer_flow = 2.6;
+//   else if (spielStore.flow==2.4 && spielStore.ort=='og1' && (kategorie==6 || !auswerten))  // Vorhängeschloss
+//     neuer_flow = 2.6;
+//   else if (spielStore.flow==3.4 && spielStore.ort=='eg' && (kategorie==12 || !auswerten))   // Kristall
+//     neuer_flow = 3.6;
+//   else if (spielStore.flow==3.4 && spielStore.ort=='og1' && (kategorie==9 || !auswerten))  // Kelch 
+//     neuer_flow = 3.6;
+//   return neuer_flow;
+// }
 
-function objektIdentifiziertSubset(kategorie : number, auswerten = true) {
-  let ret = true;
-  if (spielStore.flow==0.8 && spielStore.ort=='eg' && (kategorie==6 || !auswerten) )      // Leiner-Statue
-    spielStore.flow = 0.9;
-  else if (spielStore.flow==0.8 && spielStore.ort=='og1' && (kategorie==7 || !auswerten))  // Leiner-Aufsteller
-    spielStore.flow = 0.88;
-  else if (spielStore.flow==1.4 && spielStore.ort=='eg' && (kategorie==5 || !auswerten))   // Ichtyosaurier
-    spielStore.flow = 1.6;
-  else if (spielStore.flow==1.4 && spielStore.ort=='og1' && (kategorie==1 || !auswerten))  // Haarlocke
-    spielStore.flow = 1.6;
-  else if (spielStore.flow==2.4 && spielStore.ort=='eg' && (kategorie==4 || !auswerten))   // Hellebarde
-    spielStore.flow = 2.6;
-  else if (spielStore.flow==2.4 && spielStore.ort=='og1' && (kategorie==0 || !auswerten))  // Vorhängeschloss
-    spielStore.flow = 2.6;
-  else if (spielStore.flow==3.4 && spielStore.ort=='eg' && (kategorie==3 || !auswerten))   // Kristall
-    spielStore.flow = 3.6;
-  else if (spielStore.flow==3.4 && spielStore.ort=='og1' && (kategorie==2 || !auswerten))  // Kelch 
-    spielStore.flow = 3.6;
-  else
-    ret = false;
-  return ret;
-}
-
-function objektGefunden() {
-  faelschungGefunden.value = true;
-  videoAktiv.value = false;
-  erkennungAktiv.value = false;
-  videoRef.value?.pause();
-}
+// function objektIdentifiziertSubset(kategorie : number, auswerten = true) {
+//   let ret = true;
+//   if (spielStore.flow==0.8 && spielStore.ort=='eg' && (kategorie==6 || !auswerten) )      // Leiner-Statue
+//     spielStore.flow = 0.9;
+//   else if (spielStore.flow==0.8 && spielStore.ort=='og1' && (kategorie==7 || !auswerten))  // Leiner-Aufsteller
+//     spielStore.flow = 0.88;
+//   else if (spielStore.flow==1.4 && spielStore.ort=='eg' && (kategorie==5 || !auswerten))   // Ichtyosaurier
+//     spielStore.flow = 1.6;
+//   else if (spielStore.flow==1.4 && spielStore.ort=='og1' && (kategorie==1 || !auswerten))  // Haarlocke
+//     spielStore.flow = 1.6;
+//   else if (spielStore.flow==2.4 && spielStore.ort=='eg' && (kategorie==4 || !auswerten))   // Hellebarde
+//     spielStore.flow = 2.6;
+//   else if (spielStore.flow==2.4 && spielStore.ort=='og1' && (kategorie==0 || !auswerten))  // Vorhängeschloss
+//     spielStore.flow = 2.6;
+//   else if (spielStore.flow==3.4 && spielStore.ort=='eg' && (kategorie==3 || !auswerten))   // Kristall
+//     spielStore.flow = 3.6;
+//   else if (spielStore.flow==3.4 && spielStore.ort=='og1' && (kategorie==2 || !auswerten))  // Kelch 
+//     spielStore.flow = 3.6;
+//   else
+//     ret = false;
+//   return ret;
+// }
 
 async function modalSchliessen() {
   console.log('modal schliessen');
