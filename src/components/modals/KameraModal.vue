@@ -1,7 +1,7 @@
 <template>
   <div class="modal-wrapper">
     <div class="modal-content">
-      <div id="erkannte-kategorie">{{ kategorie }}<br>{{ wahrscheinlichkeit.toFixed(2) }}</div>
+      <div id="erkannte-kategorie">({{gesuchte_kategorie}}) {{ kategorie }}<br>{{ wahrscheinlichkeit.toFixed(2) }}</div>
       <div class="objekt-info" v-show="erkennungAktiv">analysiere...</div>
       <div class="faelschung-gefunden" v-show="faelschungGefunden">Gefälscht!</div>
       <div id="kamerabild">
@@ -206,13 +206,13 @@ if (spielStore.flow == 0.8 && spielStore.ort == 'eg') {
   gesuchte_kategorie.value = 80;
   neuerFlow.value = 0.9;
 } else if (spielStore.flow == 1.4) {
-  gesuchte_kategorie.value = spielStore.objekte_ort[0].nr;
+  gesuchte_kategorie.value = spielStore.objekte_ort[0].bilderkennung.kategorie;
   neuerFlow.value = 1.6;
 } else if (spielStore.flow == 2.4) {
-  gesuchte_kategorie.value = spielStore.objekte_ort[1].nr;
+  gesuchte_kategorie.value = spielStore.objekte_ort[1].bilderkennung.kategorie;
   neuerFlow.value = 2.6;
 } else if (spielStore.flow == 3.4) {
-  gesuchte_kategorie.value = spielStore.objekte_ort[2].nr;
+  gesuchte_kategorie.value = spielStore.objekte_ort[2].bilderkennung.kategorie;
   neuerFlow.value = 3.6;
 } else {
   gesuchte_kategorie.value = 0;
@@ -347,17 +347,17 @@ async function predictModel()  {
       // console.log(predict);
       // console.log('predict: ', model.predict(tensor.expandDims(0)).argMax(1).dataSync()[0]);
       
-      if (wahrscheinlichkeit.value >= 0.8 && objektIdentifiziert(kategorie.value)>0) {
-        if (kategorie.value == gesuchte_kategorie.value)
-        {
-          faelschungGefunden.value = true;
-          videoAktiv.value = false;
-          erkennungAktiv.value = false;
-          videoRef.value?.pause();
-        }
-      }
-      else
+      if (wahrscheinlichkeit.value >= 0.80 
+          && kategorie.value != 0 
+          && gesuchte_kategorie.value != 0 
+          && kategorie.value == gesuchte_kategorie.value) {
+        faelschungGefunden.value = true;
+        videoAktiv.value = false;
+        erkennungAktiv.value = false;
+        videoRef.value?.pause();
+      } else {
         window.requestAnimationFrame(predictModel);
+      }
 
     } catch (error) {
       console.log(error);

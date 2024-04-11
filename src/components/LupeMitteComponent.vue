@@ -92,7 +92,8 @@ watch(props, () => {
   opacity: 0.2;
 }
 .vordergrund {
-  opacity: 90%;
+  /* opacity: 90%; */
+  opacity: 100%;
   z-index: 10;
 }
 .hintergrund {

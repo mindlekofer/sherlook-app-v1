@@ -18,8 +18,33 @@ export const useSpielStore = defineStore('spielStore', {
     verhaftet: [false, false, false],
     personVerhaftet: "",
     personenReihenfolge: [0,1,2],
-    objekte_eg: ['', '', ''],
-    objekte_og: ['', '', ''],
+    aktives_raetsel: 0,
+    raetsel: [
+      {
+        'schuldig': '00x0',
+        'unschuldig': {
+        'watson': ['11x1', '111x'],
+        'sherlock': ['111x', 'x111'],
+        'enola': ['11x0', '01x1'] 
+        },
+        'objekte': {
+          'eg': ['00x0_eg_02', 'x0x0_eg_02', '00x1_eg_ab'],
+          'og1': ['001x_og1_ab', '00x0_og1_ac', '10x0_og1_bc']
+        } 
+      },
+      {
+        'schuldig': '011x',
+        'unschuldig': {
+        'watson': ['100x', 'x001'],
+        'sherlock': ['x001', '10x0'],
+        'enola': ['110x', '000x'] 
+        },
+        'objekte': {
+          'eg': ['111x_eg_bc', '01x1_eg_ab', '001x_eg_ac'],
+          'og1': ['01xx_og1_01', 'x11x_og1_2', '0x1x_og1_01']
+        } 
+      }
+    ],
     objekte: {
       'eg': [
         objektMuster,

@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true">
-      <span class="debugging" id="debug-flow-anzeige">{{ spieler }} {{ ort }} {{ flow }} {{ slideNr }}</span>
+      <span class="debugging" id="debug-flow-anzeige">{{ raetsel[aktives_raetsel].schuldig }} {{ spieler }} {{ ort }} {{ flow }} {{ slideNr }} </span>
       <div id="container_alles">
         <div id="container_links">
           <div class="container_hinweise">
@@ -18,7 +18,7 @@
             />
             <HinweisBoxComponent class="hinweis-box" v-else-if="flow<5.0"
                 :zahl="'1'"
-                :gross="(flow>=1.3 && flow<2.0 && slideNr>=2) || (flow==2.0) || (flow>=2.3 && flow<=2.7 && slideNr>=2) || (flow>=3.3 && flow<=3.7 && slideNr>=2) || flow==3.0 || flow>=4.0"
+                :gross="(flow>=1.3 && flow<2.0 && slideNr>=2) || (flow==2.0) || (flow>=2.3 && flow<3.0 && slideNr>=2) || (flow>=3.3 && flow<4.0 && slideNr>=2) || flow==3.0 || flow>=4.0"
                 :buch="flow>=1.1"
                 :auswahl="(flow>=1.0 && flow<2.0) || hinweisModalOffenNr==1"
                 :vordergrund="flow>=1.0 && !lupeImVordergrund"
@@ -30,8 +30,8 @@
                 :abgeschlossen="flow>=2"
                 @click="hinweisClicked(1)"
                 @hinweis-clicked="console.log('Hinweis clicked')"
-                :hashtag1Rot="isHashtagFalsch(spielStore.personVerhaftet, objekte_ort[0].hashtag[0].code)"
-                :hashtag2Rot="isHashtagFalsch(spielStore.personVerhaftet, objekte_ort[0].hashtag[1].code)"
+                :hashtag1Rot="flow >= 4 ? isHashtagFalsch(spielStore.personVerhaftet, objekte_ort[0].hashtag[0].code) : false"
+                :hashtag2Rot="flow >= 4 ? isHashtagFalsch(spielStore.personVerhaftet, objekte_ort[0].hashtag[1].code) : false"
             />
             <!-- :bild="ort=='eg'?'assets/objekte/eg/00x0_eg_02/00x0_eg_02_rund.png':'assets/objekte/og1/00x0_og1_ac/00x0_og1_ac_rund.png'" -->
                 
@@ -42,7 +42,7 @@
             />
             <HinweisBoxComponent class="hinweis-box" v-else-if="flow<5.0"
                 :zahl="'2'"
-                :gross="(flow>=2.3 && flow<3.0 && slideNr>=2) || (flow==3.0) || (flow>=3.3 && flow <= 3.7 && slideNr>=2) || flow>=4.0"
+                :gross="(flow>=2.3 && flow<3.0 && slideNr>=2) || (flow==3.0) || (flow>=3.3 && flow<4.0 && slideNr>=2) || flow>=4.0"
                 :buch="flow>=2.1"
                 :auswahl="(flow>=2.0 && flow<3.0) || hinweisModalOffenNr==2" 
                 :vordergrund="flow>=2.0 && !lupeImVordergrund"
@@ -153,11 +153,11 @@
             />
             <ButtonKameraComponent v-else-if="flow<4.0" disabled></ButtonKameraComponent>
 
-            <span class="personen-boxen" v-if="flow>=4.1">
+            <span class="personen-boxen" v-if="flow>=4.2">
               <PersonenBoxComponent v-for="(n, i) in 3" :key="i"
                   :name=person_ort_spieler[i].name 
                   :code=person_ort_spieler[i].code
-                  @click="personClicked(n, person_ort_spieler[i].code)" 
+                  @click="flow<4.5 ? personClicked(n, person_ort_spieler[i].code) : ''"
                   :auswahl="personAusgewaehlt==n" 
                   :inaktiv="flow>=4.5"
                   :richtig="verhaftet[i] && (person_ort_spieler[i].code == person.schuldig.code)"
@@ -187,8 +187,8 @@
       <ion-alert
         :is-open="skipTutorialHinweisOffen"
         header="Hinweis"
-        sub-header="Wollen Sie das Tutorial wirklich überspringen?"
-        message="Sie können das Tutorial über das Einstellungsmenü auch während des Spielverlaufs wieder erreichen."
+        sub-header="Willst du das Tutorial wirklich überspringen?"
+        message="Du kannst das Tutorial jederzeit über das Einstellungsmenü, auch während des Spielverlaufs, wieder erreichen."
         :buttons="[
             {text: 'fortsetzen', role: 'cancel', handler: 'skipTutorialHinweis(false)'}, 
             {text:'Überspringen', role:'confirm', handler: skipTutorial}
@@ -384,8 +384,7 @@ import LupeMitteComponent from '@/components/LupeMitteComponent.vue';
 import PersonenBoxComponent from '@/components/PersonenBoxComponent.vue';
 import HinweisModal from '@/components/modals/HinweisModal.vue';
 import OutroModal from '@/components/modals/OutroModal.vue';
-import ObjekteModal from '@/components/modals/ObjekteModal.vue';
-import PersonenModal from '@/components/modals/PersonenModal.vue';
+import RaetselModal from '@/components/modals/RaetselModal.vue';
 import axios from 'axios';
 
 const spielStore = useSpielStore();
@@ -430,8 +429,8 @@ const scrollSeite = shallowRef(Scroll_0_6_Tutorial);
 
 const { flow, ort, spieler, btTrigger, kameraTrigger, slideNr, 
   ermittlungsAuswahl, verhaftet, verdaechtig, unverdaechtig, 
-  objekte_eg, objekte_og, objekte_ort,
-  personen_auswahl, person, personenReihenfolge, person_ort_spieler } = storeToRefs(spielStore);
+  objekte_ort,
+  person, personenReihenfolge, person_ort_spieler, raetsel, aktives_raetsel } = storeToRefs(spielStore);
 
 spielStore.flow = 0.6;
 
@@ -447,10 +446,10 @@ watch(flow, () => {
     lupeImVordergrund.value = false;
   }
   if (flow.value==1.1 || flow.value==2.1 || flow.value==3.1) {
-    lupeImVordergrund.value=true;
+    lupeImVordergrund.value = true;
   }
   if (flow.value==1.3 || flow.value==2.3 || flow.value==3.3) {
-    lupeImVordergrund.value=false;
+    lupeImVordergrund.value = false;
     timeoutObjektNichtGefunden.value = setTimeout(() => {
       if (flow.value < 1.4) flow.value = 1.36;
       else if (flow.value < 2.4) flow.value = 2.36;
@@ -494,14 +493,22 @@ watch(slideNr, () => {
   //     && slideNr.value>=2 && slideNr.value<=3) {
   //   lupeImVordergrund.value = false;
   // }
-  if (((flow.value>=1.3&&flow.value<=1.4) 
-      || (flow.value>=2.3&&flow.value<=2.4) 
-      || (flow.value>=3.3&&flow.value<=3.4)) 
+  console.log("(spiel) slideNr: ", slideNr.value);
+  if (flow.value==0.9 && slideNr.value==10) { // wenn auf letztem Slide
+    flow.value = 0.95;  // im Detektivbüro angekommen
+  }
+  if (((flow.value>=1.3 && flow.value<=1.4) 
+      || (flow.value>=2.3 && flow.value<=2.4) 
+      || (flow.value>=3.3 && flow.value<=3.4)) 
       && slideNr.value==3) {
-    lupeImVordergrund.value == true;
+    lupeImVordergrund.value = true;
+    console.log("(spiel->slideNr) lupeImVordergrund: ", lupeImVordergrund.value);
   }
   if (flow.value==1.7 && slideNr.value==6) {
-    flow.value=1.8;
+    flow.value = 1.8;
+  }
+  if (flow.value==4.1 && slideNr.value==1) {
+    flow.value = 4.2;
   }
 });
 
@@ -551,7 +558,7 @@ watch(rangeTicks, () => {
       }
     }
     if (flow.value == 1.4) {
-      empfang.value = beaconStore.getEmpfangVonIndex(objekte_ort.value[0].beacon[0].id);
+      empfang.value = beaconStore.getEmpfangVonId(objekte_ort.value[0].beacon[0].id);
     }
     if (flow.value==2.3 || flow.value==2.36) {
       if (beaconStore.getBeaconVonId(objekte_ort.value[1].beacon[0].id).rssi > objekte_ort.value[1].beacon[0].schwelle) {
@@ -559,7 +566,7 @@ watch(rangeTicks, () => {
       }
     }
     if (flow.value == 2.4) {
-      empfang.value = beaconStore.getEmpfangVonIndex(objekte_ort.value[1].beacon[0].id);
+      empfang.value = beaconStore.getEmpfangVonId(objekte_ort.value[1].beacon[0].id);
     }
     if (flow.value==3.3 || flow.value==3.36) {
       if (beaconStore.getBeaconVonId(objekte_ort.value[2].beacon[0].id).rssi > objekte_ort.value[2].beacon[0].schwelle) {
@@ -567,7 +574,7 @@ watch(rangeTicks, () => {
       }
     }
     if (flow.value == 3.4) {
-      empfang.value = beaconStore.getEmpfangVonIndex(objekte_ort.value[2].beacon[0].id);
+      empfang.value = beaconStore.getEmpfangVonId(objekte_ort.value[2].beacon[0].id);
     }
     if (flow.value == 4.0) {
       if (beaconStore.getBeaconVonOrt('EG Detektivbüro').rssi > -95) {
@@ -577,59 +584,43 @@ watch(rangeTicks, () => {
   }
 });
 
-watch(objekte_eg, () => {
-  console.log('Änderung: ' + objekte_eg.value);
-  for (let i=0; i<3; i++) {
-    axios.get('assets/objekte/eg/'+spielStore.objekte_eg[i]+'/'+spielStore.objekte_eg[i]+'.json')
-        .then(response => { spielStore.objekte.eg[i] = response.data, console.log(response); });
-  }
-  for (let i=0; i<3; i++) {
-    axios.get('assets/objekte/eg/'+spielStore.objekte_eg[i]+'/'+spielStore.objekte_eg[i]+'.json')
-        .then(response => { spielStore.objekte.eg[i] = response.data, console.log(response); });
-  }
-});
-
-watch(objekte_og, () => {
-  console.log('Änderung: ' + objekte_og.value);
-  for (let i=0; i<3; i++) {
-    axios.get('assets/objekte/og1/'+spielStore.objekte_og[i]+'/'+spielStore.objekte_og[i]+'.json')
-        .then(response => { spielStore.objekte.og1[i] = response.data, console.log(response); });
-  }
-});
-
-watch(personen_auswahl, () => {
-  console.log('Personenauswahl geändert: ', personen_auswahl);
-  axios.get('assets/personen/'+personen_auswahl.value.schuldig+'/'+personen_auswahl.value.schuldig+'.json')
+watch(aktives_raetsel, () => {
+  console.log('Rätsel geändert: ', aktives_raetsel);
+  // Schuldiger //
+  axios.get('assets/personen/'+raetsel.value[aktives_raetsel.value].schuldig+'/'+raetsel.value[aktives_raetsel.value].schuldig+'.json')
         .then(response => { person.value.schuldig = response.data; console.log('Person (schuldig): ', person.value.schuldig); })
         .catch( (error) => {console.log("Axios Fehler: ", error)});
+  // Unschuldige //
   for (let i=0; i<2; i++) {
-    axios.get('assets/personen/'+personen_auswahl.value.unschuldig.watson[i]+'/'+personen_auswahl.value.unschuldig.watson[i]+'.json')
+    axios.get('assets/personen/'+raetsel.value[aktives_raetsel.value].unschuldig.watson[i]+'/'+raetsel.value[aktives_raetsel.value].unschuldig.watson[i]+'.json')
       .then(response => { person.value.unschuldig.watson[i] = response.data; console.log('Person (unschuldig, Watson): ', response.data); })
       .catch( (error) => {console.log("Axios Fehler: ", error)});
   }
   for (let i=0; i<2; i++) {
-    axios.get('assets/personen/'+personen_auswahl.value.unschuldig.sherlock[i]+'/'+personen_auswahl.value.unschuldig.sherlock[i]+'.json')
+    axios.get('assets/personen/'+raetsel.value[aktives_raetsel.value].unschuldig.sherlock[i]+'/'+raetsel.value[aktives_raetsel.value].unschuldig.sherlock[i]+'.json')
       .then(response => { person.value.unschuldig.sherlock[i] = response.data; console.log('Person (unschuldig, Sherlock): ', response.data); })
       .catch( (error) => {console.log("Axios Fehler: ", error)});
     }
   for (let i=0; i<2; i++) {
-      axios.get('assets/personen/'+personen_auswahl.value.unschuldig.enola[i]+'/'+personen_auswahl.value.unschuldig.enola[i]+'.json')
+      axios.get('assets/personen/'+raetsel.value[aktives_raetsel.value].unschuldig.enola[i]+'/'+raetsel.value[aktives_raetsel.value].unschuldig.enola[i]+'.json')
       .then(response => { person.value.unschuldig.enola[i] = response.data; console.log('Person (unschuldig, Enola): ', response.data); })
       .catch( (error) => {console.log("Axios Fehler: ", error)});
   }
-});
-
-objekte_eg.value = ['00x0_eg_02', 'x0x0_eg_02', '00x1_eg_ab'];
-objekte_og.value = ['001x_og1_ab', '00x0_og1_ac', '10x0_og1_bc'];
-
-personen_auswahl.value = {
-  'schuldig': '00x0',
-  'unschuldig': {
-  'watson': ['11x1', '111x'],
-  'sherlock': ['111x', 'x111'],
-  'enola': ['11x0', '01x1'] 
+  // Objekte EG //
+  for (let i=0; i<3; i++) {
+    axios.get('assets/objekte/eg/'
+        +spielStore.raetsel[spielStore.aktives_raetsel].objekte.eg[i]+'/'
+        +spielStore.raetsel[spielStore.aktives_raetsel].objekte.eg[i]+'.json')
+            .then(response => { spielStore.objekte.eg[i] = response.data, console.log(response); });
   }
-};
+  // Objekte OG1 //
+  for (let i=0; i<3; i++) {
+    axios.get('assets/objekte/og1/'
+        +spielStore.raetsel[spielStore.aktives_raetsel].objekte.og1[i]+'/'
+        +spielStore.raetsel[spielStore.aktives_raetsel].objekte.og1[i]+'.json')
+            .then(response => { spielStore.objekte.og1[i] = response.data, console.log(response); });
+  }
+});
 
 function hinweisClicked(nr : number) {
   console.log(`Hinweis ${nr} clicked`);
@@ -700,18 +691,12 @@ const openSpielMenu = async () => {
       cssClass: 'einstellungs-modal',
       backdropDismiss: true });
     einstellungs_modal.present();
-  } else if (data == "objekte") {
-    const objekte_modal = await modalController.create({
-      component: ObjekteModal,
-      cssClass: 'objekte-modal',
+  } else if (data == "rätsel") {
+    const raetsel_modal = await modalController.create({
+      component: RaetselModal,
+      cssClass: 'raetsel-modal',
       backdropDismiss: true });
-    objekte_modal.present();
-  } else if (data == "personen") {
-    const personen_modal = await modalController.create({
-      component: PersonenModal,
-      cssClass: 'personen-modal',
-      backdropDismiss: true });
-    personen_modal.present();
+    raetsel_modal.present();
   }
 };
 const openKarteModal = async () => {
@@ -834,18 +819,18 @@ const openHinweisModal = async (nr: number) => {
   hinweisModalOffenNr.value = 0;
 }
 
-const openObjekteModal = async (nr: number) => {
-  console.log("openObjekteModal()");
-  const objekte_modal = await modalController.create({
-    component: ObjekteModal,
-    cssClass: 'hinweis-modal',
-    componentProps: {
-      nr: nr
-    }
-  });
-  objekte_modal.present();
-  await objekte_modal.onWillDismiss();
-}
+// const openObjekteModal = async (nr: number) => {
+//   console.log("openObjekteModal()");
+//   const objekte_modal = await modalController.create({
+//     component: ObjekteModal,
+//     cssClass: 'hinweis-modal',
+//     componentProps: {
+//       nr: nr
+//     }
+//   });
+//   objekte_modal.present();
+//   await objekte_modal.onWillDismiss();
+// }
 
 const personAusgewaehlt = ref(0);
 

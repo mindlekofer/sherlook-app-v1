@@ -4,9 +4,6 @@
     <div class="modal-content">
       <ion-button @click="modalController.dismiss('einstellungen')" size="large" fill="outline" expand="block">Einstellungen</ion-button>
       <ion-button @click="modalController.dismiss('rätsel')" size="large" fill="outline" expand="block">Rätsel</ion-button>
-      <ion-button @click="modalController.dismiss('beacons')" size="large" fill="outline" expand="block">Beacons</ion-button>
-      <ion-button @click="modalController.dismiss('kamera')" size="large" fill="outline" expand="block">Kamera</ion-button>
-      <ion-button @click="beendeHinweis(true)" color="danger" size="large" fill="outline" expand="block">Spiel beenden</ion-button>
     </div>
     <div class="modal-control">
       <ion-button size="large" @click="modalController.dismiss()">zurück zum Spiel</ion-button>

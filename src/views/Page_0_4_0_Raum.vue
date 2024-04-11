@@ -25,9 +25,11 @@
         <div class="auswahl_box">
           <img src="assets/img/halbraum_lang.svg"  @click="spielStore.ort = 'og1'"/>
           <div class="objekte_container">
-            <img :src="'assets/objekte/og1/'+objekte_og[0]+'/'+objekte_og[0]+'_rund.png'" @click="spielStore.ort = 'og1'"/>
-            <img :src="'assets/objekte/og1/'+objekte_og[1]+'/'+objekte_og[1]+'_rund.png'" @click="spielStore.ort = 'og1'"/>
-            <img :src="'assets/objekte/og1/'+objekte_og[2]+'/'+objekte_og[2]+'_rund.png'" @click="spielStore.ort = 'og1'"/>
+            <img :src="'assets/objekte/og1/'
+                +spielStore.raetsel[spielStore.aktives_raetsel].objekte.og1[i]+'/'
+                +spielStore.raetsel[spielStore.aktives_raetsel].objekte.og1[i]+'_rund.png'" 
+                @click="spielStore.ort = 'og1'" v-for="(n,i) in 3" :key="n"
+            />
           </div>
           <ion-button color="primary" expand="block" size="large" :fill="spielStore.ort == 'og1' ? 'solid' : 'outline'" @click="spielStore.ort = 'og1'">
             <div class="button_inhalt">
@@ -39,9 +41,11 @@
         <div class="auswahl_box">
           <img src="assets/img/halbraum_lang.svg"  @click="spielStore.ort = 'eg'"/>
           <div class="objekte_container">
-            <img :src="'assets/objekte/eg/'+objekte_eg[0]+'/'+objekte_eg[0]+'_rund.png'" @click="spielStore.ort = 'eg'"/>
-            <img :src="'assets/objekte/eg/'+objekte_eg[1]+'/'+objekte_eg[1]+'_rund.png'" @click="spielStore.ort = 'eg'"/>
-            <img :src="'assets/objekte/eg/'+objekte_eg[2]+'/'+objekte_eg[2]+'_rund.png'" @click="spielStore.ort = 'eg'"/>
+            <img :src="'assets/objekte/eg/'
+                +spielStore.raetsel[spielStore.aktives_raetsel].objekte.eg[i]+'/'
+                +spielStore.raetsel[spielStore.aktives_raetsel].objekte.eg[i]+'_rund.png'" 
+                @click="spielStore.ort = 'eg'" v-for="(n,i) in 3"  :key="n"
+            />
           </div>
           <ion-button  color="primary" expand="block" size="large" :fill="spielStore.ort == 'eg' ? 'solid' : 'outline'" @click="spielStore.ort = 'eg'">
             <div class="button_inhalt">
@@ -190,6 +194,5 @@ p, ul {
   import { storeToRefs } from 'pinia';
 
   const spielStore = useSpielStore();
-  const { objekte_eg, objekte_og } = storeToRefs(spielStore);
 
 </script>

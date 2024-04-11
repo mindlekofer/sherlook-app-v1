@@ -2,10 +2,20 @@
   <div class="modal-wrapper">
     <div class="modal-content">
       <h1>
-          Objekte
+          Rätsel
       </h1>
       <div class="liste-enger_">
-       
+        
+        <ion-list>
+          <ion-radio-group v-model="spielStore.aktives_raetsel">
+            <ion-item>
+                <ion-radio value="0" label-placement="start" alignment="center" justify="space-between">00x0</ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-radio value="1" label-placement="start" alignment="center" justify="space-between">011x (neu)</ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
 
       </div>
     </div>

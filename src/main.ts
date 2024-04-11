@@ -40,5 +40,5 @@ router.isReady().then(() => {
 });
 
 
-ladeModell();
+// ladeModell();
 // ladeCocoModel();

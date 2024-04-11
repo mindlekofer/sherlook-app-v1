@@ -28,6 +28,9 @@
            "schwelle" : -100
        }
    ],
+   "bilderkennung": {
+     "kategorie": 99
+   },
   
   "watson": {
       "quiz": {

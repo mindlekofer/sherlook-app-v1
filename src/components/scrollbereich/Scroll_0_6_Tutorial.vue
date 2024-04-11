@@ -9,10 +9,10 @@
         <p> Willkommen im Detektivbüro Holmes! </p>
         <p> Mein Name ist Watson, Dr. Watson! </p>
         <p> Seid ihr bereit für diesen rätselhaften Fall? </p>
-        <p style="margin-top: 70px;">
+        <!-- <p style="margin-top: 70px;">
           <i>Wischt mit dem Finger oder drückt auf den grünen Weiter-Button, um auf die nächste Seite zu gelangen. <br>
             Ihr könnt jederzeit wieder zurückblättern, falls ihr etwas vergessen habt.</i>
-        </p>
+        </p> -->
       </span>
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="210"/>
@@ -24,12 +24,12 @@
           Schauen wir uns ein wenig um. Jede kleine Beobachtung kann später von unschätzbarem Wert sein.
           Seid ihr bereit? 
         </p>
-        <p style="margin-top: 0px;">
+        <!-- <p style="margin-top: 0px;">
           <i>
             Wischt mit dem Finger oder drückt auf den grünen Weiter-Button, um auf die nächste Seite zu gelangen. <br>
             Ihr könnt jederzeit wieder zurückblättern, falls ihr etwas vergessen habt.
           </i>
-        </p>
+        </p> -->
       </span>
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="180"/>
@@ -40,12 +40,12 @@
           Was für ein wunderbares Museum – und was für gemeine Diebstähle! Wir müssen den Täter oder die Täterin finden.<br>
           Seid ihr bereit?  
         </p>
-        <p style="margin-top: 20px;">
+        <!-- <p style="margin-top: 20px;">
           <i>
             Wischt mit dem Finger oder drückt auf den grünen Weiter-Button, um auf die nächste Seite zu gelangen. <br>
             Ihr könnt jederzeit wieder zurückblättern, falls ihr etwas vergessen habt.
           </i>
-        </p>
+        </p> -->
       </span>
       <!-- <div class="swipe-geste-horizontal" v-if="flow==0.6"></div> -->
       <div class="swipe-geste-horizontal"></div>
@@ -144,9 +144,9 @@
             Und los geht's!
             Sucht die Büste von Ludwig Leiner. 
           </p>
-          <p>
+          <!-- <p>
             Drückt auf den grünen Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den Weg.
-          </p>
+          </p> -->
         </span>
         <span v-else-if="spieler=='Sherlock' && ort=='eg'">
           <img class="spieler" src="assets/img/detektive/sherlock_gluecklich.png" width="240"/>
@@ -156,17 +156,17 @@
           <p> 
             Suchen wir die Büste von Ludwig Leiner. 
           </p>
-          <p>
+          <!-- <p>
             Drückt auf den grünen Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den Weg.
-          </p>
+          </p> -->
         </span>
         <span v-else-if="spieler=='Enola' && ort=='eg'">
           <img class="spieler" src="assets/img/detektive/enola_gluecklich.png" width="210"/>
           <p> 
             Wunderbar, das fängt gut an! <br>
             Und nun nichts wie hin zu dieser Bartlocke von Ludwig Leiner. 
-            <br>
-            Drückt auf den grünen Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den Weg.
+            <!-- <br>
+            Drückt auf den grünen Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den Weg. -->
           </p>
         </span>
         <span v-else-if="spieler=='Watson' && ort=='og1'">
@@ -178,16 +178,17 @@
             Und los geht's! 
             Suchen wir Ludwig Leiner und seinen Schreibtisch. 
           </p>
-          <p>
+          <!-- <p>
             Drückt auf den grünen Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den Weg.
-          </p>
+          </p> -->
         </span>
         <span v-else-if="spieler=='Sherlock' && ort=='og1'">
           <img class="spieler" src="assets/img/detektive/sherlock_gluecklich.png" width="220"/>
           <p>
             Sehr gut, die Antwort ist richtig. <br>
-            Und die Spur ist noch heiß! Suchen wir die Brille von Ludwig Leiner! <br>
-            Drückt auf den grünen Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den Weg.
+            Und die Spur ist noch heiß! Suchen wir die Brille von Ludwig Leiner! 
+            <!-- <br> -->
+            <!-- Drückt auf den grünen Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den Weg. -->
           </p>
         </span>
         <span v-else-if="spieler=='Enola' && ort=='og1'">
@@ -196,9 +197,9 @@
             Wunderbar, das fängt gut an! <br>
             Und nun nichts wie hin zu dieser Brille von Ludwig Leiner! 
           </p>
-          <p>
+          <!-- <p>
             Drückt auf den grünen Weiter-Button oder wischt mit dem Finger, dann zeige ich Euch den Weg.
-          </p>
+          </p> -->
         </span>
       </span>
       <div class="antwort-buttons" v-if="spieler=='Watson'">
@@ -774,9 +775,11 @@ function onSlideChanged() {
 const buttonFarbe1 = ref("primary");
 const buttonFarbe2 = ref("primary");
 const buttonFarbe3 = ref("primary");
-const buttonFill1 = ref("outline");
-const buttonFill2 = ref("outline");
-const buttonFill3 = ref("outline");
+type ButtonFillType = 'clear' | 'outline' | 'solid' | 'default';
+const buttonFill1 = ref<ButtonFillType>("outline");
+const buttonFill2 = ref<ButtonFillType>("outline");
+const buttonFill3 = ref<ButtonFillType>("outline");
+
 const antwortClicked = ref(0);
 const antwortRichtig = ref(false);
 
@@ -807,12 +810,7 @@ watch(flow, () => {
         swiperInstance.value.slideTo(7);
     }, 1000 )
   }
-  if (flow.value == 0.95) {
-    setTimeout(() => {
-      swiperInstance.value.slideNext();
-    }, 1000 )
-  }
-})
+});
 
 function antwortAusgewaehlt(nr : number, richtig : boolean) {
   console.log("antwort: "+nr+" richtig: "+richtig);

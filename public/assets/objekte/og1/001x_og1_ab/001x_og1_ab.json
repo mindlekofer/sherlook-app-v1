@@ -24,10 +24,13 @@
    ],
    "beacon": [
        {
-           "id" : 6,
+           "id" : 8,
            "schwelle" : -95
        }
    ],
+   "bilderkennung": {
+     "kategorie": 6
+   },
 
   "watson": {
       "quiz": {

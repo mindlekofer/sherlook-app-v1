@@ -187,7 +187,7 @@
         <p> Drückt dann auf den grünen Button und der Fall kann beginnen... </p>
       </span>
       <button-weiter-component class="button-weiter" v-if="!btTrigger" @click="flow=1.4; swiperInstance.slideNext();"/>
-      <button-weiter-component class="button-weiter" v-else-if="flow==1.4" @click="swiperInstance.slideNext();" pulsiert/>
+      <!-- <button-weiter-component class="button-weiter" v-else-if="flow==1.4" @click="swiperInstance.slideNext();" pulsiert/> -->
       <button-weiter-component class="button-weiter" v-else-if="flow>1.4" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
     </swiper-slide>
@@ -322,10 +322,8 @@
         <swiper-slide>
           <!-- <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/> -->
           <img class="spieler" src="assets/img/leiner.png" width="200"/>
-
           <p v-html="objekte_ort_spieler(0).leinertext" />
-
-          <img v-if="ort=='eg'" :src="`assets/objekte/eg/${objekte.eg[0].code}/${objekte.eg[0].code}_leiner.jpg`" width="500" style="margin-left: auto; margin-right: auto; display: block;"/>
+          <img v-if="ort=='eg'" :src="`assets/objekte/eg/${objekte.eg[0].code}/${objekte.eg[0].code}_leiner.jpg`" width="500" style="margin-left: auto; margin-right: auto; display: block;" />
           <img v-else-if="ort=='og1'" :src="`assets/objekte/og1/${objekte.og1[0].code}/${objekte.og1[0].code}_leiner.jpg`" width="500" style="margin-left: auto; margin-right: auto; display: block;"/>
           <p style="margin-bottom: 120px;" />
           <button-weiter-component class="button-weiter" v-if="flow==1.8" @click="flow=2.0" pulsiert />
@@ -454,7 +452,7 @@
         <swiper-slide>
           <span v-if="spieler=='Watson'">
             <img class="spieler" src="assets/img/detektive/watson_neutral.png" width="210"/>
-            <br><br><br>
+            <br><br>
             <p> Schaut Euch den Post genau an und sucht dann nach dem Objekt. </p>
           </span>
           <span v-else-if="spieler=='Sherlock'">
@@ -508,7 +506,7 @@
         <p> Ihr wisst ja, wenn die  Hightech-Lupe blinkt, ist etwas Verdächtiges in der Nähe! </p>
       </span>
       <button-weiter-component class="button-weiter" v-if="!btTrigger" @click="flow=2.6"/>
-      <button-weiter-component class="button-weiter" v-else-if="flow==2.4" @click="swiperInstance.slideNext();"/>
+      <!-- <button-weiter-component class="button-weiter" v-else-if="flow==2.4" @click="swiperInstance.slideNext();"/> -->
       <button-weiter-component class="button-weiter" v-else-if="flow>2.4" @click="swiperInstance.slideNext();"/>
       <button-weiter-component class="button-weiter" v-else disabled />
     </swiper-slide>
@@ -603,10 +601,10 @@
       <swiper :modules="modules" :direction="'vertical'" :scrollbar="true" :mousewheel="true" :slidesPerView="'auto'" :freeMode="true">
         <swiper-slide>
           <!-- <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/> -->
-          <!-- <img class="spieler" src="assets/img/leiner.png" width="200"/> -->
+          <img class="spieler" src="assets/img/leiner.png" width="200"/>
+          <p v-html="objekte_ort_spieler(0).leinertext" />
           <img v-if="ort=='eg'" :src="`assets/objekte/eg/${objekte.eg[1].code}/${objekte.eg[1].code}_leiner.jpg`" width="500" style="margin-left: auto; margin-right: auto; display: block;"/>
           <img v-else-if="ort=='og1'" :src="`assets/objekte/og1/${objekte.og1[1].code}/${objekte.og1[1].code}_leiner.jpg`" width="500" style="margin-left: auto; margin-right: auto; display: block;"/>
-          <p v-html="objekte_ort_spieler(0).leinertext" />
           <p style="margin-bottom: 120px;" />
           <button-weiter-component class="button-weiter" v-if="flow==2.8" @click="flow=3.0" pulsiert />
           <button-weiter-component class="button-weiter" v-else-if="flow>2.8" @click="flow=3.0"/>
@@ -750,11 +748,11 @@
               :username="`@${person.schuldig.accountnamen[0]}`"
               :avatar="`assets/accounts/${person.schuldig.accountnamen[0]}/${person.schuldig.accountnamen[0]}.jpg`"
               :bild="`assets/objekte/${objekte_ort[2].ort}/${objekte_ort[2].code}/${objekte_ort[2].code}_post1.jpg`"
-              :hashtag=objekte_ort[1].hashtag[0].text
+              :hashtag=objekte_ort[2].hashtag[0].text
               likes="48501"
               @hashtag-clicked="flow<3.3 ? flow=3.3 : flow=flow"
               :eingetragen="flow>=3.3">
-            <span v-html="objekte_ort_spieler(1).post_1" />
+            <span v-html="objekte_ort_spieler(2).post_1" />
           </PostingComponent>
           <p style="margin-bottom: 120px;">
             Berührt den pulsierenden Hashtag.
@@ -834,11 +832,11 @@
               :username="`@${person.schuldig.accountnamen[0]}`"
               :avatar="`assets/accounts/${person.schuldig.accountnamen[0]}/${person.schuldig.accountnamen[0]}.jpg`"
               :bild="`assets/objekte/${objekte_ort[2].ort}/${objekte_ort[2].code}/${objekte_ort[2].code}_post2.jpg`"
-              :hashtag=objekte_ort[1].hashtag[1].text
+              :hashtag=objekte_ort[2].hashtag[1].text
               likes="51029"
               @hashtag-clicked="flow<3.7 ? flow=3.7 : flow=flow"
               :eingetragen="flow>=3.7">
-            <span v-html="objekte_ort_spieler(1).post_2" />
+            <span v-html="objekte_ort_spieler(2).post_2" />
           </PostingComponent>
           <p style="margin-bottom: 120px;">
             Berührt den pulsierenden Hashtag.
@@ -882,10 +880,10 @@
       <swiper :modules="modules" :direction="'vertical'" :scrollbar="true" :mousewheel="true" :slidesPerView="'auto'" :freeMode="true">
         <swiper-slide>
           <!-- <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/> -->
-          <!-- <img class="spieler" src="assets/img/leiner.png" width="200"/> -->
+          <img class="spieler" src="assets/img/leiner.png" width="200"/>
+          <p v-html="objekte_ort_spieler(0).leinertext" />
           <img v-if="ort=='eg'" :src="`assets/objekte/eg/${objekte.eg[2].code}/${objekte.eg[2].code}_leiner.jpg`" width="500" style="margin-left: auto; margin-right: auto; display: block;"/>
           <img v-else-if="ort=='og1'" :src="`assets/objekte/og1/${objekte.og1[2].code}/${objekte.og1[2].code}_leiner.jpg`" width="500" style="margin-left: auto; margin-right: auto; display: block;"/>
-          <p v-html="objekte_ort_spieler(0).leinertext" />
           <p style="margin-bottom: 120px;" />
           <button-weiter-component class="button-weiter" v-if="flow==3.8" @click="flow=4.0" pulsiert />
           <button-weiter-component class="button-weiter" v-else-if="flow>3.8" @click="flow=4.0"/>
@@ -1156,8 +1154,6 @@
     </swiper-slide>
     
     <swiper-slide v-if="flow >=4.5 && flow<5.0">
-
-      {{person_ort_spieler.findIndex(p => p.code == spielStore.personVerhaftet)}}
       <span v-if="spieler=='Watson'">
         <img class="spieler" src="assets/img/detektive/watson_gluecklich.png" width="250"/>
         <br><br>
@@ -1211,7 +1207,7 @@ import router from '@/router';
 // Store //
 const spielStore = useSpielStore();
 const { flow, ort, spieler, btTrigger, ermittlungsAuswahl, 
-    objekte, objekte_ort, objekte_ort_spieler,
+    objekte, objekte_ort, objekte_ort_spieler, slideNr,
     person, person_ort_spieler } = storeToRefs(spielStore);
 console.log(`flow: ${flow}`);
 
@@ -1344,8 +1340,8 @@ function antwortAusgewaehlt(nr : number, richtig : boolean) {
 }
 
 function onSlideChanged() {
-  spielStore.slideNr = swiperInstance.value.activeIndex;
-  console.log("Slide changed: ", spielStore.slideNr);
+  slideNr.value = swiperInstance.value.activeIndex;
+  console.log("Slide changed: ", slideNr.value);
 }
 
 function getPronomenVonCode(code : string, gross : boolean) : string {
@@ -1363,13 +1359,11 @@ function getPronomenVonCode(code : string, gross : boolean) : string {
 
 }
 
-
-
 </script>
 
 <style scoped>
 .leiner-slide {
-  background-color: rgb(110, 107, 102);
+  background-color: #6e6b66;
   color: white;
   /* background-color: rgb(178, 178, 178); */
 }
