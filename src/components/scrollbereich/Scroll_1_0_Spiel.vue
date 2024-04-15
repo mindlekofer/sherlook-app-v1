@@ -602,7 +602,7 @@
         <swiper-slide>
           <!-- <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/> -->
           <img class="spieler" src="assets/img/leiner.png" width="200"/>
-          <p v-html="objekte_ort_spieler(0).leinertext" />
+          <p v-html="objekte_ort_spieler(1).leinertext" />
           <img v-if="ort=='eg'" :src="`assets/objekte/eg/${objekte.eg[1].code}/${objekte.eg[1].code}_leiner.jpg`" width="500" style="margin-left: auto; margin-right: auto; display: block;"/>
           <img v-else-if="ort=='og1'" :src="`assets/objekte/og1/${objekte.og1[1].code}/${objekte.og1[1].code}_leiner.jpg`" width="500" style="margin-left: auto; margin-right: auto; display: block;"/>
           <p style="margin-bottom: 120px;" />
@@ -881,7 +881,7 @@
         <swiper-slide>
           <!-- <img src="assets/img/leiner.png" width="200" style="margin-left: auto; margin-right: auto; display: block;"/> -->
           <img class="spieler" src="assets/img/leiner.png" width="200"/>
-          <p v-html="objekte_ort_spieler(0).leinertext" />
+          <p v-html="objekte_ort_spieler(2).leinertext" />
           <img v-if="ort=='eg'" :src="`assets/objekte/eg/${objekte.eg[2].code}/${objekte.eg[2].code}_leiner.jpg`" width="500" style="margin-left: auto; margin-right: auto; display: block;"/>
           <img v-else-if="ort=='og1'" :src="`assets/objekte/og1/${objekte.og1[2].code}/${objekte.og1[2].code}_leiner.jpg`" width="500" style="margin-left: auto; margin-right: auto; display: block;"/>
           <p style="margin-bottom: 120px;" />
