@@ -1,0 +1,103 @@
+{
+  "code": "00xx_eg_01",
+  "nr": 90,
+  "ort": "eg",
+  "name": "Buch",
+  "genus": {
+    "maskulin": false,
+    "feminin": false,
+    "neutrum": true
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#mega",
+       "code": "xxxx"
+    },
+    {
+       "text": "#aktuelle_botschaft",
+       "code": "1xxx"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 1,
+           "schwelle": -95
+       }
+   ],
+  "bilderkennung": {
+        "kategorie": 90
+  },
+  
+  "watson": {
+      "quiz": {
+          "frage": "Eine verschlüsselte Botschaft! A steht für den ersten Buchstaben im griechischen Alphabet. Wie heisst er?",
+          "antwort" : [
+              {
+                  "text": "Alpha",
+                  "richtig": true
+              },
+              {
+                  "text": "Antonia",
+                  "richtig": false
+              },  
+              {
+                  "text": "Alexander",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Mega. Genauer gesagt Omega. Dieser Stein soll das A und O meiner Sammlung werden! Wenn da nur nicht dieses blöde Detektivbüro in  der Nähe wäre...",
+      "post_2": "Diese alten Skulpturen haben die Zeiten an einer kleinen Konstanzer Kapelle überdauert. Das Buch von Christus zeigt des griechische Alpha und Omega. A und O. So sagen wir noch immer und meinen damit den Kern einer Sache. Bleib bei der Sache! Bleib bei den Fakten! Eine Botschaft aktueller denn je.",
+      "leinertext": "Ich danke Dr. Watson und seinem Team für die erfolgreiche Spurensicherung!  <br> Dieser Stein stellt Maria, Christus und Petrus dar. Ich habe das alte Siechenhaus, wo wir ihn gefunden haben, noch gezeichnet. Sein Diebstahl ist ein schweres Verbrechen! <br> Bringt den wahren Stein bitte schnell wieder zurück."
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Verschlüsselte Zeichen... das mag ich. Wie heisst der erste Buchstabe im griechischen Alphabets?",
+          "antwort" : [
+              {
+                  "text": "Alpha",
+                  "richtig": true
+              },
+              {
+                  "text": "Aleph",
+                  "richtig": false
+              },  
+              {
+                  "text": "Alex",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Mega. Genauer gesagt Omega. Dieser Stein soll das A und O meiner Sammlung werden!  Wenn da nur nicht dieses blöde Detektivbüro in der Nähe wäre...",
+      "post_2": "Diese Skulpturen wurden um 1200 geschaffen und haben die Zeiten an einer kleinen Konstanzer Kapelle überdauert.  <br> Das Buch von Christus zeigt des griechische A und O, Alpha und Omega, der erste und letzte Buchstabe dieses Alphabets. A und O. So sagen wir noch immer und meinen damit den Kern einer Sache. Bleib bei der Sache! Bleib bei den Fakten! Eine Botschaft aktueller denn je.",
+      "leinertext": "Ich danke Sherlock und seinem Team für die erfolgreiche Spurensicherung. <br> Dieser Stein stellt Maria, Christus und Petrus dar. Wie oft habe ich die Figurengruppe bestaunt und gezeichnet, am Konstanzer Siechenhaus. Dann wurde das Gebäude abgerissen und der Stein kam in mein Museum. <br> Sein Diebstahl ist ein schweres Verbrechen! Bringt den wahren Stein bitte schnell wieder zurück."
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Eine verschlüsselte Botschaft... das mag ich. Wofür stehen diese Buchstaben?",
+          "antwort" : [
+              {
+                  "text": "Anfang und Ende",
+                  "richtig": true
+              },
+              {
+                  "text": "Himmel und Hölle",
+                  "richtig": false
+              },  
+              {
+                  "text": "Mars und Venus",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Mega. Genauer gesagt Omega. Dieser Stein soll das A und O meiner Sammlung werden! Wenn da nur nicht dieses blöde Detektivbüro in  der Nähe wäre...",
+      "post_2": "Diese Skulpturen wurden um 1200 geschaffen und haben die Zeiten an einer kleinen Konstanzer Kapelle überdauert. <br> Das Buch von Christus zeigt des griechische A und O, Alpha und Omega, der erste und letzte Buchstabe dieses Alphabets. A und O. So sagen wir noch immer und meinen damit den Kern einer Sache. Bleib bei der Sache! Bleib bei den Fakten! Eine Botschaft aktueller denn je.",
+      "leinertext": "Ich danke Enola und ihrem Team für die erfolgreiche Spurensicherung! <br> Da sollte der Detaildieb mal zu mir in die Lehre gehen. <br> Dieser Stein stellt Maria, Christus und Petrus dar. Wie oft habe ich die Figurengruppe bestaunt und gezeichnet, am Konstanzer Siechenhaus. Dann wurde das Gebäude abgerissen und der Stein kam in mein Museum. <br> Sein Diebstahl ist ein schweres Verbrechen! Bringt den wahren Stein bitte schnell wieder zurück."
+  }
+}

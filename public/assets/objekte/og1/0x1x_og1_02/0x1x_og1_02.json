@@ -1,0 +1,103 @@
+{
+  "code": "0x1x_og1_02",
+  "nr": 58,
+  "ort": "og1",
+  "name": "Auge",
+  "genus": {
+    "maskulin": false,
+    "feminin": false,
+    "neutrum": true
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#was_hat_das_zu_bedeuten",
+       "code": "xx1x"
+    },
+    {
+       "text": "#heilge_fakten",
+       "code": "x0xx"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 9,
+           "schwelle": -95
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 58
+   },
+  
+  "watson": {
+      "quiz": {
+          "frage": "Ein einzelnes Auge, bestimmt ein Symbol ... <br> Aber welches Motiv könnt ihr noch erkennen?",
+          "antwort" : [
+              {
+                  "text": "Hühnerkrallen",
+                  "richtig": true
+              },
+              {
+                  "text": "Hundepfoten",
+                  "richtig": false
+              },  
+              {
+                  "text": "Krötenbeine",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Was meint ihr: ist das ein Bilderrätsel und bedeutet 'Hühneraugen'? Folgt mir ums Eck, schaut an die rote Wand und ihr werdet die Lösung erfahren...",
+      "post_2": "Hier ist die Auflösung des Rätsels: Die heilige Odilia wurde blind geboren und erst durch die Taufe geheilt. Deshalb bekommt sie in Bildern immer wieder Augen als Erkennungszeichen. <br> Und der Hahn mahnt uns alle, wachsam zu bleiben!",
+      "leinertext": "Danke Dr. Watson! Ein frecher und findiger Dieb, das muss ich schon sagen. Aber auch wir bleiben wachsam!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Ein einzelnes Auge und Hühnerkrallen ... Zu wem gehört das Auge?",
+          "antwort" : [
+              {
+                  "text": "zu einer Heiligen",
+                  "richtig": true
+              },
+              {
+                  "text": "zu einem Hühnerdieb",
+                  "richtig": false
+              },  
+              {
+                  "text": "zu einem Arzt",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Was meint ihr: ist das ein Bilderrätsel und bedeutet 'Hühneraugen'? Folgt mir ums Eck, schaut an die rote Wand und ihr werdet die Lösung erfahren...",
+      "post_2": "Hier ist die Auflösung des Rätsels: Die Augen stehen für das Schicksal der hl. Odilia. Sie wurde blind geboren und erst durch die Taufe geheilt. Deshalb bekommt sie in Bildern immer wieder Augen als Erkennungszeichen. Und der Hahn mahnt uns alle, wachsam zu bleiben!",
+      "leinertext": "Danke Sherlock Holmes! Ein frecher und findiger Dieb, das muss ich schon sagen. Aber auch wir bleiben wachsam. Das sind wir auch der hl. Odilia schuldig!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Ein einzelnes Auge und Hühnerkrallen ... zu wem gehört dieses Auge?",
+          "antwort" : [
+              {
+                  "text": "zu einer Heiligen",
+                  "richtig": true
+              },
+              {
+                  "text": "zu einem Dieb",
+                  "richtig": false
+              },  
+              {
+                  "text": "zu einem berühmten Arzt",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Was meint ihr: ist das ein Bilderrätsel und bedeutet 'Hühneraugen'? Folgt mir ums Eck, schaut an die rote Wand und ihr werdet die Lösung erfahren...",
+      "post_2": "Wie immer bekommt ihr von mir die wahren Fakten und Bedeutungen. Hier ist die Auflösung des Rätsels: Die Augen stehen für das Schicksal der hl. Odilia. Sie wurde blind geboren und erst durch die Taufe geheilt. Deshalb bekommt sie in Bildern immer wieder Augen als Erkennungszeichen. Und der Hahn mahnt uns alle, wachsam zu bleiben!",
+      "leinertext": "Danke Enola Holmes! Ein frecher und findiger Dieb, das muss ich schon sagen. <br> Aber nicht findig genug: Schaut auf die andere Heilige im Bild. Brot und Kanne stehen für die hl. Elisabeth, die die Armen gespeist hat. Vor den beiden Heiligen kniet der Stifter. Genau so unbekannt wie unser Detaildieb... <br> Jetzt seid ihr wieder an der Reihe.  Ich bin mir sicher, ihr bleibt wachsam, und werdet den Fall rasch lösen!"
+  }
+}

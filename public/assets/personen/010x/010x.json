@@ -1,0 +1,32 @@
+{
+  "code": "010x",
+  "name": "Adelheid von Altenberg",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "alt & fremd",
+    "Phantasie",
+    "Materialien"
+  ],
+  "accountnamen": [
+    "antiquarius",
+    "schaetze_suchen",
+    "saetze_sind_schaetze"
+  ],
+  "gruppen": [
+    "01xx",
+    "0x0x",
+    "x10x"
+  ],
+  "watson": {
+    "steckbrief": "<b> LAVINIA LEE </b> <ul> <li> mag, wenn Dinge alt und fremd aussehen </li> <li> verfügt über künstlerische Phantasie </li> <li> untersucht gerne Materialien </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> LAVINIA LEE </b> <ul> <li> lebt nach dem Motto, früher was vieles besser </li> <li> ist sprachgewandt und verfügt über künstlerische Phantasie </li> <li> mag Dinge und Materialien gerne berühren und aus der Nähe untersuchen </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> LAVINIA LEE </b> ADELHEID VON ALTENBURG lebt ganz nach dem Motto: früher war vieles besser. Dass man die Dinge in den Museen meist nicht berühren darf, hat sie noch nie verstanden: denn sie untersucht gerne feine Materialien und zwar gründlich! In ihrer guten Stube stehen viele in feines Leder gebundene Märchenbücher. Gerne lädt sie all ihre Enkel und Urenkel zu sich nachause ein, und denkt sich zu den fremd und fabelhaft anmutenden Dingen die tollsten Geschichten aus ... Die finden das einfach nur wunderbar!"
+  }
+}

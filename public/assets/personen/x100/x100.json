@@ -1,0 +1,32 @@
+{
+  "code": "x100",
+  "name": "Frieda Frechdax",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "Phantasie",
+    "Materialien",
+    "Highlights"
+  ],
+  "accountnamen": [
+    "selten_schön",
+    "wunderblumes_traumfabrik",
+    "liriel_leichtsinn"
+  ],
+  "gruppen": [
+    "x10x",
+    "x1x0",
+    "xx00"
+  ],
+  "watson": {
+    "steckbrief": "<b> FRIEDA FRECHDAX </b> <ul> <li> hat eine große Phantasie </li> <li> liebt Materialien und Techniken </li> <li> hat einen Blick für die 'Highlights' eines Museums </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> FRIEDA FRECHDAX </b> <ul> <li> schreibt Bücher mit lustigen Titeln wie \"1x1 der Fantasie\" oder \"Tintenkleckse für Tiefseetaucher\" </li> <li> kritisiert gern seine Zeitgenossen und findet z.B. den Audioguide des Museums \"Schmalspur\" </li> <li> ist ein kritischer Geist, der nach wahren und wichtigen Bedeutungen sucht </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> FRIEDA FRECHDAX </b> hat einen sicheren Geschmack. Interessante Erfindungen und Materialien ziehen sie ebenso an, wie kleine Details, wenn sie nur 'großartig' sind. Wenn sie einen Raum betritt, weiß sie meist sofort, wer oder was sie interessiert. Mit ihrer Phantasie kommt sie dabei auf Dinge, die anderen nicht im Traum einfallen."
+  }
+}

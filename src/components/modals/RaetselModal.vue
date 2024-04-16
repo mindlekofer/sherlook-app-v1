@@ -14,6 +14,9 @@
             <ion-item>
               <ion-radio value="1" label-placement="start" alignment="center" justify="space-between">011x (neu)</ion-radio>
             </ion-item>
+            <ion-item>
+              <ion-radio value="2" label-placement="start" alignment="center" justify="space-between">101x (ganz neu)</ion-radio>
+            </ion-item>
           </ion-radio-group>
         </ion-list>
 

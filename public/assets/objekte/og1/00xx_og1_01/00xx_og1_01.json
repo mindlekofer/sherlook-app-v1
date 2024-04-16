@@ -1,0 +1,103 @@
+{
+  "code": "00xx_og1_01",
+  "nr": 62,
+  "ort": "og1",
+  "name": "Tasche",
+  "genus": {
+    "maskulin": false,
+    "feminin": true,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#gut_zu_gebrauchen",
+       "code": "1xxx"
+    },
+    {
+       "text": "#alte_fakten_alltagshilfen ",
+       "code": "10xx"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 9,
+           "schwelle": -95
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 62
+   },
+  
+  "watson": {
+      "quiz": {
+          "frage": "Wie gemein... <br> Was hat der Langfinger hier durch eine Fälschung ersetzt?",
+          "antwort" : [
+              {
+                  "text": "Ledertasche",
+                  "richtig": true
+              },
+              {
+                  "text": "Schulranzen",
+                  "richtig": false
+              },  
+              {
+                  "text": "Fahrradtasche",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Ich bin dann mal weg! Und da kann ich diese Tasche gut gebrauchen. Sucht im Raum voller Andacht. Aber leise! Im Bild liegt ein süßes, kleines Baby im Stall...",
+      "post_2": "So gingen die Menschen früher auf Pilgerfahrt: Mit Pilgerstab, Pilgerhut und Pilgertasche.  Und da ich demnächt selbst auf dem Jakobsweg wandern werde, kann ich solche Vorbilder gut gebrauchen! Ich liebe es, wenn mir alte Bilder in meinem Alltag helfen.",
+      "leinertext": "Ich danke dem Team um Dr. Watson für seine hervorragenden Ermittlungen. <br> Habt ihr auch die Hauptsache dieses schönen Bildes gesehen? Das Christuskind liegt in Licht gebettet und Maria betet zum himmlischen Vater... Solche Zeitdokumente sind in meinem Museum am besten aufgehoben!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Wie gemein... Was hat der Langfinger hier durch eine Fälschung ersetzt?",
+          "antwort" : [
+              {
+                  "text": "Pilgertasche",
+                  "richtig": true
+              },
+              {
+                  "text": "Satteltasche",
+                  "richtig": false
+              },  
+              {
+                  "text": "Schulranzen",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Ich bin dann mal weg! Und da kann ich diese Tasche gut gebrauchen. Sucht im Raum voller Heiligkeit und Andacht. Aber leise! Im Bild liegt ein süßes, kleines Baby im Stall...",
+      "post_2": "So gingen die Menschen im 15. Jahrhundert auf Pilgerfahrt, nach Rom oder Jerusalem. Mit Pilgerstab, Pilgerhut und Pilgertasche. Da ich demnächt selbst auf dem Jakobsweg wandern werde, kann ich solche Vorbilder gut gebrauchen! Ich liebe es, wenn mir alte Bilder in meinem Alltag helfen. ",
+      "leinertext": "Ich danke dem Team um Sherlock Holmes für seine hervorragenden Ermittlungen. <br> Dieser Langfinger ist nicht nur dreist, sondern hat auch eine sehr einseitige Sicht auf mein reichhaltiges Museum. Dieses Bild zeigt eine wunderbare Vision. Die heilige Brigitta, sieht, wie das Christuskind in Licht gebettet auf dem Boden liegt und Maria  zum himmlischen Vater betet... <br> Solche Zeitdokumente sind in meinem Museum am besten aufgehoben!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Wie gemein... <br> Was hat der Langfinger hier durch eine Fälschung ersetzt?",
+          "antwort" : [
+              {
+                  "text": "Pilgertasche",
+                  "richtig": true
+              },
+              {
+                  "text": "Satteltasche",
+                  "richtig": false
+              },  
+              {
+                  "text": "Geldtasche",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Ich bin dann mal weg! Und da kann ich diese Tasche gut gebrauchen. <br> Sucht im Raum voller Heiligkeit und Andacht. Aber leise! Im Bild liegt ein süßes, kleines Baby im Stall...",
+      "post_2": "Schaut wie  die Menschen im 15. Jahrhundert auf Pilgerfahrt gingen, nach Rom oder Jerusalem. Mit Pilgerstab, Pilgerhut und Pilgertasche. Oder auf der anderen Seite des Bildes: Josef verlässt den Stall mit einem Pilgerstab, Messer und Geldbeutel Da ich demnächt selbst auf dem Jakobsweg wandern werde, kann ich solche Vorbilder gut gebrauchen! Ich liebe es, wenn mir alte Bilder in meinem Alltag helfen. ",
+      "leinertext": "Ich danke Enola Holmes und ihrem Team für die hervorragenden Ermittlungen. <br> Dieser Langfinger ist nicht nur dreist, sondern hat auch eine sehr einseitige Sicht auf mein reichhaltiges Museum. Dieses Bild zeigt nicht nur Alltagsgegenstände, sondern eine wunderbare Vision. Die Heilige Brigitta, sieht, wie Maria das Christuskind ganz ohne Schmerzen zur Welt bringt. Es gibt kein Bett und keine Liege. Das Kind liegt in Licht gebettet auf dem Boden und Maria betet zum himmlischen Vater... <br> Solche Zeitdokumente sind in meinem Museum am besten aufgehoben!"
+  }
+}

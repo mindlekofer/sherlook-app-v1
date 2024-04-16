@@ -1,0 +1,103 @@
+{
+  "code": "10x1_eg_ac",
+  "nr": 16,
+  "ort": "eg",
+  "name": "Spindel",
+  "genus": {
+    "maskulin": false,
+    "feminin": true,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#handarbeit_ist_trend",
+       "code": "1xxx"
+    },
+    {
+       "text": "#nachhaltig_wie_früher",
+       "code": "xxx1"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 3,
+           "schwelle": -90
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 16
+   },
+  
+  "watson": {
+      "quiz": {
+          "frage": "Das ist aber verwickelt.  <br><br> Was wurde denn hier gefälscht?",
+          "antwort" : [
+              {
+                  "text": "eine alte Spindel",
+                  "richtig": true
+              },
+              {
+                  "text": "ein asiatisches Essstäbchen",
+                  "richtig": false
+              },  
+              {
+                  "text": "ein mittelalterliches Wattestäbchen",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Geht in den Steinzeitsaal und folgt dem Blick von Ludwig Leiner. Dann findet ihr eine Vitrine mit toller Handarbeit und ihren Hilfsmitteln...",
+      "post_2": "Ich liebe Dinge, die ihre Bedeutung nie verlieren. Handarbeit ist wieder voll im Trend. Es entschleunigt und ist wunderbar nachhaltig.",
+      "leinertext": "Großartig. Vielen Dank dem Team um Dr. Watson für seine Ermittlungen. <br> Legt diesem Langfinger bitte sein unverschämtes Handwerk und bringt die wertvolle Spindel aus der Steinzeit wieder zurück in mein Museum."
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Das ist aber verwickelt.  <br><br> Was wurde denn hier gefälscht?",
+          "antwort" : [
+              {
+                  "text": "eine alte Spindel",
+                  "richtig": true
+              },
+              {
+                  "text": "eine alte Seilwinde",
+                  "richtig": false
+              },  
+              {
+                  "text": "ein asiatisches Esstäbchen",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Geht in den Steinzeitsaal und folgt dem Blick von Ludwig Leiner. Dann findet ihr eine Vitrine mit toller Handarbeit und ihren Hilfsmitteln... Das liegt wieder voll im Trend!",
+      "post_2": "Ich liebe Dinge, die ihre Bedeutung nie verlieren werden und deren Wert sogar noch steigt. Wie diese Spindel aus der Steinzeit. Handarbeit ist wieder voll im Trend. Und das ist auch richtig und wichtig: Es entschleunigt und ist wunderbar nachhaltig.",
+      "leinertext": "Großartig. Vielen Dank dem berühmten Sherlock Holmes und seinem Team. <br> Ich glaube kaum, dass diese Spindel aus der Steinzeit dem heutigen Textibedarf gewachsen wäre. Sie liegt seit 150 Jahren in meinem schönen Museum und dort soll sie auch bleiben!  Legt diesem Langfinger bitte sein unverschämtes Handwerk."
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Verzwickt und verwickelt. <br> Was wurde denn hier gefälscht?",
+          "antwort" : [
+              {
+                  "text": "eine alte Spindel",
+                  "richtig": true
+              },
+              {
+                  "text": "eine alte Seilwinde",
+                  "richtig": false
+              },  
+              {
+                  "text": "ein alt-chinesisches Esstäbchen",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Geht in den Steinzeitsaal und folgt dem Blick von Ludwig Leiner. Dann findet ihr eine Vitrine mit toller Handarbeit und ihren Hilfsmitteln... Das liegt wieder voll im Trend!",
+      "post_2": "Ich liebe Dinge, die ihre Bedeutung nie verlieren werden und deren Wert sogar noch steigt. Wie diese Spindel aus der Steinzeit. Handarbeit ist wieder voll im Trend. Und das ist auch richtig und wichtig: Es entschleunigt und ist wunderbar nachhaltig.",
+      "leinertext": "Großartig. Ich danke Enola Holmes und ihren Helfer:innen. <br> Schaut Euch in der Vitrine die ersten Handarbeiten und ihre Hilfsmittel an. Ich glaube kaum, dass solche Werkzeuge aus der Steinzeit dem heutigen Textibedarf gewachsen wären. <br> Diese großartigen Funde aus den Pfahlbausiedlungen liegen seit 150 Jahren in meinem schönen Museum und dort sollen sie auch bleiben! Legt diesem Langfinger bitte sein unverschämtes Handwerk."
+  }
+}

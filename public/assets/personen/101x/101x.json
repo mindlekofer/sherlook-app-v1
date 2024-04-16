@@ -1,0 +1,32 @@
+{
+  "code": "101x",
+  "name": "Claris Birnbaum",
+  "genus": {
+    "maskulin": true,
+    "feminin": false
+  },
+  "eigenschaften": [
+    "Aktualität",
+    "Fakten",
+    "Bedeutungen"
+  ],
+  "accountnamen": [
+    "hintertürchen",
+    "altes_holz",
+    "numis_dorado"
+  ],
+  "gruppen": [
+    "10xx",
+    "1x1x",
+    "x01x"
+  ],
+  "watson": {
+    "steckbrief": "<b> CLARIS BIRNBAUM </b> <ul> <li> will, dass alte Traditionen wieder Trend werden </li> <li> trägt Daten und Fakten zusammen </li> <li> pflegt alte Rituale und Bedeutungen </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> CLARIS BIRNBAUM </b> <ul> <li> will, dass alte Traditionen wieder Trend werden </li> <li> trägt Daten und Fakten zusammen </li> <li> pflegt alte Rituale und Bedeutungen </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> CLARIS BIRNBAUM </b> st der festen Überzeugung durch ein Zeitloch ins 21. Jahrhundert gefallen zu sein. Alles, was sie über alte Daten, Fakten und ihre Bedeutung zusammenträgt, hat zwar Hand und Fuß. Aber irgendwie scheint sie den Sinn für den Unterscheid zwischen Damals und Heute verloren zu haben. Claris würde gerne einen Orden gründen, in dem alte Rituale gepflegt und bedeutsame Dinge wertvoll bleiben. Sie selbst sieht sich als ein eindeutiger Beweis, dass die Vergangenheit lebt!"
+  }
+}

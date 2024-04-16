@@ -1,0 +1,103 @@
+{
+  "code": "1x1x_og1_02",
+  "nr": 55,
+  "ort": "og1",
+  "name": "Muschel",
+  "genus": {
+    "maskulin": false,
+    "feminin": true,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#pilgersymbol",
+       "code": "xx1x"
+    },
+    {
+       "text": "#zeitlose_Bedeutung",
+       "code": "1x1x"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 9,
+           "schwelle": -95
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 55
+   },
+  
+  "watson": {
+      "quiz": {
+          "frage": "Aha, dieses Objekt kenne ich noch aus meinem Spanienurlaub! Wisst ihr auch, was das ist?",
+          "antwort" : [
+              {
+                  "text": "eine Jakobsmuschel",
+                  "richtig": true
+              },
+              {
+                  "text": "ein Jakobsbeutel",
+                  "richtig": false
+              },  
+              {
+                  "text": "ein Jakobstuch",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Gleich mehrfach hängt sie da, diese Muschel. Ein altes Symbol... Schaut ein wenig ums Eck an der roten Wand und sucht nach dem grausigen Galgen.",
+      "post_2": "Ihr wisst doch, was die Jakobsmuschel bedeutet? Es ist das Zeichen der Pilger, die sich auf dem Weg zum heiligen Jakobus nach Spanien machen.  Das ist wieder Trend und ich mag es auch. Warum? Ich gewinne Abstand vom Alltag und weite meinen Horizont!",
+      "leinertext": "Der Dieb schämt sich wohl gar nicht? Mit Diebesgut auf Pilgerfahrt zu gehen. <br> Dieses Holzrelief ist über 500 Jahre alt! Es erzählt die Geschichte, in der der hl. Jakobus einen unschuldig Verurteilten vom Galgen rettet. Unschuldig ist dieser Langfinger gewiss nicht. Ich hoffe, ihr schnappt ihn bald mitsamt seiner Beute!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Die Jakobsmuschel ist eine wahre Delikatesse! Doch wie wird sie hier verwendet?",
+          "antwort" : [
+              {
+                  "text": " als Pilgerabzeichen",
+                  "richtig": true
+              },
+              {
+                  "text": "als Geldbeutel",
+                  "richtig": false
+              },  
+              {
+                  "text": "als Kastagnette",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Gleich mehrfach hängt sie da, diese Muschel. Ein altes Symbol... <br> Schaut ein wenig ums Eck an der roten Wand und sucht nach dem grausigen Galgen.",
+      "post_2": "Ihr wisst doch, was die Jakobsmuschel bedeutet? Es ist das das Zeichen der Pilger, die sich auf dem Weg zum heiligen Jakobus nach Spanien machen.  Das ist wieder Trend und ich mag es auch. Warum?  Ich gewinne Abstand vom Alltag und weite meinen Horizont!",
+      "leinertext": "Der Dieb schämt sich wohl gar nicht? Mit Diebesgut auf Pilgerfahrt zu gehen. <br> Dieses Holzrelief ist über 500 Jahre alt! Es erzählt die Geschichte, in der der Hl. Jakobus einen unschuldig Verurteilten vom Galgen rettet. Unschuldig ist dieser Langfinger gewiss nicht. Ich hoffe, ihr schnappt ihn bald mitsamt seiner Beute!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Aha, die Jakobsmuschel kenne ich noch aus meinem Spanienurlaub! <br> Doch wie wird sie hier verwendet?",
+          "antwort" : [
+              {
+                  "text": "als Pilgerabzeichen",
+                  "richtig": true
+              },
+              {
+                  "text": "als Geldbeutel",
+                  "richtig": false
+              },  
+              {
+                  "text": "als Kastagnette",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Gleich mehrfach hängt sie da, diese Muschel. Ein altes Symbol... <br> Schaut ein wenig ums Eck an der roten Wand und sucht nach dem grausigen Galgen.",
+      "post_2": "hr wisst doch, was die Jakobsmuschel bedeutet? Es ist das das Zeichen der Pilger, die sich auf dem Weg zum hl. Jakobus nach Spanien machen.  Das ist wieder Trend und auch mich zieht es immer wieder auf diesen alten Jakobsweg. Auf einer Pilgerfahrt Abstand vom eigenen Alltag gewinnen und den eigenen Horizont weiten. Das ist wichtig und bedeutsam, früher genau so wie heute.",
+      "leinertext": "Der Dieb schämt sich wohl gar nicht? Mit Diebesgut 'seinen Horizont zu weiten'. Dieses Holzrelief ist über 500 Jahre alt! Es erzählt die Geschichte, in der der Hl. Jakobus einen unschuldig Verurteilten vom Galgen rettet. Der dankbare Vater trägt das Pilgerzeichen gleich doppelt und dreifach auf seinem Gewand. Auch ich wäre sehr dankbar, wenn ihr diesen Langfinger mitsamt seiner Beute bald schnappen würdet"
+  }
+}

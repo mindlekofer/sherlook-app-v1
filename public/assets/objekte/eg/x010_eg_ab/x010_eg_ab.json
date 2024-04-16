@@ -1,0 +1,103 @@
+{
+  "code": "x0x0_eg_02",
+  "nr": 41,
+  "ort": "eg",
+  "name": "Boot",
+  "genus": {
+    "maskulin": false,
+    "feminin": false,
+    "neutrum": true
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#zille_ganz_groß",
+       "code": "xx1x"
+    },
+    {
+       "text": "#bootsbauer_1600",
+       "code": "x0xx"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 1,
+           "schwelle": -95
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 41
+   },
+
+  "watson": {
+      "quiz": {
+          "frage": "Schon wieder eine Fälschung! <br> Welcher Antrieb ist hier zusammen mit dem Boot verschwunden?",
+          "antwort" : [
+              {
+                  "text": "Ruder",
+                  "richtig": true
+              },
+              {
+                  "text": "rote Segel",
+                  "richtig": false
+              },  
+              {
+                  "text": "Schiffsschraube",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Da dümpelt sie dahin, unsere altmodische Zille. Zum Glück war das Detektivbüro gerade nicht besetzt... So ist sie mir heimlich, still und leise ins Netz gegangen...",
+      "post_2": "Wie bedeutsam dieses alte Gefährt doch ist! Vor 500 Jahren wussten sicher schon kleine Kinder, was eine 'Zille' ist: das waren die wichtigsten Handelsschiffe auf dem Bodensee, flache Wasserfahrzeuge ohne Kiel. Aus großen Nadelbäumen konnte man bis zu zwanzig Meter lange Schiffe bauen. Das muss ganz schön kippelig gewesen sein ...",
+      "leinertext": "ch danke dem Team um Dr. Watson für seine hervorragenden Ermittlungen. <br> Kippelig hin oder her, ich brauche meine Zille zurück! Schaut euch an, wie schön die Schiffe aus dem Konstanzer Hafen auslaufen... Diese wundervolle Karte muss vollständig bleiben!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Schon wieder eine Fälschung! <br> Welcher Antrieb ist hier zusammen mit dem Boot verschwunden?",
+          "antwort" : [
+              {
+                  "text": "Stechruder",
+                  "richtig": true
+              },
+              {
+                  "text": "Treidelstangen",
+                  "richtig": false
+              },  
+              {
+                  "text": "rote Segel",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Da dümpelt sie dahin, unsere altmodische Zille. Zum Glück war das Detektivbüro gerade nicht besetzt... So ist sie mir heimlich, still und leise ins Netz gegangen...",
+      "post_2": "Wie bedeutsam dieses alte Gefährt doch ist! Vor 500 Jahren wussten sicher schon kleine Kinder, was eine 'Zille' ist: das waren die wichtigsten Schiffe auf dem Bodensee, flache Wasserfahrzeuge ohne Kiel, mit denen man Waren und Personen befördern konnte. Aus großen Nadelbäumen konnte man bis zu zwanzig Meter lange Schiffe bauen. Das muss ganz schön kippelig gewesen sein! Ein Exemplar werde ich nun selbst zu Wasser lassen. AHOI!",
+      "leinertext": "Ich danke dem Team um Sherlock Holmes für seine hervorragenden Ermittlungen. Kippelig hin oder her, ich brauche meine Zille zurück! Schaut euch an, wie schön die Schiffe aus dem Konstanzer Hafen auslaufen... Sehr ihr das alte Warenhaus am Hafen, das ihr noch heute als 'Konzilgebäude' besichtigen könnt? Diese wundervolle Karte muss vollständig "
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Schon wieder eine Fälschung! Welcher Antrieb ist hier zusammen mit dem Boot verschwunden?",
+          "antwort" : [
+              {
+                  "text": "Stechruder",
+                  "richtig": true
+              },
+              {
+                  "text": "Treidelstangen",
+                  "richtig": false
+              },  
+              {
+                  "text": "Stakhölzer",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Da dümpelt sie dahin, unsere altmodische Zille. <br> Ich liebe Dinge, bei denen ich nach bedeutungsvollen Fakten recherchieren kann. Zum Glück war das Detektivbüro gerade nicht besetzt... So ist sie mir heimlich, still und leise ins Netz gegangen...",
+      "post_2": "Wie bedeutsam dieses alte Gefährt doch ist! Vor 500 Jahren wussten sicher schon kleine Kinder, was eine 'Zille' ist: das waren die wichtigsten Schiffe auf dem Bodensee, flache Wasserfahrzeuge ohne Kiel, mit denen man Waren und Personen befördern konnte. In der Mitte gab es manchmal ein richtiges Haus, damit man bei schlechtem Wetter geschützt war. Ein guter Bootsbauer konnte aus großen Nadelbäumen bis zu zwanzig Meter lange Schiffe bauen. Das muss ganz schön kippelig gewesen sein! <br> Ein Exemplar werde ich nun selbst zu Wasser lassen. AHOI!",
+      "leinertext": "Ich danke Enola Holmes und ihrem Team für die hervorragenden Ermittlungen. Kippelig hin oder her, ich brauche meine Zille zurück! Schaut euch an, wie schön die Schiffe aus dem Konstanzer Hafen auslaufen... Sehr ihr das alte Warenhaus am Hafen, das ihr noch heute als 'Konzilgebäude' besichtigen könnt? Diese wundervolle Karte muss vollständig bleiben!"
+  }
+}
