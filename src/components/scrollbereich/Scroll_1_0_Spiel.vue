@@ -546,8 +546,8 @@
           <span v-else-if="spieler=='Sherlock'">
             <img class="spieler" src="assets/img/detektive/sherlock_neutral.png" width="250"/>
             <p> Verblüffend: auch das ist also eine Fälschung! </p>
-            <p v-if="ort=='eg'"> Und es gibt einen zweiten Post von @{{ person.schuldig.accountnamen[0] }}. </p>
-            <p v-else-if="ort=='og1'"> Mal schauen, ob wir da noch mehr über die Tatmotive erfahren? </p>
+            <p> Und es gibt einen zweiten Post von @{{ person.schuldig.accountnamen[0] }}. </p>
+            <p> Mal schauen, ob wir da noch mehr über die Tatmotive erfahren? </p>
           </span>
           <span v-else-if="spieler=='Enola'">
             <img class="spieler" src="assets/img/detektive/enola_neutral.png" width="220"/>
@@ -1043,10 +1043,17 @@
       <span v-else-if="spieler=='Sherlock'">
         <img class="spieler" src="assets/img/detektive/sherlock_enttaeuscht.png" width="250"/>
         <p> 
-          Und schaut euch bitte die rot markierten Hashtags an. Sie passen in der Tat nicht gut zu {{ spielStore.personVerhaftet=='111x' ? "Mia Mirabilis" : "Wolfram Wolkenwand" }}.
+          Und schaut euch bitte die rot markierten Hashtags an. Sie passen in der Tat nicht gut zu 
+          <!-- {{ spielStore.personVerhaftet=='111x' ? "Mia Mirabilis" : "Wolfram Wolkenwand" }} -->
+          {{ person_ort_spieler.find(elem => elem.code == spielStore.personVerhaftet)?.name }}
+          .
         </p>
         <p>
-          Doch wir haben noch eine Chance: Wen überprüfen wir als nächstes Katinka Antiqus oder {{ spielStore.personVerhaftet=='111x' ? "Wolfram Wolkenwand" : "Mia Mirabilis" }}? Einer von ihnen muss es gewesen sein.
+          Doch wir haben noch eine Chance: Wen überprüfen wir als nächstes
+          {{ person_ort_spieler.filter(elem => elem.code != spielStore.personVerhaftet)[0].name }}
+          oder 
+          {{ person_ort_spieler.filter(elem => elem.code != spielStore.personVerhaftet)[1].name }}
+          ? Einer von ihnen muss es gewesen sein.
         </p>
         <p>
           Schaut Euch die Steckbriefe nochmal an und drückt auf die Handschellen, wenn ihr glaubt zu wissen, wer es ist.
@@ -1055,10 +1062,15 @@
       <span v-else>
         <img class="spieler" src="assets/img/detektive/enola_enttaeuscht.png" width="220"/>
         <p> 
-          So ein Pech! Aber schaut euch die rot markierten Hashtags nochmal an. Sie passen tatsächlich nicht gut zu {{ spielStore.personVerhaftet=='11x0' ? "Iri Adler" : "Shorm Roderick" }}.
+          So ein Pech! Aber schaut euch die rot markierten Hashtags nochmal an. Sie passen tatsächlich nicht gut zu
+          {{ person_ort_spieler.find(elem => elem.code == spielStore.personVerhaftet)?.name }}
         </p>
         <p>
-          Wir geben nicht auf! Nächster Versuch: Wen überprüfen wir als nächstes? Katinka Antiqus oder {{ spielStore.personVerhaftet=='11x0' ? "Shorm Roderick" : "Iri Adler" }}? Einer von ihnen muss es gewesen sein.
+          Wir geben nicht auf! Nächster Versuch: Wen überprüfen wir als nächstes?
+          {{ person_ort_spieler.filter(elem => elem.code != spielStore.personVerhaftet)[0].name }}
+          oder 
+          {{ person_ort_spieler.filter(elem => elem.code != spielStore.personVerhaftet)[1].name }}?
+          ? Einer von ihnen muss es gewesen sein.
         </p>
         <p>
           Schaut Euch ihre Steckbriefe nochmal an und drückt auf die Handschellen, wenn ihr glaubt zu wissen, wer es ist.
