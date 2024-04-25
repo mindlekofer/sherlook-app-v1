@@ -41,7 +41,7 @@ export const useSpielStore = defineStore('spielStore', {
         },
         'objekte': {
           'eg': ['111x_eg_bc', '01x1_eg_ab', '001x_eg_ac'],
-          'og1': ['01xx_og1_01', 'x11x_og1_2', '0x1x_og1_01']
+          'og1': ['01xx_og1_01', 'x11x_og1_02', '0x1x_og1_01']
         } 
       },
       {
@@ -54,6 +54,30 @@ export const useSpielStore = defineStore('spielStore', {
         'objekte': {
           'eg': ['00xx_eg_01', '10x1_eg_ac', 'x010_eg_ab'],
           'og1': ['00xx_og1_01', 'x11x_og1_02', '0x1x_og1_02']
+        } 
+      },
+      {
+        'schuldig': 'x101',
+        'unschuldig': {
+        'watson': ['x010', '001x'],
+        'sherlock': ['001x', '00x0'],
+        'enola': ['01x0', '000x'] 
+        },
+        'objekte': {
+          'eg': ['x1x1_eg_01', 'x101_eg_ab', 'x001_eg_bc'],
+          'og1': ['xx01_og1_01', 'x101_og1_ab', 'x101_og1_ac']
+        } 
+      },
+      {
+        'schuldig': '11x1',
+        'unschuldig': {
+        'watson': ['00x0', '001x'],
+        'sherlock': ['001x', 'x000'],
+        'enola': ['00x1', '10x0'] 
+        },
+        'objekte': {
+          'eg': ['111x_eg_ab', '11x1_eg_ac', '01x1_eg_bc'],
+          'og1': ['111x_og1_ab', '1xx1_og1_01', '11x1_og1_bc']
         } 
       }
     ],

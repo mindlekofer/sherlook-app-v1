@@ -1,0 +1,103 @@
+{
+  "code": "x101_og1_ac",
+  "nr": 23,
+  "ort": "og1",
+  "name": "Baby",
+  "genus": {
+    "maskulin": false,
+    "feminin": false,
+    "neutrum": true
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#kein_vorbild",
+       "code": "xxx1"
+    },
+    {
+       "text": "#kuschelbär",
+       "code": "x1xx"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 0,
+           "schwelle": -95
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 67
+   },
+
+  "watson": {
+      "quiz": {
+          "frage": "Ein vertauschtes Baby? Und was sollen diese goldenen Streifen darstellen?",
+          "antwort" : [
+              {
+                  "text": "Lichstrahlen",
+                  "richtig": true
+              },
+              {
+                  "text": "feiner Regen",
+                  "richtig": false
+              },  
+              {
+                  "text": "Saiten einer Harfe",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Das soll ein Vorbild sein? Sucht im Saal mit der alten Kirchenkunst und überlegt, was man da verbessern kann...",
+      "post_2": "So sieht es doch schon besser aus. So ein goldener Strahl ist schließlich kein Heizstrahler!",
+      "leinertext": "Danke lieber Dr. Watson! Dieser Dieb ist ahnungslos. Das Bild zeigt die Geburt Christi nach der Vison der heiligen Brigitta von Schweden. In dieser Vison liegt Jesus nun einmal auf dem Boden. Ganz friedlich und ohne Kuscheltier. Bringt das Original bitte schnell wieder zurück."
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Ein vertauschtes Baby? Und was sollen diese goldenen Streifen darstellen?",
+          "antwort" : [
+              {
+                  "text": "Lichstrahlen",
+                  "richtig": true
+              },
+              {
+                  "text": "Goldregen",
+                  "richtig": false
+              },  
+              {
+                  "text": "Saiten einer Harfe",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Das soll ein Vorbild sein? Sucht nach den gemalten Steinfließen im Saal mit der alten Kirchenkunst und überlegt, was man an der Lage dieses armen Geschöpfs verbessern  kann...",
+      "post_2": "Kinder haben keine Lobby! Und mit solchen Bildern fängt es an. Muss da allein auf dem Boden frieren. So ein goldener Strahl ist schließlich kein Heizstrahler! Aber mit Kuscheldecke und Kuschelbär sieht es doch schon besser aus. ",
+      "leinertext": "Danke lieber Sherlock und ihrem Team! Dieser Dieb ist ahnungslos. Das Bild zeigt die Geburt Christi nach der Vison der heiligen Brigitta von Schweden. In dieser Vison liegt Jesus nun einmal auf dem Boden. Ganz friedlich und ohne Kuscheltier. Bringt das Original bitte schnell wieder zurück."
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Eine Fälschung?! <br> Welches Tier könnte hier nicht ganz echt sein?",
+          "antwort" : [
+              {
+                  "text": "Bär",
+                  "richtig": true
+              },
+              {
+                  "text": "Löwenmensch",
+                  "richtig": false
+              },  
+              {
+                  "text": "Biber",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Das soll ein Vorbild sein? Sucht nach den gemalten Steinfließen im Saal mit der alten Kirchenkunst und überlegt, was man an der Lage dieses armen Geschöpfs verbessern  kann...",
+      "post_2": "Kinder haben keine Lobby! Und mit solchen Bildern fängt es an. Muss da allein auf dem Boden frieren. So ein goldener Strahl ist schließlich kein Heizstrahler! Aber mit Kuscheldecke und Kuschelbär sieht es doch schon besser aus.",
+      "leinertext": "Danke liebe Enola und ihrem Team! Dieser Dieb ist ahnungslos. Das Bild zeigt die Geburt Christi nach der Vison der heiligen Brigitta von Schweden. In dieser Vison liegt Jesus nun einmal auf dem Boden. Ganz friedlich und ohne Kuscheltier. Bringt das Original bitte schnell wieder zurück"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "code": "01x0",
+  "name": "Agatha Glanzer",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "alt & fremd",
+    "Phantasie",
+    "Highlights"
+  ],
+  "accountnamen": [
+    "antiquarius",
+    "alt_und_unvergessen"
+  ],
+  "gruppen": [
+    "01xx",
+    "0xx0",
+    "x1x0"
+  ],
+  "watson": {
+    "steckbrief": "<b> AGATHA GLANZER </b> <ul> <li> mag, was alt und fremd aussieht </li> <li> lässt ihrer Phantasie oft freien Lauf </li> <li> mag Dinge, die als besonderes 'Highlight' präsentiert werden können </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> AGATHA GLANZER </b> <ul> <li> mag Dinge, die möglichst 'retro' aussehen </li> <li> lässt sich durch ihre vielen Fantasybücher inspirieren </li> <li> mag Objekte, die als Eyecatcher taugen </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> AGATHA GLANZER </b> lebt mit zwei Katzen und vielen Fantasy-Büchern in einer kleinen Altbauwohnung in Karlsruhe. Sie mag alt-ehrwürdige Objekte, die möglichst retro aussehen und als Eyecatcher taugen. Ganz nach dem Vorbild ihrer Lieblingsbücher denkt sie sich zu ihren guten Stücken oft eigene und seltsame Geschichten aus..."
+  }
+}

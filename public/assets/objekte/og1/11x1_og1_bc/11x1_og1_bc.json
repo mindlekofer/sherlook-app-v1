@@ -1,0 +1,103 @@
+{
+  "code": "11x1_og1_bc",
+  "nr": 77,
+  "ort": "og1",
+  "name": "junger Mann",
+  "genus": {
+    "maskulin": true,
+    "feminin": false,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#kritisch_bleiben",
+       "code": "xxx1"
+    },
+    {
+       "text": "#mein_neues_drama",
+       "code": "x1xx"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 0,
+           "schwelle": -95
+       }
+   ],
+  "bilderkennung": {
+        "kategorie": 77
+  },
+  
+  "watson": {
+      "quiz": {
+          "frage": "Eine kleine feine Fälschung. Was ist das wohl für eine Szene?",
+          "antwort" : [
+              {
+                  "text": "Ein junger Mann wird von einer Frau abgewiesen",
+                  "richtig": true
+              },
+              {
+                  "text": "Ein junger Mann wird zum Ritter geschlagen",
+                  "richtig": false
+              },  
+              {
+                  "text": "Ein junges Paar heiratet",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Immer wieder zieht es mich zu diesem Biedermeierschrank... auch wenn ich seine Botschaften, kritisch kommentiere!",
+      "post_2": "Ich habe gleich gesehen, um was es hier geht. Sie hat schon hundert mal 'nein' gesagt und er bedrängt sie noch immer. <br> Für mich hat diese Szene eine klare Moral: Nein heißt nein! - Das wird der Titel meines neuen Theaterstücks.",
+      "leinertext": "Danke Dr. Watson und seinem findigen Team. Auch ich sage Nein! - zu diesen Diebstählen. Dieses Tablett aus Frankreich ist ein wertvolles historisches Dokument <br> Bringt es schnell wieder unversehrt zurück!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Eine kleine feine Fälschung. Was ist das wohl für eine Szene?",
+          "antwort" : [
+              {
+                  "text": "Ein junger Mann wird von einer Frau abgewiesen",
+                  "richtig": true
+              },
+              {
+                  "text": "Ein junger Mann wird zum Ritter geschlagen",
+                  "richtig": false
+              },  
+              {
+                  "text": "Ein junges Paar heiratet",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Immer wieder zieht es mich zu diesem Biedermeierschrank... auch wenn ich seine Botschaften, kritisch kommentiere!",
+      "post_2": "Ich habe gleich gesehen, um was es hier geht. Sie hat schon hundert mal 'nein' gesagt und er bedrängt sie noch immer. <br> Für mich hat diese Szene eine klare Moral: Nein heißt nein! - Das wird der Titel meines neuen Theaterstücks.",
+      "leinertext": "Danke dem berühmten Sherlock Holmes und seinem findigen Team. Auch ich sage Nein! - zu diesen Diebstählen. Der Dieb hat wohl nicht alle Tassen im Schrank! Dieses Tablett aus Frankreich ist ein wertvolles historisches Dokument. <br> Bringt es schnell wieder unversehrt zurück!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Eine kleine feine Fälschung. Was ist das wohl für eine Szene?",
+          "antwort" : [
+              {
+                  "text": "Ein junger Mann wird von einer Frau abgewiesen",
+                  "richtig": true
+              },
+              {
+                  "text": "Ein junger Mann wird zum Ritter geschlagen",
+                  "richtig": false
+              },  
+              {
+                  "text": "Eine Frau klopft ihrem Mann anerkennend auf die Schulter",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Immer wieder zieht es mich zu diesem Biedermeierschrank... auch wenn ich seine Botschaften, kritisch kommentiere!",
+      "post_2": "Ich habe gleich gesehen, um was es hier geht. Sie hat schon hundert mal 'nein' gesagt und er bedrängt sie noch immer. <br> Für mich hat diese Szene eine klare Moral: Nein heißt nein! - Das wird der Titel meines neuen Theaterstücks.",
+      "leinertext": "Danke Enola Watson und ihrem findigen Team. Auch ich sage Nein! zu diesen Diebstählen. Der Dieb hat wohl nicht alle Tassen im Schrank! Dieses Tablett aus Frankreich ist ein wertvolles historisches Dokument der Biedermeierzeit. <br> Bringt es schnell wieder unversehrt zurück!"
+  }
+}

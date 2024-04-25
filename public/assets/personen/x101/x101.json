@@ -1,0 +1,31 @@
+{
+  "code": "x101",
+  "name": "Alice Elster",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "Phantasie",
+    "Materialien",
+    "Kritik"
+  ],
+  "accountnamen": [
+    "gold_richtig",
+    "numis_dorado",
+  ],
+  "gruppen": [
+    "x10x",
+    "x1x1",
+    "xx01"
+  ],
+  "watson": {
+    "steckbrief": "<b> ALICE ELSTER </b> <ul> <li> betrachtet die Dinge mit viel Phantasie </li> <li> interessiert sich für Materialien und feines Handwerk </li> <li> mäkelt oft an Museen herum </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> ALICE ELSTER </b> <ul> <li> betrachtet die Dinge mit viel Phantasie </li> <li> interessiert sich für Materialien und feines Handwerk </li> <li> betrachtet Museen und Ausstellungen mit kritischem Blick </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> ALICE ELSTER </b> betrachtet die Dinge mit eigenen Ideen und viel Phantasie. Sie kümmert sich rührend um den Erhalt alter Dinge und Materialien und doch entwickelt sie dabei viele eigene Ideen. Sie mäkelt gerne an Museen und Ausstellungen herum, denen ihrer Meinung nach nichts Neues einfällt."
+  }
+}

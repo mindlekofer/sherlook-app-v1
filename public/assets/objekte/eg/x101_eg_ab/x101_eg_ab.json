@@ -1,0 +1,103 @@
+{
+  "code": "x101_eg_ab",
+  "nr": 5,
+  "ort": "eg",
+  "name": "Perlen",
+  "genus": {
+    "maskulin": false,
+    "feminin": true,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": false,
+    "plural": true
+  },
+  "hashtag": [
+    {
+       "text": "#brokat",
+       "code": "xx0x"
+    },
+    {
+       "text": "#märchenball",
+       "code": "x1xx"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 0,
+           "schwelle": -95
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 5
+   },
+
+  "watson": {
+      "quiz": {
+          "frage": "Was für ein gefälschtes Durcheinander . <br> Was sind denn das für kleine weiße Kügelchen?",
+          "antwort" : [
+              {
+                  "text": "Porzellanperlen",
+                  "richtig": true
+              },
+              {
+                  "text": "Schneebeeren",
+                  "richtig": false
+              },  
+              {
+                  "text": "Zuckererbsen",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Brokatstoff und Porzellan, was für schöne Materialien! Die rosa Vitrine hat mich inspiriert. Auch diesem angestaubten Stück werde ich zu neuem Glanz verhelfen...",
+      "post_2": "Vorhang auf für den großen Auftritt! Jetzt fehlt nur noch die Einladung zum #Märchenball ^^. Welchen Entwurf findet ihr besser?",
+      "leinertext": "Danke lieber Dr. Watson. Was für ein respektloser Diebstahl! Reliquien sind die sterblichen Überreste von Heiligen. Sie sollen zwischen Himmel und Erde vermitteln und gehören mit Sicherheit NICHT auf einen Märchenball! Da müssen wir noch viel Aufklärungsarbeit leisten..."
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Was für ein gefälschtes Durcheinander . <br> Was sind denn das für kleine weiße Kügelchen?",
+          "antwort" : [
+              {
+                  "text": "Porzellanperlen",
+                  "richtig": true
+              },
+              {
+                  "text": "Strass-Steine",
+                  "richtig": false
+              },  
+              {
+                  "text": "Schneebeeren",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Brokatstoff und Porzellan, was für schöne Materialien! Die rosa Vitrine hat mich inspiriert. Auch diesem etwas angestaubten Kästchen werde ich zu neuem Glanz verhelfen...",
+      "post_2": "Alte Reliquien, neuer Glanz. Vorhang auf für den großen Auftritt! Jetzt fehlt nur noch die Einladung zum Märchenball ^^. Welchen Entwurf findet ihr besser?",
+      "leinertext": "Danke lieber Sherlock Holmes. Was für ein respektloser Diebstahl! Reliquien sind die sterblichen Überreste von Heiligen. Sie wurden in Kästchen aufbewahrt und reich geschmückt. Sie sollten zwischen Himmel und Erde vermitteln und gehören mit Sicherheit NICHT auf einen Märchenball! Da müssen wir noch viel Aufklärungsarbeit leisten..."
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Was für ein gefälschtes Durcheinander . <br> Wie nennt man der Glanz dieser weißen Porzellanperlen?",
+          "antwort" : [
+              {
+                  "text": "Lüster",
+                  "richtig": true
+              },
+              {
+                  "text": "Perlmutt",
+                  "richtig": false
+              },  
+              {
+                  "text": "Chenille",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Brokatstoff und Porzellan, was für schöne Materialien! Die rosa Vitrine hat mich inspiriert. Auch diesem etwas angestaubten Kästchen werde ich zu neuem Glanz verhelfen, ihr werdet schon sehen...",
+      "post_2": "VAlte Reliquien, neuer Glanz. Vorhang auf für den großen Auftritt! Jetzt fehlt nur noch die Einladung zum Märchenball ^^. Welchen Entwurf findet ihr besser?",
+      "leinertext": "Danke liebe Enola Holmes. Verhindert bitte respektlose Auftritte dieser Art! Reliquien sind die sterblichen Überreste von Heiligen. Sie wurden in Kästchen aufbewahrt und reich geschmückt. Sie sollten zwischen Himmel und Erde vermitteln und gehören mit Sicherheit NICHT auf einen Märchenball! Da müssen wir noch viel Aufklärungsarbeit leisten..."
+  }
+}

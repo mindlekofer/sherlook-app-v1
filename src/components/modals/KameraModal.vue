@@ -135,7 +135,7 @@ import { VideoHTMLAttributes, ref } from 'vue';
 import { useSpielStore } from '@/stores/SpielStore'
 import { useBeaconStore } from '@/stores/BeaconStore';
 
-import { model, cocoModel, modelGeladen, ladeModell } from '../../bilderkennung'
+import { model, modelGeladen, ladeModell } from '../../bilderkennung'
 
 import ButtonWeiterComponent from '../ButtonWeiterComponent.vue';
 import ButtonZurueckComponent from '../ButtonZurueckComponent.vue';
@@ -368,38 +368,38 @@ async function predictModel()  {
 }
 
 // Versuche mit CocoSSD Modell //
-async function cocoPredict() {
-  videoStartet.value = false;
-  if (videoAktiv.value) {
-    try {
-      // console.log('image: ', image);
+// async function cocoPredict() {
+//   videoStartet.value = false;
+//   if (videoAktiv.value) {
+//     try {
+//       // console.log('image: ', image);
 
-      cocoModel.detect(videoRef.value).then(function (predictions : any) {
-      // model.predict(videoRef.value).then(function (predictions : any) {
-        console.log('predictions', predictions);
-        if (predictions.length>=1) {
-          bbox_x.value = predictions[0].bbox[0]*2.0;
-          bbox_y.value = predictions[0].bbox[1]*2.0;
-          bbox_width.value = predictions[0].bbox[2]*2.0;
-          bbox_height.value = predictions[0].bbox[3]*2.0;
-          bbox_class.value = predictions[0].class;
-          bbox_score.value = (predictions[0].score*100).toFixed(0)+"%";
-          showBbox.value = true;
-          if (bbox_class.value == 'cup') {
-            modalSchliessen();
-          }
-        } else if (predictions.length == 0) {
-          showBbox.value = false;
-        }
-        // setTimeout(predictWebcam, 100);
-        window.requestAnimationFrame(cocoPredict);
-      });
-      erkennungAktiv.value = true;
-    } catch (error) {
-      console.log('predict error', error);
-    }
-  }
-}
+//       cocoModel.detect(videoRef.value).then(function (predictions : any) {
+//       // model.predict(videoRef.value).then(function (predictions : any) {
+//         console.log('predictions', predictions);
+//         if (predictions.length>=1) {
+//           bbox_x.value = predictions[0].bbox[0]*2.0;
+//           bbox_y.value = predictions[0].bbox[1]*2.0;
+//           bbox_width.value = predictions[0].bbox[2]*2.0;
+//           bbox_height.value = predictions[0].bbox[3]*2.0;
+//           bbox_class.value = predictions[0].class;
+//           bbox_score.value = (predictions[0].score*100).toFixed(0)+"%";
+//           showBbox.value = true;
+//           if (bbox_class.value == 'cup') {
+//             modalSchliessen();
+//           }
+//         } else if (predictions.length == 0) {
+//           showBbox.value = false;
+//         }
+//         // setTimeout(predictWebcam, 100);
+//         window.requestAnimationFrame(cocoPredict);
+//       });
+//       erkennungAktiv.value = true;
+//     } catch (error) {
+//       console.log('predict error', error);
+//     }
+//   }
+// }
 
 // function objektIdentifiziert(kategorie : number, auswerten = true) {
 //   let neuer_flow = 0;

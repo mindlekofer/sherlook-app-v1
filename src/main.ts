@@ -24,7 +24,7 @@ import '@ionic/vue/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-import { ladeModell, ladeCocoModel } from './bilderkennung';
+import { ladeModell } from './bilderkennung';
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'

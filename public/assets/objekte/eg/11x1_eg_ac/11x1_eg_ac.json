@@ -1,0 +1,103 @@
+{
+  "code": "11x1_eg_ac",
+  "nr": 4,
+  "ort": "eg",
+  "name": "Knochen",
+  "genus": {
+    "maskulin": true,
+    "feminin": false,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": false,
+    "plural": true
+  },
+  "hashtag": [
+    {
+       "text": "#in_knochen_lesen",
+       "code": "xx1x"
+    },
+    {
+       "text": "#falsche_klischees",
+       "code": "xxx1"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 0,
+           "schwelle": -95
+       }
+   ],
+  "bilderkennung": {
+        "kategorie": 4
+  },
+  
+  "watson": {
+      "quiz": {
+          "frage": "Schauerlich! Was ist hier gefälscht worden?",
+          "antwort" : [
+              {
+                  "text": "Knochen eines Menschen",
+                  "richtig": true
+              },
+              {
+                  "text": "Knochen eines Dinosauriers",
+                  "richtig": false
+              },  
+              {
+                  "text": "Balsaholz",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Unter dem strengen Blick des alten Herrn Leiner musste ich diese Knochen untersuchen und bin dabei zu überraschenden Schlüssen gekommen!",
+      "post_2": "Diese Knochen deuten auf einen starken Unterarm und stammen von einer Frau aus der Steinzeit. Sie musste ebenso schwere Arbeiten verrichten wie ihre männlichen Zeitgenossen. <br> Das werde ich in meiner Ausstellung hervorheben!",
+      "leinertext": "Danke lieber Dr. Watson, wenn ihr diesem Detaildieb auf die Finger klopft. Es ist gut, wenn ein Museum für Aufklärung sorgt. <br> Aber das machen wir schon selbst und nicht dieser seltsame Fälscher."
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Schauerlich! Was ist hier gefälscht worden?",
+          "antwort" : [
+              {
+                  "text": "Oberarmknochen",
+                  "richtig": true
+              },
+              {
+                  "text": "Balsaholz",
+                  "richtig": false
+              },  
+              {
+                  "text": "Hüftknochen",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Unter dem strengen Blick des alten Herrn Leiner musste ich diese Knochen untersuchen und bin dabei zu überraschenden Schlüssen gekommen!",
+      "post_2": "Diese Knochen deuten auf einen starken Unterarm und stammen von einer Frau aus der Steinzeit. Sie musste ebenso schwere Arbeiten verrichten wie ihre männlichen Zeitgenossen. <br> Manche Klischees sind einfach falsch. Das werde ich in meiner Ausstellung hervorheben!",
+      "leinertext": "Danke lieber Dr. Watson, wenn ihr diesem Detaildieb auf die Finger klopft. Es ist gut, wenn ein Museum für Aufklärung sorgt. <br> Aber das machen wir schon selbst und nicht dieser seltsame Fälscher."
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Schauerlich! Was ist hier gefälscht worden?",
+          "antwort" : [
+              {
+                  "text": "Oberarmknochen",
+                  "richtig": true
+              },
+              {
+                  "text": "Fingerknochen",
+                  "richtig": false
+              },  
+              {
+                  "text": "Hüftknochen",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Unter dem strengen Blick des alten Herrn Leiner musste ich diese Knochen untersuchen und bin dabei zu überraschenden Schlüssen gekommen!",
+      "post_2": "Diese Knochen deuten auf einen starken Unterarm, an dem viele Muskeln ansetzen konnten. Sie stammen von einer Frau aus der Steinzeit, die ebenso schwere Arbeiten verrichten musste wie ihre männlichen Zeitgenossen. <br> Manche Klischees sind einfach falsch.  Das werde ich in meiner Ausstellung hervorheben!",
+      "leinertext": "Danke lieber Dr. Watson, wenn ihr diesem Detaildieb auf die Finger klopft. Es ist gut, wenn ein Museum für Aufklärung sorgt. <br> Aber das machen wir schon selbst und nicht dieser seltsame Fälscher."
+  }
+}

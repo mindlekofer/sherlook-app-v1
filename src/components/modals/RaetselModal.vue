@@ -12,10 +12,16 @@
                 <ion-radio value="0" label-placement="start" alignment="center" justify="space-between">00x0</ion-radio>
             </ion-item>
             <ion-item>
-              <ion-radio value="1" label-placement="start" alignment="center" justify="space-between">011x (neu)</ion-radio>
+              <ion-radio value="1" label-placement="start" alignment="center" justify="space-between">011x</ion-radio>
             </ion-item>
             <ion-item>
-              <ion-radio value="2" label-placement="start" alignment="center" justify="space-between">101x (ganz neu)</ion-radio>
+              <ion-radio value="2" label-placement="start" alignment="center" justify="space-between">101x (neu)</ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-radio value="3" label-placement="start" alignment="center" justify="space-between">x101 (test)</ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-radio value="4" label-placement="start" alignment="center" justify="space-between">11x1 (test)</ion-radio>
             </ion-item>
           </ion-radio-group>
         </ion-list>

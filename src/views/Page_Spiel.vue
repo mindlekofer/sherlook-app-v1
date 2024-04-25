@@ -584,8 +584,7 @@ watch(rangeTicks, () => {
   }
 });
 
-watch(aktives_raetsel, () => {
-  console.log('Rätsel geändert: ', aktives_raetsel);
+const lade_assets = () => {
   // Schuldiger //
   axios.get('assets/personen/'+raetsel.value[aktives_raetsel.value].schuldig+'/'+raetsel.value[aktives_raetsel.value].schuldig+'.json')
         .then(response => { person.value.schuldig = response.data; console.log('Person (schuldig): ', person.value.schuldig); })
@@ -620,6 +619,11 @@ watch(aktives_raetsel, () => {
         +spielStore.raetsel[spielStore.aktives_raetsel].objekte.og1[i]+'.json')
             .then(response => { spielStore.objekte.og1[i] = response.data, console.log(response); });
   }
+}
+
+watch(aktives_raetsel, () => {
+  console.log('Rätsel geändert: ', aktives_raetsel);
+  lade_assets();
 });
 
 function hinweisClicked(nr : number) {
@@ -672,6 +676,7 @@ const openSpielMenu = async () => {
     spielStore.$reset();
     router.push("start");
     spielStore.flow = 0.0;
+    lade_assets();
   } else if (data == "beacons") {
     console.log("open beacons modal");
     const beacon_modal = await modalController.create({

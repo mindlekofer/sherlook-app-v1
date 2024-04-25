@@ -1,0 +1,103 @@
+{
+  "code": "111x_eg_ab",
+  "nr": 27,
+  "ort": "eg",
+  "name": "Mitra",
+  "genus": {
+    "maskulin": false,
+    "feminin": true,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#topaktuell",
+       "code": "0xxx"
+    },
+    {
+       "text": "#mode_phantasie",
+       "code": "x1xx"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 0,
+           "schwelle": -95
+       }
+   ],
+  "bilderkennung": {
+        "kategorie": 27
+  },
+  
+  "watson": {
+      "quiz": {
+          "frage": "Eine feine Fälschung. Was könnte das für ein Objekt sein?",
+          "antwort" : [
+              {
+                  "text": "Kopfbedeckung",
+                  "richtig": true
+              },
+              {
+                  "text": "Autositz",
+                  "richtig": false
+              },  
+              {
+                  "text": "Weihnachtsdeko",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Das habe ich in einem rosa Schaufenster gefunden, in dem Bischöfe einkaufen... Zeitlos schön und topaktuell. <br> Einfach mal MITRA-ten, was das sein könnte...",
+      "post_2": "Was sagt ihr zu meinem Entwurf? Man braucht nur ein wenig Phantasie: und schon bekommt ein alter Bischofshut eine neue Zielgruppe...",
+      "leinertext": "Danke Watson und ihrem ganzen Team! Früher gab es in Konstanz tatsächlich einen Bischof. <br> Der letzte hat die Stadt 1821 verlassen... Diesem respektlosen Schneider müssen wir das Handwerk legen."
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Eine feine Fälschung. Was für ein schönes Muster. Aber wozu gehört das überhaupt?",
+          "antwort" : [
+              {
+                  "text": "würdige Kopfbedeckung",
+                  "richtig": true
+              },
+              {
+                  "text": "alte Weihnachtsdekoration",
+                  "richtig": false
+              },  
+              {
+                  "text": "edler Autositz",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Das habe ich in einem rosa Schaufenster gefunden, in dem Bischöfe einkaufen...  Zeitlos schön und topaktuell. <br> Einfach mal MITRA-ten, was das sein könnte...",
+      "post_2": "Mit alten Hüten habe ich wenig am Hut. Aber man braucht nur ein wenig Phantasie: und schon findet eine verstaubte Mitra eine neue Zielgruppe...",
+      "leinertext": "Danke Watson und ihrem ganzen Team! Früher gab es in Konstanz tatsächlich einen Bischof. <br> Der letzte hat die Stadt 1821 verlassen, als sein Bistum nach Freiburg verlegt wurde... <br> Diesem respektlosen Schneider müssen wir das Handwerk legen."
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Eine feine Fälschung. Was für ein schönes Muster. Aber wozu gehört das überhaupt?",
+          "antwort" : [
+              {
+                  "text": "würdige Kopfbedeckung",
+                  "richtig": true
+              },
+              {
+                  "text": "alte Weihnachtsdekoration",
+                  "richtig": false
+              },  
+              {
+                  "text": "edler Autositz",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Das habe ich in einem rosa Schaufenster gefunden, in dem Bischöfe einkaufen könnten! Zeitlos schön und topaktuell. <br> Die verschlungenen Ornamente könnte ich stundenlang anschauen... <br> Einfach mal MITRA-ten, was man daraus noch so machen könnte...",
+      "post_2": "Mit alten Hüten habe ich wenig am Hut. Aber man braucht nur ein wenig Phantasie: und schon findet eine verstaubte Mitra eine neue Zielgruppe... <br> Abonniert meinen Kanal und ihr liegt immer voll im Trend!",
+      "leinertext": "Danke Enola und ihrem ganzen Team! Früher gab es in Konstanz tatsächlich einen Bischof. <br> Der letzte hat die Stadt 1821 verlassen, als sein Bistum nach Freiburg verlegt wurde... <br> Diesem respektlosen Schneider müssen wir das Handwerk legen."
+  }
+}

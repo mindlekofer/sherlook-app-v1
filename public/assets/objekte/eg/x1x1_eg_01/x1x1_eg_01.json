@@ -1,0 +1,103 @@
+{
+  "code": "x1x1_eg_01",
+  "nr": 109,
+  "ort": "eg",
+  "name": "Stein",
+  "genus": {
+    "maskulin": true,
+    "feminin": false,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#unterste_schublade",
+       "code": "x1xx"
+    },
+    {
+       "text": "#mehr_phantasie_wagen",
+       "code": "x1xx"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 0,
+           "schwelle": -95
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 109
+   },
+
+  "watson": {
+      "quiz": {
+          "frage": "Was für ein seltsame Fälschung. <br> Was ist das überhaupt?",
+          "antwort" : [
+              {
+                  "text": "geschliffener Stein",
+                  "richtig": true
+              },
+              {
+                  "text": "Steinkiwi",
+                  "richtig": false
+              },  
+              {
+                  "text": "eingelegte Zwiebel",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Macht doch einfach mal ein paar Kniebeugen, gleich beim Eingang in den alten Saal. <br> Ein phantastisches Wunderwerk wartet auf euch!",
+      "post_2": "Wie kann man ein solches Wunderwerk nur in der untersten Schublade verstecken und mit so viel Fachbegriffen zudecken. In meinem Atelier werde ich diese Schönheit in ein Schmuckstück verwandeln!",
+      "leinertext": "Danke Dr. Watson und danke ihrem findigen Team. Wie unverschämt! Meine Dinge verschwinden lassen und dann noch meine Erklärung kritisieren. Legt diesem Dieb das Handwerk bevor er seine Pläne in die Tat umsetzt."
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Was für ein seltsame Fälschung. <br> Was ist das überhaupt?",
+          "antwort" : [
+              {
+                  "text": "Kugeldiorit",
+                  "richtig": true
+              },
+              {
+                  "text": "Steinkiwi",
+                  "richtig": false
+              },  
+              {
+                  "text": "Dessertteller",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Geschliffen und poliert! Macht doch einfach mal ein paar Kniebeugen, gleich beim Eingang in den alten Saal. Ein phantastisches Wunderwerk wartet auf euch...",
+      "post_2": "Wie kann man ein solches Wunderwerk nur in der untersten Schublade verstecken und derart mit Fachbegriffen zudecken. Corsit? Amphibol?? Chlorit?? In meinem Atelier werde ich diese Schönheit in ein Schmuckstück verwandeln und mit sehr viel mehr Phantasie präsentieren!",
+      "leinertext": "Danke Sherlock Holmes und danke ihrem findigen Team. Wie unverschämt! Meine Dinge verschwinden lassen und dann noch meine Erklärung kritisieren. Die Begriffe bezeichnen verschiedene Minerale. Legt diesem Dieb das Handwerk bevor er seine Pläne in die Tat umsetzt."
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Was für ein seltsame Fälschung. <br> Was ist das überhaupt?",
+          "antwort" : [
+              {
+                  "text": "Kugeldiorit",
+                  "richtig": true
+              },
+              {
+                  "text": "Steinkiwi",
+                  "richtig": false
+              },  
+              {
+                  "text": "Dessertteller",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Wie geschliffen und poliert. Fast wäre ich achtlos vorbeigelaufen. Macht doch einfach mal ein paar Kniebeugen, gleich beim Eingang in den alten Saal. Ein phantastisches Wunderwerk wartet auf euch...",
+      "post_2": "Wie kann man ein solches Wunderwerk nur in der untersten Schublade verstecken und mit so viel Fachbegriffen zudecken: Kugelbildung, Kristallisationsstreben, Corsit, Amphibol, Chlorit. In meinem Atelier werde ich diese Schönheit in ein Schmuckstück verwandeln und mit sehr viel mehr Phantasie präsentieren!",
+      "leinertext": "Danke Enola Holmes und danke ihrem findigen Team. Wie unverschämt! Meine Dinge verschwinden lassen und dann noch meine Erklärung kritisieren. Die Begriffe bezeichnen verschiedene Minerale. Sie erstarren zu einem 'Kugeldiorit', wenn Magma plötzlich abkühlt. Legt diesem Dieb das Handwerk!"
+  }
+}

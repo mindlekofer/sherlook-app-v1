@@ -1,0 +1,103 @@
+{
+  "code": "x101_og1_ab",
+  "nr": 48,
+  "ort": "og1",
+  "name": "Biber",
+  "genus": {
+    "maskulin": true,
+    "feminin": false,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#goldkrone",
+       "code": "xx0x"
+    },
+    {
+       "text": "#biberkönig",
+       "code": "x1xx"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 0,
+           "schwelle": -95
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 5
+   },
+
+  "watson": {
+      "quiz": {
+          "frage": "Oh weh... Welches Tier trägt hier eine vermutlich gefälschte Krone?",
+          "antwort" : [
+              {
+                  "text": "Biber",
+                  "richtig": true
+              },
+              {
+                  "text": "Affe",
+                  "richtig": false
+              },  
+              {
+                  "text": "Dachs",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Seht ihr auch das dünne Blattgold funkeln?! Im Holzgebälk des alten Saal hat sich ein Biberkönig versteckt ^^.",
+      "post_2": "DIE MACHT DES GOLDES <br> Es war einmal ein Biber, br> kein gewöhnlicher und lieber. <br> Er schikaniert das ganze Land, <br> als er ne goldne Krone fand... <br> Da wurd er Biber Blöd genannt.",
+      "leinertext": "Danke, lieber Dr. Watson, für ihre große Hilfe. Was soll man dazu sagen? <br><br> Es war einmal ein Dieb,<br> sehr dreist und gar nicht lieb,<br> doch bald ist er geschnappt <br> auf frischer Tat ertappt!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Oh weh. Welches Tier trägt hier eine vermutlich gefälschte Krone?",
+          "antwort" : [
+              {
+                  "text": "Biber",
+                  "richtig": true
+              },
+              {
+                  "text": "Affe",
+                  "richtig": false
+              },  
+              {
+                  "text": "Maulwurf",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Seht ihr auch das dünne Blattgold funkeln?! Im Holzgebälk des alten Saals hat sich ein Biberkönig versteckt ^^",
+      "post_2": "DIE MACHT DES GOLDES <br> Es war einmal ein Biber, br> kein gewöhnlicher und lieber. <br> Er schikaniert das ganze Land, <br> als er ne goldne Krone fand... <br> Da wurd er Biber Blöd genannt.",
+      "leinertext": "Danke, lieber Sherlock Holmes, für ihre große Hilfe. Was soll man dazu sagen? <br><br> Es war einmal ein Dieb,<br> sehr dreist und gar nicht lieb,<br> doch bald ist er geschnappt <br> auf frischer Tat ertappt!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Was für ein gefälschtes Durcheinander . <br> Wie nennt man der Glanz dieser weißen Porzellanperlen?",
+          "antwort" : [
+              {
+                  "text": "Lüster",
+                  "richtig": true
+              },
+              {
+                  "text": "Perlmutt",
+                  "richtig": false
+              },  
+              {
+                  "text": "Chenille",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Seht ihr auch das dünne Blattgold funkeln?! Im Holzgebälk des alten Saals hat sich ein Biberkönig versteckt ^^",
+      "post_2": "DIE MACHT DES GOLDES <br> Es war einmal ein Biber, br> kein gewöhnlicher und lieber. <br> Er schikaniert das ganze Land, <br> als er ne goldne Krone fand... <br> Da wurd er Biber Blöd genannt.",
+      "leinertext": "Danke, liebe Enola Holmes, für ihre große Hilfe. Was soll man dazu sagen? <br><br> Es war einmal ein Dieb,<br> sehr dreist und gar nicht lieb,<br> doch bald ist er geschnappt <br> auf frischer Tat ertappt!"
+  }
+}

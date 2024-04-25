@@ -1,0 +1,103 @@
+{
+  "code": "1xx1_og1_01",
+  "nr": 61,
+  "ort": "og1",
+  "name": "Ochse",
+  "genus": {
+    "maskulin": true,
+    "feminin": false,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#lichter_stall",
+       "code": "xxxx"
+    },
+    {
+       "text": "#macht_es_besser_so_wie_früher",
+       "code": "1xx1"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 0,
+           "schwelle": -95
+       }
+   ],
+  "bilderkennung": {
+        "kategorie": 61
+  },
+  
+  "watson": {
+      "quiz": {
+          "frage": "Oh Schreck! Welches Tier wurde hier vermutlich gefälscht?",
+          "antwort" : [
+              {
+                  "text": "Ochse",
+                  "richtig": true
+              },
+              {
+                  "text": "Pferd",
+                  "richtig": false
+              },  
+              {
+                  "text": "Kuh",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "In diesem Saal sind Bilder aus den Konstanzer Kirchen ausgestellt. Und dieses Weihnachtsbild müsst ihr Euch genau anschauen... Denn ich habe eine wichtige Botschaft dazu...",
+      "post_2": "Ein alter, luftiger Stall... Wie schön und wie tierfreundlich. Ach, wie wir heute Tiere einsperren... ist das nicht furchtbar?",
+      "leinertext": "Danke dem flinken Team um Dr. Watson. Diebstähle sind nicht geeignet, um auf solche Anliegen aufmerksam zu machen. Ochs und Esel im Stall sind hier besonders schön gemalt. <br> Bringt mir das Original schnell zurück!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Oh Schreck! Welches Tier wurde hier vermutlich gefälscht?",
+          "antwort" : [
+              {
+                  "text": "ein Ochse im Stall",
+                  "richtig": true
+              },
+              {
+                  "text": "ein Stier in der Arena",
+                  "richtig": false
+              },  
+              {
+                  "text": "eine Kuh auf der Weide",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "In diesem Saal sind Bilder aus den Konstanzer Kirchen ausgestellt. Und dieses Weihnachtsbild müsst ihr Euch genau anschauen... Denn ich habe eine wichtige Botschaft dazu...",
+      "post_2": "Ein alter, luftiger Stall wie auf diesem alten Weihnachtsbild aus Konstanz... Wie schön und wie tierfreundlich. Ach, wie wir heute Tiere einsperren... ist das nicht furchtbar?",
+      "leinertext": "Danke dem flinken Team um den berühmten Sherlock Holmes. Diebstähle sind nicht geeignet, um auf solche Anliegen aufmerksam zu machen. Ochs und Esel sind hier besonders schön gemalt, mit den goldenen Strahlen. Habt ihr gesehen, wo sie enden? Beim kleinen Jesuskind und seiner Mutter Maria. <br> Bringt mir das Original schnell zurück!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Da will der Dieb uns wohl einen Bären aufbinden. Welches Sprichwort passt am Besten zu diesem Bild?",
+          "antwort" : [
+              {
+                  "text": "Es kennt der Ochse seinen Besitzer und der Esel die Krippe seines Herrn",
+                  "richtig": true
+              },
+              {
+                  "text": "Wie ein Ochs vor dem Berg stehen",
+                  "richtig": false
+              },  
+              {
+                  "text": "Den Stier bei den Hörnern packen",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "In diesem Saal sind Bilder aus den Konstanzer Kirchen ausgestellt. Und dieses Weihnachtsbild müsst ihr Euch genau anschauen... Denn ich habe eine wichtige Botschaft dazu...",
+      "post_2": "Ein alter, luftiger Stall wie auf diesem alten Weihnachtsbild aus Konstanz... Wie schön, wie tierfreundlich, wie nachhaltig. Ach, wie wir heute Tiere einsperren... ist das nicht furchtbar?",
+      "leinertext": "Danke dem flinken Team um Enola Holmes. Diebstähle sind nicht geeignet, um auf solche Anliegen aufmerksam zu machen. Ochs und Esel sind hier besonders schön gemalt, mit den goldenen Strahlen. <br> Habt ihr gesehen, wo sie enden? Beim kleinen Jesuskind und seiner Mutter Maria. Das Kind leuchtet und über ihm schwebt die Taube des Heiligen Geistes. <br> Bringt mir das Original schnell wieder zurück!"
+  }
+}

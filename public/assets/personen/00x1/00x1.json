@@ -1,0 +1,32 @@
+{
+  "code": "00x1",
+  "name": "Klara Fall",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "Alt & Fremd",
+    "Fakten",
+    "Kritik"
+  ],
+  "accountnamen": [
+    "altes_holz",
+    "vielzuviel_fatal",
+    "saetze_sind_schaetze"
+  ],
+  "gruppen": [
+    "00xx",
+    "0xx1",
+    "x0x1"
+  ],
+  "watson": {
+    "steckbrief": "<b> KLARA FALL </b> <ul> <li> spürt gerne alten Namen und Traditionen nach </li> <li> sammelt eifrig Fakten </li> <li>  vertritt eigene Meinungen </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> KLARA FALL </b> <ul> <li> spürt gerne alten Namen und Traditionen nach </li> <li> sammelt eifrig Zahlen und Fakten </li> <li> vertritt eigene kritische Meinungen </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> KLARA FALL </b> KLARA FALL spürt gerne alten Namen und Traditionen nach, ganz nach dem Motto: "Zurück zu den wahren Wurzeln!"  Sie recherchiert mit Ausdauer nach Fakten, Zahlen und interessanten Zusammenhängen. Mit klarem Blick und kritischem Geist vertritt sie gern eigene Meinungen, deckt Fehler auf und fordert ihre Mitmenschen zum Umdenken auf."
+  }
+}

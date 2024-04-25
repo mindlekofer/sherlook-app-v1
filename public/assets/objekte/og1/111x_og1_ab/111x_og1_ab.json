@@ -1,0 +1,103 @@
+{
+  "code": "111x_og1_ab",
+  "nr": 46,
+  "ort": "og1",
+  "name": "Hut",
+  "genus": {
+    "maskulin": true,
+    "feminin": false,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#roter_galero",
+       "code": "xxxx"
+    },
+    {
+       "text": "#aktueller_bestseller",
+       "code": "11xx"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 0,
+           "schwelle": -95
+       }
+   ],
+  "bilderkennung": {
+        "kategorie": 46
+  },
+  
+  "watson": {
+      "quiz": {
+          "frage": "Ein seltsamer Hut... Wem könnte er gehört haben?",
+          "antwort" : [
+              {
+                  "text": "Einem Kardinal",
+                  "richtig": true
+              },
+              {
+                  "text": "Einem Brezel-Bäcker",
+                  "richtig": false
+              },  
+              {
+                  "text": "Das ist kein Hut, sondern ein UFO",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Geisterhaft schwebt er im Fenster der alten Zunftstube... Dazu werde ich eine tolle Geschichte erfinden.",
+      "post_2": "Aus diesem Hut mache ich einen Star! Das wird der Titelheld meines neuen Romans: Der rote Galero! Ein Filmstar verschwindet spurlos... <br> Mehr wird noch nicht verraten!",
+      "leinertext": "Ich danke Dr. Watson und seinem Team! Wusstet ihr: Diesen roten Galero gibt es wirklich! So heisst ein Hut, den früher Kardinäle trugen. <br> Bringt das Orginal schnell wieder zurück!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Da wurde ein seltsamer Hut gefälscht. Wem könnte er gehört haben?",
+          "antwort" : [
+              {
+                  "text": "Einem Prälaten",
+                  "richtig": true
+              },
+              {
+                  "text": "Einem Gondoliere",
+                  "richtig": false
+              },  
+              {
+                  "text": "Das ist kein Hut, sondern ein UFO",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Geisterhaft schwebt er im Fenster der alten Zunftstube über der Rosgartenstraße... Dazu werde ich eine tolle Geschichte erfinden.",
+      "post_2": "Wie geheimnisvoll und meisterhaft. Das soll der Titelheld meines neuen Bestsellers werden: Der rote Galero! Ein Filmstar verschwindet spurlos auf dem roten Teppich... <br> Mehr wird noch nicht verraten!",
+      "leinertext": "Ich danke dem Team um den berühmten Sherlock Holmes, sehr gute Arbeit!  Dieser Filmstar ist natürlich eine Erfindung. Aber diesen roten Galero gibt es wirklich! So heisst ein Hut, den früher nur Kardinäle tragen durften. <br> Bringt das Orginal schnell wieder zurück!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Da wurde ein seltsamer Hut gefälscht. Wem könnte er gehört haben?",
+          "antwort" : [
+              {
+                  "text": "Einem Prälaten",
+                  "richtig": true
+              },
+              {
+                  "text": "Einem Gondoliere",
+                  "richtig": false
+              },  
+              {
+                  "text": "Dem roten Baron",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Geisterhaft schwebt er im Fenster der alten Zunftstube über der Rosgartenstraße... Bald fliegt er auch auf deinen Büchertisch!",
+      "post_2": "Folgt diesen verschlungenen Kordeln... Wie geheimnisvoll und meisterhaft. Der rote Galero! So soll mein neuer Bestseller heißen: Ein Filmstar verschwindet spurlos auf dem roten Teppich... Plötzlich ist er weg, nur sein roter Hut bleibt übrig. <br> Mehr wird noch nicht verraten!",
+      "leinertext": "Ich danke Enola Holmes und ihren Helferinnen und Helfern. Dieser Filmstar ist natürlich eine Erfindung.  Aber den roten Galero gibt es wirklich!  So heisst ein Hut, den früher nur Kardinäle tragen durften. Die rote Farbe sollte an das Blut Christi erinnern... <br> Bringt ihn schnell wieder zurück ins Museum!"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "code": "xx01_og1_01",
+  "nr": 112,
+  "ort": "og1",
+  "name": "Trauertuch",
+  "genus": {
+    "maskulin": false,
+    "feminin": false,
+    "neutrum": true
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#trauer_weide",
+       "code": "xx0x"
+    },
+    {
+       "text": "#da_ist_der_wurm_drin",
+       "code": "xxx1"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 0,
+           "schwelle": -95
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 112
+   },
+
+  "watson": {
+      "quiz": {
+          "frage": "Seltsame Fälschung. <br> Was soll das für ein Tuch sein?",
+          "antwort" : [
+              {
+                  "text": "Teil eines Schleiers",
+                  "richtig": true
+              },
+              {
+                  "text": "Tischtuch",
+                  "richtig": false
+              },  
+              {
+                  "text": "Putztuch",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Mitten im Raum und doch in einer Ecke, versteckt sich die Trauernde. <br> Dieses Weidenholz musste ich genauer anschauen...",
+      "post_2": "Spuren von Holzwürmern, wo man nur hinschaut! Und dann fehlen auch noch die Beine. Kann man auf solch wertvolle Kunstwerke nicht besser aufpassen?",
+      "leinertext": "Danke Dr. Watson, dass sie diesen Dieb in seinen Schlupflöchern aufspüren. Diese Figuren des Meisters von Eriskirch wurdem 1988 sorgsam restauriert. Wir müssen dankbar sein, dass sie überhaupt überliefert sind. Bringt sie schnell wieder zurück."
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Seltsame Fälschung. <br> Warum darf dieses Tuch nicht fehlen?",
+          "antwort" : [
+              {
+                  "text": "es trocknet Tränen",
+                  "richtig": true
+              },
+              {
+                  "text": "es wärmt die Hände",
+                  "richtig": false
+              },  
+              {
+                  "text": "es muss geflickt werden",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Mitten im Raum und doch in einer Ecke versteckt sich die Trauernde und führt den Schleier in Richtung ihres Gesichts. Dieses Weidenholz muss ich genauer untersuchen...",
+      "post_2": "Weidenholz ist manchmal etwas spröde und lässt sich nicht so glatt hobeln und schnitzen. Aber soviel Wurmlöcher habe ich selten gesehen. Und hier fehlen sogar die Beine. Kann man auf solch wertvolle Kunstwerke nicht besser aufpassen?",
+      "leinertext": "Danke Sherlock Holmes, dass sie diesen Dieb in seinen Schlupflöchern aufspüren. Den genauen Namen des Künstler kennen wir leider nicht. Er wird Meister von Eriskirch genannt. Nur wenige seiner Skulpturen sind erhalten. Diese Figur wurde 1988 sorgsam restauriert. Wir müssen dankbar sein, dass wir noch erkennen können, wie fein sie geschnitzt ist. Bringt sie schnell wieder zurück."
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Seltsame Fälschung. <br> Warum darf dieses Tuch nicht fehlen?",
+          "antwort" : [
+              {
+                  "text": "es trocknet Tränen",
+                  "richtig": true
+              },
+              {
+                  "text": "es wärmt die Hände",
+                  "richtig": false
+              },  
+              {
+                  "text": "es muss geflickt werden",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Mitten im Raum und doch in einer Ecke versteckt sich die Trauernde und führt den Schleier in Richtung ihres Gesichts. Dieses Weidenholz musste ich genauer untersuchen...",
+      "post_2": "Weidenholz ist manchmal etwas spröde und lässt sich nicht so glatt hobeln und schnitzen. Aber soviel Wurmlöcher habe ich selten gesehen. Und hier fehlen sogar die Beine. Kann man auf solch wertvolle Kunstwerke nicht besser aufpassen?",
+      "leinertext": "Danke Enola Holmes, dass sie diesen Dieb in seinen Schlupflöchern aufspüren. Den genauen Namen des Künstler kennen wir leider nicht. Er wird Meister von Eriskirch genannt. Nur wenige seiner Skulpturen sind erhalten. Diese Figur wurde 1988 sorgsam restauriert. Wir müssen dankbar sein, dass wir noch erkennen können, wie fein sie geschnitzt ist. Bringt sie schnell wieder zurück."
+  }
+}

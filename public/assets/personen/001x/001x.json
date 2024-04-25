@@ -1,0 +1,32 @@
+{
+  "code": "001x",
+  "name": "Hilda Herrlich",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "alt & fremd",
+    "Fakten",
+    "Bedeutungen"
+  ],
+  "accountnamen": [
+    "antiquarius",
+    "hintertuerchen",
+    "schaetze_suchen"
+  ],
+  "gruppen": [
+    "00xx",
+    "0x1x",
+    "x01x"
+  ],
+  "watson": {
+    "steckbrief": "<b> HILDA HERRLICH </b> <ul> <li> liebt das Alte und Fremde </li> <li> begeistert sich für Namen, Daten und Fakten </li> <li> möchte wissen, was die Dinge bedeutet haben </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> HILDA HERRLICH </b> <ul> <li> liebt Dinge, wenn sie alt und fremd erscheinen </li> <li>  begeistert sich für Namen, Daten und Fakten, die sie sich auch gut merken kann </li> <li> möchte wissen, was die Dinge den Menschen in der Vergangeheit bedeutet haben </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> HILDA HERRLICH </b> weiß, dass manche Dinge eine Schönheit bergen, die nur noch wenige aus ihrer Generation erkennen können. Immer sucht sie nach der historischen Wahrheit. Sie möchte genau wissen, was die Dinge den Menschen in der Vergangeheit bedeutet haben, auch wenn das die Generation ihrer Enkel kaum noch zu interessieren scheint. Sie begeistert sich für Namen, Daten und Fakten, die sie sich trotz ihres fortgeschrittenen Alters sehr gut merken kann."
+  }
+}

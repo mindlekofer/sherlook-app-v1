@@ -1,0 +1,103 @@
+{
+  "code": "01x1_eg_bc",
+  "nr": 36,
+  "ort": "eg",
+  "name": "Wappen",
+  "genus": {
+    "maskulin": false,
+    "feminin": false,
+    "neutrum": true
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#spieglein_spieglein",
+       "code": "x1xx"
+    },
+    {
+       "text": "#kritisch_bleiben",
+       "code": "xxx1"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 0,
+           "schwelle": -95
+       }
+   ],
+  "bilderkennung": {
+        "kategorie": 36
+  },
+  
+  "watson": {
+      "quiz": {
+          "frage": "Eine dreiste Fälschung. Könnt ihr das Tier auf dem Wappen erkennen?",
+          "antwort" : [
+              {
+                  "text": "Ein Einhorn",
+                  "richtig": true
+              },
+              {
+                  "text": "Ein Zirkuspferd",
+                  "richtig": false
+              },  
+              {
+                  "text": "Ein Nashorn",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Spieglein, Spielglein in der Wand. Wer hat den schönsten Kelch im ganzen Land? <br> Sucht ihn in den rosroten Vitrinen der Bischöfe!",
+      "post_2": "Wenn der Bischof aus dem Messkelch getrunken hat, kam sein Wappen mit Einhorn zum Vorschein! <br> Dieser unglaubliche Reichtum der Kirche macht mich wütend. Und deshalb kommt der Pokal nun in meine Sammlung. <br> Er wird der Hauptgewinn auf meiner nächsten Themenparty.",
+      "leinertext": "Dank an Dr. Watson und sein findiges Team. Dieser Dieb ist dreist und anmaßend! <br> Das Wappen gehört dem Konstanzer Bischof Georg Sigismund Miller (1616 – 1686). <br> Bringt den echten Kelch bitte schnell wieder zurück in mein Museum."
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Ein gefälschtes Wappen! Schaut genau hin: Könnt ihr das Wappentier erkennen?",
+          "antwort" : [
+              {
+                  "text": "Einhorn",
+                  "richtig": true
+              },
+              {
+                  "text": "weißer Rappe",
+                  "richtig": false
+              },  
+              {
+                  "text": "Zentaur",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Spieglein, Spielglein in der Wand. Wer hat den schönsten Kelch im ganzen Land? <br> Sucht ihn in den Vitrinen der Bischöfe!",
+      "post_2": "Wenn der Bischof aus dem Messkelch getrunken hat, kam sein Wappen mit Einhorn zum Vorschein! <br> Dieser unglaubliche Reichtum der Kirche macht mich wütend. Und deshalb kommt der Pokal nun in meine Sammlung. <br> Er wird der Hauptgewinn auf meiner nächsten Themenparty.",
+      "leinertext": "Dank an den berühmten Sherlock Holmes und sein findiges Team. Dieser Dieb ist dreist und anmaßend! <br> Das Wappen hat dem Konstanzer Bischof Georg Sigismund Miller (1616 – 1686) gehört. <br> Sein Grabstein befindet sich im Konstanzer Münster. Bringt den echten Kelch bitte schnell wieder zurück."
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Ein gefälschtes Wappen ! Schaut genau hin: Wie heißt das Wappentier?",
+          "antwort" : [
+              {
+                  "text": "unicornis",
+                  "richtig": true
+              },
+              {
+                  "text": "capricornus",
+                  "richtig": false
+              },  
+              {
+                  "text": "equus albus",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Spieglein, Spielglein in der Wand. Wer hat den schönsten Kelch im ganzen Land? <br> Sucht ihn in den Vitrinen der Bischöfe!",
+      "post_2": "Wenn der Bischof aus dem Messkelch getrunken hat, kam sein Wappen zum Vorschein! <br> Dieser unglaubliche Reichtum der 'Kirchendiener' macht mich wütend. Da wäre doch mal eine kritische Bemerkung von Seiten des Museums angebracht! Und deshalb kommt der Pokal nun in meine Sammlung. <br> Er wird der Hauptgewinn auf meiner nächsten Themenparty.",
+      "leinertext": "Dank an Enola Holmes und ihr findiges Team. Dieser Dieb ist dreist und anmaßend! <br> Das Wappen hat dem Konstanzer Bischof Georg Sigismund Miller  gehört. 1686 ist er ohne Nachkommen gestorben. <br> Sein Grabstein befindet sich im Konstanzer Münster. Bringt den echten Kelch bitte schnell wieder zurück."
+  }
+}

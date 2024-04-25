@@ -1,0 +1,103 @@
+{
+  "code": "x001_eg_bc",
+  "nr": 23,
+  "ort": "eg",
+  "name": "Bär",
+  "genus": {
+    "maskulin": true,
+    "feminin": false,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#alter_knochen",
+       "code": "xx0x"
+    },
+    {
+       "text": "#darf_nicht_wahr_sein",
+       "code": "xxx1"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 0,
+           "schwelle": -95
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 23
+   },
+
+  "watson": {
+      "quiz": {
+          "frage": "Eine Fälschung?! <br> Welches Tier könnte hier nicht ganz echt sein?",
+          "antwort" : [
+              {
+                  "text": "Bär",
+                  "richtig": true
+              },
+              {
+                  "text": "Eichhörnchen",
+                  "richtig": false
+              },  
+              {
+                  "text": "Seehund",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Da steht der alte Herr Leiner auf seinem Sockel. Und zu seiner rechten liegt diese Fälschung in der Vitrine. <br> Das darf doch nicht wahr sein!",
+      "post_2": "Dieser Bär ist keine Ritzzeichnung aus der Steinzeit. Er wurde aus einem Kinderbuch des 19. Jahrhunderts abgezeichnet! Weg damit! Wenn hier jemand fälschen darf, dann ich!",
+      "leinertext": "Danke Dr. Watson und ihrem ganzen Team. Bringt das kuriose Stück bitte schnell zurück. In der Vitrine erklären wir, wie es zu diesem  Mißgeschick kam... Und: Eine Fälschung fälschen, macht überhaupt keinen Sinn, oder?!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Eine Fälschung?! <br> Welches Tier könnte hier nicht ganz echt sein?",
+          "antwort" : [
+              {
+                  "text": "Bär",
+                  "richtig": true
+              },
+              {
+                  "text": "Wolf",
+                  "richtig": false
+              },  
+              {
+                  "text": "Biber",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Da steht der alte Herr Leiner auf seinem Sockel. Und zu seiner rechten liegt diese Fälschung in der Vitrine. <br> Das darf doch nicht wahr sein!",
+      "post_2": "Alte Handwerkskunst? Dass ich nicht lache. Dieser Bär ist keine Ritzzeichnung aus der Steinzeit. Er wurde aus einem Kinderbuch des 19. Jahrhunderts abgezeichnet! Weg damit! Wenn hier jemand fälschen darf, dann bin ich das!",
+      "leinertext": "Danke Sherlock Holmes und ihrem ganzen Team. Bringt das kuriose Stück bitte schnell wieder zurück. Diese Geschichte ist mir ehrlich gesagt auch etwas peinlich. Aber in der Vitrine erklären wir, wie es zu diesem  Mißgeschick kam... Und: Eine Fälschung fälschen, macht überhaupt keinen Sinn, oder?!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Eine Fälschung?! <br> Welches Tier könnte hier nicht ganz echt sein?",
+          "antwort" : [
+              {
+                  "text": "Bär",
+                  "richtig": true
+              },
+              {
+                  "text": "Löwenmensch",
+                  "richtig": false
+              },  
+              {
+                  "text": "Biber",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Da steht der alte Herr Leiner auf seinem Sockel. Und zu seiner rechten liegt diese Fälschung in der Vitrine. <br> Das darf doch nicht wahr sein!",
+      "post_2": "Alte Handwerkskunst? Dass ich nicht lache. Dieser Bär ist keine Ritzzeichnung aus der Steinzeit. Er wurde aus einem Kinderbuch des 19. Jahrhunderts abgezeichnet! Undverschämt und weg damit! Wenn hier jemand fälschen darf, dann bin ich das!",
+      "leinertext": "Danke Enola Holmes und ihrem ganzen Team. Bringt das kuriose Stück bitte schnell wieder zurück. Diese Geschichte ist mir ehrlich gesagt auch etwas peinlich. Aber in der Vitrine erklären wir, wie es zu diesem  Mißgeschick kam... Und: Eine Fälschung fälschen, macht überhaupt keinen Sinn, oder?!"
+  }
+}

@@ -159,6 +159,8 @@
  });
 
   const weiterButtonClicked = () => {
+    if (spielStore.objekte.eg[0].nr == 0)
+      lade_assets();
     spielStore.flow = 0.2;
     console.log(`weiter -> flow = ${spielStore.flow}`);
   }
