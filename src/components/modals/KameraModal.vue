@@ -1,7 +1,7 @@
 <template>
   <div class="modal-wrapper">
     <div class="modal-content">
-      <div id="erkannte-kategorie">({{gesuchte_kategorie}}) {{ kategorie }}<br>{{ wahrscheinlichkeit.toFixed(2) }}</div>
+      <div id="erkannte-kategorie">Obj:{{gesuchtes_objekt}} Kat:{{gesuchte_kategorie}} <br> Det:{{ kategorie }} {{ (wahrscheinlichkeit*100).toFixed(0) }}%</div>
       <div class="objekt-info" v-show="erkennungAktiv">analysiere...</div>
       <div class="faelschung-gefunden" v-show="faelschungGefunden">Gefälscht!</div>
       <div id="kamerabild">
@@ -199,6 +199,7 @@ const kategorie = ref(0);
 const wahrscheinlichkeit = ref(0.0);
 
 const gesuchte_kategorie = ref(0);
+const gesuchtes_objekt = ref(0);
 if (spielStore.flow == 0.8 && spielStore.ort == 'eg') {
   gesuchte_kategorie.value = 79;
   neuerFlow.value = 0.9;
@@ -207,15 +208,19 @@ if (spielStore.flow == 0.8 && spielStore.ort == 'eg') {
   neuerFlow.value = 0.9;
 } else if (spielStore.flow == 1.4) {
   gesuchte_kategorie.value = spielStore.objekte_ort[0].bilderkennung.kategorie;
+  gesuchtes_objekt.value = spielStore.objekte_ort[0].nr;
   neuerFlow.value = 1.6;
 } else if (spielStore.flow == 2.4) {
   gesuchte_kategorie.value = spielStore.objekte_ort[1].bilderkennung.kategorie;
+  gesuchtes_objekt.value = spielStore.objekte_ort[1].nr;
   neuerFlow.value = 2.6;
 } else if (spielStore.flow == 3.4) {
   gesuchte_kategorie.value = spielStore.objekte_ort[2].bilderkennung.kategorie;
+  gesuchtes_objekt.value = spielStore.objekte_ort[2].nr;
   neuerFlow.value = 3.6;
 } else {
   gesuchte_kategorie.value = 0;
+  gesuchtes_objekt.value = 0;
 }
 
 let cam : any;

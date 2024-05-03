@@ -1,0 +1,32 @@
+{
+  "code": "x010",
+  "name": "Annie Envy",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "Fakten",
+    "Bedeutungen",
+    "Highlights"
+  ],
+  "accountnamen": [
+    "numis_dorado",
+    "simsalabim",
+    "prince_leviathan"
+  ],
+  "gruppen": [
+    "x01x",
+    "x0x0",
+    "xx10"
+  ],
+  "watson": {
+    "steckbrief": "<b> ANNIE ENVY </b> <ul> <li> interssiert sich für Fakten, nichts als Fakten </li> <li> aber bitte mit Bedeutung </li> <li> das sind die wahren Highlights </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> ANNIE ENVY </b> <ul> <li> interssiert sich für Fakten, nichts als Fakten </li> <li> aber bitte mit Bedeutung </li> <li> das sind die wahren Highlights </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> ANNIE ENVY  </b> Auch wenn das bei einer Fälscherin reichlich paradox klingen mag: Annie Envy mag gut geprüfte Fakten und wahre Bedeutungen. Sie sind für sie das Salz in der Suppe einer Ausstellung. So wählt sie ihre ganz persönlichen Highlights aus..."
+  }
+}

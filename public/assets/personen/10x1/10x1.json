@@ -1,0 +1,32 @@
+{
+  "code": "10x1",
+  "name": "Anny Amsel",
+  "genus": {
+    "maskulin": false,
+    "feminin": true
+  },
+  "eigenschaften": [
+    "Aktualität",
+    "Fakten",
+    "Kritik"
+  ],
+  "accountnamen": [
+    "faktengram",
+    "vielzuviel_fatal",
+    "saetze_sind_schaetze"
+  ],
+  "gruppen": [
+    "10xx",
+    "1xx1",
+    "x0x1"
+  ],
+  "watson": {
+    "steckbrief": "<b> ANNY AMSEL </b> <ul> <li>  mag wenn etwas noch im Gebrauch oder von Nutzen ist </li> <li> recherchiert Herkunft und Datierung </li> <li> übt gerne Kritik an der Gegenwart </li> </ul>"
+  },
+  "sherlock": {
+    "steckbrief": "<b> ANNY AMSEL </b> <ul> <li> mag wenn alte Dinge immer noch im Gebrauch oder von Nutzen sind </li> <li>  recherchiert gerne nach der Herkunft und Datierung der Dinge </li> <li> übt gerne Kritik an der Gegenwart </li> </ul>"
+  },
+  "enola": {
+    "steckbrief": "<b> ANNY AMSEL </b>  ist stets am Puls der Zeit. Mit feinem Gespür für aktuelle Fragen zeigt sie auf, wie alte Dinge noch immer einen Nutzen haben können. Obwohl sie ganz im Hier und Heute lebt, recherchiert sie gerne nach der Herkunft und Datierung von Dingen und bleibt bei den Fakten. Zu allem hat sie eine Meinung, meist sogar eine, mit der sie die eigene Gegenwart kritisiert."
+  }
+}

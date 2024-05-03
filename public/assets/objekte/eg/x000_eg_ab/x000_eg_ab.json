@@ -1,0 +1,103 @@
+{
+  "code": "x000_eg_ab",
+  "nr": 25,
+  "ort": "eg",
+  "name": "Schlüssel",
+  "genus": {
+    "maskulin": true,
+    "feminin": false,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#roter_stein",
+       "code": "xx0x"
+    },
+    {
+       "text": "#200.000.000_jahre_alt",
+       "code": "x0xx"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 31,
+           "schwelle": -95
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 0
+   },
+
+  "watson": {
+      "quiz": {
+          "frage": "Achtung, auch dieses Detail könnte gefälscht sein! Aber was stellt es überhaupt dar?",
+          "antwort" : [
+              {
+                  "text": "Himmelsschlüssel",
+                  "richtig": true
+              },
+              {
+                  "text": "Wetterfahne",
+                  "richtig": false
+              },  
+              {
+                  "text": "Kreuzfahrerzeichen",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Ha, auch wenn die Hände den Schlüssel fest umklammern, ich habe alles zusammen aus dem Wappen gelöst und hoch oben vom Sockel geholt...",
+      "post_2": "Ich liebe diesen roten Buntsandstein. Er ist vor über 200 Millionen Jahre entstanden und findet sich z.B. im Schwarzwald. Daraus kann man tolle Werksteine machen wie bei diesem Wappen eines Konstanzer Bischofs. <br> Das muss ich in meiner Werkstatt genauer untersuchen!",
+      "leinertext": "TO DO"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Achtung, auch dieser Schlüssel könnte gefälscht sein. Aber ist das überhaupt ein Schlüssel?",
+          "antwort" : [
+              {
+                  "text": "Ja, ein Himmelsschlüssel",
+                  "richtig": true
+              },
+              {
+                  "text": "Nein, eine Wetterfahne",
+                  "richtig": false
+              },  
+              {
+                  "text": "Nein, ein Kreuzfahrerzeichen",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Ha, auch wenn die Hände den Schlüssel fest umklammern. Ich habe alles zusammen aus dem Wappen gelöst und hoch oben vom Sockel geholt... Diesen roten Stein musste ich genauer untersuchen...",
+      "post_2": "Ich liebe diesen roten Buntsandstein. Die Gesteinsschicht ist vor über 200 Millionen Jahren entstanden und findet sich z.B. im Nordschwarzwald. Wusstet ihr, dass die Schichten für die Gewinnung von Werksteinen oft nur wenige Meter hoch sind? Steinmetze suchen feinkörnige Bänke und gewinnen daraus ihr Material wie bei diesem Wappen des Konstanzer Bischofs. Faszinierend wie sich der Schlüssel der Wölbung des Wappens anpasst... <br> Das muss ich in meiner Werkstatt genauer untersuchen!",
+      "leinertext": "TO DO"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Achtung, auch dieses Objekt könnte gefälscht sein. Aber was ist das überhaupt?",
+          "antwort" : [
+              {
+                  "text": "Schlüssel auf einem Wappen",
+                  "richtig": true
+              },
+              {
+                  "text": "Schlüssel auf einem Ladenschild",
+                  "richtig": false
+              },  
+              {
+                  "text": "Schlüssel auf einem Grabstein",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Ha, auch wenn die Hände den Schlüssel fest umklammern. Ich habe alles zusammen aus dem Wappen gelöst und hoch oben vom Sockel geholt... Diesen roten Stein musste ich genauer untersuchen...",
+      "post_2": "Ich liebe diesen roten Buntsandstein. Sogar Farbreste einer alten Bemalung kann man noch erkennen. Die Gesteinsschicht ist  vor 250 bis 200 Millionen Jahren entstanden und findet sich z.B. im Nordschwarzwald. Wusstet ihr, dass die Schichten für die Gewinnung von Werksteinen oft nur wenige Meter hoch sind? Steinmetze suchen feinkörnige Bänke und gewinnen daraus ihr Material wie bei diesem Wappen des Konstanzer Bischofs. Faszinierend wie sich der Schlüssel der Wölbung des Wappens anpasst... <br> Das muss ich in meiner Werkstatt genauer untersuchen!",
+      "leinertext": "TO DO"
+  }
+}

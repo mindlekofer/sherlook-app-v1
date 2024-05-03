@@ -1,0 +1,103 @@
+{
+  "code": "x100_eg_bc",
+  "nr": 43,
+  "ort": "eg",
+  "name": "Münze",
+  "genus": {
+    "maskulin": false,
+    "feminin": true,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#goldwaage",
+       "code": "xx0x"
+    },
+    {
+       "text": "#glänzender_stern",
+       "code": "xxx0"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 23,
+           "schwelle": -95
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 0
+   },
+
+  "watson": {
+      "quiz": {
+          "frage": "Was trägt der Mann auf dieser Münze im Haar?",
+          "antwort" : [
+              {
+                  "text": "Das Diadem eines Kaisers",
+                  "richtig": true
+              },
+              {
+                  "text": "Das Stirnband eines Sportlers",
+                  "richtig": false
+              },  
+              {
+                  "text": "Den Blumenkranz eines Bräutigams",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Ein klitzekleines Objekt und doch ein Star in der Abteilung  Antike... Ob die Münze hält, was sie verspricht?",
+      "post_2": "Was für ein glänzender Star! Ich habe die Münze auf meine Küchenwaage gelegt: sie zeigt exakt 4,5 Gramm, genau wie es sein soll! <br> Ein 'festes Gold', 'solidus aureus'. Ohne Zweifel, dieses Museum bietet Qualität!",
+      "leinertext": "Herzlichen Dank für die guten Ermittlungen! Was für eine Habgier! 'Solidus' bedeutet fest: Die Münze hat einen hohen Anteil an Gold! <br> Links seht ihr den Kaiser Konstantin. Er hat die Münze eingeführt. Auf dem Solidus im Rosgartenmuseum steht der Name seines Nachfolgers TO DO."
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Wen suchen wir hier?",
+          "antwort" : [
+              {
+                  "text": "Kaiser mit Diadem",
+                  "richtig": true
+              },
+              {
+                  "text": "Sieger mit Lorbeerkranz",
+                  "richtig": false
+              },  
+              {
+                  "text": "König mit Krone",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Ein klitzekleines Objekt und doch ein Star in der Abteilung  Antike... Ob die Münze hält, was sie verspricht? Nun ja, wir werden sehen, was die Waage sagt.",
+      "post_2": "In Konstanz gab es schon in der Antike ein römisches Militärlager. Da haben sie mit solchen Münzen gezahlt. Was für ein glänzender Star! Ich habe meine Münze auf eine Küchenwaage gelegt: sie zeigt exakt 4,5 Gramm, genau wie es sein soll! <br> Ein 'festes Gold', 'solidus aureus'. Ohne Zweifel, dieses Museum bietet Qualität!",
+      "leinertext": "Mein aufrichtiger Dank für die guten Ermittlungen geht an Sherlock und sein Team. Was für eine Habgier! 'Solidus' bedeutet lateinisch fest. Die Münze wurde vom römischen Kaiser Konstantin eingeführt und hat einen hohen  Anteil an Gold! <br> Jeder neue Kaiser prägte neue Münzen mit seinem Abbild. Links seht ihr Konstantin, rechts seinen Nachfolger Valentinian. Könnt ihr erkennen, welcher Name auf dem Solidus im Rosgartenmuseum steht? (TO DO)"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Wen suchen wir hier?",
+          "antwort" : [
+              {
+                  "text": "Kaiser mit Diadem",
+                  "richtig": true
+              },
+              {
+                  "text": "Sieger mit Lorbeerkranz",
+                  "richtig": false
+              },  
+              {
+                  "text": "König mit Krone",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Ein klitzekleines Objekt und doch ein Star in der Abteilung  Antike... Ob die Münze hält, was sie verspricht? Nun ja, wir werden sehen, was die Waage sagt.",
+      "post_2": "In Konstanz gab es schon in der Antike ein römisches Militärlager. Seine Reste kann man sich beim Münster anschauen. Da haben sie mit solchen Münzen gezahlt. Was für ein glänzender Star! Ich habe meine Münze auf meine Küchenwaage gelegt und was soll ich sagen?  Sie zeigt exakt 4,5 Gramm, genau wie es sein soll! Ein 'festes Gold', 'solidus aureus'. Ohne Zweifel, dieses Museum bietet Qualität!",
+      "leinertext": "Mein aufrichtiger Dank für die guten Ermittlungen geht an Enola und ihr Team. Was für eine Habgier! Wisst ihr, was es mit dem 'Solidus' auf sich hat? Unter Kaiser Konstantin waren immer mehr Goldmünzen mit zu geringem Goldanteil im Umlauf. Da hat er den 'Solidus' eingeführt. Das bedeutet lateinisch fest, denn die Münze sollte aus gutem Gold bestehen! <br> Links seht ihr Kaiser Konstantin mit Lorbeerkranz, rechts seinen Nachfolgers Valentinian mit Diadem. Jeder neue Kaiser prägte neue Münzen mit seinem Abbild. Könnt ihr erkennen, welcher Name auf dem Solidus im Rosgartenmuseum steht? (TO DO)"
+  }
+}

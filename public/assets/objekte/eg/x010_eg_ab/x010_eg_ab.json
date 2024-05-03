@@ -1,5 +1,5 @@
 {
-  "code": "x0x0_eg_02",
+  "code": "x010_eg_ab",
   "nr": 41,
   "ort": "eg",
   "name": "Boot",
@@ -24,7 +24,7 @@
    ],
    "beacon": [
        {
-           "id": 1,
+           "id": 27,
            "schwelle": -95
        }
    ],

@@ -79,6 +79,30 @@ export const useSpielStore = defineStore('spielStore', {
           'eg': ['111x_eg_ab', '11x1_eg_ac', '01x1_eg_bc'],
           'og1': ['111x_og1_ab', '1xx1_og1_01', '11x1_og1_bc']
         } 
+      },
+      {
+        'schuldig': '00x1',
+        'unschuldig': {
+        'watson': ['11x0', '110x'],
+        'sherlock': ['110x', 'x100'],
+        'enola': ['11x1', '10x0'] 
+        },
+        'objekte': {
+          'eg': ['00x1_eg_ab', '00x1_eg_ac', 'x011_eg_bc'],
+          'og1': ['x0x1_og1_01', '001x_og1_ab', '10x1_og1_bc']
+        } 
+      },
+      {
+        'schuldig': 'x000',
+        'unschuldig': {
+          'watson': ['x111', '111x'],
+          'sherlock': ['111x', '01x1'],
+          'enola': ['10x1', '010x'] 
+        },
+        'objekte': {
+          'eg': ['x000_eg_ab', 'x100_eg_bc', 'x0x0_eg_02'],
+          'og1': ['x00x_og1_01', '10x0_og1_bc', 'x100_og1_bc']
+        } 
       }
     ],
     objekte: {

@@ -1,0 +1,103 @@
+{
+  "code": "x00x_og_01",
+  "nr": 101,
+  "ort": "og1",
+  "name": "Glasmalerei",
+  "genus": {
+    "maskulin": false,
+    "feminin": true,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#glasglanzleistung",
+       "code": "xxx0"
+    },
+    {
+       "text": "#meisterhafte_bleifugen",
+       "code": "xx0x"
+    }
+   ],
+   "beacon": [
+       {
+           "id": 6,
+           "schwelle": -95
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 0
+   },
+
+  "watson": {
+      "quiz": {
+          "frage": "Eine farbenfrohe Szene - könnt ihr schon erkennen, wo sie vermutlich spielt?",
+          "antwort" : [
+              {
+                  "text": "vor Gericht",
+                  "richtig": true
+              },
+              {
+                  "text": "auf einem Schiff",
+                  "richtig": false
+              },  
+              {
+                  "text": "in einer Dorfschenke",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Zünftig dieser Zunftsaal. Seht ihr die Bleiruten in der Buntglasscheibe? Eine Meisterleistung, wie mein unbemerkter Diebstahl",
+      "post_2": "Biegsame Bleiruten halten die bunten Glasscherben des Fensters zusammen. Hier sind sie an die Umrisse der Motive angepasst. Schaut euch zum Beispiel die Tischplatte an. Meisterhaft! <br> Und genau so meisterhaft habe ich das ganze in meiner Tasche verschwinden lassen.",
+      "leinertext": "Danke lieber Dr. Watson für die erfolgreichen Ermittlungen! Was für eine dreiste Idee, ein Werk zu stehlen, auf dem eine Gerichtsverhandlung abgebildet ist. <br> Gut, wenn wir diese Tat bald vor Gericht bringen können."
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Eine farbenfrohe Szene - könnt ihr schon erkennen, wo sie vermutlich spielt?",
+          "antwort" : [
+              {
+                  "text": "vor Gericht",
+                  "richtig": true
+              },
+              {
+                  "text": "in einer Dorfschenke",
+                  "richtig": false
+              },  
+              {
+                  "text": "auf dem Markt",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Zünftig dieser Zunftsaal. Seht ihr die Bleiruten in der Buntglasscheibe? Eine Meisterleistung, wie mein unbemerkter Diebstahl",
+      "post_2": "Bleiruten, das sind biegsame Leisten, die die bunten Glasscherben des Fensters zusammenhalten. Hier sind sie an die Umrisse der Motive angepasst. Schaut euch zum Beispiel die Tischplatte an. Meisterhaft! <br> Und genau so meisterhaft habe ich das ganze in meiner Tasche verschwinden lassen. Was für ein Augenschmaus! Das kann ich nun jeden Tag genießen!",
+      "leinertext": "Danke lieber Sherlock Holmes für die erfolgreichen Ermittlungen! Was für eine Ironie, ein Werk zu stehlen, auf dem eine Gerichtsverhandlung abgebildet wird. Gut, wenn wir diese Dreistigkeit bald vor Gericht bringen können. <br> Ich zähle auf Eure Hilfe!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Rüschenkrägen - wie stylisch! Könnt ihr ahnen, wann und wo die Szene vermutlich spielt?",
+          "antwort" : [
+              {
+                  "text": "vor Gericht im 17. Jahrhundert",
+                  "richtig": true
+              },
+              {
+                  "text": "in einer Kirche des 14. Jahrhunderts",
+                  "richtig": false
+              },  
+              {
+                  "text": "auf einem Bahnhof des 19. Jahrhunderts",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Zünftig dieser Zunftsaal. Seht ihr die Bleiruten in der Buntglasscheibe? Eine Meisterleistung, wie mein unbemerkter Diebstahl",
+      "post_2": "Bleiruten, das sind leicht biegsame Leisten, die die bunten Glasscherben des Fensters zusammenhalten. In diesem Fenster sind sie an die Umrisse der Motive angepasst. Schaut euch zum Beispiel die Tischplatte an. Meisterhaft! <br> Und genau so meisterhaft habe ich das ganze in meiner Tasche verschwinden lassen. Was für ein Augenschmaus! Das kann ich nun jeden Tag genießen!",
+      "leinertext": "Danke liebe Enola Holmes für die erfolgreichen Ermittlungen des ganzens Teams! Was für eine Ironie, ein Werk zu stehlen, auf dem eine Gerichtsverhandlung abgebildet wird. Gut, wenn wir diese Dreistigkeit bald vor Gericht bringen können. <br> Ich zähle auf Eure Hilfe!"
+  }
+}

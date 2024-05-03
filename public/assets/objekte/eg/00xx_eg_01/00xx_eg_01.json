@@ -24,12 +24,12 @@
    ],
    "beacon": [
        {
-           "id": 1,
+           "id": 23,
            "schwelle": -95
        }
    ],
   "bilderkennung": {
-        "kategorie": 90
+        "kategorie": 37
   },
   
   "watson": {

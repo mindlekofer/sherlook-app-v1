@@ -19,7 +19,9 @@ export async function ladeModell() {
     // model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_subset_js_graph/model.json');
     // model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_v1_js_graph/model.json');
     // model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_v1_128_js_graph/model.json');
-    model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_v2_128_js_graph/model.json');
+    // model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_v2_128_js_graph/model.json');
+    // model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_v3_js_graph/model.json');
+    model = await loadGraphModel('assets/tensorflow/rosgarten_transfer_v4_js_graph/model.json');
     // tflite_model = rosgarten_v2_aug.tflite
     console.log('model loaded');
     console.log('setBackend("webgl"): ', await setBackend('webgl'));

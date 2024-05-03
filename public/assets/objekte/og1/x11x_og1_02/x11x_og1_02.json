@@ -1,5 +1,5 @@
 {
-  "code": "x11x_og1_2",
+  "code": "x11x_og1_02",
   "nr": 81,
   "ort": "og1",
   "name": "Rosen",
@@ -24,7 +24,7 @@
    ],
    "beacon": [
        {
-           "id" : 7,
+           "id" : 25,
            "schwelle" : -95
        }
    ],
