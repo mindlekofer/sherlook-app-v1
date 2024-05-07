@@ -2,8 +2,8 @@
 
 <ion-page>
   <ion-content :fullscreen="true">
+    <span class="debugging" id="debug-flow-anzeige">v{{ package_json.version }} </span>
     <div class="container">
-
       <img class="logo_sherlook" src="assets/logo_sherlook.png" width="700">
       <img class="logo_uni" src="assets/logo_uni.jpg" width="340">
       <img class="logo_rosgarten" src="assets/logo_rosgarten.png" width="350">
@@ -73,6 +73,11 @@
   bottom: 25px;
   right: 25px;
 }
+.debugging {
+  position: absolute;
+  z-index: 9999;
+  opacity: 50%;
+}
 
 </style>
 
@@ -90,6 +95,7 @@
   import RaetselModal from '@/components/modals/RaetselModal.vue';
   import axios from 'axios';
   import { ladeModell } from '@/bilderkennung';
+  import package_json from "../../package.json";
 
   const spielStore = useSpielStore();
   const { person, raetsel, aktives_raetsel } = storeToRefs(spielStore);
