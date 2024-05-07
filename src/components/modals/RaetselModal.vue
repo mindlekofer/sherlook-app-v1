@@ -2,26 +2,37 @@
   <div class="modal-wrapper">
     <div class="modal-content">
       <h1>
-          Rätsel
+        Rätsel
       </h1>
       <div class="liste-enger_">
-        
+
         <ion-list>
           <ion-radio-group v-model="spielStore.aktives_raetsel">
             <ion-item>
-                <ion-radio value="0" label-placement="start" alignment="center" justify="space-between">00x0</ion-radio>
+              <ion-radio value="0" label-placement="start" alignment="center" justify="space-between">00x0</ion-radio>
             </ion-item>
             <ion-item>
               <ion-radio value="1" label-placement="start" alignment="center" justify="space-between">011x</ion-radio>
             </ion-item>
             <ion-item>
-              <ion-radio value="2" label-placement="start" alignment="center" justify="space-between">101x (neu)</ion-radio>
+              <ion-radio value="2" label-placement="start" alignment="center" justify="space-between">101x
+                (neu)</ion-radio>
             </ion-item>
             <ion-item>
-              <ion-radio value="3" label-placement="start" alignment="center" justify="space-between">x101 (test)</ion-radio>
+              <ion-radio value="3" label-placement="start" alignment="center" justify="space-between">x101
+                (test)</ion-radio>
             </ion-item>
             <ion-item>
-              <ion-radio value="4" label-placement="start" alignment="center" justify="space-between">11x1 (test)</ion-radio>
+              <ion-radio value="4" label-placement="start" alignment="center" justify="space-between">11x1
+                (test)</ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-radio value="5" label-placement="start" alignment="center" justify="space-between">00x1
+                (unvollständig)</ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-radio value="6" label-placement="start" alignment="center" justify="space-between">x000
+                (unvollständig)</ion-radio>
             </ion-item>
           </ion-radio-group>
         </ion-list>
@@ -41,6 +52,7 @@
   margin-right: auto;
   padding: 50px;
 }
+
 .modal-wrapper {
   padding: 30px;
   padding-top: 10px;
@@ -48,9 +60,11 @@
   flex-direction: column;
   height: 100%;
 }
+
 .modal-wrapper h1 {
   font-size: 24pt;
 }
+
 .modal-wrapper .modal-content {
   font-size: 16pt;
   flex-grow: 1;
@@ -59,10 +73,10 @@
   flex-direction: column;
   /* justify-content: center; */
 }
-.modal-wrapper .modal-control {
-    text-align: end;
-}
 
+.modal-wrapper .modal-control {
+  text-align: end;
+}
 </style>
 
 <script setup lang="ts">

@@ -1,0 +1,104 @@
+{
+  "code": "00x1_eg_ac",
+  "nr": 29,
+  "ort": "eg",
+  "name": "Hahn",
+  "genus": {
+    "maskulin": true,
+    "feminin": false,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+      "text": "#alter_Wecker",
+      "code": "0xxx"
+    },
+    {
+      "text": "#streithähne_trennen",
+      "code": "xxx1"
+    }
+  ],
+  "beacon": [
+    {
+      "id" : 31,
+      "schwelle" : -95
+    }
+  ],
+  "bilderkennung": {
+    "kategorie": 29,
+    "kategorien": [29]
+  },
+
+  "watson": {
+    "quiz": {
+      "frage": "Ein seltsames Detail. Was wurde hier gefälscht?",
+      "antwort": [
+        {
+          "text": "Kralle eines Vogels",
+          "richtig": true
+        },
+        {
+          "text": "Knospe eines Baums",
+          "richtig": false
+        },
+        {
+          "text": "alte Greifzange",
+          "richtig": false
+        }
+      ]
+    },
+    "post_1": "KIKERIKI. Auf alte Art geweckt werden, von einem natürlichen Wecker? Das finde ich wunderbar. Kopf hoch, ihr werdet ihn schon finden!",
+    "post_2": "Warum müssen Wappentiere immer so streitlustig dargestellt werden? Dieser Kampfhahn scheint auf den Löwen loszugehen... Ich werde das in meiner Sammlung ganz anders präsentieren.",
+    "leinertext": "Danke, Dr. Watson für die gute Leistung des ganzen Teams. Ich werde wohl mit diesem Dieb noch ein wenig streiten müssen. Diese Gedenktafel erinnert nämlich an etwas ganz Besonderes: ... (TO DO)"
+  },
+
+  "sherlock": {
+    "quiz": {
+      "frage": "Ein seltsames Detail. Was wurde hier gefälscht?",
+      "antwort": [
+        {
+          "text": "Kralle eines Vogels",
+          "richtig": true
+        },
+        {
+          "text": "Blätterknospe",
+          "richtig": false
+        },
+        {
+          "text": "Dreizack",
+          "richtig": false
+        }
+      ]
+    },
+    "post_1": "KIKERIKI statt Handyklingeln. Auf alte Art geweckt werden, von einem natürlichen Wecker? Das finde ich wunderbar. Kopf hoch, ihr werdet ihn schon finden!",
+    "post_2": "Warum müssen Wappentiere immer so streitlustig dargestellt werden? Hier sieht es doch so aus, als ob der Kampfhahn gleicht auf den Löwen losgehen wollte... Ich werde das in meiner Sammlung ganz anders präsentieren.",
+    "leinertext": "Danke, Sherlock Holmes, für die gute Leistung des ganzen Teams. Ich werde wohl mit diesem Dieb noch ein wenig streiten müssen. Diese Gedenktafel erinnert nämlich an etwas ganz Besonderes: ... (TO DO)"
+  },
+
+  "enola": {
+    "quiz": {
+      "frage": "Ein seltsames Detail. Was wurde hier gefälscht?",
+      "antwort": [
+        {
+          "text": "Kralle eines Vogels",
+          "richtig": true
+        },
+        {
+          "text": "Blätterknospe",
+          "richtig": false
+        },
+        {
+          "text": "Hellebarde",
+          "richtig": false
+        }
+      ]
+    },
+    "post_1": "KIKERIKI statt Handyklingeln. Auf alte Art geweckt werden, von einem natürlichen Wecker? Das finde ich wunderbar. Kopf hoch, ihr werdet ihn schon finden!",
+    "post_2": "Warum müssen Wappentiere immer so aggressiv dargestellt werden? Schaut euch diese alte Gedenktafel an. Hier sieht es doch so aus, als ob der Kampfhahn gleicht auf den Löwen losgehen wollte... Ich werde das in meinem Museum ganz anders präsentieren. Der Löwe ist eine gesellige Raubkatze und der Hahn ein freundliches Tier, das die anderen am Morgen lauthals begrüßt.",
+    "leinertext": "Danke, Enola Holmes, für die gute Leistung des ganzen Teams. Ich werde wohl mit diesem Dieb noch ein wenig streiten müssen. Diese Gedenktafel erinnert nämlich an etwas ganz Besonderes: ... (TO DO)"
+  }
+}

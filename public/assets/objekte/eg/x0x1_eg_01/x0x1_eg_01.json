@@ -1,0 +1,101 @@
+{
+  "code": "x0x1_eg_01",
+  "nr": 108,
+  "ort": "eg",
+  "name": "Nuss",
+  "genus": {
+    "maskulin": false,
+    "feminin": true,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+      "text": "#nüsse_sind_gesund",
+      "code": "xxxx"
+    },
+    {
+      "text": "#schluss_mit_dem_artensterben",
+      "code": "xxx1"
+    }
+  ],
+  "beacon": [
+    {
+      "id": 13,
+      "schwelle": -95
+    }
+  ],
+  "bilderkennung": {
+    "kategorie": 108,
+    "kategorien": [108]
+  },
+  "watson": {
+    "quiz": {
+      "frage": "Was um Himmels Willen ist das denn?",
+      "antwort": [
+        {
+          "text": "Eine Wassernuss.",
+          "richtig": true
+        },
+        {
+          "text": "Nachbildung eines Vulkans",
+          "richtig": false
+        },
+        {
+          "text": "Kaputtes Kissen",
+          "richtig": false
+        }
+      ]
+    },
+    "post_1": "Wie unscheinbar und klein, in der Vitrine links neben dem Eingang. Aber diese Nuss hat es in sich. Warum? Das werde ich Euch gleich verraten...",
+    "post_2": "Nüsse sind ein wichtiger Bestandteil einer gesunden Ernährung. Leider ist die Wassernuss hierzulande vom Aussterben bedroht. In der Steinzeit wurde sie geröstet und gern gegessen. Da kommt dieses uralte Saatgut gerade recht. Ich habe es mitgenommen und werde es in unserer Region verbreiten.",
+    "leinertext": "Danke Dr. Watson für die gute Zusammenarbeit. Was für eine verrückte Idee. Als Saatgut taugen diese uralten Nüsse sicher nicht mehr. Die Menschen in den Pfahlbauten haben sie häufig gegessen. Röstet man sie im Feuer, verlieren sie ihr Gift. Bringt sie schnell zurück in mein Museum."
+  },
+  "sherlock": {
+    "quiz": {
+      "frage": "Was um Himmels Willen ist das denn?",
+      "antwort": [
+        {
+          "text": "Eine Wassernuss",
+          "richtig": true
+        },
+        {
+          "text": "Rekonstruktion eines Hegau-Vulkans",
+          "richtig": false
+        },
+        {
+          "text": "Kaputtes Kissen",
+          "richtig": false
+        }
+      ]
+    },
+    "post_1": "Wie unscheinbar und klein, in der Vitrine links neben dem Eingang. Aber diese Nuss hat es in sich. Warum? Das werde ich Euch gleich verraten...",
+    "post_2": "Nüsse sind ein wichtiger Bestandteil einer gesunden Ernährung. Leider ist die Wassernuss hierzulande vom Aussterben und steht auf der Roten Liste der gefährdeten Arten. Ihr bevorzugter Lebensraum sind warme schlammige Seen und Teiche. In der Steinzeit wurde sie geröstet und gern gegessen. Da kommt dieses uralte Saatgut doch gerade recht. Ich habe es mitgenommen und werde es in unserer Region verbreiten.",
+    "leinertext": "Danke Sherlock Holmes für die gute Zusammenarbeit. Die Ziele dieses Diebes mögen redlich sein, aber ich verurteile seine Taten. Als Saatgut taugen diese uralten Nüsse ganz sicher nicht mehr. Die Menschen in der Pfahlbauten haben sie häufig gegessen. Röstet man sie im Feuer, verlieren sie ihr Gift und schmecken wie Esskastanien. Bringt sie schnell zurück in mein Museum."
+  },
+  "enola": {
+    "quiz": {
+      "frage": "Was um Himmels Willen ist das denn?",
+      "antwort": [
+        {
+          "text": "Eine Wassernuss",
+          "richtig": true
+        },
+        {
+          "text": "Rekonstruktion eines Hegau-Vulkans",
+          "richtig": false
+        },
+        {
+          "text": "Durchstochener Brustpanzer",
+          "richtig": false
+        }
+      ]
+    },
+    "post_1": "Wie unscheinbar und klein, in der Vitrine links neben dem Eingang. Aber diese Nuss hat es in sich. Warum? Das werde ich Euch gleich verraten...",
+    "post_2": "Nüsse sind ein wichtiger Bestandteil einer gesunden Ernährung. Leider ist die Wassernuss hierzulande vom Aussterben und steht auf der Roten Liste der gefährdeten Arten. Weltweit sind schon 44.000 Arten vom Aussterben bedroht. In der Steinzeit wurde sie geröstet und gern gegessen. Da kommt dieses uralte Saatgut doch gerade recht. Ich habe es mitgenommen und werde es in unserer Region verbreiten. Aber Achtung: man darf Wassernüsse nicht roh essen, dann sind sie giftig!",
+    "leinertext": "Danke Enola Holmes für die gute Zusammenarbeit. Die Ziele dieses Diebes mögen redlich sein, aber seine Taten sind so giftig und stachelig wie diese Nüsse. Als Saatgut taugen diese alten Nüsse ganz sicher nicht mehr. Die Menschen in der Pfahlbauten haben sie häufig gegessen. Röstet man sie im Feuer, verlieren sie ihr Gift und schmecken wie Esskastanien. Bringt sie schnell zurück in mein Museum."
+  }
+}

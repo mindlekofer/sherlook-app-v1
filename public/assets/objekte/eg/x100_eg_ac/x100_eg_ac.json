@@ -1,0 +1,104 @@
+{
+  "code": "x100_eg_ac",
+  "nr": 42,
+  "ort": "eg",
+  "name": "Figürchen",
+  "genus": {
+    "maskulin": false,
+    "feminin": false,
+    "neutrum": true
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+       "text": "#verstecktes_Highlight",
+       "code": "xxx0"
+    },
+    {
+       "text": " #in_phantasie_verbunden",
+       "code": "x1xx"
+    }
+   ],
+   "beacon": [
+       {
+           "id" : 23,
+           "schwelle" : -95
+       }
+   ],
+   "bilderkennung": {
+     "kategorie": 42,
+     "kategorien": [42]
+   },
+  
+  "watson": {
+      "quiz": {
+          "frage": "Schwer zu erkennen, was wurde da überhaupt gefälscht?",
+          "antwort" : [
+              {
+                  "text": " Helm eines Götterboten",
+                  "richtig": true
+              },
+              {
+                  "text": "Kappe eines Narren",
+                  "richtig": false
+              },  
+              {
+                  "text": "Hut eines Räubers",
+                  "richtig": false
+              } 
+          ]
+      },
+      "post_1": "Zum Glück war das Detektivbüro gerade nicht besetzt. So konnte ich den kleinen Götterboten unbemerkt aus seinem Glaswürfel befreien!",
+      "post_2": "Ist er nicht göttlich, mein kleiner Merkur mit geflügeltem Helm? Am liebsten würde ich den Götterboten auf all seinen Reisen begleiten. Ganz vernarrt bin ich in mein neues Prunkstück.",
+      "leinertext": "Ich danke dem Team um Dr. Watson für die erfolgreichen Ermittlungen!  Die kleine Bronzefigur aus dem 4. oder 5. Jahrhunderts n. Chr. zeigt den römischen Götterboten Merkur, der einen Helm mit Federflügeln trägt. Eilt diesem gemeinen Detaildieb hinterher, mit geflügelten Schritten!"
+  },
+  
+  "sherlock": {
+      "quiz": {
+          "frage": "Schwer zu erkennen, was wurde da überhaupt gefälscht?",
+          "antwort" : [
+              {
+                  "text": "Geflügelter Helm eines Götterboten",
+                  "richtig": true
+              },
+              {
+                  "text": "Räuberhut mit Federschmuck",
+                  "richtig": false
+              },  
+              {
+                  "text": "Narrenkappe mit Hasenohren",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Irgendwie steht der kleine Götterbote etwas verloren in seiner Ecke... Zum Glück war das Detektivbüro gerade nicht besetzt. So konnte ich das Figürchen unbemerkt aus seinem Glaswürfel befreien!",
+      "post_2": "Ist er nicht göttlich, mein kleiner Merkur mit geflügeltem Helm? Am liebsten würde ich den Götterboten auf all seinen Reisen begleiten. Ganz vernarrt bin ich in mein neues Prunkstück.",
+      "leinertext": "Ich danke dem Team um Sherlock Holmes für die erfolgreichen Ermittlungen!  Die kleine Bronzefigur aus dem 4. oder 5. Jahrhunderts n. Chr. zeigt den römischen Götterboten Merkur, der einen Helm mit Federflügeln trägt. Eilt diesem Detaildieb hinterher, mit geflügelten Schritten!"
+  },
+
+  "enola": {
+      "quiz": {
+          "frage": "Schwer zu erkennen, was wurde da überhaupt gefälscht?",
+          "antwort" : [
+              {
+                  "text": "Geflügelter Helm eines Götterboten (Merkur)",
+                  "richtig": true
+              },
+              {
+                  "text": "Räuberhut mit Federschmuck (Hotzenplotz)",
+                  "richtig": false
+              },  
+              {
+                  "text": "Narrenkappe mit Hasenohren (Eulenspiegel)",
+                  "richtig": false
+              }  
+          ]
+      },
+      "post_1": "Was für ein fein gefertigtes Highlight! Aber irgendwie stand der kleine Götterbote etwas verloren in seiner Ecke. Zum Glück war das Detektivbüro nicht besetzt. So konnte ich das Figürchen unbeobachtet aus seinem Glaswürfel befreien!",
+      "post_2": "Ist er nicht göttlich, mein kleiner Merkur mit geflügeltem Retro-Helm?  Ich glaube, er suchte schon lange ein neues Zuhause! Ganz vernarrt bin ich in meinen neuen Gefährten. Am liebsten würde ich ihn auf all seinen Reisen begleiten.",
+      "leinertext": "Ich danke dem Team um Enola Holmes für die erfolgreichen Ermittlungen!  Die kleine Bronzefigur aus dem 4. oder 5. Jahrhunderts n. Chr. wurde in Konstanz gefunden und zeigt den römischen Götterboten Merkur. Er trägt einen Helm mit Federflügeln, weil er so schnell unterwegs ist. Nehmt ihn zum Vorbild und eilt dem Detaildieb hinterher, mit geflügelten Schritten!"
+  }
+}

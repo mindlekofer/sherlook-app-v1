@@ -1,0 +1,101 @@
+{
+  "code": "1xx0_eg_01",
+  "nr": 86,
+  "ort": "EG",
+  "name": "Fossil des Ichtyosauriers",
+  "genus": {
+    "maskulin": true,
+    "feminin": false,
+    "neutrum": false
+  },
+  "numerus": {
+    "singular": true,
+    "plural": false
+  },
+  "hashtag": [
+    {
+      "text": "#riesen_highlight",
+      "code": "xxx0"
+    },
+    {
+      "text": "#aktuelle_mahnung",
+      "code": "1xxx"
+    }
+  ],
+  "beacon": [
+    {
+      "id": 4,
+      "schwelle": -95
+    }
+  ],
+  "bilderkennung": {
+    "kategorie": 86,
+    "kategorien": [86]
+  },
+  "watson": {
+    "quiz": {
+      "frage": "Was sehen wir hier als Fälschung?",
+      "antwort": [
+        {
+          "text": "Fossil eines Dinosauriers",
+          "richtig": true
+        },
+        {
+          "text": "alte italienischen Handtasche",
+          "richtig": false
+        },
+        {
+          "text": "Verzierung eines Kachelofens",
+          "richtig": false
+        }
+      ]
+    },
+    "post_1": "Unglaublich! Haltet den Kopf oben und schaut nach den Riesen am Wand des Urzeit-Saals.",
+    "post_2": "Kaum zu glauben, dass diese Riesen einst lebendig waren und durch die Ozeane schwammen... Und doch sind sie ausgestorben. Das sei uns gerade heute eine Mahnung! Welche Arten wird es wohl in 65 Millionen Jahren noch auf unserer Erde geben?",
+    "leinertext": "Danke lieber Dr. Watson und ihrem ganzen Team! Ichtiosaurier waren schnelle Schwimmer mit einer eleganten Körperform. Schade, dass es diese tollen Tiere nicht mehr gibt. Bringt die Versteinerung wieder zurück ins Museum."
+  },
+  "sherlock": {
+    "quiz": {
+      "frage": "Nicht einfach ... Was sehen wir hier als Fälschung?",
+      "antwort": [
+        {
+          "text": "Flosse eines großen Fischsauriers",
+          "richtig": true
+        },
+        {
+          "text": "Saugnäpfe eines Tintenfischs",
+          "richtig": false
+        },
+        {
+          "text": "Gebiss eines Tyrannosaurus Rex",
+          "richtig": false
+        }
+      ]
+    },
+    "post_1": "Wahrhaft monumental! Haltet den Kopf oben und schaut nach den Riesen am Wand des Urzeit-Saals.",
+    "post_2": "Kaum zu glauben, dass diese Riesen einst lebendig waren und durch die Ozeane navigierten... Das grenzt beinah an ein Wunder. Und doch sind sie ausgestorben. Das sei uns gerade heute eine Mahnung! Welche Arten, die heute auf unserer Erde laufen, fliegen und schwimmen, wird es wohl in 65 Millionen Jahren noch geben?",
+    "leinertext": "Danke lieber Sherlock Holmes und ihrem ganzen Team! Ichtiosaurier waren schnelle und exzellente Schwimmer mit einer eleganten Körperform. Schade, dass diese tollen Tiere ausgestorben sind. Als kleines Trostpflaster können wir uns alle heute noch an ihren Fossilien erfreuen! Bringt sie wieder zurück ins Museum."
+  },
+  "enola": {
+    "quiz": {
+      "frage": "Nicht einfach - wie viel Jahre könnten zwischen dem Original und dieser Fälschung liegen?",
+      "antwort": [
+        {
+          "text": "Mehr als 65 Millionen Jahre",
+          "richtig": true
+        },
+        {
+          "text": "Etwa 5.000 Jahre",
+          "richtig": false
+        },
+        {
+          "text": "Etwa 500.000 Jahre",
+          "richtig": false
+        }
+      ]
+    },
+    "post_1": "Wahrhaft monumental! Haltet den Kopf oben und schaut nach den Riesen  an der Wand des Urzeit-Saals.",
+    "post_2": "Kaum zu glauben, dass dieses beeindruckende Gesteinsgebilde einst lebendig war und durch die Ozeane navigierte. Das grenzt beinah an ein Wunder. Und doch sind diese Riesenechsen ausgestorben. Das sei uns gerade heute eine Mahnung! Welche Arten, die heute auf unserer Erde laufen, fliegen und schwimmen, wird es wohl in 65 Millionen Jahren noch geben?",
+    "leinertext": "Danke liebe Enola Holmes! Ich erinnere mich wie fasziniert ich war, als ich dieses spektakuläre Fossil gefunden habe. Ichtiosaurier waren extrem schnelle und exzellente Schwimmer mit einer eleganten Körperform. Schade, dass diese tollen Tiere ausgestorben sind. Als kleines Trostpflaster können wir uns alle heute noch an ihren Fossilien erfreuen! Bringt sie wieder zurück ins Museum."
+  }
+}

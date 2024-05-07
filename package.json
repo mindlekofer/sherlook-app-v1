@@ -1,6 +1,6 @@
 {
   "name": "sherlook-app-v1",
-  "version": "0.0.1",
+  "version": "0.7.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

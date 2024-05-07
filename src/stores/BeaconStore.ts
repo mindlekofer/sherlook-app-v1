@@ -77,6 +77,174 @@ export const useBeaconStore = defineStore('beaconStore', {
         rssi: -100,
         time: 0,
         counter: 0
+      },
+      {
+        id: 10,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 11,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 12,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 13,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 14,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 15,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 16,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 17,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 18,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 19,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 20,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 21,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 22,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 23,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 24,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 25,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 26,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 27,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 28,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 29,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 30,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 31,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 32,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
+      },
+      {
+        id: 33,
+        ort: "",
+        rssi: -100,
+        time: 0,
+        counter: 0
       }
     ]
   }),

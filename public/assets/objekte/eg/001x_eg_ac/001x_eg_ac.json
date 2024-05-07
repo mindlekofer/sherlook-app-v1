@@ -29,7 +29,8 @@
        }
    ],
   "bilderkennung": {
-        "kategorie": 25
+        "kategorie": 25,
+        "kategorien": [26]
   },
   
   "watson": {

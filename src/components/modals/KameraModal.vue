@@ -201,21 +201,23 @@ const wahrscheinlichkeit = ref(0.0);
 const gesuchte_kategorie = ref(0);
 const gesuchtes_objekt = ref(0);
 if (spielStore.flow == 0.8 && spielStore.ort == 'eg') {
-  gesuchte_kategorie.value = 79;
+  // gesuchte_kategorie.value = 79;
+  gesuchte_kategorie.value = 87;
   neuerFlow.value = 0.9;
 } else if (spielStore.flow == 0.8 && spielStore.ort == 'og1') {
-  gesuchte_kategorie.value = 80;
+  // gesuchte_kategorie.value = 80;
+  gesuchte_kategorie.value = 88;
   neuerFlow.value = 0.9;
 } else if (spielStore.flow == 1.4) {
-  gesuchte_kategorie.value = spielStore.objekte_ort[0].bilderkennung.kategorie;
+  gesuchte_kategorie.value = spielStore.objekte_ort[0].bilderkennung.kategorien[0];
   gesuchtes_objekt.value = spielStore.objekte_ort[0].nr;
   neuerFlow.value = 1.6;
 } else if (spielStore.flow == 2.4) {
-  gesuchte_kategorie.value = spielStore.objekte_ort[1].bilderkennung.kategorie;
+  gesuchte_kategorie.value = spielStore.objekte_ort[1].bilderkennung.kategorien[0];
   gesuchtes_objekt.value = spielStore.objekte_ort[1].nr;
   neuerFlow.value = 2.6;
 } else if (spielStore.flow == 3.4) {
-  gesuchte_kategorie.value = spielStore.objekte_ort[2].bilderkennung.kategorie;
+  gesuchte_kategorie.value = spielStore.objekte_ort[2].bilderkennung.kategorien[0];
   gesuchtes_objekt.value = spielStore.objekte_ort[2].nr;
   neuerFlow.value = 3.6;
 } else {
@@ -325,6 +327,12 @@ async function predictModel()  {
       // const data = prediction.dataSync();
       const data = await prediction.data();
       console.log('nach prediction.data()');
+      const top3 = Array.from(data)
+        .map((p, i) => { return { "objekt_nr": i, "wahrscheinlichkeit": p } })
+        .sort((a, b) => b.wahrscheinlichkeit - a.wahrscheinlichkeit)
+        .slice(0, 3);
+      console.log(top3);
+
       // console.log('data: ', data);
       // const argmax = tf.argMax(data, 0).dataSync()[0];
       const argmax = await tf.argMax(data, 0).data();
